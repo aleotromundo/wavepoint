@@ -6,6 +6,17 @@
   function formatTimeCR(date=new Date()){ const locale = languageState.current === 'en' ? 'en-US' : 'es-CR'; return new Intl.DateTimeFormat(locale,{hour:'2-digit',minute:'2-digit',timeZone:CR_TZ}).format(date); }
   function weatherText(code,isDay){ const day=Number(isDay)===1; const spanishMap={0:day?['☀️','Soleado']:['🌙','Noche despejada'],1:day?['🌤️','Mayormente despejado']:['🌙','Noche mayormente despejada'],2:day?['⛅','Parcialmente nublado']:['☁️','Nublado de noche'],3:['☁️','Nublado'],45:['🌫️','Neblina'],48:['🌫️','Neblina'],51:day?['🌦️','Llovizna ligera']:['🌧️','Llovizna nocturna'],53:day?['🌦️','Llovizna']:['🌧️','Llovizna nocturna'],55:day?['🌧️','Llovizna fuerte']:['🌧️','Llovizna fuerte nocturna'],61:day?['🌦️','Lluvia ligera']:['🌧️','Lluvia nocturna'],63:day?['🌧️','Lluvia']:['🌧️','Lluvia nocturna'],65:day?['🌧️','Lluvia fuerte']:['🌧️','Lluvia fuerte nocturna'],80:day?['🌦️','Chubascos']:['🌧️','Chubascos nocturnos'],81:day?['🌧️','Chubascos']:['🌧️','Chubascos nocturnos'],82:['⛈️','Chubascos fuertes'],95:['⛈️','Tormenta'],96:['⛈️','Tormenta con granizo'],99:['⛈️','Tormenta fuerte']}; const englishMap={0:day?['☀️','Sunny']:['🌙','Clear night'],1:day?['🌤️','Mostly sunny']:['🌙','Mostly clear night'],2:day?['⛅','Partly cloudy']:['☁️','Cloudy night'],3:['☁️','Cloudy'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:day?['🌦️','Light drizzle']:['🌧️','Night drizzle'],53:day?['🌦️','Drizzle']:['🌧️','Night drizzle'],55:day?['🌧️','Heavy drizzle']:['🌧️','Heavy night drizzle'],61:day?['🌦️','Light rain']:['🌧️','Night rain'],63:day?['🌧️','Rain']:['🌧️','Night rain'],65:day?['🌧️','Heavy rain']:['🌧️','Heavy night rain'],80:day?['🌦️','Showers']:['🌧️','Night showers'],81:day?['🌧️','Showers']:['🌧️','Night showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Severe storm']}; const map = languageState.current === 'en' ? englishMap : spanishMap; return map[code] || (day?['🌤️','Variable conditions']:['🌙','Night conditions']); }
   function weatherMotion(code,isDay){ const value=Number(code); if(Number(isDay)!==1) return 'night'; if([95,96,99].includes(value)) return 'storm'; if([51,53,55,61,63,65,80,81,82].includes(value)) return 'rain'; if([45,48].includes(value)) return 'mist'; if([1,2,3].includes(value)) return 'clouds'; return 'sun'; }
+  function weatherIllustration(condition){
+    const art={
+      sun:'<circle class="weather-sun" cx="78" cy="35" r="18"/><path class="weather-ray" d="M78 7v7m0 42v7M50 35h7m42 0h7M58 15l5 5m30 30 5 5m0-40-5 5m-30 30-5 5"/><path class="weather-cloud" d="M21 72h71a16 16 0 0 0 0-32 25 25 0 0 0-47-3 18 18 0 0 0-24 35Z"/>',
+      clouds:'<path class="weather-cloud-back" d="M43 48h49a14 14 0 0 0 0-28 22 22 0 0 0-42-2 15 15 0 0 0-7 30Z"/><path class="weather-cloud" d="M18 75h77a17 17 0 0 0 0-34 27 27 0 0 0-51-4 19 19 0 0 0-26 38Z"/>',
+      rain:'<path class="weather-cloud" d="M18 55h77a17 17 0 0 0 0-34 27 27 0 0 0-51-4 19 19 0 0 0-26 38Z"/><path class="weather-drop" d="m37 67-5 12m25-12-5 12m25-12-5 12"/>',
+      storm:'<path class="weather-storm-cloud" d="M18 53h77a17 17 0 0 0 0-34 27 27 0 0 0-51-4 19 19 0 0 0-26 38Z"/><path class="weather-bolt" d="m63 49-15 23h13l-5 17 22-29H64l8-11Z"/>',
+      mist:'<path class="weather-cloud" d="M24 47h69a15 15 0 0 0 0-30 23 23 0 0 0-44-3 17 17 0 0 0-25 33Z"/><path class="weather-mist" d="M23 63h70M34 75h57M44 87h40"/>',
+      night:'<path class="weather-moon" d="M79 13a29 29 0 1 0 28 41A25 25 0 0 1 79 13Z"/><circle class="weather-star" cx="36" cy="38" r="2"/><circle class="weather-star" cx="53" cy="21" r="1.5"/><circle class="weather-star" cx="31" cy="58" r="1.5"/>'
+    };
+    return `<svg viewBox="0 0 120 96" aria-hidden="true">${art[condition] || art.sun}</svg>`;
+  }
   //function applyCameraState(){ const live=isCameraLiveNow(); document.body.classList.toggle('night', !live); document.querySelectorAll('.live-badge').forEach(b=>{ b.textContent=live?'● En vivo':'☾ Descanso'; b.classList.toggle('rest', !live); }); document.getElementById('cameraNightNotice').classList.toggle('show', !live); }
   
   function applyCameraState(){
@@ -60,12 +71,12 @@
       ]);
       const weather=await wRes.json(), marine=await mRes.json();
       const cur=weather.current||{};
-      const [ico,label]=weatherText(cur.weather_code,cur.is_day);
+      const [,label]=weatherText(cur.weather_code,cur.is_day);
       icon.dataset.conditionCode=cur.weather_code ?? 0;
       icon.dataset.isDay=cur.is_day ?? 1;
-      document.getElementById('temp').textContent=Math.round(cur.temperature_2m??0);
-      icon.textContent=ico;
       icon.dataset.condition=weatherMotion(cur.weather_code,cur.is_day);
+      icon.innerHTML=weatherIllustration(icon.dataset.condition);
+      document.getElementById('temp').textContent=Math.round(cur.temperature_2m??0);
       document.getElementById('weatherState').textContent=label;
       document.getElementById('wind').textContent=Math.round(cur.wind_speed_10m??0);
       document.getElementById('waveHeight').textContent=Number(marine?.current?.wave_height??0).toFixed(1);
@@ -73,8 +84,8 @@
       document.getElementById('updatedText').textContent='Actualizado ahora';
     } catch(e){
       const isDay=isCameraLiveNow();
-      icon.textContent=isDay?'🌤️':'🌙';
       icon.dataset.condition=isDay?'clouds':'night';
+      icon.innerHTML=weatherIllustration(icon.dataset.condition);
       document.getElementById('weatherState').textContent=isDay?'Condiciones disponibles':'Noche en Tamarindo';
       document.getElementById('localTime').textContent=formatTimeCR();
       document.getElementById('updatedText').textContent='Sin conexión al clima';
