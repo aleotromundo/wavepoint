@@ -380,8 +380,7 @@
     const langToggle = document.querySelector('[data-lang-toggle]');
     if (langToggle) {
       const isSpanish = lang === 'es';
-      const flagCodePoints = isSpanish ? [0x1f1fa, 0x1f1f8] : [0x1f1ea, 0x1f1f8];
-      langToggle.textContent = String.fromCodePoint(...flagCodePoints);
+      langToggle.dataset.language = lang;
       langToggle.setAttribute('aria-label', isSpanish ? 'Switch to English' : 'Cambiar a español');
       langToggle.setAttribute('aria-pressed', String(!isSpanish));
     }

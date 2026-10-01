@@ -24,6 +24,9 @@
     .lang-toggle { width:34px; height:34px; border:1px solid transparent; border-radius:50%; display:grid; place-items:center; padding:0; background:rgba(255,255,255,.06); cursor:pointer; font-size:18px; opacity:.9; transition:transform .2s ease, opacity .2s ease, border-color .2s ease, box-shadow .2s ease; }
     .lang-toggle:hover { opacity:1; transform:translateY(-1px); border-color:rgba(255,255,255,.4); box-shadow:0 8px 18px rgba(0,0,0,.18); }
     .lang-toggle:focus-visible { outline:2px solid rgba(15,199,215,.9); outline-offset:3px; }
+    .lang-toggle { overflow: hidden; }
+    .lang-toggle svg { display: none; width: 23px; height: 23px; border-radius: 50%; }
+    .lang-toggle[data-language="es"] .flag-us, .lang-toggle[data-language="en"] .flag-es { display: block; }
     .navlinks { display:flex; align-items:center; justify-content:flex-end; gap:24px; flex:1; color:#fff; font-size:13px; font-weight:800; text-transform:uppercase; text-shadow:0 2px 14px rgba(0,0,0,.25); margin-left:72px; }
     .navlinks>a, .dropbtn { opacity:.96; transition:.2s ease; background:none; border:0; color:#fff; cursor:pointer; font:inherit; text-transform:uppercase; padding:0; }
     .navlinks>a:hover, .dropbtn:hover { transform:translateY(-1px); opacity:1; }
@@ -2039,7 +2042,9 @@ body { background: #071c28; }
 }
 
 @media (max-width: 640px) {
-  .hero { padding-top: 82px; }
+  .hero { padding-top: 82px; padding-bottom: 34px; }
+  .hero-actions { flex-direction: row; flex-wrap: nowrap; gap: 8px; margin-top: 18px; }
+  .hero-actions .btn { width: auto; min-width: 0; min-height: 48px; flex: 1 1 0; padding: 0 8px; font-size: 12px; white-space: nowrap; }
 }
 
 @media (prefers-reduced-motion: reduce) {
