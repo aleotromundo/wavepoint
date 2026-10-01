@@ -1440,7 +1440,7 @@ body { background: #f1f5f3; }
   animation: weather-window-drift 7s ease-in-out infinite;
 }
 .weather-card.is-dragging { z-index: 6; animation-play-state: paused; transition: none; }
-.weather-card:not(.is-dragging) { transition: box-shadow .25s ease, border-color .25s ease; }
+.weather-card:not(.is-dragging) { transition: transform .35s cubic-bezier(.22,1.2,.35,1), box-shadow .25s ease, border-color .25s ease; }
 .weather-card:not(.is-dragging):hover { border-color: rgba(229, 250, 255, .58); box-shadow: 0 24px 60px rgba(2, 18, 27, .3), inset 0 1px rgba(255, 255, 255, .34); }
 .weather-head { cursor: grab; touch-action: none; user-select: none; }
 .weather-head:active { cursor: grabbing; }

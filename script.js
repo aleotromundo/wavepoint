@@ -95,6 +95,17 @@
       weatherWind: 'Viento',
       weatherTime: 'Hora local',
       cameraNightNotice: 'Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.',
+      cameraLive: '● En vivo',
+      cameraRestTitle: 'Cámara en descanso',
+      cameraRestHours: 'Disponible de 4:45 a.m. a 6:30 p.m.',
+      cameraClickOpen: 'Click para abrir',
+      cameraView: 'Ver cámara',
+      cameraSpotInfo: 'Info del spot',
+      cameraComingSoon: 'Próximamente',
+      cameraNewComing: 'Nueva cámara en camino',
+      cameraSoonShort: 'Próx.',
+      cameraSpotShort: 'Spot',
+      cameraViewCollaborator: 'Ver colaborador',
       camerasSectionTitle: 'Cámaras en vivo',
       camerasSectionSubtitle: 'Tres puntos clave: dos cámaras activas y Red Door en preparación.',
       camerasSectionLink: 'Ir al sitio actual →',
@@ -147,6 +158,9 @@
       partnerCameraSpot: 'Cámara / spot',
       partnerCollaborator: 'Colaborador',
       cameraOfflineText: 'Esta cámara está fuera del horario de transmisión. Vuelve aprox. a las 4:45 a.m. hora Costa Rica.',
+      cameraCloseHint: 'Haz clic fuera del recuadro para cerrar.',
+      cameraModalTitle: 'Cámara',
+      spotModalTitle: 'Info del spot',
       mobileHome: 'Inicio',
       mobileCameras: 'Cámaras',
       mobileServices: 'Servicios',
@@ -156,6 +170,14 @@
       mobileCapitan: 'Capitán Suizo',
       mobileCasa: 'Casa de Maderas',
       mobileRedDoor: 'Red Door',
+      mobileWavePoint: 'WavePoint',
+      mobileLive: 'En vivo',
+      mobileSurfPhoto: 'Surf / Foto',
+      mobileTamarindo: 'Tamarindo',
+      mobileLocals: 'Locales',
+      mobileProject: 'Proyecto',
+      mobileCamera: 'Cámara',
+      mobileComingSoon: 'Próximamente',
       footerIntro: 'Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.',
       footerQuickLinks: 'Enlaces rápidos',
       footerGuide: 'Guía turística',
@@ -187,6 +209,17 @@
       weatherWind: 'Wind',
       weatherTime: 'Local time',
       cameraNightNotice: 'Night cameras off · Back around 4:45 a.m.',
+      cameraLive: '● Live',
+      cameraRestTitle: 'Camera on standby',
+      cameraRestHours: 'Available from 4:45 a.m. to 6:30 p.m.',
+      cameraClickOpen: 'Click to open',
+      cameraView: 'View camera',
+      cameraSpotInfo: 'Spot info',
+      cameraComingSoon: 'Coming soon',
+      cameraNewComing: 'New camera on the way',
+      cameraSoonShort: 'Soon',
+      cameraSpotShort: 'Spot',
+      cameraViewCollaborator: 'View collaborator',
       camerasSectionTitle: 'Live cameras',
       camerasSectionSubtitle: 'Three key spots: two active cameras and Red Door still coming.',
       camerasSectionLink: 'Go to the current site →',
@@ -239,6 +272,9 @@
       partnerCameraSpot: 'Camera / spot',
       partnerCollaborator: 'Collaborator',
       cameraOfflineText: 'This camera is outside its broadcast window. It returns around 4:45 a.m. Costa Rica time.',
+      cameraCloseHint: 'Click outside the frame to close.',
+      cameraModalTitle: 'Camera',
+      spotModalTitle: 'Spot info',
       mobileHome: 'Home',
       mobileCameras: 'Cameras',
       mobileServices: 'Services',
@@ -248,6 +284,14 @@
       mobileCapitan: 'Capitán Suizo',
       mobileCasa: 'Casa de Maderas',
       mobileRedDoor: 'Red Door',
+      mobileWavePoint: 'WavePoint',
+      mobileLive: 'Live',
+      mobileSurfPhoto: 'Surf / Photo',
+      mobileTamarindo: 'Tamarindo',
+      mobileLocals: 'Local',
+      mobileProject: 'Project',
+      mobileCamera: 'Camera',
+      mobileComingSoon: 'Coming soon',
       footerIntro: 'We connect surfers, travelers, and local businesses with the best conditions and experiences in Tamarindo.',
       footerQuickLinks: 'Quick links',
       footerGuide: 'Travel guide',
@@ -281,7 +325,7 @@
     const langToggle = document.querySelector('[data-lang-toggle]');
     if (langToggle) {
       const isSpanish = lang === 'es';
-      langToggle.textContent = isSpanish ? '🇺🇸' : '🇨🇷';
+      langToggle.textContent = isSpanish ? '🇺🇸' : '�🇸';
       langToggle.setAttribute('aria-label', isSpanish ? 'Switch to English' : 'Cambiar a español');
       langToggle.setAttribute('aria-pressed', String(!isSpanish));
     }
@@ -741,6 +785,9 @@
     const stopDrag=event=>{
       if(!drag || event.pointerId!==drag.pointerId) return;
       drag=null;
+      offsetX=0;
+      offsetY=0;
+      applyOffset();
       card.classList.remove('is-dragging');
     };
     handle.addEventListener('pointerup',stopDrag);

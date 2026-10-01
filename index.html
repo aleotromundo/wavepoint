@@ -44,15 +44,15 @@
 <button aria-label="Cerrar menú" class="mobile-close" id="mobileClose">×</button>
 </div>
 <nav class="mobile-menu">
-<a href="#inicio" data-i18n="mobileHome">Inicio <small>WavePoint</small></a>
-<a href="#camaras" data-i18n="mobileCameras">Cámaras <small>En vivo</small></a>
-<a href="#servicios" data-i18n="mobileServices">Servicios <small>Surf / Foto</small></a>
-<a href="#guia" data-i18n="mobileGuide">Guía local <small>Tamarindo</small></a>
-<a href="#aliados" data-i18n="mobileAllies">Aliados <small>Locales</small></a>
-<a href="https://wavepointcr.com/Enlaces/nostros.html" data-i18n="mobileAbout">Nosotros <small>Proyecto</small></a>
-<a href="https://wavepointcr.com/Enlaces/capitan-suizo.html" data-i18n="mobileCapitan">Capitán Suizo <small>Cámara</small></a>
-<a href="https://wavepointcr.com/Enlaces/casa-maderas.html" data-i18n="mobileCasa">Casa de Maderas <small>Cámara</small></a>
-<a href="https://wavepointcr.com/Enlaces/red-door.html" data-i18n="mobileRedDoor">Red Door <small>Próximamente</small></a>
+<a href="#inicio" data-i18n="mobileHome">Inicio <small data-i18n="mobileWavePoint">WavePoint</small></a>
+<a href="#camaras" data-i18n="mobileCameras">Cámaras <small data-i18n="mobileLive">En vivo</small></a>
+<a href="#servicios" data-i18n="mobileServices">Servicios <small data-i18n="mobileSurfPhoto">Surf / Foto</small></a>
+<a href="#guia" data-i18n="mobileGuide">Guía local <small data-i18n="mobileTamarindo">Tamarindo</small></a>
+<a href="#aliados" data-i18n="mobileAllies">Aliados <small data-i18n="mobileLocals">Locales</small></a>
+<a href="https://wavepointcr.com/Enlaces/nostros.html" data-i18n="mobileAbout">Nosotros <small data-i18n="mobileProject">Proyecto</small></a>
+<a href="https://wavepointcr.com/Enlaces/capitan-suizo.html" data-i18n="mobileCapitan">Capitán Suizo <small data-i18n="mobileCamera">Cámara</small></a>
+<a href="https://wavepointcr.com/Enlaces/casa-maderas.html" data-i18n="mobileCasa">Casa de Maderas <small data-i18n="mobileCamera">Cámara</small></a>
+<a href="https://wavepointcr.com/Enlaces/red-door.html" data-i18n="mobileRedDoor">Red Door <small data-i18n="mobileComingSoon">Próximamente</small></a>
 </nav>
 </div>
 <main>
@@ -104,41 +104,41 @@
 <article class="camera-card" data-camera="capitan" data-location="Tamarindo" data-src="https://player.castr.com/live_701aeb00a57e11f0baef55dc48bc4cf6" data-title="Capitán Suizo">
 <!--<div class="cam-media"><span class="badge live-badge">● En vivo</span><img src="assets/capitan.jpg" alt="Capitán Suizo"><div class="night-mask auto"><span><span class="moon">☾</span><strong>Cámara en descanso</strong><small>Disponible de 4:45 a.m. a 6:30 p.m.</small></span></div></div>-->
 <div class="cam-media">
-<span class="badge live-badge">● En vivo</span>
+<span class="badge live-badge" data-i18n="cameraLive">● En vivo</span>
 <iframe allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="" class="cam-preview" loading="lazy" src="https://player.castr.com/live_701aeb00a57e11f0baef55dc48bc4cf6">
 </iframe>
 <img alt="WavePoint" class="stream-watermark" src="assets/wavepoint-watermark.png"/>
 <div class="night-mask auto">
 <span>
 <span class="moon">☾</span>
-<strong>Cámara en descanso</strong>
-<small>Disponible de 4:45 a.m. a 6:30 p.m.</small>
+<strong data-i18n="cameraRestTitle">Cámara en descanso</strong>
+<small data-i18n="cameraRestHours">Disponible de 4:45 a.m. a 6:30 p.m.</small>
 </span>
 </div>
 </div>
-<div class="cam-body"><div><h3>Capitán Suizo</h3><p>Tamarindo</p></div><div class="cam-meta"><strong>Live cam</strong><small>Click para abrir</small></div><div class="cam-actions"><a class="cam-link primary js-open-camera" href="#">Ver cámara <span>→</span></a><a class="cam-link js-open-spot" href="#">Info del spot <span>↗</span></a></div></div>
+<div class="cam-body"><div><h3>Capitán Suizo</h3><p>Tamarindo</p></div><div class="cam-meta"><strong>Live cam</strong><small data-i18n="cameraClickOpen">Click para abrir</small></div><div class="cam-actions"><a class="cam-link primary js-open-camera" href="#" data-i18n="cameraView">Ver cámara <span>→</span></a><a class="cam-link js-open-spot" href="#" data-i18n="cameraSpotInfo">Info del spot <span>↗</span></a></div></div>
 </article>
 <!--<article class="camera-card" data-camera="casitas" data-title="Casa de Maderas" data-location="Palm Beach" data-src="https://player.castr.com/live_00740d005e9c11f0bcee018375e0c90e">
           <div class="cam-media"><span class="badge live-badge">● En vivo</span><img src="assets/casitas.jpg" alt="Casa de Maderas"><div class="night-mask auto"><span><span class="moon">☾</span><strong>Cámara en descanso</strong><small>Disponible de 4:45 a.m. a 6:30 p.m.</small></span></div></div>-->
 <article class="camera-card" data-camera="casitas" data-location="Palm Beach" data-src="https://player.castr.com/live_00740d005e9c11f0bcee018375e0c90e" data-title="Casa de Maderas">
 <div class="cam-media">
-<span class="badge live-badge">● En vivo</span>
+<span class="badge live-badge" data-i18n="cameraLive">● En vivo</span>
 <iframe allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="" class="cam-preview" loading="lazy" src="https://player.castr.com/live_00740d005e9c11f0bcee018375e0c90e">
 </iframe>
 <img alt="WavePoint" class="stream-watermark" src="assets/wavepoint-watermark.png"/>
 <div class="night-mask auto">
 <span>
 <span class="moon">☾</span>
-<strong>Cámara en descanso</strong>
-<small>Disponible de 4:45 a.m. a 6:30 p.m.</small>
+<strong data-i18n="cameraRestTitle">Cámara en descanso</strong>
+<small data-i18n="cameraRestHours">Disponible de 4:45 a.m. a 6:30 p.m.</small>
 </span>
 </div>
 </div>
-<div class="cam-body"><div><h3>Casa de Maderas</h3><p>Palm Beach</p></div><div class="cam-meta"><strong>Live cam</strong><small>Click para abrir</small></div><div class="cam-actions"><a class="cam-link primary js-open-camera" href="#">Ver cámara <span>→</span></a><a class="cam-link js-open-spot" href="#">Info del spot <span>↗</span></a></div></div>
+<div class="cam-body"><div><h3>Casa de Maderas</h3><p>Palm Beach</p></div><div class="cam-meta"><strong>Live cam</strong><small data-i18n="cameraClickOpen">Click para abrir</small></div><div class="cam-actions"><a class="cam-link primary js-open-camera" href="#" data-i18n="cameraView">Ver cámara <span>→</span></a><a class="cam-link js-open-spot" href="#" data-i18n="cameraSpotInfo">Info del spot <span>↗</span></a></div></div>
 </article>
 <article class="camera-card" onclick="window.location.href='https://wavepointcr.com/Enlaces/red-door.html'">
-<div class="cam-media"><span class="badge soon">Próximamente</span><img alt="Red Door próximamente" src="assets/reddoor.jpg"/><div class="coming-mask"><span><strong>Red Door</strong><small>Nueva cámara en camino</small></span></div></div>
-<div class="cam-body"><div><h3>Red Door</h3><p>Tamarindo</p></div><div class="cam-meta"><strong>Próx.</strong><small>Spot</small></div><div class="cam-action"><span>Ver colaborador</span><span>→</span></div></div></article>
+<div class="cam-media"><span class="badge soon" data-i18n="cameraComingSoon">Próximamente</span><img alt="Red Door próximamente" src="assets/reddoor.jpg"/><div class="coming-mask"><span><strong>Red Door</strong><small data-i18n="cameraNewComing">Nueva cámara en camino</small></span></div></div>
+<div class="cam-body"><div><h3>Red Door</h3><p>Tamarindo</p></div><div class="cam-meta"><strong data-i18n="cameraSoonShort">Próx.</strong><small data-i18n="cameraSpotShort">Spot</small></div><div class="cam-action"><span data-i18n="cameraViewCollaborator">Ver colaborador</span><span>→</span></div></div></article>
 </div>
 </div>
 </section>
@@ -242,11 +242,11 @@
 <section class="newsletter"><div class="container newsletter-grid"><div><h2 data-i18n="newsletterTitle">Entérate primero</h2><p data-i18n="newsletterText">Recibe alertas de olas, novedades y promociones seleccionadas.</p></div><form class="signup"><input data-i18n-placeholder="newsletterEmailPlaceholder" placeholder="Tu correo electrónico" type="email"/><button type="button" data-i18n="newsletterButton">Suscribirme</button></form></div></section>
 </main>
 <footer><div class="container"><div class="foot-grid"><div><div class="foot-brand">WavePoint</div><p data-i18n="footerIntro">Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.</p></div><div><h3 data-i18n="footerQuickLinks">Enlaces rápidos</h3><a href="https://wavepointcr.com/">Home</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html" data-i18n="footerGuide">Guía turística</a><a href="https://wavepointcr.com/Enlaces/service.html" data-i18n="footerServices">Servicios</a><a href="https://wavepointcr.com/Enlaces/nostros.html" data-i18n="footerAbout">Nosotros</a></div><div><h3 data-i18n="footerCameras">Cámaras</h3><a href="https://wavepointcr.com/Enlaces/capitan-suizo.html">Capitán Suizo</a><a href="https://wavepointcr.com/Enlaces/casa-maderas.html">Casa de Maderas</a><a href="https://wavepointcr.com/Enlaces/red-door.html">Red Door</a></div><div><h3 data-i18n="footerGuide">Guía</h3><a href="https://wavepointcr.com/Enlaces/guia-playas.html" data-i18n="footerBeaches">Playas</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html" data-i18n="footerRestaurants">Restaurantes</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html" data-i18n="footerTours">Tours</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html" data-i18n="footerSnorkeling">Snorkeling</a></div><div><h3>WavePoint</h3><p data-i18n="footerWavePointText">Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.</p><a class="btn btn-primary" href="#camaras" data-i18n="footerViewCameras">Ver cámaras</a></div></div><div class="foot-bottom"><span>© 2026 WavePoint Tamarindo.</span><span data-i18n="footerTerms">Términos · Privacidad</span></div></div></footer>
-<div aria-hidden="true" class="modal" id="cameraModal"><div class="modal-box"><div class="modal-head"><div><div class="modal-title" id="modalTitle">Cámara</div></div><button class="close" id="closeCamera">×</button></div><div class="modal-body"><iframe allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="" id="cameraFrame" loading="lazy" src=""></iframe><img alt="WavePoint" class="stream-watermark modal-watermark" id="modalWatermark" src="assets/wavepoint-watermark.png"/><div class="offline-panel" id="offlinePanel"><div><span class="moon">☾</span><h3 id="offlineTitle">Cámara en descanso</h3><p data-i18n="cameraOfflineText">Esta cámara está fuera del horario de transmisión. Vuelve aprox. a las 4:45 a.m. hora Costa Rica.</p></div></div></div><div class="modal-note" id="modalNote">Haz clic fuera del recuadro para cerrar.</div></div></div>
+<div aria-hidden="true" class="modal" id="cameraModal"><div class="modal-box"><div class="modal-head"><div><div class="modal-title" id="modalTitle" data-i18n="cameraModalTitle">Cámara</div></div><button class="close" id="closeCamera">×</button></div><div class="modal-body"><iframe allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="" id="cameraFrame" loading="lazy" src=""></iframe><img alt="WavePoint" class="stream-watermark modal-watermark" id="modalWatermark" src="assets/wavepoint-watermark.png"/><div class="offline-panel" id="offlinePanel"><div><span class="moon">☾</span><h3 id="offlineTitle" data-i18n="cameraRestTitle">Cámara en descanso</h3><p data-i18n="cameraOfflineText">Esta cámara está fuera del horario de transmisión. Vuelve aprox. a las 4:45 a.m. hora Costa Rica.</p></div></div></div><div class="modal-note" id="modalNote" data-i18n="cameraCloseHint">Haz clic fuera del recuadro para cerrar.</div></div></div>
 <div aria-hidden="true" class="modal" id="spotModal">
 <div class="modal-box spot-panel">
 <div class="modal-head">
-<div class="modal-title" id="spotModalTitle">Info del spot</div>
+<div class="modal-title" id="spotModalTitle" data-i18n="spotModalTitle">Info del spot</div>
 <button class="close" id="closeSpot">×</button>
 </div>
 <div class="spot-modal-body" id="spotModalBody"></div>
