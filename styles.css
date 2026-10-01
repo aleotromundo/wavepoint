@@ -41,14 +41,13 @@
       height:auto;
       filter:drop-shadow(0 10px 24px rgba(1,20,29,.28)) drop-shadow(0 2px 8px rgba(151,229,230,.18));
     }
+    .hero-logo-wrap:before,
     .hero-logo-wrap:after {
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(112deg, transparent 39%, rgba(111,237,255,.12) 45%, rgba(255,255,255,.92) 49%, rgba(180,250,255,.98) 50%, rgba(255,255,255,.78) 51%, rgba(111,237,255,.16) 56%, transparent 62%);
-      transform:translateX(-155%);
+      transform:translateX(-155%) skewX(-16deg);
       opacity:0;
-      filter:drop-shadow(0 0 8px rgba(149,244,255,.7));
       -webkit-mask-image:url('assets/wavepoint-sticker.png');
       mask-image:url('assets/wavepoint-sticker.png');
       -webkit-mask-size:100% 100%;
@@ -57,14 +56,30 @@
       mask-repeat:no-repeat;
       pointer-events:none;
     }
-    .hero-logo-wrap.is-shining:after {
-      animation:hero-logo-shine 1.15s cubic-bezier(.22,.61,.36,1) both;
+    .hero-logo-wrap:before {
+      background:linear-gradient(108deg, transparent 34%, rgba(77,226,255,.12) 44%, rgba(230,252,255,.48) 49%, rgba(255,255,255,.72) 50%, rgba(255,192,137,.16) 52%, rgba(83,218,255,.2) 57%, transparent 68%);
+      filter:blur(5px) drop-shadow(0 0 10px rgba(92,225,255,.48));
     }
-    @keyframes hero-logo-shine {
-      0% { opacity:0; transform:translateX(-155%); }
-      14% { opacity:1; }
-      78% { opacity:.9; transform:translateX(155%); }
-      100% { opacity:0; transform:translateX(155%); }
+    .hero-logo-wrap:after {
+      background:linear-gradient(108deg, transparent 46%, rgba(120,229,255,.24) 48.5%, rgba(255,255,255,.86) 49.5%, #fff 50%, rgba(205,250,255,.96) 50.35%, rgba(255,196,151,.62) 51%, rgba(255,255,255,.08) 52%, transparent 54%);
+      filter:drop-shadow(0 0 4px rgba(255,255,255,.95)) drop-shadow(0 0 13px rgba(89,222,255,.72));
+    }
+    .hero-logo-wrap.is-shining:before {
+      animation:hero-logo-bloom 1.35s cubic-bezier(.19,1,.22,1) both;
+    }
+    .hero-logo-wrap.is-shining:after {
+      animation:hero-logo-glint 1.2s cubic-bezier(.19,1,.22,1) .08s both;
+    }
+    @keyframes hero-logo-bloom {
+      0% { opacity:0; transform:translateX(-155%) skewX(-16deg); }
+      24% { opacity:.72; }
+      100% { opacity:0; transform:translateX(155%) skewX(-16deg); }
+    }
+    @keyframes hero-logo-glint {
+      0% { opacity:0; transform:translateX(-155%) skewX(-16deg); }
+      18% { opacity:1; }
+      72% { opacity:.92; }
+      100% { opacity:0; transform:translateX(155%) skewX(-16deg); }
     }
     .hero-grid { position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:56px; align-items:center; padding-top:32px; }
     .hero-grid > div { display:flex; flex-direction:column; align-items:center; justify-self:center; text-align:center; width:min(100%, 680px); max-width:100%; }
@@ -756,6 +771,7 @@
 
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-logo-wrap:before,
   .hero-logo-wrap:after {
     animation: none;
   }
