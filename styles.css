@@ -39,7 +39,7 @@
     .hero:after { content:""; position:absolute; inset:auto 0 0 0; height:105px; background:linear-gradient(180deg, transparent, rgba(248,251,251,.72)); pointer-events:none; }
     .hero-logo-wrap {
       position:relative;
-      width:min(100%, 460px);
+      width:min(100%, 560px);
       max-width:100%;
       margin:0 auto 24px;
       z-index:8;
@@ -51,6 +51,7 @@
     .hero-sticker-logo {
       display:block;
       width:100%;
+      max-width:560px;
       height:auto;
       position:relative;
       z-index:1;
@@ -155,7 +156,7 @@
     .offline-panel p { margin:0; color:rgba(255,255,255,.78); font-weight:750; line-height:1.5; max-width:620px; }
 
     @media (max-width:980px) { .navlinks { display:none; } .hamb { display:block; } .hero { min-height:auto; padding:125px 0 80px; } .hero-grid, .camera-grid, .promo-grid, .service-grid, .why-grid, .newsletter-grid, .foot-grid { grid-template-columns:1fr; gap:28px; } .weather-card { justify-self:stretch; max-width:420px; } .logo-rail { grid-template-columns:repeat(2,1fr); } .benefits { grid-template-columns:1fr; } .promo-card { min-height:300px; } }
-    @media (max-width:560px) { .container { width:min(100% - 28px, 1180px); } .brand img { height:40px; } .hero h1 { font-size:48px; } .hero p { font-size:18px; } .hero-actions { flex-direction:column; } .btn { width:100%; } .cam-media { height:210px; } .section { padding:52px 0; } .section-head { display:block; } .signup { flex-direction:column; } }
+    @media (max-width:560px) { .container { width:min(100% - 28px, 1180px); } .brand img { height:46px; } .hero h1 { font-size:48px; } .hero p { font-size:18px; } .hero-actions { flex-direction:column; } .btn { width:100%; } .cam-media { height:210px; } .section { padding:52px 0; } .section-head { display:block; } .signup { flex-direction:column; } }
   
     /* Responsive polish v4 */
     .mobile-panel {
@@ -1455,14 +1456,14 @@ footer h3 { text-transform: none; }
   .brand { display: none; }
   .hero-grid > div { justify-self: center; }
   .hero-location { align-self: center; justify-content: center; }
-  .hero-logo-wrap { width: min(100%, 390px); }
+  .hero-logo-wrap { width: min(100%, 470px); }
   .hero-location { margin-top: 0; }
   .weather-card { justify-self: center; }
   .hero h1 { font-size: 62px; line-height: 1; }
 }
 
 @media (max-width: 640px) {
-  .hero-logo-wrap { width: min(86vw, 350px); margin-bottom: 22px; }
+  .hero-logo-wrap { width: min(88vw, 420px); margin-bottom: 22px; }
   .hero-location { margin-top: 0; }
   .hero-location-name { font-size: 16px; }
   .country-seal-label { font-size: 9px; }
