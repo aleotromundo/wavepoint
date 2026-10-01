@@ -211,6 +211,15 @@
       });
     });
 
+    document.querySelectorAll('.js-open-partner-camera').forEach(btn=>{
+      btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        const camera=document.querySelector(`.camera-card[data-camera="${btn.dataset.camera}"]`);
+        if(camera) openCamera(camera);
+      });
+    });
+
     document.getElementById('closeCamera').addEventListener('click', closeCamera);
     modal.addEventListener('click', (e)=>{ if(e.target===modal) closeCamera(); });
     document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeCamera(); closeAd(); } });
