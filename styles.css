@@ -2260,3 +2260,60 @@ body { background: #071c28; }
   .weather-list { padding-inline: 8px; }
   .w-value { font-size: 14px; }
 }
+
+
+/* Weather correction: keep the atmospheric illustration and label in their own lane. */
+.weather-condition {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  min-width: 0;
+  padding-left: 3px;
+}
+.weather-icon { flex: 0 0 auto; width: 66px; height: 66px; }
+.weather-state {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  color: #f0fffb;
+  font-size: 13px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+.weather-place { white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .weather-condition { gap: 6px; padding-left: 0; }
+  .weather-icon { width: 58px; height: 58px; }
+  .weather-state { font-size: 12px; }
+}
+
+@media (max-width: 380px) {
+  .weather-icon { width: 52px; height: 52px; }
+  .weather-state { font-size: 11px; }
+}
+
+
+/* Specificity fix for the legacy weather grid rule. */
+.weather-main > .weather-condition {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  min-width: 0;
+  padding-left: 3px;
+}
+.weather-main > .weather-condition .weather-state {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+@media (max-width: 640px) {
+  .weather-main > .weather-condition { gap: 6px; padding-left: 0; }
+}

@@ -104,7 +104,7 @@
       heroText: 'Conéctate con la ola. Mira las condiciones en tiempo real y elige tu próximo spot.',
       btnWatchCameras: 'Ver cámaras en vivo ▸',
       btnBeachGuide: 'Guía de playas',
-      weatherTitle: 'Condiciones generales',
+      weatherTitle: 'Condiciones para surfear',
       weatherLoading: 'Cargando clima',
       weatherWave: 'Oleaje estimado',
       weatherWind: 'Viento',
@@ -278,7 +278,7 @@
       heroText: 'Connect with the wave. Check real-time conditions and choose your next spot.',
       btnWatchCameras: 'Watch live cameras ▸',
       btnBeachGuide: 'Beach guide',
-      weatherTitle: 'General conditions',
+      weatherTitle: 'Surf conditions',
       weatherLoading: 'Loading weather',
       weatherWave: 'Estimated swell',
       weatherWind: 'Wind',
@@ -1073,4 +1073,3 @@
   bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
-
