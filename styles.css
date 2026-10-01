@@ -52,8 +52,7 @@
       height:auto;
       position:relative;
       z-index:1;
-      filter:grayscale(1) contrast(8) invert(1);
-      mix-blend-mode:screen;
+      filter:drop-shadow(0 8px 20px rgba(0,167,189,.22));
     }
     .logo-wave-aura {
       position:absolute;
@@ -1406,6 +1405,10 @@ body { background: #f1f5f3; }
 .navlinks { gap: 18px; font-size: 13px; font-weight: 700; text-transform: none; }
 .navlinks>a, .dropbtn { letter-spacing: 0; text-transform: none; }
 .hero h1 { font-size: 78px; line-height: .98; text-transform: none; }
+.hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(300px, .75fr); gap: clamp(44px, 6vw, 88px); }
+.hero-grid > div { justify-self: start; align-items: flex-start; text-align: left; width: min(100%, 760px); }
+.hero-logo-wrap { align-self: flex-start; width: min(100%, 430px); margin: 0 0 22px; }
+.hero-actions { justify-content: flex-start; }
 .section-title { font-size: 38px; line-height: 1.04; text-transform: none; }
 .cam-body h3, .service-body h3 { font-size: 24px; text-transform: none; }
 .partner-overlay h3, .partner-card h3, .after-content h3, .promo-content h3 { text-transform: none; }
@@ -1419,8 +1422,11 @@ footer h3 { text-transform: none; }
 
 @media (max-width: 980px) {
   .brand { display: none; }
-  .hero-grid > div { justify-self: center; }
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-grid > div { justify-self: center; align-items: center; text-align: center; }
   .hero-logo-wrap { width: min(100%, 390px); }
+  .hero-logo-wrap { align-self: center; margin: 0 auto 22px; }
+  .hero-actions { justify-content: center; }
   .hero-location { margin-top: 0; }
   .weather-card { justify-self: center; }
   .hero h1 { font-size: 62px; line-height: 1; }
