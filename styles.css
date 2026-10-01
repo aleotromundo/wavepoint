@@ -2183,3 +2183,80 @@ body { background: #071c28; }
 }
 
 
+
+
+/* Weather window: compact surf conditions, inspired by glanceable weather apps */
+.weather-card {
+  width: min(100%, 348px);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(15, 199, 215, .24), transparent 38%),
+    linear-gradient(145deg, rgba(8, 49, 64, .74), rgba(5, 29, 43, .78));
+  border-color: rgba(224, 251, 251, .34);
+  box-shadow: 0 26px 64px rgba(1, 16, 26, .34), inset 0 1px rgba(255, 255, 255, .2);
+}
+.weather-head {
+  min-height: 52px;
+  padding: 13px 16px 12px;
+  border-bottom-color: rgba(227, 250, 250, .15);
+}
+.weather-heading { display: inline-flex; align-items: center; gap: 8px; }
+.weather-live-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #8df4df;
+  box-shadow: 0 0 0 4px rgba(141, 244, 223, .14), 0 0 15px rgba(141, 244, 223, .7);
+}
+.weather-head > div > span:last-child { color: rgba(239, 255, 251, .92); font-size: 11px; font-weight: 800; letter-spacing: .11em; }
+.weather-head small { color: rgba(226, 247, 244, .68); font-size: 10px; }
+.weather-main {
+  min-height: 142px;
+  padding: 18px 16px 16px;
+  grid-template-columns: 1fr 1.12fr;
+  gap: 10px;
+  border-bottom-color: rgba(227, 250, 250, .15);
+}
+.weather-temp-block { align-self: center; }
+.weather-place { margin-bottom: 3px; color: rgba(211, 242, 239, .64); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.temp { color: #f8fffc; font-size: 70px; line-height: .86; text-shadow: 0 4px 18px rgba(0, 0, 0, .18); }
+.temp-unit { color: #9fe8df; font-size: .48em; vertical-align: top; letter-spacing: 0; }
+.weather-condition { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 10px; align-items: center; min-width: 0; }
+.weather-icon { width: 74px; height: 74px; border: 1px solid rgba(232, 255, 251, .26); box-shadow: 0 8px 22px rgba(0, 0, 0, .18); }
+.weather-state { color: #f0fffb; font-size: 14px; line-height: 1.15; font-weight: 700; }
+.weather-list { display: grid; grid-template-columns: repeat(3, 1fr); padding: 10px 12px 12px; gap: 7px; }
+.w-row { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; padding: 8px 7px 7px; border: 1px solid rgba(224, 251, 251, .13); border-radius: 12px; background: rgba(255, 255, 255, .065); }
+.w-row:last-child { border-bottom: 1px solid rgba(224, 251, 251, .13); }
+.w-ico { width: 25px; height: 25px; border-radius: 8px; background: rgba(141, 244, 223, .14); color: #a9f3ec; font-size: 14px; }
+.w-value { color: #f4fffc; font-size: 17px; line-height: 1; font-weight: 800; white-space: nowrap; }
+.w-value small { margin-left: 2px; color: rgba(220, 248, 241, .68); font-size: 9px; font-weight: 700; }
+.w-label { margin-top: 3px; color: rgba(226, 247, 244, .66); font-size: 10px; line-height: 1.1; font-weight: 600; }
+.camera-status-night { margin: 0 12px 12px; padding: 9px 10px; border: 1px solid rgba(243, 182, 75, .2); border-radius: 10px; background: rgba(243, 182, 75, .1); color: #ffe1a2; font-size: 10px; line-height: 1.35; }
+
+@media (max-width: 980px) {
+  .weather-card { width: min(100%, 430px); }
+}
+
+@media (max-width: 640px) {
+  .weather-card { width: 100%; }
+  .weather-head { min-height: 47px; padding: 11px 13px 10px; }
+  .weather-main { min-height: 128px; padding: 15px 13px 14px; grid-template-columns: .9fr 1.1fr; }
+  .temp { font-size: 62px; }
+  .weather-condition { grid-template-columns: 62px minmax(0, 1fr); gap: 8px; }
+  .weather-icon { width: 62px; height: 62px; }
+  .weather-list { padding: 9px 10px 10px; gap: 5px; }
+  .w-row { padding: 7px 6px 6px; }
+  .w-value { font-size: 15px; }
+  .w-label { font-size: 9px; }
+}
+
+@media (max-width: 380px) {
+  .weather-main { grid-template-columns: .82fr 1.18fr; padding-inline: 11px; }
+  .temp { font-size: 56px; }
+  .weather-condition { grid-template-columns: 54px minmax(0, 1fr); }
+  .weather-icon { width: 54px; height: 54px; }
+  .weather-state { font-size: 12px; }
+  .weather-list { padding-inline: 8px; }
+  .w-value { font-size: 14px; }
+}
