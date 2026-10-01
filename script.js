@@ -219,7 +219,42 @@
       assistantFallbackSurf: 'Tamarindo tiene olas para distintos niveles. WavePoint ofrece clases de surf y surfskate; revisá las cámaras y las condiciones antes de entrar, y pedí orientación a un instructor local si estás empezando.',
       assistantFallbackActivities: 'La guía de WavePoint incluye playas como Ventanas, Danta, Avellanas, Naranjo y Conchal; también cascadas, senderismo y snorkeling. Escribinos por WhatsApp para ayudarte a elegir según el tiempo y tu plan.',
       assistantFallbackContact: 'Podés escribirle directamente a WavePoint por WhatsApp usando el botón verde de esta página. También encontrás Instagram como @wavepointcr.',
-      assistantFallbackGeneral: 'Puedo orientarte sobre cámaras, clima, spots, servicios de surf y actividades en Guanacaste. ¿Qué plan tenés en mente?'
+      assistantFallbackGeneral: 'Puedo orientarte sobre cámaras, clima, spots, servicios de surf y actividades en Guanacaste. ¿Qué plan tenés en mente?',
+      servicePageBack: '← Volver a WavePoint',
+      servicePageEyebrow: 'SURF · FOTO · EXPERIENCIAS',
+      servicePageTitle: 'La próxima sesión empieza acá.',
+      servicePageIntro: 'Entrenamiento y fotografía con gente que conoce estas olas. Elegí lo que te gustaría hacer y coordinamos con vos.',
+      servicePageBook: 'Consultar por WhatsApp ↗',
+      servicePageSectionKicker: 'HECHO EN TAMARINDO',
+      servicePageSectionTitle: 'Encontrá tu forma de entrar al agua.',
+      servicePageCoachingTitle: 'Surf coaching',
+      servicePageCoachingText: 'Entrenamiento personalizado, análisis de técnica y video-coaching para avanzar en el agua.',
+      servicePageSurfPhotoTitle: 'Fotos de surf',
+      servicePageSurfPhotoText: 'Guardá tus mejores olas con fotógrafos locales que siguen la sesión desde la playa.',
+      servicePageWaterPhotoTitle: 'Fotografía acuática',
+      servicePageWaterPhotoText: 'Una perspectiva dentro del lineup para capturar la energía de cada ola.',
+      servicePageSurfskateTitle: 'Clases de surfskate',
+      servicePageSurfskateText: 'Practicá giros, equilibrio y fluidez en tierra antes de llevarlos al agua.',
+      servicePageAsk: 'Consultar disponibilidad ↗',
+      guidePageEyebrow: 'GUANACASTE · COSTA RICA',
+      guidePageTitle: 'Seguí la costa. Encontrá tu lugar.',
+      guidePageIntro: 'Playas para surfear y bajar el ritmo, naturaleza para explorar y planes para conocer la zona con otra mirada.',
+      guidePageCameras: 'Ver condiciones y cámaras ↗',
+      guidePageSectionKicker: 'IDEAS PARA SALIR',
+      guidePageSectionTitle: 'Elegí el próximo plan.',
+      guideBeaches: 'PLAYAS',
+      guideNature: 'NATURALEZA',
+      guideVentanas: 'Playa Ventanas',
+      guideVentanasText: 'Una costa más tranquila cerca de Playa Grande. Consultá el acceso local antes de salir.',
+      guideAvellanas: 'Playa Avellanas',
+      guideAvellanasText: 'Un destino conocido por el surf y su ambiente relajado; revisá mareas y transporte del día.',
+      guideConchal: 'Playa Conchal',
+      guideConchalText: 'Aguas claras y una costa distinta; planeá el acceso con tiempo y llevá agua.',
+      guideWaterfall: 'Llanos de Cortés',
+      guideWaterfallText: 'Una escapada a una cascada amplia; verificá condiciones de camino y acceso antes de viajar.',
+      guideCatalinas: 'Islas Catalinas',
+      guideCatalinasText: 'Una opción popular para snorkeling en bote. Coordiná con un operador local y consultá el mar.',
+      guideOpenMap: 'Abrir mapa ↗'
     },
     en: {
       navInicio: 'Home',
@@ -358,7 +393,42 @@
       assistantFallbackSurf: 'Tamarindo has waves for different skill levels. WavePoint features surf and surfskate lessons; check the cameras and conditions before paddling out, and ask a local instructor if you are new.',
       assistantFallbackActivities: 'The WavePoint guide features beaches such as Ventanas, Danta, Avellanas, Naranjo, and Conchal, plus waterfalls, hiking, and snorkeling. Message us on WhatsApp and we can help you choose based on your plans.',
       assistantFallbackContact: 'Message WavePoint directly on WhatsApp using the green button on this page. You can also find us on Instagram at @wavepointcr.',
-      assistantFallbackGeneral: 'I can help with cameras, weather, surf spots, lessons, and things to do around Guanacaste. What are you planning?'
+      assistantFallbackGeneral: 'I can help with cameras, weather, surf spots, lessons, and things to do around Guanacaste. What are you planning?',
+      servicePageBack: '← Back to WavePoint',
+      servicePageEyebrow: 'SURF · PHOTO · EXPERIENCES',
+      servicePageTitle: 'Your next session starts here.',
+      servicePageIntro: 'Coaching and photography with people who know these waves. Choose what you would like to do and we will help you plan it.',
+      servicePageBook: 'Ask us on WhatsApp ↗',
+      servicePageSectionKicker: 'MADE IN TAMARINDO',
+      servicePageSectionTitle: 'Find your way into the water.',
+      servicePageCoachingTitle: 'Surf coaching',
+      servicePageCoachingText: 'Personal coaching, technique analysis, and video feedback to help you progress in the water.',
+      servicePageSurfPhotoTitle: 'Surf photos',
+      servicePageSurfPhotoText: 'Keep your best waves with local photographers following the session from the beach.',
+      servicePageWaterPhotoTitle: 'In-water photography',
+      servicePageWaterPhotoText: 'A perspective from inside the lineup to capture the energy of every wave.',
+      servicePageSurfskateTitle: 'Surfskate lessons',
+      servicePageSurfskateText: 'Practice turns, balance, and flow on land before bringing them into the water.',
+      servicePageAsk: 'Check availability ↗',
+      guidePageEyebrow: 'GUANACASTE · COSTA RICA',
+      guidePageTitle: 'Follow the coast. Find your place.',
+      guidePageIntro: 'Beaches to surf or slow down, nature to explore, and local ideas to see the area from a new angle.',
+      guidePageCameras: 'Check conditions and cameras ↗',
+      guidePageSectionKicker: 'IDEAS FOR YOUR DAY',
+      guidePageSectionTitle: 'Choose your next plan.',
+      guideBeaches: 'BEACHES',
+      guideNature: 'NATURE',
+      guideVentanas: 'Playa Ventanas',
+      guideVentanasText: 'A quieter stretch of coast near Playa Grande. Check local access before heading out.',
+      guideAvellanas: 'Playa Avellanas',
+      guideAvellanasText: 'Known for surf and a relaxed atmosphere; check tides and transportation for the day.',
+      guideConchal: 'Playa Conchal',
+      guideConchalText: 'Clear water and a unique coastline; plan access ahead and bring drinking water.',
+      guideWaterfall: 'Llanos de Cortés',
+      guideWaterfallText: 'A wide waterfall makes for a refreshing day trip. Check road and access conditions first.',
+      guideCatalinas: 'Catalina Islands',
+      guideCatalinasText: 'A popular boat-based snorkeling trip. Arrange with a local operator and check sea conditions.',
+      guideOpenMap: 'Open map ↗'
     }
   };
 
@@ -419,6 +489,13 @@
       applyTranslations(nextLang);
     });
   }
+
+  document.querySelectorAll('a[href]').forEach(link=>{
+    const target=new URL(link.href,location.href);
+    if(target.hostname!=='wavepointcr.com') return;
+    if(target.pathname.toLowerCase().endsWith('/enlaces/service.html')) link.href='service.html';
+    if(target.pathname.toLowerCase().endsWith('/enlaces/guia-playas.html')) link.href='guia-playas.html';
+  });
 
   const SPOTS = {
     capitan: {
@@ -878,6 +955,18 @@
   }
 
   function bindSiteAssistant(){
+    if(!document.getElementById('siteAssistant')){
+      document.body.insertAdjacentHTML('beforeend', `
+        <div class="assistant-greeting" id="assistantGreeting"><span data-i18n="assistantGreeting"></span><button type="button" id="dismissGreeting" aria-label="Close">×</button></div>
+        <button class="assistant-launcher" id="assistantLauncher" type="button" aria-label="Open WavePoint guide" aria-expanded="false" aria-controls="siteAssistant"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-5 4v-4.5a2.5 2.5 0 0 1-2-2.5Z"/><path d="M8 8h8M8 11.5h5"/></svg></button>
+        <section class="assistant-panel" id="siteAssistant" role="dialog" aria-modal="false" aria-labelledby="assistantTitle" hidden>
+          <header class="assistant-header"><div><small data-i18n="assistantEyebrow"></small><h2 id="assistantTitle" data-i18n="assistantTitle"></h2></div><button class="assistant-close" id="assistantClose" type="button" aria-label="Close assistant">×</button></header>
+          <div class="assistant-messages" id="assistantMessages" aria-live="polite"><p class="assistant-message assistant-message-bot" data-i18n="assistantWelcome"></p></div>
+          <div class="assistant-suggestions"><button type="button" data-assistant-question="cameras" data-i18n="assistantSuggestionCameras"></button><button type="button" data-assistant-question="beginner" data-i18n="assistantSuggestionBeginner"></button><button type="button" data-assistant-question="activities" data-i18n="assistantSuggestionActivities"></button></div>
+          <form class="assistant-form" id="assistantForm"><label class="sr-only" for="assistantInput" data-i18n="assistantInputLabel"></label><input id="assistantInput" name="message" maxlength="1200" autocomplete="off" data-i18n-placeholder="assistantPlaceholder" required/><button type="submit" aria-label="Send question"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 4 16 8-16 8 3-8Z"/><path d="M7 12h13"/></svg></button></form>
+          <p class="assistant-disclaimer" data-i18n="assistantDisclaimer"></p>
+        </section>`);
+    }
     const panel=document.getElementById('siteAssistant');
     const launcher=document.getElementById('assistantLauncher');
     const close=document.getElementById('assistantClose');
@@ -964,12 +1053,12 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape' && !panel.hidden) hide();});
   }
 
+  bindSiteAssistant();
   applyTranslations();
   bindMobileMenu();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();
   bindWeatherCardDrag();
-  bindSiteAssistant();
   bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
