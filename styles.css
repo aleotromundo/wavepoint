@@ -1902,4 +1902,148 @@ body { background: #071c28; }
   .scroll-reveal, .scroll-reveal.is-visible { transform: none; }
 }
 
+.after-card { display: block; overflow: hidden; }
+.after-card-cta { border-bottom: 1px solid rgba(201, 255, 240, .5); padding-bottom: 4px; }
+
+.whatsapp-float {
+  position: fixed;
+  z-index: 1000;
+  right: 82px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: min(240px, calc(100vw - 112px));
+  min-height: 56px;
+  padding: 9px 14px;
+  border: 1px solid rgba(217, 255, 229, .25);
+  border-radius: 999px;
+  background: #087c58;
+  color: #fff;
+  box-shadow: 0 14px 36px rgba(0, 20, 17, .3);
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.whatsapp-float:hover { transform: translateY(-3px); background: #079264; box-shadow: 0 18px 42px rgba(0, 20, 17, .4); }
+.whatsapp-float svg { width: 28px; height: 28px; flex: 0 0 28px; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+.whatsapp-float span { display: grid; min-width: 0; gap: 1px; }
+.whatsapp-float small { font-size: 11px; line-height: 1.2; opacity: .86; }
+.whatsapp-float strong { font-size: 13px; line-height: 1.25; white-space: nowrap; }
+
+.assistant-launcher {
+  position: fixed;
+  z-index: 1002;
+  right: 18px;
+  bottom: 20px;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 1px solid rgba(228, 255, 251, .55);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #15b6a4, #087f8d);
+  color: #fff;
+  box-shadow: 0 14px 36px rgba(0, 20, 30, .34);
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.assistant-launcher:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 18px 42px rgba(0, 20, 30, .42); }
+.assistant-launcher svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.assistant-launcher:focus-visible, .assistant-close:focus-visible, .assistant-form button:focus-visible { outline: 3px solid #f5bd60; outline-offset: 3px; }
+
+.assistant-greeting {
+  position: fixed;
+  z-index: 1002;
+  right: 20px;
+  bottom: 88px;
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  width: min(250px, calc(100vw - 36px));
+  padding: 13px 13px 13px 15px;
+  border: 1px solid rgba(255, 255, 255, .72);
+  border-radius: 16px 16px 4px 16px;
+  background: #f5fbf8;
+  color: #123943;
+  box-shadow: 0 14px 38px rgba(0, 20, 30, .2);
+  font-size: 13px;
+  line-height: 1.4;
+  animation: assistant-greeting-in .55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.assistant-greeting::after { content: ""; position: absolute; right: 17px; bottom: -7px; width: 13px; height: 13px; border-right: 1px solid rgba(255,255,255,.72); border-bottom: 1px solid rgba(255,255,255,.72); background: #f5fbf8; transform: rotate(45deg); }
+.assistant-greeting button { flex: 0 0 auto; margin: -5px -5px 0 0; padding: 0 4px; border: 0; background: transparent; color: #54727a; font-size: 20px; line-height: 1; cursor: pointer; }
+.assistant-greeting.is-dismissed { display: none; }
+
+.assistant-panel {
+  position: fixed;
+  z-index: 1001;
+  right: 18px;
+  bottom: 90px;
+  display: grid;
+  grid-template-rows: auto minmax(120px, 1fr) auto auto auto;
+  width: min(390px, calc(100vw - 28px));
+  height: min(560px, calc(100dvh - 132px));
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid rgba(193, 237, 226, .3);
+  border-radius: 16px;
+  background: #f1f7f3;
+  color: #123943;
+  box-shadow: 0 24px 80px rgba(0, 15, 24, .42);
+}
+
+.assistant-panel[hidden] { display: none; }
+.assistant-header { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 17px 18px; background: linear-gradient(115deg, #0a3443, #087b82); color: #fff; }
+.assistant-header small { display: block; color: rgba(231, 255, 249, .72); font-size: 9px; font-weight: 700; letter-spacing: .08em; }
+.assistant-header h2 { margin: 3px 0 0; font-family: "Barlow Condensed", Impact, sans-serif; font-size: 26px; line-height: 1; font-weight: 700; }
+.assistant-close { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: rgba(255,255,255,.1); color: #fff; font-size: 22px; cursor: pointer; }
+.assistant-messages { display: flex; flex-direction: column; gap: 10px; overflow-y: auto; padding: 17px 14px; }
+.assistant-message { max-width: 88%; margin: 0; padding: 10px 12px; border-radius: 13px; font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.assistant-message-bot { align-self: start; border: 1px solid rgba(10, 71, 79, .09); border-bottom-left-radius: 4px; background: #fff; color: #173e49; }
+.assistant-message-user { align-self: end; border-bottom-right-radius: 4px; background: #d1eee5; color: #123943; }
+.assistant-pending { animation: assistant-pulse 1.1s ease-in-out infinite alternate; }
+.assistant-suggestions { display: flex; gap: 7px; overflow-x: auto; padding: 10px 13px; border-top: 1px solid rgba(12, 63, 72, .08); }
+.assistant-suggestions button { flex: 0 0 auto; min-height: 32px; padding: 0 11px; border: 1px solid rgba(8, 123, 130, .22); border-radius: 999px; background: #e5f2ed; color: #12626a; font: 600 11px "DM Sans", sans-serif; cursor: pointer; }
+.assistant-suggestions button:hover { background: #d2e9e0; }
+.assistant-form { display: flex; align-items: center; gap: 8px; padding: 11px 12px; border-top: 1px solid rgba(12, 63, 72, .1); background: #f8fbf9; }
+.assistant-form input { width: 100%; min-width: 0; min-height: 42px; padding: 0 12px; border: 1px solid rgba(12, 63, 72, .16); border-radius: 9px; background: #fff; color: #173e49; font: 13px "DM Sans", sans-serif; }
+.assistant-form input:focus { outline: 2px solid #26a99c; outline-offset: 1px; }
+.assistant-form button { display: grid; flex: 0 0 42px; width: 42px; height: 42px; place-items: center; border: 0; border-radius: 9px; background: #087f8d; color: #fff; cursor: pointer; }
+.assistant-form button:disabled { opacity: .5; cursor: wait; }
+.assistant-form button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.assistant-disclaimer { margin: 0; padding: 0 14px 12px; background: #f8fbf9; color: #647a7c; font-size: 10px; line-height: 1.4; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
+
+@keyframes assistant-greeting-in {
+  from { opacity: 0; transform: translate3d(20px, 8px, 0) scale(.96); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes assistant-pulse { to { opacity: .55; } }
+
+@media (max-width: 560px) {
+  .whatsapp-float { right: 82px; bottom: 16px; width: min(220px, calc(100vw - 112px)); min-height: 52px; padding: 8px 11px; }
+  .whatsapp-float svg { width: 26px; height: 26px; flex-basis: 26px; }
+  .whatsapp-float small { font-size: 10px; }
+  .whatsapp-float strong { font-size: 12px; }
+  .assistant-launcher { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .assistant-greeting { right: 16px; bottom: 78px; width: min(240px, calc(100vw - 32px)); }
+  .assistant-panel { right: 10px; bottom: 78px; width: calc(100vw - 20px); height: min(560px, calc(100dvh - 100px)); min-height: 320px; }
+}
+
+@media (max-width: 980px) {
+  .hero { padding-top: 92px; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding-top: 82px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-greeting, .assistant-pending { animation: none; }
+}
+
 

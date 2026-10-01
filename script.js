@@ -52,6 +52,7 @@
   async function loadWeather(){
     const lat=10.2993, lon=-85.8371;
     const icon=document.getElementById('weatherIcon');
+    if(!icon || !document.getElementById('temp')) return;
     try{
       const [wRes,mRes]=await Promise.all([
         fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,is_day,wind_speed_10m&timezone=America%2FCosta_Rica`),
@@ -60,6 +61,8 @@
       const weather=await wRes.json(), marine=await mRes.json();
       const cur=weather.current||{};
       const [ico,label]=weatherText(cur.weather_code,cur.is_day);
+      icon.dataset.conditionCode=cur.weather_code ?? 0;
+      icon.dataset.isDay=cur.is_day ?? 1;
       document.getElementById('temp').textContent=Math.round(cur.temperature_2m??0);
       icon.textContent=ico;
       icon.dataset.condition=weatherMotion(cur.weather_code,cur.is_day);
@@ -197,7 +200,26 @@
       footerSnorkeling: 'Snorkeling',
       footerWavePointText: 'Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.',
       footerViewCameras: 'Ver cámaras',
-      footerTerms: 'Términos · Privacidad'
+      footerTerms: 'Términos · Privacidad',
+      whatsappLabel: 'Escribinos por WhatsApp',
+      assistantGreeting: 'Hola, hello. Tu guía local en Tamarindo. ¿Qué te gustaría saber?',
+      assistantEyebrow: 'WAVEPOINT · TAMARINDO',
+      assistantTitle: 'Tu guía local',
+      assistantWelcome: 'Preguntame por las cámaras, el clima, los spots o qué hacer en Tamarindo.',
+      assistantSuggestionCameras: 'Cámaras',
+      assistantSuggestionBeginner: 'Empezar a surfear',
+      assistantSuggestionActivities: 'Qué hacer',
+      assistantInputLabel: 'Tu pregunta',
+      assistantPlaceholder: 'Escribí tu pregunta...',
+      assistantDisclaimer: 'Las respuestas automáticas pueden equivocarse. Confirmá las condiciones del mar con gente local.',
+      assistantLauncherLabel: 'Abrir guía WavePoint',
+      assistantTyping: 'Estoy buscando una buena respuesta…',
+      assistantFallbackCameras: 'WavePoint tiene cámaras en Capitán Suizo y Casa de Maderas. Red Door está en preparación. Las cámaras transmiten aproximadamente de 4:45 a. m. a 6:30 p. m., hora de Costa Rica.',
+      assistantFallbackConditions: 'En la tarjeta de clima de esta página podés ver temperatura, viento, oleaje estimado y hora local. Es una referencia; verificá el estado del mar al llegar y consultá a surfistas locales.',
+      assistantFallbackSurf: 'Tamarindo tiene olas para distintos niveles. WavePoint ofrece clases de surf y surfskate; revisá las cámaras y las condiciones antes de entrar, y pedí orientación a un instructor local si estás empezando.',
+      assistantFallbackActivities: 'La guía de WavePoint incluye playas como Ventanas, Danta, Avellanas, Naranjo y Conchal; también cascadas, senderismo y snorkeling. Escribinos por WhatsApp para ayudarte a elegir según el tiempo y tu plan.',
+      assistantFallbackContact: 'Podés escribirle directamente a WavePoint por WhatsApp usando el botón verde de esta página. También encontrás Instagram como @wavepointcr.',
+      assistantFallbackGeneral: 'Puedo orientarte sobre cámaras, clima, spots, servicios de surf y actividades en Guanacaste. ¿Qué plan tenés en mente?'
     },
     en: {
       navInicio: 'Home',
@@ -317,7 +339,26 @@
       footerSnorkeling: 'Snorkeling',
       footerWavePointText: 'Cameras, spots, local guide, and experiences for surfers and visitors in Tamarindo.',
       footerViewCameras: 'View cameras',
-      footerTerms: 'Terms · Privacy'
+      footerTerms: 'Terms · Privacy',
+      whatsappLabel: 'Chat on WhatsApp',
+      assistantGreeting: 'Hi! Hola. Your local Tamarindo guide is here. What would you like to know?',
+      assistantEyebrow: 'WAVEPOINT · TAMARINDO',
+      assistantTitle: 'Your local guide',
+      assistantWelcome: 'Ask me about the cameras, weather, surf spots, or things to do in Tamarindo.',
+      assistantSuggestionCameras: 'Cameras',
+      assistantSuggestionBeginner: 'Learn to surf',
+      assistantSuggestionActivities: 'Things to do',
+      assistantInputLabel: 'Your question',
+      assistantPlaceholder: 'Ask a question...',
+      assistantDisclaimer: 'Automated answers can be wrong. Confirm ocean conditions with local surfers.',
+      assistantLauncherLabel: 'Open WavePoint guide',
+      assistantTyping: 'Let me find a helpful answer…',
+      assistantFallbackCameras: 'WavePoint has cameras at Capitán Suizo and Casa de Maderas. Red Door is coming soon. Cameras usually stream from about 4:45 a.m. to 6:30 p.m. Costa Rica time.',
+      assistantFallbackConditions: 'The weather panel shows temperature, wind, estimated swell, and local time. Treat it as a reference, check the ocean when you arrive, and ask local surfers for current advice.',
+      assistantFallbackSurf: 'Tamarindo has waves for different skill levels. WavePoint features surf and surfskate lessons; check the cameras and conditions before paddling out, and ask a local instructor if you are new.',
+      assistantFallbackActivities: 'The WavePoint guide features beaches such as Ventanas, Danta, Avellanas, Naranjo, and Conchal, plus waterfalls, hiking, and snorkeling. Message us on WhatsApp and we can help you choose based on your plans.',
+      assistantFallbackContact: 'Message WavePoint directly on WhatsApp using the green button on this page. You can also find us on Instagram at @wavepointcr.',
+      assistantFallbackGeneral: 'I can help with cameras, weather, surf spots, lessons, and things to do around Guanacaste. What are you planning?'
     }
   };
 
@@ -344,6 +385,7 @@
       langToggle.setAttribute('aria-label', isSpanish ? 'Switch to English' : 'Cambiar a español');
       langToggle.setAttribute('aria-pressed', String(!isSpanish));
     }
+    document.getElementById('assistantLauncher')?.setAttribute('aria-label', dict.assistantLauncherLabel);
 
     if (document.getElementById('weatherState')) {
       const [icon,label] = weatherText(document.getElementById('weatherIcon')?.dataset?.conditionCode ?? 0, Number(document.getElementById('weatherIcon')?.dataset?.isDay ?? 1));
@@ -834,11 +876,99 @@
     window.addEventListener('resize',keepWithinHero);
   }
 
+  function bindSiteAssistant(){
+    const panel=document.getElementById('siteAssistant');
+    const launcher=document.getElementById('assistantLauncher');
+    const close=document.getElementById('assistantClose');
+    const form=document.getElementById('assistantForm');
+    const input=document.getElementById('assistantInput');
+    const messages=document.getElementById('assistantMessages');
+    const greeting=document.getElementById('assistantGreeting');
+    if(!panel || !launcher || !form || !input || !messages) return;
+
+    const dict=()=>translations[languageState.current] || translations.es;
+    const addMessage=(text,kind)=>{
+      const message=document.createElement('p');
+      message.className=`assistant-message assistant-message-${kind}`;
+      message.textContent=text;
+      messages.append(message);
+      messages.scrollTop=messages.scrollHeight;
+      return message;
+    };
+    const fallbackAnswer=(question)=>{
+      const text=question.toLocaleLowerCase();
+      const current=dict();
+      if(/camera|cámara|camara|live|transmi/.test(text)) return current.assistantFallbackCameras;
+      if(/weather|clima|oleaje|ola|wave|wind|viento|condici/.test(text)) return current.assistantFallbackConditions;
+      if(/surf|princip|beginner|lesson|clase|instructor|surfskate/.test(text)) return current.assistantFallbackSurf;
+      if(/do |visit|activity|activities|hacer|visitar|playa|beach|waterfall|cascada|snorkel|hike|sender/.test(text)) return current.assistantFallbackActivities;
+      if(/contact|whatsapp|instagram|contacto|escrib/.test(text)) return current.assistantFallbackContact;
+      return current.assistantFallbackGeneral;
+    };
+    const open=()=>{
+      panel.hidden=false;
+      launcher.setAttribute('aria-expanded','true');
+      greeting?.classList.add('is-dismissed');
+      input.focus();
+    };
+    const hide=()=>{
+      panel.hidden=true;
+      launcher.setAttribute('aria-expanded','false');
+      launcher.focus();
+    };
+    const ask=async(question)=>{
+      const cleanQuestion=question.trim().slice(0,1200);
+      if(!cleanQuestion) return;
+      addMessage(cleanQuestion,'user');
+      const pending=addMessage(dict().assistantTyping,'bot assistant-pending');
+      input.disabled=true;
+      form.querySelector('button[type="submit"]').disabled=true;
+      try{
+        const context={
+          weather:document.getElementById('weatherState')?.textContent.trim() || '',
+          temperature:document.getElementById('temp')?.textContent.trim() || '',
+          wind:document.getElementById('wind')?.textContent.trim() || '',
+          swell:document.getElementById('waveHeight')?.textContent.trim() || '',
+          localTime:document.getElementById('localTime')?.textContent.trim() || '',
+          cameras:document.body.classList.contains('night')?'night standby':'daytime schedule'
+        };
+        const response=await fetch('/api/assistant',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:cleanQuestion,language:languageState.current,context})});
+        const data=response.ok?await response.json():null;
+        pending.textContent=data?.answer || fallbackAnswer(cleanQuestion);
+      }catch(error){
+        pending.textContent=fallbackAnswer(cleanQuestion);
+      }finally{
+        pending.classList.remove('assistant-pending');
+        input.disabled=false;
+        form.querySelector('button[type="submit"]').disabled=false;
+        input.focus();
+        messages.scrollTop=messages.scrollHeight;
+      }
+    };
+
+    launcher.addEventListener('click',()=>panel.hidden?open():hide());
+    close?.addEventListener('click',hide);
+    greeting?.querySelector('button')?.addEventListener('click',()=>greeting.classList.add('is-dismissed'));
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      const question=input.value;
+      input.value='';
+      ask(question);
+    });
+    panel.querySelectorAll('[data-assistant-question]').forEach(button=>button.addEventListener('click',()=>{
+      const current=dict();
+      const question=button.dataset.assistantQuestion==='cameras'?current.assistantSuggestionCameras:button.dataset.assistantQuestion==='beginner'?current.assistantSuggestionBeginner:current.assistantSuggestionActivities;
+      ask(question);
+    }));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape' && !panel.hidden) hide();});
+  }
+
   applyTranslations();
   bindMobileMenu();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();
   bindWeatherCardDrag();
+  bindSiteAssistant();
   bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); document.getElementById('localTime').textContent=formatTimeCR(); }, 30000);
