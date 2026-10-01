@@ -1611,7 +1611,7 @@ html { scroll-padding-top: 0; }
 }
 
 #servicios::before {
-  inset: -30% -15%;
+  inset: 0;
   opacity: .58;
   background: repeating-linear-gradient(118deg, transparent 0 42px, rgba(7, 123, 130, .14) 43px 46px, transparent 47px 86px);
   background-size: 180px 180px;
@@ -1621,7 +1621,8 @@ html { scroll-padding-top: 0; }
 #guia::before {
   opacity: .62;
   background: repeating-radial-gradient(ellipse at 8% 90%, transparent 0 38px, rgba(7, 123, 130, .13) 39px 41px, transparent 42px 74px);
-  transform: translate3d(-1%, 0, 0) scale(1.04);
+  background-size: 108% 108%;
+  background-repeat: no-repeat;
   animation: guide-contours 28s ease-in-out infinite alternate;
 }
 
@@ -1660,7 +1661,7 @@ html { scroll-padding-top: 0; }
 }
 
 @keyframes guide-contours {
-  to { transform: translate3d(1%, -1%, 0) scale(1.07); }
+  to { background-position: 100% 100%; }
 }
 
 @keyframes ally-reflection {
