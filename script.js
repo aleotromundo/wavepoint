@@ -10,6 +10,7 @@
   
   function applyCameraState(){
   const live = isCameraLiveNow();
+  const dict = translations[document.documentElement.lang] || translations.es;
 
   document.body.classList.toggle('night', !live);
 
@@ -27,7 +28,7 @@
         mask.style.zIndex = '99';
       }
       if (badge) {
-        badge.textContent = '☾ Descanso';
+        badge.textContent = dict.cameraRestBadge;
         badge.classList.add('rest');
       }
     } else {
@@ -38,7 +39,7 @@
         mask.style.pointerEvents = 'none';
       }
       if (badge) {
-        badge.textContent = '● En vivo';
+        badge.textContent = dict.cameraLive;
         badge.classList.remove('rest');
       }
     }
@@ -96,6 +97,12 @@
       weatherTime: 'Hora local',
       cameraNightNotice: 'Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.',
       cameraLive: '● En vivo',
+      cameraRestBadge: '☾ Descanso',
+      weatherUpdating: 'Actualizando…',
+      weatherUpdatedNow: 'Actualizado ahora',
+      weatherNoConnection: 'Sin conexión al clima',
+      weatherConditionsAvailable: 'Condiciones disponibles',
+      weatherTamarindoNight: 'Noche en Tamarindo',
       cameraRestTitle: 'Cámara en descanso',
       cameraRestHours: 'Disponible de 4:45 a.m. a 6:30 p.m.',
       cameraClickOpen: 'Click para abrir',
@@ -210,6 +217,12 @@
       weatherTime: 'Local time',
       cameraNightNotice: 'Night cameras off · Back around 4:45 a.m.',
       cameraLive: '● Live',
+      cameraRestBadge: '☾ Resting',
+      weatherUpdating: 'Updating…',
+      weatherUpdatedNow: 'Updated now',
+      weatherNoConnection: 'Weather offline',
+      weatherConditionsAvailable: 'Conditions available',
+      weatherTamarindoNight: 'Night in Tamarindo',
       cameraRestTitle: 'Camera on standby',
       cameraRestHours: 'Available from 4:45 a.m. to 6:30 p.m.',
       cameraClickOpen: 'Click to open',
@@ -312,6 +325,7 @@
 
   function applyTranslations(lang = languageState.current) {
     const dict = translations[lang] || translations.es;
+    languageState.current = lang;
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach(node => {
       const value = dict[node.dataset.i18n];
@@ -343,10 +357,17 @@
 
     if (document.getElementById('updatedText')) {
       const statusEl = document.getElementById('updatedText');
-      statusEl.textContent = statusEl.textContent === 'Actualizado ahora' || statusEl.textContent === 'Updated now' ? statusEl.textContent : statusEl.textContent;
+      const currentStatus = statusEl.textContent.trim();
+      if (currentStatus === translations.es.weatherNoConnection || currentStatus === translations.en.weatherNoConnection) {
+        statusEl.textContent = dict.weatherNoConnection;
+      } else if (currentStatus === translations.es.weatherUpdatedNow || currentStatus === translations.en.weatherUpdatedNow) {
+        statusEl.textContent = dict.weatherUpdatedNow;
+      } else {
+        statusEl.textContent = dict.weatherUpdating;
+      }
     }
 
-    languageState.current = lang;
+    applyCameraState();
   }
 
   const langToggle = document.querySelector('[data-lang-toggle]');
