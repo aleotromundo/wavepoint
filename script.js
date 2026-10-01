@@ -547,6 +547,7 @@
     const offline=document.getElementById('offlinePanel');
     const offlineTitle=document.getElementById('offlineTitle');
     const modalWatermark=document.getElementById('modalWatermark');
+    if(!modal || !frame || !title || !note || !offline || !offlineTitle) return;
 
     function openCamera(card){
       const isLive=isCameraLiveNow();
@@ -617,6 +618,7 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let previewVisible = false;
   let previewHovered = false;
+  if (!modal || !video || !document.getElementById('closeAd')) return;
 
   const updatePreview = () => {
     if (!preview || modal?.classList.contains('show') || document.hidden) {
@@ -970,5 +972,5 @@
   bindSiteAssistant();
   bindScrollReveals();
   bindSpotModal();
-  applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); document.getElementById('localTime').textContent=formatTimeCR(); }, 30000);
+  applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
 
