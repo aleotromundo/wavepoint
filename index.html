@@ -1,0 +1,243 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>WavePoint Tamarindo · Cámaras de surf en vivo</title>
+<meta content="Cámaras de surf en vivo en Tamarindo, condiciones del mar, guía local y experiencias recomendadas." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/></head>
+<body>
+<header class="topbar">
+<div class="container nav">
+<nav class="navlinks">
+<a href="#inicio">Inicio</a>
+<a href="#camaras">Cámaras</a>
+<a href="#servicios">Servicios</a>
+<a href="#guia">Guía local</a>
+<a href="#aliados">Aliados</a>
+<div class="dropdown">
+<button class="dropbtn">Colaboradores ▾</button>
+<div class="menu">
+<a href="https://wavepointcr.com/Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a>
+<a href="https://wavepointcr.com/Enlaces/red-door.html">Red Door, Tamarindo</a>
+<a href="https://wavepointcr.com/Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a>
+<a href="https://wavepointcr.com/Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a>
+</div>
+</div>
+</nav>
+<button aria-label="Abrir menú" class="hamb" id="hamb">☰</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-panel" id="mobilePanel">
+<div class="mobile-panel-head">
+<img alt="WavePoint" src="assets/wavepoint-logo.png"/>
+<button aria-label="Cerrar menú" class="mobile-close" id="mobileClose">×</button>
+</div>
+<nav class="mobile-menu">
+<a href="#inicio">Inicio <small>WavePoint</small></a>
+<a href="#camaras">Cámaras <small>En vivo</small></a>
+<a href="#servicios">Servicios <small>Surf / Foto</small></a>
+<a href="#guia">Guía local <small>Tamarindo</small></a>
+<a href="#aliados">Aliados <small>Locales</small></a>
+<a href="https://wavepointcr.com/Enlaces/nostros.html">Nosotros <small>Proyecto</small></a>
+<a href="https://wavepointcr.com/Enlaces/capitan-suizo.html">Capitán Suizo <small>Cámara</small></a>
+<a href="https://wavepointcr.com/Enlaces/casa-maderas.html">Casa de Maderas <small>Cámara</small></a>
+<a href="https://wavepointcr.com/Enlaces/red-door.html">Red Door <small>Próximamente</small></a>
+</nav>
+</div>
+<main>
+<section class="hero" id="inicio">
+<div aria-hidden="true" class="hero-video-stack">
+<video class="hero-video is-active" autoplay loop muted playsinline>
+<source src="assets/videohero0.mp4" type="video/mp4"/>
+</video>
+<video class="hero-video" autoplay loop muted playsinline>
+<source src="assets/videohero1.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="container hero-grid">
+<div>
+<div class="hero-logo-wrap">
+<img alt="WavePoint Surf Experiences" class="hero-sticker-logo" src="assets/wavepoint-sticker.png"/>
+</div>
+<span class="eyebrow hero-location">Tamarindo · Costa Rica</span>
+<h1>Cámaras de surf en vivo en Tamarindo</h1>
+<p>Conéctate con la ola. Mira las condiciones en tiempo real y elige tu próximo spot.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#camaras">Ver cámaras en vivo ▸</a>
+<a class="btn btn-ghost" href="https://wavepointcr.com/Enlaces/guia-playas.html">Guía de playas</a>
+</div>
+</div>
+<aside aria-label="Condiciones generales" class="weather-card">
+<div class="weather-head"><span>Condiciones generales</span><small id="updatedText">Actualizando…</small></div>
+<div class="weather-main"><div class="temp"><span id="temp">--</span>°</div><div><div class="weather-icon" id="weatherIcon">◌</div><div class="weather-state" id="weatherState">Cargando clima</div></div></div>
+<div class="weather-list">
+<div class="w-row"><span class="w-ico">≈</span><div><div class="w-value"><span id="waveHeight">--</span> m</div><div class="w-label">Oleaje estimado</div></div></div>
+<div class="w-row"><span class="w-ico">↗</span><div><div class="w-value"><span id="wind">--</span> km/h</div><div class="w-label">Viento</div></div></div>
+<div class="w-row"><span class="w-ico">◷</span><div><div class="w-value" id="localTime">--:--</div><div class="w-label">Hora local</div></div></div>
+</div>
+<div class="camera-status-night" id="cameraNightNotice">Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.</div>
+</aside>
+</div>
+</section>
+<section class="section" id="camaras">
+<div class="container">
+<div class="section-head"><div><h2 class="section-title"><span class="sq"></span>Cámaras en vivo</h2><p class="section-sub">Tres puntos clave: dos cámaras activas y Red Door en preparación.</p></div><a class="link-more" href="https://wavepointcr.com/">Ir al sitio actual →</a></div>
+<div class="camera-grid">
+<article class="camera-card" data-camera="capitan" data-location="Tamarindo" data-src="https://player.castr.com/live_701aeb00a57e11f0baef55dc48bc4cf6" data-title="Capitán Suizo">
+<!--<div class="cam-media"><span class="badge live-badge">● En vivo</span><img src="assets/capitan.jpg" alt="Capitán Suizo"><div class="night-mask auto"><span><span class="moon">☾</span><strong>Cámara en descanso</strong><small>Disponible de 4:45 a.m. a 6:30 p.m.</small></span></div></div>-->
+<div class="cam-media">
+<span class="badge live-badge">● En vivo</span>
+<iframe allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="" class="cam-preview" loading="lazy" src="https://player.castr.com/live_701aeb00a57e11f0baef55dc48bc4cf6">
+</iframe>
+<img alt="WavePoint" class="stream-watermark" src="assets/wavepoint-watermark.png"/>
+<div class="night-mask auto">
+<span>
+<span class="moon">☾</span>
+<strong>Cámara en descanso</strong>
+<small>Disponible de 4:45 a.m. a 6:30 p.m.</small>
+</span>
+</div>
+</div>
+<div class="cam-body"><div><h3>Capitán Suizo</h3><p>Tamarindo</p></div><div class="cam-meta"><strong>Live cam</strong><small>Click para abrir</small></div><div class="cam-actions"><a class="cam-link primary js-open-camera" href="#">Ver cámara <span>→</span></a><a class="cam-link js-open-spot" href="#">Info del spot <span>↗</span></a></div></div>
+</article>
+<!--<article class="camera-card" data-camera="casitas" data-title="Casa de Maderas" data-location="Palm Beach" data-src="https://player.castr.com/live_00740d005e9c11f0bcee018375e0c90e">
+          <div class="cam-media"><span class="badge live-badge">● En vivo</span><img src="assets/casitas.jpg" alt="Casa de Maderas"><div class="night-mask auto"><span><span class="moon">☾</span><strong>Cámara en descanso</strong><small>Disponible de 4:45 a.m. a 6:30 p.m.</small></span></div></div>-->
+<article class="camera-card" data-camera="casitas" data-location="Palm Beach" data-src="https://player.castr.com/live_00740d005e9c11f0bcee018375e0c90e" data-title="Casa de Maderas">
+<div class="cam-media">
+<span class="badge live-badge">● En vivo</span>
+<iframe allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="" class="cam-preview" loading="lazy" src="https://player.castr.com/live_00740d005e9c11f0bcee018375e0c90e">
+</iframe>
+<img alt="WavePoint" class="stream-watermark" src="assets/wavepoint-watermark.png"/>
+<div class="night-mask auto">
+<span>
+<span class="moon">☾</span>
+<strong>Cámara en descanso</strong>
+<small>Disponible de 4:45 a.m. a 6:30 p.m.</small>
+</span>
+</div>
+</div>
+<div class="cam-body"><div><h3>Casa de Maderas</h3><p>Palm Beach</p></div><div class="cam-meta"><strong>Live cam</strong><small>Click para abrir</small></div><div class="cam-actions"><a class="cam-link primary js-open-camera" href="#">Ver cámara <span>→</span></a><a class="cam-link js-open-spot" href="#">Info del spot <span>↗</span></a></div></div>
+</article>
+<article class="camera-card" onclick="window.location.href='https://wavepointcr.com/Enlaces/red-door.html'">
+<div class="cam-media"><span class="badge soon">Próximamente</span><img alt="Red Door próximamente" src="assets/reddoor.jpg"/><div class="coming-mask"><span><strong>Red Door</strong><small>Nueva cámara en camino</small></span></div></div>
+<div class="cam-body"><div><h3>Red Door</h3><p>Tamarindo</p></div><div class="cam-meta"><strong>Próx.</strong><small>Spot</small></div><div class="cam-action"><span>Ver colaborador</span><span>→</span></div></div></article>
+</div>
+</div>
+</section>
+<section class="section services" id="servicios"><div class="container"><div class="section-head"><div><h2 class="section-title"><span class="sq"></span>Servicios destacados</h2><p class="section-sub">Servicios reales que pueden convertirse en reservas, leads y alianzas.</p></div></div><div class="service-grid"><article class="service-card"><div class="service-img"><img alt="Clases de surf" src="assets/surf-service.jpg"/></div><div class="service-body"><h3>Clases de surf</h3><p>Clases para todos los niveles con instructores locales.</p><a href="https://wavepointcr.com/Enlaces/service.html">Más información →</a></div></article><article class="service-card"><div class="service-img"><img alt="Fotos de surf" src="assets/photo-service.jpg"/></div><div class="service-body"><h3>Fotos de surf</h3><p>Captura tus mejores olas desde la playa.</p><a href="https://wavepointcr.com/Enlaces/service.html">Más información →</a></div></article><article class="service-card"><div class="service-img"><img alt="Fotografía acuática" src="assets/capitan.jpg"/></div><div class="service-body"><h3>Fotografía acuática</h3><p>Sesiones profesionales dentro y fuera del agua.</p><a href="https://wavepointcr.com/Enlaces/service.html">Más información →</a></div></article><article class="service-card"><div class="service-img"><img alt="Surfskate" src="assets/casitas.jpg"/></div><div class="service-body"><h3>Clases de surfskate</h3><p>Mejora técnica y fluidez fuera del agua.</p><a href="https://wavepointcr.com/Enlaces/service.html">Más información →</a></div></article></div></div></section>
+<section class="section" id="guia"><div class="container why-grid"><div><div class="section-head"><div><h2 class="section-title"><span class="sq"></span>WavePoint en Tamarindo</h2><p class="section-sub">Información útil para elegir mejor tu spot, planear tu sesión y moverte en Tamarindo.</p></div></div><div class="benefits"><div class="benefit"><span class="ico">◉</span><div><h3>Cámaras reales</h3><p>Consulta el estado visual de los spots antes de salir.</p></div></div><div class="benefit"><span class="ico">≈</span><div><h3>Condiciones rápidas</h3><p>Clima, viento, hora local y oleaje estimado en un solo lugar.</p></div></div><div class="benefit"><span class="ico">⌖</span><div><h3>Guía local</h3><p>Playas, experiencias y puntos útiles para moverte mejor.</p></div></div><div class="benefit"><span class="ico">✦</span><div><h3>Aliados locales</h3><p>Colaboradores que ayudan a mantener la experiencia activa y útil.</p></div></div></div></div><article class="guide-card"><div class="guide-content"><h3>Vive Tamarindo</h3><p>Más que surf: playas, colaboradores, servicios y experiencias recomendadas.</p><a class="btn btn-primary" href="https://wavepointcr.com/Enlaces/guia-playas.html">Explorar guía</a></div></article></div></section>
+<section class="sponsor-strip allies-section" id="aliados">
+<div class="container">
+<div class="section-head">
+<div>
+<h2 class="section-title"><span class="sq"></span>Aliados y patrocinadores</h2>
+<p class="section-sub">Colaboradores reales del proyecto y marcas que acompañan la experiencia WavePoint en Tamarindo.</p>
+</div>
+</div>
+<div class="partner-layout">
+<article class="active-sponsor-card" id="logoChop">
+<img alt="Chophouse Tamarindo" src="assets/after-chophouse.jpg"/>
+<div class="partner-overlay">
+<span class="partner-badge sponsor">Patrocinador activo</span>
+<h3>Chop House Tamarindo</h3>
+<p>Burgers &amp; empanadas · Tamarindo</p>
+<!-- <a href="#" id="sponsorPreview">Ver anuncio →</a>-->
+<a class="sponsor-site-link" href="https://chophouse.cr/" rel="noopener" target="_blank">Visitar sitio →</a>
+</div>
+</article>
+<div class="partner-grid">
+<article class="partner-card">
+<img alt="Capitán Suizo" src="assets/ally-capitan.jpg"/>
+<a aria-label="Más información sobre Capitán Suizo" class="partner-card-link" href="https://wavepointcr.com/Enlaces/capitan-suizo.html"></a>
+<a class="partner-badge soon js-open-spot" data-camera="capitan" href="#spotModal">Cámara / spot</a>
+<h3>Capitán Suizo</h3>
+<p>Tamarindo</p>
+</article>
+<article class="partner-card">
+<img alt="Casa de Maderas" src="assets/ally-casa.jpg"/>
+<a aria-label="Más información sobre Casa de Maderas" class="partner-card-link" href="https://wavepointcr.com/Enlaces/casa-maderas.html"></a>
+<a class="partner-badge soon js-open-spot" data-camera="casitas" href="#spotModal">Cámara / spot</a>
+<h3>Casa de Maderas</h3>
+<p>Palm Beach</p>
+</article>
+<article class="partner-card">
+<img alt="Red Door Tamarindo" src="assets/ally-red-door.jpg"/>
+<!--<span class="partner-badge soon">Próximamente</span>-->
+<a aria-label="Más información sobre Red Door" class="partner-card-link" href="https://wavepointcr.com/Enlaces/red-door.html"></a>
+<a class="partner-badge" href="https://www.booking.com/hotel/cr/laguna-del-cocodrilo.es.html" rel="noopener" target="_blank">Colaborador</a>
+<h3>Red Door</h3>
+<p>Tamarindo</p>
+</article>
+<article class="partner-card">
+<img alt="Occidental Tamarindo" src="assets/ally-occidental.jpg"/>
+<a aria-label="Más información sobre Occidental Tamarindo" class="partner-card-link" href="https://wavepointcr.com/Enlaces/occidental.html"></a>
+<a class="partner-badge" href="https://www.barcelo.com/es-cr/occidental-tamarindo/" rel="noopener" target="_blank">Colaborador</a>
+<h3>Occidental Tamarindo</h3>
+<p>Langosta</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="after-surf" id="despues-del-surf">
+<div class="container">
+<div class="section-head">
+<div>
+<h2 class="section-title"><span class="sq"></span>Después del surf</h2>
+<p class="section-sub">Opciones útiles para comer, guardar recuerdos de la sesión y seguir explorando Tamarindo.</p>
+</div>
+</div>
+<div class="after-grid">
+<article class="after-card">
+<img alt="Chophouse Tamarindo" src="assets/after-chophouse.jpg"/>
+<div class="after-content">
+<span>Comida</span>
+<h3>Chophouse Tamarindo</h3>
+<p>Burgers, empanadas y cerveza fría después de surfear.</p>
+<a href="#" id="adTrigger">Ver pre-play demo →</a>
+</div>
+</article>
+<article class="after-card">
+<img alt="Fotos de surf" src="assets/after-photos.jpg"/>
+<div class="after-content">
+<span>Recuerdo de tu sesión</span>
+<h3>Fotos de surf</h3>
+<p>Captura tus mejores olas con fotografía profesional.</p>
+<a href="https://wavepointcr.com/Enlaces/service.html">Ver servicio →</a>
+</div>
+</article>
+<article class="after-card">
+<img alt="Explora Tamarindo" src="assets/after-guide.jpg"/>
+<div class="after-content">
+<span>Guía local</span>
+<h3>Explora Tamarindo</h3>
+<p>Playas, colaboradores, servicios y experiencias cercanas.</p>
+<a href="https://wavepointcr.com/Enlaces/guia-playas.html">Ver guía →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="newsletter"><div class="container newsletter-grid"><div><h2>Entérate primero</h2><p>Recibe alertas de olas, novedades y promociones seleccionadas.</p></div><form class="signup"><input placeholder="Tu correo electrónico" type="email"/><button type="button">Suscribirme</button></form></div></section>
+</main>
+<footer><div class="container"><div class="foot-grid"><div><div class="foot-brand">WavePoint</div><p>Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.</p></div><div><h3>Enlaces rápidos</h3><a href="https://wavepointcr.com/">Home</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html">Guía turística</a><a href="https://wavepointcr.com/Enlaces/service.html">Servicios</a><a href="https://wavepointcr.com/Enlaces/nostros.html">Nosotros</a></div><div><h3>Cámaras</h3><a href="https://wavepointcr.com/Enlaces/capitan-suizo.html">Capitán Suizo</a><a href="https://wavepointcr.com/Enlaces/casa-maderas.html">Casa de Maderas</a><a href="https://wavepointcr.com/Enlaces/red-door.html">Red Door</a></div><div><h3>Guía</h3><a href="https://wavepointcr.com/Enlaces/guia-playas.html">Playas</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html">Restaurantes</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html">Tours</a><a href="https://wavepointcr.com/Enlaces/guia-playas.html">Snorkeling</a></div><div><h3>WavePoint</h3><p>Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.</p><a class="btn btn-primary" href="#camaras">Ver cámaras</a></div></div><div class="foot-bottom"><span>© 2026 WavePoint Tamarindo.</span><span>Términos · Privacidad</span></div></div></footer>
+<div aria-hidden="true" class="modal" id="cameraModal"><div class="modal-box"><div class="modal-head"><div><div class="modal-title" id="modalTitle">Cámara</div></div><button class="close" id="closeCamera">×</button></div><div class="modal-body"><iframe allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="" id="cameraFrame" loading="lazy" src=""></iframe><img alt="WavePoint" class="stream-watermark modal-watermark" id="modalWatermark" src="assets/wavepoint-watermark.png"/><div class="offline-panel" id="offlinePanel"><div><span class="moon">☾</span><h3 id="offlineTitle">Cámara en descanso</h3><p>Esta cámara está fuera del horario de transmisión. Vuelve aprox. a las 4:45 a.m. hora Costa Rica.</p></div></div></div><div class="modal-note" id="modalNote">Haz clic fuera del recuadro para cerrar.</div></div></div>
+<div aria-hidden="true" class="modal" id="spotModal">
+<div class="modal-box spot-panel">
+<div class="modal-head">
+<div class="modal-title" id="spotModalTitle">Info del spot</div>
+<button class="close" id="closeSpot">×</button>
+</div>
+<div class="spot-modal-body" id="spotModalBody"></div>
+</div>
+</div>
+<div aria-hidden="true" class="modal" id="adModal"><div class="modal-box"><div class="modal-head"><div class="modal-title">Chophouse pre-play demo</div><button class="close" id="closeAd">×</button></div><div class="modal-body" style="background:#000"><video controls="" id="adVideo" playsinline="" src="assets/chophouse-preroll-12s.mp4" style="width:100%;height:100%;display:block"></video></div><div class="modal-note">Demo del formato pre-play para Castr.</div></div></div>
+
+<script defer="True" src="script.js"></script></body>
+</html>
