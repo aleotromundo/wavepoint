@@ -2026,6 +2026,10 @@ body { background: #071c28; }
 }
 
 @keyframes assistant-pulse { to { opacity: .55; } }
+@keyframes menu-cue {
+  0%, 100% { opacity: .55; transform: translate(-2px, -50%); }
+  50% { opacity: 1; transform: translate(3px, -50%); }
+}
 
 @media (max-width: 560px) {
   .whatsapp-float { right: 82px; bottom: 16px; width: min(220px, calc(100vw - 112px)); min-height: 52px; padding: 8px 11px; }
@@ -2038,17 +2042,46 @@ body { background: #071c28; }
 }
 
 @media (max-width: 980px) {
-  .hero { padding-top: 92px; }
+  html { overflow-x: clip; }
+  .hero { padding-top: 88px; }
+  .container.nav { margin-right: 14px; }
+  .hamb { position: relative; }
+  .hamb::before {
+    content: "››";
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 11px);
+    color: rgba(255, 255, 255, .78);
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -3px;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    animation: menu-cue 1.8s ease-in-out infinite;
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 640px) {
-  .hero { padding-top: 82px; padding-bottom: 34px; }
-  .hero-actions { flex-direction: row; flex-wrap: nowrap; gap: 8px; margin-top: 18px; }
-  .hero-actions .btn { width: auto; min-width: 0; min-height: 48px; flex: 1 1 0; padding: 0 8px; font-size: 12px; white-space: nowrap; }
+  .hero { padding-top: 76px; padding-bottom: 24px; background-attachment: scroll; background-position: center 58%; }
+  .hero-video { object-position: center 58%; }
+  .hero-grid { gap: 16px; }
+  .hero-logo-wrap { width: min(78vw, 300px); margin-bottom: 8px; }
+  .hero-location { margin-top: 0; }
+  .hero h1 { margin: 12px 0 10px; font-size: clamp(38px, 10vw, 42px); line-height: .98; }
+  .hero p { font-size: 16px; line-height: 1.35; }
+  .hero-actions { flex-direction: row; flex-wrap: nowrap; gap: 8px; margin-top: 14px; }
+  .hero-actions .btn { width: auto; min-width: 0; min-height: 44px; flex: 1 1 0; padding: 0 8px; font-size: clamp(10px, 3vw, 12px); white-space: nowrap; }
+  .weather-head { padding: 10px 12px; }
+  .weather-main { padding: 10px 12px; }
+  .w-row { padding: 8px 12px; }
+  .weather-card { border-radius: 16px; }
+  .services, .sponsor-strip, .after-surf { background-attachment: scroll; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .assistant-greeting, .assistant-pending { animation: none; }
+  .hamb::before { animation: none; }
 }
 
 
