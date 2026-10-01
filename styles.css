@@ -2317,3 +2317,30 @@ body { background: #071c28; }
 @media (max-width: 640px) {
   .weather-main > .weather-condition { gap: 6px; padding-left: 0; }
 }
+
+
+/* Weather art alignment: icon left, readable condition copy right. */
+.weather-main > .weather-condition {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 7px;
+  row-gap: 0;
+  padding-left: 0;
+}
+.weather-main > .weather-condition .weather-icon {
+  width: 52px;
+  height: 52px;
+  margin-left: -5px;
+}
+.weather-main > .weather-condition .weather-state {
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+@media (max-width: 640px) {
+  .weather-main > .weather-condition { grid-template-columns: 48px minmax(0, 1fr); column-gap: 6px; }
+  .weather-main > .weather-condition .weather-icon { width: 48px; height: 48px; margin-left: -4px; }
+}
