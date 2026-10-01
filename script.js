@@ -77,6 +77,75 @@
     }
   }
 
+  const translations = {
+    es: {
+      navInicio: 'Inicio',
+      navCamaras: 'Cámaras',
+      navServicios: 'Servicios',
+      navGuia: 'Guía local',
+      navAliados: 'Aliados',
+      navColaboradores: 'Colaboradores ▾',
+      heroTitle: 'Cámaras de surf en vivo en Tamarindo',
+      heroText: 'Conéctate con la ola. Mira las condiciones en tiempo real y elige tu próximo spot.',
+      btnWatchCameras: 'Ver cámaras en vivo ▸',
+      btnBeachGuide: 'Guía de playas',
+      weatherTitle: 'Condiciones generales',
+      weatherLoading: 'Cargando clima',
+      weatherWave: 'Oleaje estimado',
+      weatherWind: 'Viento',
+      weatherTime: 'Hora local',
+      cameraNightNotice: 'Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.'
+    },
+    en: {
+      navInicio: 'Home',
+      navCamaras: 'Cameras',
+      navServicios: 'Services',
+      navGuia: 'Local guide',
+      navAliados: 'Partners',
+      navColaboradores: 'Partners ▾',
+      heroTitle: 'Live surf cameras in Tamarindo',
+      heroText: 'Connect with the wave. Check real-time conditions and choose your next spot.',
+      btnWatchCameras: 'Watch live cameras ▸',
+      btnBeachGuide: 'Beach guide',
+      weatherTitle: 'General conditions',
+      weatherLoading: 'Loading weather',
+      weatherWave: 'Estimated swell',
+      weatherWind: 'Wind',
+      weatherTime: 'Local time',
+      cameraNightNotice: 'Night cameras off · Back around 4:45 a.m.'
+    }
+  };
+
+  const languageState = { current: localStorage.getItem('wavepoint-lang') || 'es' };
+
+  function applyTranslations(lang = languageState.current) {
+    const dict = translations[lang] || translations.es;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(node => {
+      const value = dict[node.dataset.i18n];
+      if (value) node.textContent = value;
+    });
+
+    const langToggle = document.querySelector('[data-lang-toggle]');
+    if (langToggle) {
+      const isSpanish = lang === 'es';
+      langToggle.textContent = isSpanish ? '🇺🇸' : '🇨🇷';
+      langToggle.setAttribute('aria-label', isSpanish ? 'Switch to English' : 'Cambiar a español');
+      langToggle.setAttribute('aria-pressed', String(!isSpanish));
+    }
+
+    languageState.current = lang;
+  }
+
+  const langToggle = document.querySelector('[data-lang-toggle]');
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      const nextLang = languageState.current === 'es' ? 'en' : 'es';
+      localStorage.setItem('wavepoint-lang', nextLang);
+      applyTranslations(nextLang);
+    });
+  }
+
   const SPOTS = {
     capitan: {
       title:'Capitán Suizo',
@@ -497,6 +566,7 @@
     window.addEventListener('resize',keepWithinHero);
   }
 
+  applyTranslations();
   bindMobileMenu();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();

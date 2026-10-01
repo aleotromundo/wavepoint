@@ -16,14 +16,17 @@
 <body>
 <header class="topbar">
 <div class="container nav">
+<div aria-label="Selector de idioma" class="lang-switcher">
+<button aria-label="Cambiar idioma" class="lang-toggle" data-lang-toggle type="button" aria-pressed="false">🇺🇸</button>
+</div>
 <nav class="navlinks">
-<a href="#inicio">Inicio</a>
-<a href="#camaras">Cámaras</a>
-<a href="#servicios">Servicios</a>
-<a href="#guia">Guía local</a>
-<a href="#aliados">Aliados</a>
+<a data-i18n="navInicio" href="#inicio">Inicio</a>
+<a data-i18n="navCamaras" href="#camaras">Cámaras</a>
+<a data-i18n="navServicios" href="#servicios">Servicios</a>
+<a data-i18n="navGuia" href="#guia">Guía local</a>
+<a data-i18n="navAliados" href="#aliados">Aliados</a>
 <div class="dropdown">
-<button class="dropbtn">Colaboradores ▾</button>
+<button class="dropbtn" data-i18n="navColaboradores">Colaboradores ▾</button>
 <div class="menu">
 <a href="https://wavepointcr.com/Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a>
 <a href="https://wavepointcr.com/Enlaces/red-door.html">Red Door, Tamarindo</a>
@@ -75,22 +78,22 @@
 <span class="country-seal-label">Costa Rica</span>
 </span>
 </div>
-<h1>Cámaras de surf en vivo en Tamarindo</h1>
-<p>Conéctate con la ola. Mira las condiciones en tiempo real y elige tu próximo spot.</p>
+<h1 data-i18n="heroTitle">Cámaras de surf en vivo en Tamarindo</h1>
+<p data-i18n="heroText">Conéctate con la ola. Mira las condiciones en tiempo real y elige tu próximo spot.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="#camaras">Ver cámaras en vivo ▸</a>
-<a class="btn btn-ghost" href="https://wavepointcr.com/Enlaces/guia-playas.html">Guía de playas</a>
+<a class="btn btn-primary" data-i18n="btnWatchCameras" href="#camaras">Ver cámaras en vivo ▸</a>
+<a class="btn btn-ghost" data-i18n="btnBeachGuide" href="https://wavepointcr.com/Enlaces/guia-playas.html">Guía de playas</a>
 </div>
 </div>
 <aside aria-label="Condiciones generales" class="weather-card">
-<div aria-label="Mover tarjeta del clima; usar las flechas para ajustar" class="weather-head" tabindex="0"><span>Condiciones generales</span><small id="updatedText">Actualizando…</small></div>
-<div class="weather-main"><div class="temp"><span id="temp">--</span>°</div><div><div class="weather-icon" id="weatherIcon">◌</div><div class="weather-state" id="weatherState">Cargando clima</div></div></div>
+<div aria-label="Mover tarjeta del clima; usar las flechas para ajustar" class="weather-head" tabindex="0"><span data-i18n="weatherTitle">Condiciones generales</span><small id="updatedText">Actualizando…</small></div>
+<div class="weather-main"><div class="temp"><span id="temp">--</span>°</div><div><div class="weather-icon" id="weatherIcon">◌</div><div class="weather-state" id="weatherState" data-i18n="weatherLoading">Cargando clima</div></div></div>
 <div class="weather-list">
-<div class="w-row"><span class="w-ico">≈</span><div><div class="w-value"><span id="waveHeight">--</span> m</div><div class="w-label">Oleaje estimado</div></div></div>
-<div class="w-row"><span class="w-ico">↗</span><div><div class="w-value"><span id="wind">--</span> km/h</div><div class="w-label">Viento</div></div></div>
-<div class="w-row"><span class="w-ico">◷</span><div><div class="w-value" id="localTime">--:--</div><div class="w-label">Hora local</div></div></div>
+<div class="w-row"><span class="w-ico">≈</span><div><div class="w-value"><span id="waveHeight">--</span> m</div><div class="w-label" data-i18n="weatherWave">Oleaje estimado</div></div></div>
+<div class="w-row"><span class="w-ico">↗</span><div><div class="w-value"><span id="wind">--</span> km/h</div><div class="w-label" data-i18n="weatherWind">Viento</div></div></div>
+<div class="w-row"><span class="w-ico">◷</span><div><div class="w-value" id="localTime">--:--</div><div class="w-label" data-i18n="weatherTime">Hora local</div></div></div>
 </div>
-<div class="camera-status-night" id="cameraNightNotice">Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.</div>
+<div class="camera-status-night" data-i18n="cameraNightNotice" id="cameraNightNotice">Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.</div>
 </aside>
 </div>
 </section>
