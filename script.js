@@ -3,8 +3,8 @@
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
   function getCRDate(){ return new Date(new Date().toLocaleString('en-US',{timeZone:CR_TZ})); }
   function isCameraLiveNow(){ const d=getCRDate(); const m=d.getHours()*60+d.getMinutes(); return m>=CAM_START.hour*60+CAM_START.minute && m<=CAM_END.hour*60+CAM_END.minute; }
-  function formatTimeCR(date=new Date()){ return new Intl.DateTimeFormat('es-CR',{hour:'2-digit',minute:'2-digit',timeZone:CR_TZ}).format(date); }
-  function weatherText(code,isDay){ const day=Number(isDay)===1; const map={0:day?['☀️','Soleado']:['🌙','Noche despejada'],1:day?['🌤️','Mayormente despejado']:['🌙','Noche mayormente despejada'],2:day?['⛅','Parcialmente nublado']:['☁️','Nublado de noche'],3:['☁️','Nublado'],45:['🌫️','Neblina'],48:['🌫️','Neblina'],51:day?['🌦️','Llovizna ligera']:['🌧️','Llovizna nocturna'],53:day?['🌦️','Llovizna']:['🌧️','Llovizna nocturna'],55:day?['🌧️','Llovizna fuerte']:['🌧️','Llovizna fuerte nocturna'],61:day?['🌦️','Lluvia ligera']:['🌧️','Lluvia nocturna'],63:day?['🌧️','Lluvia']:['🌧️','Lluvia nocturna'],65:day?['🌧️','Lluvia fuerte']:['🌧️','Lluvia fuerte nocturna'],80:day?['🌦️','Chubascos']:['🌧️','Chubascos nocturnos'],81:day?['🌧️','Chubascos']:['🌧️','Chubascos nocturnos'],82:['⛈️','Chubascos fuertes'],95:['⛈️','Tormenta'],96:['⛈️','Tormenta con granizo'],99:['⛈️','Tormenta fuerte']}; return map[code] || (day?['🌤️','Condiciones variables']:['🌙','Condiciones nocturnas']); }
+  function formatTimeCR(date=new Date()){ const locale = languageState.current === 'en' ? 'en-US' : 'es-CR'; return new Intl.DateTimeFormat(locale,{hour:'2-digit',minute:'2-digit',timeZone:CR_TZ}).format(date); }
+  function weatherText(code,isDay){ const day=Number(isDay)===1; const spanishMap={0:day?['☀️','Soleado']:['🌙','Noche despejada'],1:day?['🌤️','Mayormente despejado']:['🌙','Noche mayormente despejada'],2:day?['⛅','Parcialmente nublado']:['☁️','Nublado de noche'],3:['☁️','Nublado'],45:['🌫️','Neblina'],48:['🌫️','Neblina'],51:day?['🌦️','Llovizna ligera']:['🌧️','Llovizna nocturna'],53:day?['🌦️','Llovizna']:['🌧️','Llovizna nocturna'],55:day?['🌧️','Llovizna fuerte']:['🌧️','Llovizna fuerte nocturna'],61:day?['🌦️','Lluvia ligera']:['🌧️','Lluvia nocturna'],63:day?['🌧️','Lluvia']:['🌧️','Lluvia nocturna'],65:day?['🌧️','Lluvia fuerte']:['🌧️','Lluvia fuerte nocturna'],80:day?['🌦️','Chubascos']:['🌧️','Chubascos nocturnos'],81:day?['🌧️','Chubascos']:['🌧️','Chubascos nocturnos'],82:['⛈️','Chubascos fuertes'],95:['⛈️','Tormenta'],96:['⛈️','Tormenta con granizo'],99:['⛈️','Tormenta fuerte']}; const englishMap={0:day?['☀️','Sunny']:['🌙','Clear night'],1:day?['🌤️','Mostly sunny']:['🌙','Mostly clear night'],2:day?['⛅','Partly cloudy']:['☁️','Cloudy night'],3:['☁️','Cloudy'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:day?['🌦️','Light drizzle']:['🌧️','Night drizzle'],53:day?['🌦️','Drizzle']:['🌧️','Night drizzle'],55:day?['🌧️','Heavy drizzle']:['🌧️','Heavy night drizzle'],61:day?['🌦️','Light rain']:['🌧️','Night rain'],63:day?['🌧️','Rain']:['🌧️','Night rain'],65:day?['🌧️','Heavy rain']:['🌧️','Heavy night rain'],80:day?['🌦️','Showers']:['🌧️','Night showers'],81:day?['🌧️','Showers']:['🌧️','Night showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Severe storm']}; const map = languageState.current === 'en' ? englishMap : spanishMap; return map[code] || (day?['🌤️','Variable conditions']:['🌙','Night conditions']); }
   function weatherMotion(code,isDay){ const value=Number(code); if(Number(isDay)!==1) return 'night'; if([95,96,99].includes(value)) return 'storm'; if([51,53,55,61,63,65,80,81,82].includes(value)) return 'rain'; if([45,48].includes(value)) return 'mist'; if([1,2,3].includes(value)) return 'clouds'; return 'sun'; }
   //function applyCameraState(){ const live=isCameraLiveNow(); document.body.classList.toggle('night', !live); document.querySelectorAll('.live-badge').forEach(b=>{ b.textContent=live?'● En vivo':'☾ Descanso'; b.classList.toggle('rest', !live); }); document.getElementById('cameraNightNotice').classList.toggle('show', !live); }
   
@@ -94,7 +94,81 @@
       weatherWave: 'Oleaje estimado',
       weatherWind: 'Viento',
       weatherTime: 'Hora local',
-      cameraNightNotice: 'Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.'
+      cameraNightNotice: 'Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.',
+      camerasSectionTitle: 'Cámaras en vivo',
+      camerasSectionSubtitle: 'Tres puntos clave: dos cámaras activas y Red Door en preparación.',
+      camerasSectionLink: 'Ir al sitio actual →',
+      servicesSectionTitle: 'Servicios destacados',
+      servicesSectionSubtitle: 'Servicios reales que pueden convertirse en reservas, leads y alianzas.',
+      serviceSurfLessons: 'Clases de surf',
+      serviceSurfLessonsText: 'Clases para todos los niveles con instructores locales.',
+      serviceSurfPhotos: 'Fotos de surf',
+      serviceSurfPhotosText: 'Captura tus mejores olas desde la playa.',
+      serviceWaterPhoto: 'Fotografía acuática',
+      serviceWaterPhotoText: 'Sesiones profesionales dentro y fuera del agua.',
+      serviceSurfskate: 'Clases de surfskate',
+      serviceSurfskateText: 'Mejora técnica y fluidez fuera del agua.',
+      serviceMoreInfo: 'Más información →',
+      wavepointInTamarindo: 'WavePoint en Tamarindo',
+      wavepointInTamarindoSubtitle: 'Información útil para elegir mejor tu spot, planear tu sesión y moverte en Tamarindo.',
+      benefitLiveCameras: 'Cámaras reales',
+      benefitLiveCamerasText: 'Consulta el estado visual de los spots antes de salir.',
+      benefitQuickConditions: 'Condiciones rápidas',
+      benefitQuickConditionsText: 'Clima, viento, hora local y oleaje estimado en un solo lugar.',
+      benefitLocalGuide: 'Guía local',
+      benefitLocalGuideText: 'Playas, experiencias y puntos útiles para moverte mejor.',
+      benefitLocalAllies: 'Aliados locales',
+      benefitLocalAlliesText: 'Colaboradores que ayudan a mantener la experiencia activa y útil.',
+      guideLiveTamarindo: 'Vive Tamarindo',
+      guideText: 'Más que surf: playas, colaboradores, servicios y experiencias recomendadas.',
+      guideButton: 'Explorar guía',
+      afterSurfTitle: 'Después del surf',
+      afterSurfSubtitle: 'Opciones útiles para comer, guardar recuerdos de la sesión y seguir explorando Tamarindo.',
+      afterFood: 'Comida',
+      afterFoodText: 'Burgers, empanadas y cerveza fría después de surfear.',
+      afterDemo: 'Ver pre-play demo →',
+      afterSession: 'Recuerdo de tu sesión',
+      afterPhotosTitle: 'Fotos de surf',
+      afterPhotosText: 'Captura tus mejores olas con fotografía profesional.',
+      afterServiceLink: 'Ver servicio →',
+      afterGuideTag: 'Guía local',
+      afterGuideTitle: 'Explora Tamarindo',
+      afterGuideText: 'Playas, colaboradores, servicios y experiencias cercanas.',
+      afterGuideLink: 'Ver guía →',
+      newsletterTitle: 'Entérate primero',
+      newsletterText: 'Recibe alertas de olas, novedades y promociones seleccionadas.',
+      newsletterEmailPlaceholder: 'Tu correo electrónico',
+      newsletterButton: 'Suscribirme',
+      partnersSectionTitle: 'Aliados y patrocinadores',
+      partnersSectionSubtitle: 'Colaboradores reales del proyecto y marcas que acompañan la experiencia WavePoint en Tamarindo.',
+      sponsorActive: 'Patrocinador activo',
+      sponsorLocation: 'Burgers & empanadas · Tamarindo',
+      sponsorSite: 'Visitar sitio →',
+      partnerCameraSpot: 'Cámara / spot',
+      partnerCollaborator: 'Colaborador',
+      cameraOfflineText: 'Esta cámara está fuera del horario de transmisión. Vuelve aprox. a las 4:45 a.m. hora Costa Rica.',
+      mobileHome: 'Inicio',
+      mobileCameras: 'Cámaras',
+      mobileServices: 'Servicios',
+      mobileGuide: 'Guía local',
+      mobileAllies: 'Aliados',
+      mobileAbout: 'Nosotros',
+      mobileCapitan: 'Capitán Suizo',
+      mobileCasa: 'Casa de Maderas',
+      mobileRedDoor: 'Red Door',
+      footerIntro: 'Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.',
+      footerQuickLinks: 'Enlaces rápidos',
+      footerGuide: 'Guía turística',
+      footerServices: 'Servicios',
+      footerAbout: 'Nosotros',
+      footerCameras: 'Cámaras',
+      footerBeaches: 'Playas',
+      footerRestaurants: 'Restaurantes',
+      footerTours: 'Tours',
+      footerSnorkeling: 'Snorkeling',
+      footerWavePointText: 'Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.',
+      footerViewCameras: 'Ver cámaras',
+      footerTerms: 'Términos · Privacidad'
     },
     en: {
       navInicio: 'Home',
@@ -112,7 +186,81 @@
       weatherWave: 'Estimated swell',
       weatherWind: 'Wind',
       weatherTime: 'Local time',
-      cameraNightNotice: 'Night cameras off · Back around 4:45 a.m.'
+      cameraNightNotice: 'Night cameras off · Back around 4:45 a.m.',
+      camerasSectionTitle: 'Live cameras',
+      camerasSectionSubtitle: 'Three key spots: two active cameras and Red Door still coming.',
+      camerasSectionLink: 'Go to the current site →',
+      servicesSectionTitle: 'Featured services',
+      servicesSectionSubtitle: 'Real services that can become bookings, leads, and partnerships.',
+      serviceSurfLessons: 'Surf lessons',
+      serviceSurfLessonsText: 'Lessons for all levels with local instructors.',
+      serviceSurfPhotos: 'Surf photos',
+      serviceSurfPhotosText: 'Capture your best waves from the beach.',
+      serviceWaterPhoto: 'Water photography',
+      serviceWaterPhotoText: 'Professional sessions in and out of the water.',
+      serviceSurfskate: 'Surfskate lessons',
+      serviceSurfskateText: 'Improve technique and flow off the water.',
+      serviceMoreInfo: 'More info →',
+      wavepointInTamarindo: 'WavePoint in Tamarindo',
+      wavepointInTamarindoSubtitle: 'Useful information to choose your spot better, plan your session, and move around Tamarindo.',
+      benefitLiveCameras: 'Real cameras',
+      benefitLiveCamerasText: 'Check the visual status of spots before heading out.',
+      benefitQuickConditions: 'Quick conditions',
+      benefitQuickConditionsText: 'Weather, wind, local time, and estimated swell in one place.',
+      benefitLocalGuide: 'Local guide',
+      benefitLocalGuideText: 'Beaches, experiences, and useful spots to move around better.',
+      benefitLocalAllies: 'Local allies',
+      benefitLocalAlliesText: 'Partners who help keep the experience active and useful.',
+      guideLiveTamarindo: 'Live Tamarindo',
+      guideText: 'More than surf: beaches, partners, services, and recommended experiences.',
+      guideButton: 'Explore guide',
+      afterSurfTitle: 'After the surf',
+      afterSurfSubtitle: 'Useful options for eating, saving memories from the session, and continuing to explore Tamarindo.',
+      afterFood: 'Food',
+      afterFoodText: 'Burgers, empanadas, and cold beer after surfing.',
+      afterDemo: 'Watch pre-play demo →',
+      afterSession: 'Your session memory',
+      afterPhotosTitle: 'Surf photos',
+      afterPhotosText: 'Capture your best waves with professional photography.',
+      afterServiceLink: 'View service →',
+      afterGuideTag: 'Local guide',
+      afterGuideTitle: 'Explore Tamarindo',
+      afterGuideText: 'Beaches, partners, services, and nearby experiences.',
+      afterGuideLink: 'View guide →',
+      newsletterTitle: 'Know first',
+      newsletterText: 'Get wave alerts, updates, and selected promotions.',
+      newsletterEmailPlaceholder: 'Your email',
+      newsletterButton: 'Subscribe',
+      partnersSectionTitle: 'Partners & sponsors',
+      partnersSectionSubtitle: 'Real collaborators of the project and brands that support the WavePoint experience in Tamarindo.',
+      sponsorActive: 'Active sponsor',
+      sponsorLocation: 'Burgers & empanadas · Tamarindo',
+      sponsorSite: 'Visit site →',
+      partnerCameraSpot: 'Camera / spot',
+      partnerCollaborator: 'Collaborator',
+      cameraOfflineText: 'This camera is outside its broadcast window. It returns around 4:45 a.m. Costa Rica time.',
+      mobileHome: 'Home',
+      mobileCameras: 'Cameras',
+      mobileServices: 'Services',
+      mobileGuide: 'Local guide',
+      mobileAllies: 'Partners',
+      mobileAbout: 'About',
+      mobileCapitan: 'Capitán Suizo',
+      mobileCasa: 'Casa de Maderas',
+      mobileRedDoor: 'Red Door',
+      footerIntro: 'We connect surfers, travelers, and local businesses with the best conditions and experiences in Tamarindo.',
+      footerQuickLinks: 'Quick links',
+      footerGuide: 'Travel guide',
+      footerServices: 'Services',
+      footerAbout: 'About',
+      footerCameras: 'Cameras',
+      footerBeaches: 'Beaches',
+      footerRestaurants: 'Restaurants',
+      footerTours: 'Tours',
+      footerSnorkeling: 'Snorkeling',
+      footerWavePointText: 'Cameras, spots, local guide, and experiences for surfers and visitors in Tamarindo.',
+      footerViewCameras: 'View cameras',
+      footerTerms: 'Terms · Privacy'
     }
   };
 
@@ -125,6 +273,10 @@
       const value = dict[node.dataset.i18n];
       if (value) node.textContent = value;
     });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(node => {
+      const value = dict[node.dataset.i18nPlaceholder];
+      if (value) node.setAttribute('placeholder', value);
+    });
 
     const langToggle = document.querySelector('[data-lang-toggle]');
     if (langToggle) {
@@ -132,6 +284,21 @@
       langToggle.textContent = isSpanish ? '🇺🇸' : '🇨🇷';
       langToggle.setAttribute('aria-label', isSpanish ? 'Switch to English' : 'Cambiar a español');
       langToggle.setAttribute('aria-pressed', String(!isSpanish));
+    }
+
+    if (document.getElementById('weatherState')) {
+      const [icon,label] = weatherText(document.getElementById('weatherIcon')?.dataset?.conditionCode ?? 0, Number(document.getElementById('weatherIcon')?.dataset?.isDay ?? 1));
+      const readyText = label || (lang === 'en' ? 'Loading weather' : 'Cargando clima');
+      document.getElementById('weatherState').textContent = readyText;
+    }
+
+    if (document.getElementById('cameraNightNotice')) {
+      document.getElementById('cameraNightNotice').textContent = dict.cameraNightNotice || translations.es.cameraNightNotice;
+    }
+
+    if (document.getElementById('updatedText')) {
+      const statusEl = document.getElementById('updatedText');
+      statusEl.textContent = statusEl.textContent === 'Actualizado ahora' || statusEl.textContent === 'Updated now' ? statusEl.textContent : statusEl.textContent;
     }
 
     languageState.current = lang;
@@ -176,33 +343,63 @@
     const temp = document.getElementById('temp')?.textContent || '--';
     const wind = document.getElementById('wind')?.textContent || '--';
     const wave = document.getElementById('waveHeight')?.textContent || '--';
-    const weather = document.getElementById('weatherState')?.textContent || 'Condiciones actuales';
+    const weather = document.getElementById('weatherState')?.textContent || (languageState.current === 'en' ? 'Current conditions' : 'Condiciones actuales');
     const time = document.getElementById('localTime')?.textContent || '--:--';
+    const isEnglish = languageState.current === 'en';
+    const labels = isEnglish ? {
+      prelim: 'Preliminary surf sheet',
+      climate: 'Weather',
+      wind: 'Wind',
+      swell: 'Swell',
+      current: 'current',
+      localTime: 'Local time',
+      quickRead: 'Quick read',
+      level: 'Recommended level',
+      tide: 'Best tide',
+      bottom: 'Bottom',
+      risk: 'Risks',
+      localNotes: 'Local notes',
+      country: 'Costa Rica'
+    } : {
+      prelim: 'Ficha surf preliminar',
+      climate: 'Clima',
+      wind: 'Viento',
+      swell: 'Oleaje',
+      current: 'actual',
+      localTime: 'Hora local',
+      quickRead: 'Lectura rápida',
+      level: 'Nivel recomendado',
+      tide: 'Mejor marea',
+      bottom: 'Fondo',
+      risk: 'Riesgos',
+      localNotes: 'Notas locales',
+      country: 'Costa Rica'
+    };
     return `
       <div class="spot-hero ${s.css}">
         <div>
           <h3>${s.title}</h3>
-          <p>${s.location} · Ficha surf preliminar</p>
+          <p>${s.location} · ${labels.prelim}</p>
         </div>
       </div>
       <div class="spot-data">
-        <div class="spot-card"><small>Clima</small><strong>${temp}°</strong><span>${weather}</span></div>
-        <div class="spot-card"><small>Viento</small><strong>${wind}</strong><span>km/h actual</span></div>
-        <div class="spot-card"><small>Oleaje</small><strong>${wave} m</strong><span>estimado Marine API</span></div>
-        <div class="spot-card"><small>Hora local</small><strong>${time}</strong><span>Costa Rica</span></div>
+        <div class="spot-card"><small>${labels.climate}</small><strong>${temp}°</strong><span>${weather}</span></div>
+        <div class="spot-card"><small>${labels.wind}</small><strong>${wind}</strong><span>${labels.current}</span></div>
+        <div class="spot-card"><small>${labels.swell}</small><strong>${wave} m</strong><span>${isEnglish ? 'estimated by Marine API' : 'estimado Marine API'}</span></div>
+        <div class="spot-card"><small>${labels.localTime}</small><strong>${time}</strong><span>${labels.country}</span></div>
       </div>
       <div class="spot-info-grid">
         <div class="spot-info-block">
-          <h4>Lectura rápida</h4>
+          <h4>${labels.quickRead}</h4>
           <ul>
-            <li>Nivel recomendado: ${s.level}</li>
-            <li>Mejor marea: ${s.tide}</li>
-            <li>Fondo: ${s.bottom}</li>
-            <li>Riesgos: ${s.risk}</li>
+            <li>${labels.level}: ${s.level}</li>
+            <li>${labels.tide}: ${s.tide}</li>
+            <li>${labels.bottom}: ${s.bottom}</li>
+            <li>${labels.risk}: ${s.risk}</li>
           </ul>
         </div>
         <div class="spot-info-block">
-          <h4>Notas locales</h4>
+          <h4>${labels.localNotes}</h4>
           <ul>${s.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
         </div>
       </div>
@@ -223,7 +420,7 @@
         const card=btn.closest('.camera-card');
         const key=btn.dataset.camera || card?.dataset?.camera || 'capitan';
         const spot=SPOTS[key] || SPOTS.capitan;
-        title.textContent='Info del spot · ' + spot.title;
+        title.textContent = (languageState.current === 'en' ? 'Spot info · ' : 'Info del spot · ') + spot.title;
         body.innerHTML=buildSpotHtml(key);
         modal.classList.add('show');
         document.body.style.overflow='hidden';
@@ -253,14 +450,14 @@
         frame.style.display='block';
         frame.src=card.dataset.src;
         if (modalWatermark) modalWatermark.style.display='block';
-        note.textContent='Estás viendo: ' + cameraName + ' · Haz clic fuera del recuadro para cerrar.';
+        note.textContent = (languageState.current === 'en' ? 'You are watching: ' : 'Estás viendo: ') + cameraName + (languageState.current === 'en' ? ' · Click outside the frame to close.' : ' · Haz clic fuera del recuadro para cerrar.');
       } else {
         frame.src='';
         frame.style.display='none';
         if (modalWatermark) modalWatermark.style.display='none';
-        offlineTitle.textContent = cameraName + ' en descanso';
+        offlineTitle.textContent = cameraName + (languageState.current === 'en' ? ' on standby' : ' en descanso');
         offline.classList.add('show');
-        note.textContent='Cámara fuera de horario · Transmisión aprox. de 4:45 a.m. a 6:30 p.m.';
+        note.textContent = languageState.current === 'en' ? 'Camera outside broadcast hours · Transmission approx. 4:45 a.m. to 6:30 p.m.' : 'Cámara fuera de horario · Transmisión aprox. de 4:45 a.m. a 6:30 p.m.';
       }
       modal.classList.add('show');
       document.body.style.overflow='hidden';
