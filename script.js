@@ -719,7 +719,9 @@
 
     items.forEach(item=>{
       const siblings=[...item.parentElement.children].filter(sibling=>sibling.matches(selector));
-      item.style.setProperty('--reveal-delay', `${Math.max(0, siblings.indexOf(item)) * 75}ms`);
+      const siblingIndex=Math.max(0, siblings.indexOf(item));
+      item.style.setProperty('--reveal-delay', `${siblingIndex * 75}ms`);
+      item.style.setProperty('--reveal-x', siblingIndex % 2 === 0 ? '-72px' : '72px');
       item.classList.add('scroll-reveal');
       observer.observe(item);
     });
