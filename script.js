@@ -395,12 +395,112 @@
 
   function bindHeroLogoEntrance(){
     const logo=document.querySelector('.hero-logo-wrap');
-    if(logo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) logo.classList.add('is-arriving');
+    if(!logo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const replay=()=>{
+      logo.classList.remove('is-arriving');
+      void logo.offsetWidth;
+      logo.classList.add('is-arriving');
+    };
+
+    logo.classList.add('is-arriving');
+    logo.addEventListener('click', replay);
+    logo.addEventListener('keydown', e=>{
+      if(e.key==='Enter' || e.key===' '){
+        e.preventDefault();
+        replay();
+      }
+    });
+    document.querySelectorAll('a[href="#inicio"]').forEach(link=>link.addEventListener('click', replay));
+
+    if('IntersectionObserver' in window){
+      let firstObservation=true;
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting && !firstObservation) replay();
+          firstObservation=false;
+        });
+      }, {threshold:.65});
+      observer.observe(logo);
+    }
+  }
+
+  function bindWeatherCardDrag(){
+    const card=document.querySelector('.weather-card');
+    const handle=card?.querySelector('.weather-head');
+    const hero=card?.closest('.hero');
+    if(!card || !handle || !hero) return;
+
+    let offsetX=0, offsetY=0, drag=null;
+    const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+    const applyOffset=()=>{
+      card.style.setProperty('--weather-drag-x',`${offsetX}px`);
+      card.style.setProperty('--weather-drag-y',`${offsetY}px`);
+    };
+    const keepWithinHero=()=>{
+      const cardRect=card.getBoundingClientRect();
+      const heroRect=hero.getBoundingClientRect();
+      offsetX=clamp(offsetX,heroRect.left-cardRect.left+offsetX,heroRect.right-cardRect.right+offsetX);
+      offsetY=clamp(offsetY,heroRect.top-cardRect.top+offsetY,heroRect.bottom-cardRect.bottom+offsetY);
+      applyOffset();
+    };
+
+    handle.addEventListener('pointerdown',event=>{
+      if(event.pointerType==='mouse' && event.button!==0) return;
+      event.preventDefault();
+      card.classList.add('is-dragging');
+      const cardRect=card.getBoundingClientRect();
+      const heroRect=hero.getBoundingClientRect();
+      drag={
+        pointerId:event.pointerId,
+        startX:event.clientX,
+        startY:event.clientY,
+        offsetX,
+        offsetY,
+        minX:heroRect.left-cardRect.left+offsetX,
+        maxX:heroRect.right-cardRect.right+offsetX,
+        minY:heroRect.top-cardRect.top+offsetY,
+        maxY:heroRect.bottom-cardRect.bottom+offsetY
+      };
+      handle.setPointerCapture(event.pointerId);
+    });
+
+    handle.addEventListener('pointermove',event=>{
+      if(!drag || event.pointerId!==drag.pointerId) return;
+      offsetX=clamp(drag.offsetX+event.clientX-drag.startX,drag.minX,drag.maxX);
+      offsetY=clamp(drag.offsetY+event.clientY-drag.startY,drag.minY,drag.maxY);
+      applyOffset();
+    });
+
+    const stopDrag=event=>{
+      if(!drag || event.pointerId!==drag.pointerId) return;
+      drag=null;
+      card.classList.remove('is-dragging');
+    };
+    handle.addEventListener('pointerup',stopDrag);
+    handle.addEventListener('pointercancel',stopDrag);
+    handle.addEventListener('lostpointercapture',stopDrag);
+
+    handle.addEventListener('keydown',event=>{
+      const step=event.shiftKey?32:12;
+      const moves={ArrowLeft:[-step,0],ArrowRight:[step,0],ArrowUp:[0,-step],ArrowDown:[0,step]};
+      const move=moves[event.key];
+      if(!move) return;
+      event.preventDefault();
+      const cardRect=card.getBoundingClientRect();
+      const heroRect=hero.getBoundingClientRect();
+      offsetX=clamp(offsetX+move[0],heroRect.left-cardRect.left+offsetX,heroRect.right-cardRect.right+offsetX);
+      offsetY=clamp(offsetY+move[1],heroRect.top-cardRect.top+offsetY,heroRect.bottom-cardRect.bottom+offsetY);
+      applyOffset();
+    });
+
+    window.addEventListener('resize',keepWithinHero);
   }
 
   bindMobileMenu();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();
+  bindWeatherCardDrag();
   bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); document.getElementById('localTime').textContent=formatTimeCR(); }, 30000);
