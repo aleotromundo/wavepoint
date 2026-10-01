@@ -313,8 +313,24 @@
     setInterval(swap, 6000);
   }
 
+  function bindHeroLogoShine(){
+    const logo = document.querySelector('.hero-logo-wrap');
+    if (!logo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const scheduleShine = () => {
+      window.setTimeout(() => {
+        logo.classList.add('is-shining');
+        window.setTimeout(() => logo.classList.remove('is-shining'), 1200);
+        scheduleShine();
+      }, 5000 + Math.random() * 9000);
+    };
+
+    scheduleShine();
+  }
+
   bindMobileMenu();
   bindHeroVideoSwap();
+  bindHeroLogoShine();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); document.getElementById('localTime').textContent=formatTimeCR(); }, 30000);
 
