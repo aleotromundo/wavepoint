@@ -238,6 +238,26 @@
   function bindAdModal() {
   const modal = document.getElementById('adModal');
   const video = document.getElementById('adVideo');
+  const videoNote = modal?.querySelector('.modal-note');
+  const sponsorCard = document.getElementById('logoChop');
+  const preview = sponsorCard?.querySelector('.sponsor-preview');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let previewVisible = false;
+  let previewHovered = false;
+
+  const updatePreview = () => {
+    if (!preview || modal?.classList.contains('show') || document.hidden) {
+      preview?.pause();
+      return;
+    }
+
+    if (previewHovered || (previewVisible && !reduceMotion)) {
+      preview.play().catch(() => {});
+    } else {
+      preview.pause();
+    }
+  };
+
   const openers = [
     document.getElementById('adTrigger'),
     document.getElementById('logoChop')
@@ -252,11 +272,44 @@
     }
 
     e.preventDefault();
+    preview?.pause();
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
     video.currentTime = 0;
-    video.play().catch(() => {});
+    video.play().catch(() => {
+      if (videoNote) videoNote.textContent = 'No se pudo reproducir este MP4 en el navegador.';
+    });
   }));
+
+  if (preview && sponsorCard) {
+    sponsorCard.addEventListener('pointerenter', () => {
+      previewHovered = true;
+      updatePreview();
+    });
+    sponsorCard.addEventListener('pointerleave', () => {
+      previewHovered = false;
+      updatePreview();
+    });
+    preview.addEventListener('playing', () => sponsorCard.classList.add('is-preview-playing'));
+    preview.addEventListener('pause', () => sponsorCard.classList.remove('is-preview-playing'));
+    preview.addEventListener('error', () => sponsorCard.classList.remove('is-preview-playing'));
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        previewVisible = entries.some(entry => entry.isIntersecting);
+        updatePreview();
+      }, {threshold:.35});
+      observer.observe(sponsorCard);
+    }
+  }
+
+  video.addEventListener('playing', () => {
+    if (videoNote) videoNote.textContent = 'Demo del formato pre-play para Castr.';
+  });
+  video.addEventListener('error', () => {
+    if (videoNote) videoNote.textContent = 'No se pudo reproducir este MP4 en el navegador.';
+  });
+  document.addEventListener('visibilitychange', updatePreview);
 
   document.getElementById('closeAd').addEventListener('click', closeAd);
 
@@ -268,6 +321,7 @@
     video.pause();
     modal.classList.remove('show');
     document.body.style.overflow = '';
+    updatePreview();
   }
 
   window.closeAd = closeAd;
@@ -322,24 +376,32 @@
     setInterval(swap, 6000);
   }
 
-  function bindHeroLogoShine(){
-    const logo = document.querySelector('.hero-logo-wrap');
-    if (!logo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function bindScrollReveals(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
 
-    const scheduleShine = () => {
-      window.setTimeout(() => {
-        logo.classList.add('is-shining');
-        window.setTimeout(() => logo.classList.remove('is-shining'), 1200);
-        scheduleShine();
-      }, 5000 + Math.random() * 9000);
-    };
+    const selector = '.section-head, .camera-card, .service-card, .benefit, .guide-card, .active-sponsor-card, .partner-card, .after-card, .promo-card, .newsletter-grid > *';
+    const items = [...document.querySelectorAll(selector)];
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>entry.target.classList.toggle('is-visible', entry.isIntersecting));
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
 
-    scheduleShine();
+    items.forEach(item=>{
+      const siblings=[...item.parentElement.children].filter(sibling=>sibling.matches(selector));
+      item.style.setProperty('--reveal-delay', `${Math.max(0, siblings.indexOf(item)) * 75}ms`);
+      item.classList.add('scroll-reveal');
+      observer.observe(item);
+    });
+  }
+
+  function bindHeroLogoEntrance(){
+    const logo=document.querySelector('.hero-logo-wrap');
+    if(logo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) logo.classList.add('is-arriving');
   }
 
   bindMobileMenu();
   bindHeroVideoSwap();
-  bindHeroLogoShine();
+  bindHeroLogoEntrance();
+  bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); document.getElementById('localTime').textContent=formatTimeCR(); }, 30000);
 
