@@ -95,10 +95,9 @@
   const translations = {
     es: {
       navInicio: 'Inicio',
-      navCamaras: 'Cámaras',
       navServicios: 'Servicios',
-      navGuia: 'Guía local',
-      navAliados: 'Aliados',
+      navGuia: 'Guía turística',
+      navNosotros: 'Nosotros',
       navColaboradores: 'Colaboradores ▾',
       heroTitle: 'Cámaras de surf en vivo en Tamarindo',
       heroText: 'Conéctate con la ola. Mira las condiciones en tiempo real y elige tu próximo spot.',
@@ -277,10 +276,9 @@
     },
     en: {
       navInicio: 'Home',
-      navCamaras: 'Cameras',
       navServicios: 'Services',
-      navGuia: 'Local guide',
-      navAliados: 'Partners',
+      navGuia: 'Tourist guide',
+      navNosotros: 'About us',
       navColaboradores: 'Partners ▾',
       heroTitle: 'Live surf cameras in Tamarindo',
       heroText: 'Connect with the wave. Check real-time conditions and choose your next spot.',
@@ -826,6 +824,11 @@
 
     open.addEventListener('click', openMenu);
     close.addEventListener('click', closeMenu);
+    const collaborators = panel.querySelector('.mobile-dropdown');
+    const collaboratorsToggle = panel.querySelector('.mobile-dropdown-toggle');
+    collaboratorsToggle?.addEventListener('click', ()=>{
+      collaborators?.classList.toggle('is-open');
+    });
     panel.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
   }
