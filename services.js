@@ -17,7 +17,7 @@
       id: 'clases-de-surf', number: '02', eyebrow: 'AGUA · APRENDIZAJE', title: 'Clases de surf',
       cardText: 'Una primera ola, mejores bases o una habilidad puntual con instructores locales.',
       description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
-      images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/Playa_23.jpg', 'assets/legacy/surfskate.png'],
+      images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/playa-ventanas.jpg', 'assets/legacy/surfskate.png'],
       questions: [
         { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
         { id: 'lesson_goal', label: '¿Qué te gustaría conseguir con la clase?', type: 'choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
@@ -40,7 +40,7 @@
       id: 'roca-bruja', number: '04', eyebrow: 'SURF TRIP · AVENTURA', title: 'Surf trip a Roca Bruja',
       cardText: 'Planificá una salida a uno de los spots más especiales de la costa con logística local.',
       description: 'Roca Bruja exige mirar el mar, la logística y el grupo como un todo. Coordinamos la consulta con información sobre niveles, tablas y flexibilidad de fechas para que el operador pueda evaluar la salida de forma responsable. Las condiciones pueden pedir cambios: por eso este primer paso nos ayuda a buscar una ventana que tenga sentido para quienes viajan y para el océano.',
-      images: ['assets/legacy/bruja.jpg', 'assets/legacy/Aerial_02.jpg', 'assets/legacy/Playa_23.jpg'],
+      images: ['assets/legacy/bruja.jpg', 'assets/legacy/avellanas.jpg', 'assets/legacy/rincon.jpg'],
       questions: [
         { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
         { id: 'own_boards', label: '¿Todos llevarán su propia tabla?', type: 'choice', options: ['Sí', 'No'] },
@@ -52,7 +52,7 @@
       id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
       cardText: 'Elegí entre explorar bajo el agua, navegar la costa o combinar las dos experiencias.',
       description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
-      images: ['assets/legacy/conchal.jpg', 'assets/legacy/catalinas.jpg', 'assets/legacy/Playa_23.jpg'],
+      images: ['assets/legacy/conchal.jpg', 'assets/legacy/catalinas.jpg', 'assets/legacy/B_03.jpg'],
       questions: [
         { id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
         { id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
@@ -65,7 +65,7 @@
       id: 'yoga', number: '06', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
       cardText: 'Encontrá una práctica que acompañe tu viaje, desde una primera vez hasta una sesión profunda.',
       description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
-      images: ['assets/legacy/OTAMA_HEAL_21.jpg', 'assets/legacy/OTAMA_VIEW_30.jpg', 'assets/legacy/Playa_23.jpg'],
+      images: ['assets/legacy/OTAMA_HEAL_21.jpg', 'assets/legacy/IMG_1270.jpeg', 'assets/legacy/IMG_1271.jpeg'],
       questions: [
         { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
         { id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
@@ -88,7 +88,7 @@
       id: 'retiros', number: '08', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
       cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
       description: 'Un retiro es una experiencia con su propio ritmo. Te ayudamos a encontrar una propuesta que combine las actividades que te interesan con el tipo de habitación y acompañamiento que necesitás. Si incluye surf, saber tu nivel nos permite consultar mejor; y si tenés necesidades de alimentación o alojamiento, podés compartirlas desde el inicio para buscar una opción que te haga sentir cómodo.',
-      images: ['assets/legacy/OTAMA_HEAL_21.jpg', 'assets/legacy/OTAMA_VIEW_30.jpg', 'assets/legacy/Playa_23.jpg'],
+      images: ['assets/legacy/ocotal.jpg', 'assets/legacy/IMG_1269.jpeg', 'assets/legacy/Restaurante_1.jpg'],
       questions: [
         { id: 'retreat_choice', label: '¿Qué retiro te interesa?', type: 'choice', options: ['Selecciona un retiro', 'Quiero recomendaciones'] },
         { id: 'retreat_surf_level', label: 'Si el retiro incluye surf: ¿cuál es tu nivel?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'], optional: true },
