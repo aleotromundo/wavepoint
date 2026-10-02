@@ -2570,7 +2570,7 @@ body { background: #071c28; }
 .topbar, .service-topbar { position: fixed; inset: 0 0 auto 0; z-index: 100; pointer-events: none; }
 .topbar > *, .service-topbar > *, .topbar .nav, .service-topbar .nav { pointer-events: auto; }
 .site-shared-header .nav { min-height: 56px; }
-.shared-brand { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.shared-brand, .mobile-panel-head > img { display: none; }
 .shared-brand img { width: auto; height: 42px; object-fit: contain; }
 .service-topbar .nav { width: min(1180px, calc(100% - 42px)); margin: 0 auto; }
 .service-topbar .navlinks { margin-left: auto; }
@@ -2608,7 +2608,7 @@ body { background: #071c28; }
 .about-kicker, .about-label { margin: 0 0 14px; color: #168f8b; font-size: 11px; font-weight: 800; letter-spacing: .13em; }
 .about-kicker { color: #a9eadc; }
 .about-index { margin: 0 0 14px; color: #c4f1e6; font-size: 12px; font-weight: 700; letter-spacing: .12em; }
-.about-hero h1 { max-width: 820px; margin: 0; font: 700 clamp(62px, 9vw, 118px)/.84 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.025em; }
+.about-hero h1 { max-width: 820px; margin: 0; font: 500 clamp(62px, 9vw, 118px)/.92 "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; }
 .about-intro { max-width: 600px; margin: 22px 0 28px; color: rgba(242,251,247,.86); font-size: 19px; line-height: 1.5; }
 .about-scroll-note { position: absolute; right: max(21px, calc((100vw - 1180px) / 2)); bottom: 86px; color: rgba(240,251,247,.7); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; writing-mode: vertical-rl; }
 .about-scroll-note span { display: inline-block; margin-top: 9px; font-size: 18px; }
