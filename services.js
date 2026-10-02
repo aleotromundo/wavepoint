@@ -52,7 +52,7 @@
       id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
       cardText: 'Elegí entre explorar bajo el agua, navegar la costa o combinar las dos experiencias.',
       description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
-      images: ['assets/legacy/conchal.jpg', 'assets/legacy/catalinas.jpg', 'assets/legacy/B_03.jpg'],
+      images: ['assets/legacy/conchal.jpg', 'assets/legacy/catalinas.jpg'],
       questions: [
         { id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
         { id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
@@ -65,7 +65,7 @@
       id: 'yoga', number: '06', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
       cardText: 'Encontrá una práctica que acompañe tu viaje, desde una primera vez hasta una sesión profunda.',
       description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
-      images: ['assets/legacy/OTAMA_HEAL_21.jpg', 'assets/legacy/IMG_1270.jpeg', 'assets/legacy/IMG_1271.jpeg'],
+      images: ['assets/legacy/OTAMA_HEAL_21.jpg'],
       questions: [
         { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
         { id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
