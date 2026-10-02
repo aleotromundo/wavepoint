@@ -17,7 +17,7 @@
       id: 'clases-de-surf', number: '02', eyebrow: 'AGUA · APRENDIZAJE', title: 'Clases de surf',
       cardText: 'Una primera ola, mejores bases o una habilidad puntual con instructores locales.',
       description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
-      images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/playa-ventanas.jpg', 'assets/legacy/surfskate.png'],
+      images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/clase-surf.jpeg'],
       questions: [
         { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
         { id: 'lesson_goal', label: '¿Qué te gustaría conseguir con la clase?', type: 'choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
@@ -28,7 +28,7 @@
       id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Surf coaching',
       cardText: 'Observación personalizada, objetivos concretos y herramientas para progresar en el agua.',
       description: 'El coaching empieza antes de entrar al agua: entendemos qué sentís que querés mejorar y armamos una sesión con foco. Durante la práctica observamos tu toma de decisiones, técnica y relación con la ola; después transformamos esas observaciones en indicaciones concretas. Podés sumar fotografías o videoanálisis para volver sobre la sesión y ver tu progreso con más claridad.',
-      images: ['assets/legacy/_GSK8664.jpg', 'assets/legacy/DSC_0258-5.jpeg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
+      images: ['assets/legacy/_GSK8664.jpg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
       questions: [
         { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
         { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Cuéntanos brevemente.' },
@@ -40,7 +40,7 @@
       id: 'roca-bruja', number: '04', eyebrow: 'SURF TRIP · AVENTURA', title: 'Surf trip a Roca Bruja',
       cardText: 'Planificá una salida a uno de los spots más especiales de la costa con logística local.',
       description: 'Roca Bruja exige mirar el mar, la logística y el grupo como un todo. Coordinamos la consulta con información sobre niveles, tablas y flexibilidad de fechas para que el operador pueda evaluar la salida de forma responsable. Las condiciones pueden pedir cambios: por eso este primer paso nos ayuda a buscar una ventana que tenga sentido para quienes viajan y para el océano.',
-      images: ['assets/legacy/bruja.jpg', 'assets/legacy/avellanas.jpg', 'assets/legacy/rincon.jpg'],
+      images: ['assets/legacy/bruja.jpg', 'assets/legacy/avellanas.jpg'],
       questions: [
         { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
         { id: 'own_boards', label: '¿Todos llevarán su propia tabla?', type: 'choice', options: ['Sí', 'No'] },
@@ -76,7 +76,7 @@
       id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
       cardText: 'Recorré los caminos de Guanacaste con una consulta previa sobre participantes y requisitos.',
       description: 'Los tours en ATV son una manera intensa y divertida de salir de la playa y conocer el paisaje alrededor de Tamarindo. Antes de recomendarte una opción, necesitamos entender cuántas personas quieren conducir, quiénes irían como acompañantes y qué edades tienen los conductores. WavePoint consulta estos datos con el operador para confirmar los requisitos de participación antes de avanzar.',
-      images: ['assets/legacy/Aerial_02.jpg', 'assets/legacy/lasbaulas.jpg', 'assets/legacy/danta1.jpg'],
+      images: ['assets/legacy/rincon.jpg'],
       questions: [
         { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
         { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -100,7 +100,7 @@
       id: 'fotos-surf', number: '09', eyebrow: 'SURF · FOTOGRAFÍA', title: 'Fotos de surf',
       cardText: 'Llevate un recuerdo de tu sesión con fotografías tomadas desde la playa.',
       description: 'Capturá tus mejores momentos en el agua con fotografías profesionales desde la orilla. Una forma de volver a mirar tus maniobras y llevarte imágenes de la sesión.',
-      images: ['assets/photo-service.jpg', 'assets/after-photos.jpg', 'assets/legacy/fotodesurf.jpg'],
+      images: ['assets/after-photos.jpg'],
       questions: [
         { id: 'surf_photo_date', label: '¿Qué día será la sesión?', type: 'dates', fields: ['Fecha'] },
         { id: 'surf_photo_group', label: '¿Cuántas personas quieren fotografiarse?', type: 'number' },
@@ -111,7 +111,7 @@
       id: 'fotografia-acuatica', number: '10', eyebrow: 'SURF · FOTOGRAFÍA EN EL AGUA', title: 'Fotografía acuática de surf',
       cardText: 'Imágenes de surf desde dentro del agua, en plena sesión.',
       description: 'Viví una sesión fotográfica dentro del agua. Fotógrafos especializados se sumergen para capturar la experiencia desde una perspectiva cercana a la ola.',
-      images: ['assets/legacy/fotoacuatica.jpg', 'assets/capitan.jpg'],
+      images: ['assets/legacy/fotoacuatica.jpg'],
       questions: [
         { id: 'water_photo_date', label: '¿Qué día será la sesión?', type: 'dates', fields: ['Fecha'] },
         { id: 'water_photo_group', label: '¿Cuántas personas participarían?', type: 'number' },
