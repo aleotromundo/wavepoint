@@ -2032,6 +2032,7 @@ body { background: #071c28; }
   line-height: 1.4;
   animation: assistant-greeting-in .55s cubic-bezier(.2,.8,.2,1) both;
 }
+.assistant-greeting { display: none; }
 
 .assistant-greeting::after { content: ""; position: absolute; right: 17px; bottom: -7px; width: 13px; height: 13px; border-right: 1px solid rgba(255,255,255,.72); border-bottom: 1px solid rgba(255,255,255,.72); background: #f5fbf8; transform: rotate(45deg); }
 .assistant-greeting button { flex: 0 0 auto; margin: -5px -5px 0 0; padding: 0 4px; border: 0; background: transparent; color: #54727a; font-size: 20px; line-height: 1; cursor: pointer; }
@@ -2501,9 +2502,9 @@ body { background: #071c28; }
 }
 
 /* Service catalog expansion: eight experiences and reusable request detail pages. */
-.service-offerings-eight { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.service-offerings-eight .service-offering { min-height: 236px; }
-.service-offerings-eight .service-offering img { min-height: 236px; }
+.service-offerings-catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-offerings-catalog .service-offering { min-height: 236px; }
+.service-offerings-catalog .service-offering img { min-height: 236px; }
 .service-page-heading .service-page-intro { max-width: 720px; margin: 14px 0 0; }
 .detail-hero { position: relative; isolation: isolate; display: flex; min-height: min(590px, 74svh); align-items: end; overflow: hidden; padding: 150px 0 72px; background: linear-gradient(90deg, rgba(3,22,31,.9), rgba(4,36,45,.54) 62%, rgba(6,40,48,.2)), var(--detail-hero) center/cover no-repeat; }
 .detail-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(4,24,33,.34), transparent 64%); }
@@ -2542,13 +2543,13 @@ body { background: #071c28; }
 .detail-form-note { margin: 10px 0 0; color: #789098; font-size: 11px; line-height: 1.45; text-align: center; }
 .detail-error { min-height: 16px; margin: 8px 0 0; color: #b23c3c; font-size: 12px; text-align: center; }
 @media (max-width: 980px) {
-  .service-offerings-eight { grid-template-columns: 1fr; }
+  .service-offerings-catalog { grid-template-columns: 1fr; }
   .detail-layout { grid-template-columns: 1fr; gap: 44px; }
   .detail-story { max-width: none; }
   .detail-request { position: static; max-width: 720px; }
 }
 @media (max-width: 640px) {
-  .service-offerings-eight .service-offering, .service-offerings-eight .service-offering img { min-height: 0; }
+  .service-offerings-catalog .service-offering, .service-offerings-catalog .service-offering img { min-height: 0; }
   .detail-hero { min-height: 500px; padding: 124px 0 54px; }
   .detail-hero-content { margin: 0 auto; }
   .detail-hero h1 { font-size: 62px; }
@@ -2561,10 +2562,10 @@ body { background: #071c28; }
   .detail-request h2 { font-size: 42px; }
   .detail-date-grid { grid-template-columns: 1fr; }
 }
-/* Homepage service catalog now mirrors the eight detailed experiences. */
-.service-grid-eight { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 980px) { .service-grid-eight { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) { .service-grid-eight { grid-template-columns: 1fr; } }
+/* Keep the homepage service grid aligned with the full service catalog. */
+.service-grid-catalog { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 980px) { .service-grid-catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .service-grid-catalog { grid-template-columns: 1fr; } }
 
 /* Persistent navigation across homepage, service catalog and detail pages. */
 .topbar, .service-topbar { position: fixed; inset: 0 0 auto 0; z-index: 100; pointer-events: none; }

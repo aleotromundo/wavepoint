@@ -28,7 +28,7 @@
       id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Surf coaching',
       cardText: 'Observación personalizada, objetivos concretos y herramientas para progresar en el agua.',
       description: 'El coaching empieza antes de entrar al agua: entendemos qué sentís que querés mejorar y armamos una sesión con foco. Durante la práctica observamos tu toma de decisiones, técnica y relación con la ola; después transformamos esas observaciones en indicaciones concretas. Podés sumar fotografías o videoanálisis para volver sobre la sesión y ver tu progreso con más claridad.',
-      images: ['assets/legacy/fotodesurf.jpg', 'assets/legacy/fotoacuatica.jpg', 'assets/legacy/clase-surf.jpeg'],
+      images: ['assets/legacy/_GSK8664.jpg', 'assets/legacy/DSC_0258-5.jpeg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
       questions: [
         { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
         { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Cuéntanos brevemente.' },
@@ -95,6 +95,39 @@
         { id: 'room_type', label: '¿Qué tipo de habitación prefieres?', type: 'choice', options: ['Compartida', 'Privada', 'Cualquiera de las dos'], optional: true },
         { id: 'retreat_needs', label: '¿Hay alguna necesidad de alimentación o alojamiento que debamos tener en cuenta?', type: 'textarea', placeholder: 'Opcional', optional: true }
       ]
+    },
+    {
+      id: 'fotos-surf', number: '09', eyebrow: 'SURF · FOTOGRAFÍA', title: 'Fotos de surf',
+      cardText: 'Llevate un recuerdo de tu sesión con fotografías tomadas desde la playa.',
+      description: 'Capturá tus mejores momentos en el agua con fotografías profesionales desde la orilla. Una forma de volver a mirar tus maniobras y llevarte imágenes de la sesión.',
+      images: ['assets/photo-service.jpg', 'assets/after-photos.jpg', 'assets/legacy/fotodesurf.jpg'],
+      questions: [
+        { id: 'surf_photo_date', label: '¿Qué día será la sesión?', type: 'dates', fields: ['Fecha'] },
+        { id: 'surf_photo_group', label: '¿Cuántas personas quieren fotografiarse?', type: 'number' },
+        { id: 'surf_photo_level', label: '¿Qué nivel de surf tienen?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] }
+      ]
+    },
+    {
+      id: 'fotografia-acuatica', number: '10', eyebrow: 'SURF · FOTOGRAFÍA EN EL AGUA', title: 'Fotografía acuática de surf',
+      cardText: 'Imágenes de surf desde dentro del agua, en plena sesión.',
+      description: 'Viví una sesión fotográfica dentro del agua. Fotógrafos especializados se sumergen para capturar la experiencia desde una perspectiva cercana a la ola.',
+      images: ['assets/legacy/fotoacuatica.jpg', 'assets/capitan.jpg'],
+      questions: [
+        { id: 'water_photo_date', label: '¿Qué día será la sesión?', type: 'dates', fields: ['Fecha'] },
+        { id: 'water_photo_group', label: '¿Cuántas personas participarían?', type: 'number' },
+        { id: 'water_photo_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] }
+      ]
+    },
+    {
+      id: 'surfskate', number: '11', eyebrow: 'SURF · ENTRENAMIENTO EN TIERRA', title: 'Clases de surfskate',
+      cardText: 'Practicá giros, estabilidad y fluidez fuera del agua.',
+      description: 'Mejorá tu estilo y técnica en tierra firme con sesiones de surfskate. Un entrenamiento para trabajar giros, estabilidad y fluidez antes de entrar al agua, para distintas edades y niveles.',
+      images: ['assets/legacy/surfskate.png'],
+      questions: [
+        { id: 'surfskate_level', label: '¿Qué experiencia tienes con el surfskate?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
+        { id: 'surfskate_goal', label: '¿Qué te gustaría trabajar?', type: 'textarea', placeholder: 'Opcional', optional: true },
+        { id: 'surfskate_own_board', label: '¿Tienes surfskate propio?', type: 'choice', options: ['Sí', 'No', 'Quiero consultar'], optional: true }
+      ]
     }
   ];
 
@@ -111,7 +144,7 @@
   }
   function render(service) {
     document.title = `${service.title} · WavePoint`;
-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / 08</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story"><p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div></article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${service.questions.map(question => renderQuestion(service, question)).join('')}<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label><label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
+    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / 11</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story"><p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div></article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${service.questions.map(question => renderQuestion(service, question)).join('')}<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label><label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
     document.getElementById('serviceRequestForm').addEventListener('submit', event => submitRequest(event, service));
   }
   function submitRequest(event, service) {
