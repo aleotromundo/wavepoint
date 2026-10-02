@@ -17,7 +17,7 @@
       id: 'clases-de-surf', number: '02', eyebrow: 'AGUA · APRENDIZAJE', title: 'Clases de surf',
       cardText: 'Una primera ola, mejores bases o una habilidad puntual con instructores locales.',
       description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
-      images: ['assets/legacy/clase-surf.jpeg', 'assets/legacy/Playa_23.jpg', 'assets/legacy/surfskate.png'],
+      images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/Playa_23.jpg', 'assets/legacy/surfskate.png'],
       questions: [
         { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
         { id: 'lesson_goal', label: '¿Qué te gustaría conseguir con la clase?', type: 'choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
