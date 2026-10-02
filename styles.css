@@ -2569,6 +2569,7 @@ body { background: #071c28; }
 /* Persistent navigation across homepage, service catalog and detail pages. */
 .topbar, .service-topbar { position: fixed; inset: 0 0 auto 0; z-index: 100; pointer-events: none; }
 .topbar > *, .service-topbar > *, .topbar .nav, .service-topbar .nav { pointer-events: auto; }
+.topbar > .instagram-link { display: none; }
 .site-shared-header .nav { min-height: 56px; }
 .shared-brand, .mobile-panel-head > img { display: none; }
 .shared-brand img { width: auto; height: 42px; object-fit: contain; }
@@ -2602,7 +2603,7 @@ body { background: #071c28; }
 /* About page: editorial story built from the original WavePoint content. */
 .about-page { background: #f0f5f2; color: #12313b; }
 .about-hero { position: relative; isolation: isolate; min-height: min(720px, 86svh); display: flex; align-items: end; overflow: hidden; padding: 170px 0 86px; color: #f5fbf8; background: #092b3b; }
-.about-hero-image { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(3,22,31,.88), rgba(4,43,53,.56) 56%, rgba(4,43,53,.18)), url('../assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg') center 42%/cover no-repeat; transform: scale(1.015); }
+.about-hero-image { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(3,22,31,.88), rgba(4,43,53,.56) 56%, rgba(4,43,53,.18)), url('assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg') center 42%/cover no-repeat; transform: scale(1.015); }
 .about-hero::after { content: ""; position: absolute; inset: auto 0 0; z-index: -1; height: 180px; background: linear-gradient(0deg, #f0f5f2, transparent); }
 .about-hero-inner { width: 100%; max-width: 900px; margin-left: max(21px, calc((100vw - 1180px) / 2)); }
 .about-kicker, .about-label { margin: 0 0 14px; color: #168f8b; font-size: 11px; font-weight: 800; letter-spacing: .13em; }
@@ -2616,14 +2617,14 @@ body { background: #071c28; }
 .about-opening-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: start; }
 .about-quote-wrap { padding-top: 10px; }
 .about-quote-mark { display: block; height: 58px; color: #0e9a91; font: 800 100px/.7 Georgia, serif; }
-.about-quote { max-width: 420px; margin: 12px 0 0; color: #0d3744; font: 700 clamp(34px, 4.2vw, 57px)/.98 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.015em; }
+.about-quote { max-width: 420px; margin: 12px 0 0; color: #0d3744; font: 500 clamp(34px, 4.2vw, 57px)/.98 "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; }
 .about-opening-copy { max-width: 650px; padding-top: 16px; }
 .about-opening-copy > p:last-child, .about-story-copy > p:not(.about-label), .about-closing-grid > div:last-child > p { margin: 0; color: #4a646c; font-size: 17px; line-height: 1.75; }
 .about-story { padding: 100px 0; background: linear-gradient(135deg, #092c3b, #12434a 62%, #0a2e3e); color: #effaf6; }
 .about-story-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: center; }
 .about-story-copy { max-width: 670px; }
 .about-story-copy .about-label, .about-closing .about-label { color: #99e5d8; }
-.about-story-copy h2, .about-gallery-heading h2, .about-closing h2 { margin: 0 0 20px; font: 700 clamp(44px, 6vw, 74px)/.9 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.02em; }
+.about-story-copy h2, .about-gallery-heading h2, .about-closing h2 { margin: 0 0 20px; font: 500 clamp(44px, 6vw, 74px)/.94 "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; }
 .about-story-copy > p:not(.about-label) { color: rgba(235,248,242,.76); }
 .about-text-link { display: inline-flex; gap: 10px; margin-top: 28px; color: #b4efdf; font-size: 14px; font-weight: 800; }
 .about-stat-stack { display: grid; gap: 11px; }
