@@ -2553,3 +2553,36 @@ body { background: #071c28; }
 .service-grid-eight { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 980px) { .service-grid-eight { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .service-grid-eight { grid-template-columns: 1fr; } }
+
+/* Persistent navigation across homepage, service catalog and detail pages. */
+.topbar, .service-topbar { position: fixed; inset: 0 0 auto 0; z-index: 100; pointer-events: none; }
+.topbar > *, .service-topbar > *, .topbar .nav, .service-topbar .nav { pointer-events: auto; }
+.site-shared-header .nav { min-height: 56px; }
+.shared-brand { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.shared-brand img { width: auto; height: 42px; object-fit: contain; }
+.service-topbar .nav { width: min(1180px, calc(100% - 42px)); margin: 0 auto; }
+.service-topbar .navlinks { margin-left: auto; }
+.service-topbar .hamb { display: none; }
+.service-page-hero, .detail-hero { padding-top: 170px; }
+/* Preserve the whole photograph inside its frame instead of cropping the subject. */
+.service-img img, .service-offering img, .detail-gallery img, .collab-gallery img { object-fit: contain; background: #0a2c3b; }
+.service-img { background: #0a2c3b; }
+.service-img img { height: 100%; }
+.service-offering img { background: #061d2a; }
+.detail-gallery img { height: auto; min-height: 188px; aspect-ratio: auto; }
+.detail-gallery img:first-child { height: auto; min-height: 0; }
+.collab-gallery img { height: auto; min-height: 190px; }
+@media (max-width: 980px) {
+  .topbar, .service-topbar { padding-top: 10px; }
+  .service-topbar .nav { width: 46px; min-width: 46px; margin-right: 14px; margin-left: auto; padding: 0; background: transparent; border: 0; box-shadow: none; }
+  .service-topbar .navlinks { display: none; }
+  .service-topbar .hamb { display: block; }
+  .site-shared-header .shared-brand { display: none; }
+  .service-page-hero, .detail-hero { padding-top: 140px; }
+}
+@media (max-width: 640px) {
+  .shared-brand img { height: 36px; }
+  .service-img img { height: auto; min-height: 190px; }
+  .service-offering img { height: auto; min-height: 190px; }
+  .detail-gallery img, .detail-gallery img:first-child, .collab-gallery img { min-height: 0; height: auto; }
+}
