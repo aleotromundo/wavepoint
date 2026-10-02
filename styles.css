@@ -2549,3 +2549,7 @@ body { background: #071c28; }
   .detail-request h2 { font-size: 42px; }
   .detail-date-grid { grid-template-columns: 1fr; }
 }
+/* Homepage service catalog now mirrors the eight detailed experiences. */
+.service-grid-eight { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 980px) { .service-grid-eight { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .service-grid-eight { grid-template-columns: 1fr; } }
