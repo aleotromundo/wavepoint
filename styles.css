@@ -211,6 +211,7 @@
       gap:8px;
     }
     .mobile-menu a,
+    .mobile-dropdown-link,
     .mobile-dropdown-toggle {
       display:flex;
       align-items:center;
@@ -225,15 +226,27 @@
       letter-spacing:.02em;
     }
     .mobile-dropdown-toggle {
-      width:100%;
+      width:46px;
       border:0;
-      text-align:left;
+      justify-content:center;
       cursor:pointer;
       font-family:inherit;
+      border-left:1px solid rgba(255,255,255,.12);
+      border-radius:0 14px 14px 0;
+    }
+    .mobile-dropdown {
+      display:flex;
+      flex-wrap:wrap;
+      gap:0;
+    }
+    .mobile-dropdown-link {
+      flex:1;
+      border-radius:14px 0 0 14px;
     }
     .mobile-dropdown.is-open .mobile-dropdown-toggle { background:rgba(255,255,255,.12); }
     .mobile-submenu {
       display:none;
+      flex-basis:100%;
       gap:6px;
       margin:6px 0 0 12px;
       padding-left:10px;
