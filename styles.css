@@ -2397,7 +2397,7 @@ body { background: #071c28; }
 .ally-tile:hover { transform: translateY(-3px); background: rgba(255, 255, 255, .18); }
 .ally-tile img { width: 58px; height: 58px; flex: 0 0 58px; border-radius: 9px; object-fit: cover; }
 .ally-tile span { display: grid; min-width: 0; gap: 3px; }
-.ally-tile strong { overflow: hidden; font-family: "Barlow Condensed", Impact, sans-serif; font-size: 20px; line-height: .95; text-overflow: ellipsis; white-space: nowrap; }
+.ally-tile strong { display: block; overflow: visible; font-family: "Barlow Condensed", Impact, sans-serif; font-size: 20px; line-height: .95; white-space: normal; overflow-wrap: normal; }
 .ally-tile small { color: #a0e7d8; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .ally-sponsor { border-color: rgba(255, 208, 106, .45); }
 .ally-sponsor small { color: #ffd477; }
