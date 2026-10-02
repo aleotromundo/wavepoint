@@ -1,5 +1,6 @@
 
   const CR_TZ='America/Costa_Rica';
+  const reducedMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
   // Catálogo incremental de book requests: solo contiene servicios y preguntas confirmados por el cliente.
   const BOOKING_SERVICES = [
     {
@@ -38,17 +39,29 @@
   function formatTimeCR(date=new Date()){ const locale = languageState.current === 'en' ? 'en-US' : 'es-CR'; return new Intl.DateTimeFormat(locale,{hour:'2-digit',minute:'2-digit',timeZone:CR_TZ}).format(date); }
   function weatherText(code,isDay){ const day=Number(isDay)===1; const spanishMap={0:day?['☀️','Soleado']:['🌙','Noche despejada'],1:day?['🌤️','Mayormente despejado']:['🌙','Noche mayormente despejada'],2:day?['⛅','Parcialmente nublado']:['☁️','Nublado de noche'],3:['☁️','Nublado'],45:['🌫️','Neblina'],48:['🌫️','Neblina'],51:day?['🌦️','Llovizna ligera']:['🌧️','Llovizna nocturna'],53:day?['🌦️','Llovizna']:['🌧️','Llovizna nocturna'],55:day?['🌧️','Llovizna fuerte']:['🌧️','Llovizna fuerte nocturna'],61:day?['🌦️','Lluvia ligera']:['🌧️','Lluvia nocturna'],63:day?['🌧️','Lluvia']:['🌧️','Lluvia nocturna'],65:day?['🌧️','Lluvia fuerte']:['🌧️','Lluvia fuerte nocturna'],80:day?['🌦️','Chubascos']:['🌧️','Chubascos nocturnos'],81:day?['🌧️','Chubascos']:['🌧️','Chubascos nocturnos'],82:['⛈️','Chubascos fuertes'],95:['⛈️','Tormenta'],96:['⛈️','Tormenta con granizo'],99:['⛈️','Tormenta fuerte']}; const englishMap={0:day?['☀️','Sunny']:['🌙','Clear night'],1:day?['🌤️','Mostly sunny']:['🌙','Mostly clear night'],2:day?['⛅','Partly cloudy']:['☁️','Cloudy night'],3:['☁️','Cloudy'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:day?['🌦️','Light drizzle']:['🌧️','Night drizzle'],53:day?['🌦️','Drizzle']:['🌧️','Night drizzle'],55:day?['🌧️','Heavy drizzle']:['🌧️','Heavy night drizzle'],61:day?['🌦️','Light rain']:['🌧️','Night rain'],63:day?['🌧️','Rain']:['🌧️','Night rain'],65:day?['🌧️','Heavy rain']:['🌧️','Heavy night rain'],80:day?['🌦️','Showers']:['🌧️','Night showers'],81:day?['🌧️','Showers']:['🌧️','Night showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Severe storm']}; const map = languageState.current === 'en' ? englishMap : spanishMap; return map[code] || (day?['🌤️','Variable conditions']:['🌙','Night conditions']); }
   function weatherMotion(code,isDay){ const value=Number(code); if(Number(isDay)!==1) return 'night'; if([95,96,99].includes(value)) return 'storm'; if([51,53,55,61,63,65,80,81,82].includes(value)) return 'rain'; if([45,48].includes(value)) return 'mist'; if([1,2,3].includes(value)) return 'clouds'; return 'sun'; }
-  function weatherIllustration(condition){
-    const art={
-      sun:'<circle class="weather-sun" cx="78" cy="35" r="18"/><path class="weather-ray" d="M78 7v7m0 42v7M50 35h7m42 0h7M58 15l5 5m30 30 5 5m0-40-5 5m-30 30-5 5"/><path class="weather-cloud" d="M21 72h71a16 16 0 0 0 0-32 25 25 0 0 0-47-3 18 18 0 0 0-24 35Z"/>',
-      clouds:'<path class="weather-cloud-back" d="M43 48h49a14 14 0 0 0 0-28 22 22 0 0 0-42-2 15 15 0 0 0-7 30Z"/><path class="weather-cloud" d="M18 75h77a17 17 0 0 0 0-34 27 27 0 0 0-51-4 19 19 0 0 0-26 38Z"/>',
-      rain:'<path class="weather-cloud" d="M18 55h77a17 17 0 0 0 0-34 27 27 0 0 0-51-4 19 19 0 0 0-26 38Z"/><path class="weather-drop" d="m37 67-5 12m25-12-5 12m25-12-5 12"/>',
-      storm:'<path class="weather-storm-cloud" d="M18 53h77a17 17 0 0 0 0-34 27 27 0 0 0-51-4 19 19 0 0 0-26 38Z"/><path class="weather-bolt" d="m63 49-15 23h13l-5 17 22-29H64l8-11Z"/>',
-      mist:'<path class="weather-cloud" d="M24 47h69a15 15 0 0 0 0-30 23 23 0 0 0-44-3 17 17 0 0 0-25 33Z"/><path class="weather-mist" d="M23 63h70M34 75h57M44 87h40"/>',
-      night:'<path class="weather-moon" d="M79 13a29 29 0 1 0 28 41A25 25 0 0 1 79 13Z"/><circle class="weather-star" cx="36" cy="38" r="2"/><circle class="weather-star" cx="53" cy="21" r="1.5"/><circle class="weather-star" cx="31" cy="58" r="1.5"/>'
-    };
-    return `<svg viewBox="0 0 120 96" aria-hidden="true">${art[condition] || art.sun}</svg>`;
+  function weatherIconName(code,isDay){
+    const value=Number(code), day=Number(isDay)===1, time=day?'day':'night';
+    if(value===0) return `clear-${time}`;
+    if(value===1) return `mostly-clear-${time}`;
+    if(value===2) return `partly-cloudy-${time}`;
+    if(value===3) return `overcast-${time}`;
+    if([45,48].includes(value)) return `fog-${time}`;
+    if([51,53,55].includes(value)) return `partly-cloudy-${time}-drizzle`;
+    if([61,63,65,80,81,82].includes(value)) return `partly-cloudy-${time}-rain`;
+    if([95,96,99].includes(value)) return `thunderstorms-${time}-rain`;
+    return `mostly-clear-${time}`;
   }
+  function setMeteoconIcon(element,iconName=element?.dataset.meteocon){
+    if(!element || !iconName) return;
+    element.dataset.meteocon=iconName;
+    const image=document.createElement('img');
+    image.alt='';
+    image.src=`assets/meteocons/${iconName}${reducedMotionPreference.matches?'-static':''}.svg`;
+    element.replaceChildren(image);
+  }
+  const updateMeteocons=()=>document.querySelectorAll('[data-meteocon]').forEach(element=>setMeteoconIcon(element));
+  if(reducedMotionPreference.addEventListener) reducedMotionPreference.addEventListener('change',updateMeteocons);
+  else reducedMotionPreference.addListener?.(updateMeteocons);
   //function applyCameraState(){ const live=isCameraLiveNow(); document.body.classList.toggle('night', !live); document.querySelectorAll('.live-badge').forEach(b=>{ b.textContent=live?'● En vivo':'☾ Descanso'; b.classList.toggle('rest', !live); }); document.getElementById('cameraNightNotice').classList.toggle('show', !live); }
   
   function applyCameraState(){
@@ -96,6 +109,7 @@
     const lat=10.2993, lon=-85.8371;
     const icon=document.getElementById('weatherIcon');
     if(!icon || !document.getElementById('temp')) return;
+    setMeteoconIcon(document.getElementById('waveIcon'),'water-tide-high');
     try{
       const [wRes,mRes]=await Promise.all([
         fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,is_day,wind_speed_10m&timezone=America%2FCosta_Rica`),
@@ -107,7 +121,7 @@
       icon.dataset.conditionCode=cur.weather_code ?? 0;
       icon.dataset.isDay=cur.is_day ?? 1;
       icon.dataset.condition=weatherMotion(cur.weather_code,cur.is_day);
-      icon.innerHTML=weatherIllustration(icon.dataset.condition);
+      setMeteoconIcon(icon,weatherIconName(cur.weather_code,cur.is_day));
       document.getElementById('temp').textContent=Math.round(cur.temperature_2m??0);
       document.getElementById('weatherState').textContent=label;
       document.getElementById('wind').textContent=Math.round(cur.wind_speed_10m??0);
@@ -117,7 +131,7 @@
     } catch(e){
       const isDay=isCameraLiveNow();
       icon.dataset.condition=isDay?'clouds':'night';
-      icon.innerHTML=weatherIllustration(icon.dataset.condition);
+      setMeteoconIcon(icon,isDay?'mostly-clear-day':'mostly-clear-night');
       document.getElementById('weatherState').textContent=isDay?'Condiciones disponibles':'Noche en Tamarindo';
       document.getElementById('localTime').textContent=formatTimeCR();
       document.getElementById('updatedText').textContent='Sin conexión al clima';
@@ -172,6 +186,27 @@
       serviceSurfskate: 'Clases de surfskate',
       serviceSurfskateText: 'Mejora técnica y fluidez fuera del agua.',
       serviceMoreInfo: 'Más información →',
+      serviceCardStayTitle: 'Alojamiento y experiencias',
+      serviceCardStayText: 'Encontrá dónde dormir y qué sumar a tu viaje.',
+      serviceCardStayAlt: 'Alojamiento y experiencias en Tamarindo',
+      serviceCardCoachingTitle: 'Surf coaching',
+      serviceCardCoachingText: 'Llevá tu surf al siguiente nivel con entrenamiento personalizado.',
+      serviceCardWitchRockTitle: 'Surf trip a Roca Bruja',
+      serviceCardWitchRockText: 'Una salida especial a uno de los spots de la costa.',
+      serviceCardSnorkelTitle: 'Snorkel y catamarán',
+      serviceCardSnorkelText: 'Explorá bajo el agua, navegá la costa o combiná ambas.',
+      serviceCardYogaTitle: 'Yoga',
+      serviceCardYogaText: 'Una práctica para acompañar tu viaje y bajar el ritmo.',
+      serviceCardAtvTitle: 'Tours en cuatriciclo — ATV',
+      serviceCardAtvText: 'Recorré los caminos de Guanacaste con operadores locales.',
+      serviceCardRetreatsTitle: 'Retiros',
+      serviceCardRetreatsText: 'Surf, descanso, movimiento y comunidad en un mismo viaje.',
+      serviceCardPhotosTitle: 'Fotos de surf',
+      serviceCardPhotosText: 'Guardá los mejores momentos de tu sesión en imágenes.',
+      serviceCardWaterPhotoTitle: 'Fotografía acuática',
+      serviceCardWaterPhotoText: 'Una perspectiva dentro del agua para volver a vivir la sesión.',
+      serviceCardSurfskateTitle: 'Clases de surfskate',
+      serviceCardSurfskateText: 'Trabajá giros, estabilidad y fluidez fuera del agua.',
       wavepointInTamarindo: 'WavePoint en Tamarindo',
       wavepointInTamarindoSubtitle: 'Información útil para elegir mejor tu spot, planear tu sesión y moverte en Tamarindo.',
       benefitLiveCameras: 'Cámaras reales',
@@ -353,6 +388,27 @@
       serviceSurfskate: 'Surfskate lessons',
       serviceSurfskateText: 'Improve technique and flow off the water.',
       serviceMoreInfo: 'More info →',
+      serviceCardStayTitle: 'Stays and experiences',
+      serviceCardStayText: 'Find a place to stay and experiences to add to your trip.',
+      serviceCardStayAlt: 'Stays and experiences in Tamarindo',
+      serviceCardCoachingTitle: 'Surf coaching',
+      serviceCardCoachingText: 'Take your surfing to the next level with personalized coaching.',
+      serviceCardWitchRockTitle: 'Surf trip to Witch Rock',
+      serviceCardWitchRockText: 'A special trip to one of the coast’s standout surf spots.',
+      serviceCardSnorkelTitle: 'Snorkeling and catamaran',
+      serviceCardSnorkelText: 'Explore underwater, sail along the coast, or combine both.',
+      serviceCardYogaTitle: 'Yoga',
+      serviceCardYogaText: 'A practice to complement your trip and slow things down.',
+      serviceCardAtvTitle: 'ATV tours',
+      serviceCardAtvText: 'Explore Guanacaste’s trails with local operators.',
+      serviceCardRetreatsTitle: 'Retreats',
+      serviceCardRetreatsText: 'Surf, rest, movement, and community in one trip.',
+      serviceCardPhotosTitle: 'Surf photos',
+      serviceCardPhotosText: 'Keep the best moments from your session in photos.',
+      serviceCardWaterPhotoTitle: 'In-water photography',
+      serviceCardWaterPhotoText: 'Relive your session through photos taken in the water.',
+      serviceCardSurfskateTitle: 'Surfskate lessons',
+      serviceCardSurfskateText: 'Work on turns, stability, and flow on land.',
       wavepointInTamarindo: 'WavePoint in Tamarindo',
       wavepointInTamarindoSubtitle: 'Useful information to choose your spot better, plan your session, and move around Tamarindo.',
       benefitLiveCameras: 'Real cameras',
@@ -502,6 +558,10 @@
     document.querySelectorAll('[data-i18n-placeholder]').forEach(node => {
       const value = dict[node.dataset.i18nPlaceholder];
       if (value) node.setAttribute('placeholder', value);
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(node => {
+      const value = dict[node.dataset.i18nAlt];
+      if (value) node.setAttribute('alt', value);
     });
 
     const langToggle = document.querySelector('[data-lang-toggle]');
@@ -896,14 +956,18 @@
     const selector = '.section-head, .camera-card, .service-card, .benefit, .guide-card, .active-sponsor-card, .partner-card, .after-card, .promo-card, .newsletter-grid > *';
     const items = [...document.querySelectorAll(selector)];
     const observer = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>entry.target.classList.toggle('is-visible', entry.isIntersecting));
-    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+      entries.forEach(entry=>{
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, {threshold:0, rootMargin:'0px 0px 40% 0px'});
 
     items.forEach(item=>{
       const siblings=[...item.parentElement.children].filter(sibling=>sibling.matches(selector));
       const siblingIndex=Math.max(0, siblings.indexOf(item));
-      item.style.setProperty('--reveal-delay', `${siblingIndex * 75}ms`);
-      item.style.setProperty('--reveal-x', siblingIndex % 2 === 0 ? '-72px' : '72px');
+      item.style.setProperty('--reveal-delay', `${siblingIndex * 45}ms`);
+      item.style.setProperty('--reveal-x', siblingIndex % 2 === 0 ? '-28px' : '28px');
       item.classList.add('scroll-reveal');
       observer.observe(item);
     });
