@@ -1,5 +1,37 @@
 
   const CR_TZ='America/Costa_Rica';
+  // Catálogo incremental de book requests: solo contiene servicios y preguntas confirmados por el cliente.
+  const BOOKING_SERVICES = [
+    {
+      id: 'alojamiento-experiencias',
+      name: 'Alojamiento y experiencias',
+      questions: [
+        { id: 'stay_dates', label: '¿Cuándo quieres alojarte?', type: 'date-range', fields: ['llegada', 'salida'] },
+        { id: 'accommodation_type', label: '¿Qué tipo de alojamiento prefieres?', type: 'single-choice', options: ['Habitación', 'Casa completa', 'Quiero recomendaciones'] },
+        { id: 'nightly_budget', label: '¿Cuál es tu presupuesto aproximado por noche para todo el grupo?', type: 'money', optional: true, fields: ['importe', 'moneda'] },
+        { id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi-choice', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'] }
+      ]
+    },
+    {
+      id: 'clases-de-surf',
+      name: 'Clases de surf',
+      questions: [
+        { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'single-choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
+        { id: 'lesson_goal', label: '¿Qué te gustaría conseguir con la clase?', type: 'single-choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
+        { id: 'board_need', label: '¿Necesitarás una tabla?', type: 'single-choice', options: ['Sí', 'No', 'Llevo la mía', 'Necesito asesoramiento'] }
+      ]
+    },
+    {
+      id: 'surf-coaching',
+      name: 'Surf coaching',
+      questions: [
+        { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'single-choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
+        { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'long-text', placeholder: 'Cuéntanos brevemente.' },
+        { id: 'coaching_package', label: '¿Qué te gustaría incluir?', type: 'single-choice', options: ['Solo coaching', 'Coaching y fotografías', 'Coaching y videoanálisis', 'Coaching, fotografías y videoanálisis'] },
+        { id: 'own_board', label: '¿Traerás tu propia tabla?', type: 'single-choice', options: ['Sí', 'No'] }
+      ]
+    }
+  ];
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
   function getCRDate(){ return new Date(new Date().toLocaleString('en-US',{timeZone:CR_TZ})); }
   function isCameraLiveNow(){ const d=getCRDate(); const m=d.getHours()*60+d.getMinutes(); return m>=CAM_START.hour*60+CAM_START.minute && m<=CAM_END.hour*60+CAM_END.minute; }
