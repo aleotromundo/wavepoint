@@ -2377,3 +2377,36 @@ body { background: #071c28; }
   .collab-layout { grid-template-columns: 1fr; gap: 34px; }
   .collab-content { padding: 56px 0 70px; }
 }
+
+/* Compact sponsor rail directly below the hero. */
+.allies-ticker {
+  padding: 24px 0 28px;
+  overflow: hidden;
+  background: #082b3a;
+  color: #f4fbf8;
+}
+.allies-ticker-head { position: relative; z-index: 1; }
+.allies-ticker .section-head, .allies-ticker-head .section-sub { margin-bottom: 10px; }
+.allies-ticker .section-title { margin-bottom: 3px; color: #f4fbf8; font-size: clamp(24px, 3vw, 34px); }
+.allies-ticker .section-sub { max-width: 760px; color: rgba(234, 247, 242, .7); font-size: 13px; }
+.allies-ticker .sq { background: #48d7c1; }
+.allies-ticker-viewport { width: 100%; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.allies-ticker-track { display: flex; width: max-content; animation: allies-slide-left 34s linear infinite; }
+.allies-ticker-set { display: flex; gap: 12px; padding-right: 12px; }
+.ally-tile { display: flex; align-items: center; gap: 10px; width: 194px; height: 74px; padding: 8px 12px 8px 8px; flex: 0 0 auto; border: 1px solid rgba(160, 231, 216, .2); border-radius: 12px; background: rgba(255, 255, 255, .1); color: #f4fbf8; transition: transform .2s ease, background .2s ease; }
+.ally-tile:hover { transform: translateY(-3px); background: rgba(255, 255, 255, .18); }
+.ally-tile img { width: 58px; height: 58px; flex: 0 0 58px; border-radius: 9px; object-fit: cover; }
+.ally-tile span { display: grid; min-width: 0; gap: 3px; }
+.ally-tile strong { overflow: hidden; font-family: "Barlow Condensed", Impact, sans-serif; font-size: 20px; line-height: .95; text-overflow: ellipsis; white-space: nowrap; }
+.ally-tile small { color: #a0e7d8; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.ally-sponsor { border-color: rgba(255, 208, 106, .45); }
+.ally-sponsor small { color: #ffd477; }
+@keyframes allies-slide-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
+.allies-ticker:hover .allies-ticker-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .allies-ticker-track { animation: none; } }
+@media (max-width: 640px) {
+  .allies-ticker { padding: 20px 0 24px; }
+  .ally-tile { width: 170px; height: 66px; }
+  .ally-tile img { width: 50px; height: 50px; flex-basis: 50px; }
+  .ally-tile strong { font-size: 18px; }
+}
