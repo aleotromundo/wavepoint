@@ -1,5 +1,12 @@
 ## 2026-10-03
 
+### Vidrio oscuro definitivo del panel del clima
+
+- `styles.css`: retirar el rojo de comprobación y establecer el panel `.weather-card` en azul negro translúcido (`rgba(3, 14, 22, .56)`), conservando el desenfoque, el borde y las sombras; las filas internas vuelven a un blanco muy sutil.
+- El fondo del hero ahora puede percibirse a través del panel sin perder la lectura de los valores meteorológicos.
+
+## 2026-10-03
+
 ### Panel del clima visible en rojo
 
 - `styles.css`: aplicar un fondo rojo semitransparente al panel `.weather-card` y un rojo más oscuro a sus filas internas, a pedido del usuario, para que el cambio visual se perciba claramente en el sitio.
