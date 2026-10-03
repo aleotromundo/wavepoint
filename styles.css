@@ -1914,6 +1914,11 @@ html { scroll-padding-top: 0; }
   .logo-wave-aura::after { animation: none; }
 }
 
+.hero-logo-wrap.is-user-replay {
+  animation: logo-wave-arrive .85s cubic-bezier(.2, .8, .25, 1) both;
+  transform-origin: center bottom;
+}
+
 body { background: #071c28; }
 
 #camaras {

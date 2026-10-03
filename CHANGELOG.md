@@ -37,3 +37,5 @@ Este archivo registra cambios funcionales y visuales del sitio para conservar de
 La comparacion de Git del 2026-10-02 no encontro una eliminacion global de keyframes. La unica retirada CSS de movimiento del clima fue el flotado del contenedor Meteocons, reemplazado por la animacion dentro de los SVG. Los reveals se acortaron y pasaron a una sola pasada para evitar que las tarjetas quedaran invisibles al salir del viewport.
 
 La revision historica tambien detecto que el flotado CSS del contenedor Meteocons se habia quitado al migrar el icono. Se restauro `weather-float` (3.2 s) en movimiento normal; `prefers-reduced-motion` lo sigue desactivando. El ripple continuo del logo y las animaciones de fondo permanecen en CSS.
+
+En `prefers-reduced-motion`, el logo no entra ni mueve el aura automaticamente, pero el control accesible "Volver a animar el logo WavePoint" conserva su accion: una activacion explicita ejecuta una entrada breve.

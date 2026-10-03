@@ -1029,15 +1029,16 @@
 
   function bindHeroLogoEntrance(){
     const logo=document.querySelector('.hero-logo-wrap');
-    if(!logo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if(!logo) return;
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const replay=()=>{
-      logo.classList.remove('is-arriving');
+      logo.classList.remove('is-arriving','is-user-replay');
       void logo.offsetWidth;
-      logo.classList.add('is-arriving');
+      logo.classList.add(reduceMotion.matches?'is-user-replay':'is-arriving');
     };
 
-    logo.classList.add('is-arriving');
+    if(!reduceMotion.matches) logo.classList.add('is-arriving');
     logo.addEventListener('click', replay);
     logo.addEventListener('keydown', e=>{
       if(e.key==='Enter' || e.key===' '){
@@ -1047,7 +1048,7 @@
     });
     document.querySelectorAll('a[href="#inicio"]').forEach(link=>link.addEventListener('click', replay));
 
-    if('IntersectionObserver' in window){
+    if('IntersectionObserver' in window && !reduceMotion.matches){
       let firstObservation=true;
       const observer=new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
