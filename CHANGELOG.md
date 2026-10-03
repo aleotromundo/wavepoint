@@ -8,6 +8,22 @@
 
 ## 2026-10-03
 
+## 2026-10-03
+
+### Primer retiro de enlaces al sitio antiguo
+
+- Auditoría completa del repositorio: las únicas referencias al dominio `wavepointcr.com` eran el enlace de cámaras, el enlace Home del footer y un adaptador JavaScript para rutas antiguas.
+- `index.html`: cambiar el enlace de cámaras a `#camaras` y el Home a `index.html`, evitando salir del sitio nuevo.
+- `script.js`: actualizar los textos bilingües de ese enlace y retirar el adaptador JavaScript que dependía del dominio viejo. Las rutas puente `Enlaces/service.html` y `Enlaces/guia-playas.html` se conservan para no romper enlaces existentes.
+- Se mantienen intactos los enlaces externos necesarios a Instagram, WhatsApp, Google Maps, Castr y sitios de colaboradores.
+
+### Validación
+
+- Auditoría final sin referencias a `wavepointcr.com` en código o HTML activo.
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Título y descripción de Servicios más visibles
 
 - `styles.css`: aumentar ligeramente el tamaño del título y la descripción de Servicios tanto en `index.html#servicios` como en `service.html#servicios`.

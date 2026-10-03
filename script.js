@@ -142,7 +142,7 @@
       cameraViewCollaborator: 'Ver colaborador',
       camerasSectionTitle: 'Cámaras en vivo',
       camerasSectionSubtitle: 'Tres puntos clave: dos cámaras activas y Red Door en preparación.',
-      camerasSectionLink: 'Ir al sitio actual →',
+      camerasSectionLink: 'Ver cámaras en vivo →',
       servicesSectionTitle: '¿Qué te gustaría hacer en Tamarindo?',
       servicesSectionSubtitle: 'Elegí una experiencia para ver los detalles. Cuando estés listo, envianos tu fecha preferida.',
       serviceSurfLessons: 'Clases de surf',
@@ -337,7 +337,7 @@
       cameraViewCollaborator: 'View collaborator',
       camerasSectionTitle: 'Live cameras',
       camerasSectionSubtitle: 'Three key spots: two active cameras and Red Door still coming.',
-      camerasSectionLink: 'Go to the current site →',
+      camerasSectionLink: 'View live cameras →',
       servicesSectionTitle: 'What would you like to do in Tamarindo?',
       servicesSectionSubtitle: 'Choose an experience to see the details. When you’re ready, send us your preferred date.',
       serviceSurfLessons: 'Surf lessons',
@@ -560,13 +560,6 @@
       applyTranslations(nextLang);
     });
   }
-
-  document.querySelectorAll('a[href]').forEach(link=>{
-    const target=new URL(link.href,location.href);
-    if(target.hostname!=='wavepointcr.com') return;
-    if(target.pathname.toLowerCase().endsWith('/enlaces/service.html')) link.href='service.html';
-    if(target.pathname.toLowerCase().endsWith('/enlaces/guia-playas.html')) link.href='guia-playas.html';
-  });
 
   const SPOTS = {
     capitan: {
