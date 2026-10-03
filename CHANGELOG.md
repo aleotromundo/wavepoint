@@ -4,6 +4,21 @@
 
 ## 2026-10-03
 
+## 2026-10-03
+
+### Copy de Servicios sincronizado en inicio y catálogo
+
+- `script.js`: aplicar el mismo título y descripción bilingües también a las claves `servicesSectionTitle` y `servicesSectionSubtitle` que usa `index.html#servicios`.
+- Motivo: el cambio anterior estaba en `service.html`, mientras que el enlace principal **Servicios** del sitio lleva a la sección de servicios de `index.html`.
+- Ambas ubicaciones muestran ahora el mismo copy en español e inglés.
+
+### Validación
+
+- Confirmadas las claves para `index.html` y `service.html`.
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Nuevo encabezado del catálogo de Servicios
 
 - `service.html`: reemplazar el título de la sección por **“¿Qué te gustaría hacer en Tamarindo?”** y dejar una sola descripción orientada a elegir una experiencia y enviar la fecha preferida.
