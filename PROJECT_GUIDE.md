@@ -18,6 +18,7 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
 | Guía turística | `guia-playas.html` | Playas, spots y experiencias de Guanacaste. |
 | Páginas de colaboradores | `Enlaces/*.html` | Fichas individuales de aliados locales. |
 | Comportamiento global | `script.js` | Traducciones, clima, cámaras, idioma, navegación, animaciones, asistente y modales. |
+| Selector de idioma | `lang-switch.js` | Selector ES/EN presente en todas las páginas, idioma guardado en `localStorage` y traducción de navegación y pie compartidos. |
 | Estilos globales | `styles.css` | Diseño, responsive, animaciones, tarjetas, fondos y accesibilidad visual. |
 | Datos de servicios | `services.js` | Catálogo, descripciones, imágenes, preguntas y formularios de cada servicio. |
 | Asistente | `api/assistant.js` | Contexto y endpoint serverless del asistente local. |
@@ -245,6 +246,7 @@ Ejecutar como mínimo:
 ```bash
 node --check script.js
 node --check services.js
+node --check lang-switch.js
 git diff --check
 ```
 

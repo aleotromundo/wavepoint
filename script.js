@@ -552,14 +552,8 @@
     applyCameraState();
   }
 
-  const langToggle = document.querySelector('[data-lang-toggle]');
-  if (langToggle) {
-    langToggle.addEventListener('click', () => {
-      const nextLang = languageState.current === 'es' ? 'en' : 'es';
-      localStorage.setItem('wavepoint-lang', nextLang);
-      applyTranslations(nextLang);
-    });
-  }
+  // The switch itself lives in lang-switch.js, which stores the choice and announces it here.
+  window.addEventListener('wavepoint:languagechange', event => applyTranslations(event.detail.lang));
 
   const SPOTS = {
     capitan: {

@@ -1,5 +1,23 @@
 ## 2026-10-03
 
+### Selector de idioma en todas las páginas
+
+- `lang-switch.js` (nuevo): módulo compartido que inserta el mismo selector de banderas de `index.html` en cualquier página con header que no lo tenga, guarda la elección en `localStorage` (`wavepoint-lang`), actualiza `<html lang>`, el estado y la etiqueta accesible del botón, y avisa del cambio con el evento `wavepoint:languagechange`.
+- `lang-switch.js`: traduce a español/inglés la navegación compartida (Inicio, Guía turística, Servicios, Nosotros, Colaboradores), los enlaces del pie (**Volver a WavePoint** / **Volver a Servicios**) y las etiquetas accesibles del menú. Los nodos con `data-i18n` se omiten porque siguen siendo de `script.js`.
+- `script.js`: el clic del selector deja de manejarse aquí; ahora `applyTranslations` se ejecuta al recibir `wavepoint:languagechange`. Evita un doble enlace del clic.
+- `services.js`: el detalle de servicio vuelve a renderizarse al recibir `wavepoint:languagechange`, así el modal y la encuesta de clases de surf cambian de idioma sin recargar.
+- `index.html`, `service.html`, `service-detail.html`, `guia-playas.html` y `Enlaces/*.html` (capitan-suizo, casa-maderas, nostros, occidental, red-door): cargar `lang-switch.js` y actualizar las versiones de `script.js` y `services.js` para evitar caché.
+- Sin cambios en `styles.css`: el selector reutiliza las reglas existentes y queda como hijo directo del header, igual que en `index.html` y `guia-playas.html`.
+- Alcance: en `service.html`, `service-detail.html` y `Enlaces/*.html` el selector cambia la navegación, el pie y, en las clases de surf, todo el modal y la encuesta; el resto del contenido de esas páginas sigue en español porque todavía no tiene traducción.
+
+### Validación
+
+- Se verificó `node --check` de `script.js`, `services.js` y `lang-switch.js`, y `git diff --check`.
+- Se probó con jsdom en las 9 páginas: un solo selector por página, cambio ES↔EN de la navegación, dos clics vuelven al idioma original, el idioma guardado se respeta al abrir la página, y el modal de clases de surf se traduce al cambiar el idioma.
+- No se revisó la posición visual en un navegador real.
+
+## 2026-10-03
+
 ### Clases de surf: traducciones ES/EN del modal y la encuesta
 
 - `services.js`: leer el idioma guardado en `localStorage` (`wavepoint-lang`, el mismo que usa el selector del sitio) y mostrar en inglés o español el modal, el bloque de introducción a la encuesta, la descripción larga, las siete preguntas con sus opciones, el formulario de solicitud y los mensajes de error.

@@ -189,7 +189,7 @@
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;' }[char]));
   const getService = () => { const id = new URLSearchParams(location.search).get('service'); return services.find(item => item.id === id) || services[0]; };
-  const lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'en' ? 'en' : 'es'; } catch (error) { return 'es'; } })();
+  let lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'en' ? 'en' : 'es'; } catch (error) { return 'es'; } })();
   const isSurfEn = service => lang === 'en' && service.id === 'clases-de-surf';
   const localizeService = service => {
     if (!isSurfEn(service) || !service.en) return service;
@@ -329,4 +329,8 @@
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
   }
   render(localizeService(getService()));
+  window.addEventListener('wavepoint:languagechange', event => {
+    lang = event.detail.lang === 'en' ? 'en' : 'es';
+    render(localizeService(getService()));
+  });
 })();
