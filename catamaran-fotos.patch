@@ -1,0 +1,25 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 29213d1..a6ca192 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -7,6 +7,7 @@
+ - `services.js`: la pregunta `dietary_needs` pasa a decir "Si la comida está incluida, ¿hay alergias o requerimientos alimentarios que debamos informar al operador?" (opcional, placeholder "Cuéntanos aquí" / "Tell us here"). Se actualizó la existente en vez de duplicarla.
+ - `services.js` (`render`): el detalle genérico acepta los campos opcionales `intro`, `boatInfoTitle` y `boatInfo`; el resto de los servicios no cambia.
+ - Pendiente de confirmar con el operador: política de cancelación exacta, si 5 años es mínimo obligatorio y el estado de los documentos del capitán.
++- Fotos: `services.js` pasa a usar `assets/catamaran-portada.jpg` (hero) y `assets/catamaran-descripcion.jpg` (galería). Las anteriores (`assets/legacy/conchal.jpg` y `catalinas.jpg`) eran collages de tres paneles sin catamarán y siguen en el repo sin usarse en este servicio. Las fotos nuevas son de Pixabay (licencia libre para uso comercial) hasta que haya fotos propias de la embarcación.
+ - Las tarjetas de `index.html` y sus traducciones en `script.js` no se tocaron.
+ 
+ ### Validación
+diff --git a/services.js b/services.js
+index bf9fb0d..589fbef 100644
+--- a/services.js
++++ b/services.js
+@@ -154,7 +154,7 @@ intro: 'Ya sea que quieras hacer snorkel, relajarte en cubierta o ver el atardec
+ description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
+ boatInfoTitle: 'Información de la embarcación',
+ boatInfo: ['Máximo 5 personas', 'Incluye: frutas variadas, hummus y dips, cervezas, refrescos, agua y hielo', 'Bebidas alcohólicas solo para adultos', 'Equipo de snorkel incluido', 'Plataforma flotante', 'Punto de salida: Bahía Potrero', 'El transporte hasta la bahía se paga aparte', 'Idiomas: español e inglés', 'Edad recomendada: a partir de 5 años', 'Reserva: con al menos 24 horas de anticipación y un adelanto del 30% del total', 'Cancelación gratuita hasta 72 horas antes de la salida', 'Permisos de navegación y póliza de seguro vigentes', 'Documentación del capitán en proceso de finalización'],
+-images: ['assets/legacy/conchal.jpg', 'assets/legacy/catalinas.jpg'],
++images: ['assets/catamaran-portada.jpg', 'assets/catamaran-descripcion.jpg'],
+ questions: [
+ { id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
+ { id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },

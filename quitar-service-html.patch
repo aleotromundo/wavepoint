@@ -1,0 +1,186 @@
+From a8a010b0d5b33baab1b471fd9201079ece1834b4 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Sat, 3 Oct 2026 21:32:55 +0000
+Subject: [PATCH] fix: remove service.html again and point Servicios links to
+ index.html#servicios
+
+---
+ CHANGELOG.md         | 17 +++++++++++++++++
+ Enlaces/service.html |  1 -
+ PROJECT_GUIDE.md     |  5 ++---
+ guia-playas.html     |  2 +-
+ manus-routes.json    |  2 +-
+ service-detail.html  |  4 ++--
+ service.html         | 39 ---------------------------------------
+ site-nav.js          |  2 +-
+ 8 files changed, 24 insertions(+), 48 deletions(-)
+ delete mode 100644 Enlaces/service.html
+ delete mode 100644 service.html
+
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index c9ebccf..2d1bade 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,5 +1,22 @@
+ ## 2026-10-03
+ 
++### Servicios vuelve a vivir solo en index.html#servicios
++
++- `service.html` y `Enlaces/service.html` (redirección a `service.html`): eliminados otra vez. Habían reaparecido en el commit `2ba3ac0`, que también devolvió los enlaces al catálogo aparte.
++- `site-nav.js`: el header compartido (usado por `guia-playas.html`, `service-detail.html` y `Enlaces/nostros.html`) enlaza **Servicios** a `index.html#servicios` (antes `service.html#servicios`).
++- `service-detail.html` (menú de escritorio y panel móvil) y `guia-playas.html` (botón "Ver servicios y armar mi plan"): enlaces a `index.html#servicios`.
++- `manus-routes.json`: se quita la ruta `/service.html`.
++- `PROJECT_GUIDE.md`: el catálogo se documenta en `index.html#servicios` y se quitan las referencias a `service.html`.
++- Si alguien abre un enlace viejo a `/service.html`, `vercel.json` ya lo manda a `index.html` por el fallback de rutas.
++- La tarjeta de Witch’s Rock Surf Trip del catálogo vive solo en `index.html`; los cambios que se habían hecho en `service.html` quedan sin efecto, porque la tarjeta de la página principal ya tiene el mismo texto y se traduce a ES/EN.
++
++### Validación
++
++- `node --check` de `site-nav.js`, `services.js`, `script.js` y `lang-switch.js`; `git diff --check`.
++- Búsqueda en todo el repo: no queda ningún enlace a `service.html` fuera del `CHANGELOG.md`.
++
++## 2026-10-03
++
+ ### Witch’s Rock Surf Trip: nuevo texto, nueva foto y pregunta de cantidad de personas (ES/EN)
+ 
+ - `services.js`: el servicio `roca-bruja` pasa a llamarse **Witch’s Rock Surf Trip** (mismo nombre en español e inglés). Nuevo texto de descripción en ambos idiomas: frase de apertura, párrafo del viaje en barco con guías locales y párrafo de coordinación de WavePoint. El número del servicio pasa de 04 a 05 para coincidir con la tarjeta de `service.html`.
+diff --git a/Enlaces/service.html b/Enlaces/service.html
+deleted file mode 100644
+index a027015..0000000
+--- a/Enlaces/service.html
++++ /dev/null
+@@ -1 +0,0 @@
+-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=../service.html"><link rel="canonical" href="../service.html"><title>Servicios WavePoint</title></head><body><p>Redirigiendo a <a href="../service.html">Servicios WavePoint</a>…</p></body></html>
+\ No newline at end of file
+diff --git a/PROJECT_GUIDE.md b/PROJECT_GUIDE.md
+index 71cea32..17833b3 100644
+--- a/PROJECT_GUIDE.md
++++ b/PROJECT_GUIDE.md
+@@ -13,7 +13,7 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
+ | Área | Archivos principales | Responsabilidad |
+ | --- | --- | --- |
+ | Página principal | `index.html` | Hero, clima, cámaras, servicios, guía, aliados, promociones y contacto. |
+-| Catálogo de servicios | `service.html` | Listado completo de servicios reales. |
++| Catálogo de servicios | `index.html` (sección `#servicios`) | Listado completo de servicios reales. No existe un `service.html` aparte. |
+ | Detalle de servicio | `service-detail.html` + `services.js` | Página dinámica según `?service=...`, preguntas y solicitud por WhatsApp. |
+ | Guía turística | `guia-playas.html` | Playas, spots y experiencias de Guanacaste. |
+ | Páginas de colaboradores | `Enlaces/*.html` | Fichas individuales de aliados locales. |
+@@ -30,7 +30,7 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
+ Las páginas públicas principales son:
+ 
+ - `/index.html` o `/`: página de inicio.
+-- `/service.html`: catálogo completo.
++- `/index.html#servicios`: catálogo completo (el enlace **Servicios** del header de todas las páginas apunta acá).
+ - `/service-detail.html?service=<id>`: detalle de un servicio.
+ - `/guia-playas.html`: guía turística.
+ - `/Enlaces/capitan-suizo.html`.
+@@ -76,7 +76,6 @@ retiros
+ Cuando cambie el catálogo, actualizar de forma coordinada:
+ 
+ - Las tarjetas de servicios en `index.html`.
+-- Las tarjetas del catálogo en `service.html`.
+ - El array `services` en `services.js`.
+ - Las traducciones de títulos y descripciones en `script.js`.
+ - El contexto del asistente en `api/assistant.js` si afecta sus recomendaciones.
+diff --git a/guia-playas.html b/guia-playas.html
+index 1dfcf2a..f746075 100644
+--- a/guia-playas.html
++++ b/guia-playas.html
+@@ -92,7 +92,7 @@
+     <div class="guide-callout">
+       <p>Si querés dejar todo armado para tu viaje, te ayudamos a elegir la mejor opción según tus fechas, nivel y estilo de trip.</p>
+       <div class="guide-callout-actions">
+-        <a href="service.html#servicios">Ver servicios y armar mi plan</a>
++        <a href="index.html#servicios">Ver servicios y armar mi plan</a>
+         <a href="https://wa.me/543517397525" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+       </div>
+     </div>
+diff --git a/manus-routes.json b/manus-routes.json
+index 11f3c6c..7e78452 100644
+--- a/manus-routes.json
++++ b/manus-routes.json
+@@ -1 +1 @@
+-{"routes":[{"path":"/","title":"WavePoint"},{"path":"/service.html","title":"Servicios"},{"path":"/service-detail.html","title":"Detalle de servicio"},{"path":"/guia-playas.html","title":"Guía de playas"}]}
+\ No newline at end of file
++{"routes":[{"path":"/","title":"WavePoint"},{"path":"/service-detail.html","title":"Detalle de servicio"},{"path":"/guia-playas.html","title":"Guía de playas"}]}
+diff --git a/service-detail.html b/service-detail.html
+index 4eca41d..fecf27a 100644
+--- a/service-detail.html
++++ b/service-detail.html
+@@ -18,13 +18,13 @@
+   <div class="container nav">
+     <a class="shared-brand" href="index.html" aria-label="WavePoint inicio"><img src="assets/wavepoint-logo.png" alt="WavePoint" /></a>
+     <nav class="navlinks" aria-label="Navegación principal">
+-      <a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a>
++      <a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="index.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a>
+       <div class="dropdown"><a class="dropbtn" href="index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div>
+     </nav>
+     <button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button>
+   </div>
+ </header>
+-<div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>
++<div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="index.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>
+   <main id="serviceDetailRoot" aria-live="polite"></main>
+   <footer class="service-page-footer"><div class="container"><a href="index.html#servicios">← Volver a Servicios</a><a class="instagram-footer-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint" title="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span class="visually-hidden">Instagram WavePoint</span></a></div></footer>
+   <script defer src="site-nav.js?v=20261001-1"></script>
+diff --git a/service.html b/service.html
+deleted file mode 100644
+index 0540b3a..0000000
+--- a/service.html
++++ /dev/null
+@@ -1,39 +0,0 @@
+-<!doctype html>
+-<html lang="es">
+-<head>
+-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#0a3547"/>
+-<title>Servicios y experiencias en Tamarindo · WavePoint</title><meta name="description" content="Conocé los servicios y experiencias de WavePoint en Tamarindo y armá tu solicitud personalizada."/>
+-<link rel="icon" href="assets/wavepoint-favicon.ico" sizes="any"/><link rel="icon" href="assets/wavepoint-favicon-32.png" type="image/png" sizes="32x32"/><link rel="icon" href="assets/wavepoint-favicon-192.png" type="image/png" sizes="192x192"/><link rel="apple-touch-icon" href="assets/wavepoint-apple-touch-icon.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/><link rel="stylesheet" href="styles.css?v=20261001-17"/>
+-</head>
+-<body class="service-page">
+-<header class="topbar service-topbar site-shared-header">
+-  <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg></a>
+-  <div class="container nav">
+-    <a class="shared-brand" href="index.html" aria-label="WavePoint inicio"><img src="assets/wavepoint-logo.png" alt="WavePoint" /></a>
+-    <nav class="navlinks" aria-label="Navegación principal">
+-      <a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a>
+-      <div class="dropdown"><a class="dropbtn" href="index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div>
+-    </nav>
+-    <button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button>
+-  </div>
+-</header>
+-<div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>
+-<main>
+-<section class="service-page-hero"><div class="container service-page-hero-content"><p class="service-page-kicker">SURF · BIENESTAR · EXPERIENCIAS</p><h1>La próxima sesión empieza acá.</h1><p class="service-page-intro">Elegí una experiencia, conocé todos los detalles y armá una solicitud a tu medida. WavePoint la ordena y la consulta con el encargado local.</p><a class="service-page-cta" href="#servicios">Explorar los 10 servicios ↓</a></div></section>
+-<section class="service-page-list" id="servicios"><div class="container"><div class="service-page-heading"><p class="service-page-kicker">HECHO EN TAMARINDO</p><h2 data-i18n="servicePageSectionTitle">¿Qué te gustaría hacer en Tamarindo?</h2><p class="service-page-intro" data-i18n="servicePageSectionIntro">Elegí una experiencia para ver los detalles. Cuando estés listo, envianos tu fecha preferida y el tamaño de tu grupo. Consultaremos la disponibilidad con el proveedor.</p></div>
+-<div class="service-offerings service-offerings-catalog">
+-<a class="service-offering" href="service-detail.html?service=alojamiento-experiencias"><img src="assets/legacy/B_03.jpg" alt="Stays and Hotels · alojamientos en Tamarindo" loading="lazy"/><div><span>01 / STAY · HOTELS</span><h3>Stays and Hotels</h3><p>Hoteles y alojamientos frente al mar para cada tipo de viaje.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=clases-de-surf"><img src="assets/legacy/DSC02807.jpg" alt="Clases de surf en Tamarindo" loading="lazy"/><div><span>02 / SURF · LESSONS</span><h3>Surf lessons</h3><p>Your first wave or your next step. Find a lesson that fits your level.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=surf-coaching"><img src="assets/legacy/_GSK8664.jpg" alt="Surf coaching en Tamarindo" loading="lazy"/><div><span>03 / SURF · COACHING</span><h3>Surf coaching</h3><p>Work on your surfing with coaching and optional photos or video analysis.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=yoga"><img src="assets/legacy/OTAMA_HEAL_21.jpg" alt="Yoga y bienestar" loading="lazy"/><div><span>04 / WELLNESS · YOGA</span><h3>Yoga</h3><p>Tell us your experience and preferred time to find a suitable session.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=roca-bruja"><img src="assets/legacy/bruja.jpg" alt="Witch’s Rock Surf Trip" data-i18n-alt="serviceCardWitchRockTitle" loading="lazy"/><div><span data-i18n="serviceListWitchRockEyebrow">05 / SURF TRIP · AVENTURA</span><h3 data-i18n="serviceCardWitchRockTitle">Witch’s Rock Surf Trip</h3><p data-i18n="serviceCardWitchRockText">Un día de surf en barco con guías locales que conocen la zona.</p><strong data-i18n="serviceListCta">Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=snorkel-catamaran"><img src="assets/legacy/conchal.jpg" alt="Snorkel y catamarán" loading="lazy"/><div><span>06 / SEA · BOAT</span><h3>Snorkeling &amp; catamaran</h3><p>Compare boat experiences, snorkeling options and time on the coast.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=buceo"><img src="assets/surf-service.jpg" alt="Buceo en Tamarindo" loading="lazy"/><div><span>07 / SEA · DIVING</span><h3>Diving</h3><p>Discover Tamarindo underwater with a local diving experience.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=atv"><img src="assets/legacy/rincon.jpg" alt="Tours en cuatriciclo ATV" loading="lazy"/><div><span>08 / LAND · ADVENTURE</span><h3>ATV tours</h3><p>Check tour details and the operator’s participation requirements.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering service-offering-featured" href="service-detail.html?service=pack-ajustable"><img src="assets/after-guide.jpg" alt="Pack ajustable de experiencias" loading="lazy"/><div><span>DIFFERENTIATED · CUSTOM EXPERIENCE</span><h3>Build your own experience</h3><p>Combine the activities that fit your trip and create your own experience.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=retiros"><img src="assets/legacy/ocotal.jpg" alt="Retreats y experiencias" loading="lazy"/><div><span>10 / RETREATS · EXPERIENCES</span><h3>Retreats</h3><p>Explore hosted group trips with a planned program and stay.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-</div></div></section>
+-</main>
+-<footer class="service-page-footer"><div class="container"><a href="index.html">← Volver a WavePoint</a><a class="instagram-footer-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint" title="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span class="visually-hidden">Instagram WavePoint</span></a></div></footer>
+-<script defer src="script.js?v=20261003-2"></script><script defer src="lang-switch.js?v=20261003-1"></script>
+-</body></html>
+diff --git a/site-nav.js b/site-nav.js
+index aa9ceca..ce0dbde 100644
+--- a/site-nav.js
++++ b/site-nav.js
+@@ -1,7 +1,7 @@
+ (() => {
+   const nested = location.pathname.split('/').includes('Enlaces');
+   const base = nested ? '../' : './';
+-  const sharedHeader = `<header class="topbar service-topbar site-shared-header"><a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg></a><div class="container nav"><a class="shared-brand" href="${base}index.html" aria-label="WavePoint inicio"><img src="${base}assets/wavepoint-logo.png" alt="WavePoint" /></a><nav class="navlinks" aria-label="Navegación principal"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}service.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="dropdown"><a class="dropbtn" href="${base}index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav><button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button></div></header><div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="${base}assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}service.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="${base}index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>`;
++  const sharedHeader = `<header class="topbar service-topbar site-shared-header"><a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg></a><div class="container nav"><a class="shared-brand" href="${base}index.html" aria-label="WavePoint inicio"><img src="${base}assets/wavepoint-logo.png" alt="WavePoint" /></a><nav class="navlinks" aria-label="Navegación principal"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}index.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="dropdown"><a class="dropbtn" href="${base}index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav><button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button></div></header><div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="${base}assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}index.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="${base}index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>`;
+ 
+   if (!document.querySelector('.site-shared-header')) {
+     document.querySelector('.collab-nav')?.remove();
+-- 
+2.43.0
+
