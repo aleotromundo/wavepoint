@@ -1,5 +1,13 @@
 ## 2026-10-03
 
+### Ícono del clima más grande y mejor aprovechamiento del panel
+
+- `styles.css`: ampliar el ícono atmosférico a 88 px en escritorio, con una superposición intencional y controlada sobre el área de temperatura para aprovechar mejor el ancho del panel.
+- Responsive: reducirlo a 76 px en pantallas pequeñas y 68 px en anchos de hasta 380 px; el texto del estado conserva su espacio y puede envolver sin desbordar.
+- Validación: revisar las reglas finales que anulaban tamaños anteriores de 52–62 px; conservar el comportamiento del panel de vidrio oscuro y la legibilidad de los datos.
+
+## 2026-10-03
+
 ### Vidrio oscuro definitivo del panel del clima
 
 - `styles.css`: retirar el rojo de comprobación y establecer el panel `.weather-card` en azul negro translúcido (`rgba(3, 14, 22, .56)`), conservando el desenfoque, el borde y las sombras; las filas internas vuelven a un blanco muy sutil.
