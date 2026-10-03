@@ -1,5 +1,13 @@
 ## 2026-10-03
 
+### Ventana del clima en vidrio oscuro
+
+- `styles.css`: aplicar a `.weather-card` un acabado de vidrio oscuro con fondo translúcido, desenfoque y saturación, borde sutil, sombra profunda y filas internas más discretas.
+- Se mantuvo la legibilidad de temperaturas, estado meteorológico, oleaje, viento y hora local, sin modificar la composición del hero.
+- Validación: revisar el alcance del selector para que afecte únicamente la ventana del clima.
+
+## 2026-10-03
+
 ### Orden de secciones en la página de inicio
 
 - `index.html`: mover la sección **WavePoint en Tamarindo** (`#guia`) para que aparezca inmediatamente antes de **Cámaras en vivo** (`#camaras`). No se modificó el contenido interno de ninguna sección.
