@@ -125,3 +125,14 @@ Esta entrega reúne las mejoras realizadas después de sincronizar el catálogo 
 - `CHANGELOG.md`: historial detallado de las modificaciones.
 - `services.js`: selector visual y contador del Pack ajustable.
 - `styles.css`: selector del Pack, tamaño responsive del logo, posición del hero y tipografía del header.
+
+## 2026-10-02
+
+### Logo móvil — segundo ajuste
+
+- `styles.css`: ampliar nuevamente el logo en pantallas de hasta 640 px hasta `min(100%, 360px)` y en pantallas de hasta 380 px hasta `min(100%, 320px)`. El logo utiliza ahora casi todo el ancho útil del contenedor, sin superar sus límites.
+
+### Validación
+
+- `git diff --check`: sin errores de formato.
+- Se conserva el ancho del contenedor móvil para evitar overflow horizontal.
