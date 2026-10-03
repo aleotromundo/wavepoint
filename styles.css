@@ -3946,3 +3946,137 @@ body { background: #071c28; }
     height: 56px !important;
   }
 }
+
+
+/* Tabla de tarifas de servicios: panel oceánico y lectura cómoda en móvil */
+.service-rates {
+  position: relative;
+  margin-top: 46px;
+  overflow: hidden;
+  border: 1px solid rgba(156, 232, 215, .24);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(4, 25, 36, .82), rgba(8, 62, 69, .62));
+  box-shadow: 0 22px 52px rgba(0, 0, 0, .24), inset 0 1px rgba(255, 255, 255, .1);
+  backdrop-filter: blur(16px) saturate(125%);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+}
+.service-rates::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wp-aqua), var(--wp-sun));
+}
+.service-rates-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 28px 20px;
+}
+.service-rates-kicker {
+  display: block;
+  margin-bottom: 7px;
+  color: #8fe9db;
+  font: 700 11px/1 "DM Sans", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.service-rates-heading h3 {
+  margin: 0;
+  color: #f5fbf8;
+  font: 700 clamp(28px, 3.1vw, 39px)/1 "Barlow Condensed", Impact, sans-serif;
+  text-transform: uppercase;
+}
+.service-rates-heading p {
+  margin: 8px 0 0;
+  color: rgba(231, 245, 239, .72);
+  font-size: 13px;
+}
+.service-rates-badge {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border: 1px solid rgba(243, 182, 75, .45);
+  border-radius: 50%;
+  background: rgba(243, 182, 75, .12);
+  color: #ffd98a;
+  font: 800 12px "DM Sans", sans-serif;
+  letter-spacing: .05em;
+}
+.service-rates-scroll {
+  overflow-x: auto;
+  padding: 0 28px 4px;
+  scrollbar-color: rgba(127, 230, 234, .55) rgba(255, 255, 255, .08);
+  scrollbar-width: thin;
+}
+.service-rates table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #f3fbf7;
+  font-size: 13px;
+}
+.service-rates th,
+.service-rates td {
+  padding: 15px 14px;
+  border-right: 1px solid rgba(186, 231, 220, .13);
+  border-bottom: 1px solid rgba(186, 231, 220, .13);
+  text-align: center;
+  white-space: nowrap;
+}
+.service-rates tr > :first-child {
+  border-left: 1px solid rgba(186, 231, 220, .13);
+  text-align: left;
+}
+.service-rates thead th {
+  border-top: 1px solid rgba(186, 231, 220, .18);
+  background: rgba(0, 167, 189, .17);
+  color: #bdf8ed;
+  font: 700 12px "DM Sans", sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.service-rates thead th:first-child { border-top-left-radius: 12px; }
+.service-rates thead th:last-child { border-top-right-radius: 12px; }
+.service-rates tbody th {
+  width: 28%;
+  background: rgba(255, 255, 255, .045);
+  color: #f7fcfa;
+  font-weight: 700;
+}
+.service-rates tbody td {
+  background: rgba(255, 255, 255, .018);
+  color: #fff;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.service-rates tbody tr:nth-child(even) th,
+.service-rates tbody tr:nth-child(even) td { background: rgba(255, 255, 255, .07); }
+.service-rates tbody tr:hover th,
+.service-rates tbody tr:hover td { background: rgba(15, 199, 215, .13); }
+.service-rates tbody tr:last-child th { border-bottom-left-radius: 12px; }
+.service-rates tbody tr:last-child td:last-child { border-bottom-right-radius: 12px; }
+.service-rates td span { color: #ffd98a; }
+.service-rates-note {
+  margin: 15px 28px 23px;
+  color: rgba(231, 245, 239, .62);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.service-rates-note span { color: #ffd98a; font-weight: 800; }
+@media (max-width: 640px) {
+  .service-rates { margin-top: 34px; border-radius: 17px; }
+  .service-rates-heading { padding: 22px 18px 17px; }
+  .service-rates-heading p { max-width: 245px; font-size: 12px; }
+  .service-rates-badge { width: 40px; height: 40px; flex-basis: 40px; font-size: 11px; }
+  .service-rates-scroll { padding: 0 18px 4px; }
+  .service-rates th, .service-rates td { padding: 13px 12px; }
+  .service-rates tbody th { white-space: normal; }
+  .service-rates-note { margin: 13px 18px 19px; }
+}

@@ -1,5 +1,17 @@
 ## 2026-10-03
 
+### Tabla estilizada de tarifas de servicios
+
+- `index.html`: agregar al final de la sección **Servicios** una tabla semántica con las tarifas proporcionadas para clases de surf, fotografía acuática, fotografía desde la playa, surfskate y surf coaching.
+- `styles.css`: diseñar la tabla como un panel oceánico/glass acorde con WavePoint, con encabezado destacado, acentos aqua/dorados, estados hover y desplazamiento horizontal accesible en pantallas pequeñas.
+- Se muestran los precios como referencia en USD y se aclara que la disponibilidad y el precio final se confirman con el proveedor.
+
+### Validación
+
+- Se verificó `git diff --check`, la sintaxis de `script.js` y `services.js`, y la presencia de la tabla en el HTML/CSS.
+
+## 2026-10-03
+
 ## 2026-10-03
 
 ## 2026-10-03
