@@ -1,5 +1,19 @@
 ## 2026-10-03
 
+### Detalle de servicio: flechas para recorrer los servicios
+
+- `services.js`: el hero de cada servicio muestra dos flechas laterales (‹ ›) que llevan al servicio anterior y al siguiente. Al llegar al último vuelve al primero y viceversa. Cada flecha tiene `aria-label` en español o inglés según el idioma elegido ("Servicio anterior: …" / "Previous service: …") y el nombre del servicio como `title`.
+- `services.js`: el orden de los servicios ahora coincide con el de las tarjetas de `index.html` (Estadías, Clases, Coaching, Yoga, Witch’s Rock, Snorkel y catamarán, Buceo, ATV, Pack ajustable, Retiros). El contador del hero (`05 / 10`) se calcula según esa posición, así ya no hay números repetidos; los números fijos del array se alinearon para que coincidan.
+- `styles.css`: flechas grandes y discretas (blancas, con baja opacidad que sube al pasar el cursor o enfocar con teclado), con sombra suave para leerse sobre cualquier foto. En pantallas de hasta 980 px son más compactas y quedan sobre el título. Se respeta `prefers-reduced-motion`.
+- Las flechas se generan con el resto del detalle, así que funcionan en todos los servicios y cambian de idioma junto con la página.
+
+### Validación
+
+- `node --check services.js`.
+- Prueba en Chromium real: capturas de escritorio (1366 px) y móvil (390 px) en español e inglés; clic en ambas flechas, vuelta del primero al último y del último al primero, contador correcto y etiquetas accesibles en ES/EN.
+
+## 2026-10-03
+
 ### Servicios vuelve a vivir solo en index.html#servicios
 
 - `service.html` y `Enlaces/service.html` (redirección a `service.html`): eliminados otra vez. Habían reaparecido en el commit `2ba3ac0`, que también devolvió los enlaces al catálogo aparte.
