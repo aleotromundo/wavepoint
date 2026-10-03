@@ -1,5 +1,13 @@
 ## 2026-10-03
 
+### Subtítulo del hero centrado en la comunidad local
+
+- `index.html` y `script.js`: reemplazar el texto sobre revisar condiciones y elegir el próximo spot por **“Through the people who call it home”** en inglés.
+- La versión española equivalente queda como **“Conocé Tamarindo a través de quienes lo llaman hogar.”**
+- Los botones y el resto de la composición del hero permanecen sin cambios.
+
+## 2026-10-03
+
 ### Nuevo posicionamiento del título del hero
 
 - `index.html` y `script.js`: reemplazar el título centrado en cámaras por **“Tamarindo’s best experiences, with the locals who know it best”** en inglés.
