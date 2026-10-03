@@ -1073,6 +1073,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 .hero:after {
   height: 116px;
   background: linear-gradient(180deg, transparent, rgba(244, 248, 246, .84));
+  display: none;
 }
 
 .hero-grid { gap: 48px; padding-top: 0; transform: translateY(2px); }
