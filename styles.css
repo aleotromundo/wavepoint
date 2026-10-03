@@ -2848,3 +2848,7 @@ body { background: #071c28; }
 #camaras .cam-link:not(.primary) { background: rgba(255, 255, 255, .1); color: #8fe9ee; }
 #camaras .cam-link:not(.primary):hover { background: rgba(255, 255, 255, .18); }
 #camaras .cam-action, #camaras .cam-action * { color: #8fe9ee; }
+
+/* Foto de las tarjetas de servicios: llena todo el espacio, sin franjas de fondo */
+.service-img { background: transparent; }
+.service-img img { object-fit: cover; background: none; }

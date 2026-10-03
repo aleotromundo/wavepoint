@@ -164,13 +164,15 @@ Las secciones fuera del hero pueden usar gradientes oceánicos, capas radiales y
 
 ### Favicon y logo original
 
-El favicon activo es exactamente la imagen original proporcionada por el usuario:
+Desde 2026-10-03 el favicon activo es el ícono de la ola con punto que proporcionó el usuario (fondo negro con esquinas redondeadas y las esquinas transparentes). Archivos:
 
 ```text
-assets/wavepoint-favicon-original.jpeg
+assets/wavepoint-favicon.ico              16, 32 y 48 px (también copiado en /favicon.ico)
+assets/wavepoint-favicon-16.png / -32.png / -192.png / -512.png
+assets/wavepoint-apple-touch-icon.png     180 × 180, cuadrado negro completo (iOS aplica su propia máscara)
 ```
 
-Tiene formato JPEG y dimensiones originales de 1024 × 1024 px. No redibujar, recolorear, recortar ni reemplazar esta imagen sin autorización explícita. El SVG anterior `assets/wavepoint-favicon.svg` se conserva como recurso histórico, pero no es el favicon activo.
+Todas las páginas lo enlazan con `<link rel="icon">` (ico, 32 y 192) y `<link rel="apple-touch-icon">`. No redibujar, recolorear ni reinterpretar este ícono sin autorización explícita. Los favicons anteriores (`assets/wavepoint-favicon-original.jpeg`, `assets/wavepoint-favicon-inverted.jpeg` y `assets/wavepoint-favicon.svg`) se conservan como recursos históricos y ya no son el favicon activo.
 
 ## 8. Responsive y accesibilidad
 
@@ -201,7 +203,8 @@ Reglas de accesibilidad:
 
 | Asset | Uso |
 | --- | --- |
-| `assets/wavepoint-favicon-original.jpeg` | Favicon activo, imagen original del usuario. |
+| `assets/wavepoint-favicon.ico`, `wavepoint-favicon-*.png`, `wavepoint-apple-touch-icon.png` | Favicon activo (ola con punto, esquinas transparentes). |
+| `assets/wavepoint-favicon-original.jpeg` | Favicon anterior, recurso histórico. |
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
 | `assets/wavepoint-watermark.png` | Marca sobre streams de cámara. |
@@ -245,7 +248,7 @@ node --check services.js
 git diff --check
 ```
 
-Para validar el favicon original:
+Para validar el favicon anterior (histórico):
 
 ```bash
 python3 - <<'PY'
@@ -333,7 +336,7 @@ Antes de publicar:
 - No modificar el hero sin permiso explícito.
 - No inventar servicios, colaboradores, precios, horarios ni disponibilidad.
 - No reintroducir Fotos de surf, Fotografía acuática o Surfskate como servicios del catálogo real sin confirmación.
-- No reemplazar el favicon original del usuario por una reinterpretación.
+- No reemplazar el favicon activo (ola con punto, 2026-10-03) por una reinterpretación.
 - No borrar datos ni assets sin revisar referencias y documentar la decisión.
 - No agregar dependencias o frameworks para cambios que puedan resolverse con HTML, CSS y JavaScript existentes.
 - No subir secretos, claves API ni credenciales al repositorio.
