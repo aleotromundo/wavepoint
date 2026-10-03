@@ -3408,3 +3408,229 @@ body { background: #071c28; }
     font-size: 17px !important;
   }
 }
+
+/* =========================================================
+   CORRECCIÓN DE DESAJUSTES EN UI DEL CLIMA (WAVEPOINT)
+   ========================================================= */
+
+/* 1. Contenedor principal con bordes coherentes */
+.weather-card {
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(179, 237, 230, 0.2) !important;
+  background: linear-gradient(155deg, rgba(6, 32, 46, 0.92), rgba(4, 18, 27, 0.96)) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  box-shadow: 0 20px 50px rgba(0, 10, 16, 0.4), inset 0 1px 1px rgba(255,255,255,0.15) !important;
+}
+
+/* 2. Tamaño de temperatura equilibrado y unidad alineada */
+.temp {
+  font-size: 56px !important; /* Reducido de 72px para mejor proporción */
+  line-height: 1 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 2px !important;
+  background: linear-gradient(180deg, #ffffff 40%, #b8f0e5 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)) !important;
+}
+
+.temp-unit {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  margin-top: 6px !important;
+  background: linear-gradient(180deg, #ffffff 40%, #b8f0e5 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* 3. Alineación perfecta del estado ("Nublado") e ícono principal */
+.weather-condition {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important; /* Centrado vertical estricto */
+  gap: 14px !important;
+  margin-top: 4px !important;
+}
+
+.weather-icon {
+  width: 56px !important;
+  height: 56px !important;
+  flex: 0 0 56px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.2), transparent 50%),
+              linear-gradient(155deg, #1b6a7f, #093444) !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.3) !important;
+}
+
+/* Forzar que las imágenes SVG dentro del ícono tengan tamaño consistente */
+.weather-icon img,
+.weather-icon svg {
+  width: 65% !important;
+  height: 65% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.weather-state {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.01em !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4) !important;
+}
+
+/* 4. Espaciado y bordes uniformes en las tarjetas inferiores */
+.weather-list {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 10px !important; /* Espaciado uniforme entre tarjetas */
+  padding: 14px !important;
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.w-row {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* Centrado para mejor simetría */
+  text-align: center !important;
+  gap: 6px !important;
+  padding: 12px 8px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease !important;
+}
+
+.w-row:hover {
+  transform: translateY(-2px) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(0, 240, 196, 0.3) !important;
+}
+
+/* 5. Unificación de estilos de íconos en las tarjetas (Olas, Viento, Reloj) */
+.w-ico {
+  width: 32px !important;
+  height: 32px !important;
+  flex: 0 0 32px !important;
+  border-radius: 10px !important;
+  display: grid !important;
+  place-items: center !important;
+  background: rgba(0, 240, 196, 0.12) !important;
+  color: #7ef2db !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(0, 240, 196, 0.15) !important;
+}
+
+/* Asegurar que el SVG de las olas no rompa la cuadrícula y pese lo mismo que los caracteres de texto */
+.w-ico img,
+.w-ico svg {
+  width: 60% !important;
+  height: 60% !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)) !important;
+}
+
+/* 6. Jerarquía tipográfica clara y consistente */
+.w-value {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: center !important;
+  gap: 2px !important;
+}
+
+.w-value small {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(220, 248, 242, 0.7) !important;
+}
+
+.w-label {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: rgba(220, 248, 242, 0.65) !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+}
+
+/* 7. Ajuste del bloque principal para cohesión */
+.weather-main {
+  padding: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.weather-place {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #8ce8db !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 2px !important;
+}
+
+/* Animaciones simples tipo Samsung One UI */
+
+/* Sol brillando */
+@keyframes sun-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Nubes flotando */
+@keyframes cloud-float {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+
+/* Lluvia cayendo */
+@keyframes rain-drop {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+/* Aplicar a los íconos */
+.weather-icon[data-meteocon="clear-day"] {
+  animation: sun-spin 12s linear infinite;
+}
+
+.weather-icon[data-meteocon="cloudy"],
+.weather-icon[data-meteocon="partly-cloudy-day"] {
+  animation: cloud-float 4s ease-in-out infinite;
+}
+
+.weather-icon[data-meteocon="rain"] {
+  animation: rain-drop 2s ease-in-out infinite;
+}
+
+/* Estado "Nublado" alineado perfecto */
+.weather-condition {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weather-state {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap; /* Evita que se rompa el texto */
+}
