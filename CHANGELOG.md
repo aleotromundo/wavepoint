@@ -1,5 +1,12 @@
 ## 2026-10-03
 
+### Panel del clima visible en rojo
+
+- `styles.css`: aplicar un fondo rojo semitransparente al panel `.weather-card` y un rojo más oscuro a sus filas internas, a pedido del usuario, para que el cambio visual se perciba claramente en el sitio.
+- Validación: JavaScript sin errores y `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Transparencia sutil en la ventana del clima
 
 - `styles.css`: reducir la opacidad del panel de clima de `.76` a `.62` y suavizar el fondo de sus filas internas para que el fondo del hero se perciba mejor sin cambiar la lectura de los datos.
