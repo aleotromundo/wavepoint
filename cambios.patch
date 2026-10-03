@@ -1,0 +1,457 @@
+From 74095a24d4a2ecb5caf2ada065703df59a05e846 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Sat, 3 Oct 2026 16:20:11 +0000
+Subject: [PATCH 1/2] fix: translate surf lessons title, description and labels
+ ES/EN
+
+---
+ Enlaces/capitan-suizo.html |  2 +-
+ Enlaces/casa-maderas.html  |  2 +-
+ Enlaces/nostros.html       |  2 +-
+ Enlaces/occidental.html    |  2 +-
+ Enlaces/red-door.html      |  2 +-
+ guia-playas.html           |  2 +-
+ index.html                 |  2 +-
+ lang-switch.js             |  3 +++
+ service-detail.html        |  4 ++--
+ service.html               |  2 +-
+ services.js                | 23 +++++++++++++++++------
+ 11 files changed, 30 insertions(+), 16 deletions(-)
+
+diff --git a/Enlaces/capitan-suizo.html b/Enlaces/capitan-suizo.html
+index e1b60a1..cf083dc 100644
+--- a/Enlaces/capitan-suizo.html
++++ b/Enlaces/capitan-suizo.html
+@@ -3,4 +3,4 @@
+ <body class="collaborator-page"><header class="collab-nav"><a href="../index.html" class="collab-back">← WavePoint</a><nav><a href="../index.html#servicios">Servicios</a><a href="../index.html#camaras">Cámaras</a><a href="../guia-playas.html">Guía local</a></nav></header>
+ <main><section class="collab-hero"><div class="container collab-hero-inner"><p class="collab-kicker">COLABORADOR · TAMARINDO</p><h1>Capitán Suizo: arena amable y olas para todos.</h1><p class="collab-intro">Hotel boutique frente a la playa y uno de los bancos de arena favoritos para aprender a surfear en Tamarindo.</p><a class="btn btn-primary" href="https://www.capitansuizo.com/" target="_blank" rel="noopener noreferrer">Visitar Capitán Suizo ↗</a></div></section>
+ <section class="collab-content"><div class="container collab-layout"><article><p class="collab-label">INFORMACIÓN DEL COLABORADOR</p><p>Capitán Suizo es un Hotel Boutique de cuatro estrellas frente a la playa, consciente con el medio ambiente y evaluado oficialmente por el Instituto Costarricense de Turismo. Cuenta con 31 habitaciones entre árboles nativos y amplios jardines orgánicos que atraen una gran variedad de vida silvestre.</p><p>Ubicado en un área privilegiada, al final de la bahía y directamente en la playa de Tamarindo, se encuentra frente a aguas cálidas durante todo el año y limita con el Parque Nacional Marino Baulas.</p><p>Capitán Suizo es un amigable banco de arena, favorito para surfistas principiantes e instructores de surf. Su ola suave y constante brinda seguridad y diversión; cuando otros puntos están demasiado grandes, también ofrece sesiones accesibles para surfistas intermedios y avanzados. Por el posicionamiento de la costa, puede mantener un offshore perfecto cuando otros spots tienen viento desfavorable.</p></article><aside class="collab-gallery"><img src="../assets/legacy/Aerial_02.jpg" alt="Capitán Suizo desde el aire" loading="lazy"><img src="../assets/legacy/B_03.jpg" alt="Habitaciones y jardines" loading="lazy"><img src="../assets/legacy/Piscina_16.jpg" alt="Piscina del hotel" loading="lazy"><img src="../assets/legacy/Playa_23.jpg" alt="Playa frente al hotel" loading="lazy"></aside></div></section></main>
+-<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-1"></script></body></html>
+\ No newline at end of file
++<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-2"></script></body></html>
+\ No newline at end of file
+diff --git a/Enlaces/casa-maderas.html b/Enlaces/casa-maderas.html
+index aa3f90e..065b4e8 100644
+--- a/Enlaces/casa-maderas.html
++++ b/Enlaces/casa-maderas.html
+@@ -3,4 +3,4 @@
+ <body class="collaborator-page"><header class="collab-nav"><a href="../index.html" class="collab-back">← WavePoint</a><nav><a href="../index.html#servicios">Servicios</a><a href="../index.html#camaras">Cámaras</a><a href="../guia-playas.html">Guía local</a></nav></header>
+ <main><section class="collab-hero"><div class="container collab-hero-inner"><p class="collab-kicker">COLABORADOR · PALM BEACH</p><h1>Casa Maderas: aventura, estero y un spot escondido.</h1><p class="collab-intro">Un oasis rústico tropical junto a Casitas, con acceso a uno de los spots preferidos por los locales.</p><a class="btn btn-primary" href="https://casademaderacr.com/" target="_blank" rel="noopener noreferrer">Visitar Casa de Maderas ↗</a></div></section>
+ <section class="collab-content"><div class="container collab-layout"><article><p class="collab-label">INFORMACIÓN DEL COLABORADOR</p><p>Para llegar a este spot de surf es necesario cruzar un estero. Se recomienda extrema precaución, ya que en la zona pueden habitar cocodrilos. Evita cruzar en solitario y, de ser posible, consulta con locales antes de ingresar. También existe la opción de cruzar de forma segura en las pangas locales, disponibles hasta las 5:00 p.m. Tu seguridad es lo primero.</p><p>Ubicada a solo pasos del reconocido point de surf Casitas, Casa Maderas es un oasis escondido en medio de la naturaleza. Rodeada de exuberante vegetación y ambientada con un estilo rústico tropical, combina comodidad, privacidad y una ubicación privilegiada para quienes buscan desconectarse, surfear olas de clase mundial y relajarse.</p><p>Casitas está al principio de Playa Grande, pegada al estero de Tamarindo. Es un spot escondido de todo forecast y muy elegido por los locales. Cuenta con tres picos definidos de banco de arena; sus izquierdas y derechas son divertidas y con fuerza, un poco más complicadas que Tamarindo pero menos que Langosta, con opciones para todos los niveles.</p></article><aside class="collab-gallery"><img src="../assets/ally-casa.jpg" alt="Casa de Maderas" loading="lazy"><img src="../assets/casitas.jpg" alt="Casitas" loading="lazy"><img src="../assets/legacy/reddoor1.jpg" alt="Naturaleza de la zona" loading="lazy"></aside></div></section></main>
+-<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-1"></script></body></html>
+\ No newline at end of file
++<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-2"></script></body></html>
+\ No newline at end of file
+diff --git a/Enlaces/nostros.html b/Enlaces/nostros.html
+index d98c8c8..83c3291 100644
+--- a/Enlaces/nostros.html
++++ b/Enlaces/nostros.html
+@@ -55,6 +55,6 @@
+   </main>
+   <footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer>
+   <script defer src="../site-nav.js?v=20261001-3"></script>
+-  <script defer src="../lang-switch.js?v=20261003-1"></script>
++  <script defer src="../lang-switch.js?v=20261003-2"></script>
+ </body>
+ </html>
+diff --git a/Enlaces/occidental.html b/Enlaces/occidental.html
+index 732fdc4..85d3100 100644
+--- a/Enlaces/occidental.html
++++ b/Enlaces/occidental.html
+@@ -3,4 +3,4 @@
+ <body class="collaborator-page"><header class="collab-nav"><a href="../index.html" class="collab-back">← WavePoint</a><nav><a href="../index.html#servicios">Servicios</a><a href="../index.html#camaras">Cámaras</a><a href="../guia-playas.html">Guía local</a></nav></header>
+ <main><section class="collab-hero"><div class="container collab-hero-inner"><p class="collab-kicker">COLABORADOR · LANGOSTA</p><h1>Occidental Tamarindo: descanso frente al mar.</h1><p class="collab-intro">Hotel todo incluido en la bahía de Tamarindo, junto a la costa de Langosta y sus rompientes consistentes.</p><a class="btn btn-primary" href="https://www.barcelo.com/es-cr/occidental-tamarindo/" target="_blank" rel="noopener noreferrer">Visitar Occidental Tamarindo ↗</a></div></section>
+ <section class="collab-content"><div class="container collab-layout"><article><p class="collab-label">INFORMACIÓN DEL COLABORADOR</p><p>Localizado en la bahía de Tamarindo, provincia de Guanacaste, Occidental Tamarindo ofrece una amplia gama de servicios, exquisita gastronomía y opciones de entretenimiento. Está situado frente a una de las playas más bellas de Guanacaste y es ideal para amantes del surf y la naturaleza, vacaciones en familia o lunas de miel.</p><p>Bajo el sistema todo incluido se ofrecen tres tiempos de alimentación estilo buffet y una gran variedad de snacks durante todo el día. Para más información puedes contactar al Call Center (+506 4600-9297) o visitar Occidental Tamarindo y Barcelo.com.</p><p>Playa Langosta es una excelente opción para quienes buscan buenas olas. Está aproximadamente a una milla al sur del centro de Tamarindo y ofrece rompientes consistentes a lo largo de la costa. La desembocadura del río genera olas interesantes durante todo el año; el pico principal puede estar concurrido, mientras que las olas suelen ser rápidas y variables en marea baja y más gordas y pesadas en marea alta.</p></article><aside class="collab-gallery"><img src="../assets/ally-occidental.jpg" alt="Occidental Tamarindo" loading="lazy"><img src="../assets/legacy/OTAMA_GAST_102.jpg" alt="Gastronomía" loading="lazy"><img src="../assets/legacy/OTAMA_HEAL_21.jpg" alt="Bienestar" loading="lazy"><img src="../assets/legacy/OTAMA_VIEW_30.jpg" alt="Vista al mar" loading="lazy"></aside></div></section></main>
+-<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-1"></script></body></html>
+\ No newline at end of file
++<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-2"></script></body></html>
+\ No newline at end of file
+diff --git a/Enlaces/red-door.html b/Enlaces/red-door.html
+index 2868120..e91b841 100644
+--- a/Enlaces/red-door.html
++++ b/Enlaces/red-door.html
+@@ -3,4 +3,4 @@
+ <body class="collaborator-page"><header class="collab-nav"><a href="../index.html" class="collab-back">← WavePoint</a><nav><a href="../index.html#servicios">Servicios</a><a href="../index.html#camaras">Cámaras</a><a href="../guia-playas.html">Guía local</a></nav></header>
+ <main><section class="collab-hero"><div class="container collab-hero-inner"><p class="collab-kicker">COLABORADOR · TAMARINDO</p><h1>Red Door: mar, estero y una ola con tubos.</h1><p class="collab-intro">Restaurante y hotel frente a la playa de Tamarindo, junto al estero y a pocos minutos del centro.</p><a class="btn btn-primary" href="https://anatolianhospitalitygroup.pixieset.com/thereddoorcr/" target="_blank" rel="noopener noreferrer">Ver Red Door ↗</a></div></section>
+ <section class="collab-content"><div class="container collab-layout"><article><p class="collab-label">INFORMACIÓN DEL COLABORADOR</p><p>El Hotel Laguna del Cocodrilo se encuentra frente a la playa de Tamarindo, rodeado de un exuberante jardín tropical. Ofrece acceso directo a la playa y al estero de Tamarindo, a solo cinco minutos a pie del centro, donde se encuentran tiendas, restaurantes y bares.</p><p>Entre las comodidades se encuentra el restaurante Red Door, famoso por sus platos del mar, su estilo culinario y su calidad.</p><p>El Estero de Tamarindo es uno de los spots más icónicos de la zona. Su banco de arena favorece la formación de tubos y ofrece secciones rápidas y huecas cuando las condiciones son óptimas. Con marejadas medianas brinda paredes perfectas para surfistas intermedios; con un swell sólido se vuelve desafiante, con take-offs críticos y secciones tubulares que requieren experiencia. El fondo cambia durante el año y se recomienda respetar las normas locales y la rotación en el pico.</p></article><aside class="collab-gallery"><img src="../assets/ally-red-door.jpg" alt="Red Door" loading="lazy"><img src="../assets/legacy/reddoor1.jpg" alt="Laguna del Cocodrilo" loading="lazy"><img src="../assets/legacy/reddoor4.jpg" alt="Playa y estero" loading="lazy"><img src="../assets/legacy/reddoor6.jpg" alt="Restaurante Red Door" loading="lazy"></aside></div></section></main>
+-<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-1"></script></body></html>
+\ No newline at end of file
++<footer class="service-page-footer"><div class="container"><a href="../index.html">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer><script defer src="../site-nav.js?v=20261001-2"></script><script defer src="../lang-switch.js?v=20261003-2"></script></body></html>
+\ No newline at end of file
+diff --git a/guia-playas.html b/guia-playas.html
+index 1dfcf2a..5dc6b27 100644
+--- a/guia-playas.html
++++ b/guia-playas.html
+@@ -101,4 +101,4 @@
+ </main>
+ <footer class="service-page-footer"><div class="container"><a href="index.html" data-i18n="servicePageBack">← Volver a WavePoint</a><a href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer">Instagram @wavepointcr</a></div></footer>
+ <a class="whatsapp-float" href="https://wa.me/543517397525" target="_blank" rel="noopener noreferrer" aria-label="Contactar WavePoint por WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.8Z"/><path d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.4 2 1.8.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.4-1.1.6-1.8.5-.6-.1-1.5-.4-2.6-1.1-1.4-.9-2.4-2-2.9-2.7-.5-.8-.8-1.6-.8-2.2 0-.7.4-1.3.8-1.6Z"/></svg><span><small data-i18n="whatsappLabel">Escribinos por WhatsApp</small><strong>+54 351 739 7525</strong></span></a>
+-<script defer src="script.js?v=20261003-1"></script><script defer src="site-nav.js?v=20261001-2"></script><script defer src="lang-switch.js?v=20261003-1"></script></body></html>
++<script defer src="script.js?v=20261003-1"></script><script defer src="site-nav.js?v=20261001-2"></script><script defer src="lang-switch.js?v=20261003-2"></script></body></html>
+diff --git a/index.html b/index.html
+index cf71a34..0e62cef 100644
+--- a/index.html
++++ b/index.html
+@@ -271,5 +271,5 @@
+ </div>
+ <div aria-hidden="true" class="modal" id="adModal"><div class="modal-box"><div class="modal-head"><div class="modal-title">Chophouse pre-play demo</div><button class="close" id="closeAd">×</button></div><div class="modal-body" style="background:#000"><video controls="" id="adVideo" playsinline="" src="assets/chophouse-preroll-12s.mp4" style="width:100%;height:100%;display:block"></video></div><div class="modal-note">Demo del formato pre-play para Castr.</div></div></div>
+ 
+-<script defer="True" src="script.js?v=20261003-1"></script><script defer src="lang-switch.js?v=20261003-1"></script></body>
++<script defer="True" src="script.js?v=20261003-1"></script><script defer src="lang-switch.js?v=20261003-2"></script></body>
+ </html>
+diff --git a/lang-switch.js b/lang-switch.js
+index 6727236..287a13e 100644
+--- a/lang-switch.js
++++ b/lang-switch.js
+@@ -24,6 +24,9 @@
+     { selector: '.navlinks > a[href$="nostros.html"], .mobile-menu > a[href$="nostros.html"]', es: 'Nosotros', en: 'About us' },
+     { selector: '.navlinks .dropbtn', es: 'Colaboradores ▾', en: 'Partners ▾' },
+     { selector: '.mobile-dropdown-link', es: 'Colaboradores', en: 'Partners' },
++    { selector: '.service-offering[href$="clases-de-surf"] span', es: '02 / SURF · CLASES', en: '02 / SURF · LESSONS' },
++    { selector: '.service-offering[href$="clases-de-surf"] h3', es: 'Clases de surf', en: 'Surf lessons' },
++    { selector: '.service-offering[href$="clases-de-surf"] p', es: 'Tu primera ola o tu siguiente paso. Encontrá la clase que se ajusta a tu nivel.', en: 'Your first wave or your next step. Find a lesson that fits your level.' },
+     { selector: '.service-page-footer a[href$="index.html"]', es: '← Volver a WavePoint', en: '← Back to WavePoint' },
+     { selector: '.service-page-footer a[href$="index.html#servicios"]', es: '← Volver a Servicios', en: '← Back to Services' }
+   ];
+diff --git a/service-detail.html b/service-detail.html
+index fe44911..186434d 100644
+--- a/service-detail.html
++++ b/service-detail.html
+@@ -28,7 +28,7 @@
+   <main id="serviceDetailRoot" aria-live="polite"></main>
+   <footer class="service-page-footer"><div class="container"><a href="index.html#servicios">← Volver a Servicios</a><a class="instagram-footer-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint" title="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span class="visually-hidden">Instagram WavePoint</span></a></div></footer>
+   <script defer src="site-nav.js?v=20261001-1"></script>
+-  <script defer src="lang-switch.js?v=20261003-1"></script>
+-  <script defer src="services.js?v=20261003-2"></script>
++  <script defer src="lang-switch.js?v=20261003-2"></script>
++  <script defer src="services.js?v=20261003-3"></script>
+ </body>
+ </html>
+diff --git a/service.html b/service.html
+index d4715f6..290a4c5 100644
+--- a/service.html
++++ b/service.html
+@@ -35,5 +35,5 @@
+ </div></div></section>
+ </main>
+ <footer class="service-page-footer"><div class="container"><a href="index.html">← Volver a WavePoint</a><a class="instagram-footer-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint" title="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span class="visually-hidden">Instagram WavePoint</span></a></div></footer>
+-<script defer src="script.js?v=20261003-1"></script><script defer src="lang-switch.js?v=20261003-1"></script>
++<script defer src="script.js?v=20261003-1"></script><script defer src="lang-switch.js?v=20261003-2"></script>
+ </body></html>
+diff --git a/services.js b/services.js
+index 6bd8d1d..7be1eee 100644
+--- a/services.js
++++ b/services.js
+@@ -65,8 +65,8 @@
+       ]
+     },
+     {
+-      id: 'clases-de-surf', number: '02', eyebrow: 'SURF · LESSONS', title: 'Ready to Surf?',
+-      cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
++      id: 'clases-de-surf', number: '02', eyebrow: 'SURF · CLASES', title: '¿Listo para surfear?',
++      cardText: 'Contanos tu nivel y qué te gustaría aprender. Buscamos la clase que mejor encaje con vos.',
+       description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
+       images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/clase-surf.jpeg', 'assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg'],
+       questions: [
+@@ -79,6 +79,9 @@
+         { id: 'board_need', label: '¿Necesitarán una tabla?', type: 'choice', options: ['Sí', 'No, llevamos la nuestra', 'Necesitamos asesoramiento'] }
+       ],
+       en: {
++        eyebrow: 'SURF · LESSONS',
++        title: 'Ready to surf?',
++        cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
+         description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
+         questions: {
+           surf_level: { label: 'What’s your surfing level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
+@@ -193,11 +196,15 @@
+   const isSurfEn = service => lang === 'en' && service.id === 'clases-de-surf';
+   const localizeService = service => {
+     if (!isSurfEn(service) || !service.en) return service;
+-    return { ...service, description: service.en.description, questions: service.questions.map(question => ({ ...question, ...(service.en.questions[question.id] || {}) })) };
++    return { ...service, eyebrow: service.en.eyebrow, title: service.en.title, cardText: service.en.cardText, description: service.en.description, questions: service.questions.map(question => ({ ...question, ...(service.en.questions[question.id] || {}) })) };
+   };
+   const FORM_UI = {
+     es: {
+       optional: 'Opcional',
++      requestKicker: 'SOLICITUD DE RESERVA',
++      surfKicker: 'CLASES DE SURF · TAMARINDO',
++      surfCheckinKicker: 'CLASES DE SURF · CHECK-IN RÁPIDO',
++      modalKicker: '¿LISTO PARA SURFEAR?',
+       requestTitle: 'Contanos qué estás buscando.',
+       requestText: 'Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.',
+       nameLabel: '¿Cómo te llamás?', namePlaceholder: 'Tu nombre',
+@@ -216,6 +223,10 @@
+     },
+     en: {
+       optional: 'Optional',
++      requestKicker: 'BOOK REQUEST',
++      surfKicker: 'SURF LESSONS · TAMARINDO',
++      surfCheckinKicker: 'SURF LESSONS · QUICK CHECK-IN',
++      modalKicker: 'READY TO SURF?',
+       requestTitle: 'Tell us what you’re looking for.',
+       requestText: 'Answer these questions and open WhatsApp with an organized request for the person in charge.',
+       nameLabel: 'What’s your name?', namePlaceholder: 'Your name',
+@@ -267,7 +278,7 @@
+   function renderSurfLessonStory(service) {
+     const ui = uiFor(service);
+     const gallery = service.images.map((image, index) => `<img src="${image}" alt="${ui.galleryAlt} ${index + 1}" loading="lazy" />`).join('');
+-    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
++    return `<p class="service-page-kicker">${ui.surfKicker}</p><h2>${esc(service.title)}</h2><p class="surf-lesson-lead">${esc(service.cardText)}</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${ui.surfCheckinKicker}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
+   }
+   function render(service) {
+     const ui = uiFor(service);
+@@ -284,8 +295,8 @@
+       : service.id === 'clases-de-surf'
+         ? renderSurfLessonStory(service)
+         : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
+-    const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">READY TO SURF?</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
+-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${ui.submit}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
++    const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${ui.modalKicker}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
++    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${ui.requestKicker}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${ui.submit}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+     if (service.id === 'pack-ajustable') {
+       const packGrid = document.querySelector('.pack-service-grid');
+       const count = document.querySelector('[data-pack-selection]');
+-- 
+2.43.0
+
+
+From 555a9f329c0415509c5239544027fb5a6a9219a4 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Sat, 3 Oct 2026 16:21:08 +0000
+Subject: [PATCH 2/2] refactor: remove service.html, Servicios lives only in
+ index.html#servicios
+
+---
+ CHANGELOG.md         | 12 ++++++++++++
+ Enlaces/service.html |  1 -
+ PROJECT_GUIDE.md     |  7 ++-----
+ guia-playas.html     |  2 +-
+ index.html           |  2 +-
+ lang-switch.js       |  3 ---
+ manus-routes.json    |  2 +-
+ service-detail.html  |  4 ++--
+ service.html         | 39 ---------------------------------------
+ site-nav.js          |  2 +-
+ vercel.json          | 16 ++++++++++++++--
+ 11 files changed, 34 insertions(+), 56 deletions(-)
+ delete mode 100644 Enlaces/service.html
+ delete mode 100644 service.html
+
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index ab8b6a3..18c39c1 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,5 +1,17 @@
+ ## 2026-10-03
+ 
++### Se elimina `service.html`: la sección Servicios vive solo en `index.html`
++
++- Decisión: "Servicios" es la sección `#servicios` de `index.html`; el catálogo aparte duplicaba las mismas 10 tarjetas.
++- Eliminados `service.html` y la redirección `Enlaces/service.html`.
++- Los enlaces "Servicios" de `site-nav.js`, `service-detail.html`, `guia-playas.html` y el pie de `index.html` apuntan ahora a `index.html#servicios` / `#servicios`.
++- `vercel.json`: `/service`, `/service.html` y `/Enlaces/service(.html)` redirigen (308) a `/#servicios` para no romper enlaces viejos.
++- `manus-routes.json` y `PROJECT_GUIDE.md` actualizados; `lang-switch.js` pierde las reglas de la tarjeta de `service.html`.
++- Clases de surf: título, descripción y etiquetas del detalle ahora cambian entre ES y EN (`services.js`).
++- Pendiente: las reglas `.service-offering*` / `.service-page-*` de `styles.css` quedan sin uso desde `service.html`; no se tocaron.
++
++## 2026-10-03
++
+ ### Selector de idioma en todas las páginas
+ 
+ - `lang-switch.js` (nuevo): módulo compartido que inserta el mismo selector de banderas de `index.html` en cualquier página con header que no lo tenga, guarda la elección en `localStorage` (`wavepoint-lang`), actualiza `<html lang>`, el estado y la etiqueta accesible del botón, y avisa del cambio con el evento `wavepoint:languagechange`.
+diff --git a/Enlaces/service.html b/Enlaces/service.html
+deleted file mode 100644
+index a027015..0000000
+--- a/Enlaces/service.html
++++ /dev/null
+@@ -1 +0,0 @@
+-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=../service.html"><link rel="canonical" href="../service.html"><title>Servicios WavePoint</title></head><body><p>Redirigiendo a <a href="../service.html">Servicios WavePoint</a>…</p></body></html>
+\ No newline at end of file
+diff --git a/PROJECT_GUIDE.md b/PROJECT_GUIDE.md
+index 71cea32..3940b45 100644
+--- a/PROJECT_GUIDE.md
++++ b/PROJECT_GUIDE.md
+@@ -12,8 +12,7 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
+ 
+ | Área | Archivos principales | Responsabilidad |
+ | --- | --- | --- |
+-| Página principal | `index.html` | Hero, clima, cámaras, servicios, guía, aliados, promociones y contacto. |
+-| Catálogo de servicios | `service.html` | Listado completo de servicios reales. |
++| Página principal | `index.html` | Hero, clima, cámaras, servicios (sección `#servicios`), guía, aliados, promociones y contacto. |
+ | Detalle de servicio | `service-detail.html` + `services.js` | Página dinámica según `?service=...`, preguntas y solicitud por WhatsApp. |
+ | Guía turística | `guia-playas.html` | Playas, spots y experiencias de Guanacaste. |
+ | Páginas de colaboradores | `Enlaces/*.html` | Fichas individuales de aliados locales. |
+@@ -29,8 +28,7 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
+ 
+ Las páginas públicas principales son:
+ 
+-- `/index.html` o `/`: página de inicio.
+-- `/service.html`: catálogo completo.
++- `/index.html` o `/`: página de inicio (incluye la sección Servicios, `#servicios`, que es el único catálogo; ya no existe `service.html`).
+ - `/service-detail.html?service=<id>`: detalle de un servicio.
+ - `/guia-playas.html`: guía turística.
+ - `/Enlaces/capitan-suizo.html`.
+@@ -76,7 +74,6 @@ retiros
+ Cuando cambie el catálogo, actualizar de forma coordinada:
+ 
+ - Las tarjetas de servicios en `index.html`.
+-- Las tarjetas del catálogo en `service.html`.
+ - El array `services` en `services.js`.
+ - Las traducciones de títulos y descripciones en `script.js`.
+ - El contexto del asistente en `api/assistant.js` si afecta sus recomendaciones.
+diff --git a/guia-playas.html b/guia-playas.html
+index 5dc6b27..84f9ffe 100644
+--- a/guia-playas.html
++++ b/guia-playas.html
+@@ -92,7 +92,7 @@
+     <div class="guide-callout">
+       <p>Si querés dejar todo armado para tu viaje, te ayudamos a elegir la mejor opción según tus fechas, nivel y estilo de trip.</p>
+       <div class="guide-callout-actions">
+-        <a href="service.html#servicios">Ver servicios y armar mi plan</a>
++        <a href="index.html#servicios">Ver servicios y armar mi plan</a>
+         <a href="https://wa.me/543517397525" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+       </div>
+     </div>
+diff --git a/index.html b/index.html
+index 0e62cef..71d6334 100644
+--- a/index.html
++++ b/index.html
+@@ -245,7 +245,7 @@
+ </section>
+ <section class="newsletter"><div class="container newsletter-grid"><div><h2 data-i18n="newsletterTitle">Entérate primero</h2><p data-i18n="newsletterText">Recibe alertas de olas, novedades y promociones seleccionadas.</p></div><form class="signup"><input data-i18n-placeholder="newsletterEmailPlaceholder" placeholder="Tu correo electrónico" type="email"/><button type="button" data-i18n="newsletterButton">Suscribirme</button></form></div></section>
+ </main>
+-<footer><div class="container"><div class="foot-grid"><div><div class="foot-brand">WavePoint</div><p data-i18n="footerIntro">Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.</p></div><div><h3 data-i18n="footerQuickLinks">Enlaces rápidos</h3><a href="index.html">Home</a><a href="Enlaces/guia-playas.html" data-i18n="footerGuide">Guía turística</a><a href="Enlaces/service.html" data-i18n="footerServices">Servicios</a><a href="Enlaces/nostros.html" data-i18n="footerAbout">Nosotros</a></div><div><h3 data-i18n="footerCameras">Cámaras</h3><a href="Enlaces/capitan-suizo.html">Capitán Suizo</a><a href="Enlaces/casa-maderas.html">Casa de Maderas</a><a href="Enlaces/red-door.html">Red Door</a></div><div><h3 data-i18n="footerGuide">Guía</h3><a href="Enlaces/guia-playas.html" data-i18n="footerBeaches">Playas</a><a href="Enlaces/guia-playas.html" data-i18n="footerRestaurants">Restaurantes</a><a href="Enlaces/guia-playas.html" data-i18n="footerTours">Tours</a><a href="Enlaces/guia-playas.html" data-i18n="footerSnorkeling">Snorkeling</a></div><div><h3>WavePoint</h3><p data-i18n="footerWavePointText">Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.</p><a class="btn btn-primary" href="#camaras" data-i18n="footerViewCameras">Ver cámaras</a></div></div><div class="foot-bottom"><span>© 2026 WavePoint Tamarindo.</span><span data-i18n="footerTerms">Términos · Privacidad</span></div></div></footer>
++<footer><div class="container"><div class="foot-grid"><div><div class="foot-brand">WavePoint</div><p data-i18n="footerIntro">Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.</p></div><div><h3 data-i18n="footerQuickLinks">Enlaces rápidos</h3><a href="index.html">Home</a><a href="Enlaces/guia-playas.html" data-i18n="footerGuide">Guía turística</a><a href="#servicios" data-i18n="footerServices">Servicios</a><a href="Enlaces/nostros.html" data-i18n="footerAbout">Nosotros</a></div><div><h3 data-i18n="footerCameras">Cámaras</h3><a href="Enlaces/capitan-suizo.html">Capitán Suizo</a><a href="Enlaces/casa-maderas.html">Casa de Maderas</a><a href="Enlaces/red-door.html">Red Door</a></div><div><h3 data-i18n="footerGuide">Guía</h3><a href="Enlaces/guia-playas.html" data-i18n="footerBeaches">Playas</a><a href="Enlaces/guia-playas.html" data-i18n="footerRestaurants">Restaurantes</a><a href="Enlaces/guia-playas.html" data-i18n="footerTours">Tours</a><a href="Enlaces/guia-playas.html" data-i18n="footerSnorkeling">Snorkeling</a></div><div><h3>WavePoint</h3><p data-i18n="footerWavePointText">Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.</p><a class="btn btn-primary" href="#camaras" data-i18n="footerViewCameras">Ver cámaras</a></div></div><div class="foot-bottom"><span>© 2026 WavePoint Tamarindo.</span><span data-i18n="footerTerms">Términos · Privacidad</span></div></div></footer>
+ <a class="whatsapp-float" href="https://wa.me/543517397525" target="_blank" rel="noopener noreferrer" aria-label="Contactar WavePoint por WhatsApp al +54 351 739 7525">
+ <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.8Z"/><path d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.4 2 1.8.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.4-1.1.6-1.8.5-.6-.1-1.5-.4-2.6-1.1-1.4-.9-2.4-2-2.9-2.7-.5-.8-.8-1.6-.8-2.2 0-.7.4-1.3.8-1.6Z"/></svg>
+ <span><small data-i18n="whatsappLabel">Escribinos por WhatsApp</small><strong>+54 351 739 7525</strong></span>
+diff --git a/lang-switch.js b/lang-switch.js
+index 287a13e..6727236 100644
+--- a/lang-switch.js
++++ b/lang-switch.js
+@@ -24,9 +24,6 @@
+     { selector: '.navlinks > a[href$="nostros.html"], .mobile-menu > a[href$="nostros.html"]', es: 'Nosotros', en: 'About us' },
+     { selector: '.navlinks .dropbtn', es: 'Colaboradores ▾', en: 'Partners ▾' },
+     { selector: '.mobile-dropdown-link', es: 'Colaboradores', en: 'Partners' },
+-    { selector: '.service-offering[href$="clases-de-surf"] span', es: '02 / SURF · CLASES', en: '02 / SURF · LESSONS' },
+-    { selector: '.service-offering[href$="clases-de-surf"] h3', es: 'Clases de surf', en: 'Surf lessons' },
+-    { selector: '.service-offering[href$="clases-de-surf"] p', es: 'Tu primera ola o tu siguiente paso. Encontrá la clase que se ajusta a tu nivel.', en: 'Your first wave or your next step. Find a lesson that fits your level.' },
+     { selector: '.service-page-footer a[href$="index.html"]', es: '← Volver a WavePoint', en: '← Back to WavePoint' },
+     { selector: '.service-page-footer a[href$="index.html#servicios"]', es: '← Volver a Servicios', en: '← Back to Services' }
+   ];
+diff --git a/manus-routes.json b/manus-routes.json
+index 11f3c6c..e6832c5 100644
+--- a/manus-routes.json
++++ b/manus-routes.json
+@@ -1 +1 @@
+-{"routes":[{"path":"/","title":"WavePoint"},{"path":"/service.html","title":"Servicios"},{"path":"/service-detail.html","title":"Detalle de servicio"},{"path":"/guia-playas.html","title":"Guía de playas"}]}
+\ No newline at end of file
++{"routes":[{"path":"/","title":"WavePoint"},{"path":"/service-detail.html","title":"Detalle de servicio"},{"path":"/guia-playas.html","title":"Guía de playas"}]}
+\ No newline at end of file
+diff --git a/service-detail.html b/service-detail.html
+index 186434d..864d203 100644
+--- a/service-detail.html
++++ b/service-detail.html
+@@ -18,13 +18,13 @@
+   <div class="container nav">
+     <a class="shared-brand" href="index.html" aria-label="WavePoint inicio"><img src="assets/wavepoint-logo.png" alt="WavePoint" /></a>
+     <nav class="navlinks" aria-label="Navegación principal">
+-      <a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a>
++      <a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="index.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a>
+       <div class="dropdown"><a class="dropbtn" href="index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div>
+     </nav>
+     <button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button>
+   </div>
+ </header>
+-<div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>
++<div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="index.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>
+   <main id="serviceDetailRoot" aria-live="polite"></main>
+   <footer class="service-page-footer"><div class="container"><a href="index.html#servicios">← Volver a Servicios</a><a class="instagram-footer-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint" title="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span class="visually-hidden">Instagram WavePoint</span></a></div></footer>
+   <script defer src="site-nav.js?v=20261001-1"></script>
+diff --git a/service.html b/service.html
+deleted file mode 100644
+index 290a4c5..0000000
+--- a/service.html
++++ /dev/null
+@@ -1,39 +0,0 @@
+-<!doctype html>
+-<html lang="es">
+-<head>
+-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#0a3547"/>
+-<title>Servicios y experiencias en Tamarindo · WavePoint</title><meta name="description" content="Conocé los servicios y experiencias de WavePoint en Tamarindo y armá tu solicitud personalizada."/>
+-<link rel="icon" href="assets/wavepoint-favicon.ico" sizes="any"/><link rel="icon" href="assets/wavepoint-favicon-32.png" type="image/png" sizes="32x32"/><link rel="icon" href="assets/wavepoint-favicon-192.png" type="image/png" sizes="192x192"/><link rel="apple-touch-icon" href="assets/wavepoint-apple-touch-icon.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/><link rel="stylesheet" href="styles.css?v=20261001-17"/>
+-</head>
+-<body class="service-page">
+-<header class="topbar service-topbar site-shared-header">
+-  <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg></a>
+-  <div class="container nav">
+-    <a class="shared-brand" href="index.html" aria-label="WavePoint inicio"><img src="assets/wavepoint-logo.png" alt="WavePoint" /></a>
+-    <nav class="navlinks" aria-label="Navegación principal">
+-      <a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a>
+-      <div class="dropdown"><a class="dropbtn" href="index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div>
+-    </nav>
+-    <button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button>
+-  </div>
+-</header>
+-<div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="index.html#inicio">Inicio</a><a href="guia-playas.html">Guía turística</a><a href="service.html#servicios">Servicios</a><a href="Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="Enlaces/red-door.html">Red Door, Tamarindo</a><a href="Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>
+-<main>
+-<section class="service-page-hero"><div class="container service-page-hero-content"><p class="service-page-kicker">SURF · BIENESTAR · EXPERIENCIAS</p><h1>La próxima sesión empieza acá.</h1><p class="service-page-intro">Elegí una experiencia, conocé todos los detalles y armá una solicitud a tu medida. WavePoint la ordena y la consulta con el encargado local.</p><a class="service-page-cta" href="#servicios">Explorar los 10 servicios ↓</a></div></section>
+-<section class="service-page-list" id="servicios"><div class="container"><div class="service-page-heading"><p class="service-page-kicker">HECHO EN TAMARINDO</p><h2 data-i18n="servicePageSectionTitle">¿Qué te gustaría hacer en Tamarindo?</h2><p class="service-page-intro" data-i18n="servicePageSectionIntro">Elegí una experiencia para ver los detalles. Cuando estés listo, envianos tu fecha preferida y el tamaño de tu grupo. Consultaremos la disponibilidad con el proveedor.</p></div>
+-<div class="service-offerings service-offerings-catalog">
+-<a class="service-offering" href="service-detail.html?service=alojamiento-experiencias"><img src="assets/legacy/B_03.jpg" alt="Stays and Hotels · alojamientos en Tamarindo" loading="lazy"/><div><span>01 / STAY · HOTELS</span><h3>Stays and Hotels</h3><p>Hoteles y alojamientos frente al mar para cada tipo de viaje.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=clases-de-surf"><img src="assets/legacy/DSC02807.jpg" alt="Clases de surf en Tamarindo" loading="lazy"/><div><span>02 / SURF · LESSONS</span><h3>Surf lessons</h3><p>Your first wave or your next step. Find a lesson that fits your level.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=surf-coaching"><img src="assets/legacy/_GSK8664.jpg" alt="Surf coaching en Tamarindo" loading="lazy"/><div><span>03 / SURF · COACHING</span><h3>Surf coaching</h3><p>Work on your surfing with coaching and optional photos or video analysis.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=yoga"><img src="assets/legacy/OTAMA_HEAL_21.jpg" alt="Yoga y bienestar" loading="lazy"/><div><span>04 / WELLNESS · YOGA</span><h3>Yoga</h3><p>Tell us your experience and preferred time to find a suitable session.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=roca-bruja"><img src="assets/legacy/bruja.jpg" alt="Surf trip a Roca Bruja" loading="lazy"/><div><span>05 / SURF TRIP · ADVENTURE</span><h3>Witch’s Rock surf trip</h3><p>Request a guided surf trip with details matched to your group and the conditions.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=snorkel-catamaran"><img src="assets/legacy/conchal.jpg" alt="Snorkel y catamarán" loading="lazy"/><div><span>06 / SEA · BOAT</span><h3>Snorkeling &amp; catamaran</h3><p>Compare boat experiences, snorkeling options and time on the coast.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=buceo"><img src="assets/surf-service.jpg" alt="Buceo en Tamarindo" loading="lazy"/><div><span>07 / SEA · DIVING</span><h3>Diving</h3><p>Discover Tamarindo underwater with a local diving experience.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=atv"><img src="assets/legacy/rincon.jpg" alt="Tours en cuatriciclo ATV" loading="lazy"/><div><span>08 / LAND · ADVENTURE</span><h3>ATV tours</h3><p>Check tour details and the operator’s participation requirements.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering service-offering-featured" href="service-detail.html?service=pack-ajustable"><img src="assets/after-guide.jpg" alt="Pack ajustable de experiencias" loading="lazy"/><div><span>DIFFERENTIATED · CUSTOM EXPERIENCE</span><h3>Build your own experience</h3><p>Combine the activities that fit your trip and create your own experience.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-<a class="service-offering" href="service-detail.html?service=retiros"><img src="assets/legacy/ocotal.jpg" alt="Retreats y experiencias" loading="lazy"/><div><span>10 / RETREATS · EXPERIENCES</span><h3>Retreats</h3><p>Explore hosted group trips with a planned program and stay.</p><strong>Ver servicio y armar solicitud ↗</strong></div></a>
+-</div></div></section>
+-</main>
+-<footer class="service-page-footer"><div class="container"><a href="index.html">← Volver a WavePoint</a><a class="instagram-footer-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint" title="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span class="visually-hidden">Instagram WavePoint</span></a></div></footer>
+-<script defer src="script.js?v=20261003-1"></script><script defer src="lang-switch.js?v=20261003-2"></script>
+-</body></html>
+diff --git a/site-nav.js b/site-nav.js
+index aa9ceca..ce0dbde 100644
+--- a/site-nav.js
++++ b/site-nav.js
+@@ -1,7 +1,7 @@
+ (() => {
+   const nested = location.pathname.split('/').includes('Enlaces');
+   const base = nested ? '../' : './';
+-  const sharedHeader = `<header class="topbar service-topbar site-shared-header"><a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg></a><div class="container nav"><a class="shared-brand" href="${base}index.html" aria-label="WavePoint inicio"><img src="${base}assets/wavepoint-logo.png" alt="WavePoint" /></a><nav class="navlinks" aria-label="Navegación principal"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}service.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="dropdown"><a class="dropbtn" href="${base}index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav><button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button></div></header><div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="${base}assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}service.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="${base}index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>`;
++  const sharedHeader = `<header class="topbar service-topbar site-shared-header"><a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg></a><div class="container nav"><a class="shared-brand" href="${base}index.html" aria-label="WavePoint inicio"><img src="${base}assets/wavepoint-logo.png" alt="WavePoint" /></a><nav class="navlinks" aria-label="Navegación principal"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}index.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="dropdown"><a class="dropbtn" href="${base}index.html#aliados">Colaboradores ▾</a><div class="menu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav><button aria-label="Abrir menú" class="hamb" id="hamb" type="button">☰</button></div></header><div aria-hidden="true" class="mobile-panel" id="mobilePanel"><div class="mobile-panel-head"><img alt="WavePoint" src="${base}assets/wavepoint-logo.png"/><button aria-label="Cerrar menú" class="mobile-close" id="mobileClose" type="button">×</button></div><nav class="mobile-menu"><a href="${base}index.html#inicio">Inicio</a><a href="${base}guia-playas.html">Guía turística</a><a href="${base}index.html#servicios">Servicios</a><a href="${base}Enlaces/nostros.html">Nosotros</a><div class="mobile-dropdown"><a class="mobile-dropdown-link" href="${base}index.html#aliados">Colaboradores</a><button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button><div class="mobile-submenu"><a href="${base}Enlaces/capitan-suizo.html">Capitán Suizo, Tamarindo</a><a href="${base}Enlaces/red-door.html">Red Door, Tamarindo</a><a href="${base}Enlaces/occidental.html">Hotel Occidental Tamarindo, Langosta</a><a href="${base}Enlaces/casa-maderas.html">Casa de Maderas, Palm Beach “Casitas”</a></div></div></nav></div>`;
+ 
+   if (!document.querySelector('.site-shared-header')) {
+     document.querySelector('.collab-nav')?.remove();
+diff --git a/vercel.json b/vercel.json
+index 9894594..754fb7c 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -7,7 +7,19 @@
+   "cleanUrls": true,
+   "trailingSlash": false,
+   "routes": [
+-    { "handle": "filesystem" },
+-    { "src": "/(.*)", "dest": "/index.html" }
++    {
++      "src": "/(?:Enlaces/)?service(?:\\.html)?",
++      "status": 308,
++      "headers": {
++        "Location": "/#servicios"
++      }
++    },
++    {
++      "handle": "filesystem"
++    },
++    {
++      "src": "/(.*)",
++      "dest": "/index.html"
++    }
+   ]
+ }
+-- 
+2.43.0
+

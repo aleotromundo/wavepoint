@@ -1,5 +1,17 @@
 ## 2026-10-03
 
+### Se elimina `service.html`: la sección Servicios vive solo en `index.html`
+
+- Decisión: "Servicios" es la sección `#servicios` de `index.html`; el catálogo aparte duplicaba las mismas 10 tarjetas.
+- Eliminados `service.html` y la redirección `Enlaces/service.html`.
+- Los enlaces "Servicios" de `site-nav.js`, `service-detail.html`, `guia-playas.html` y el pie de `index.html` apuntan ahora a `index.html#servicios` / `#servicios`.
+- `vercel.json`: `/service`, `/service.html` y `/Enlaces/service(.html)` redirigen (308) a `/#servicios` para no romper enlaces viejos.
+- `manus-routes.json` y `PROJECT_GUIDE.md` actualizados; `lang-switch.js` pierde las reglas de la tarjeta de `service.html`.
+- Clases de surf: título, descripción y etiquetas del detalle ahora cambian entre ES y EN (`services.js`).
+- Pendiente: las reglas `.service-offering*` / `.service-page-*` de `styles.css` quedan sin uso desde `service.html`; no se tocaron.
+
+## 2026-10-03
+
 ### Selector de idioma en todas las páginas
 
 - `lang-switch.js` (nuevo): módulo compartido que inserta el mismo selector de banderas de `index.html` en cualquier página con header que no lo tenga, guarda la elección en `localStorage` (`wavepoint-lang`), actualiza `<html lang>`, el estado y la etiqueta accesible del botón, y avisa del cambio con el evento `wavepoint:languagechange`.
