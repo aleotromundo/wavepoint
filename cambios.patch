@@ -1,2 +1,0 @@
-git rm service.html
-git commit -m "chore: eliminar service.html residual (Servicios vive solo en index.html#servicios)"
