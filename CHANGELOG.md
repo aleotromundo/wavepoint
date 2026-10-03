@@ -2,6 +2,23 @@
 
 ## 2026-10-03
 
+## 2026-10-03
+
+### Nuevo encabezado del catálogo de Servicios
+
+- `service.html`: reemplazar el título de la sección por **“¿Qué te gustaría hacer en Tamarindo?”** y dejar una sola descripción orientada a elegir una experiencia y enviar la fecha preferida.
+- `script.js`: agregar las versiones bilingües:
+  - Español: **“¿Qué te gustaría hacer en Tamarindo?”** / **“Elegí una experiencia para ver los detalles. Cuando estés listo, envianos tu fecha preferida.”**
+  - Inglés: **“What would you like to do in Tamarindo?”** / **“Choose an experience to see the details. When you’re ready, send us your preferred date.”**
+- Se eliminó la segunda descripción redundante del encabezado; las diez tarjetas de servicios no se modificaron.
+
+### Validación
+
+- `service.html` enlaza el título y la descripción con `data-i18n`.
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Guía de playas inicia en la guía local completa
 
 - `guia-playas.html`: retirar la portada y el bloque inicial de tarjetas-resumen, ya que repetían destinos y enlaces de mapas presentes en la guía detallada inferior.
