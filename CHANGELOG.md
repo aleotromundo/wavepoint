@@ -136,3 +136,17 @@ Esta entrega reúne las mejoras realizadas después de sincronizar el catálogo 
 
 - `git diff --check`: sin errores de formato.
 - Se conserva el ancho del contenedor móvil para evitar overflow horizontal.
+
+## 2026-10-02
+
+### Rediseño de la tarjeta de clima
+
+- `styles.css`: aumentar el tamaño y contraste de los valores de oleaje, viento y hora local, incluyendo unidades más legibles.
+- `styles.css`: convertir los tres indicadores inferiores en módulos más definidos, con iconos mayores, separadores claros y menos espacio vacío.
+- `styles.css`: dar más presencia al icono meteorológico principal con un panel cuadrado redondeado, mayor área visual y una animación suave de flotación/escala. Se respeta `prefers-reduced-motion`.
+- `styles.css`: ajustar los tamaños en 640 px y 480 px para conservar jerarquía sin desbordamiento en móvil.
+
+### Validación
+
+- `git diff --check`: sin errores de formato.
+- Se conservaron los identificadores y la lógica de Open-Meteo, por lo que los datos dinámicos continúan funcionando.
