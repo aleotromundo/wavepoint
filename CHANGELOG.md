@@ -1,5 +1,21 @@
 ## 2026-10-03
 
+## 2026-10-03
+
+### Guía de playas inicia en la guía local completa
+
+- `guia-playas.html`: retirar la portada y el bloque inicial de tarjetas-resumen, ya que repetían destinos y enlaces de mapas presentes en la guía detallada inferior.
+- La página ahora comienza directamente con **“GUÍA LOCAL COMPLETA · Guanacaste, pensada para viajar bien”**, su índice de categorías, tarjetas desarrolladas, mapas, recomendaciones prácticas y llamada a la acción.
+- `styles.css`: adaptar el bloque inicial al ancho y fondo visual del sitio, eliminando el margen y separador que dependían del contenido retirado.
+
+### Validación
+
+- Confirmada la ausencia de `guide-page-hero`, `guide-page-list` y `guide-offering`.
+- Confirmadas las tarjetas detalladas y sus enlaces a mapas.
+- `node --check script.js` y `git diff --check` correctos.
+
+## 2026-10-03
+
 ### Traducciones del encabezado de aliados
 
 - `index.html` y `script.js`: conectar el nuevo encabezado externo y su descripción accesible al sistema de idiomas existente.
