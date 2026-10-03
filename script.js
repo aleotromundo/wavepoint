@@ -875,7 +875,7 @@
 
   function bindHeroVideoSwap(){
     const videos = [...document.querySelectorAll('.hero-video')];
-    const scrollVideos = [...document.querySelectorAll('.camera-scroll-video')];
+    const scrollVideos = [...document.querySelectorAll('.section-scroll-video')];
     if (videos.length < 2) return;
 
     let activeIndex = 0;
@@ -918,16 +918,17 @@
     setInterval(swap, 6000);
   }
 
-  function bindCameraBackgroundParallax(){
-    const section = document.querySelector('.camera-scroll-section');
-    const videos = [...document.querySelectorAll('.camera-scroll-video')];
-    if (!section || !videos.length) return;
+  function bindSectionBackgroundParallax(){
+    const sections = [...document.querySelectorAll('.services, #guia, .newsletter')];
+    if (!sections.length) return;
 
     let ticking = false;
     const update = () => {
-      const rect = section.getBoundingClientRect();
-      const shift = Math.max(-56, Math.min(56, (window.innerHeight * .5 - (rect.top + rect.height * .5)) * .08));
-      videos.forEach(video => video.style.setProperty('--camera-parallax', `${shift}px`));
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const shift = Math.max(-56, Math.min(56, (window.innerHeight * .5 - (rect.top + rect.height * .5)) * .08));
+        section.querySelectorAll('.section-scroll-video').forEach(video => video.style.setProperty('--section-parallax', `${shift}px`));
+      });
       ticking = false;
     };
     const requestUpdate = () => {
@@ -1251,7 +1252,7 @@
   applyTranslations();
   bindMobileMenu();
   bindHeroVideoSwap();
-  bindCameraBackgroundParallax();
+  bindSectionBackgroundParallax();
   bindHeroLogoEntrance();
   bindAlliesTickerInteraction();
   bindWeatherCardDrag();

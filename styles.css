@@ -1240,7 +1240,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   background: #0a3443;
 }
 
-.camera-scroll-video {
+.section-scroll-video {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -1249,14 +1249,14 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   object-fit: cover;
   opacity: 0;
   filter: saturate(1.1) contrast(1.05);
-  transform: translate3d(0, var(--camera-parallax, 0px), 0) scale(1.08);
+  transform: translate3d(0, var(--section-parallax, 0px), 0) scale(1.08);
   will-change: transform, opacity;
   transition: opacity 1.3s ease-in-out;
   pointer-events: none;
 }
 
-.camera-scroll-video.is-active { opacity: .42; }
-.camera-scroll-video-overlay {
+.section-scroll-video.is-active { opacity: .42; }
+.section-scroll-video-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -1278,6 +1278,35 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 }
 
 #camaras > .container { position: relative; z-index: 2; }
+
+#servicios {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0a3443;
+}
+
+#servicios::before { z-index: 1; opacity: .18; }
+#servicios > .container { position: relative; z-index: 2; }
+
+#guia,
+.newsletter {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0a3443;
+}
+
+#guia::before,
+.newsletter::before { z-index: 1; opacity: .18; }
+#guia > .container,
+.newsletter > .container { position: relative; z-index: 2; }
+
+.allies-ticker {
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(112deg, #0b303b, #0d3c43 55%, #123844);
+}
 
 @keyframes camera-current {
   to { transform: translate3d(1.5%, -1%, 0) scale(1.06); }
