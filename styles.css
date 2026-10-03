@@ -1061,6 +1061,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 
 .hero {
   min-height: min(680px, 100svh);
+  padding-bottom: 56px;
   background-color: var(--deep);
 }
 
