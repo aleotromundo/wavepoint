@@ -875,7 +875,6 @@
 
   function bindHeroVideoSwap(){
     const videos = [...document.querySelectorAll('.hero-video')];
-    const scrollVideos = [...document.querySelectorAll('.section-scroll-video')];
     if (videos.length < 2) return;
 
     let activeIndex = 0;
@@ -896,50 +895,7 @@
       video.play().catch(() => {});
     });
 
-    const syncScrollBackground = () => {
-      if (!scrollVideos.length) return;
-      const activeVideo = videos[activeIndex];
-      scrollVideos.forEach((video, index) => {
-        video.muted = true;
-        video.playsInline = true;
-        video.autoplay = true;
-        video.loop = true;
-        video.classList.toggle('is-active', index === activeIndex);
-        if (video.readyState >= 1 && activeVideo.readyState >= 1 && Math.abs(video.currentTime - activeVideo.currentTime) > .35) {
-          video.currentTime = activeVideo.currentTime % (video.duration || 1);
-        }
-        video.play().catch(() => {});
-      });
-    };
-
-    syncScrollBackground();
-    setInterval(syncScrollBackground, 250);
-
     setInterval(swap, 6000);
-  }
-
-  function bindSectionBackgroundParallax(){
-    const sections = [...document.querySelectorAll('.services, #guia, .newsletter')];
-    if (!sections.length) return;
-
-    let ticking = false;
-    const update = () => {
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        const shift = Math.max(-56, Math.min(56, (window.innerHeight * .5 - (rect.top + rect.height * .5)) * .08));
-        section.querySelectorAll('.section-scroll-video').forEach(video => video.style.setProperty('--section-parallax', `${shift}px`));
-      });
-      ticking = false;
-    };
-    const requestUpdate = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener('scroll', requestUpdate, {passive:true});
-    window.addEventListener('resize', requestUpdate);
   }
 
   function bindScrollReveals(){
@@ -1252,7 +1208,6 @@
   applyTranslations();
   bindMobileMenu();
   bindHeroVideoSwap();
-  bindSectionBackgroundParallax();
   bindHeroLogoEntrance();
   bindAlliesTickerInteraction();
   bindWeatherCardDrag();

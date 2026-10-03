@@ -1237,38 +1237,14 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 #camaras {
   isolation: isolate;
   overflow: hidden;
-  background: #0a3443;
-}
-
-.section-scroll-video {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  filter: saturate(1.1) contrast(1.05);
-  transform: translate3d(0, var(--section-parallax, 0px), 0) scale(1.08);
-  will-change: transform, opacity;
-  transition: opacity 1.3s ease-in-out;
-  pointer-events: none;
-}
-
-.section-scroll-video.is-active { opacity: .42; }
-.section-scroll-video-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(5, 31, 42, .82), rgba(7, 52, 61, .7) 48%, rgba(7, 28, 39, .88));
-  pointer-events: none;
+  background: linear-gradient(135deg, #c5e2dc, #f2f7f3 58%, #d4e9e4);
 }
 
 #camaras:before {
   content: "";
   position: absolute;
   inset: -18% -12%;
-  z-index: 1;
+  z-index: 0;
   background:
     repeating-radial-gradient(ellipse at 14% 108%, transparent 0 34px, rgba(7, 140, 145, .11) 36px 38px, transparent 40px 70px),
     radial-gradient(ellipse at 82% 16%, rgba(255, 255, 255, .46), transparent 42%);
@@ -1277,36 +1253,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   pointer-events: none;
 }
 
-#camaras > .container { position: relative; z-index: 2; }
-
-#servicios {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: #0a3443;
-}
-
-#servicios::before { z-index: 1; opacity: .18; }
-#servicios > .container { position: relative; z-index: 2; }
-
-#guia,
-.newsletter {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: #0a3443;
-}
-
-#guia::before,
-.newsletter::before { z-index: 1; opacity: .18; }
-#guia > .container,
-.newsletter > .container { position: relative; z-index: 2; }
-
-.allies-ticker {
-  position: relative;
-  z-index: 3;
-  background: linear-gradient(112deg, #0b303b, #0d3c43 55%, #123844);
-}
+#camaras > .container { position: relative; z-index: 1; }
 
 @keyframes camera-current {
   to { transform: translate3d(1.5%, -1%, 0) scale(1.06); }
