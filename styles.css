@@ -4888,3 +4888,20 @@ footer a {
   color: var(--wp-turquoise, #00a7bd);
   font-weight: 900;
 }
+/* Witch’s Rock Surf Trip: foto de la descripción y pregunta de cantidad de personas */
+.detail-story .witch-rock-gallery { grid-template-columns: 1fr; margin-top: 8px; }
+.detail-story .witch-rock-gallery img:first-child { display: block; }
+.headcount-note {
+  margin: 12px 0 0;
+  color: #5b7379;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.headcount-ages {
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+  color: var(--wp-ink, #102638);
+  font-size: 14px;
+  font-weight: 700;
+}

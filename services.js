@@ -106,16 +106,35 @@ questions: [
 ]
 },
 {
-id: 'roca-bruja', number: '04', eyebrow: 'SURF TRIP · AVENTURA', title: 'Surf trip a Roca Bruja',
-cardText: 'Planificá una salida a uno de los spots más especiales de la costa con logística local.',
-description: 'Roca Bruja exige mirar el mar, la logística y el grupo como un todo. Coordinamos la consulta con información sobre niveles, tablas y flexibilidad de fechas para que el operador pueda evaluar la salida de forma responsable. Las condiciones pueden pedir cambios: por eso este primer paso nos ayuda a buscar una ventana que tenga sentido para quienes viajan y para el océano.',
-images: ['assets/legacy/bruja.jpg', 'assets/legacy/avellanas.jpg'],
+id: 'roca-bruja', number: '05', eyebrow: 'SURF TRIP · AVENTURA', title: 'Witch’s Rock Surf Trip',
+cardText: 'Un día de surf en barco con guías locales que conocen la zona.',
+lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
+description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
+coordination: 'WavePoint ayuda a coordinar los detalles, teniendo en cuenta el nivel de surf de tu grupo y las condiciones.',
+galleryAlt: 'Olas y costa de Guanacaste',
+images: ['assets/legacy/bruja.jpg', 'assets/legacy/hermosa.jpg'],
 questions: [
+{ id: 'group_size', label: '¿Cuántas personas se suman?', type: 'headcount', fields: [{ id: 'adults', label: 'Adultos' }, { id: 'children', label: 'Niños' }], note: 'Si se suman niños, contanos sus edades para consultar los requisitos del proveedor.', agesLabel: 'Edades de los niños', agesPlaceholder: 'Ej.: 8 y 11' },
 { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
 { id: 'own_boards', label: '¿Todos llevarán su propia tabla?', type: 'choice', options: ['Sí', 'No'] },
 { id: 'board_count', label: 'Si alguien necesita tabla, ¿cuántas necesitan?', type: 'number', optional: true },
 { id: 'date_flexibility', label: '¿Pueden cambiar de fecha si las condiciones del mar lo requieren?', type: 'choice', options: ['Sí', 'No'] }
-]
+],
+en: {
+eyebrow: 'SURF TRIP · ADVENTURE',
+cardText: 'A day of surf by boat with local guides who know the area.',
+lead: 'Some surf trips stay with you long after your last wave.',
+description: 'Head out by boat to Roca Bruja and share a day of surf with local guides who know the area. From the journey out to the time in the water, the experience is shaped by the ocean, your group and the people guiding you.',
+coordination: 'WavePoint helps coordinate the details, taking your group’s surf level and the conditions into account.',
+galleryAlt: 'Waves and coastline in Guanacaste',
+questions: {
+group_size: { label: 'How many people are joining?', fields: [{ id: 'adults', label: 'Adults' }, { id: 'children', label: 'Children' }], note: 'If children are joining, please tell us their ages so we can check the provider’s requirements.', agesLabel: 'Children’s ages', agesPlaceholder: 'e.g. 8 and 11' },
+group_levels: { label: 'What is each participant’s surf level?', placeholder: 'Please share everyone’s level.' },
+own_boards: { label: 'Will everyone bring their own board?', options: ['Yes', 'No'] },
+board_count: { label: 'If anyone needs a board, how many?' },
+date_flexibility: { label: 'Can you change the date if sea conditions require it?', options: ['Yes', 'No'] }
+}
+}
 },
 {
 id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
@@ -182,7 +201,7 @@ cardText: 'Build your own experience by combining the activities that fit your t
 description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
 images: ['assets/after-guide.jpg'],
 questions: [
-{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Yoga', 'Witch’s Rock surf trip', 'Snorkeling & catamaran', 'Buceo', 'ATV tours', 'Retreats'] },
+{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Yoga', 'Witch’s Rock Surf Trip', 'Snorkeling & catamaran', 'Buceo', 'ATV tours', 'Retreats'] },
 { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
 { id: 'pack_notes', label: '¿Qué debería tener en cuenta el operador?', type: 'textarea', placeholder: 'Cantidad de personas, preferencias o necesidades especiales.', optional: true }
 ]
@@ -191,10 +210,11 @@ questions: [
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
 const getService = () => { const id = new URLSearchParams(location.search).get('service'); return services.find(item => item.id === id) || services[0]; };
 let lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'en' ? 'en' : 'es'; } catch (error) { return 'es'; } })();
-const isSurfEn = service => lang === 'en' && service.id === 'clases-de-surf';
+const hasEn = service => lang === 'en' && Boolean(service.en);
 const localizeService = service => {
-if (!isSurfEn(service) || !service.en) return service;
-return { ...service, description: service.en.description, questions: service.questions.map(question => ({ ...question, ...(service.en.questions[question.id] || {}) })) };
+if (!hasEn(service)) return service;
+const { questions: questionsEn = {}, ...rest } = service.en;
+return { ...service, ...rest, questions: service.questions.map(question => ({ ...question, ...(questionsEn[question.id] || {}) })) };
 };
 const FORM_UI = {
 es: {
@@ -234,14 +254,14 @@ modalText: 'Complete the survey and we’ll prepare a request tailored to your g
 modalClose: 'Close survey'
 }
 };
-const uiFor = service => isSurfEn(service) ? FORM_UI.en : FORM_UI.es;
+const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
 'Alojamiento': { title: 'Stay & experience', detail: 'Un lugar cómodo y algo más para vivir Tamarindo.', image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
 'Surf lessons': { title: 'Surf lessons', detail: 'Tu primera ola o el siguiente paso.', image: 'assets/legacy/DSC02807.jpg' },
 'Surf coaching': { title: 'Surf coaching', detail: 'Entrenamiento personalizado con video-análisis.', image: 'assets/legacy/_GSK8664.jpg' },
 'Yoga': { title: 'Yoga', detail: 'Bajá el ritmo y encontrá tu pausa.', image: 'assets/legacy/OTAMA_HEAL_21.jpg' },
-'Witch’s Rock surf trip': { title: 'Witch’s Rock', detail: 'Una salida guiada a un spot inolvidable.', image: 'assets/legacy/bruja.jpg' },
+'Witch’s Rock Surf Trip': { title: 'Witch’s Rock Surf Trip', detail: 'Una salida guiada a un spot inolvidable.', image: 'assets/legacy/bruja.jpg' },
 'Snorkeling & catamaran': { title: 'Snorkeling & catamaran', detail: 'Mar, navegación y tiempo para explorar.', image: 'assets/legacy/conchal.jpg' },
 'Buceo': { title: 'Diving', detail: 'Descubrí el mundo bajo la superficie.', image: 'assets/surf-service.jpg' },
 'ATV tours': { title: 'ATV tours', detail: 'Aventura y caminos de Guanacaste.', image: 'assets/legacy/rincon.jpg' },
@@ -251,6 +271,7 @@ function renderQuestion(service, question) {
 const id = inputId(service, question);
 const optional = question.optional ? `<span class="detail-optional">${uiFor(service).optional}</span>` : '';
 if (service.id === 'pack-ajustable' && question.id === 'pack_activities') return `<fieldset class="detail-question pack-question"><legend>${esc(question.label)} ${optional}</legend><p class="pack-question-intro">Elegí dos o más tarjetas y armamos una experiencia a tu medida.</p><div class="pack-service-grid">${question.options.map(option => { const card = PACK_SERVICE_CARDS[option]; return `<label class="pack-service-card"><input type="checkbox" name="${question.id}" value="${esc(option)}" /><span class="pack-service-image"><img src="${card.image}" alt="" loading="lazy" /><span class="pack-service-check" aria-hidden="true">✓</span></span><span class="pack-service-copy"><strong>${esc(card.title)}</strong><small>${esc(card.detail)}</small></span></label>`; }).join('')}</div><p class="pack-selection-count" data-pack-selection>0 experiencias seleccionadas</p></fieldset>`;
+if (question.type === 'headcount') return `<fieldset class="detail-question headcount-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map((field, index) => `<label for="${id}-${field.id}">${esc(field.label)}<input id="${id}-${field.id}" name="${question.id}-${field.id}" type="number" min="${index === 0 ? 1 : 0}" step="1" inputmode="numeric" placeholder="${index === 0 ? '1' : '0'}" required /></label>`).join('')}</div><p class="headcount-note">${esc(question.note)}</p><label class="headcount-ages" for="${id}-ages"><span>${esc(question.agesLabel)} <span class="detail-optional">${uiFor(service).optional}</span></span><input id="${id}-ages" name="${question.id}-ages" type="text" placeholder="${esc(question.agesPlaceholder)}" /></label></fieldset>`;
 if (question.type === 'dates') return `<fieldset class="detail-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
 if (question.type === 'choice' || question.type === 'multi') return `<fieldset class="detail-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-options">${question.options.map((option, index) => `<label class="detail-option"><input type="${question.type === 'multi' ? 'checkbox' : 'radio'}" name="${question.id}" value="${esc(option)}" ${question.type === 'choice' && index === 0 && !question.optional ? 'required' : ''} /><span>${esc(option)}</span></label>`).join('')}</div></fieldset>`;
 const type = question.type === 'number' ? 'number' : question.type === 'money' ? 'text' : 'text';
@@ -270,6 +291,9 @@ const ui = uiFor(service);
 const gallery = service.images.map((image, index) => `<img src="${image}" alt="${ui.galleryAlt} ${index + 1}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
 }
+function renderWitchRockStory(service) {
+return `<p class="service-page-kicker">WITCH’S ROCK · SURF TRIP</p><h2>${esc(service.lead)}</h2><p>${esc(service.description)}</p><p>${esc(service.coordination)}</p><div class="detail-gallery witch-rock-gallery"><img src="${service.images[1]}" alt="${esc(service.galleryAlt)}" loading="lazy" /></div>`;
+}
 function render(service) {
 const ui = uiFor(service);
 document.documentElement.lang = lang;
@@ -284,6 +308,8 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderAccommodationStory(service)
 : service.id === 'clases-de-surf'
 ? renderSurfLessonStory(service)
+: service.id === 'roca-bruja'
+? renderWitchRockStory(service)
 : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>Incluye</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
 const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">READY TO SURF?</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
 document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${ui.submit}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
@@ -321,6 +347,13 @@ const name = form.elements['request-name']?.value.trim();
 const extra = form.elements['request-contact']?.value.trim();
 if (service.id === 'clases-de-surf' && name) lines.push(`${ui.waName} ${name}`);
 service.questions.forEach(question => {
+if (question.type === 'headcount') {
+const parts = question.fields.map(field => { const value = form.elements[`${question.id}-${field.id}`]?.value.trim(); return value ? `${field.label}: ${value}` : ''; }).filter(Boolean);
+const ages = form.elements[`${question.id}-ages`]?.value.trim();
+if (parts.length) lines.push(`${question.label} ${parts.join(' / ')}`);
+if (ages) lines.push(`${question.agesLabel}: ${ages}`);
+return;
+}
 const values = [...form.querySelectorAll(`[name="${question.id}"], [name^="${question.id}-"]`)].map(input => input.type === 'checkbox' || input.type === 'radio' ? (input.checked ? input.value : '') : input.value).filter(Boolean);
 if (values.length) lines.push(`${question.label} ${values.join(' / ')}`);
 });
