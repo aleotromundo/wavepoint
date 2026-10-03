@@ -97,36 +97,25 @@
       ]
     },
     {
-      id: 'fotos-surf', number: '09', eyebrow: 'SURF · FOTOGRAFÍA', title: 'Fotos de surf',
-      cardText: 'Llevate un recuerdo de tu sesión con fotografías tomadas desde la playa.',
-      description: 'Capturá tus mejores momentos en el agua con fotografías profesionales desde la orilla. Una forma de volver a mirar tus maniobras y llevarte imágenes de la sesión.',
-      images: ['assets/after-photos.jpg'],
+      id: 'buceo', number: '09', eyebrow: 'MAR · EXPLORACIÓN', title: 'Buceo',
+      cardText: 'Discover Tamarindo underwater with a local diving experience.',
+      description: 'Conocé las opciones de buceo disponibles en Tamarindo y consultá con el operador local cuál experiencia se adapta mejor a tu grupo y a las condiciones del día.',
+      images: ['assets/surf-service.jpg'],
       questions: [
-        { id: 'surf_photo_date', label: '¿Qué día será la sesión?', type: 'dates', fields: ['Fecha'] },
-        { id: 'surf_photo_group', label: '¿Cuántas personas quieren fotografiarse?', type: 'number' },
-        { id: 'surf_photo_level', label: '¿Qué nivel de surf tienen?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] }
+        { id: 'dive_experience', label: '¿Qué experiencia de buceo te interesa?', type: 'choice', options: ['Quiero recomendaciones', 'Buceo recreativo', 'Quiero consultar disponibilidad'] },
+        { id: 'dive_level', label: '¿Qué experiencia tienes buceando?', type: 'choice', options: ['Primera vez', 'Principiante', 'Con experiencia'], optional: true },
+        { id: 'dive_people', label: '¿Cuántas personas participarían?', type: 'number' }
       ]
     },
     {
-      id: 'fotografia-acuatica', number: '10', eyebrow: 'SURF · FOTOGRAFÍA EN EL AGUA', title: 'Fotografía acuática de surf',
-      cardText: 'Imágenes de surf desde dentro del agua, en plena sesión.',
-      description: 'Viví una sesión fotográfica dentro del agua. Fotógrafos especializados se sumergen para capturar la experiencia desde una perspectiva cercana a la ola.',
-      images: ['assets/legacy/fotoacuatica.jpg'],
+      id: 'pack-ajustable', number: '10', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
+      cardText: 'Build your own experience by combining the activities that fit your trip.',
+      description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
+      images: ['assets/after-guide.jpg'],
       questions: [
-        { id: 'water_photo_date', label: '¿Qué día será la sesión?', type: 'dates', fields: ['Fecha'] },
-        { id: 'water_photo_group', label: '¿Cuántas personas participarían?', type: 'number' },
-        { id: 'water_photo_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] }
-      ]
-    },
-    {
-      id: 'surfskate', number: '11', eyebrow: 'SURF · ENTRENAMIENTO EN TIERRA', title: 'Clases de surfskate',
-      cardText: 'Practicá giros, estabilidad y fluidez fuera del agua.',
-      description: 'Mejorá tu estilo y técnica en tierra firme con sesiones de surfskate. Un entrenamiento para trabajar giros, estabilidad y fluidez antes de entrar al agua, para distintas edades y niveles.',
-      images: ['assets/legacy/surfskate.png'],
-      questions: [
-        { id: 'surfskate_level', label: '¿Qué experiencia tienes con el surfskate?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
-        { id: 'surfskate_goal', label: '¿Qué te gustaría trabajar?', type: 'textarea', placeholder: 'Opcional', optional: true },
-        { id: 'surfskate_own_board', label: '¿Tienes surfskate propio?', type: 'choice', options: ['Sí', 'No', 'Quiero consultar'], optional: true }
+        { id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Yoga', 'Witch’s Rock surf trip', 'Snorkeling & catamaran', 'Buceo', 'ATV tours', 'Retreats'] },
+        { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
+        { id: 'pack_notes', label: '¿Qué debería tener en cuenta el operador?', type: 'textarea', placeholder: 'Cantidad de personas, preferencias o necesidades especiales.', optional: true }
       ]
     }
   ];
@@ -144,7 +133,7 @@
   }
   function render(service) {
     document.title = `${service.title} · WavePoint`;
-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / 11</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story"><p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div></article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${service.questions.map(question => renderQuestion(service, question)).join('')}<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label><label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
+    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story"><p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div></article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${service.questions.map(question => renderQuestion(service, question)).join('')}<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label><label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
     document.getElementById('serviceRequestForm').addEventListener('submit', event => submitRequest(event, service));
   }
   function submitRequest(event, service) {

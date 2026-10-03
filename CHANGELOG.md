@@ -41,3 +41,24 @@ La comparacion de Git del 2026-10-02 no encontro una eliminacion global de keyfr
 La revision historica tambien detecto que el flotado CSS del contenedor Meteocons se habia quitado al migrar el icono. Se restauro `weather-float` (3.2 s) en movimiento normal; `prefers-reduced-motion` lo sigue desactivando. El ripple continuo del logo y las animaciones de fondo permanecen en CSS.
 
 En `prefers-reduced-motion`, el logo no entra ni mueve el aura automaticamente, pero el control accesible "Volver a animar el logo WavePoint" conserva su accion: una activacion explicita ejecuta una entrada breve.
+
+## 2026-10-02
+
+### Catálogo de servicios reales
+
+- `index.html`: reemplazar el catálogo de la portada por los diez servicios confirmados: Stay & experience, Surf lessons, Surf coaching, Yoga, Witch’s Rock surf trip, Snorkeling & catamaran, Diving, ATV tours, Build your own experience y Retreats.
+- `service.html`: sincronizar el catálogo completo con las diez tarjetas reales y sus descripciones breves en inglés. Actualizar el llamado de navegación de 11 a 10 servicios.
+- `services.js`: retirar los servicios no confirmados de fotografía de surf, fotografía acuática y surfskate; agregar los detalles, preguntas y formularios de WhatsApp para `buceo` y `pack-ajustable`.
+- `services.js`: cambiar la numeración de detalle a un total dinámico (`n / ${services.length}`) para evitar inconsistencias futuras.
+- `index.html`: reemplazar la promoción secundaria de Fotos de surf por una tarjeta de Buceo, manteniendo únicamente servicios confirmados.
+- `script.js`: agregar traducciones ES/EN para Buceo y Pack ajustable, eliminar textos heredados de los servicios retirados y actualizar las respuestas del asistente sobre las experiencias disponibles.
+- `api/assistant.js`: actualizar el contexto del asistente para recomendar exclusivamente el catálogo real de servicios.
+
+### Validación
+
+- `node --check script.js` y `node --check services.js`: correctos.
+- `git diff --check`: sin errores de espacios o formato.
+- Portada validada con 10 tarjetas de servicios.
+- Catálogo completo validado con 10 tarjetas de servicios.
+- Imágenes usadas por los diez servicios verificadas en `assets/`.
+- Enlaces a `fotos-surf`, `fotografia-acuatica` y `surfskate` eliminados de las páginas públicas.

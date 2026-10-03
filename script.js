@@ -1,38 +1,6 @@
 
   const CR_TZ='America/Costa_Rica';
   const reducedMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
-  // Catálogo incremental de book requests: solo contiene servicios y preguntas confirmados por el cliente.
-  const BOOKING_SERVICES = [
-    {
-      id: 'alojamiento-experiencias',
-      name: 'Alojamiento y experiencias',
-      questions: [
-        { id: 'stay_dates', label: '¿Cuándo quieres alojarte?', type: 'date-range', fields: ['llegada', 'salida'] },
-        { id: 'accommodation_type', label: '¿Qué tipo de alojamiento prefieres?', type: 'single-choice', options: ['Habitación', 'Casa completa', 'Quiero recomendaciones'] },
-        { id: 'nightly_budget', label: '¿Cuál es tu presupuesto aproximado por noche para todo el grupo?', type: 'money', optional: true, fields: ['importe', 'moneda'] },
-        { id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi-choice', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'] }
-      ]
-    },
-    {
-      id: 'clases-de-surf',
-      name: 'Clases de surf',
-      questions: [
-        { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'single-choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
-        { id: 'lesson_goal', label: '¿Qué te gustaría conseguir con la clase?', type: 'single-choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
-        { id: 'board_need', label: '¿Necesitarás una tabla?', type: 'single-choice', options: ['Sí', 'No', 'Llevo la mía', 'Necesito asesoramiento'] }
-      ]
-    },
-    {
-      id: 'surf-coaching',
-      name: 'Surf coaching',
-      questions: [
-        { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'single-choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
-        { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'long-text', placeholder: 'Cuéntanos brevemente.' },
-        { id: 'coaching_package', label: '¿Qué te gustaría incluir?', type: 'single-choice', options: ['Solo coaching', 'Coaching y fotografías', 'Coaching y videoanálisis', 'Coaching, fotografías y videoanálisis'] },
-        { id: 'own_board', label: '¿Traerás tu propia tabla?', type: 'single-choice', options: ['Sí', 'No'] }
-      ]
-    }
-  ];
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
   function getCRDate(){ return new Date(new Date().toLocaleString('en-US',{timeZone:CR_TZ})); }
   function isCameraLiveNow(){ const d=getCRDate(); const m=d.getHours()*60+d.getMinutes(); return m>=CAM_START.hour*60+CAM_START.minute && m<=CAM_END.hour*60+CAM_END.minute; }
@@ -179,11 +147,8 @@
       servicesSectionSubtitle: '¿Qué experiencias quieres tener en Tamarindo?',
       serviceSurfLessons: 'Clases de surf',
       serviceSurfLessonsText: 'Clases para todos los niveles con instructores locales.',
-      serviceSurfPhotos: 'Fotos de surf',
       serviceSurfPhotosText: 'Captura tus mejores olas desde la playa.',
-      serviceWaterPhoto: 'Fotografía acuática',
       serviceWaterPhotoText: 'Sesiones profesionales dentro y fuera del agua.',
-      serviceSurfskate: 'Clases de surfskate',
       serviceSurfskateText: 'Mejora técnica y fluidez fuera del agua.',
       serviceMoreInfo: 'Más información →',
       serviceCardStayTitle: 'Alojamiento y experiencias',
@@ -201,12 +166,10 @@
       serviceCardAtvText: 'Recorré los caminos de Guanacaste con operadores locales.',
       serviceCardRetreatsTitle: 'Retiros',
       serviceCardRetreatsText: 'Surf, descanso, movimiento y comunidad en un mismo viaje.',
-      serviceCardPhotosTitle: 'Fotos de surf',
-      serviceCardPhotosText: 'Guardá los mejores momentos de tu sesión en imágenes.',
-      serviceCardWaterPhotoTitle: 'Fotografía acuática',
-      serviceCardWaterPhotoText: 'Una perspectiva dentro del agua para volver a vivir la sesión.',
-      serviceCardSurfskateTitle: 'Clases de surfskate',
-      serviceCardSurfskateText: 'Trabajá giros, estabilidad y fluidez fuera del agua.',
+      serviceCardDiveTitle: 'Buceo',
+      serviceCardDiveText: 'Descubrí Tamarindo bajo el agua con una experiencia de buceo local.',
+      serviceCardPackTitle: 'Pack ajustable',
+      serviceCardPackText: 'Armá tu propia experiencia combinando las actividades que mejor encajan con tu viaje.',
       wavepointInTamarindo: 'WavePoint en Tamarindo',
       wavepointInTamarindoSubtitle: 'Información útil para elegir mejor tu spot, planear tu sesión y moverte en Tamarindo.',
       benefitLiveCameras: 'Cámaras reales',
@@ -226,8 +189,6 @@
       afterFoodText: 'Burgers, empanadas y cerveza fría después de surfear.',
       afterDemo: 'Ver pre-play demo →',
       afterSession: 'Recuerdo de tu sesión',
-      afterPhotosTitle: 'Fotos de surf',
-      afterPhotosText: 'Captura tus mejores olas con fotografía profesional.',
       afterServiceLink: 'Ver servicio →',
       afterGuideTag: 'Guía local',
       afterGuideTitle: 'Explora Tamarindo',
@@ -293,7 +254,7 @@
       assistantTyping: 'Estoy buscando una buena respuesta…',
       assistantFallbackCameras: 'WavePoint tiene cámaras en Capitán Suizo y Casa de Maderas. Red Door está en preparación. Las cámaras transmiten aproximadamente de 4:45 a. m. a 6:30 p. m., hora de Costa Rica.',
       assistantFallbackConditions: 'En la tarjeta de clima de esta página podés ver temperatura, viento, oleaje estimado y hora local. Es una referencia; verificá el estado del mar al llegar y consultá a surfistas locales.',
-      assistantFallbackSurf: 'Tamarindo tiene olas para distintos niveles. WavePoint ofrece clases de surf y surfskate; revisá las cámaras y las condiciones antes de entrar, y pedí orientación a un instructor local si estás empezando.',
+      assistantFallbackSurf: 'Tamarindo tiene olas para distintos niveles. WavePoint ofrece clases de surf y surf coaching; revisá las cámaras y las condiciones antes de entrar, y pedí orientación a un instructor local si estás empezando.',
       assistantFallbackActivities: 'La guía de WavePoint incluye playas como Ventanas, Danta, Avellanas, Naranjo y Conchal; también cascadas, senderismo y snorkeling. Escribinos por WhatsApp para ayudarte a elegir según el tiempo y tu plan.',
       assistantFallbackContact: 'Podés escribirle directamente a WavePoint por WhatsApp usando el botón verde de esta página. También encontrás Instagram como @wavepointcr.',
       assistantFallbackGeneral: 'Puedo orientarte sobre cámaras, clima, spots, servicios de surf y actividades en Guanacaste. ¿Qué plan tenés en mente?',
@@ -306,11 +267,8 @@
       servicePageSectionTitle: 'Encontrá tu forma de entrar al agua.',
       servicePageCoachingTitle: 'Surf coaching',
       servicePageCoachingText: 'Entrenamiento personalizado, análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento con entrenadores expertos.',
-      servicePageSurfPhotoTitle: 'Fotos de surf',
       servicePageSurfPhotoText: 'Capturá tus mejores maniobras con fotógrafos profesionales que siguen la sesión desde la playa y crean recuerdos de alta calidad.',
-      servicePageWaterPhotoTitle: 'Fotografía acuática',
       servicePageWaterPhotoText: 'Viví una sesión dentro del agua con fotógrafos especializados y capturá la energía de cada ola desde la perspectiva más épica.',
-      servicePageSurfskateTitle: 'Clases de surfskate',
       servicePageSurfskateText: 'Mejorá giros, estabilidad, equilibrio y fluidez en tierra antes de llevarlos al agua; para todas las edades y niveles.',
       servicePageAsk: 'Consultar disponibilidad ↗',
       guidePageEyebrow: 'GUANACASTE · COSTA RICA',
@@ -381,11 +339,8 @@
       servicesSectionSubtitle: 'What experiences do you want to have in Tamarindo?',
       serviceSurfLessons: 'Surf lessons',
       serviceSurfLessonsText: 'Lessons for all levels with local instructors.',
-      serviceSurfPhotos: 'Surf photos',
       serviceSurfPhotosText: 'Capture your best waves from the beach.',
-      serviceWaterPhoto: 'Water photography',
       serviceWaterPhotoText: 'Professional sessions in and out of the water.',
-      serviceSurfskate: 'Surfskate lessons',
       serviceSurfskateText: 'Improve technique and flow off the water.',
       serviceMoreInfo: 'More info →',
       serviceCardStayTitle: 'Stays and experiences',
@@ -403,12 +358,10 @@
       serviceCardAtvText: 'Explore Guanacaste’s trails with local operators.',
       serviceCardRetreatsTitle: 'Retreats',
       serviceCardRetreatsText: 'Surf, rest, movement, and community in one trip.',
-      serviceCardPhotosTitle: 'Surf photos',
-      serviceCardPhotosText: 'Keep the best moments from your session in photos.',
-      serviceCardWaterPhotoTitle: 'In-water photography',
-      serviceCardWaterPhotoText: 'Relive your session through photos taken in the water.',
-      serviceCardSurfskateTitle: 'Surfskate lessons',
-      serviceCardSurfskateText: 'Work on turns, stability, and flow on land.',
+      serviceCardDiveTitle: 'Diving',
+      serviceCardDiveText: 'Discover Tamarindo underwater with a local diving experience.',
+      serviceCardPackTitle: 'Build your own experience',
+      serviceCardPackText: 'Combine the activities that fit your trip and create your own experience.',
       wavepointInTamarindo: 'WavePoint in Tamarindo',
       wavepointInTamarindoSubtitle: 'Useful information to choose your spot better, plan your session, and move around Tamarindo.',
       benefitLiveCameras: 'Real cameras',
@@ -428,8 +381,6 @@
       afterFoodText: 'Burgers, empanadas, and cold beer after surfing.',
       afterDemo: 'Watch pre-play demo →',
       afterSession: 'Your session memory',
-      afterPhotosTitle: 'Surf photos',
-      afterPhotosText: 'Capture your best waves with professional photography.',
       afterServiceLink: 'View service →',
       afterGuideTag: 'Local guide',
       afterGuideTitle: 'Explore Tamarindo',
@@ -495,7 +446,7 @@
       assistantTyping: 'Let me find a helpful answer…',
       assistantFallbackCameras: 'WavePoint has cameras at Capitán Suizo and Casa de Maderas. Red Door is coming soon. Cameras usually stream from about 4:45 a.m. to 6:30 p.m. Costa Rica time.',
       assistantFallbackConditions: 'The weather panel shows temperature, wind, estimated swell, and local time. Treat it as a reference, check the ocean when you arrive, and ask local surfers for current advice.',
-      assistantFallbackSurf: 'Tamarindo has waves for different skill levels. WavePoint features surf and surfskate lessons; check the cameras and conditions before paddling out, and ask a local instructor if you are new.',
+      assistantFallbackSurf: 'Tamarindo has waves for different skill levels. WavePoint features surf lessons and surf coaching; check the cameras and conditions before paddling out, and ask a local instructor if you are new.',
       assistantFallbackActivities: 'The WavePoint guide features beaches such as Ventanas, Danta, Avellanas, Naranjo, and Conchal, plus waterfalls, hiking, and snorkeling. Message us on WhatsApp and we can help you choose based on your plans.',
       assistantFallbackContact: 'Message WavePoint directly on WhatsApp using the green button on this page. You can also find us on Instagram at @wavepointcr.',
       assistantFallbackGeneral: 'I can help with cameras, weather, surf spots, lessons, and things to do around Guanacaste. What are you planning?',
@@ -508,11 +459,8 @@
       servicePageSectionTitle: 'Find your way into the water.',
       servicePageCoachingTitle: 'Surf coaching',
       servicePageCoachingText: 'Personal coaching, technique analysis, video feedback, and strategies to improve your performance with expert coaches.',
-      servicePageSurfPhotoTitle: 'Surf photos',
       servicePageSurfPhotoText: 'Keep your best maneuvers with professional photographers following the session from the beach and creating high-quality memories.',
-      servicePageWaterPhotoTitle: 'In-water photography',
       servicePageWaterPhotoText: 'Experience a session in the water with specialized photographers capturing the energy of every wave from the best perspective.',
-      servicePageSurfskateTitle: 'Surfskate lessons',
       servicePageSurfskateText: 'Improve turns, stability, balance, and flow on land before bringing them into the water, for every age and level.',
       servicePageAsk: 'Check availability ↗',
       guidePageEyebrow: 'GUANACASTE · COSTA RICA',
@@ -1193,7 +1141,7 @@
       const current=dict();
       if(/camera|cámara|camara|live|transmi/.test(text)) return current.assistantFallbackCameras;
       if(/weather|clima|oleaje|ola|wave|wind|viento|condici/.test(text)) return current.assistantFallbackConditions;
-      if(/surf|princip|beginner|lesson|clase|instructor|surfskate/.test(text)) return current.assistantFallbackSurf;
+      if(/surf|princip|beginner|lesson|clase|instructor/.test(text)) return current.assistantFallbackSurf;
       if(/do |visit|activity|activities|hacer|visitar|playa|beach|waterfall|cascada|snorkel|hike|sender/.test(text)) return current.assistantFallbackActivities;
       if(/contact|whatsapp|instagram|contacto|escrib/.test(text)) return current.assistantFallbackContact;
       return current.assistantFallbackGeneral;
