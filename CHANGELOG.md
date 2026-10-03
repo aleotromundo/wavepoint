@@ -1,5 +1,13 @@
 ## 2026-10-03
 
+### Nuevo posicionamiento del título del hero
+
+- `index.html` y `script.js`: reemplazar el título centrado en cámaras por **“Tamarindo’s best experiences, with the locals who know it best”** en inglés.
+- La versión española equivalente queda como **“Las mejores experiencias de Tamarindo, con los locales que mejor lo conocen”**, manteniendo el cambio coherente con el selector de idioma.
+- No se modificó la composición visual ni la jerarquía del hero.
+
+## 2026-10-03
+
 ### Ícono del clima más grande y mejor aprovechamiento del panel
 
 - `styles.css`: ampliar el ícono atmosférico a 88 px en escritorio, con una superposición intencional y controlada sobre el área de temperatura para aprovechar mejor el ancho del panel.
