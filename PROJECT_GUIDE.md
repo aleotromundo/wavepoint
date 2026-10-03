@@ -12,7 +12,8 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
 
 | Área | Archivos principales | Responsabilidad |
 | --- | --- | --- |
-| Página principal | `index.html` | Hero, clima, cámaras, servicios (sección `#servicios`), guía, aliados, promociones y contacto. |
+| Página principal | `index.html` | Hero, clima, cámaras, servicios, guía, aliados, promociones y contacto. |
+| Catálogo de servicios | `service.html` | Listado completo de servicios reales. |
 | Detalle de servicio | `service-detail.html` + `services.js` | Página dinámica según `?service=...`, preguntas y solicitud por WhatsApp. |
 | Guía turística | `guia-playas.html` | Playas, spots y experiencias de Guanacaste. |
 | Páginas de colaboradores | `Enlaces/*.html` | Fichas individuales de aliados locales. |
@@ -28,7 +29,8 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
 
 Las páginas públicas principales son:
 
-- `/index.html` o `/`: página de inicio (incluye la sección Servicios, `#servicios`, que es el único catálogo; ya no existe `service.html`).
+- `/index.html` o `/`: página de inicio.
+- `/service.html`: catálogo completo.
 - `/service-detail.html?service=<id>`: detalle de un servicio.
 - `/guia-playas.html`: guía turística.
 - `/Enlaces/capitan-suizo.html`.
@@ -74,6 +76,7 @@ retiros
 Cuando cambie el catálogo, actualizar de forma coordinada:
 
 - Las tarjetas de servicios en `index.html`.
+- Las tarjetas del catálogo en `service.html`.
 - El array `services` en `services.js`.
 - Las traducciones de títulos y descripciones en `script.js`.
 - El contexto del asistente en `api/assistant.js` si afecta sus recomendaciones.
