@@ -1,5 +1,28 @@
 ## 2026-10-03
 
+### Navegación del detalle de servicios
+
+- `service-detail.html`: actualizar el enlace inferior **Volver a Servicios** para regresar directamente a `index.html#servicios`, donde se encuentran el catálogo y las tarifas completas.
+
+### Validación
+
+- Se verificó `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-03
+
+### Clases de surf: Ready to Surf y encuesta de preferencias
+
+- `services.js`: agregar una galería de fotos locales para clases de surf y actualizar el detalle con el título **Ready to Surf?** y el texto solicitado.
+- `services.js`: incorporar la encuesta con nombre como primer campo, cantidad de personas, procedencia, nivel, objetivo de aprendizaje, fruta preferida después de la clase y horario preferido (AM, medio día o tarde).
+- `services.js`: mantener el resumen de WhatsApp en el mismo orden de la encuesta para que el encargado reciba la información de forma clara.
+- `styles.css`: agregar una presentación editorial para la galería y el bloque **Llena nuestra pequeña encuesta**, con responsive para móvil.
+
+### Validación
+
+- Se verificó `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-03
+
 ### Stays and Hotels: catálogo completo de alojamientos
 
 - `index.html`, `service.html` y `script.js`: renombrar la tarjeta **Alojamiento y experiencias** a **Stays and Hotels**, actualizar su copy y asignar una imagen local de alojamiento.

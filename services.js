@@ -65,18 +65,22 @@
       ]
     },
     {
-      id: 'clases-de-surf', number: '02', eyebrow: 'AGUA · APRENDIZAJE', title: 'Clases de surf',
-      cardText: 'Una primera ola, mejores bases o una habilidad puntual con instructores locales.',
-      description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
-      images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/clase-surf.jpeg'],
+      id: 'clases-de-surf', number: '02', eyebrow: 'SURF · LESSONS', title: 'Ready to Surf?',
+      cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
+      description: 'Contanos tu nivel y qué te gustaría aprender. Buscaremos una clase que se adapte a vos, a tu grupo y al momento del día que prefieran.',
+      images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/clase-surf.jpeg', 'assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg'],
       questions: [
         { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
-        { id: 'lesson_goal', label: '¿Qué te gustaría conseguir con la clase?', type: 'choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
-        { id: 'board_need', label: '¿Necesitarás una tabla?', type: 'choice', options: ['Sí', 'No, llevo la mía', 'Necesito asesoramiento'] }
+        { id: 'lesson_goal', label: '¿Qué te gustaría aprender?', type: 'choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
+        { id: 'group_size', label: '¿Cuántos son?', type: 'number' },
+        { id: 'origin', label: '¿De dónde nos visitan?', type: 'text', placeholder: 'Ciudad y país' },
+        { id: 'preferred_fruit', label: '¿Qué fruta prefieren comer después de la clase?', type: 'multi', options: ['Piña', 'Bananas', 'Mangos', 'Cocos'] },
+        { id: 'preferred_schedule', label: '¿Qué horarios prefieren?', type: 'choice', options: ['AM', 'Medio día', 'Tarde'] },
+        { id: 'board_need', label: '¿Necesitarán una tabla?', type: 'choice', options: ['Sí', 'No, llevamos la nuestra', 'Necesitamos asesoramiento'] }
       ]
     },
     {
-      id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Surf coaching',
+      id: 'surf-coaching' , number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Surf coaching',
       cardText: 'Observación personalizada, objetivos concretos y herramientas para progresar en el agua.',
       description: 'El coaching empieza antes de entrar al agua: entendemos qué sentís que querés mejorar y armamos una sesión con foco. Durante la práctica observamos tu toma de decisiones, técnica y relación con la ola; después transformamos esas observaciones en indicaciones concretas. Podés sumar fotografías o videoanálisis para volver sobre la sesión y ver tu progreso con más claridad.',
       images: ['assets/legacy/_GSK8664.jpg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
@@ -203,12 +207,24 @@
   function renderAccommodationStory(service) {
     return `<p class="service-page-kicker">ALOJAMIENTOS EN TAMARINDO</p><h2>Opciones de alojamiento en Tamarindo</h2><p>${esc(service.description)}</p><div class="accommodation-rate-note"><strong>Tarifas en USD</strong><span>Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
   }
+  function renderSurfLessonStory(service) {
+    const gallery = service.images.map((image, index) => `<img src="${image}" alt="Clases de surf · imagen ${index + 1}" loading="lazy" />`).join('');
+    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>Llena nuestra pequeña encuesta</h3><p>Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.</p></div></div>`;
+  }
   function render(service) {
     document.title = `${service.title} · WavePoint`;
+    const nameField = service.id === 'clases-de-surf'
+      ? '<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás?</span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" required /></label>'
+      : '<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label>';
+    const formQuestions = service.id === 'clases-de-surf'
+      ? `${nameField}${service.questions.map(question => renderQuestion(service, question)).join('')}`
+      : `${service.questions.map(question => renderQuestion(service, question)).join('')}${nameField}`;
     const story = service.id === 'alojamiento-experiencias'
       ? renderAccommodationStory(service)
-      : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${service.questions.map(question => renderQuestion(service, question)).join('')}<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label><label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
+      : service.id === 'clases-de-surf'
+        ? renderSurfLessonStory(service)
+        : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
+    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
     if (service.id === 'pack-ajustable') {
       const packGrid = document.querySelector('.pack-service-grid');
       const count = document.querySelector('[data-pack-selection]');
@@ -226,13 +242,14 @@
     const error = document.getElementById('detailError');
     if (!form.checkValidity()) { form.reportValidity(); error.textContent = 'Completá las respuestas necesarias para continuar.'; return; }
     const lines = [`Hola WavePoint, quiero consultar por: ${service.title}`, ''];
+    const name = form.elements['request-name']?.value.trim();
+    const extra = form.elements['request-contact']?.value.trim();
+    if (service.id === 'clases-de-surf' && name) lines.push(`Nombre: ${name}`);
     service.questions.forEach(question => {
       const values = [...form.querySelectorAll(`[name="${question.id}"], [name^="${question.id}-"]`)].map(input => input.type === 'checkbox' || input.type === 'radio' ? (input.checked ? input.value : '') : input.value).filter(Boolean);
       if (values.length) lines.push(`${question.label} ${values.join(' / ')}`);
     });
-    const name = form.elements['request-name']?.value.trim();
-    const extra = form.elements['request-contact']?.value.trim();
-    if (name) lines.push(`Nombre: ${name}`);
+    if (service.id !== 'clases-de-surf' && name) lines.push(`Nombre: ${name}`);
     if (extra) lines.push(`Información adicional: ${extra}`);
     lines.push('', 'Gracias. Quedo atento/a.');
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');

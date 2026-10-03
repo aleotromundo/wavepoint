@@ -4293,3 +4293,64 @@ footer a {
   .accommodation-price span { max-width: none; }
   .accommodation-columns { grid-template-columns: 1fr; gap: 16px; }
 }
+
+
+/* Clases de surf: galería y encuesta de bienvenida */
+.surf-lesson-lead {
+  max-width: 640px;
+  margin: 0 0 22px;
+  color: #45636c;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+.surf-lesson-gallery {
+  grid-template-columns: 1.35fr .8fr;
+  grid-template-rows: 145px 145px;
+  height: 294px;
+  margin-bottom: 27px;
+}
+.surf-lesson-gallery img:first-child { grid-row: 1 / -1; }
+.surf-lesson-gallery img:nth-child(3) { grid-column: 2; }
+.surf-lesson-survey-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 8px 0 6px;
+  padding: 18px;
+  border: 1px solid rgba(7, 143, 145, .2);
+  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(7, 143, 145, .08), rgba(243, 182, 75, .1));
+}
+.surf-lesson-survey-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border-radius: 11px;
+  background: #087f87;
+  color: #fff;
+  font: 800 12px "DM Sans", sans-serif;
+  letter-spacing: .08em;
+}
+.surf-lesson-survey-intro .service-page-kicker { margin-bottom: 6px; color: #087f87; }
+.surf-lesson-survey-intro h3 {
+  margin: 0 0 7px;
+  color: #173f4b;
+  font: 700 29px/1 "Barlow Condensed", Impact, sans-serif;
+  text-transform: uppercase;
+}
+.surf-lesson-survey-intro p:last-child {
+  max-width: 530px;
+  margin: 0;
+  color: #5a747b;
+  font-size: 14px;
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .surf-lesson-lead { font-size: 16px; }
+  .surf-lesson-gallery { grid-template-rows: 105px 105px; height: 214px; }
+  .surf-lesson-survey-intro { padding: 15px; }
+  .surf-lesson-survey-intro h3 { font-size: 25px; }
+}
