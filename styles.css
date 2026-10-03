@@ -1764,7 +1764,7 @@ html { scroll-padding-top: 0; }
 .service-image-link { flex: 0 0 184px; }
 .service-img { height: 184px; }
 .service-body { display: flex; flex: 1; flex-direction: column; padding: 20px; }
-.service-body h3 { min-height: 0; margin-bottom: 10px; font-size: 25px; line-height: 1.02; }
+.service-body h3 { min-height: 0; margin-bottom: 10px; font-size: 50px; line-height: 1.02; }
 .service-body p { margin-bottom: 18px; }
 .service-body > a { align-self: flex-start; margin-top: auto; }
 
