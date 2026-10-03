@@ -62,3 +62,66 @@ En `prefers-reduced-motion`, el logo no entra ni mueve el aura automaticamente, 
 - Catálogo completo validado con 10 tarjetas de servicios.
 - Imágenes usadas por los diez servicios verificadas en `assets/`.
 - Enlaces a `fotos-surf`, `fotografia-acuatica` y `surfskate` eliminados de las páginas públicas.
+
+## 2026-10-02
+
+### Selector visual para Pack ajustable
+
+- `services.js`: convertir la pregunta de actividades del Pack ajustable en un selector visual con nueve tarjetas de servicios reales: alojamiento, surf lessons, surf coaching, yoga, Witch’s Rock, snorkeling & catamaran, diving, ATV tours y retreats.
+- `services.js`: cada tarjeta incluye imagen, título, descripción breve, checkbox accesible y check visual al seleccionarla. Se agregó un contador dinámico de experiencias seleccionadas.
+- `styles.css`: agregar el diseño de tarjetas, estados hover/focus/selected, imágenes recortadas, check circular y versión responsive de una columna para pantallas pequeñas.
+- El resto de las preguntas del formulario y la generación de la solicitud por WhatsApp permanecen sin cambios.
+
+### Validación
+
+- `node --check services.js`: correcto.
+- `git diff --check`: sin errores de formato.
+- Se verificó que todas las imágenes nuevas del selector pertenecen al catálogo real y existen en `assets/`.
+
+## 2026-10-02
+
+### Logo principal en móvil
+
+- `styles.css`: aumentar moderadamente el ancho del logo WavePoint en pantallas de hasta 640 px, de 78vw/300 px a 86vw/330 px, y en pantallas muy pequeñas de 76vw/270 px a 84vw/300 px. El tamaño de escritorio no cambia.
+- Se conserva el ancho máximo relativo al viewport para evitar overflow horizontal.
+
+### Validación
+
+- `git diff --check`: sin errores de formato.
+- Se revisaron los breakpoints de 640 px y 380 px, incluyendo el comportamiento del contenedor móvil.
+
+## 2026-10-02
+
+### Separación superior del hero en escritorio
+
+- `styles.css`: bajar 14 px el contenido completo del hero en escritorio, pasando de `translateY(-12px)` a `translateY(2px)`, para separar mejor el logo y las condiciones del borde superior.
+- El breakpoint de hasta 980 px conserva `transform: none`, por lo que tablet y móvil mantienen su posición anterior.
+
+### Validación
+
+- `git diff --check`: sin errores de formato.
+- Se confirmó que el ajuste queda limitado a escritorio y no modifica el tamaño del logo.
+
+## 2026-10-02
+
+### Tipografía del menú del header
+
+- `styles.css`: aumentar los enlaces principales del header de 13 px a 14 px y ampliar el espacio entre enlaces de 18 px a 20 px para mejorar la lectura en escritorio.
+- `styles.css`: aumentar de 12 px a 13 px la tipografía del menú desplegable de Colaboradores.
+- El comportamiento responsive del header se mantiene sin cambios: el menú se reemplaza por el botón hamburguesa en pantallas pequeñas.
+
+### Validación
+
+- `git diff --check`: sin errores de formato.
+
+## 2026-10-02
+
+### Entrega de mejoras visuales y del Pack ajustable
+
+Esta entrega reúne las mejoras realizadas después de sincronizar el catálogo real de servicios: selector visual del Pack ajustable con tarjetas, imágenes, checks y contador; logo principal más grande en móvil; hero de escritorio ligeramente más separado del borde superior; y tipografía del menú del header más legible. También se mantienen documentadas las validaciones de sintaxis, formato, assets y breakpoints realizadas durante el trabajo.
+
+### Archivos incluidos
+
+- `CHANGELOG.md`: historial detallado de las modificaciones.
+- `services.js`: selector visual y contador del Pack ajustable.
+- `styles.css`: selector del Pack, tamaño responsive del logo, posición del hero y tipografía del header.
