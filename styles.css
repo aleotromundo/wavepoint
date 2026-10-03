@@ -1596,7 +1596,7 @@ footer h3 { text-transform: none; }
   font-size: 38px;
   filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .16));
   box-shadow: inset 0 1px 10px rgba(255,255,255,.2), 0 8px 20px rgba(0,0,0,.2);
-  animation: none;
+  animation: weather-float 3.2s ease-in-out infinite;
 }
 .weather-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
 
