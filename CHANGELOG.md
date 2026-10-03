@@ -1,5 +1,12 @@
 ## 2026-10-03
 
+### Transparencia sutil en la ventana del clima
+
+- `styles.css`: reducir la opacidad del panel de clima de `.76` a `.62` y suavizar el fondo de sus filas internas para que el fondo del hero se perciba mejor sin cambiar la lectura de los datos.
+- Validación: mantener contraste, desenfoque y borde del panel; `git diff --check` pendiente de la validación final.
+
+## 2026-10-03
+
 ### Ventana del clima en vidrio oscuro
 
 - `styles.css`: aplicar a `.weather-card` un acabado de vidrio oscuro con fondo translúcido, desenfoque y saturación, borde sutil, sombra profunda y filas internas más discretas.
