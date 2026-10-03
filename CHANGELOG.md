@@ -1,5 +1,14 @@
 ## 2026-10-03
 
+### Fondos de sección con foto y parallax
+
+- `index.html`: se agrega una capa `.px-bg` (y la clase `has-px`) dentro de Servicios, Cámaras, Guía (`#guia`) y Después del surf. El hero no se modificó.
+- `styles.css` (final del archivo): cada sección toma su foto desde `--px-img` (`assets/bg/`), con un velo azul oscuro para que se lean los textos; títulos y subtítulos de esas secciones pasan a blanco. Las tarjetas conservan su fondo.
+- `script.js` (final del archivo): parallax por `transform` (la foto se mueve a ~18 % de la velocidad del scroll), con `requestAnimationFrame` y listeners pasivos. No usa `background-attachment: fixed`, que falla en iOS. Se desactiva con `prefers-reduced-motion`.
+- `assets/bg/`: fotos optimizadas a 1920 px desde `assets/legacy/` (`servicios.jpg`, `camaras.jpg`, `guia.jpg`, `atardecer.jpg`). Para cambiar una foto basta reemplazar el archivo o la URL de `--px-img`.
+- Nota: `servicios.jpg` y `guia.jpg` vienen de originales de 1366 px; conviene reemplazarlas por fotos de playa de 1920 px o más.
+- Pendiente: sin validar visualmente en navegador; revisar contraste de textos y alturas en móvil.
+
 ### Menú del header: texto más grande y tipografía informal
 
 - `styles.css`: importar Fredoka (400/500/600) con `@import` al inicio del archivo, así el cambio vale para todas las páginas sin tocar cada HTML. Se define `--font-menu` y se aplica a la barra de navegación, al desplegable de Colaboradores y al panel del menú hamburguesa.

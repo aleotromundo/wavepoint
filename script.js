@@ -1214,3 +1214,24 @@
   bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
+
+/* Parallax de los fondos de sección (.px-bg). No toca el hero. */
+(() => {
+  const layers = [...document.querySelectorAll('.px-bg')];
+  if (!layers.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const speed = 0.18;
+  let ticking = false;
+  const update = () => {
+    const vh = window.innerHeight;
+    layers.forEach(el => {
+      const r = el.parentElement.getBoundingClientRect();
+      if (r.bottom < -120 || r.top > vh + 120) return;
+      el.style.setProperty('--px-y', ((r.top + r.height / 2 - vh / 2) * -speed).toFixed(1) + 'px');
+    });
+    ticking = false;
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();

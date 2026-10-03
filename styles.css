@@ -2821,3 +2821,16 @@ body { background: #071c28; }
 @media (min-width: 981px) and (max-width: 1180px) {
   .navlinks { gap: 18px; font-size: 17px; }
 }
+
+/* ===== Fondos de sección con foto + parallax (servicios, cámaras, guía, después del surf). No afecta al hero. ===== */
+.has-px { position: relative; isolation: isolate; overflow: hidden; }
+.px-bg { position: absolute; left: 0; right: 0; top: -180px; bottom: -180px; z-index: -2; pointer-events: none; background: var(--px-img) center / cover no-repeat; transform: translate3d(0, var(--px-y, 0px), 0); will-change: transform; }
+.px-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4, 26, 36, .72), rgba(4, 26, 36, .46) 45%, rgba(4, 26, 36, .74)); }
+#servicios { --px-img: url('assets/bg/servicios.jpg'); }
+#camaras { --px-img: url('assets/bg/camaras.jpg'); }
+#guia { --px-img: url('assets/bg/guia.jpg'); }
+#despues-del-surf { --px-img: url('assets/bg/atardecer.jpg'); }
+.has-px .section-title, .has-px .link-more { color: #fff; }
+.has-px .section-sub { color: rgba(255, 255, 255, .86); }
+#guia .benefit h3 { color: #fff; }
+#guia .benefit p { color: rgba(255, 255, 255, .84); }
