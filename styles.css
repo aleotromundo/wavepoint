@@ -3406,6 +3406,96 @@ body { background: #071c28; }
   }
 }
 
+/* Guía local: imágenes más cómodas y visor ampliado */
+.guide-detail-card:not(.guide-detail-card-text-only) {
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+.guide-detail-card img {
+  min-height: 330px;
+  cursor: zoom-in;
+  transition: filter .22s ease, transform .22s ease;
+}
+.guide-detail-card img:hover,
+.guide-detail-card img:focus-visible {
+  filter: brightness(1.08) saturate(1.08);
+  outline: 2px solid #9ce8d7;
+  outline-offset: -2px;
+}
+.guide-image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: rgba(2, 10, 16, .88);
+  backdrop-filter: blur(12px);
+}
+.guide-image-modal[hidden] { display: none; }
+.guide-image-modal figure {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: min(1120px, 100%);
+  max-height: 100%;
+  margin: 0;
+}
+.guide-image-modal img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 112px);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 14px;
+  object-fit: contain;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .55);
+}
+.guide-image-modal figcaption {
+  color: rgba(241, 250, 247, .86);
+  font: 600 14px/1.3 "DM Sans", sans-serif;
+  text-align: center;
+}
+.guide-image-modal-close {
+  position: absolute;
+  top: -18px;
+  right: -8px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 50%;
+  background: rgba(4, 22, 30, .86);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.guide-image-modal-close:hover,
+.guide-image-modal-close:focus-visible {
+  background: #087f87;
+  outline: 2px solid #9ce8d7;
+  outline-offset: 2px;
+}
+@media (max-width: 980px) {
+  .guide-detail-card:not(.guide-detail-card-text-only) {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+  .guide-detail-card img { min-height: 300px; }
+}
+@media (max-width: 640px) {
+  .guide-detail-card:not(.guide-detail-card-text-only) {
+    grid-template-columns: 1fr;
+  }
+  .guide-detail-card img {
+    height: 260px;
+    min-height: 0;
+  }
+  .guide-image-modal { padding: 16px; }
+  .guide-image-modal img { max-height: calc(100vh - 86px); border-radius: 10px; }
+  .guide-image-modal-close { top: -10px; right: -5px; }
+}
+
 /* Valores numéricos */
 .w-value,
 .w-row:last-child .w-value {

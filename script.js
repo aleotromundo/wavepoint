@@ -1104,6 +1104,59 @@
     window.addEventListener('resize',keepWithinHero);
   }
 
+  function bindGuideImageModal(){
+    const images = [...document.querySelectorAll('.guide-detail-card img')];
+    if (!images.length) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'guide-image-modal';
+    modal.hidden = true;
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Imagen ampliada');
+    modal.innerHTML = '<figure><button class="guide-image-modal-close" type="button" aria-label="Cerrar imagen">×</button><img alt=""><figcaption></figcaption></figure>';
+    document.body.appendChild(modal);
+
+    const close = modal.querySelector('.guide-image-modal-close');
+    const image = modal.querySelector('img');
+    const caption = modal.querySelector('figcaption');
+    let lastFocused = null;
+
+    function closeModal(){
+      modal.hidden = true;
+      image.removeAttribute('src');
+      document.body.style.overflow = '';
+      lastFocused?.focus();
+    }
+    function openModal(source){
+      lastFocused = document.activeElement;
+      image.src = source.currentSrc || source.src;
+      image.alt = source.alt || '';
+      caption.textContent = source.alt || '';
+      close.setAttribute('aria-label', languageState.current === 'en' ? 'Close image' : 'Cerrar imagen');
+      modal.setAttribute('aria-label', languageState.current === 'en' ? 'Enlarged image' : 'Imagen ampliada');
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      close.focus();
+    }
+
+    images.forEach(source=>{
+      source.tabIndex = 0;
+      source.setAttribute('role', 'button');
+      source.setAttribute('aria-label', `${languageState.current === 'en' ? 'View enlarged image: ' : 'Ver imagen ampliada: '}${source.alt || ''}`);
+      source.addEventListener('click', ()=>openModal(source));
+      source.addEventListener('keydown', event=>{
+        if(event.key === 'Enter' || event.key === ' '){
+          event.preventDefault();
+          openModal(source);
+        }
+      });
+    });
+    close.addEventListener('click', closeModal);
+    modal.addEventListener('click', event=>{ if(event.target === modal) closeModal(); });
+    document.addEventListener('keydown', event=>{ if(event.key === 'Escape' && !modal.hidden) closeModal(); });
+  }
+
   function bindSiteAssistant(){
     if(!document.getElementById('siteAssistant')){
       document.body.insertAdjacentHTML('beforeend', `
@@ -1206,6 +1259,7 @@
   bindSiteAssistant();
   applyTranslations();
   bindMobileMenu();
+  bindGuideImageModal();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();
   bindAlliesTickerInteraction();

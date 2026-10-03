@@ -1,5 +1,19 @@
 ## 2026-10-03
 
+## 2026-10-03
+
+### Imágenes ampliables en la guía de playas
+
+- `styles.css`: ampliar el espacio visual de las imágenes en las tarjetas detalladas, con un marco más cómodo en escritorio y una imagen más alta en móvil.
+- `script.js`: agregar un visor modal accesible para abrir cada imagen en grande con clic, Enter o barra espaciadora; se cierra con el botón, clic fuera o Escape.
+- Los enlaces **“Ver ubicación”** a Google Maps permanecen separados y sin cambios.
+
+### Validación
+
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Descripción completa para elegir Servicios
 
 - `index.html`, `service.html` y `script.js`: ampliar la descripción bilingüe para incluir fecha, tamaño del grupo y consulta de disponibilidad con el proveedor.
