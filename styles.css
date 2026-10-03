@@ -2822,15 +2822,17 @@ body { background: #071c28; }
   .navlinks { gap: 18px; font-size: 17px; }
 }
 
-/* ===== Fondos de sección con foto + parallax (servicios, cámaras, guía, después del surf). No afecta al hero. ===== */
-.has-px { position: relative; isolation: isolate; overflow: hidden; }
-.px-bg { position: absolute; left: 0; right: 0; top: -180px; bottom: -180px; z-index: -2; pointer-events: none; background: var(--px-img) center / cover no-repeat; transform: translate3d(0, var(--px-y, 0px), 0); will-change: transform; }
-.px-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4, 26, 36, .72), rgba(4, 26, 36, .46) 45%, rgba(4, 26, 36, .74)); }
+/* ===== Fondos de sección con foto + parallax (servicios, cámaras, guía, después del surf). No afecta al hero. =====
+   La foto es position:fixed a tamaño de pantalla y el panel (clip-path) la recorta: el contenido se desliza sobre una foto que queda quieta. */
+.has-px { --px-r: clamp(22px, 2.6vw, 38px); position: relative; isolation: isolate; margin: clamp(10px, 1.6vw, 24px) clamp(8px, 1.6vw, 24px); border-radius: var(--px-r); clip-path: inset(0 round var(--px-r)); }
+.px-bg { position: fixed; inset: 0; z-index: -2; pointer-events: none; background: var(--px-img) center / cover no-repeat; }
+.px-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 24, 34, .46), rgba(3, 24, 34, .16) 45%, rgba(3, 24, 34, .4)); }
 #servicios { --px-img: url('assets/bg/servicios.jpg'); }
 #camaras { --px-img: url('assets/bg/camaras.jpg'); }
 #guia { --px-img: url('assets/bg/guia.jpg'); }
 #despues-del-surf { --px-img: url('assets/bg/atardecer.jpg'); }
-.has-px .section-title, .has-px .link-more { color: #fff; }
-.has-px .section-sub { color: rgba(255, 255, 255, .86); }
+.has-px .section-title, .has-px .link-more { color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .35); }
+.has-px .section-sub { color: rgba(255, 255, 255, .9); text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
 #guia .benefit h3 { color: #fff; }
-#guia .benefit p { color: rgba(255, 255, 255, .84); }
+#guia .benefit p { color: rgba(255, 255, 255, .88); }
+#guia .px-bg::after { background: linear-gradient(90deg, rgba(3, 24, 34, .6), rgba(3, 24, 34, .28) 55%, rgba(3, 24, 34, .14)), linear-gradient(180deg, rgba(3, 24, 34, .3), rgba(3, 24, 34, 0) 40%, rgba(3, 24, 34, .3)); }
