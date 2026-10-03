@@ -12,7 +12,8 @@ Este archivo registra cambios funcionales y visuales del sitio para conservar de
 - `styles.css`: ajustar tamano del icono y cifras del clima para escritorio y movil. Comprobar anchos de 320, 375 y 430 px sin overflow horizontal.
 - `index.html`: evitar repetir la imagen entre la tarjeta de fotos del catalogo y la tarjeta de fotos posterior al surf.
 - `index.html` / `styles.css`: mover el titulo de aliados al primer elemento del carrusel; conservar su traduccion en los dos grupos visuales. Aumentar las tarjetas y quitar el borde marcado.
-- `script.js` / `styles.css`: acelerar el carrusel a 24 s en reposo, 30 s al hover y 40 s durante el arrastre. Aplicar resistencia al drag (48%, limitada a 64 px) y volver a cero al soltar sin pausar el marquee.
+- `script.js` / `styles.css`: acelerar el carrusel a 20 s en reposo, 25 s al hover y 32 s al interactuar. Ajustar la velocidad con `Animation.updatePlaybackRate()` para conservar la fase.
+- En movil, el dedo desplaza el contenido a ambos lados sin limite fijo; al soltar, el offset vuelve suavemente a cero y el autoplay sigue. El hover solo ralentiza en dispositivos con puntero fino, para evitar hover pegado en touch.
 - El cambio de ritmo del carrusel usa `Animation.updatePlaybackRate()` para conservar la fase y evitar saltos al hover/drag; los tiempos objetivo anteriores no cambian.
 - `styles.css`: con `prefers-reduced-motion`, el carrusel continua mas lento (48 s, 54 s al hover, 64 s al interactuar), conserva `overflow: hidden` y permite drag. Se elimino una regla anterior que aplicaba `animation: none` y el fallback que mostraba una barra horizontal.
 

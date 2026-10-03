@@ -980,12 +980,13 @@
     const resistLayer=section?.querySelector('.allies-ticker-resist');
     if(!section || !viewport || !track || !resistLayer) return;
 
-    let pointerId=null, startX=0, startY=0, isDragging=false, suppressClick=false;
-    const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+    let pointerId=null, startX=0, startY=0, startOffset=0, isDragging=false, suppressClick=false;
     const updateTickerSpeed=()=>{
       const reduced=reducedMotionPreference.matches;
-      const baseDuration=reduced?48:24;
-      const targetDuration=section.classList.contains('is-interacting')?(reduced?64:40):section.matches(':hover')?(reduced?54:30):baseDuration;
+      const baseDuration=reduced?48:20;
+      const supportsHover=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      const hovering=supportsHover && section.matches(':hover');
+      const targetDuration=section.classList.contains('is-interacting')?(reduced?64:32):hovering?(reduced?54:25):baseDuration;
       const animation=track.getAnimations().find(item=>item.animationName==='allies-slide-left');
       if(!animation) return;
       const playbackRate=baseDuration/targetDuration;
@@ -1011,6 +1012,8 @@
       pointerId=event.pointerId;
       startX=event.clientX;
       startY=event.clientY;
+      startOffset=Number.parseFloat(getComputedStyle(resistLayer).left)||0;
+      resistLayer.style.transition='none';
       isDragging=false;
       section.classList.add('is-interacting');
       updateTickerSpeed();
@@ -1022,7 +1025,10 @@
       if(Math.abs(deltaX)<5 || Math.abs(deltaX)<Math.abs(deltaY)) return;
       isDragging=true;
       section.classList.add('is-dragging');
-      resistLayer.style.left=`${clamp(deltaX*.48,-64,64)}px`;
+      const loopWidth=section.querySelector('.allies-ticker-set:not([aria-hidden="true"])')?.getBoundingClientRect().width||0;
+      const draggedOffset=startOffset+deltaX*.9;
+      const wrappedOffset=loopWidth?((draggedOffset+loopWidth/2)%loopWidth+loopWidth)%loopWidth-loopWidth/2:draggedOffset;
+      resistLayer.style.left=`${wrappedOffset}px`;
       event.preventDefault();
     });
     window.addEventListener('pointerup',finishInteraction);

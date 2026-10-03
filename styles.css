@@ -2538,9 +2538,8 @@ body { background: #071c28; }
 
 .allies-ticker { padding: 30px 0; background: linear-gradient(112deg, #0b303b, #0d3c43 55%, #123844); }
 .allies-ticker-viewport { mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
-.allies-ticker-track { animation-duration: 24s; touch-action: pan-y; cursor: grab; }
+.allies-ticker-track { animation-duration: 20s; touch-action: pan-y; cursor: grab; }
 .allies-ticker-resist { position: relative; left: 0; display: flex; width: max-content; transition: left .42s cubic-bezier(.2, .75, .25, 1); }
-.allies-ticker.is-interacting .allies-ticker-resist { transition-duration: .08s; }
 .allies-ticker.is-dragging .allies-ticker-track { cursor: grabbing; }
 .allies-ticker.is-dragging .allies-ticker-resist { transition: none; }
 .ally-tile img { pointer-events: none; user-select: none; -webkit-user-drag: none; }
