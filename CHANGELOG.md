@@ -13,6 +13,7 @@ Este archivo registra cambios funcionales y visuales del sitio para conservar de
 - `index.html`: evitar repetir la imagen entre la tarjeta de fotos del catalogo y la tarjeta de fotos posterior al surf.
 - `index.html` / `styles.css`: mover el titulo de aliados al primer elemento del carrusel; conservar su traduccion en los dos grupos visuales. Aumentar las tarjetas y quitar el borde marcado.
 - `script.js` / `styles.css`: acelerar el carrusel a 24 s en reposo, 30 s al hover y 40 s durante el arrastre. Aplicar resistencia al drag (48%, limitada a 64 px) y volver a cero al soltar sin pausar el marquee.
+- El cambio de ritmo del carrusel usa `Animation.updatePlaybackRate()` para conservar la fase y evitar saltos al hover/drag; los tiempos objetivo anteriores no cambian.
 - `styles.css`: con `prefers-reduced-motion`, el carrusel continua mas lento (48 s, 54 s al hover, 64 s al interactuar), conserva `overflow: hidden` y permite drag. Se elimino una regla anterior que aplicaba `animation: none` y el fallback que mostraba una barra horizontal.
 
 ### Animaciones que deben conservarse

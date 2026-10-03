@@ -982,6 +982,16 @@
 
     let pointerId=null, startX=0, startY=0, isDragging=false, suppressClick=false;
     const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+    const updateTickerSpeed=()=>{
+      const reduced=reducedMotionPreference.matches;
+      const baseDuration=reduced?48:24;
+      const targetDuration=section.classList.contains('is-interacting')?(reduced?64:40):section.matches(':hover')?(reduced?54:30):baseDuration;
+      const animation=track.getAnimations().find(item=>item.animationName==='allies-slide-left');
+      if(!animation) return;
+      const playbackRate=baseDuration/targetDuration;
+      if(animation.updatePlaybackRate) animation.updatePlaybackRate(playbackRate);
+      else animation.playbackRate=playbackRate;
+    };
     const finishInteraction=(event)=>{
       if(pointerId===null || (event?.pointerId!==undefined && event.pointerId!==pointerId)) return;
       const wasDragged=isDragging;
@@ -989,6 +999,7 @@
       isDragging=false;
       section.classList.remove('is-interacting','is-dragging');
       resistLayer.style.left='0px';
+      updateTickerSpeed();
       if(wasDragged){
         suppressClick=true;
         window.setTimeout(()=>{ suppressClick=false; },400);
@@ -1002,6 +1013,7 @@
       startY=event.clientY;
       isDragging=false;
       section.classList.add('is-interacting');
+      updateTickerSpeed();
     });
     window.addEventListener('pointermove',event=>{
       if(event.pointerId!==pointerId) return;
@@ -1016,6 +1028,8 @@
     window.addEventListener('pointerup',finishInteraction);
     window.addEventListener('pointercancel',finishInteraction);
     window.addEventListener('blur',()=>finishInteraction());
+    section.addEventListener('pointerenter',updateTickerSpeed);
+    section.addEventListener('pointerleave',updateTickerSpeed);
     document.addEventListener('click',event=>{
       if(!suppressClick || !event.target.closest('.allies-ticker')) return;
       event.preventDefault();
@@ -1024,7 +1038,9 @@
     },true);
     reducedMotionPreference.addEventListener?.('change',event=>{
       if(event.matches) finishInteraction();
+      updateTickerSpeed();
     });
+    updateTickerSpeed();
   }
 
   function bindHeroLogoEntrance(){

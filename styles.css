@@ -2517,7 +2517,6 @@ body { background: #071c28; }
 .ally-sponsor { border-color: rgba(255, 208, 106, .45); }
 .ally-sponsor small { color: #ffd477; }
 @keyframes allies-slide-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
-.allies-ticker:hover .allies-ticker-track { animation-duration: 30s; }
 @media (max-width: 640px) {
   .allies-ticker { padding: 20px 0 24px; }
   .ally-tile { width: 170px; height: 66px; }
@@ -2541,7 +2540,6 @@ body { background: #071c28; }
 .allies-ticker-viewport { mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
 .allies-ticker-track { animation-duration: 24s; touch-action: pan-y; cursor: grab; }
 .allies-ticker-resist { position: relative; left: 0; display: flex; width: max-content; transition: left .42s cubic-bezier(.2, .75, .25, 1); }
-.allies-ticker.is-interacting .allies-ticker-track { animation-duration: 40s; }
 .allies-ticker.is-interacting .allies-ticker-resist { transition-duration: .08s; }
 .allies-ticker.is-dragging .allies-ticker-track { cursor: grabbing; }
 .allies-ticker.is-dragging .allies-ticker-resist { transition: none; }
@@ -2572,8 +2570,6 @@ body { background: #071c28; }
 
 @media (prefers-reduced-motion: reduce) {
   .allies-ticker-track { animation-duration: 48s; }
-  .allies-ticker:hover .allies-ticker-track { animation-duration: 54s; }
-  .allies-ticker.is-interacting .allies-ticker-track { animation-duration: 64s; }
 }
 
 /* Service catalog expansion: eight experiences and reusable request detail pages. */
