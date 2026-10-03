@@ -2949,7 +2949,10 @@ body { background: #071c28; }
   justify-content: center !important;
   gap: 14px !important;
   min-height: 38px !important;
-  padding: 0 18px 18px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  padding: 18px 18px 14px !important;
+  background: #04090e !important;
   color: rgba(241, 235, 217, .78) !important;
   text-align: center !important;
 }
@@ -2964,7 +2967,7 @@ body { background: #071c28; }
   margin: 0 !important;
   color: inherit !important;
   font-family: "DM Sans", sans-serif !important;
-  font-size: clamp(9px, 1.12vw, 14px) !important;
+  font-size: clamp(11px, 1.35vw, 17px) !important;
   font-weight: 500 !important;
   line-height: 1 !important;
   letter-spacing: .14em !important;
@@ -3088,14 +3091,14 @@ body { background: #071c28; }
   .allies-heading {
     gap: 8px !important;
     min-height: 30px !important;
-    padding: 0 10px 12px !important;
+    padding: 14px 10px 10px !important;
   }
   .allies-heading-rule {
     width: 16px !important;
     flex-basis: 16px !important;
   }
   .allies-heading h2 {
-    font-size: 8px !important;
+    font-size: 9px !important;
     letter-spacing: .08em !important;
   }
   .ally-heading-tile {

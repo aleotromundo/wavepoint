@@ -1,5 +1,18 @@
 ## 2026-10-03
 
+### Encabezado de aliados fuera de la cinta
+
+- `index.html`: colocar el encabezado descriptivo fuera de la sección filmstrip para que se vea claramente por encima de la tira de película.
+- `styles.css`: aumentar moderadamente el tamaño del texto, conservarlo en una sola línea y darle un fondo oscuro independiente para separar visualmente el encabezado de la cinta.
+- El fotograma interno **“Aliados y patrocinadores”** permanece dentro del carrusel.
+
+### Validación
+
+- Sintaxis JavaScript y `git diff --check` correctos.
+- Confirmado que el encabezado externo precede al elemento `<section id="aliados">` y que los dos fotogramas internos se conservan.
+
+## 2026-10-03
+
 ### Título premium sobre la cinta de aliados
 
 - `index.html`: agregar inmediatamente encima de la cinta de cine el texto **“The brands and local businesses that believe in WavePoint and help make it possible”** en una sola línea, conservando también el fotograma interno **“Aliados y patrocinadores”** en ambos conjuntos del carrusel.
