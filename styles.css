@@ -4080,3 +4080,106 @@ body { background: #071c28; }
   .service-rates tbody th { white-space: normal; }
   .service-rates-note { margin: 13px 18px 19px; }
 }
+
+
+/* Legibilidad editorial: textos secundarios más claros sin perder la escala visual */
+.section-sub {
+  font-size: 17px !important;
+  line-height: 1.62 !important;
+  font-weight: 550 !important;
+  letter-spacing: .005em;
+}
+.has-px .section-sub,
+#camaras .section-sub,
+#servicios .section-sub,
+#guia .section-sub,
+#aliados .section-sub,
+.after-surf .section-sub {
+  color: rgba(238, 250, 246, .88) !important;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .28);
+}
+.cam-body p,
+.service-body p {
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  font-weight: 550 !important;
+  letter-spacing: .005em;
+}
+#servicios .service-body p,
+#camaras .cam-body p {
+  color: rgba(255, 255, 255, .9) !important;
+}
+.service-body > a,
+.cam-action,
+.link-more {
+  font-size: 14px !important;
+  line-height: 1.35;
+}
+.benefit p,
+.guide-content p,
+.after-content p,
+.promo-content p {
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  font-weight: 550 !important;
+}
+.service-offering p,
+.guide-offering p {
+  font-size: 15px !important;
+  line-height: 1.58 !important;
+  color: rgba(238, 250, 246, .84) !important;
+}
+.service-offering strong,
+.guide-offering strong {
+  font-size: 13px !important;
+  line-height: 1.35;
+}
+.guide-glossary span {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: rgba(238, 250, 246, .78) !important;
+}
+.guide-detail-category > p:last-child,
+.guide-detail-card p {
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  color: rgba(238, 250, 246, .84) !important;
+}
+.guide-detail-card ul {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: rgba(238, 250, 246, .8) !important;
+}
+footer p,
+footer a {
+  font-size: 14px !important;
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .section-sub {
+    font-size: 16px !important;
+    line-height: 1.58 !important;
+  }
+  .cam-body p,
+  .service-body p,
+  .benefit p,
+  .guide-content p,
+  .after-content p,
+  .promo-content p,
+  .service-offering p,
+  .guide-offering p,
+  .guide-detail-category > p:last-child,
+  .guide-detail-card p {
+    font-size: 14px !important;
+    line-height: 1.58 !important;
+  }
+  .service-offering strong,
+  .guide-offering strong,
+  .service-body > a,
+  .cam-action,
+  .link-more {
+    font-size: 13px !important;
+  }
+  footer p,
+  footer a { font-size: 13px !important; }
+}

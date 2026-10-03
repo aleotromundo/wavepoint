@@ -1,5 +1,17 @@
 ## 2026-10-03
 
+### Mejora de legibilidad en textos secundarios
+
+- `styles.css`: aumentar de forma moderada el tamaño, interlineado y peso de subtítulos y descripciones en secciones, tarjetas de servicios, cámaras, guía, beneficios, promociones y footer.
+- `styles.css`: reforzar el contraste de textos sobre fondos oceánicos y reducir la opacidad excesiva sin modificar la composición, colores principales ni jerarquía de títulos.
+- En móvil se aplican valores ligeramente más compactos para conservar el ritmo visual y evitar tarjetas demasiado altas.
+
+### Validación
+
+- Se verificó `git diff --check`, la sintaxis de `script.js` y `services.js`, y la presencia de los selectores de legibilidad.
+
+## 2026-10-03
+
 ### Tabla estilizada de tarifas de servicios
 
 - `index.html`: agregar al final de la sección **Servicios** una tabla semántica con las tarifas proporcionadas para clases de surf, fotografía acuática, fotografía desde la playa, surfskate y surf coaching.
