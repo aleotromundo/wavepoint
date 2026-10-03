@@ -1,5 +1,19 @@
 ## 2026-10-03
 
+### Clases de surf: traducciones ES/EN del modal y la encuesta
+
+- `services.js`: leer el idioma guardado en `localStorage` (`wavepoint-lang`, el mismo que usa el selector del sitio) y mostrar en inglés o español el modal, el bloque de introducción a la encuesta, la descripción larga, las siete preguntas con sus opciones, el formulario de solicitud y los mensajes de error.
+- `services.js`: el mensaje de WhatsApp se arma en el idioma elegido (saludo, etiquetas, respuestas y cierre), con la misma estructura y orden que antes.
+- `services.js`: los textos en español se movieron a `FORM_UI.es` sin cambios de redacción; los demás servicios siguen en español porque solo las clases de surf tienen traducción.
+- `service-detail.html`: actualizar la versión de `services.js` para evitar caché.
+- Pendiente: `service-detail.html` no carga `script.js` ni tiene selector de idioma; el idioma se toma del que se eligió en las otras páginas (por defecto, español).
+
+### Validación
+
+- Se verificó `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-03
+
 ### Clases de surf: encuesta en modal interactivo
 
 - `services.js`: agregar el botón **Completar encuesta** y un modal nativo accesible que reutiliza el formulario existente, evitando duplicar campos o lógica de envío.

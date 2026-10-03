@@ -77,7 +77,19 @@
         { id: 'preferred_fruit', label: '¿Qué fruta prefieren comer después de la clase?', type: 'multi', options: ['Piña', 'Bananas', 'Mangos', 'Cocos'] },
         { id: 'preferred_schedule', label: '¿Qué horarios prefieren?', type: 'choice', options: ['AM', 'Medio día', 'Tarde'] },
         { id: 'board_need', label: '¿Necesitarán una tabla?', type: 'choice', options: ['Sí', 'No, llevamos la nuestra', 'Necesitamos asesoramiento'] }
-      ]
+      ],
+      en: {
+        description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
+        questions: {
+          surf_level: { label: 'What’s your surfing level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
+          lesson_goal: { label: 'What would you like to learn?', options: ['Try surfing', 'Improve the basics', 'Work on a specific skill'] },
+          group_size: { label: 'How many of you are there?' },
+          origin: { label: 'Where are you visiting from?', placeholder: 'City and country' },
+          preferred_fruit: { label: 'Which fruit would you like to eat after the lesson?', options: ['Pineapple', 'Bananas', 'Mangoes', 'Coconuts'] },
+          preferred_schedule: { label: 'What times do you prefer?', options: ['AM', 'Midday', 'Afternoon'] },
+          board_need: { label: 'Will you need a board?', options: ['Yes', 'No, we bring our own', 'We need advice'] }
+        }
+      }
     },
     {
       id: 'surf-coaching' , number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Surf coaching',
@@ -177,6 +189,51 @@
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;' }[char]));
   const getService = () => { const id = new URLSearchParams(location.search).get('service'); return services.find(item => item.id === id) || services[0]; };
+  const lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'en' ? 'en' : 'es'; } catch (error) { return 'es'; } })();
+  const isSurfEn = service => lang === 'en' && service.id === 'clases-de-surf';
+  const localizeService = service => {
+    if (!isSurfEn(service) || !service.en) return service;
+    return { ...service, description: service.en.description, questions: service.questions.map(question => ({ ...question, ...(service.en.questions[question.id] || {}) })) };
+  };
+  const FORM_UI = {
+    es: {
+      optional: 'Opcional',
+      requestTitle: 'Contanos qué estás buscando.',
+      requestText: 'Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.',
+      nameLabel: '¿Cómo te llamás?', namePlaceholder: 'Tu nombre',
+      extraLabel: '¿Hay algo más que quieras contarnos?', extraPlaceholder: 'Fechas, cantidad de personas u otra información útil',
+      submit: 'Armar solicitud en WhatsApp ↗',
+      note: 'Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.',
+      error: 'Completá las respuestas necesarias para continuar.',
+      waIntro: 'Hola WavePoint, quiero consultar por:', waName: 'Nombre:', waExtra: 'Información adicional:', waThanks: 'Gracias. Quedo atento/a.',
+      galleryAlt: 'Clases de surf · imagen',
+      surveyHeading: 'Llena nuestra pequeña encuesta',
+      surveyText: 'Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.',
+      surveyOpen: 'Completar encuesta',
+      modalTitle: 'Tu clase empieza acá.',
+      modalText: 'Completá la encuesta y prepararemos una consulta a medida para tu grupo.',
+      modalClose: 'Cerrar encuesta'
+    },
+    en: {
+      optional: 'Optional',
+      requestTitle: 'Tell us what you’re looking for.',
+      requestText: 'Answer these questions and open WhatsApp with an organized request for the person in charge.',
+      nameLabel: 'What’s your name?', namePlaceholder: 'Your name',
+      extraLabel: 'Anything else you’d like to tell us?', extraPlaceholder: 'Dates, number of people or any other useful information',
+      submit: 'Build request on WhatsApp ↗',
+      note: 'WhatsApp will open with your answers ready to review before sending.',
+      error: 'Please complete the required answers to continue.',
+      waIntro: 'Hi WavePoint, I’d like to ask about:', waName: 'Name:', waExtra: 'Additional information:', waThanks: 'Thank you. Looking forward to your reply.',
+      galleryAlt: 'Surf lessons · image',
+      surveyHeading: 'Fill out our quick survey',
+      surveyText: 'With these answers we can prepare a clearer request for the instructor and make the lesson feel made for you.',
+      surveyOpen: 'Complete the survey',
+      modalTitle: 'Your lesson starts here.',
+      modalText: 'Complete the survey and we’ll prepare a request tailored to your group.',
+      modalClose: 'Close survey'
+    }
+  };
+  const uiFor = service => isSurfEn(service) ? FORM_UI.en : FORM_UI.es;
   const inputId = (service, question) => `${service.id}-${question.id}`;
   const PACK_SERVICE_CARDS = {
     'Alojamiento': { title: 'Stay & experience', detail: 'Un lugar cómodo y algo más para vivir Tamarindo.', image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
@@ -191,7 +248,7 @@
   };
   function renderQuestion(service, question) {
     const id = inputId(service, question);
-    const optional = question.optional ? '<span class="detail-optional">Opcional</span>' : '';
+    const optional = question.optional ? `<span class="detail-optional">${uiFor(service).optional}</span>` : '';
     if (service.id === 'pack-ajustable' && question.id === 'pack_activities') return `<fieldset class="detail-question pack-question"><legend>${esc(question.label)} ${optional}</legend><p class="pack-question-intro">Elegí dos o más tarjetas y armamos una experiencia a tu medida.</p><div class="pack-service-grid">${question.options.map(option => { const card = PACK_SERVICE_CARDS[option]; return `<label class="pack-service-card"><input type="checkbox" name="${question.id}" value="${esc(option)}" /><span class="pack-service-image"><img src="${card.image}" alt="" loading="lazy" /><span class="pack-service-check" aria-hidden="true">✓</span></span><span class="pack-service-copy"><strong>${esc(card.title)}</strong><small>${esc(card.detail)}</small></span></label>`; }).join('')}</div><p class="pack-selection-count" data-pack-selection>0 experiencias seleccionadas</p></fieldset>`;
     if (question.type === 'dates') return `<fieldset class="detail-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
     if (question.type === 'choice' || question.type === 'multi') return `<fieldset class="detail-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-options">${question.options.map((option, index) => `<label class="detail-option"><input type="${question.type === 'multi' ? 'checkbox' : 'radio'}" name="${question.id}" value="${esc(option)}" ${question.type === 'choice' && index === 0 && !question.optional ? 'required' : ''} /><span>${esc(option)}</span></label>`).join('')}</div></fieldset>`;
@@ -208,14 +265,17 @@
     return `<p class="service-page-kicker">ALOJAMIENTOS EN TAMARINDO</p><h2>Opciones de alojamiento en Tamarindo</h2><p>${esc(service.description)}</p><div class="accommodation-rate-note"><strong>Tarifas en USD</strong><span>Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
   }
   function renderSurfLessonStory(service) {
-    const gallery = service.images.map((image, index) => `<img src="${image}" alt="Clases de surf · imagen ${index + 1}" loading="lazy" />`).join('');
-    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>Llena nuestra pequeña encuesta</h3><p>Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.</p><button class="surf-survey-open" type="button" data-open-surf-survey>Completar encuesta <span aria-hidden="true">↗</span></button></div></div>`;
+    const ui = uiFor(service);
+    const gallery = service.images.map((image, index) => `<img src="${image}" alt="${ui.galleryAlt} ${index + 1}" loading="lazy" />`).join('');
+    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
   }
   function render(service) {
+    const ui = uiFor(service);
+    document.documentElement.lang = lang;
     document.title = `${service.title} · WavePoint`;
     const nameField = service.id === 'clases-de-surf'
-      ? '<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás?</span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" required /></label>'
-      : '<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label>';
+      ? `<label class="detail-question detail-field" for="request-name"><span>${ui.nameLabel}</span><input id="request-name" name="request-name" type="text" placeholder="${ui.namePlaceholder}" required /></label>`
+      : `<label class="detail-question detail-field" for="request-name"><span>${ui.nameLabel} <span class="detail-optional">${ui.optional}</span></span><input id="request-name" name="request-name" type="text" placeholder="${ui.namePlaceholder}" /></label>`;
     const formQuestions = service.id === 'clases-de-surf'
       ? `${nameField}${service.questions.map(question => renderQuestion(service, question)).join('')}`
       : `${service.questions.map(question => renderQuestion(service, question)).join('')}${nameField}`;
@@ -224,8 +284,8 @@
       : service.id === 'clases-de-surf'
         ? renderSurfLessonStory(service)
         : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
-    const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">READY TO SURF?</p><h2 id="surfSurveyTitle">Tu clase empieza acá.</h2><p>Completá la encuesta y prepararemos una consulta a medida para tu grupo.</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="Cerrar encuesta">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+    const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">READY TO SURF?</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
+    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${ui.submit}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
     if (service.id === 'pack-ajustable') {
       const packGrid = document.querySelector('.pack-service-grid');
       const count = document.querySelector('[data-pack-selection]');
@@ -252,20 +312,21 @@
   function submitRequest(event, service) {
     event.preventDefault();
     const form = event.currentTarget;
+    const ui = uiFor(service);
     const error = document.getElementById('detailError');
-    if (!form.checkValidity()) { form.reportValidity(); error.textContent = 'Completá las respuestas necesarias para continuar.'; return; }
-    const lines = [`Hola WavePoint, quiero consultar por: ${service.title}`, ''];
+    if (!form.checkValidity()) { form.reportValidity(); error.textContent = ui.error; return; }
+    const lines = [`${ui.waIntro} ${service.title}`, ''];
     const name = form.elements['request-name']?.value.trim();
     const extra = form.elements['request-contact']?.value.trim();
-    if (service.id === 'clases-de-surf' && name) lines.push(`Nombre: ${name}`);
+    if (service.id === 'clases-de-surf' && name) lines.push(`${ui.waName} ${name}`);
     service.questions.forEach(question => {
       const values = [...form.querySelectorAll(`[name="${question.id}"], [name^="${question.id}-"]`)].map(input => input.type === 'checkbox' || input.type === 'radio' ? (input.checked ? input.value : '') : input.value).filter(Boolean);
       if (values.length) lines.push(`${question.label} ${values.join(' / ')}`);
     });
-    if (service.id !== 'clases-de-surf' && name) lines.push(`Nombre: ${name}`);
-    if (extra) lines.push(`Información adicional: ${extra}`);
-    lines.push('', 'Gracias. Quedo atento/a.');
+    if (service.id !== 'clases-de-surf' && name) lines.push(`${ui.waName} ${name}`);
+    if (extra) lines.push(`${ui.waExtra} ${extra}`);
+    lines.push('', ui.waThanks);
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
   }
-  render(getService());
+  render(localizeService(getService()));
 })();
