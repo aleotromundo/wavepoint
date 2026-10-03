@@ -67,7 +67,7 @@
     {
       id: 'clases-de-surf', number: '02', eyebrow: 'SURF · LESSONS', title: 'Ready to Surf?',
       cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
-      description: 'Contanos tu nivel y qué te gustaría aprender. Buscaremos una clase que se adapte a vos, a tu grupo y al momento del día que prefieran.',
+      description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
       images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/clase-surf.jpeg', 'assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg'],
       questions: [
         { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
@@ -209,7 +209,7 @@
   }
   function renderSurfLessonStory(service) {
     const gallery = service.images.map((image, index) => `<img src="${image}" alt="Clases de surf · imagen ${index + 1}" loading="lazy" />`).join('');
-    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>Llena nuestra pequeña encuesta</h3><p>Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.</p></div></div>`;
+    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>Llena nuestra pequeña encuesta</h3><p>Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.</p></div></div>`;
   }
   function render(service) {
     document.title = `${service.title} · WavePoint`;

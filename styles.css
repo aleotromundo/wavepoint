@@ -4304,6 +4304,13 @@ footer a {
   line-height: 1.6;
   font-weight: 600;
 }
+.surf-lesson-description {
+  max-width: 720px;
+  margin: 0 0 23px;
+  color: #5b7379;
+  font-size: 15px;
+  line-height: 1.68;
+}
 .surf-lesson-gallery {
   grid-template-columns: 1.35fr .8fr;
   grid-template-rows: 145px 145px;
@@ -4353,4 +4360,59 @@ footer a {
   .surf-lesson-gallery { grid-template-rows: 105px 105px; height: 214px; }
   .surf-lesson-survey-intro { padding: 15px; }
   .surf-lesson-survey-intro h3 { font-size: 25px; }
+}
+
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Instagram en el pie: ícono reconocible con brillo sutil */
+.instagram-footer-link {
+  position: relative;
+  display: inline-flex !important;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  background: rgba(8, 43, 58, .48);
+  color: #fff !important;
+  box-shadow: 0 8px 24px rgba(3, 20, 31, .18);
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.instagram-footer-link svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.instagram-footer-link .instagram-dot { fill: currentColor; stroke: none; }
+.instagram-footer-link:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, .58); background: rgba(8, 43, 58, .76); }
+.instagram-footer-link::after {
+  content: '✦';
+  position: absolute;
+  top: -7px;
+  right: -6px;
+  color: #f5cf73;
+  font-size: 13px;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(.45) rotate(-18deg);
+  animation: instagram-sparkle 5.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes instagram-sparkle {
+  0%, 72%, 100% { opacity: 0; transform: scale(.45) rotate(-18deg); }
+  77% { opacity: .95; transform: scale(1.15) rotate(8deg); }
+  83% { opacity: .25; transform: scale(.78) rotate(20deg); }
+  88% { opacity: .8; transform: scale(1) rotate(-4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .instagram-footer-link::after { animation: none; opacity: .65; transform: scale(.8); }
 }

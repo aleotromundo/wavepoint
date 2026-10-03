@@ -1,5 +1,27 @@
 ## 2026-10-03
 
+### Clases de surf: restauración de descripción larga
+
+- `services.js`: conservar el título **Ready to Surf?** y el subtítulo solicitado, restaurando debajo la descripción completa sobre niveles, objetivos, seguridad y asesoramiento de tablas.
+- `styles.css`: agregar jerarquía visual para que la descripción larga acompañe al subtítulo sin competir con la galería ni la encuesta.
+
+### Validación
+
+- Se verificó `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-03
+
+### Instagram: ícono con brillo sutil
+
+- `service.html` y `service-detail.html`: reemplazar el texto del enlace inferior de Instagram por un ícono SVG reconocible, con etiqueta accesible y enlace directo a `@wavepointcr`.
+- `styles.css`: agregar un brillo dorado que pulsa ocasionalmente, con soporte para `prefers-reduced-motion` para evitar animación cuando el usuario lo solicita.
+
+### Validación
+
+- Se verificó `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-03
+
 ### Navegación del detalle de servicios
 
 - `service-detail.html`: actualizar el enlace inferior **Volver a Servicios** para regresar directamente a `index.html#servicios`, donde se encuentran el catálogo y las tarifas completas.
