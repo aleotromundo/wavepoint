@@ -106,14 +106,15 @@ questions: [
 ]
 },
 {
-id: 'roca-bruja', number: '04', eyebrow: 'SURF TRIP · AVENTURA', title: 'Surf trip a Roca Bruja',
-cardText: 'Planificá una salida a uno de los spots más especiales de la costa con logística local.',
-description: 'Roca Bruja exige mirar el mar, la logística y el grupo como un todo. Coordinamos la consulta con información sobre niveles, tablas y flexibilidad de fechas para que el operador pueda evaluar la salida de forma responsable. Las condiciones pueden pedir cambios: por eso este primer paso nos ayuda a buscar una ventana que tenga sentido para quienes viajan y para el océano.',
+id: 'roca-bruja', number: '04', eyebrow: 'SURF TRIP · AVENTURA', title: 'Witch's Rock Surf Trip',
+cardText: 'Some surf trips stay with you long after your last wave.',
+description: 'Head out by boat to Roca Bruja and share a day of surf with local guides who know the area. From the journey out to the time in the water, the experience is shaped by the ocean, your group and the people guiding you. WavePoint helps coordinate the details, taking your group's surf level and the conditions into account.',
 images: ['assets/legacy/bruja.jpg', 'assets/legacy/avellanas.jpg'],
 questions: [
 { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
 { id: 'own_boards', label: '¿Todos llevarán su propia tabla?', type: 'choice', options: ['Sí', 'No'] },
 { id: 'board_count', label: 'Si alguien necesita tabla, ¿cuántas necesitan?', type: 'number', optional: true },
+{ id: 'group_size', label: 'How many people are joining?', type: 'group_size', adultsLabel: 'Adults', childrenLabel: 'Children', childrenNote: 'If children are joining, please tell us their ages so we can check the provider's requirements.' },
 { id: 'date_flexibility', label: '¿Pueden cambiar de fecha si las condiciones del mar lo requieren?', type: 'choice', options: ['Sí', 'No'] }
 ]
 },
