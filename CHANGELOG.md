@@ -1,5 +1,12 @@
 ## 2026-10-03
 
+### Orden de secciones en la página de inicio
+
+- `index.html`: mover la sección **WavePoint en Tamarindo** (`#guia`) para que aparezca inmediatamente antes de **Cámaras en vivo** (`#camaras`). No se modificó el contenido interno de ninguna sección.
+- Validación: orden de IDs comprobado y `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Favicon WavePoint con ola engrosada
 
 - Se regeneró el favicon a partir de la imagen de referencia proporcionada por el usuario, conservando el fondo negro, el punto blanco y la forma de la ola inspirada en Manus, pero con un trazo visiblemente más grueso y legible en tamaños pequeños.
