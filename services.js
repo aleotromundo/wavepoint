@@ -106,18 +106,7 @@ questions: [
 ]
 },
 {
-id: 'yoga', number: '04', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
-cardText: 'Encontrá una práctica que acompañe tu viaje, desde una primera vez hasta una sesión profunda.',
-description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
-images: ['assets/legacy/OTAMA_HEAL_21.jpg'],
-questions: [
-{ id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
-{ id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
-{ id: 'yoga_notes', label: '¿Hay algo que quieras que el instructor tenga en cuenta para adaptar la sesión?', type: 'textarea', placeholder: 'Opcional', optional: true }
-]
-},
-{
-id: 'roca-bruja', number: '05', eyebrow: 'SURF TRIP · AVENTURA', title: 'Witch’s Rock Surf Trip',
+id: 'roca-bruja', number: '04', eyebrow: 'SURF TRIP · AVENTURA', title: 'Witch’s Rock Surf Trip',
 cardText: 'Un día de surf en barco con guías locales que conocen la zona.',
 lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
@@ -146,6 +135,17 @@ board_count: { label: 'If anyone needs a board, how many?' },
 date_flexibility: { label: 'Can you change the date if sea conditions require it?', options: ['Yes', 'No'] }
 }
 }
+},
+{
+id: 'yoga', number: '05', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
+cardText: 'Encontrá una práctica que acompañe tu viaje, desde una primera vez hasta una sesión profunda.',
+description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
+images: ['assets/legacy/OTAMA_HEAL_21.jpg'],
+questions: [
+{ id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
+{ id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
+{ id: 'yoga_notes', label: '¿Hay algo que quieras que el instructor tenga en cuenta para adaptar la sesión?', type: 'textarea', placeholder: 'Opcional', optional: true }
+]
 },
 {
 id: 'snorkel-catamaran', number: '06', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
@@ -189,7 +189,7 @@ cardText: 'Build your own experience by combining the activities that fit your t
 description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
 images: ['assets/after-guide.jpg'],
 questions: [
-{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Yoga', 'Witch’s Rock Surf Trip', 'Snorkeling & catamaran', 'Buceo', 'ATV tours', 'Retreats'] },
+{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Yoga', 'Snorkeling & catamaran', 'Buceo', 'ATV tours', 'Retreats'] },
 { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
 { id: 'pack_notes', label: '¿Qué debería tener en cuenta el operador?', type: 'textarea', placeholder: 'Cantidad de personas, preferencias o necesidades especiales.', optional: true }
 ]

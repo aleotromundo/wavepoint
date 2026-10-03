@@ -1,5 +1,19 @@
 ## 2026-10-03
 
+### Orden de los servicios: Witch’s Rock Surf Trip pasa al lugar 04
+
+- `index.html`: la tarjeta de Witch’s Rock Surf Trip va antes que Yoga en la sección Servicios.
+- `services.js`: el array de servicios sigue el mismo orden que la página principal y los números (`04 / 10`, etc.) se alinean. Las flechas del hero siguen ese orden, así que Surf coaching → Witch’s Rock Surf Trip → Yoga.
+- `services.js`: en el Pack ajustable, la tarjeta de Witch’s Rock Surf Trip también aparece antes que Yoga.
+- Orden actual: 01 Stays and Hotels, 02 Surf lessons, 03 Surf coaching, 04 Witch’s Rock Surf Trip, 05 Yoga, 06 Snorkel y catamarán, 07 Buceo, 08 ATV, 09 Pack ajustable, 10 Retiros. Los últimos seis se ordenarán a medida que se vayan trabajando.
+
+### Validación
+
+- `node --check services.js`, `git diff --check`.
+- Chromium: orden de las tarjetas de la página principal, contador y destino de las flechas en Surf coaching, Witch’s Rock y Yoga, y orden de las tarjetas del Pack ajustable.
+
+## 2026-10-03
+
 ### Detalle de servicio: flechas para recorrer los servicios
 
 - `services.js`: el hero de cada servicio muestra dos flechas laterales (‹ ›) que llevan al servicio anterior y al siguiente. Al llegar al último vuelve al primero y viceversa. Cada flecha tiene `aria-label` en español o inglés según el idioma elegido ("Servicio anterior: …" / "Previous service: …") y el nombre del servicio como `title`.
