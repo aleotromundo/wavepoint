@@ -4817,3 +4817,39 @@ footer a {
   letter-spacing: 0.01em !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
 }
+
+/* ── Surf Coaching: sección Incluye ── */
+.service-includes {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: rgba(0, 167, 189, 0.08);
+  border: 1px solid rgba(0, 167, 189, 0.2);
+  border-radius: 16px;
+}
+.service-includes h3 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--wp-turquoise, #00a7bd);
+}
+.service-includes ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: none;
+}
+.service-includes li {
+  position: relative;
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--wp-ink, #102638);
+}
+.service-includes li::before {
+  content: '✓';
+  position: absolute;
+  left: -20px;
+  color: var(--wp-turquoise, #00a7bd);
+  font-weight: 900;
+}
