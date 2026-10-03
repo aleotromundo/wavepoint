@@ -2533,6 +2533,39 @@ body { background: #071c28; }
   .ally-tile strong { font-size: 20px; }
 }
 
+.allies-ticker { padding: 30px 0; background: linear-gradient(112deg, #0b303b, #0d3c43 55%, #123844); }
+.allies-ticker-viewport { mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
+.allies-ticker-track { animation-duration: 40s; }
+.allies-ticker-set { align-items: center; gap: 14px; padding-right: 14px; }
+.ally-heading-tile { display: grid; flex: 0 0 300px; align-content: center; min-height: 104px; padding: 8px 12px; }
+.ally-heading-marker { width: 34px; height: 3px; margin-bottom: 10px; border-radius: 2px; background: #55ddc4; }
+.ally-heading-tile h2 { margin: 0; color: #f4fbf8; font: 700 34px/1 "Barlow Condensed", Impact, sans-serif; }
+.ally-heading-tile p { max-width: 290px; margin: 8px 0 0; color: rgba(234, 247, 242, .72); font-size: 12px; line-height: 1.4; }
+.ally-tile { width: 244px; height: 104px; gap: 13px; padding: 9px; border: 0; border-radius: 13px; background: linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.07)); box-shadow: inset 0 1px rgba(255,255,255,.16), 0 10px 24px rgba(0,0,0,.12); }
+.ally-tile:hover { background: linear-gradient(135deg, rgba(255,255,255,.21), rgba(255,255,255,.1)); }
+.ally-tile img { width: 86px; height: 86px; flex-basis: 86px; border-radius: 9px; }
+.ally-tile strong { font-size: 23px; line-height: 1; }
+.ally-tile small { font-size: 10px; }
+.ally-sponsor { background: linear-gradient(135deg, rgba(255,212,128,.17), rgba(255,255,255,.07)); }
+.ally-sponsor:hover { background: linear-gradient(135deg, rgba(255,212,128,.23), rgba(255,255,255,.1)); }
+
+@media (max-width: 640px) {
+  .allies-ticker { padding: 22px 0; }
+  .allies-ticker-set { gap: 10px; padding-right: 10px; }
+  .ally-heading-tile { flex-basis: 248px; min-height: 90px; padding-inline: 8px; }
+  .ally-heading-tile h2 { font-size: 29px; }
+  .ally-heading-tile p { font-size: 11px; }
+  .ally-tile { width: 218px; height: 90px; gap: 11px; padding: 8px; }
+  .ally-tile img { width: 72px; height: 72px; flex-basis: 72px; }
+  .ally-tile strong { font-size: 21px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .allies-ticker-viewport { overflow-x: auto; mask-image: none; scrollbar-color: rgba(160, 231, 216, .6) transparent; scrollbar-width: thin; }
+  .allies-ticker-track { animation: none; }
+  .allies-ticker-set[aria-hidden="true"] { display: none; }
+}
+
 /* Service catalog expansion: eight experiences and reusable request detail pages. */
 .service-offerings-catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .service-offerings-catalog .service-offering { min-height: 236px; }
