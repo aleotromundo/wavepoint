@@ -1,5 +1,14 @@
 ## 2026-10-03
 
+### Descripción completa para elegir Servicios
+
+- `index.html`, `service.html` y `script.js`: ampliar la descripción bilingüe para incluir fecha, tamaño del grupo y consulta de disponibilidad con el proveedor.
+- Inglés: **“Choose an experience to see the details. When you’re ready, send us your preferred date and group size. We’ll check availability with the provider.”**
+
+### Validación
+
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
 ## 2026-10-03
 
 ## 2026-10-03
