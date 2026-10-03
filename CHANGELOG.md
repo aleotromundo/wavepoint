@@ -1,5 +1,17 @@
 ## 2026-10-03
 
+### Clases de surf: encuesta en modal interactivo
+
+- `services.js`: agregar el botón **Completar encuesta** y un modal nativo accesible que reutiliza el formulario existente, evitando duplicar campos o lógica de envío.
+- `services.js`: permitir abrir, cerrar y restaurar el formulario en su panel original; el botón de cierre y la tecla Escape funcionan como salida del modal.
+- `styles.css`: diseñar el modal, su backdrop, botón de apertura, estados hover y comportamiento responsive para móvil.
+
+### Validación
+
+- Se verificó `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-03
+
 ### Clases de surf: restauración de descripción larga
 
 - `services.js`: conservar el título **Ready to Surf?** y el subtítulo solicitado, restaurando debajo la descripción completa sobre niveles, objetivos, seguridad y asesoramiento de tablas.

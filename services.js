@@ -209,7 +209,7 @@
   }
   function renderSurfLessonStory(service) {
     const gallery = service.images.map((image, index) => `<img src="${image}" alt="Clases de surf · imagen ${index + 1}" loading="lazy" />`).join('');
-    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>Llena nuestra pequeña encuesta</h3><p>Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.</p></div></div>`;
+    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>Llena nuestra pequeña encuesta</h3><p>Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.</p><button class="surf-survey-open" type="button" data-open-surf-survey>Completar encuesta <span aria-hidden="true">↗</span></button></div></div>`;
   }
   function render(service) {
     document.title = `${service.title} · WavePoint`;
@@ -224,7 +224,8 @@
       : service.id === 'clases-de-surf'
         ? renderSurfLessonStory(service)
         : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
+    const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">READY TO SURF?</p><h2 id="surfSurveyTitle">Tu clase empieza acá.</h2><p>Completá la encuesta y prepararemos una consulta a medida para tu grupo.</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="Cerrar encuesta">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
+    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
     if (service.id === 'pack-ajustable') {
       const packGrid = document.querySelector('.pack-service-grid');
       const count = document.querySelector('[data-pack-selection]');
@@ -234,7 +235,19 @@
       };
       packGrid?.addEventListener('change', updatePackCount);
     }
-    document.getElementById('serviceRequestForm').addEventListener('submit', event => submitRequest(event, service));
+    const requestForm = document.getElementById('serviceRequestForm');
+    if (service.id === 'clases-de-surf') {
+      const modal = document.getElementById('surfSurveyModal');
+      const modalBody = document.getElementById('surfSurveyModalBody');
+      const requestPanel = document.getElementById('detailRequestPanel');
+      const openSurvey = document.querySelector('[data-open-surf-survey]');
+      const restoreForm = () => { if (requestForm && requestPanel && requestForm.parentElement === modalBody) requestPanel.appendChild(requestForm); };
+      openSurvey?.addEventListener('click', () => { modalBody.appendChild(requestForm); modal.showModal(); });
+      modal?.querySelector('[data-close-surf-survey]')?.addEventListener('click', () => { restoreForm(); modal.close(); });
+      modal?.addEventListener('cancel', restoreForm);
+      modal?.addEventListener('close', restoreForm);
+    }
+    requestForm.addEventListener('submit', event => submitRequest(event, service));
   }
   function submitRequest(event, service) {
     event.preventDefault();
