@@ -2852,3 +2852,559 @@ body { background: #071c28; }
 /* Foto de las tarjetas de servicios: llena todo el espacio, sin franjas de fondo */
 .service-img { background: transparent; }
 .service-img img { object-fit: cover; background: none; }
+
+#servicios .service-body h3,
+#servicios .service-body h3 a {
+  font-size: 26px !important;
+  color: #fff !important;
+}
+
+/* =========================================================
+   CARROUSEL MODO FILMSTRIP / ROLLO DE PELÍCULA (ALIADOS)
+   ========================================================= */
+.allies-ticker {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #04090e !important;
+  padding: 38px 0 !important;
+  box-shadow: inset 0 3px 14px rgba(0, 0, 0, 0.9), inset 0 -3px 14px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* =========================================================
+   PERFORACIONES ROLLO DE PELÍCULA (CORRECCIÓN BRILLO Y OPACIDAD)
+   ========================================================= */
+#aliados::before,
+.allies-ticker::before,
+#aliados::after,
+.allies-ticker::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 16px !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  animation: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='16' viewBox='0 0 44 16'%3E%3Crect x='8' y='1' width='22' height='14' rx='3.5' fill='%23f1ebd9' opacity='0.94'/%3E%3C/svg%3E") !important;
+  background-repeat: repeat-x !important;
+  background-size: 44px 16px !important;
+}
+
+#aliados::before,
+.allies-ticker::before {
+  top: 10px !important;
+  bottom: auto !important;
+}
+
+#aliados::after,
+.allies-ticker::after {
+  bottom: 10px !important;
+  top: auto !important;
+}
+
+/* Tarjeta cabecera estilo claqueta / portada de rollo */
+.ally-heading-tile {
+  position: relative !important;
+  flex: 0 0 260px !important;
+  width: 260px !important;
+  height: 176px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 20px !important;
+  background: #020508 !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+.ally-heading-marker {
+  width: 38px !important;
+  height: 2px !important;
+  background: #ffffff !important;
+  opacity: 0.8 !important;
+  margin: 0 auto 14px auto !important;
+  border-radius: 2px !important;
+}
+.ally-heading-tile h2 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+.ally-heading-tile p {
+  display: none !important;
+}
+
+/* Fotogramas de película de los aliados */
+.ally-tile {
+  position: relative !important;
+  overflow: hidden !important;
+  flex: 0 0 270px !important;
+  width: 270px !important;
+  height: 176px !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  background: #050b10 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+.ally-tile:hover {
+  transform: translateY(-3px) scale(1.015) !important;
+  border-color: rgba(143, 233, 238, 0.45) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Foto a fotograma completo */
+.ally-tile img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+  z-index: 1 !important;
+  transition: transform 0.45s ease, filter 0.3s ease !important;
+  pointer-events: none !important;
+}
+.ally-tile:hover img {
+  transform: scale(1.06) !important;
+}
+
+/* Degradado cinematográfico oscuro inferior */
+.ally-tile::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0.88) 100%) !important;
+  pointer-events: none !important;
+}
+
+/* Textos sobre el fotograma */
+.ally-tile span {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+  padding: 14px 16px !important;
+  text-align: left !important;
+}
+
+.ally-tile strong {
+  display: block !important;
+  color: #ffffff !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.01em !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+.ally-tile small {
+  display: block !important;
+  color: #8fe9ee !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Patrocinadores destacados con etiqueta dorada */
+.ally-sponsor {
+  border-color: rgba(243, 182, 75, 0.35) !important;
+}
+.ally-sponsor:hover {
+  border-color: rgba(243, 182, 75, 0.7) !important;
+}
+.ally-sponsor small {
+  color: #f3b64b !important;
+}
+
+@keyframes allies-slide-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 7px)); }
+}
+
+/* Versión móvil */
+@media (max-width: 640px) {
+  .allies-ticker {
+    padding: 30px 0 !important;
+  }
+  .allies-ticker::before,
+  .allies-ticker::after {
+    height: 13px !important;
+    background-size: 36px 13px !important;
+  }
+  .allies-ticker::before { top: 8px !important; }
+  .allies-ticker::after { bottom: 8px !important; }
+  .ally-heading-tile {
+    flex: 0 0 210px !important;
+    width: 210px !important;
+    height: 145px !important;
+    padding: 14px !important;
+  }
+  .ally-heading-tile h2 {
+    font-size: 21px !important;
+  }
+  .ally-tile {
+    flex: 0 0 220px !important;
+    width: 220px !important;
+    height: 145px !important;
+  }
+  .ally-tile strong {
+    font-size: 20px !important;
+  }
+  .ally-tile small {
+    font-size: 10px !important;
+  }
+  .ally-tile span {
+    padding: 10px 12px !important;
+  }
+}
+
+/* =========================================================
+   WIDGET DEL CLIMA MODO SAMSUNG WEATHER / ONE UI PRO
+   ========================================================= */
+
+/* Contenedor principal de cristal esmerilado */
+.weather-card {
+  position: relative !important;
+  overflow: hidden !important;
+  width: min(100%, 390px) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(179, 237, 230, 0.28) !important;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(0, 210, 225, 0.22), transparent 48%),
+    radial-gradient(circle at 12% 88%, rgba(243, 182, 75, 0.14), transparent 42%),
+    linear-gradient(155deg, rgba(6, 32, 46, 0.88), rgba(4, 18, 27, 0.94)) !important;
+  backdrop-filter: blur(28px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+  box-shadow:
+    0 24px 60px rgba(0, 10, 16, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.5) !important;
+  animation: samsung-ambient-float 6s ease-in-out infinite alternate !important;
+}
+
+/* Flotación ambiental suave de la tarjeta */
+@keyframes samsung-ambient-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+/* Cabecera del clima */
+.weather-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 48px !important;
+  padding: 14px 18px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.weather-heading {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* Punto de radar en vivo con onda expansiva */
+.weather-live-dot {
+  position: relative !important;
+  width: 8px !important;
+  height: 8px !important;
+  flex: 0 0 8px !important;
+  border-radius: 50% !important;
+  background: #00f0c4 !important;
+  box-shadow: 0 0 10px #00f0c4 !important;
+}
+.weather-live-dot::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -4px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #00f0c4 !important;
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite !important;
+}
+@keyframes radar-ping {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.weather-head span:last-child {
+  color: #f0faf7 !important;
+  font-family: "DM Sans", -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.weather-head small {
+  color: rgba(220, 245, 240, 0.65) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Zona principal de temperatura e ícono */
+.weather-main {
+  min-height: 120px !important;
+  padding: 18px 20px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important;
+  align-items: center !important;
+  gap: 14px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.weather-place {
+  margin-bottom: 4px !important;
+  color: #8ce8db !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+/* Gran número de temperatura con brillo degradado */
+.temp {
+  font-family: "DM Sans", -apple-system, sans-serif !important;
+  font-size: 72px !important;
+  line-height: 0.88 !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.04em !important;
+  background: linear-gradient(180deg, #ffffff 40%, #b8f0e5 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.35)) !important;
+}
+
+/* Contenedor del estado e ícono */
+.weather-condition {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+/* Orbe 3D del clima con iluminación interna y flotación */
+.weather-icon {
+  position: relative !important;
+  flex: 0 0 68px !important;
+  width: 68px !important;
+  height: 68px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.28), transparent 50%),
+    radial-gradient(circle at 70% 30%, #ffd166 0 16%, transparent 18%),
+    linear-gradient(155deg, #1b6a7f, #093444 80%) !important;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(0, 210, 225, 0.22) !important;
+  animation: weather-orb-float 4s ease-in-out infinite !important;
+}
+
+@keyframes weather-orb-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(2deg); }
+}
+
+/* Animación de la nube/ícono adentro */
+.weather-icon img,
+.weather-icon svg {
+  width: 78% !important;
+  height: 78% !important;
+  object-fit: contain !important;
+  animation: weather-cloud-drift 4.5s ease-in-out infinite alternate !important;
+}
+@keyframes weather-cloud-drift {
+  0% { transform: translateX(-2px) scale(0.98); }
+  100% { transform: translateX(2px) scale(1.02); }
+}
+
+.weather-state {
+  color: #ffffff !important;
+  font-family: "DM Sans", -apple-system, sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.15 !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.01em !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Grilla de métricas modulares Samsung One UI */
+.weather-list {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 8px !important;
+  padding: 12px 14px !important;
+  background: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Tarjeta individual interactiva */
+.w-row {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 5px !important;
+  padding: 10px 10px 8px 10px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.18) !important;
+  transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease !important;
+}
+
+.w-row:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(0, 240, 196, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 12px rgba(0, 240, 196, 0.15) !important;
+}
+
+/* Iconos de las métricas con micro-animaciones individuales */
+.w-ico {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 9px !important;
+  display: grid !important;
+  place-items: center !important;
+  background: rgba(0, 240, 196, 0.14) !important;
+  color: #7ef2db !important;
+  font-size: 14px !important;
+  border: 1px solid rgba(0, 240, 196, 0.2) !important;
+}
+
+/* Ola meciéndose */
+.w-row:nth-child(1) .w-ico {
+  animation: wave-bob 3s ease-in-out infinite !important;
+}
+@keyframes wave-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2.5px); }
+}
+
+/* Veleta de viento oscilando */
+.w-row:nth-child(2) .w-ico {
+  animation: wind-gust 4s ease-in-out infinite !important;
+}
+@keyframes wind-gust {
+  0%, 100% { transform: rotate(0deg); }
+  35% { transform: rotate(-10deg); }
+  70% { transform: rotate(8deg); }
+}
+
+/* Reloj pulsando */
+.w-row:nth-child(3) .w-ico {
+  animation: clock-pulse 3s ease-in-out infinite !important;
+}
+@keyframes clock-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Valores numéricos */
+.w-value,
+.w-row:last-child .w-value {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 2px !important;
+  color: #ffffff !important;
+  font-family: "DM Sans", -apple-system, sans-serif !important;
+  font-size: 19px !important;
+  line-height: 1 !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.02em !important;
+}
+.w-value small {
+  font-size: 10px !important;
+  font-weight: 750 !important;
+  color: rgba(220, 248, 242, 0.7) !important;
+}
+
+/* Etiquetas inferiores de cada métrica */
+.w-label {
+  color: rgba(220, 248, 242, 0.65) !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  font-weight: 650 !important;
+}
+
+/* Cápsula de aviso nocturno (OLED Notification Pill) */
+.camera-status-night {
+  margin: 10px 14px 14px !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(243, 182, 75, 0.35) !important;
+  background: linear-gradient(90deg, rgba(243, 182, 75, 0.14), rgba(243, 182, 75, 0.05)) !important;
+  color: #ffe499 !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.01em !important;
+  text-align: center !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 16px rgba(243, 182, 75, 0.1) !important;
+  animation: notice-amber-breathe 4s ease-in-out infinite alternate !important;
+}
+
+@keyframes notice-amber-breathe {
+  0% { border-color: rgba(243, 182, 75, 0.25); box-shadow: 0 0 10px rgba(243, 182, 75, 0.08); }
+  100% { border-color: rgba(243, 182, 75, 0.5); box-shadow: 0 0 18px rgba(243, 182, 75, 0.2); }
+}
+
+/* Ajustes Responsive en móvil */
+@media (max-width: 640px) {
+  .weather-card {
+    width: 100% !important;
+    border-radius: 20px !important;
+  }
+  .weather-main {
+    padding: 15px 16px !important;
+    min-height: 105px !important;
+  }
+  .temp {
+    font-size: 60px !important;
+  }
+  .weather-icon {
+    width: 58px !important;
+    height: 58px !important;
+    flex: 0 0 58px !important;
+  }
+  .weather-state {
+    font-size: 15px !important;
+  }
+  .weather-list {
+    padding: 9px 10px !important;
+    gap: 6px !important;
+  }
+  .w-value {
+    font-size: 17px !important;
+  }
+}
