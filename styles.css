@@ -2567,9 +2567,9 @@ body { background: #071c28; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .allies-ticker-viewport { overflow-x: auto; mask-image: none; scrollbar-color: rgba(160, 231, 216, .6) transparent; scrollbar-width: thin; }
-  .allies-ticker-track { animation: none; touch-action: auto; cursor: auto; }
-  .allies-ticker-set[aria-hidden="true"] { display: none; }
+  .allies-ticker-track { animation-duration: 48s; }
+  .allies-ticker:hover .allies-ticker-track { animation-duration: 54s; }
+  .allies-ticker.is-interacting .allies-ticker-track { animation-duration: 64s; }
 }
 
 /* Service catalog expansion: eight experiences and reusable request detail pages. */

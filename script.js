@@ -978,7 +978,7 @@
     const viewport=section?.querySelector('.allies-ticker-viewport');
     const track=section?.querySelector('.allies-ticker-track');
     const resistLayer=section?.querySelector('.allies-ticker-resist');
-    if(!section || !viewport || !track || !resistLayer || reducedMotionPreference.matches) return;
+    if(!section || !viewport || !track || !resistLayer) return;
 
     let pointerId=null, startX=0, startY=0, isDragging=false, suppressClick=false;
     const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
