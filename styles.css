@@ -2513,7 +2513,6 @@ body { background: #071c28; }
 .ally-sponsor small { color: #ffd477; }
 @keyframes allies-slide-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
 .allies-ticker:hover .allies-ticker-track { animation-duration: 30s; }
-@media (prefers-reduced-motion: reduce) { .allies-ticker-track { animation: none; } }
 @media (max-width: 640px) {
   .allies-ticker { padding: 20px 0 24px; }
   .ally-tile { width: 170px; height: 66px; }
