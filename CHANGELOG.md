@@ -6,6 +6,19 @@
 
 ## 2026-10-03
 
+## 2026-10-03
+
+### Título y descripción de Servicios más visibles
+
+- `styles.css`: aumentar ligeramente el tamaño del título y la descripción de Servicios tanto en `index.html#servicios` como en `service.html#servicios`.
+- Se mantienen ajustes responsive para que el copy siga siendo legible en móvil sin alterar la grilla de servicios.
+
+### Validación
+
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Copy de Servicios sincronizado en inicio y catálogo
 
 - `script.js`: aplicar el mismo título y descripción bilingües también a las claves `servicesSectionTitle` y `servicesSectionSubtitle` que usa `index.html#servicios`.
