@@ -2,6 +2,20 @@
 
 ## 2026-10-03
 
+## 2026-10-03
+
+### Mejor contraste para la guía de playas
+
+- `styles.css`: aplicar paneles glass semitransparentes a la introducción y las categorías de la guía, con desenfoque, bordes suaves y sombras internas.
+- `styles.css`: reforzar la columna textual de las tarjetas detalladas con una superficie translúcida independiente, mejor separación de la imagen y textos secundarios más claros.
+- Se conserva el fondo oceánico, la tipografía WavePoint y la transparencia; en móvil la separación pasa de lateral a superior.
+
+### Validación
+
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Imágenes ampliables en la guía de playas
 
 - `styles.css`: ampliar el espacio visual de las imágenes en las tarjetas detalladas, con un marco más cómodo en escritorio y una imagen más alta en móvil.
