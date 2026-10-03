@@ -1,5 +1,25 @@
 ## 2026-10-03
 
+### Witch’s Rock Surf Trip: nuevo texto, nueva foto y pregunta de cantidad de personas (ES/EN)
+
+- `services.js`: el servicio `roca-bruja` pasa a llamarse **Witch’s Rock Surf Trip** (mismo nombre en español e inglés). Nuevo texto de descripción en ambos idiomas: frase de apertura, párrafo del viaje en barco con guías locales y párrafo de coordinación de WavePoint. El número del servicio pasa de 04 a 05 para coincidir con la tarjeta de `service.html`.
+- `services.js`: nueva foto en la descripción (`assets/legacy/hermosa.jpg`, reemplaza a `avellanas.jpg`). La imagen del hero sigue siendo `assets/legacy/bruja.jpg`.
+- `services.js`: nueva primera pregunta **How many people are joining? / ¿Cuántas personas se suman?** con campos Adults/Adultos y Children/Niños, la nota sobre las edades de los niños para consultar los requisitos del proveedor y un campo opcional para escribir las edades. Adultos es obligatorio (mínimo 1); Niños empieza en 0. El mensaje de WhatsApp incluye `Adultos: n / Niños: n` y las edades si se completan.
+- `services.js`: la traducción por servicio deja de ser exclusiva de las clases de surf. Cualquier servicio con un bloque `en` se muestra en inglés (eyebrow, texto de la tarjeta, descripción, preguntas, opciones, formulario y mensaje de WhatsApp). Las clases de surf se comportan igual que antes; los demás servicios siguen sin bloque `en`.
+- `services.js`: la opción del Pack ajustable y su tarjeta pasan a llamarse `Witch’s Rock Surf Trip` para mantener la sincronización del catálogo.
+- `script.js`, `index.html`, `service.html`: título y texto de la tarjeta actualizados en ES/EN. La tarjeta de `service.html` ahora se traduce (etiqueta, título, texto, botón y `alt`) con las claves `serviceListWitchRockEyebrow` y `serviceListCta`.
+- `styles.css`: estilos para la foto única de la descripción y para la nota y el campo de edades.
+- `index.html`, `service.html`, `service-detail.html`: versiones de `script.js` y `services.js` actualizadas para evitar caché.
+- No se tocó el hero de la página principal ni el favicon.
+
+### Validación
+
+- `node --check` de `services.js` y `script.js`.
+- Prueba con jsdom en español e inglés: textos del detalle, formulario, validación (falla vacío, pasa completo) y mensaje de WhatsApp con la nueva pregunta; tarjetas de `index.html` y `service.html` en ambos idiomas; las clases de surf, surf coaching, estadías, pack y ATV siguen mostrándose.
+- No se revisó el aspecto visual en un navegador real ni en móvil.
+
+## 2026-10-03
+
 ### Selector de idioma en todas las páginas
 
 - `lang-switch.js` (nuevo): módulo compartido que inserta el mismo selector de banderas de `index.html` en cualquier página con header que no lo tenga, guarda la elección en `localStorage` (`wavepoint-lang`), actualiza `<html lang>`, el estado y la etiqueta accesible del botón, y avisa del cambio con el evento `wavepoint:languagechange`.
