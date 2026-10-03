@@ -1,5 +1,19 @@
 ## 2026-10-03
 
+### Stays and Hotels: catálogo completo de alojamientos
+
+- `index.html`, `service.html` y `script.js`: renombrar la tarjeta **Alojamiento y experiencias** a **Stays and Hotels**, actualizar su copy y asignar una imagen local de alojamiento.
+- `services.js`: incorporar la información proporcionada de Hotel Tamalodge, Casa Aura, Casa Madera y Capitán Suizo, incluyendo tarifas, tipos de unidad, cantidades, servicios, temporadas, estadías mínimas y condiciones.
+- `services.js`: crear una presentación específica para alojamientos con tarjetas visuales, galerías por opción y bloques separados de tarifas y servicios/condiciones.
+- `styles.css`: agregar estilos responsive para las tarjetas de alojamiento y sus galerías, manteniendo la estética oceánica y el formulario de consulta existente.
+- Se utilizaron únicamente fotos locales ya presentes en el repositorio; no se agregó una imagen externa ni se presentó una foto como identificada del hotel cuando el asset no tenía esa referencia.
+
+### Validación
+
+- Se verificó `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-03
+
 ### Mejora de legibilidad en textos secundarios
 
 - `styles.css`: aumentar de forma moderada el tamaño, interlineado y peso de subtítulos y descripciones en secciones, tarjetas de servicios, cámaras, guía, beneficios, promociones y footer.

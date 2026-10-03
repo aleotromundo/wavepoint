@@ -2,13 +2,64 @@
   const WHATSAPP = '543517397525';
   const services = [
     {
-      id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · EXPERIENCIAS', title: 'Alojamiento y experiencias',
-      cardText: 'Armá una estadía a tu medida: dónde dormir, qué surfear y qué sumar a tu viaje.',
-      description: 'Tamarindo se disfruta mejor cuando el alojamiento y los planes tienen el mismo ritmo que tu viaje. Te ayudamos a encontrar una opción cómoda para tu grupo y a combinarla con experiencias de mar, bienestar y aventura. Contanos tus fechas, el tipo de espacio que imaginás y qué te gustaría vivir; WavePoint consulta disponibilidad con aliados locales y te devuelve una propuesta clara para decidir sin perder tiempo.',
-      images: ['assets/legacy/OTAMA_VIEW_30.jpg', 'assets/legacy/Piscina_16.jpg', 'assets/legacy/Playa_23.jpg'],
+      id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', title: 'Stays and Hotels',
+      cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
+      description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
+      images: ['assets/legacy/B_03.jpg', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
+      accommodationOptions: [
+        {
+          category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
+          price: 'USD 50', priceNote: 'por habitación · por noche',
+          summary: 'Una habitación privada con baño privado para una estadía simple y funcional.',
+          images: ['assets/legacy/B_03.jpg', 'assets/legacy/Piscina_16.jpg'],
+          imageAlt: 'Alojamiento tropical con jardín y piscina',
+          details: ['Habitación privada con baño privado.'],
+          amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong']
+        },
+        {
+          category: 'OPCIÓN MEDIA', name: 'Casa Aura',
+          price: 'USD 80–210', priceNote: 'por unidad · por noche',
+          summary: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno incluido según la unidad.',
+          images: ['assets/legacy/OTAMA_VIEW_30.jpg', 'assets/legacy/OTAMA_GAST_102.jpg', 'assets/legacy/Playa_23.jpg'],
+          imageAlt: 'Alojamiento frente al mar con piscina y espacios interiores',
+          details: [
+            'Habitación doble — USD 80 · baño privado · desayuno incluido · 1 habitación.',
+            'Habitación cuádruple — USD 120 · una cama matrimonial y una litera · baño privado · desayuno incluido · 3 habitaciones.',
+            'Habitación cuádruple con terraza — USD 130 · dos camas matrimoniales · baño privado · terraza · desayuno incluido · 1 habitación.',
+            'Apartamento completo — USD 210 · capacidad para 8 personas · dos habitaciones con camas matrimoniales y literas · un baño · living y cocina · 2 apartamentos.'
+          ],
+          amenities: ['Frente al mar', 'Desayuno incluido según la unidad']
+        },
+        {
+          category: 'OPCIÓN GRUPAL', name: 'Casa Madera',
+          price: 'USD 250–500', priceNote: 'por noche · hasta 10 personas',
+          summary: 'Una casa frente al mar para grupos, con tarifas que cambian según la temporada.',
+          images: ['assets/ally-casa.jpg', 'assets/legacy/Playa_23.jpg', 'assets/legacy/B_03.jpg'],
+          imageAlt: 'Casa de alojamiento frente a la playa',
+          details: [
+            '24 de diciembre al 2 de enero: USD 500 · estadía mínima de 5 noches.',
+            '2 de enero al 2 de febrero: USD 400 · estadía mínima de 5 noches.',
+            '3 de febrero al 30 de abril: USD 350 · estadía mínima de 3 noches · excepto Semana Santa.',
+            '1 al 15 de julio: USD 350 · estadía mínima de 3 noches.',
+            '1 de octubre al 30 de noviembre: USD 250 · estadía mínima de 2 noches.',
+            'Resto de las fechas: USD 300 · estadía mínima de 2 noches.'
+          ],
+          amenities: ['Frente al mar', 'Tarifas para hasta 10 personas, incluidos adultos y niños', 'Máximo de 5 personas adicionales · capacidad total de 15 personas', 'Semana Santa: consultar tarifas especiales']
+        },
+        {
+          category: 'OPCIÓN DELUXE', name: 'Capitán Suizo',
+          price: 'USD 600', priceNote: 'por noche · consultar disponibilidad',
+          summary: 'Hotel frente a la playa con servicios de bienestar, piscina y espacios para disfrutar la estadía.',
+          images: ['assets/capitan.jpg', 'assets/ally-capitan.jpg', 'assets/legacy/Piscina_16.jpg'],
+          imageAlt: 'Playa frente a Capitán Suizo',
+          details: ['Tarifa: USD 600 por noche.', 'Consultar disponibilidad.'],
+          amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios']
+        }
+      ],
       questions: [
         { id: 'stay_dates', label: '¿Cuándo quieres alojarte?', type: 'dates', fields: ['Llegada', 'Salida'] },
-        { id: 'accommodation_type', label: '¿Qué tipo de alojamiento prefieres?', type: 'choice', options: ['Habitación', 'Casa completa', 'Quiero recomendaciones'] },
+        { id: 'accommodation_type', label: '¿Qué alojamiento te interesa?', type: 'choice', options: ['Hotel Tamalodge', 'Casa Aura', 'Casa Madera', 'Capitán Suizo', 'Quiero recomendaciones'] },
+        { id: 'group_size', label: '¿Cuántas personas viajarían?', type: 'number' },
         { id: 'nightly_budget', label: '¿Cuál es tu presupuesto aproximado por noche para todo el grupo?', type: 'money', optional: true },
         { id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'] }
       ]
@@ -143,9 +194,21 @@
     const type = question.type === 'number' ? 'number' : question.type === 'money' ? 'text' : 'text';
     return `<label class="detail-question detail-field" for="${id}"><span>${esc(question.label)} ${optional}</span><${question.type === 'textarea' ? 'textarea' : 'input'} id="${id}" name="${question.id}" type="${type}" placeholder="${esc(question.placeholder || '')}" ${question.optional ? '' : 'required'}></${question.type === 'textarea' ? 'textarea' : 'input'}></label>`;
   }
+  function renderAccommodationOption(option, index) {
+    const gallery = option.images.map((image, imageIndex) => `<img src="${image}" alt="${esc(option.imageAlt)} · vista ${imageIndex + 1}" loading="lazy" />`).join('');
+    const details = option.details.map(detail => `<li>${esc(detail)}</li>`).join('');
+    const amenities = option.amenities.map(item => `<li>${esc(item)}</li>`).join('');
+    return `<article class="accommodation-card accommodation-card-${index + 1}"><div class="accommodation-gallery">${gallery}</div><div class="accommodation-card-body"><p class="accommodation-category">${esc(option.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(option.priceNote)}</span></div></div><p class="accommodation-summary">${esc(option.summary)}</p><div class="accommodation-columns"><div><h4>Opciones y tarifas</h4><ul>${details}</ul></div><div><h4>Servicios y condiciones</h4><ul>${amenities}</ul></div></div></div></article>`;
+  }
+  function renderAccommodationStory(service) {
+    return `<p class="service-page-kicker">ALOJAMIENTOS EN TAMARINDO</p><h2>Opciones de alojamiento en Tamarindo</h2><p>${esc(service.description)}</p><div class="accommodation-rate-note"><strong>Tarifas en USD</strong><span>Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
+  }
   function render(service) {
     document.title = `${service.title} · WavePoint`;
-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story"><p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div></article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${service.questions.map(question => renderQuestion(service, question)).join('')}<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label><label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
+    const story = service.id === 'alojamiento-experiencias'
+      ? renderAccommodationStory(service)
+      : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
+    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>Contanos qué estás buscando.</h2><p>Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.</p></div><form id="serviceRequestForm" novalidate>${service.questions.map(question => renderQuestion(service, question)).join('')}<label class="detail-question detail-field" for="request-name"><span>¿Cómo te llamás? <span class="detail-optional">Opcional</span></span><input id="request-name" name="request-name" type="text" placeholder="Tu nombre" /></label><label class="detail-question detail-field" for="request-contact"><span>¿Hay algo más que quieras contarnos? <span class="detail-optional">Opcional</span></span><textarea id="request-contact" name="request-contact" placeholder="Fechas, cantidad de personas u otra información útil"></textarea></label><button class="detail-submit" type="submit">Armar solicitud en WhatsApp ↗</button><p class="detail-form-note">Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>`;
     if (service.id === 'pack-ajustable') {
       const packGrid = document.querySelector('.pack-service-grid');
       const count = document.querySelector('[data-pack-selection]');

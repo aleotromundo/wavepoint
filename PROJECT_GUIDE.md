@@ -44,7 +44,7 @@ El header comparte navegación hacia Inicio, Guía turística, Servicios, Nosotr
 
 El catálogo confirmado tiene diez servicios. No agregar servicios inventados ni volver a mostrar servicios retirados sin confirmación explícita.
 
-1. **Stay & experience** / Alojamiento y experiencias — elegir alojamiento y sumar experiencias.
+1. **Stays and Hotels** / Estadías y hoteles — consultar Hotel Tamalodge, Casa Aura, Casa Madera o Capitán Suizo.
 2. **Surf lessons** / Clases de surf — primera ola o siguiente paso según nivel.
 3. **Surf coaching** — coaching con posibilidad de fotos o videoanálisis.
 4. **Yoga** — sesión adaptada a experiencia y horario.
