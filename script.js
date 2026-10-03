@@ -1261,3 +1261,29 @@
   bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
+
+
+// Soporte automatico para multiples formatos de imagen (.webp, .jpg, .jpeg)
+document.addEventListener('error', function(e) {
+  if (e.target && e.target.tagName === 'IMG') {
+    const img = e.target;
+    const formats = ['.webp', '.jpg', '.jpeg'];
+    let attempted = img.dataset.triedFormats ? img.dataset.triedFormats.split(',') : [];
+    
+    const match = img.src.match(/^(.*?)\.(webp|jpe?g)(\?.*)?$/i);
+    if (!match) return;
+    
+    const base = match[1];
+    const currentExt = '.' + match[2].toLowerCase();
+    const query = match[3] || '';
+    
+    if (!attempted.includes(currentExt)) attempted.push(currentExt);
+    
+    const nextExt = formats.find(f => !attempted.includes(f));
+    if (nextExt) {
+      attempted.push(nextExt);
+      img.dataset.triedFormats = attempted.join(',');
+      img.src = base + nextExt + query;
+    }
+  }
+}, true);
