@@ -1,5 +1,19 @@
 ## 2026-10-03
 
+### Título premium sobre la cinta de aliados
+
+- `index.html`: agregar inmediatamente encima de la cinta de cine el texto **“The brands and local businesses that believe in WavePoint and help make it possible”** en una sola línea, conservando también el fotograma interno **“Aliados y patrocinadores”** en ambos conjuntos del carrusel.
+- `styles.css`: aplicar un tratamiento sutil y premium con tipografía ligera, espaciado amplio, color marfil atenuado y reglas aqua discretas; ajustar el tamaño para conservar la línea en pantallas pequeñas.
+- Los fotogramas de aliados continúan duplicándose para la animación y la cinta conserva sus perforaciones, imágenes, títulos y enlaces.
+
+### Validación
+
+- `node --check script.js` y `node --check services.js` correctos.
+- `git diff --check` limpio.
+- Confirmado que el título ya no se repite dentro de los fotogramas y que `index.html`, `styles.css` y `CHANGELOG.md` existen y no están vacíos.
+
+## 2026-10-03
+
 ### Subtítulo del hero centrado en la comunidad local
 
 - `index.html` y `script.js`: reemplazar el texto sobre revisar condiciones y elegir el próximo spot por **“Through the people who call it home”** en inglés.

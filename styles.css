@@ -2904,7 +2904,7 @@ body { background: #071c28; }
   top: auto !important;
 }
 
-/* Tarjeta cabecera estilo claqueta / portada de rollo */
+/* Fotograma de título que se conserva dentro del carrusel */
 .ally-heading-tile {
   position: relative !important;
   flex: 0 0 260px !important;
@@ -2939,8 +2939,37 @@ body { background: #071c28; }
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
 }
-.ally-heading-tile p {
-  display: none !important;
+
+/* Encabezado externo: una línea sutil sobre el rollo de película */
+.allies-heading {
+  position: relative !important;
+  z-index: 11 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  min-height: 38px !important;
+  padding: 0 18px 18px !important;
+  color: rgba(241, 235, 217, .78) !important;
+  text-align: center !important;
+}
+.allies-heading-rule {
+  width: 28px !important;
+  height: 1px !important;
+  flex: 0 0 28px !important;
+  background: rgba(143, 233, 238, .58) !important;
+}
+.allies-heading h2 {
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: inherit !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: clamp(9px, 1.12vw, 14px) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
 }
 
 /* Fotogramas de película de los aliados */
@@ -3056,6 +3085,19 @@ body { background: #071c28; }
   }
   .allies-ticker::before { top: 8px !important; }
   .allies-ticker::after { bottom: 8px !important; }
+  .allies-heading {
+    gap: 8px !important;
+    min-height: 30px !important;
+    padding: 0 10px 12px !important;
+  }
+  .allies-heading-rule {
+    width: 16px !important;
+    flex-basis: 16px !important;
+  }
+  .allies-heading h2 {
+    font-size: 8px !important;
+    letter-spacing: .08em !important;
+  }
   .ally-heading-tile {
     flex: 0 0 210px !important;
     width: 210px !important;
