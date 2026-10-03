@@ -1,5 +1,18 @@
 ## 2026-10-03
 
+### Traducciones del encabezado de aliados
+
+- `index.html` y `script.js`: conectar el nuevo encabezado externo y su descripción accesible al sistema de idiomas existente.
+- Español: **“Las marcas y negocios locales que creen en WavePoint y ayudan a hacerlo posible”**.
+- Inglés: **“The brands and local businesses that believe in WavePoint and help make it possible”**.
+
+### Validación
+
+- Confirmadas las claves en ambos diccionarios y los atributos `data-i18n` en el markup.
+- `node --check script.js` y `node --check services.js` correctos; `git diff --check` limpio.
+
+## 2026-10-03
+
 ### Encabezado de aliados fuera de la cinta
 
 - `index.html`: colocar el encabezado descriptivo fuera de la sección filmstrip para que se vea claramente por encima de la tira de película.
