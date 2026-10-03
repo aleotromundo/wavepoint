@@ -1,5 +1,22 @@
 ## 2026-10-03
 
+### Servicios vuelve a vivir solo en index.html#servicios
+
+- `service.html` y `Enlaces/service.html` (redirección a `service.html`): eliminados otra vez. Habían reaparecido en el commit `2ba3ac0`, que también devolvió los enlaces al catálogo aparte.
+- `site-nav.js`: el header compartido (usado por `guia-playas.html`, `service-detail.html` y `Enlaces/nostros.html`) enlaza **Servicios** a `index.html#servicios` (antes `service.html#servicios`).
+- `service-detail.html` (menú de escritorio y panel móvil) y `guia-playas.html` (botón "Ver servicios y armar mi plan"): enlaces a `index.html#servicios`.
+- `manus-routes.json`: se quita la ruta `/service.html`.
+- `PROJECT_GUIDE.md`: el catálogo se documenta en `index.html#servicios` y se quitan las referencias a `service.html`.
+- Si alguien abre un enlace viejo a `/service.html`, `vercel.json` ya lo manda a `index.html` por el fallback de rutas.
+- La tarjeta de Witch’s Rock Surf Trip del catálogo vive solo en `index.html`; los cambios que se habían hecho en `service.html` quedan sin efecto, porque la tarjeta de la página principal ya tiene el mismo texto y se traduce a ES/EN.
+
+### Validación
+
+- `node --check` de `site-nav.js`, `services.js`, `script.js` y `lang-switch.js`; `git diff --check`.
+- Búsqueda en todo el repo: no queda ningún enlace a `service.html` fuera del `CHANGELOG.md`.
+
+## 2026-10-03
+
 ### Witch’s Rock Surf Trip: nuevo texto, nueva foto y pregunta de cantidad de personas (ES/EN)
 
 - `services.js`: el servicio `roca-bruja` pasa a llamarse **Witch’s Rock Surf Trip** (mismo nombre en español e inglés). Nuevo texto de descripción en ambos idiomas: frase de apertura, párrafo del viaje en barco con guías locales y párrafo de coordinación de WavePoint. El número del servicio pasa de 04 a 05 para coincidir con la tarjeta de `service.html`.
