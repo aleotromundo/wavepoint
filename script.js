@@ -973,6 +973,60 @@
     });
   }
 
+  function bindAlliesTickerInteraction(){
+    const section=document.querySelector('.allies-ticker');
+    const viewport=section?.querySelector('.allies-ticker-viewport');
+    const track=section?.querySelector('.allies-ticker-track');
+    const resistLayer=section?.querySelector('.allies-ticker-resist');
+    if(!section || !viewport || !track || !resistLayer || reducedMotionPreference.matches) return;
+
+    let pointerId=null, startX=0, startY=0, isDragging=false, suppressClick=false;
+    const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+    const finishInteraction=(event)=>{
+      if(pointerId===null || (event?.pointerId!==undefined && event.pointerId!==pointerId)) return;
+      const wasDragged=isDragging;
+      pointerId=null;
+      isDragging=false;
+      section.classList.remove('is-interacting','is-dragging');
+      resistLayer.style.left='0px';
+      if(wasDragged){
+        suppressClick=true;
+        window.setTimeout(()=>{ suppressClick=false; },400);
+      }
+    };
+
+    viewport.addEventListener('pointerdown',event=>{
+      if((event.button!==undefined && event.button!==0) || pointerId!==null) return;
+      pointerId=event.pointerId;
+      startX=event.clientX;
+      startY=event.clientY;
+      isDragging=false;
+      section.classList.add('is-interacting');
+    });
+    window.addEventListener('pointermove',event=>{
+      if(event.pointerId!==pointerId) return;
+      const deltaX=event.clientX-startX;
+      const deltaY=event.clientY-startY;
+      if(Math.abs(deltaX)<5 || Math.abs(deltaX)<Math.abs(deltaY)) return;
+      isDragging=true;
+      section.classList.add('is-dragging');
+      resistLayer.style.left=`${clamp(deltaX*.48,-64,64)}px`;
+      event.preventDefault();
+    });
+    window.addEventListener('pointerup',finishInteraction);
+    window.addEventListener('pointercancel',finishInteraction);
+    window.addEventListener('blur',()=>finishInteraction());
+    document.addEventListener('click',event=>{
+      if(!suppressClick || !event.target.closest('.allies-ticker')) return;
+      event.preventDefault();
+      event.stopPropagation();
+      suppressClick=false;
+    },true);
+    reducedMotionPreference.addEventListener?.('change',event=>{
+      if(event.matches) finishInteraction();
+    });
+  }
+
   function bindHeroLogoEntrance(){
     const logo=document.querySelector('.hero-logo-wrap');
     if(!logo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1184,6 +1238,7 @@
   bindMobileMenu();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();
+  bindAlliesTickerInteraction();
   bindWeatherCardDrag();
   bindScrollReveals();
   bindSpotModal();
