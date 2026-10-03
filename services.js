@@ -65,8 +65,8 @@
       ]
     },
     {
-      id: 'clases-de-surf', number: '02', eyebrow: 'SURF · LESSONS', title: 'Ready to Surf?',
-      cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
+      id: 'clases-de-surf', number: '02', eyebrow: 'SURF · CLASES', title: '¿Listo para surfear?',
+      cardText: 'Contanos tu nivel y qué te gustaría aprender. Buscamos la clase que mejor encaje con vos.',
       description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
       images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/clase-surf.jpeg', 'assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg'],
       questions: [
@@ -79,6 +79,9 @@
         { id: 'board_need', label: '¿Necesitarán una tabla?', type: 'choice', options: ['Sí', 'No, llevamos la nuestra', 'Necesitamos asesoramiento'] }
       ],
       en: {
+        eyebrow: 'SURF · LESSONS',
+        title: 'Ready to surf?',
+        cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
         description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
         questions: {
           surf_level: { label: 'What’s your surfing level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
@@ -193,11 +196,15 @@
   const isSurfEn = service => lang === 'en' && service.id === 'clases-de-surf';
   const localizeService = service => {
     if (!isSurfEn(service) || !service.en) return service;
-    return { ...service, description: service.en.description, questions: service.questions.map(question => ({ ...question, ...(service.en.questions[question.id] || {}) })) };
+    return { ...service, eyebrow: service.en.eyebrow, title: service.en.title, cardText: service.en.cardText, description: service.en.description, questions: service.questions.map(question => ({ ...question, ...(service.en.questions[question.id] || {}) })) };
   };
   const FORM_UI = {
     es: {
       optional: 'Opcional',
+      requestKicker: 'SOLICITUD DE RESERVA',
+      surfKicker: 'CLASES DE SURF · TAMARINDO',
+      surfCheckinKicker: 'CLASES DE SURF · CHECK-IN RÁPIDO',
+      modalKicker: '¿LISTO PARA SURFEAR?',
       requestTitle: 'Contanos qué estás buscando.',
       requestText: 'Respondé estas preguntas y abrí WhatsApp con una solicitud ordenada para el encargado.',
       nameLabel: '¿Cómo te llamás?', namePlaceholder: 'Tu nombre',
@@ -216,6 +223,10 @@
     },
     en: {
       optional: 'Optional',
+      requestKicker: 'BOOK REQUEST',
+      surfKicker: 'SURF LESSONS · TAMARINDO',
+      surfCheckinKicker: 'SURF LESSONS · QUICK CHECK-IN',
+      modalKicker: 'READY TO SURF?',
       requestTitle: 'Tell us what you’re looking for.',
       requestText: 'Answer these questions and open WhatsApp with an organized request for the person in charge.',
       nameLabel: 'What’s your name?', namePlaceholder: 'Your name',
@@ -267,7 +278,7 @@
   function renderSurfLessonStory(service) {
     const ui = uiFor(service);
     const gallery = service.images.map((image, index) => `<img src="${image}" alt="${ui.galleryAlt} ${index + 1}" loading="lazy" />`).join('');
-    return `<p class="service-page-kicker">SURF LESSONS · TAMARINDO</p><h2>Ready to surf?</h2><p class="surf-lesson-lead">Tell us your level and what you’d like to learn. We’ll find a lesson that fits.</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">SURF LESSONS · QUICK CHECK-IN</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
+    return `<p class="service-page-kicker">${ui.surfKicker}</p><h2>${esc(service.title)}</h2><p class="surf-lesson-lead">${esc(service.cardText)}</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${ui.surfCheckinKicker}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
   }
   function render(service) {
     const ui = uiFor(service);
@@ -284,8 +295,8 @@
       : service.id === 'clases-de-surf'
         ? renderSurfLessonStory(service)
         : `<p class="service-page-kicker">LA EXPERIENCIA</p><h2>Un plan pensado para tu viaje.</h2><p>${esc(service.description)}</p><div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
-    const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">READY TO SURF?</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
-    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">BOOK REQUEST</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${ui.submit}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+    const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${ui.modalKicker}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
+    document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')"><div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${service.number} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${ui.requestKicker}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${ui.submit}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
     if (service.id === 'pack-ajustable') {
       const packGrid = document.querySelector('.pack-service-grid');
       const count = document.querySelector('[data-pack-selection]');
