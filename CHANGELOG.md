@@ -1,4 +1,19 @@
-A## 2026-10-03
+## 2026-10-03
+
+### Registro y control bilingüe de cambios
+
+- `CHANGELOG.md`: se usa como bitácora del repo para dejar un registro paso a paso de cada cambio realizado, con archivos tocados, decisiones y validación.
+- `services.js`: regla aplicada en esta etapa: cada texto nuevo debe estar pensado y dejado en español e inglés antes de cerrar el cambio.
+- `services.js`: los servicios Yoga y Surf coaching se ajustaron para que el selector ES/EN reescriba encabezados, textos principales, preguntas y bloques de contenido sin quedar en un solo idioma.
+- `lang-switch.js`: se mantiene como mecanismo central para cambiar idioma y disparar `wavepoint:languagechange` en todas las páginas con header compartido.
+- `service-detail.html`: prueba visual del comportamiento del botón en ES/EN sobre Yoga y Surf coaching.
+
+### Validación
+
+- Revisión en navegador real de `service-detail.html?service=yoga` y `service-detail.html?service=surf-coaching` con el selector ES/EN.
+- Confirmado: los textos que se agregan en la página deben estar escritos para ambos idiomas antes de cerrar el cambio.
+
+## 2026-10-03
 
 ### Orden de los servicios: Witch’s Rock Surf Trip pasa al lugar 04
 
