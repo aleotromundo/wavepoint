@@ -334,18 +334,25 @@ id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'WavePoint Retiros nace de nuestro amor por el surf, la naturaleza y el estilo de vida costero. Son experiencias diseñadas para reconectar contigo mismo, con el mar y con una comunidad vibrante, en uno de los destinos más mágicos de Costa Rica: Tamarindo. Estos retiros están pensados para quienes buscan más que unas vacaciones: buscan transformación, conexión y aventura.',
 images: [
+'assets/img/optimized/retreat-evening.webp',
 'assets/img/optimized/retreat-sunset.webp',
 'assets/img/optimized/retreat-tamarindo.webp',
 'assets/img/optimized/retreat-dinner.webp',
-'assets/img/optimized/retreat-evening.webp',
 'assets/img/optimized/retreat-palm.webp'
 ],
 imageAlts: [
-'Árbol tropical al atardecer frente al mar en Tamarindo',
+'Atardecer rosado en Tamarindo',
+'Surfistas caminando con sus tablas por la playa',
 'Atardecer en la costa de Costa Rica',
 'Mesas junto a la playa durante el atardecer',
-'Atardecer rosado en Tamarindo',
-'Árbol tropical visto desde abajo'
+'Cielo violeta sobre el mar al atardecer'
+],
+imageAltsEn: [
+'Pink sunset over the ocean in Tamarindo',
+'Surfers walking along the beach with their boards',
+'Sunset on the Costa Rican coast',
+'Tables by the beach at sunset',
+'Violet sky over the ocean at sunset'
 ],
 retreatDetails: {
 aboutHeading: '¿Qué son los retiros WavePoint?',
@@ -569,8 +576,8 @@ const PACK_SERVICE_CARDS = {
 'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/img/optimized/rincon-adventure.webp' },
 'Clases de surfskate': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/optimized/surfskate.webp' },
 'Surfskate lessons': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/optimized/surfskate.webp' },
-'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-sunset.webp' },
-'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-sunset.webp' }
+'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-evening.webp' },
+'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-evening.webp' }
 };
 function renderQuestion(service, question) {
 const id = inputId(service, question);
@@ -610,7 +617,7 @@ return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.lead)}</h2
 }
 function renderSurfPhotographyStory(service) {
 const kicker = lang === 'en' ? 'SURF PHOTOGRAPHY · TAMARINDO' : 'FOTOGRAFÍA DE SURF · TAMARINDO';
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${kicker}</p><p>${esc(service.description)}</p><div class="detail-gallery">${gallery}</div>`;
 }
 function renderSurfskateStory(service) {
@@ -628,7 +635,7 @@ const conditions = details.conditions.map(item => `<li>${esc(item)}</li>`).join(
 const itinerary = details.itinerary.map((day, index) => `<article class="retreat-day"><span class="retreat-day-number">${String(index + 1).padStart(2, '0')}</span><div><h4>${esc(day.title)}</h4><ul>${day.activities.map(activity => `<li>${esc(activity)}</li>`).join('')}</ul></div></article>`).join('');
 const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 const wavePhoto = isEn ? 'Surfer riding a wave in Costa Rica' : 'Surfista tomando una ola en Costa Rica';
-const introAlt = esc(service.imageAlts?.[0] || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
+const introAlt = esc((isEn ? service.imageAltsEn?.[0] : service.imageAlts?.[0]) || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
 const yogaPhoto = esc(isEn ? 'Wellness room framed by tropical greenery' : 'Espacio de bienestar rodeado de naturaleza');
 const priceFact = details.facts.find(fact => fact.label === (isEn ? 'Price' : 'Precio')) || details.facts[details.facts.length - 1];
 const durationFact = details.facts.find(fact => fact.label === (isEn ? 'Duration' : 'Duración'));
@@ -645,7 +652,7 @@ return `<div class="retreat-editorial">
   </section>
   <div class="retreat-experience-grid">
     <section class="retreat-experience-card retreat-destination-card">
-      <img src="${esc(service.images[1])}" alt="${esc(service.imageAlts?.[1] || introAlt)}" loading="lazy" />
+      <img src="${esc(service.images[1])}" alt="${esc((isEn ? service.imageAltsEn?.[1] : service.imageAlts?.[1]) || introAlt)}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-stay-card">
