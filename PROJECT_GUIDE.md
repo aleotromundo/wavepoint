@@ -232,10 +232,16 @@ Luego abrir:
 http://localhost:4173
 ```
 
+Para probar el armador de viaje:
+
+```text
+http://localhost:4173/trip-builder.html
+```
+
 Para probar una página de detalle:
 
 ```text
-http://localhost:4173/service-detail.html?service=pack-ajustable
+http://localhost:4173/service-detail.html?service=surfskate
 ```
 
 La vista previa pública temporal del sandbox usa la plantilla de URL del entorno activo. No compartir endpoints de administración.

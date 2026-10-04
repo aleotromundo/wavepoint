@@ -4877,6 +4877,10 @@ footer a {
   letter-spacing: .16em;
   text-align: center;
 }
+.service-grid-catalog > .service-pack-divider,
+.service-grid-catalog > .service-card-pack {
+  grid-column: 1 / -1;
+}
 .service-card-pack {
   display: grid;
   grid-template-columns: minmax(300px, .95fr) minmax(0, 1.05fr);

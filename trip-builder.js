@@ -166,12 +166,12 @@
     });
     const invalidDates = list.some(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
-      return experience.dateMode === 'range' && state.start && state.end && state.end < state.start;
+      return experience.dateMode === 'range' && state.start && state.end && state.end <= state.start;
     });
     const needsDetails = list.some(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
       const guests = Number(state.guests);
-      return !state.start || (experience.dateMode === 'range' && !state.end) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end < state.start);
+      return !state.start || (experience.dateMode === 'range' && !state.end) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
     });
     const requestError = invalidDates ? copy.invalidDates : list.length && needsDetails ? copy.detailsError : '';
     return `<div class="trip-summary-head"><p class="trip-kicker">${copy.selected}</p><h2>${copy.trip}</h2></div>
@@ -238,12 +238,12 @@
     if (!chosen.length) { error.textContent = COPY[lang].selectError; return; }
     const invalidDates = chosen.some(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
-      return experience.dateMode === 'range' && state.start && state.end && state.end < state.start;
+      return experience.dateMode === 'range' && state.start && state.end && state.end <= state.start;
     });
     const incomplete = chosen.some(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
       const guests = Number(state.guests);
-      return !state.start || (experience.dateMode === 'range' && !state.end) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end < state.start);
+      return !state.start || (experience.dateMode === 'range' && !state.end) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
     });
     if (invalidDates) { error.textContent = COPY[lang].invalidDates; return; }
     if (incomplete) { error.textContent = COPY[lang].detailsError; return; }
