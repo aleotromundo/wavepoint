@@ -6,8 +6,8 @@ id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', t
 cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
 description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
 images: [
-'assets/img/hotels/stayandhotels6_resultado.webp',
 'assets/img/hotels/stayandhotels5_resultado.webp',
+'assets/img/hotels/stayandhotels6_resultado.webp',
 'assets/img/hotels/stayandhotels1_resultado.webp',
 'assets/img/hotels/stayandhotels2_resultado.webp',
 'assets/img/hotels/stayandhotels3_resultado.webp',
@@ -15,8 +15,8 @@ images: [
 'assets/img/hotels/stayandhotels_resultado.webp'
 ],
 imageAlts: [
-'Alojamiento tropical junto a la playa con piscina',
-'Alojamiento con habitaciones y piscina exterior',
+'Alojamiento tropical de madera con pasarela exterior',
+'Habitación luminosa con acceso al jardín',
 'Tamalodge entre jardines tropicales',
 'Casa de madera con pasarela exterior',
 'Alojamiento de madera con piscina rodeada de vegetación',
@@ -24,8 +24,8 @@ imageAlts: [
 'Sala de estar de un alojamiento'
 ],
 imageAltsEn: [
-'Tropical beachfront accommodation with a pool',
-'Accommodation with guest rooms and an outdoor pool',
+'Tropical wooden accommodation with an outdoor walkway',
+'Bright guest room opening onto the garden',
 'Tamalodge among tropical gardens',
 'Wooden house with an outdoor walkway',
 'Wooden accommodation with a pool surrounded by greenery',
@@ -163,8 +163,8 @@ id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 
 cardText: 'Entrenamiento personalizado con video-análisis y estrategias para llevar tu surf al siguiente nivel.',
 description: 'Llevá tu surf al siguiente nivel con un entrenamiento personalizado. Análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento en el agua con la ayuda de entrenadores expertos.',
 includes: ['Sesión de video de tu sesión', 'Análisis con un instructor personalizado en tu idioma', 'Video de recuerdo'],
-images: ['assets/img/optimized/surf-coaching.webp', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
-imageAlts: ['Surfista tomando una ola en Tamarindo', 'Surfista practicando una maniobra'],
+images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
+imageAlts: ['Surfista surcando una ola sobre una tabla roja', 'Surfista practicando una maniobra'],
 questions: [
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
 { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Cuéntanos brevemente.' },
@@ -177,7 +177,7 @@ eyebrow: 'COACHING · PROGRESSION',
 title: 'Surf coaching',
 cardText: 'Personalized coaching with video analysis and strategies to take your surfing to the next level.',
 description: 'Take your surfing to the next level with personalized coaching. Technique analysis, video coaching and strategies to improve your performance in the water with expert coaches.',
-imageAlts: ['Surfer catching a wave in Tamarindo', 'Surfer practicing a maneuver'],
+imageAlts: ['Surfer riding a wave on a red board', 'Surfer practicing a maneuver'],
 includes: ['Video review of your session', 'Personalized analysis with an instructor in your language', 'Memory video'],
 questions: {
 current_surf_level: { label: 'What is your current surfing level?', options: ['Beginner', 'Intermediate', 'Advanced'] },
@@ -590,12 +590,12 @@ modalClose: 'Close survey'
 const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
-'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels6_resultado.webp' },
-'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels6_resultado.webp' },
+'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels5_resultado.webp' },
+'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels5_resultado.webp' },
 'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/clase-surf.jpeg' },
 'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/clase-surf.jpeg' },
-'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
-'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
+'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/DSC02807.jpg' },
+'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/DSC02807.jpg' },
 'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'assets/img/optimized/yoga-wellness.webp' },
 'Witch’s Rock Surf Trip': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/optimized/witch-rock.webp' },
 'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/optimized/witch-rock.webp' },
@@ -691,7 +691,7 @@ return `<div class="retreat-editorial">
       <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-stay-card">
-      <img src="assets/img/hotels/stayandhotels6_resultado.webp" alt="${isEn ? 'Tropical beachfront accommodation with a pool' : 'Alojamiento tropical junto a la playa con piscina'}" loading="lazy" />
+      <img src="assets/img/hotels/stayandhotels5_resultado.webp" alt="${isEn ? 'Tropical wooden accommodation with an outdoor walkway' : 'Alojamiento tropical de madera con pasarela exterior'}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-yoga-card">
@@ -699,7 +699,7 @@ return `<div class="retreat-editorial">
       <div><p class="retreat-card-kicker">${isEn ? 'MOVE & RESET' : 'MOVIMIENTO Y PAUSA'}</p><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div>
     </section>
     <section class="retreat-experience-card retreat-surf-card">
-      <img src="assets/img/optimized/surf-coaching.webp" alt="${wavePhoto}" loading="lazy" />
+      <img src="assets/legacy/DSC02807.jpg" alt="${wavePhoto}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'IN THE WATER' : 'EN EL AGUA'}</p><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p><h4>${esc(details.boatHeading)}</h4><p>${esc(details.boat)}</p></div>
     </section>
   </div>
