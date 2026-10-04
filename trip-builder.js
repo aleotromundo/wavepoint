@@ -7,16 +7,16 @@
     surfskate: [50, 50, 50, 50, 50, 50]
   };
   const experiences = [
-    { id: 'stays', image: 'assets/img/tamarindo-beach-palm-trees-surfboards-costa-rica.jpg', dateMode: 'range', title: { es: 'Estadías y hoteles', en: 'Stays and Hotels' }, description: { es: 'Encontrá alojamiento para tu estadía.', en: 'Find a place to stay during your trip.' } },
-    { id: 'surf-lessons', image: 'assets/img/surf-lesson-students-surfing-tamarindo-01.jpg', title: { es: 'Clases de surf', en: 'Surf lessons' }, description: { es: 'Una clase adaptada al nivel de tu grupo.', en: 'A surf lesson tailored to your group’s level.' } },
-    { id: 'surf-coaching', image: 'assets/img/surfer-riding-wave-tamarindo-costa-rica-05.jpg', title: { es: 'Surf coaching', en: 'Surf coaching' }, description: { es: 'Entrenamiento y análisis para mejorar tu surf.', en: 'Coaching and feedback to help you progress.' } },
-    { id: 'witch-rock', image: 'assets/legacy/bruja.jpg', title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, description: { es: 'Una salida de surf por barco.', en: 'A surf trip by boat.' } },
-    { id: 'snorkel-catamaran', image: 'https://cdn.pixabay.com/photo/2012/02/23/08/57/woman-15840_1280.jpg', title: { es: 'Snorkel y catamarán', en: 'Snorkeling and catamaran' }, description: { es: 'Explorá el mar o navegá la costa.', en: 'Explore underwater or sail along the coast.' } },
-    { id: 'yoga', image: 'https://cdn.pixabay.com/photo/2016/11/18/15/05/beach-1835213_1280.jpg', title: { es: 'Yoga', en: 'Yoga' }, description: { es: 'Sumá una pausa a tu viaje.', en: 'Make room for a pause in your trip.' } },
-    { id: 'atv', image: 'https://cdn.pixabay.com/photo/2023/04/18/18/38/atv-7935771_1280.jpg', title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Descubrí Guanacaste en cuatriciclo.', en: 'Explore Guanacaste by ATV.' } },
-    { id: 'surf-photography', image: 'assets/img/longboard-surfer-tamarindo-costa-rica.jpg', title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
-    { id: 'surfskate', image: 'assets/legacy/surfskate.png', title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } },
-    { id: 'retreats', image: 'assets/img/5046346892610047339.jpg', title: { es: 'Retiros', en: 'Retreats' }, description: { es: 'Surf, descanso, movimiento y comunidad.', en: 'Surf, rest, movement and community.' } }
+    { id: 'stays', image: 'assets/img/optimized/tamarindo-stay.webp', dateMode: 'range', title: { es: 'Estadías y hoteles', en: 'Stays and Hotels' }, description: { es: 'Encontrá alojamiento para tu estadía.', en: 'Find a place to stay during your trip.' } },
+    { id: 'surf-lessons', image: 'assets/img/optimized/surf-lesson-group.webp', title: { es: 'Clases de surf', en: 'Surf lessons' }, description: { es: 'Una clase adaptada al nivel de tu grupo.', en: 'A surf lesson tailored to your group’s level.' } },
+    { id: 'surf-coaching', image: 'assets/img/optimized/surf-coaching.webp', title: { es: 'Surf coaching', en: 'Surf coaching' }, description: { es: 'Entrenamiento y análisis para mejorar tu surf.', en: 'Coaching and feedback to help you progress.' } },
+    { id: 'witch-rock', image: 'assets/img/optimized/witch-rock.webp', title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, description: { es: 'Una salida de surf por barco.', en: 'A surf trip by boat.' } },
+    { id: 'snorkel-catamaran', image: 'assets/img/optimized/snorkel-catalinas.webp', title: { es: 'Snorkel y catamarán', en: 'Snorkeling and catamaran' }, description: { es: 'Explorá el mar o navegá la costa.', en: 'Explore underwater or sail along the coast.' } },
+    { id: 'yoga', image: 'assets/img/optimized/yoga-wellness.webp', title: { es: 'Yoga', en: 'Yoga' }, description: { es: 'Sumá una pausa a tu viaje.', en: 'Make room for a pause in your trip.' } },
+    { id: 'atv', image: 'assets/img/optimized/rincon-adventure.webp', title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Descubrí Guanacaste en cuatriciclo.', en: 'Explore Guanacaste by ATV.' } },
+    { id: 'surf-photography', image: 'assets/img/optimized/surf-photography.webp', title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
+    { id: 'surfskate', image: 'assets/img/optimized/surfskate.webp', title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } },
+    { id: 'retreats', image: 'assets/img/optimized/retreat-sunset.webp', title: { es: 'Retiros', en: 'Retreats' }, description: { es: 'Surf, descanso, movimiento y comunidad.', en: 'Surf, rest, movement and community.' } }
   ];
   const COPY = {
     es: {
