@@ -596,7 +596,7 @@ return `<p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 
 function renderSurfLessonStory(service) {
 const ui = uiFor(service);
 const isEn = lang === 'en';
-const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.imageAlts?.[index] || `${ui.galleryAlt} ${index + 1}`)}" loading="lazy" />`).join('');
+const gallery = service.images.slice(1).map((image, index) => `<img src="${image}" alt="${esc(service.imageAlts?.[index + 1] || `${ui.galleryAlt} ${index + 2}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2>${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS · QUICK CHECK-IN' : 'CLASES DE SURF · CONSULTA RÁPIDA'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
 }
 function renderWitchRockStory(service) {
