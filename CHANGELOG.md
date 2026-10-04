@@ -1,5 +1,18 @@
 ## 2026-10-03
 
+### Buceo: control bilingüe del servicio y textos del detalle
+
+- `services.js`: el servicio `buceo` recibe su bloque `en` completo para traducir eyebrow, título, texto de tarjeta, descripción y preguntas del formulario.
+- `services.js`: se mantiene la regla de “dos idiomas” para cualquier texto nuevo del catálogo: si se agrega una frase o pregunta, debe existir en ES y EN antes de cerrar el cambio.
+- `service-detail.html?service=buceo`: validación visual del switch ES/EN para confirmar que el texto y el detalle cambian sin dejarse en idioma fijo.
+
+### Validación
+
+- Prueba real en navegador con el selector ES/EN sobre `service-detail.html?service=buceo`.
+- Confirmado: el servicio cambia entre español e inglés sin quedarte con textos en un solo idioma.
+
+## 2026-10-03
+
 ### Registro y control bilingüe de cambios
 
 - `CHANGELOG.md`: se usa como bitácora del repo para dejar un registro paso a paso de cada cambio realizado, con archivos tocados, decisiones y validación.

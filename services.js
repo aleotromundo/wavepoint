@@ -192,14 +192,25 @@ questions: [
 },
 {
 id: 'buceo', number: '07', eyebrow: 'MAR · EXPLORACIÓN', title: 'Buceo',
-cardText: 'Discover Tamarindo underwater with a local diving experience.',
+cardText: 'Descubrí Tamarindo bajo el agua con una experiencia de buceo local.',
 description: 'Conocé las opciones de buceo disponibles en Tamarindo y consultá con el operador local cuál experiencia se adapta mejor a tu grupo y a las condiciones del día.',
 images: ['assets/surf-service.jpg'],
 questions: [
 { id: 'dive_experience', label: '¿Qué experiencia de buceo te interesa?', type: 'choice', options: ['Quiero recomendaciones', 'Buceo recreativo', 'Quiero consultar disponibilidad'] },
 { id: 'dive_level', label: '¿Qué experiencia tienes buceando?', type: 'choice', options: ['Primera vez', 'Principiante', 'Con experiencia'], optional: true },
 { id: 'dive_people', label: '¿Cuántas personas participarían?', type: 'number' }
-]
+],
+en: {
+eyebrow: 'SEA · EXPLORATION',
+title: 'Diving',
+cardText: 'Discover Tamarindo underwater with a local diving experience.',
+description: 'Explore the diving options available in Tamarindo and ask the local operator which experience best suits your group and the day’s conditions.',
+questions: {
+dive_experience: { label: 'What diving experience are you interested in?', options: ['I want recommendations', 'Recreational diving', 'I want to check availability'] },
+dive_level: { label: 'What is your diving experience?', options: ['First time', 'Beginner', 'Experienced'] },
+dive_people: { label: 'How many people would join?' }
+}
+}
 },
 {
 id: 'atv', number: '08', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
