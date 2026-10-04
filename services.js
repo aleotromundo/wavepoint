@@ -136,7 +136,7 @@ own_board: { label: 'Will you bring your own board?', options: ['Yes', 'No'] }
 }
 },
 {
-id: 'yoga', number: '04', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
+id: 'yoga', number: '06', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
 cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
 description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
 images: [
@@ -190,7 +190,7 @@ dietary_needs: { label: 'Are there any food allergies or dietary needs we should
 }
 },
 {
-id: 'roca-bruja', number: '06', eyebrow: 'VIAJE DE SURF · AVENTURA', title: 'Roca Bruja',
+id: 'roca-bruja', number: '04', eyebrow: 'VIAJE DE SURF · AVENTURA', title: 'Roca Bruja',
 cardText: 'Un día de surf en barco con guías locales que conocen la zona.',
 lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
@@ -222,7 +222,7 @@ date_flexibility: { label: 'Can you change the date if sea conditions require it
 }
 },
 {
-id: 'surf-fotografia', number: '07', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fotos de surf',
+id: 'surf-fotografia', number: '08', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fotos de surf',
 cardText: 'Tu tiempo en el agua, capturado.',
 description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
 images: ['assets/legacy/fotodesurf.jpg', 'assets/photo-service.jpg'],
@@ -238,29 +238,23 @@ questions: {}
 }
 },
 {
-id: 'buceo', number: '08', eyebrow: 'MAR · EXPLORACIÓN', title: 'Buceo',
-cardText: 'Descubrí Tamarindo bajo el agua con una experiencia de buceo local.',
-description: 'Conocé las opciones de buceo disponibles en Tamarindo y consultá con el operador local cuál experiencia se adapta mejor a tu grupo y a las condiciones del día.',
-images: ['assets/surf-service.jpg'],
-questions: [
-{ id: 'dive_experience', label: '¿Qué experiencia de buceo te interesa?', type: 'choice', options: ['Quiero recomendaciones', 'Buceo recreativo', 'Quiero consultar disponibilidad'] },
-{ id: 'dive_level', label: '¿Qué experiencia tienes buceando?', type: 'choice', options: ['Primera vez', 'Principiante', 'Con experiencia'], optional: true },
-{ id: 'dive_people', label: '¿Cuántas personas participarían?', type: 'number' }
-],
+id: 'surfskate', number: '09', eyebrow: 'SURFSKATE · PROGRESO', title: 'Clases de surfskate',
+cardText: 'Mejorá tu técnica y fluidez fuera del agua.',
+description: 'Mejorá giros, estabilidad, equilibrio y fluidez en tierra antes de llevarlos al agua; para todas las edades y niveles.',
+images: ['assets/legacy/surfskate.png'],
+questions: [],
+submitLabel: 'CONSULTAR UNA CLASE ↗',
 en: {
-eyebrow: 'SEA · EXPLORATION',
-title: 'Diving',
-cardText: 'Discover Tamarindo underwater with a local diving experience.',
-description: 'Explore the diving options available in Tamarindo and ask the local operator which experience best suits your group and the day’s conditions.',
-questions: {
-dive_experience: { label: 'What diving experience are you interested in?', options: ['I want recommendations', 'Recreational diving', 'I want to check availability'] },
-dive_level: { label: 'What is your diving experience?', options: ['First time', 'Beginner', 'Experienced'] },
-dive_people: { label: 'How many people would join?' }
-}
+eyebrow: 'SURFSKATE · PROGRESSION',
+title: 'Surfskate lessons',
+cardText: 'Improve your technique and flow off the water.',
+description: 'Improve turns, stability, balance, and flow on land before bringing them into the water, for every age and level.',
+submitLabel: 'ASK ABOUT A LESSON ↗',
+questions: {}
 }
 },
 {
-id: 'atv', number: '09', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
+id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
 images: ['assets/legacy/llanosdecortez.jpg', 'assets/legacy/IMG_1269.jpeg'],
@@ -284,12 +278,12 @@ licenses: { label: 'Do the drivers have a valid driver’s license?', options: [
 }
 },
 {
-id: 'pack-ajustable', number: '10', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
+id: 'pack-ajustable', number: '11', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
 cardText: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje.',
 description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
 images: ['assets/after-guide.jpg'],
 questions: [
-{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Yoga', 'Snorkel y catamarán', 'Witch’s Rock Surf Trip', 'Buceo', 'Fotos de surf', 'ATV tours', 'Retreats'] },
+{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Snorkel y catamarán', 'Yoga', 'ATV tours', 'Fotos de surf', 'Clases de surfskate', 'Retreats'] },
 { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
 { id: 'pack_notes', label: '¿Qué debería tener en cuenta el operador?', type: 'textarea', placeholder: 'Cantidad de personas, preferencias o necesidades especiales.', optional: true }
 ],
@@ -299,14 +293,14 @@ title: 'Custom pack',
 cardText: 'Build your own experience by combining the activities that fit your trip.',
 description: 'Create your own experience by combining accommodation, surf, wellness and adventure according to the pace of your trip. Tell us what interests you and WavePoint will request a tailored proposal based on your dates, group and priorities.',
 questions: {
-pack_activities: { label: 'What would you like to combine in your experience?', options: ['Accommodation', 'Surf lessons', 'Surf coaching', 'Yoga', 'Snorkeling & catamaran', 'Witch’s Rock Surf Trip', 'Diving', 'Surf Photography', 'ATV tours', 'Retreats'] },
+pack_activities: { label: 'What would you like to combine in your experience?', options: ['Accommodation', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Snorkeling & catamaran', 'Yoga', 'ATV tours', 'Surf Photography', 'Surfskate lessons', 'Retreats'] },
 pack_dates: { label: 'When would your trip be?', fields: ['Arrival', 'Departure'] },
 pack_notes: { label: 'What should the operator keep in mind?', placeholder: 'Number of people, preferences or special needs.' }
 }
 }
 },
 {
-id: 'retiros', number: '11', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
+id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'Un retiro es una experiencia con su propio ritmo. Te ayudamos a encontrar una propuesta que combine las actividades que te interesan con el tipo de habitación y acompañamiento que necesitás. Si incluye surf, saber tu nivel nos permite consultar mejor; y si tenés necesidades de alimentación o alojamiento, podés compartirlas desde el inicio para buscar una opción que te haga sentir cómodo.',
 images: ['assets/legacy/ocotal.jpg', 'assets/legacy/IMG_1269.jpeg', 'assets/legacy/Restaurante_1.jpg'],
@@ -330,6 +324,8 @@ retreat_needs: { label: 'Are there any dietary or accommodation needs we should 
 }
 }
 ];
+const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros', 'pack-ajustable'];
+services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
 const getService = () => { const id = new URLSearchParams(location.search).get('service'); return services.find(item => item.id === id) || services[0]; };
 let lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'en' ? 'en' : 'es'; } catch (error) { return 'es'; } })();
@@ -391,12 +387,12 @@ const PACK_SERVICE_CARDS = {
 'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/legacy/bruja.jpg' },
 'Fotos de surf': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/legacy/fotodesurf.jpg' },
 'Surf Photography': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/legacy/fotodesurf.jpg' },
-'Buceo': { title: { es: 'Buceo', en: 'Diving' }, detail: { es: 'Descubrí el mundo bajo la superficie.', en: 'Discover the underwater world.' }, image: 'assets/surf-service.jpg' },
-'Diving': { title: { es: 'Buceo', en: 'Diving' }, detail: { es: 'Descubrí el mundo bajo la superficie.', en: 'Discover the underwater world.' }, image: 'assets/surf-service.jpg' },
 'Snorkeling & catamaran': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
 'Snorkel y catamarán': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
 'ATV tours': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
 'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
+'Clases de surfskate': { title: { es: 'Clases de surfskate', en: 'Surfskate lessons' }, detail: { es: 'Mejorá tu técnica y fluidez fuera del agua.', en: 'Improve your technique and flow off the water.' }, image: 'assets/legacy/surfskate.png' },
+'Surfskate lessons': { title: { es: 'Clases de surfskate', en: 'Surfskate lessons' }, detail: { es: 'Mejorá tu técnica y fluidez fuera del agua.', en: 'Improve your technique and flow off the water.' }, image: 'assets/legacy/surfskate.png' },
 'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest and community.' }, image: 'assets/legacy/ocotal.jpg' },
 'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest and community.' }, image: 'assets/legacy/ocotal.jpg' }
 };
