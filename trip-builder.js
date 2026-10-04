@@ -34,7 +34,11 @@
       estimate: 'Estimado para esta experiencia',
       quote: 'Precio a confirmar',
       trip: 'Tu viaje',
-      empty: 'Todavía no agregaste experiencias.',
+      cartCaption: 'Tu próxima aventura empieza acá.',
+      itemCount: 'experiencia',
+      itemsCount: 'experiencias',
+      empty: 'Tu carrito está listo para la aventura.',
+      emptyTip: 'Sumá las experiencias que te entusiasmen y las vas a ver acá.',
       selected: 'Experiencias elegidas',
       remove: 'Quitar',
       guestsShort: 'personas',
@@ -77,7 +81,11 @@
       estimate: 'Estimated price for this experience',
       quote: 'Price to be confirmed',
       trip: 'Your trip',
-      empty: 'You haven’t added any experiences yet.',
+      cartCaption: 'Your next adventure starts here.',
+      itemCount: 'experience',
+      itemsCount: 'experiences',
+      empty: 'Your cart is ready for an adventure.',
+      emptyTip: 'Add the experiences you love and they’ll show up here.',
       selected: 'Selected experiences',
       remove: 'Remove',
       guestsShort: 'guests',
@@ -174,8 +182,23 @@
       return !state.start || (experience.dateMode === 'range' && !state.end) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
     });
     const requestError = invalidDates ? copy.invalidDates : list.length && needsDetails ? copy.detailsError : '';
-    return `<div class="trip-summary-head"><p class="trip-kicker">${copy.selected}</p><h2>${copy.trip}</h2></div>
-      ${list.length ? `<ul class="trip-summary-list">${rows.join('')}</ul>` : `<p class="trip-summary-empty">${copy.empty}</p>`}
+    return `<div class="trip-cart-top">
+        <div class="trip-summary-head"><p class="trip-kicker">${copy.selected}</p><h2>${copy.trip}</h2><p class="trip-cart-caption">${copy.cartCaption}</p></div>
+        <div class="trip-cart-illustration" aria-hidden="true">
+          <svg viewBox="0 0 112 96" focusable="false">
+            <path class="trip-cart-spark" d="M18 17v9m-4.5-4.5h9M91 15v8m-4 0h8" />
+            <path class="trip-cart-board" d="M29 10c4-5 8-7 12-7s8 2 12 7L42 50 29 10Z" />
+            <path class="trip-cart-board-stripe" d="m34 19 16 5m-20 5 16 5" />
+            <path class="trip-cart-basket" d="M25 45h66l-7 29H33l-8-29Z" />
+            <path class="trip-cart-basket-top" d="M20 43h76" />
+            <path class="trip-cart-grid" d="m43 48 4 21m13-21v21m13-21-4 21" />
+            <circle class="trip-cart-wheel" cx="42" cy="83" r="5" />
+            <circle class="trip-cart-wheel" cx="77" cy="83" r="5" />
+          </svg>
+        </div>
+        <span class="trip-cart-count" aria-live="polite">${list.length} ${list.length === 1 ? copy.itemCount : copy.itemsCount}</span>
+      </div>
+      ${list.length ? `<ul class="trip-summary-list">${rows.join('')}</ul>` : `<div class="trip-summary-empty"><span aria-hidden="true">✦</span><p>${copy.empty}</p><small>${copy.emptyTip}</small></div>`}
       <div class="trip-summary-total"><span>${copy.estimated}</span><strong>${list.some(([id, state]) => priceFor(id, Number(state.guests)) !== null) ? money(total) : copy.noEstimate}</strong></div>
       <p class="trip-summary-note">${copy.totalNote}</p>
       <p class="trip-confirm-note">${copy.priceNote}</p>
@@ -202,6 +225,31 @@
     if (!summary) return;
     summary.innerHTML = renderSummary();
   };
+  const animateBoardIntoCart = sourceRect => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const destination = root.querySelector('.trip-cart-illustration');
+    if (!destination) return;
+    const targetRect = destination.getBoundingClientRect();
+    const board = document.createElement('div');
+    board.className = 'trip-flying-board';
+    board.setAttribute('aria-hidden', 'true');
+    board.innerHTML = '<svg viewBox="0 0 88 30" focusable="false"><path d="M4 15C13 5 25 2 44 2s31 3 40 13c-9 10-21 13-40 13S13 25 4 15Z"/><path d="m27 5 34 20M22 9l24 14" /></svg>';
+    board.style.left = `${sourceRect.left + sourceRect.width / 2 - 44}px`;
+    board.style.top = `${sourceRect.top + sourceRect.height / 2 - 15}px`;
+    document.body.append(board);
+    const deltaX = targetRect.left + targetRect.width / 2 - sourceRect.left - sourceRect.width / 2;
+    const deltaY = targetRect.top + targetRect.height / 2 - sourceRect.top - sourceRect.height / 2;
+    const animation = board.animate([
+      { transform: 'translate(0, 0) rotate(-20deg) scale(.68)', opacity: 1 },
+      { transform: `translate(${deltaX * .58}px, ${deltaY * .58 - 74}px) rotate(155deg) scale(.92)`, opacity: 1, offset: .72 },
+      { transform: `translate(${deltaX}px, ${deltaY}px) rotate(350deg) scale(.12)`, opacity: 0 }
+    ], { duration: 760, easing: 'cubic-bezier(.2,.8,.25,1)' });
+    animation.onfinish = () => {
+      board.remove();
+      destination.classList.add('is-catching');
+      window.setTimeout(() => destination.classList.remove('is-catching'), 620);
+    };
+  };
   root.addEventListener('input', event => {
     if (event.target.matches('[data-name]')) { customerName = event.target.value; return; }
     if (event.target.matches('[data-extra]')) { customerExtra = event.target.value; return; }
@@ -222,7 +270,13 @@
     if (event.target.matches('[data-add]') && card) {
       const id = card.dataset.experience;
       if (selected.has(id)) selected.delete(id);
-      else selected.set(id, { ...drafts.get(id) });
+      else {
+        const sourceRect = event.target.getBoundingClientRect();
+        selected.set(id, { ...drafts.get(id) });
+        render();
+        animateBoardIntoCart(sourceRect);
+        return;
+      }
       render();
       return;
     }
