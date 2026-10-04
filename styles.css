@@ -4659,6 +4659,8 @@ footer a {
   box-shadow: 0 8px 24px rgba(3, 20, 31, .18);
   transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
 }
+.instagram-footer-link-labeled { width: auto; min-width: 42px; gap: 9px; padding: 0 14px; border-radius: 999px; font-size: 12px !important; font-weight: 700; }
+.instagram-footer-link-labeled svg { flex: 0 0 21px; }
 .instagram-footer-link svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; }
 .instagram-footer-link .instagram-dot { fill: currentColor; stroke: none; }
 .instagram-footer-link:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, .58); background: rgba(8, 43, 58, .76); }
@@ -5501,6 +5503,40 @@ footer a {
   backdrop-filter: blur(12px) saturate(118%);
   -webkit-backdrop-filter: blur(12px) saturate(118%);
 }
+.local-guide-page .guide-tip-card {
+  display: block;
+  min-height: 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(207, 239, 229, .32);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(15, 91, 95, .48), rgba(5, 31, 43, .42));
+  box-shadow: inset 0 1px rgba(255, 255, 255, .14), 0 18px 38px rgba(0, 0, 0, .18);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+}
+.local-guide-page .guide-tip-card h4 {
+  margin: 0 0 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(207, 239, 229, .2);
+  color: #f5fbf8;
+  font-size: 30px;
+}
+.local-guide-page .guide-tip-card ul {
+  gap: 11px;
+  padding-left: 18px;
+  color: rgba(241, 250, 247, .88);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.local-guide-page .guide-tip-card li::marker { color: #8fe3cf; }
+.local-guide-page .guide-tip-card:hover {
+  border-color: rgba(159, 237, 215, .48);
+  background: linear-gradient(145deg, rgba(17, 106, 105, .58), rgba(5, 38, 50, .48));
+  transform: translateY(-2px);
+}
+@media (max-width: 760px) {
+  .local-guide-page .guide-practical-grid { grid-template-columns: 1fr; }
+}
 .local-guide-page .service-page-footer {
   background: rgba(6, 26, 38, .76);
   backdrop-filter: blur(14px);
@@ -5511,4 +5547,6 @@ footer a {
     background-attachment: scroll;
     background-position: center top;
   }
+  .local-guide-page .guide-tip-card { padding: 19px; }
+  .local-guide-page .guide-tip-card h4 { font-size: 27px; }
 }
