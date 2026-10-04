@@ -2,7 +2,7 @@
 const WHATSAPP = '543517397525';
 const services = [
 {
-id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', title: 'Stays and Hotels',
+id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', title: 'Estadías y hoteles',
 cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
 description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
 images: ['assets/legacy/B_03.jpg', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
@@ -62,11 +62,24 @@ questions: [
 { id: 'group_size', label: '¿Cuántas personas viajarían?', type: 'number' },
 { id: 'nightly_budget', label: '¿Cuál es tu presupuesto aproximado por noche para todo el grupo?', type: 'money', optional: true },
 { id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'] }
-]
+],
+en: {
+eyebrow: 'STAYS · HOTELS',
+title: 'Stays and Hotels',
+cardText: 'Hotels and seaside stays for every type of trip.',
+description: 'Find a place to stay that suits your budget, group size and pace during your time in Tamarindo. These rates are shown in US dollars (USD) per night. WavePoint checks availability and conditions with the property before sending you a proposal.',
+questions: {
+stay_dates: { label: 'When would you like to stay?', fields: ['Arrival', 'Departure'] },
+accommodation_type: { label: 'What accommodation are you interested in?', options: ['Hotel Tamalodge', 'Casa Aura', 'Casa Madera', 'Capitán Suizo', 'I want recommendations'] },
+group_size: { label: 'How many people would be traveling?' },
+nightly_budget: { label: 'What is your approximate budget per night for the whole group?' },
+experiences: { label: 'Which experiences would you like to add?', options: ['Surf', 'Surf coaching', 'Witch’s Rock', 'Snorkel', 'Catamaran', 'Yoga', 'ATV', 'I still don’t know'] }
+}
+}
 },
 {
-id: 'clases-de-surf', number: '02', eyebrow: 'SURF · LESSONS', title: 'Ready to Surf?',
-cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
+id: 'clases-de-surf', number: '02', eyebrow: 'CLASES DE SURF · TAMARINDO', title: 'Clases de surf',
+cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.',
 description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
 images: ['assets/legacy/DSC02807.jpg', 'assets/legacy/clase-surf.jpeg', 'assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg'],
 questions: [
@@ -79,6 +92,9 @@ questions: [
 { id: 'board_need', label: '¿Necesitarán una tabla?', type: 'choice', options: ['Sí', 'No, llevamos la nuestra', 'Necesitamos asesoramiento'] }
 ],
 en: {
+eyebrow: 'SURF LESSONS · TAMARINDO',
+title: 'Surf lessons',
+cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
 description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
 questions: {
 surf_level: { label: 'What’s your surfing level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
@@ -92,7 +108,7 @@ board_need: { label: 'Will you need a board?', options: ['Yes', 'No, we bring ou
 }
 },
 {
-id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Surf coaching',
+id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Entrenamiento de surf',
 cardText: 'Entrenamiento personalizado con video-análisis y estrategias para llevar tu surf al siguiente nivel.',
 description: 'Llevá tu surf al siguiente nivel con un entrenamiento personalizado. Análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento en el agua con la ayuda de entrenadores expertos.',
 includes: ['Sesión de video de tu sesión', 'Análisis con un instructor personalizado en tu idioma', 'Video de recuerdo'],
@@ -120,7 +136,7 @@ own_board: { label: 'Will you bring your own board?', options: ['Yes', 'No'] }
 }
 },
 {
-id: 'roca-bruja', number: '04', eyebrow: 'SURF TRIP · AVENTURA', title: 'Witch’s Rock Surf Trip',
+id: 'roca-bruja', number: '04', eyebrow: 'VIAJE DE SURF · AVENTURA', title: 'Roca Bruja',
 cardText: 'Un día de surf en barco con guías locales que conocen la zona.',
 lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
@@ -188,7 +204,20 @@ questions: [
 { id: 'snorkel_people', label: '¿Cuántas personas quieren hacer snorkel?', type: 'number', optional: true },
 { id: 'swimming_comfort', label: '¿Todas se sienten cómodas nadando en el mar?', type: 'choice', options: ['Sí', 'No', 'Quisiera consultar antes'], optional: true },
 { id: 'dietary_needs', label: '¿Hay alergias alimentarias o necesidades dietéticas que debamos comunicar?', type: 'textarea', placeholder: 'Opcional', optional: true }
-]
+],
+en: {
+eyebrow: 'SEA · SAILING',
+title: 'Snorkeling & catamaran',
+cardText: 'Choose between exploring underwater, sailing along the coast or combining both experiences.',
+description: 'A day on the water can be calm, adventurous or a bit of both. We help you compare snorkel tours, catamaran rides and combined options based on availability. To protect the experience for the whole group, we check group size, swimming comfort and any dietary needs before sending a private or shared option.',
+questions: {
+sea_experience: { label: 'What experience are you interested in?', options: ['Snorkel tour', 'Catamaran cruise', 'Catamaran with snorkel, if available'] },
+departure_type: { label: 'Would you prefer a shared or private outing?', options: ['Shared', 'Private', 'I want to compare both'] },
+snorkel_people: { label: 'How many people want to snorkel?' },
+swimming_comfort: { label: 'Are everyone comfortable swimming in the sea?', options: ['Yes', 'No', 'I’d like to check first'] },
+dietary_needs: { label: 'Are there any food allergies or dietary needs we should share?', placeholder: 'Optional' }
+}
+}
 },
 {
 id: 'buceo', number: '07', eyebrow: 'MAR · EXPLORACIÓN', title: 'Buceo',
@@ -222,18 +251,41 @@ questions: [
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
 { id: 'driver_ages', label: '¿Qué edades tienen quienes quieren conducir?', type: 'text', placeholder: 'Ej.: 24, 31 y 42' },
 { id: 'licenses', label: '¿Quienes quieren conducir tienen licencia de conducir vigente?', type: 'choice', options: ['Todos', 'Algunos', 'Ninguno'] }
-]
+],
+en: {
+eyebrow: 'LAND · ADVENTURE',
+title: 'ATV tours',
+cardText: 'Explore the roads of Guanacaste with a quick check on participants and requirements.',
+description: 'ATV tours are an intense and fun way to leave the beach and explore the landscape around Tamarindo. Before recommending an option, we need to understand how many people want to drive, who will ride as passengers and the ages of the drivers. WavePoint checks these details with the operator to confirm participation requirements before moving forward.',
+questions: {
+drivers: { label: 'How many people want to drive?' },
+passengers: { label: 'How many would be passengers?' },
+driver_ages: { label: 'What are the ages of the drivers?', placeholder: 'e.g. 24, 31 and 42' },
+licenses: { label: 'Do the drivers have a valid driver’s license?', options: ['Everyone', 'Some', 'None'] }
+}
+}
 },
 {
 id: 'pack-ajustable', number: '09', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
-cardText: 'Build your own experience by combining the activities that fit your trip.',
+cardText: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje.',
 description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
 images: ['assets/after-guide.jpg'],
 questions: [
 { id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Yoga', 'Snorkeling & catamaran', 'Buceo', 'ATV tours', 'Retreats'] },
 { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
 { id: 'pack_notes', label: '¿Qué debería tener en cuenta el operador?', type: 'textarea', placeholder: 'Cantidad de personas, preferencias o necesidades especiales.', optional: true }
-]
+],
+en: {
+eyebrow: 'CUSTOM · TAILORED EXPERIENCE',
+title: 'Custom pack',
+cardText: 'Build your own experience by combining the activities that fit your trip.',
+description: 'Create your own experience by combining accommodation, surf, wellness and adventure according to the pace of your trip. Tell us what interests you and WavePoint will request a tailored proposal based on your dates, group and priorities.',
+questions: {
+pack_activities: { label: 'What would you like to combine in your experience?', options: ['Accommodation', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Yoga', 'Snorkeling & catamaran', 'Diving', 'ATV tours', 'Retreats'] },
+pack_dates: { label: 'When would your trip be?', fields: ['Arrival', 'Departure'] },
+pack_notes: { label: 'What should the operator keep in mind?', placeholder: 'Number of people, preferences or special needs.' }
+}
+}
 },
 {
 id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
@@ -245,7 +297,19 @@ questions: [
 { id: 'retreat_surf_level', label: 'Si el retiro incluye surf: ¿cuál es tu nivel?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'], optional: true },
 { id: 'room_type', label: '¿Qué tipo de habitación prefieres?', type: 'choice', options: ['Compartida', 'Privada', 'Cualquiera de las dos'], optional: true },
 { id: 'retreat_needs', label: '¿Hay alguna necesidad de alimentación o alojamiento que debamos tener en cuenta?', type: 'textarea', placeholder: 'Opcional', optional: true }
-]
+],
+en: {
+eyebrow: 'RETREATS · EXPERIENCES',
+title: 'Retreats',
+cardText: 'Choose a pause with intention: surf, rest, movement and community in one trip.',
+description: 'A retreat is an experience with its own rhythm. We help you find a proposal that combines the activities you’re interested in with the room type and support you need. If surf is included, knowing your level helps us ask the right questions; and if you have dietary or accommodation needs, you can share them from the start so we can look for a fit that feels comfortable.',
+questions: {
+retreat_choice: { label: 'Which retreat are you interested in?', options: ['Select a retreat', 'I want recommendations'] },
+retreat_surf_level: { label: 'If the retreat includes surf: what is your level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
+room_type: { label: 'What room type do you prefer?', options: ['Shared', 'Private', 'Either is fine'] },
+retreat_needs: { label: 'Are there any dietary or accommodation needs we should keep in mind?', placeholder: 'Optional' }
+}
+}
 }
 ];
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
@@ -325,7 +389,9 @@ function renderAccommodationOption(option, index) {
 const gallery = option.images.map((image, imageIndex) => `<img src="${image}" alt="${esc(option.imageAlt)} · vista ${imageIndex + 1}" loading="lazy" />`).join('');
 const details = option.details.map(detail => `<li>${esc(detail)}</li>`).join('');
 const amenities = option.amenities.map(item => `<li>${esc(item)}</li>`).join('');
-return `<article class="accommodation-card accommodation-card-${index + 1}"><div class="accommodation-gallery">${gallery}</div><div class="accommodation-card-body"><p class="accommodation-category">${esc(option.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(option.priceNote)}</span></div></div><p class="accommodation-summary">${esc(option.summary)}</p><div class="accommodation-columns"><div><h4>Opciones y tarifas</h4><ul>${details}</ul></div><div><h4>Servicios y condiciones</h4><ul>${amenities}</ul></div></div></div></article>`;
+const detailsHeading = lang === 'en' ? 'Options & rates' : 'Opciones y tarifas';
+const amenitiesHeading = lang === 'en' ? 'Services & conditions' : 'Servicios y condiciones';
+return `<article class="accommodation-card accommodation-card-${index + 1}"><div class="accommodation-gallery">${gallery}</div><div class="accommodation-card-body"><p class="accommodation-category">${esc(option.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(option.priceNote)}</span></div></div><p class="accommodation-summary">${esc(option.summary)}</p><div class="accommodation-columns"><div><h4>${detailsHeading}</h4><ul>${details}</ul></div><div><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></div></div></div></article>`;
 }
 function renderAccommodationStory(service) {
 const isEn = lang === 'en';
@@ -339,7 +405,8 @@ return `<p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'C
 }
 function renderWitchRockStory(service) {
 const isEn = lang === 'en';
-return `<p class="service-page-kicker">WITCH’S ROCK · SURF TRIP</p><h2>${esc(service.lead)}</h2><p>${esc(service.description)}</p><p>${esc(service.coordination)}</p><div class="detail-gallery witch-rock-gallery"><img src="${service.images[1]}" alt="${esc(service.galleryAlt)}" loading="lazy" /></div>`;
+const kicker = isEn ? 'SURF TRIP · ADVENTURE' : 'VIAJE DE SURF · AVENTURA';
+return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.lead)}</h2><p>${esc(service.description)}</p><p>${esc(service.coordination)}</p><div class="detail-gallery witch-rock-gallery"><img src="${service.images[1]}" alt="${esc(service.galleryAlt)}" loading="lazy" /></div>`;
 }
 function render(service) {
 const ui = uiFor(service);

@@ -1,3 +1,17 @@
+## 2026-10-04
+
+### Servicios restantes: revisión completa bilingüe en ES/EN
+
+- `services.js`: se completa la pasada bilingüe de los servicios restantes (`alojamiento-experiencias`, `clases-de-surf`, `surf-coaching`, `roca-bruja`, `snorkel-catamaran`, `atv`, `pack-ajustable`, `retiros`), dejando los textos base en español y los bloques `en` completos para cada página de detalle.
+- `services.js`: se corrigen textos fijos que quedaban en un solo idioma en los componentes de historia y formularios (`renderAccommodationOption`, `renderWitchRockStory`, `renderSurfLessonStory`).
+- `services.js`: se mantiene la regla del proyecto: si agregás texto, debe existir en español e inglés antes de cerrar el cambio.
+- `CHANGELOG.md`: se registra esta última pasada para dejar el historial actualizado y visible.
+
+### Validación
+
+- Revisión del archivo `services.js` para comprobar que cada servicio tenga bloque `en` y que los textos principales del detalle estén alineados a ES/EN.
+- Confirmado: los servicios que restaban no quedan con contenido fijo en un solo idioma al cambiar de ES a EN.
+
 ## 2026-10-03
 
 ### Buceo: control bilingüe del servicio y textos del detalle
