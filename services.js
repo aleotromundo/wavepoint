@@ -5,7 +5,9 @@ const services = [
 id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', title: 'Estadías y hoteles',
 cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
 description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
-images: ['assets/img/optimized/tamarindo-stay.webp', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
+images: ['assets/ally-capitan.jpg', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
+imageAlts: ['Hotel junto a la playa con piscina y jardines tropicales'],
+imageAltsEn: ['Beachfront hotel with a pool and tropical gardens'],
 accommodationOptions: [
 {
 category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
@@ -52,6 +54,8 @@ price: 'USD 600', priceNote: 'por noche · consultar disponibilidad',
 summary: 'Hotel frente a la playa con servicios de bienestar, piscina y espacios para disfrutar la estadía.',
 images: ['assets/capitan.jpg', 'assets/ally-capitan.jpg', 'assets/legacy/Piscina_16.jpg'],
 imageAlt: 'Playa frente a Capitán Suizo',
+imageAlts: ['Playa frente a Capitán Suizo', 'Hotel Capitán Suizo con piscina y jardines tropicales', 'Piscina al aire libre del hotel Capitán Suizo'],
+imageAltsEn: ['Beach at Capitan Suizo', 'Capitan Suizo hotel with a pool and tropical gardens', 'Outdoor pool at the Capitan Suizo hotel'],
 details: ['Tarifa: USD 600 por noche.', 'Consultar disponibilidad.'],
 amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios']
 }
@@ -311,7 +315,7 @@ licenses: { label: 'Do the drivers have a valid driver’s license?', options: [
 id: 'pack-ajustable', number: '11', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
 cardText: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje.',
 description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
-images: ['assets/img/optimized/tamarindo-stay.webp'],
+images: ['assets/ally-capitan.jpg'],
 questions: [
 { id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Snorkel y catamarán', 'Yoga', 'ATV tours', 'Fotos de surf', 'Clases de surfskate', 'Retreats'] },
 { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
@@ -559,8 +563,8 @@ modalClose: 'Close survey'
 const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
-'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/optimized/tamarindo-stay.webp' },
-'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/optimized/tamarindo-stay.webp' },
+'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/ally-capitan.jpg' },
+'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/ally-capitan.jpg' },
 'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
 'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
 'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
@@ -593,7 +597,10 @@ const type = question.type === 'number' ? 'number' : question.type === 'money' ?
 return `<label class="detail-question detail-field" for="${id}"><span>${esc(question.label)} ${optional}</span><${question.type === 'textarea' ? 'textarea' : 'input'} id="${id}" name="${question.id}" type="${type}" placeholder="${esc(question.placeholder || '')}" ${question.optional ? '' : 'required'}></${question.type === 'textarea' ? 'textarea' : 'input'}></label>`;
 }
 function renderAccommodationOption(option, index) {
-const gallery = option.images.map((image, imageIndex) => `<img src="${image}" alt="${esc(option.imageAlt)} · vista ${imageIndex + 1}" loading="lazy" />`).join('');
+const gallery = option.images.map((image, imageIndex) => {
+const localizedAlt = lang === 'en' ? option.imageAltsEn?.[imageIndex] : option.imageAlts?.[imageIndex];
+return `<img src="${image}" alt="${esc(localizedAlt || `${option.imageAlt} · ${lang === 'en' ? 'view' : 'vista'} ${imageIndex + 1}`)}" loading="lazy" />`;
+}).join('');
 const details = option.details.map(detail => `<li>${esc(detail)}</li>`).join('');
 const amenities = option.amenities.map(item => `<li>${esc(item)}</li>`).join('');
 const detailsHeading = lang === 'en' ? 'Options & rates' : 'Opciones y tarifas';
@@ -656,7 +663,7 @@ return `<div class="retreat-editorial">
       <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-stay-card">
-      <img src="assets/img/optimized/tamarindo-stay.webp" alt="${isEn ? 'Palm trees and surfboards by the beach in Tamarindo' : 'Palmeras y tablas de surf junto a la playa en Tamarindo'}" loading="lazy" />
+      <img src="assets/ally-capitan.jpg" alt="${isEn ? 'Beachfront hotel with a pool and tropical gardens' : 'Hotel junto a la playa con piscina y jardines tropicales'}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-yoga-card">

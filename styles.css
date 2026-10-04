@@ -1060,6 +1060,19 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   backdrop-filter: blur(18px);
 }
 
+.dropdown .menu::before {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 18px;
+  content: "";
+}
+
+.topbar > .instagram-link {
+  display: grid;
+}
+
 .menu a:hover { background: rgba(7, 140, 145, .10); }
 .hamb { border-radius: 10px; }
 
@@ -5657,6 +5670,15 @@ footer a {
   }
 }
 
+@media (min-width: 981px) {
+  .topbar > .instagram-link {
+    display: grid;
+    top: 18px;
+    left: 70px;
+    right: auto;
+  }
+}
+
 /* Expand catalog service descriptions over the photo only while interacted with. */
 #servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body {
   position: absolute;
@@ -5747,4 +5769,177 @@ footer a {
 
 #nosotros {
   scroll-margin-top: -92px;
+}
+
+/* Readable navigation over photos and video at every scroll position. */
+.nav {
+  padding: 6px 14px;
+  border: 1px solid rgba(231, 249, 247, .24);
+  border-radius: 16px;
+  background: rgba(4, 26, 39, .94);
+  box-shadow: 0 10px 28px rgba(0, 12, 20, .32);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.navlinks,
+.navlinks > a,
+.dropbtn {
+  color: #fff;
+  opacity: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .7);
+}
+.hamb {
+  color: #fff;
+  background: rgba(4, 26, 39, .96);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .65);
+}
+.mobile-menu a small {
+  color: #d8eee8;
+  font-size: 14px;
+}
+@media (max-width: 980px) {
+  .hamb {
+    border-color: rgba(231, 249, 247, .52);
+    background: #062638;
+    box-shadow: 0 8px 24px rgba(0, 12, 20, .42);
+  }
+}
+
+/* Raise small but meaningful labels and strengthen secondary-copy contrast. */
+.weather-head small,
+.weather-head > div > span:last-child,
+.camera-status-night,
+.weather-list .w-label,
+.w-label,
+.weather-place,
+.weather-state,
+.country-seal-label,
+.about-kicker,
+.about-label,
+.about-index,
+.about-scroll-note,
+.service-offering span,
+.guide-offering span,
+.service-offering strong,
+.guide-offering strong,
+.retreat-cover-kicker,
+.retreat-card-kicker,
+.retreat-cover-facts span,
+.retreat-fact dt,
+.assistant-header small,
+.assistant-disclaimer,
+.whatsapp-float small {
+  font-size: 13px;
+  line-height: 1.45;
+}
+.weather-head small,
+.weather-head > div > span:last-child,
+.weather-list .w-label,
+.w-label {
+  color: rgba(255, 255, 255, .96);
+}
+.weather-head small { opacity: 1; }
+.weather-card {
+  background: linear-gradient(145deg, rgba(4, 29, 42, .9), rgba(4, 29, 42, .86));
+}
+.country-seal-label { color: #fff; }
+.about-label { color: #08716e; }
+.about-scroll-note {
+  padding: 10px 7px;
+  border: 1px solid rgba(231, 249, 247, .28);
+  border-radius: 999px;
+  background: rgba(4, 26, 39, .82);
+  color: #fff;
+}
+.about-scroll-note span { line-height: 1; }
+.service-pack-tag,
+.service-rates-kicker,
+.service-rates-badge,
+.after-card-cta {
+  font-size: 13px;
+  line-height: 1.4;
+}
+.service-rates-note {
+  color: #e8f5f0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.service-rates tbody td,
+.service-rates tbody td::before {
+  font-size: 12px;
+}
+.service-rates tbody td::before { color: #d8f2e9; }
+.service-rates-heading p { color: #e8f5f0; }
+.after-card-cta { color: #e8fff6; }
+#weatherCard .weather-head small {
+  color: #f0fff9 !important;
+  font-size: 12px !important;
+  opacity: 1;
+}
+#weatherCard .weather-head .weather-heading > span:last-child {
+  color: #fff !important;
+  font-size: 12px !important;
+}
+#weatherCard .weather-place,
+#weatherCard .w-value small,
+#weatherCard .w-label {
+  color: #f0fff9 !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+#weatherCard .camera-status-night {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+.service-rates tbody td::before { font-size: 12px; }
+.service-offering p,
+.guide-offering p,
+.guide-detail-heading > p:last-child,
+.guide-detail-category > p:last-child,
+.guide-detail-card p,
+.guide-detail-card ul,
+.guide-glossary span,
+.guide-callout p,
+.guide-callout-actions a,
+.retreat-experience-card p:not(.retreat-card-kicker),
+.retreat-list li,
+.retreat-conditions li,
+.retreat-day li {
+  color: #e8f5f0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.guide-detail-card a,
+.service-offering strong,
+.guide-offering strong { font-size: 14px; }
+.retreat-fact dt { color: #c5e8df; }
+.assistant-header small { color: #e3fff5; }
+.assistant-disclaimer { color: #405d60; }
+.assistant-suggestions button { font-size: 13px; }
+.whatsapp-float small { color: #e8f5f0; opacity: 1; }
+
+@media (max-width: 640px) {
+  .country-seal-label,
+  .weather-head,
+  .weather-head small,
+  .weather-head > div > span:last-child,
+  .weather-list .w-label,
+  .w-label,
+  .weather-place,
+  .weather-state,
+  .about-kicker,
+  .about-label,
+  .about-index,
+  .about-scroll-note,
+  .service-offering span,
+  .guide-offering span,
+  .service-offering strong,
+  .guide-offering strong,
+  .retreat-cover-kicker,
+  .retreat-card-kicker,
+  .retreat-cover-facts span {
+    font-size: 12px;
+  }
+  .service-rates tbody td,
+  .service-rates tbody td::before { font-size: 12px; }
 }

@@ -7,7 +7,7 @@
     surfskate: [50, 50, 50, 50, 50, 50]
   };
   const experiences = [
-    { id: 'stays', image: 'assets/img/optimized/tamarindo-stay.webp', dateMode: 'range', title: { es: 'Estadías y hoteles', en: 'Stays and Hotels' }, description: { es: 'Encontrá alojamiento para tu estadía.', en: 'Find a place to stay during your trip.' } },
+    { id: 'stays', image: 'assets/ally-capitan.jpg', imageAlt: { es: 'Hotel junto a la playa con piscina y jardines tropicales', en: 'Beachfront hotel with a pool and tropical gardens' }, dateMode: 'range', title: { es: 'Estadías y hoteles', en: 'Stays and Hotels' }, description: { es: 'Encontrá alojamiento para tu estadía.', en: 'Find a place to stay during your trip.' } },
     { id: 'surf-lessons', image: 'assets/img/optimized/surf-lesson-group.webp', title: { es: 'Clases de surf', en: 'Surf lessons' }, description: { es: 'Una clase adaptada al nivel de tu grupo.', en: 'A surf lesson tailored to your group’s level.' } },
     { id: 'surf-coaching', image: 'assets/img/optimized/surf-coaching.webp', title: { es: 'Surf coaching', en: 'Surf coaching' }, description: { es: 'Entrenamiento y análisis para mejorar tu surf.', en: 'Coaching and feedback to help you progress.' } },
     { id: 'witch-rock', image: 'assets/img/optimized/witch-rock.webp', title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, description: { es: 'Una salida de surf por barco.', en: 'A surf trip by boat.' } },
@@ -148,7 +148,7 @@
     const price = priceFor(experience.id, Number(guests));
     const copy = COPY[lang];
     return `<article class="trip-experience${state ? ' is-added' : ''}" data-experience="${experience.id}">
-      <div class="trip-experience-image"><img src="${experience.image}" alt="${esc(copy.imageAlt)} ${esc(experience.title[lang])}" loading="lazy" /></div>
+      <div class="trip-experience-image"><img src="${experience.image}" alt="${esc(experience.imageAlt?.[lang] || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
       <div class="trip-experience-content">
         <h3>${esc(experience.title[lang])}</h3>
         <p>${esc(experience.description[lang])}</p>

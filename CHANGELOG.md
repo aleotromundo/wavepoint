@@ -1,5 +1,18 @@
 ## 2026-10-06
 
+### Foto de hotel para Estadías y hoteles
+
+- `index.html`, `services.js` y `trip-builder.js`: la tarjeta, el detalle, la propuesta de alojamiento y el armador comparten una foto local del hotel con piscina y jardines; se conserva el archivo JPG optimizado de 195 KB y se mantiene la foto anterior en la sección Nosotros.
+- `services.js` y `script.js`: los textos alternativos de la nueva imagen describen correctamente la escena en español e inglés.
+
+### Legibilidad y contraste en textos
+
+- `styles.css`: el menú de escritorio se apoya en una superficie oscura translúcida para mantener contraste sobre fotos y video; se refuerzan el botón hamburguesa y las etiquetas del menú móvil.
+- `styles.css` y `trip-builder.css`: se amplían los textos secundarios pequeños de clima, guía, detalles de servicios, Nosotros, formularios y armador, y se ajustan colores tenues según sus fondos.
+- Se conserva el color claro sobre superficies oscuras y el color oscuro sobre superficies claras; los ajustes responsive evitan agrandar en exceso etiquetas en pantallas angostas.
+- `styles.css`: un puente invisible conserva abierto el menú desplegable de colaboradores mientras el cursor cruza el espacio entre el título y la lista.
+- `styles.css`: se vuelve a mostrar el icono de Instagram en escritorio y se mantiene debajo del hamburguesa en móvil.
+
 ### Mejor encuadre en las tarjetas destacadas
 
 - `index.html` y `trip-builder.css`: Pack usa una fotografía con espacio visual en el centro, compartida con el fondo del armador.
