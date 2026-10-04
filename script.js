@@ -1,6 +1,38 @@
 
   const CR_TZ='America/Costa_Rica';
   const reducedMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+  // Catálogo incremental de book requests: solo contiene servicios y preguntas confirmados por el cliente.
+  const BOOKING_SERVICES = [
+    {
+      id: 'alojamiento-experiencias',
+      name: 'Alojamiento y experiencias',
+      questions: [
+        { id: 'stay_dates', label: '¿Cuándo quieres alojarte?', type: 'date-range', fields: ['llegada', 'salida'] },
+        { id: 'accommodation_type', label: '¿Qué tipo de alojamiento prefieres?', type: 'single-choice', options: ['Habitación', 'Casa completa', 'Quiero recomendaciones'] },
+        { id: 'nightly_budget', label: '¿Cuál es tu presupuesto aproximado por noche para todo el grupo?', type: 'money', optional: true, fields: ['importe', 'moneda'] },
+        { id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi-choice', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'] }
+      ]
+    },
+    {
+      id: 'clases-de-surf',
+      name: 'Clases de surf',
+      questions: [
+        { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'single-choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
+        { id: 'lesson_goal', label: '¿Qué te gustaría conseguir con la clase?', type: 'single-choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
+        { id: 'board_need', label: '¿Necesitarás una tabla?', type: 'single-choice', options: ['Sí', 'No', 'Llevo la mía', 'Necesito asesoramiento'] }
+      ]
+    },
+    {
+      id: 'surf-coaching',
+      name: 'Surf coaching',
+      questions: [
+        { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'single-choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
+        { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'long-text', placeholder: 'Cuéntanos brevemente.' },
+        { id: 'coaching_package', label: '¿Qué te gustaría incluir?', type: 'single-choice', options: ['Solo coaching', 'Coaching y fotografías', 'Coaching y videoanálisis', 'Coaching, fotografías y videoanálisis'] },
+        { id: 'own_board', label: '¿Traerás tu propia tabla?', type: 'single-choice', options: ['Sí', 'No'] }
+      ]
+    }
+  ];
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
   function getCRDate(){ return new Date(new Date().toLocaleString('en-US',{timeZone:CR_TZ})); }
   function isCameraLiveNow(){ const d=getCRDate(); const m=d.getHours()*60+d.getMinutes(); return m>=CAM_START.hour*60+CAM_START.minute && m<=CAM_END.hour*60+CAM_END.minute; }
@@ -113,8 +145,8 @@
       navGuia: 'Guía turística',
       navNosotros: 'Nosotros',
       navColaboradores: 'Colaboradores ▾',
-      heroTitle: 'Las mejores experiencias de Tamarindo, con los locales que mejor lo conocen',
-      heroText: 'Conocé Tamarindo a través de quienes lo llaman hogar.',
+      heroTitle: 'Cámaras de surf en vivo en Tamarindo',
+      heroText: 'Conéctate con la ola. Mira las condiciones en tiempo real y elige tu próximo spot.',
       btnWatchCameras: 'Ver cámaras en vivo ▸',
       btnBeachGuide: 'Guía de playas',
       weatherTitle: 'Condiciones para surfear',
@@ -142,43 +174,39 @@
       cameraViewCollaborator: 'Ver colaborador',
       camerasSectionTitle: 'Cámaras en vivo',
       camerasSectionSubtitle: 'Tres puntos clave: dos cámaras activas y Red Door en preparación.',
-      camerasSectionLink: 'Ver cámaras en vivo →',
-      servicesSectionTitle: '¿Qué te gustaría hacer en Tamarindo?',
-      servicesSectionSubtitle: 'Elegí una experiencia para ver los detalles. Cuando estés listo, envianos tu fecha preferida y el tamaño de tu grupo. Consultaremos la disponibilidad con el proveedor.',
-      serviceSurfLessons: 'Clases de surf',
-      serviceSurfLessonsText: 'Clases para todos los niveles con instructores locales.',
-      serviceSurfPhotosText: 'Captura tus mejores olas desde la playa.',
-      serviceWaterPhotoText: 'Sesiones profesionales dentro y fuera del agua.',
-      serviceSurfskateText: 'Mejora técnica y fluidez fuera del agua.',
+      camerasSectionLink: 'Ir al sitio actual →',
+      servicesSectionTitle: 'Servicios destacados',
+      servicesSectionSubtitle: '¿Qué experiencias quieres tener en Tamarindo?',
+      serviceSurfLessons: 'Surf lessons',
+      serviceSurfLessonsText: 'Your first wave or your next step. Find a lesson that fits your level.',
+      serviceSurfPhotos: 'Surf photos',
+      serviceSurfPhotosText: 'Capture your best waves from the beach.',
+      serviceWaterPhoto: 'Water photography',
+      serviceWaterPhotoText: 'Professional sessions in and out of the water.',
+      serviceSurfskate: 'Surfskate lessons',
+      serviceSurfskateText: 'Improve technique and flow off the water.',
       serviceMoreInfo: 'Más información →',
-      serviceCardStayTitle: 'Estadías y hoteles',
-      serviceCardStayText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
-      serviceCardStayAlt: 'Estadías y hoteles · alojamientos en Tamarindo',
+      serviceCardStayTitle: 'Stay & experience',
+      serviceCardStayText: 'Choose your accommodation and add experiences to your stay.',
+      serviceCardStayAlt: 'Stay & experience in Tamarindo',
       serviceCardCoachingTitle: 'Surf coaching',
-      serviceCardCoachingText: 'Llevá tu surf al siguiente nivel con entrenamiento personalizado.',
-      serviceCardWitchRockTitle: 'Roca Bruja',
-      serviceCardWitchRockText: 'Un día de surf en barco con guías locales que conocen la zona.',
-      serviceListWitchRockEyebrow: '04 / VIAJE DE SURF · AVENTURA',
-      serviceListCta: 'Ver servicio y armar solicitud ↗',
-      serviceCardSnorkelTitle: 'Snorkel y catamarán',
-      serviceCardSnorkelText: 'Explorá bajo el agua, navegá la costa o combiná ambas.',
+      serviceCardCoachingText: 'Work on your surfing with coaching and optional photos or video analysis.',
+      serviceCardWitchRockTitle: "Witch's Rock surf trip",
+      serviceCardWitchRockText: 'Request a guided surf trip with details matched to your group and the conditions.',
+      serviceCardSnorkelTitle: 'Snorkeling & catamaran',
+      serviceCardSnorkelText: 'Compare boat experiences, snorkeling options and time on the coast.',
       serviceCardYogaTitle: 'Yoga',
-      serviceCardYogaText: 'Una práctica para acompañar tu viaje y bajar el ritmo.',
-      serviceCardAtvTitle: 'Tours en cuatriciclo — ATV',
-      serviceCardAtvText: 'Un poco de aventura más allá de la playa.',
-
-      serviceCardRetreatsTitle: 'Retiros',
-      serviceCardRetreatsText: 'Surf, descanso, movimiento y comunidad en un mismo viaje.',
+      serviceCardYogaText: 'Tell us your experience and preferred time to find a suitable session.',
+      serviceCardAtvTitle: 'ATV tours',
+      serviceCardAtvText: 'Check your details and the operator\'s participation requirements.',
+      serviceCardRetreatsTitle: 'Retreats',
+      serviceCardRetreatsText: 'Explore hosted group trips with a planned program and stay.',
+      serviceCardPhotosTitle: 'Fotos de surf',
+      serviceCardPhotosText: 'Guardá los mejores momentos de tu sesión en imágenes.',
+      serviceCardWaterPhotoTitle: 'Fotografía acuática',
+      serviceCardWaterPhotoText: 'Una perspectiva dentro del agua para volver a vivir la sesión.',
       serviceCardSurfskateTitle: 'Clases de surfskate',
-      serviceCardSurfskateText: 'Mejorá tu técnica y fluidez fuera del agua.',
-      serviceCardSurfskateAlt: 'Clases de surfskate en Tamarindo',
-      serviceCardSurfPhotosTitle: 'Fotos de surf',
-      serviceCardSurfPhotosText: 'Tu tiempo en el agua, capturado.',
-      serviceCardSurfPhotosAlt: 'Fotografía de surf en Tamarindo',
-      serviceCardPackTitle: 'Pack ajustable',
-      serviceCardPackText: 'Armá tu propia experiencia combinando las actividades que mejor encajan con tu viaje.',
-      servicePackDivider: 'EXPERIENCIA A MEDIDA',
-      servicePackTag: 'ARMÁ TU VIAJE A TU MANERA',
+      serviceCardSurfskateText: 'Trabajá giros, estabilidad y fluidez fuera del agua.',
       wavepointInTamarindo: 'WavePoint en Tamarindo',
       wavepointInTamarindoSubtitle: 'Información útil para elegir mejor tu spot, planear tu sesión y moverte en Tamarindo.',
       benefitLiveCameras: 'Cámaras reales',
@@ -198,6 +226,8 @@
       afterFoodText: 'Burgers, empanadas y cerveza fría después de surfear.',
       afterDemo: 'Ver pre-play demo →',
       afterSession: 'Recuerdo de tu sesión',
+      afterPhotosTitle: 'Fotos de surf',
+      afterPhotosText: 'Captura tus mejores olas con fotografía profesional.',
       afterServiceLink: 'Ver servicio →',
       afterGuideTag: 'Guía local',
       afterGuideTitle: 'Explora Tamarindo',
@@ -207,8 +237,6 @@
       newsletterText: 'Recibe alertas de olas, novedades y promociones seleccionadas.',
       newsletterEmailPlaceholder: 'Tu correo electrónico',
       newsletterButton: 'Suscribirme',
-      alliesHeadingTitle: 'Las marcas y negocios locales que creen en WavePoint y ayudan a hacerlo posible',
-      alliesHeadingDescription: 'Aliados y patrocinadores de WavePoint en Tamarindo.',
       partnersSectionTitle: 'Aliados y patrocinadores',
       partnersSectionSubtitle: 'Colaboradores reales del proyecto y marcas que acompañan la experiencia WavePoint en Tamarindo.',
       sponsorActive: 'Patrocinador activo',
@@ -265,7 +293,7 @@
       assistantTyping: 'Estoy buscando una buena respuesta…',
       assistantFallbackCameras: 'WavePoint tiene cámaras en Capitán Suizo y Casa de Maderas. Red Door está en preparación. Las cámaras transmiten aproximadamente de 4:45 a. m. a 6:30 p. m., hora de Costa Rica.',
       assistantFallbackConditions: 'En la tarjeta de clima de esta página podés ver temperatura, viento, oleaje estimado y hora local. Es una referencia; verificá el estado del mar al llegar y consultá a surfistas locales.',
-      assistantFallbackSurf: 'Tamarindo tiene olas para distintos niveles. WavePoint ofrece clases de surf y surf coaching; revisá las cámaras y las condiciones antes de entrar, y pedí orientación a un instructor local si estás empezando.',
+      assistantFallbackSurf: 'Tamarindo tiene olas para distintos niveles. WavePoint ofrece clases de surf y surfskate; revisá las cámaras y las condiciones antes de entrar, y pedí orientación a un instructor local si estás empezando.',
       assistantFallbackActivities: 'La guía de WavePoint incluye playas como Ventanas, Danta, Avellanas, Naranjo y Conchal; también cascadas, senderismo y snorkeling. Escribinos por WhatsApp para ayudarte a elegir según el tiempo y tu plan.',
       assistantFallbackContact: 'Podés escribirle directamente a WavePoint por WhatsApp usando el botón verde de esta página. También encontrás Instagram como @wavepointcr.',
       assistantFallbackGeneral: 'Puedo orientarte sobre cámaras, clima, spots, servicios de surf y actividades en Guanacaste. ¿Qué plan tenés en mente?',
@@ -275,12 +303,14 @@
       servicePageIntro: 'Entrenamiento y fotografía con gente que conoce estas olas. Elegí lo que te gustaría hacer y coordinamos con vos.',
       servicePageBook: 'Consultar por WhatsApp ↗',
       servicePageSectionKicker: 'HECHO EN TAMARINDO',
-      servicePageSectionTitle: '¿Qué te gustaría hacer en Tamarindo?',
-      servicePageSectionIntro: 'Elegí una experiencia para ver los detalles. Cuando estés listo, envianos tu fecha preferida y el tamaño de tu grupo. Consultaremos la disponibilidad con el proveedor.',
+      servicePageSectionTitle: 'Encontrá tu forma de entrar al agua.',
       servicePageCoachingTitle: 'Surf coaching',
       servicePageCoachingText: 'Entrenamiento personalizado, análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento con entrenadores expertos.',
+      servicePageSurfPhotoTitle: 'Fotos de surf',
       servicePageSurfPhotoText: 'Capturá tus mejores maniobras con fotógrafos profesionales que siguen la sesión desde la playa y crean recuerdos de alta calidad.',
+      servicePageWaterPhotoTitle: 'Fotografía acuática',
       servicePageWaterPhotoText: 'Viví una sesión dentro del agua con fotógrafos especializados y capturá la energía de cada ola desde la perspectiva más épica.',
+      servicePageSurfskateTitle: 'Clases de surfskate',
       servicePageSurfskateText: 'Mejorá giros, estabilidad, equilibrio y fluidez en tierra antes de llevarlos al agua; para todas las edades y niveles.',
       servicePageAsk: 'Consultar disponibilidad ↗',
       guidePageEyebrow: 'GUANACASTE · COSTA RICA',
@@ -317,8 +347,8 @@
       navGuia: 'Tourist guide',
       navNosotros: 'About us',
       navColaboradores: 'Partners ▾',
-      heroTitle: 'Tamarindo’s best experiences, with the locals who know it best',
-      heroText: 'Through the people who call it home',
+      heroTitle: 'Live surf cameras in Tamarindo',
+      heroText: 'Connect with the wave. Check real-time conditions and choose your next spot.',
       btnWatchCameras: 'Watch live cameras ▸',
       btnBeachGuide: 'Beach guide',
       weatherTitle: 'Surf conditions',
@@ -346,43 +376,39 @@
       cameraViewCollaborator: 'View collaborator',
       camerasSectionTitle: 'Live cameras',
       camerasSectionSubtitle: 'Three key spots: two active cameras and Red Door still coming.',
-      camerasSectionLink: 'View live cameras →',
-      servicesSectionTitle: 'What would you like to do in Tamarindo?',
-      servicesSectionSubtitle: 'Choose an experience to see the details. When you’re ready, send us your preferred date and group size. We’ll check availability with the provider.',
+      camerasSectionLink: 'Go to the current site →',
+      servicesSectionTitle: 'Featured services',
+      servicesSectionSubtitle: 'What experiences do you want to have in Tamarindo?',
       serviceSurfLessons: 'Surf lessons',
-      serviceSurfLessonsText: 'Lessons for all levels with local instructors.',
+      serviceSurfLessonsText: 'Your first wave or your next step. Find a lesson that fits your level.',
+      serviceSurfPhotos: 'Surf photos',
       serviceSurfPhotosText: 'Capture your best waves from the beach.',
+      serviceWaterPhoto: 'Water photography',
       serviceWaterPhotoText: 'Professional sessions in and out of the water.',
+      serviceSurfskate: 'Surfskate lessons',
       serviceSurfskateText: 'Improve technique and flow off the water.',
       serviceMoreInfo: 'More info →',
-      serviceCardStayTitle: 'Stays and Hotels',
-      serviceCardStayText: 'Hotels and beachfront stays for every kind of trip.',
-      serviceCardStayAlt: 'Stays and Hotels · accommodation in Tamarindo',
+      serviceCardStayTitle: 'Stay & experience',
+      serviceCardStayText: 'Choose your accommodation and add experiences to your stay.',
+      serviceCardStayAlt: 'Stay & experience in Tamarindo',
       serviceCardCoachingTitle: 'Surf coaching',
-      serviceCardCoachingText: 'Take your surfing to the next level with personalized coaching.',
-      serviceCardWitchRockTitle: 'Witch’s Rock Surf Trip',
-      serviceCardWitchRockText: 'A day of surf by boat with local guides who know the area.',
-      serviceListWitchRockEyebrow: '04 / SURF TRIP · ADVENTURE',
-      serviceListCta: 'View service and build request ↗',
-      serviceCardSnorkelTitle: 'Snorkeling and catamaran',
-      serviceCardSnorkelText: 'Explore underwater, sail along the coast, or combine both.',
+      serviceCardCoachingText: 'Work on your surfing with coaching and optional photos or video analysis.',
+      serviceCardWitchRockTitle: "Witch's Rock surf trip",
+      serviceCardWitchRockText: 'Request a guided surf trip with details matched to your group and the conditions.',
+      serviceCardSnorkelTitle: 'Snorkeling & catamaran',
+      serviceCardSnorkelText: 'Compare boat experiences, snorkeling options and time on the coast.',
       serviceCardYogaTitle: 'Yoga',
-      serviceCardYogaText: 'A little space to breathe.',
-      serviceCardAtvTitle: 'ATV Tours in Tamarindo',
-      serviceCardAtvText: 'A little adventure beyond the beach.',
-
+      serviceCardYogaText: 'Tell us your experience and preferred time to find a suitable session.',
+      serviceCardAtvTitle: 'ATV tours',
+      serviceCardAtvText: 'Check your details and the operator\'s participation requirements.',
       serviceCardRetreatsTitle: 'Retreats',
-      serviceCardRetreatsText: 'Surf, rest, movement, and community in one trip.',
+      serviceCardRetreatsText: 'Explore hosted group trips with a planned program and stay.',
+      serviceCardPhotosTitle: 'Surf photos',
+      serviceCardPhotosText: 'Keep the best moments from your session in photos.',
+      serviceCardWaterPhotoTitle: 'In-water photography',
+      serviceCardWaterPhotoText: 'Relive your session through photos taken in the water.',
       serviceCardSurfskateTitle: 'Surfskate lessons',
-      serviceCardSurfskateText: 'Improve your technique and flow off the water.',
-      serviceCardSurfskateAlt: 'Surfskate lessons in Tamarindo',
-      serviceCardSurfPhotosTitle: 'Surf Photography',
-      serviceCardSurfPhotosText: 'Your time in the water, captured.',
-      serviceCardSurfPhotosAlt: 'Surf photography in Tamarindo',
-      serviceCardPackTitle: 'Build your own experience',
-      serviceCardPackText: 'Combine the activities that fit your trip and create your own experience.',
-      servicePackDivider: 'BUILD YOUR OWN EXPERIENCE',
-      servicePackTag: 'MAKE YOUR TRIP YOUR OWN',
+      serviceCardSurfskateText: 'Work on turns, stability, and flow on land.',
       wavepointInTamarindo: 'WavePoint in Tamarindo',
       wavepointInTamarindoSubtitle: 'Useful information to choose your spot better, plan your session, and move around Tamarindo.',
       benefitLiveCameras: 'Real cameras',
@@ -402,6 +428,8 @@
       afterFoodText: 'Burgers, empanadas, and cold beer after surfing.',
       afterDemo: 'Watch pre-play demo →',
       afterSession: 'Your session memory',
+      afterPhotosTitle: 'Surf photos',
+      afterPhotosText: 'Capture your best waves with professional photography.',
       afterServiceLink: 'View service →',
       afterGuideTag: 'Local guide',
       afterGuideTitle: 'Explore Tamarindo',
@@ -411,8 +439,6 @@
       newsletterText: 'Get wave alerts, updates, and selected promotions.',
       newsletterEmailPlaceholder: 'Your email',
       newsletterButton: 'Subscribe',
-      alliesHeadingTitle: 'The brands and local businesses that believe in WavePoint and help make it possible',
-      alliesHeadingDescription: 'WavePoint allies and sponsors in Tamarindo.',
       partnersSectionTitle: 'Partners & sponsors',
       partnersSectionSubtitle: 'Real collaborators of the project and brands that support the WavePoint experience in Tamarindo.',
       sponsorActive: 'Active sponsor',
@@ -469,7 +495,7 @@
       assistantTyping: 'Let me find a helpful answer…',
       assistantFallbackCameras: 'WavePoint has cameras at Capitán Suizo and Casa de Maderas. Red Door is coming soon. Cameras usually stream from about 4:45 a.m. to 6:30 p.m. Costa Rica time.',
       assistantFallbackConditions: 'The weather panel shows temperature, wind, estimated swell, and local time. Treat it as a reference, check the ocean when you arrive, and ask local surfers for current advice.',
-      assistantFallbackSurf: 'Tamarindo has waves for different skill levels. WavePoint features surf lessons and surf coaching; check the cameras and conditions before paddling out, and ask a local instructor if you are new.',
+      assistantFallbackSurf: 'Tamarindo has waves for different skill levels. WavePoint features surf and surfskate lessons; check the cameras and conditions before paddling out, and ask a local instructor if you are new.',
       assistantFallbackActivities: 'The WavePoint guide features beaches such as Ventanas, Danta, Avellanas, Naranjo, and Conchal, plus waterfalls, hiking, and snorkeling. Message us on WhatsApp and we can help you choose based on your plans.',
       assistantFallbackContact: 'Message WavePoint directly on WhatsApp using the green button on this page. You can also find us on Instagram at @wavepointcr.',
       assistantFallbackGeneral: 'I can help with cameras, weather, surf spots, lessons, and things to do around Guanacaste. What are you planning?',
@@ -479,12 +505,14 @@
       servicePageIntro: 'Coaching and photography with people who know these waves. Choose what you would like to do and we will help you plan it.',
       servicePageBook: 'Ask us on WhatsApp ↗',
       servicePageSectionKicker: 'MADE IN TAMARINDO',
-      servicePageSectionTitle: 'What would you like to do in Tamarindo?',
-      servicePageSectionIntro: 'Choose an experience to see the details. When you’re ready, send us your preferred date and group size. We’ll check availability with the provider.',
+      servicePageSectionTitle: 'Find your way into the water.',
       servicePageCoachingTitle: 'Surf coaching',
       servicePageCoachingText: 'Personal coaching, technique analysis, video feedback, and strategies to improve your performance with expert coaches.',
+      servicePageSurfPhotoTitle: 'Surf photos',
       servicePageSurfPhotoText: 'Keep your best maneuvers with professional photographers following the session from the beach and creating high-quality memories.',
+      servicePageWaterPhotoTitle: 'In-water photography',
       servicePageWaterPhotoText: 'Experience a session in the water with specialized photographers capturing the energy of every wave from the best perspective.',
+      servicePageSurfskateTitle: 'Surfskate lessons',
       servicePageSurfskateText: 'Improve turns, stability, balance, and flow on land before bringing them into the water, for every age and level.',
       servicePageAsk: 'Check availability ↗',
       guidePageEyebrow: 'GUANACASTE · COSTA RICA',
@@ -570,8 +598,21 @@
     applyCameraState();
   }
 
-  // The switch itself lives in lang-switch.js, which stores the choice and announces it here.
-  window.addEventListener('wavepoint:languagechange', event => applyTranslations(event.detail.lang));
+  const langToggle = document.querySelector('[data-lang-toggle]');
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      const nextLang = languageState.current === 'es' ? 'en' : 'es';
+      localStorage.setItem('wavepoint-lang', nextLang);
+      applyTranslations(nextLang);
+    });
+  }
+
+  document.querySelectorAll('a[href]').forEach(link=>{
+    const target=new URL(link.href,location.href);
+    if(target.hostname!=='wavepointcr.com') return;
+    if(target.pathname.toLowerCase().endsWith('/enlaces/service.html')) link.href='service.html';
+    if(target.pathname.toLowerCase().endsWith('/enlaces/guia-playas.html')) link.href='guia-playas.html';
+  });
 
   const SPOTS = {
     capitan: {
@@ -937,21 +978,10 @@
     const viewport=section?.querySelector('.allies-ticker-viewport');
     const track=section?.querySelector('.allies-ticker-track');
     const resistLayer=section?.querySelector('.allies-ticker-resist');
-    if(!section || !viewport || !track || !resistLayer) return;
+    if(!section || !viewport || !track || !resistLayer || reducedMotionPreference.matches) return;
 
-    let pointerId=null, startX=0, startY=0, startOffset=0, isDragging=false, suppressClick=false;
-    const updateTickerSpeed=()=>{
-      const reduced=reducedMotionPreference.matches;
-      const baseDuration=reduced?48:20;
-      const supportsHover=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      const hovering=supportsHover && section.matches(':hover');
-      const targetDuration=section.classList.contains('is-interacting')?(reduced?64:32):hovering?(reduced?54:25):baseDuration;
-      const animation=track.getAnimations().find(item=>item.animationName==='allies-slide-left');
-      if(!animation) return;
-      const playbackRate=baseDuration/targetDuration;
-      if(animation.updatePlaybackRate) animation.updatePlaybackRate(playbackRate);
-      else animation.playbackRate=playbackRate;
-    };
+    let pointerId=null, startX=0, startY=0, isDragging=false, suppressClick=false;
+    const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
     const finishInteraction=(event)=>{
       if(pointerId===null || (event?.pointerId!==undefined && event.pointerId!==pointerId)) return;
       const wasDragged=isDragging;
@@ -959,7 +989,6 @@
       isDragging=false;
       section.classList.remove('is-interacting','is-dragging');
       resistLayer.style.left='0px';
-      updateTickerSpeed();
       if(wasDragged){
         suppressClick=true;
         window.setTimeout(()=>{ suppressClick=false; },400);
@@ -971,11 +1000,8 @@
       pointerId=event.pointerId;
       startX=event.clientX;
       startY=event.clientY;
-      startOffset=Number.parseFloat(getComputedStyle(resistLayer).left)||0;
-      resistLayer.style.transition='none';
       isDragging=false;
       section.classList.add('is-interacting');
-      updateTickerSpeed();
     });
     window.addEventListener('pointermove',event=>{
       if(event.pointerId!==pointerId) return;
@@ -984,17 +1010,12 @@
       if(Math.abs(deltaX)<5 || Math.abs(deltaX)<Math.abs(deltaY)) return;
       isDragging=true;
       section.classList.add('is-dragging');
-      const loopWidth=section.querySelector('.allies-ticker-set:not([aria-hidden="true"])')?.getBoundingClientRect().width||0;
-      const draggedOffset=startOffset+deltaX*.9;
-      const wrappedOffset=loopWidth?((draggedOffset+loopWidth/2)%loopWidth+loopWidth)%loopWidth-loopWidth/2:draggedOffset;
-      resistLayer.style.left=`${wrappedOffset}px`;
+      resistLayer.style.left=`${clamp(deltaX*.48,-64,64)}px`;
       event.preventDefault();
     });
     window.addEventListener('pointerup',finishInteraction);
     window.addEventListener('pointercancel',finishInteraction);
     window.addEventListener('blur',()=>finishInteraction());
-    section.addEventListener('pointerenter',updateTickerSpeed);
-    section.addEventListener('pointerleave',updateTickerSpeed);
     document.addEventListener('click',event=>{
       if(!suppressClick || !event.target.closest('.allies-ticker')) return;
       event.preventDefault();
@@ -1003,23 +1024,20 @@
     },true);
     reducedMotionPreference.addEventListener?.('change',event=>{
       if(event.matches) finishInteraction();
-      updateTickerSpeed();
     });
-    updateTickerSpeed();
   }
 
   function bindHeroLogoEntrance(){
     const logo=document.querySelector('.hero-logo-wrap');
-    if(!logo) return;
-    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(!logo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const replay=()=>{
-      logo.classList.remove('is-arriving','is-user-replay');
+      logo.classList.remove('is-arriving');
       void logo.offsetWidth;
-      logo.classList.add(reduceMotion.matches?'is-user-replay':'is-arriving');
+      logo.classList.add('is-arriving');
     };
 
-    if(!reduceMotion.matches) logo.classList.add('is-arriving');
+    logo.classList.add('is-arriving');
     logo.addEventListener('click', replay);
     logo.addEventListener('keydown', e=>{
       if(e.key==='Enter' || e.key===' '){
@@ -1029,7 +1047,7 @@
     });
     document.querySelectorAll('a[href="#inicio"]').forEach(link=>link.addEventListener('click', replay));
 
-    if('IntersectionObserver' in window && !reduceMotion.matches){
+    if('IntersectionObserver' in window){
       let firstObservation=true;
       const observer=new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
@@ -1116,59 +1134,6 @@
     window.addEventListener('resize',keepWithinHero);
   }
 
-  function bindGuideImageModal(){
-    const images = [...document.querySelectorAll('.guide-detail-card img')];
-    if (!images.length) return;
-
-    const modal = document.createElement('div');
-    modal.className = 'guide-image-modal';
-    modal.hidden = true;
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Imagen ampliada');
-    modal.innerHTML = '<figure><button class="guide-image-modal-close" type="button" aria-label="Cerrar imagen">×</button><img alt=""><figcaption></figcaption></figure>';
-    document.body.appendChild(modal);
-
-    const close = modal.querySelector('.guide-image-modal-close');
-    const image = modal.querySelector('img');
-    const caption = modal.querySelector('figcaption');
-    let lastFocused = null;
-
-    function closeModal(){
-      modal.hidden = true;
-      image.removeAttribute('src');
-      document.body.style.overflow = '';
-      lastFocused?.focus();
-    }
-    function openModal(source){
-      lastFocused = document.activeElement;
-      image.src = source.currentSrc || source.src;
-      image.alt = source.alt || '';
-      caption.textContent = source.alt || '';
-      close.setAttribute('aria-label', languageState.current === 'en' ? 'Close image' : 'Cerrar imagen');
-      modal.setAttribute('aria-label', languageState.current === 'en' ? 'Enlarged image' : 'Imagen ampliada');
-      modal.hidden = false;
-      document.body.style.overflow = 'hidden';
-      close.focus();
-    }
-
-    images.forEach(source=>{
-      source.tabIndex = 0;
-      source.setAttribute('role', 'button');
-      source.setAttribute('aria-label', `${languageState.current === 'en' ? 'View enlarged image: ' : 'Ver imagen ampliada: '}${source.alt || ''}`);
-      source.addEventListener('click', ()=>openModal(source));
-      source.addEventListener('keydown', event=>{
-        if(event.key === 'Enter' || event.key === ' '){
-          event.preventDefault();
-          openModal(source);
-        }
-      });
-    });
-    close.addEventListener('click', closeModal);
-    modal.addEventListener('click', event=>{ if(event.target === modal) closeModal(); });
-    document.addEventListener('keydown', event=>{ if(event.key === 'Escape' && !modal.hidden) closeModal(); });
-  }
-
   function bindSiteAssistant(){
     if(!document.getElementById('siteAssistant')){
       document.body.insertAdjacentHTML('beforeend', `
@@ -1205,7 +1170,7 @@
       const current=dict();
       if(/camera|cámara|camara|live|transmi/.test(text)) return current.assistantFallbackCameras;
       if(/weather|clima|oleaje|ola|wave|wind|viento|condici/.test(text)) return current.assistantFallbackConditions;
-      if(/surf|princip|beginner|lesson|clase|instructor/.test(text)) return current.assistantFallbackSurf;
+      if(/surf|princip|beginner|lesson|clase|instructor|surfskate/.test(text)) return current.assistantFallbackSurf;
       if(/do |visit|activity|activities|hacer|visitar|playa|beach|waterfall|cascada|snorkel|hike|sender/.test(text)) return current.assistantFallbackActivities;
       if(/contact|whatsapp|instagram|contacto|escrib/.test(text)) return current.assistantFallbackContact;
       return current.assistantFallbackGeneral;
@@ -1271,7 +1236,6 @@
   bindSiteAssistant();
   applyTranslations();
   bindMobileMenu();
-  bindGuideImageModal();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();
   bindAlliesTickerInteraction();
@@ -1279,29 +1243,3 @@
   bindScrollReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
-
-
-// Soporte automatico para multiples formatos de imagen (.webp, .jpg, .jpeg)
-document.addEventListener('error', function(e) {
-  if (e.target && e.target.tagName === 'IMG') {
-    const img = e.target;
-    const formats = ['.webp', '.jpg', '.jpeg'];
-    let attempted = img.dataset.triedFormats ? img.dataset.triedFormats.split(',') : [];
-    
-    const match = img.src.match(/^(.*?)\.(webp|jpe?g)(\?.*)?$/i);
-    if (!match) return;
-    
-    const base = match[1];
-    const currentExt = '.' + match[2].toLowerCase();
-    const query = match[3] || '';
-    
-    if (!attempted.includes(currentExt)) attempted.push(currentExt);
-    
-    const nextExt = formats.find(f => !attempted.includes(f));
-    if (nextExt) {
-      attempted.push(nextExt);
-      img.dataset.triedFormats = attempted.join(',');
-      img.src = base + nextExt + query;
-    }
-  }
-}, true);
