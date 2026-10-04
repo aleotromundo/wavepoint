@@ -7,11 +7,17 @@
 - Solo se calculan tarifas para Clases de surf, Surf coaching, Fotos de surf y Surfskate. Las demás experiencias quedan “a confirmar” y no se incluyen en el total hasta validar el precio.
 - `services.js`: el orden de navegación de los detalles queda sincronizado con el nuevo orden del catálogo.
 - `script.js`: se agregan las traducciones ES/EN de ambas tarjetas destacadas y del enlace al armador.
+- `styles.css` e `index.html`: Pack y Retiros ocupan una fila completa cada uno y conservan el formato horizontal de imagen y texto en escritorio.
+- `styles.css` e `index.html`: la tabla de tarifas ocupa todo el ancho del catálogo; en pantallas pequeñas conserva su desplazamiento horizontal sin aplastar las columnas.
+- `trip-builder.js`: la salida de una estadía debe ser posterior a la llegada; se rechaza también una salida en la misma fecha.
 
 ### Validación
 
 - Probado el orden de tarjetas en el catálogo, la navegación hacia el armador y el cambio de idioma.
 - Verificados el cálculo del estimado por cantidad de invitados, los precios pendientes de confirmar y la solicitud consolidada por WhatsApp.
+- En navegador, un paquete para dos personas actualiza el estimado a USD 65; agregar una actividad sin tarifa no modifica el total. Se validaron fechas iguales, anteriores y posteriores para una estadía.
+- En escritorio, las tarjetas destacadas ocupan todo el ancho disponible y mantienen la imagen y el texto en columnas paralelas.
+- Revisada la tabla de tarifas en escritorio (sin recorte) y móvil (desplazamiento interno, sin desbordamiento de página).
 - Revisados el selector ES/EN, el menú compartido y el diseño móvil sin desbordamiento horizontal.
 
 ## 2026-10-04

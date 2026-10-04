@@ -4878,7 +4878,8 @@ footer a {
   text-align: center;
 }
 .service-grid-catalog > .service-pack-divider,
-.service-grid-catalog > .service-card-pack {
+.service-grid-catalog > .service-card-pack,
+.service-grid-catalog > .service-rates {
   grid-column: 1 / -1;
 }
 .service-card-pack {
