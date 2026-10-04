@@ -216,7 +216,7 @@
     document.title = `${copy.title} · WavePoint`;
     root.innerHTML = `<section class="trip-builder-hero">
       <div class="trip-builder-hero-image" aria-hidden="true">
-        <video class="trip-builder-hero-video" autoplay loop muted playsinline poster="assets/hero.jpg" tabindex="-1">
+        <video class="trip-builder-hero-video" autoplay loop muted playsinline poster="assets/img/optimized/retreat-tamarindo.webp" tabindex="-1">
           <source src="assets/videohero0.mp4" type="video/mp4" />
         </video>
       </div>
