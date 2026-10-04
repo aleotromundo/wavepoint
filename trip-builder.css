@@ -375,3 +375,59 @@
   .trip-summary { max-height: none; overflow: visible; }
   .trip-summary-list { max-height: 360px; }
 }
+
+/* Keep experience details, form controls, and the dark cart summary readable. */
+.trip-experience-content > p:not(.trip-experience-price) {
+  color: #edf8f4;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.trip-experience-fields label,
+.trip-input-pair label,
+.trip-contact-field {
+  color: #e0f3eb;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.trip-experience-fields input,
+.trip-input-pair input,
+.trip-contact-field input,
+.trip-contact-field textarea { font-size: 14px; }
+.trip-experience-price {
+  color: #fff0cf;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.trip-cart-caption,
+.trip-cart-count { font-size: 12px; }
+.trip-summary-empty small {
+  color: #405c61;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.trip-summary-index { font-size: 12px; }
+.trip-summary-item { font-size: 13px; }
+.trip-summary-item-copy span,
+.trip-summary-note,
+.trip-confirm-note,
+.trip-summary-price > span,
+.trip-summary-price button,
+.trip-request-error {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.trip-summary-item-copy span,
+.trip-summary-note { color: #e5f2ec; }
+.trip-summary-price > span { color: #ffe3a3; }
+.trip-summary-price button { color: #e3f1ec; }
+.trip-confirm-note { color: #e7fff5; }
+.trip-request-error { color: #ffd0ca; }
+.trip-add-button,
+.trip-continue-button { font-size: 14px; }
+@media (max-width: 640px) {
+  .trip-experience-content > p:not(.trip-experience-price) { font-size: 13px; }
+  .trip-experience-price { font-size: 12px; }
+  .trip-experience-fields label,
+  .trip-input-pair label,
+  .trip-contact-field { font-size: 12px; }
+}
