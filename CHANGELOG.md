@@ -1,3 +1,11 @@
+## 2026-10-06
+
+### Mejor encuadre en las tarjetas destacadas
+
+- `index.html` y `trip-builder.css`: Pack usa una fotografía con espacio visual en el centro, compartida con el fondo del armador.
+- `index.html`, `services.js` y `trip-builder.js`: Retiros usa la misma foto serena en la tarjeta, el detalle y el armador, evitando que el título tape a las personas.
+- `script.js` y `services.js`: se actualizan los textos alternativos en español e inglés según las nuevas fotografías.
+
 ## 2026-10-04
 
 ### Fotos optimizadas para tarjetas de servicios

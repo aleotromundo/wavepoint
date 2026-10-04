@@ -16,7 +16,7 @@
     { id: 'atv', image: 'assets/img/optimized/rincon-adventure.webp', title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Descubrí Guanacaste en cuatriciclo.', en: 'Explore Guanacaste by ATV.' } },
     { id: 'surf-photography', image: 'assets/img/optimized/surf-photography.webp', title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
     { id: 'surfskate', image: 'assets/img/optimized/surfskate.webp', title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } },
-    { id: 'retreats', image: 'assets/img/optimized/retreat-sunset.webp', title: { es: 'Retiros', en: 'Retreats' }, description: { es: 'Surf, descanso, movimiento y comunidad.', en: 'Surf, rest, movement and community.' } }
+    { id: 'retreats', image: 'assets/img/optimized/retreat-evening.webp', title: { es: 'Retiros', en: 'Retreats' }, description: { es: 'Surf, descanso, movimiento y comunidad.', en: 'Surf, rest, movement and community.' } }
   ];
   const COPY = {
     es: {
