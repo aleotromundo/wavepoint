@@ -166,16 +166,16 @@ Las secciones fuera del hero pueden usar gradientes oceánicos, capas radiales y
 
 ### Favicon y logo original
 
-El set de favicon se genera desde `assets/wavepoint-favicon-source.jpg`: los PNG de 16 y 32 px y el ICO multirresolución usan un recorte cuadrado con esquinas transparentes para eliminar el margen blanco y conservar el fondo oscuro del logo. Todas las páginas enlazan esos tamaños con rutas relativas. Se conserva `assets/wavepoint-apple-touch-icon.png` como icono de inicio para dispositivos Apple.
+El favicon es una marca de surf vectorial propia en `favicon.svg`, con respaldo PNG de 16 y 32 px, un ICO multirresolución y un icono Apple a juego. Todas las páginas enlazan los recursos con rutas relativas y versión de caché.
 
 ```text
-assets/wavepoint-favicon-source.jpg       Original proporcionado por el usuario
-favicon-16.png / favicon-32.png           Favicons PNG con esquinas transparentes
-favicon.ico                               Favicon multirresolución (16/32/48/64/128/256)
-assets/wavepoint-apple-touch-icon.png     Icono de inicio para dispositivos Apple
+favicon.svg                               Favicon vectorial de surf
+favicon-16.png / favicon-32.png           Respaldo PNG para navegadores
+favicon.ico                               Respaldo multirresolución (16/32/48/64/128/256)
+assets/wavepoint-apple-touch-icon.png     Icono Apple a juego (180 × 180)
 ```
 
-No sustituir ni editar el original sin autorización explícita.
+No reemplazarlo con favicons cargados por el usuario ni reinterpretar esta marca sin autorización.
 
 ## 8. Responsive y accesibilidad
 
@@ -206,9 +206,8 @@ Reglas de accesibilidad:
 
 | Asset | Uso |
 | --- | --- |
-| `favicon-16.png`, `favicon-32.png`, `favicon.ico` | Favicons de navegador generados desde el original. |
-| `assets/wavepoint-favicon-source.jpg` | Original de marca proporcionado por el usuario. |
-| `assets/wavepoint-apple-touch-icon.png` | Icono de inicio para dispositivos Apple. |
+| `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `favicon.ico` | Favicon vectorial de surf y respaldos de navegador. |
+| `assets/wavepoint-apple-touch-icon.png` | Icono Apple a juego. |
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
 | `assets/wavepoint-watermark.png` | Marca sobre streams de cámara. |

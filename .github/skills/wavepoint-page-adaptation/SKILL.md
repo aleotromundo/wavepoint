@@ -65,7 +65,7 @@ This section preserves project decisions and completed work so future assistants
 - The Nosotros section uses photographic/parallax styling and glassmorphism. Parallax is disabled on mobile and for reduced-motion preferences.
 - The homepage hero uses “A través de quienes llaman hogar a Tamarindo” / “Through the people who call it home” and its matching bilingual WavePoint subheading.
 - The Witch’s Rock, snorkel and ATV catalog images include multi-panel source photos; card-only CSS zoom and positioning focus a single panel without replacing the shared source used by the detail and trip-builder surfaces. Keep their Spanish and English alternative text aligned with the visible crop.
-- The browser favicon set is generated from `assets/wavepoint-favicon-source.jpg`: 16/32 px transparent-corner PNGs and a 16/32/48/64/128/256 px ICO. Keep the Apple touch icon separate.
+- The browser favicon is an original surf mark in root `favicon.svg`, with 16/32 px PNGs, a 16/32/48/64/128/256 px ICO, and a matching Apple touch icon. The user's uploaded favicon and its derivatives were removed at their request.
 
 ### Validation and working preferences
 
