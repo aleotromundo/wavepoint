@@ -2908,6 +2908,52 @@ body { background: #071c28; }
 .service-img { background: transparent; }
 .service-img img { object-fit: cover; background: none; }
 
+#servicios .service-grid-catalog .service-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 370px;
+  overflow: hidden;
+  background: #082b3a;
+}
+#servicios .service-grid-catalog .service-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(4, 24, 34, .04), rgba(4, 24, 34, .12) 42%, rgba(4, 24, 34, .74));
+  content: "";
+  pointer-events: none;
+}
+#servicios .service-grid-catalog .service-image-link {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  flex: none;
+}
+#servicios .service-grid-catalog .service-img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+#servicios .service-grid-catalog .service-card .service-body {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(6, 24, 34, .58);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+}
+#servicios .service-grid-catalog .service-img img {
+  opacity: .88;
+  filter: saturate(1.05);
+}
+#servicios .service-grid-catalog .service-card:hover .service-img img,
+#servicios .service-grid-catalog .service-image-link:focus-visible .service-img img {
+  opacity: 1;
+  filter: saturate(1.15);
+}
+
 #servicios .service-body h3,
 #servicios .service-body h3 a {
   font-size: 26px !important;

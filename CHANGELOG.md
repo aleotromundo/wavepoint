@@ -1,5 +1,20 @@
 ## 2026-10-04
 
+### Surfskate, fondos de servicios y favicon
+
+- `services.js`: se actualizan el texto principal, la descripción y los elementos incluidos de Surfskate en español e inglés; la página de detalle presenta el lema y la lista de equipo.
+- `index.html`, `services.js` y `script.js`: se incorporan fotos de Pixabay para las diez tarjetas del catálogo, Pack ajustable y los encabezados de detalle, con textos alternativos sincronizados en ES/EN. Pixabay no devolvió resultados para “surfskate”; se usa una imagen de longboard como opción cercana.
+- `styles.css`: las diez tarjetas principales muestran la foto como fondo con una capa de vidrio oscura para conservar el contraste del texto.
+- `index.html`, `service-detail.html`, `guia-playas.html` y las páginas vinculadas usan `furgoneta-de-surf.png` como favicon; se conserva el icono táctil existente.
+
+### Validación
+
+- Verificados los textos e imágenes de Surfskate en español e inglés, y la carga de las diez fotos del catálogo.
+- Revisado el encabezado de detalle con la imagen de Pixabay y la foto local de surfskate en la galería.
+- Comprobado que la página no desborda horizontalmente a 390 px y que todos los enlaces al favicon resuelven al archivo.
+
+## 2026-10-04
+
 ### Ajustes del catálogo: orden, Surf Photography, Surfskate y Pack ajustable
 
 - `services.js`: se aplica el orden pedido tras Roca Bruja (Snorkel, Yoga, ATV, Surf Photography, Surfskate y Retiros), se retira Buceo del catálogo y se mantiene Pack ajustable al final de la navegación.
