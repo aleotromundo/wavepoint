@@ -679,6 +679,7 @@ function render(service) {
 const ui = uiFor(service);
 document.documentElement.lang = lang;
 document.title = `${service.title} · WavePoint`;
+document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
 const nextService = services[(position + 1) % services.length];
