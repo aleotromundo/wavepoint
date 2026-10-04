@@ -5656,3 +5656,56 @@ footer a {
     left: auto;
   }
 }
+
+/* Expand catalog service descriptions over the photo only while interacted with. */
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body {
+  position: absolute;
+  inset: auto 0 0;
+  max-height: 104px;
+  margin: 0;
+  overflow: hidden;
+  border-top-color: rgba(255, 255, 255, .24);
+  background: rgba(6, 24, 34, .72);
+  transition: max-height .42s cubic-bezier(.2, .75, .2, 1), background-color .3s ease;
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body p {
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: max-height .38s ease, margin .38s ease, opacity .25s ease, transform .3s ease;
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover .service-body,
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack):focus-within .service-body,
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack).is-scroll-active .service-body {
+  max-height: 320px;
+  background: rgba(6, 24, 34, .86);
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover .service-body p,
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack):focus-within .service-body p,
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack).is-scroll-active .service-body p {
+  max-height: 160px;
+  margin: 0 0 16px;
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (hover: hover) and (pointer: fine) {
+  #servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover .service-img img {
+    transform: scale(1.04);
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  #servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover {
+    transform: none;
+  }
+  #servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover .service-img img {
+    transform: none;
+  }
+  html:not(.service-card-scroll-enabled) #servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body p {
+    max-height: 160px;
+    margin: 0 0 16px;
+    opacity: 1;
+    transform: none;
+  }
+}

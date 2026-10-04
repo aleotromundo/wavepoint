@@ -8,6 +8,14 @@
 
 ## 2026-10-04
 
+### Descripciones desplegables en servicios
+
+- `styles.css` y `script.js`: las tarjetas de servicios comunes conservan el título y el enlace visibles sobre una mayor superficie de foto; la descripción se despliega en un panel translúcido al pasar el mouse o al centrar la tarjeta con el scroll en dispositivos táctiles.
+- La tarjeta se cierra al retirar el cursor, cambiar el foco o continuar desplazándose; Pack y Retiros conservan su composición destacada.
+- `index.html`: se renuevan las versiones de caché de los estilos y el script.
+
+## 2026-10-04
+
 ### Fotos optimizadas para tarjetas de servicios
 
 - `index.html`: las tarjetas de servicios, Pack y Retiros usan fotos locales WebP seleccionadas para cada experiencia, con textos alternativos ES/EN acordes.

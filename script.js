@@ -1016,6 +1016,38 @@
     });
   }
 
+  function bindServiceCardReveals(){
+    const cards=[...document.querySelectorAll('#servicios .service-grid-catalog > .service-card:not(.service-card-pack)')];
+    const mobilePointer=window.matchMedia('(hover: none) and (pointer: coarse)');
+    const supportsObserver='IntersectionObserver' in window;
+    if(!cards.length) return;
+
+    let observer;
+    const updateMode=()=>{
+      observer?.disconnect();
+      cards.forEach(card=>card.classList.remove('is-scroll-active'));
+      const shouldRevealOnScroll=mobilePointer.matches && supportsObserver;
+      document.documentElement.classList.toggle('service-card-scroll-enabled',shouldRevealOnScroll);
+      if(!shouldRevealOnScroll) return;
+
+      const centerInset=Math.min(Math.round(window.innerHeight*.38),240);
+      observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            cards.forEach(card=>card.classList.toggle('is-scroll-active',card===entry.target));
+          }else{
+            entry.target.classList.remove('is-scroll-active');
+          }
+        });
+      },{rootMargin:`-${centerInset}px 0px -${centerInset}px 0px`,threshold:0});
+      cards.forEach(card=>observer.observe(card));
+    };
+
+    updateMode();
+    mobilePointer.addEventListener('change',updateMode);
+    window.addEventListener('resize',()=>{if(mobilePointer.matches) updateMode();},{passive:true});
+  }
+
   function bindAlliesTickerInteraction(){
     const section=document.querySelector('.allies-ticker');
     const viewport=section?.querySelector('.allies-ticker-viewport');
@@ -1361,6 +1393,7 @@
   bindAlliesTickerInteraction();
   bindWeatherCardDrag();
   bindScrollReveals();
+  bindServiceCardReveals();
   bindSpotModal();
   applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
 
