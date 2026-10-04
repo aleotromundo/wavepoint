@@ -1058,6 +1058,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   background: rgba(248, 252, 250, .92);
   box-shadow: 0 18px 44px rgba(8, 43, 58, .18);
   backdrop-filter: blur(18px);
+  text-shadow: none;
 }
 
 .dropdown .menu::before {

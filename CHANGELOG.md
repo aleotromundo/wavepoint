@@ -1,5 +1,9 @@
 ## 2026-10-04
 
+### Legibilidad del desplegable de colaboradores
+
+- `styles.css`: evitar que la sombra fuerte del texto del header se herede al menú claro de colaboradores.
+
 ### Franja compacta de aliados y sección After the surf
 
 - `styles.css`: reducir la altura y tipografía del encabezado de aliados y alinear su ancho máximo con el carrusel.
