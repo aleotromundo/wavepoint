@@ -6,6 +6,12 @@
 - `styles.css`: unificar las cuatro portadas, dar legibilidad al contenido sobre un fondo fotográfico y ajustar las galerías para llenar los marcos sin bandas azules.
 - Se conservan todos los textos, enlaces y fotografías existentes.
 
+### Nueva portada para Clases de surf
+
+- `services.js`: usar la foto del instructor con alumnos como imagen principal y conservar la portada anterior en la galería.
+- `index.html`, `script.js`, `trip-builder.js` y las opciones visuales del Pack: mantener la misma portada y textos alternativos ES/EN.
+- Se renuevan las versiones de caché de los scripts afectados.
+
 ### Nuevas fotos para Estadías y hoteles
 
 - `services.js`: usar las siete imágenes nuevas de `assets/img/hotels/` en la portada del servicio y agregar una galería descriptiva bilingüe.

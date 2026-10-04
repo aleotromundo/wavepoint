@@ -110,6 +110,7 @@ id: 'clases-de-surf', number: '02', eyebrow: 'CLASES DE SURF · TAMARINDO', titl
 cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.',
 description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
 images: [
+'assets/legacy/clase-surf.jpeg',
 'assets/img/optimized/surf-lesson-group.webp',
 'assets/img/optimized/surf-lesson-woman.webp',
 'assets/img/optimized/surf-lesson-wave.webp',
@@ -117,6 +118,7 @@ images: [
 'assets/img/optimized/surfboard-rental.webp'
 ],
 imageAlts: [
+'Instructor de surf con alumnos durante una clase en Tamarindo',
 'Grupo de estudiantes practicando surf en Tamarindo',
 'Alumna practicando surf en Tamarindo',
 'Surfista tomando una ola en Tamarindo',
@@ -138,6 +140,7 @@ title: 'Surf lessons',
 cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
 description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
 imageAlts: [
+'Surf instructor with students during a lesson in Tamarindo',
 'Group of students practicing surfing in Tamarindo',
 'Student practicing surfing in Tamarindo',
 'Surfer catching a wave in Tamarindo',
@@ -589,8 +592,8 @@ const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
 'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels6_resultado.webp' },
 'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels6_resultado.webp' },
-'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
-'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
+'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/clase-surf.jpeg' },
+'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/clase-surf.jpeg' },
 'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
 'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
 'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'assets/img/optimized/yoga-wellness.webp' },
