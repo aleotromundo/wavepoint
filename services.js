@@ -136,7 +136,61 @@ own_board: { label: 'Will you bring your own board?', options: ['Yes', 'No'] }
 }
 },
 {
-id: 'roca-bruja', number: '04', eyebrow: 'VIAJE DE SURF · AVENTURA', title: 'Roca Bruja',
+id: 'yoga', number: '04', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
+cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
+description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
+images: [
+'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1400&q=80',
+'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80',
+'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80'
+],
+includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
+questions: [
+{ id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
+{ id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
+{ id: 'yoga_notes', label: '¿Hay algo que quieras que el instructor tenga en cuenta para adaptar la sesión?', type: 'textarea', placeholder: 'Opcional', optional: true }
+],
+en: {
+eyebrow: 'WELLNESS · PAUSE',
+title: 'Yoga',
+cardText: 'Yoga in Tamarindo · A little space to breathe.',
+description: 'Take a pause, enjoy the movement and make time for yourself. Whether you’re stepping onto the mat for the first time or continuing a practice you love, WavePoint helps you find a session that suits your experience. Connect with local instructors and explore group or private classes during your stay.',
+questions: {
+  yoga_experience: { label: 'What is your experience with yoga?', options: ['First time', 'Some experience', 'I practice regularly'] },
+  yoga_format: { label: 'Would you prefer a group or private class?', options: ['Group', 'Private', 'Either is fine'] },
+  yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
+},
+includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy']
+}
+},
+{
+id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
+cardText: 'Elegí entre explorar bajo el agua, navegar la costa o combinar las dos experiencias.',
+description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
+images: ['assets/legacy/conchal.jpg', 'assets/legacy/catalinas.jpg'],
+questions: [
+{ id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
+{ id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
+{ id: 'snorkel_people', label: '¿Cuántas personas quieren hacer snorkel?', type: 'number', optional: true },
+{ id: 'swimming_comfort', label: '¿Todas se sienten cómodas nadando en el mar?', type: 'choice', options: ['Sí', 'No', 'Quisiera consultar antes'], optional: true },
+{ id: 'dietary_needs', label: '¿Hay alergias alimentarias o necesidades dietéticas que debamos comunicar?', type: 'textarea', placeholder: 'Opcional', optional: true }
+],
+en: {
+eyebrow: 'SEA · SAILING',
+title: 'Snorkeling & catamaran',
+cardText: 'Choose between exploring underwater, sailing along the coast or combining both experiences.',
+description: 'A day on the water can be calm, adventurous or a bit of both. We help you compare snorkel tours, catamaran rides and combined options based on availability. To protect the experience for the whole group, we check group size, swimming comfort and any dietary needs before sending a private or shared option.',
+questions: {
+sea_experience: { label: 'What experience are you interested in?', options: ['Snorkel tour', 'Catamaran cruise', 'Catamaran with snorkel, if available'] },
+departure_type: { label: 'Would you prefer a shared or private outing?', options: ['Shared', 'Private', 'I want to compare both'] },
+snorkel_people: { label: 'How many people want to snorkel?' },
+swimming_comfort: { label: 'Are everyone comfortable swimming in the sea?', options: ['Yes', 'No', 'I’d like to check first'] },
+dietary_needs: { label: 'Are there any food allergies or dietary needs we should share?', placeholder: 'Optional' }
+}
+}
+},
+{
+id: 'roca-bruja', number: '06', eyebrow: 'VIAJE DE SURF · AVENTURA', title: 'Roca Bruja',
 cardText: 'Un día de surf en barco con guías locales que conocen la zona.',
 lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
@@ -168,61 +222,23 @@ date_flexibility: { label: 'Can you change the date if sea conditions require it
 }
 },
 {
-id: 'yoga', number: '05', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
-cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
-description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
-images: [
-'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1400&q=80',
-'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80',
-'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80'
-],
-includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
-questions: [
-{ id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
-{ id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
-{ id: 'yoga_notes', label: '¿Hay algo que quieras que el instructor tenga en cuenta para adaptar la sesión?', type: 'textarea', placeholder: 'Opcional', optional: true }
-],
+id: 'surf-fotografia', number: '07', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fotos de surf',
+cardText: 'Tu tiempo en el agua, capturado.',
+description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
+images: ['assets/legacy/fotodesurf.jpg', 'assets/photo-service.jpg'],
+questions: [],
+submitLabel: 'Reservá tu sesión ↗',
 en: {
-eyebrow: 'WELLNESS · PAUSE',
-title: 'Yoga',
-cardText: 'Yoga in Tamarindo · A little space to breathe.',
-description: 'Take a pause, enjoy the movement and make time for yourself. Whether you’re stepping onto the mat for the first time or continuing a practice you love, WavePoint helps you find a session that suits your experience. Connect with local instructors and explore group or private classes during your stay.',
-questions: {
-  yoga_experience: { label: 'What is your experience with yoga?', options: ['First time', 'Some experience', 'I practice regularly'] },
-  yoga_format: { label: 'Would you prefer a group or private class?', options: ['Group', 'Private', 'Either is fine'] },
-  yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
-},
-includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy']
+eyebrow: 'SURF PHOTOGRAPHY',
+title: 'Surf Photography',
+cardText: 'Your time in the water, captured.',
+description: 'Your first wave, a turn you’ve been working on or a session shared with friends—every surfer has moments worth keeping. WavePoint connects you with local surf photographers to capture yours, so you can focus on the waves and take a little of Tamarindo home with you.',
+submitLabel: 'Book your session ↗',
+questions: {}
 }
 },
 {
-id: 'snorkel-catamaran', number: '06', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
-cardText: 'Elegí entre explorar bajo el agua, navegar la costa o combinar las dos experiencias.',
-description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
-images: ['assets/legacy/conchal.jpg', 'assets/legacy/catalinas.jpg'],
-questions: [
-{ id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
-{ id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
-{ id: 'snorkel_people', label: '¿Cuántas personas quieren hacer snorkel?', type: 'number', optional: true },
-{ id: 'swimming_comfort', label: '¿Todas se sienten cómodas nadando en el mar?', type: 'choice', options: ['Sí', 'No', 'Quisiera consultar antes'], optional: true },
-{ id: 'dietary_needs', label: '¿Hay alergias alimentarias o necesidades dietéticas que debamos comunicar?', type: 'textarea', placeholder: 'Opcional', optional: true }
-],
-en: {
-eyebrow: 'SEA · SAILING',
-title: 'Snorkeling & catamaran',
-cardText: 'Choose between exploring underwater, sailing along the coast or combining both experiences.',
-description: 'A day on the water can be calm, adventurous or a bit of both. We help you compare snorkel tours, catamaran rides and combined options based on availability. To protect the experience for the whole group, we check group size, swimming comfort and any dietary needs before sending a private or shared option.',
-questions: {
-sea_experience: { label: 'What experience are you interested in?', options: ['Snorkel tour', 'Catamaran cruise', 'Catamaran with snorkel, if available'] },
-departure_type: { label: 'Would you prefer a shared or private outing?', options: ['Shared', 'Private', 'I want to compare both'] },
-snorkel_people: { label: 'How many people want to snorkel?' },
-swimming_comfort: { label: 'Are everyone comfortable swimming in the sea?', options: ['Yes', 'No', 'I’d like to check first'] },
-dietary_needs: { label: 'Are there any food allergies or dietary needs we should share?', placeholder: 'Optional' }
-}
-}
-},
-{
-id: 'buceo', number: '07', eyebrow: 'MAR · EXPLORACIÓN', title: 'Buceo',
+id: 'buceo', number: '08', eyebrow: 'MAR · EXPLORACIÓN', title: 'Buceo',
 cardText: 'Descubrí Tamarindo bajo el agua con una experiencia de buceo local.',
 description: 'Conocé las opciones de buceo disponibles en Tamarindo y consultá con el operador local cuál experiencia se adapta mejor a tu grupo y a las condiciones del día.',
 images: ['assets/surf-service.jpg'],
@@ -244,10 +260,10 @@ dive_people: { label: 'How many people would join?' }
 }
 },
 {
-id: 'atv', number: '08', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
-cardText: 'Recorré los caminos de Guanacaste con una consulta previa sobre participantes y requisitos.',
-description: 'Los tours en ATV son una manera intensa y divertida de salir de la playa y conocer el paisaje alrededor de Tamarindo. Antes de recomendarte una opción, necesitamos entender cuántas personas quieren conducir, quiénes irían como acompañantes y qué edades tienen los conductores. WavePoint consulta estos datos con el operador para confirmar los requisitos de participación antes de avanzar.',
-images: ['assets/legacy/rincon.jpg'],
+id: 'atv', number: '09', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
+cardText: 'Un poco de aventura más allá de la playa.',
+description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
+images: ['assets/legacy/llanosdecortez.jpg', 'assets/legacy/IMG_1269.jpeg'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -256,9 +272,9 @@ questions: [
 ],
 en: {
 eyebrow: 'LAND · ADVENTURE',
-title: 'ATV tours',
-cardText: 'Explore the roads of Guanacaste with a quick check on participants and requirements.',
-description: 'ATV tours are an intense and fun way to leave the beach and explore the landscape around Tamarindo. Before recommending an option, we need to understand how many people want to drive, who will ride as passengers and the ages of the drivers. WavePoint checks these details with the operator to confirm participation requirements before moving forward.',
+title: 'ATV Tours in Tamarindo',
+cardText: 'A little adventure beyond the beach.',
+description: 'Head out with local guides and discover the surroundings of Tamarindo on an ATV. Take in the scenery, enjoy the ride and share the adventure with the people you’re traveling with. WavePoint helps you find a tour that suits your group, with the route and details confirmed before you go.',
 questions: {
 drivers: { label: 'How many people want to drive?' },
 passengers: { label: 'How many would be passengers?' },
@@ -268,12 +284,12 @@ licenses: { label: 'Do the drivers have a valid driver’s license?', options: [
 }
 },
 {
-id: 'pack-ajustable', number: '09', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
+id: 'pack-ajustable', number: '10', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
 cardText: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje.',
 description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
 images: ['assets/after-guide.jpg'],
 questions: [
-{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Yoga', 'Snorkeling & catamaran', 'Buceo', 'ATV tours', 'Retreats'] },
+{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Yoga', 'Snorkel y catamarán', 'Witch’s Rock Surf Trip', 'Buceo', 'Fotos de surf', 'ATV tours', 'Retreats'] },
 { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
 { id: 'pack_notes', label: '¿Qué debería tener en cuenta el operador?', type: 'textarea', placeholder: 'Cantidad de personas, preferencias o necesidades especiales.', optional: true }
 ],
@@ -283,14 +299,14 @@ title: 'Custom pack',
 cardText: 'Build your own experience by combining the activities that fit your trip.',
 description: 'Create your own experience by combining accommodation, surf, wellness and adventure according to the pace of your trip. Tell us what interests you and WavePoint will request a tailored proposal based on your dates, group and priorities.',
 questions: {
-pack_activities: { label: 'What would you like to combine in your experience?', options: ['Accommodation', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Yoga', 'Snorkeling & catamaran', 'Diving', 'ATV tours', 'Retreats'] },
+pack_activities: { label: 'What would you like to combine in your experience?', options: ['Accommodation', 'Surf lessons', 'Surf coaching', 'Yoga', 'Snorkeling & catamaran', 'Witch’s Rock Surf Trip', 'Diving', 'Surf Photography', 'ATV tours', 'Retreats'] },
 pack_dates: { label: 'When would your trip be?', fields: ['Arrival', 'Departure'] },
 pack_notes: { label: 'What should the operator keep in mind?', placeholder: 'Number of people, preferences or special needs.' }
 }
 }
 },
 {
-id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
+id: 'retiros', number: '11', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'Un retiro es una experiencia con su propio ritmo. Te ayudamos a encontrar una propuesta que combine las actividades que te interesan con el tipo de habitación y acompañamiento que necesitás. Si incluye surf, saber tu nivel nos permite consultar mejor; y si tenés necesidades de alimentación o alojamiento, podés compartirlas desde el inicio para buscar una opción que te haga sentir cómodo.',
 images: ['assets/legacy/ocotal.jpg', 'assets/legacy/IMG_1269.jpeg', 'assets/legacy/Restaurante_1.jpg'],
@@ -373,10 +389,12 @@ const PACK_SERVICE_CARDS = {
 'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80' },
 'Witch’s Rock Surf Trip': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/legacy/bruja.jpg' },
 'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/legacy/bruja.jpg' },
-'Snorkeling & catamaran': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
-'Snorkel y catamarán': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
+'Fotos de surf': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/legacy/fotodesurf.jpg' },
+'Surf Photography': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/legacy/fotodesurf.jpg' },
 'Buceo': { title: { es: 'Buceo', en: 'Diving' }, detail: { es: 'Descubrí el mundo bajo la superficie.', en: 'Discover the underwater world.' }, image: 'assets/surf-service.jpg' },
 'Diving': { title: { es: 'Buceo', en: 'Diving' }, detail: { es: 'Descubrí el mundo bajo la superficie.', en: 'Discover the underwater world.' }, image: 'assets/surf-service.jpg' },
+'Snorkeling & catamaran': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
+'Snorkel y catamarán': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
 'ATV tours': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
 'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
 'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest and community.' }, image: 'assets/legacy/ocotal.jpg' },
@@ -418,6 +436,11 @@ const isEn = lang === 'en';
 const kicker = isEn ? 'SURF TRIP · ADVENTURE' : 'VIAJE DE SURF · AVENTURA';
 return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.lead)}</h2><p>${esc(service.description)}</p><p>${esc(service.coordination)}</p><div class="detail-gallery witch-rock-gallery"><img src="${service.images[1]}" alt="${esc(service.galleryAlt)}" loading="lazy" /></div>`;
 }
+function renderSurfPhotographyStory(service) {
+const kicker = lang === 'en' ? 'SURF PHOTOGRAPHY · TAMARINDO' : 'FOTOGRAFÍA DE SURF · TAMARINDO';
+const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}" loading="lazy" />`).join('');
+return `<p class="service-page-kicker">${kicker}</p><p>${esc(service.description)}</p><div class="detail-gallery">${gallery}</div>`;
+}
 function render(service) {
 const ui = uiFor(service);
 document.documentElement.lang = lang;
@@ -439,9 +462,11 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderSurfLessonStory(service)
 : service.id === 'roca-bruja'
 ? renderWitchRockStory(service)
+: service.id === 'surf-fotografia'
+? renderSurfPhotographyStory(service)
 : `<p class="service-page-kicker">${lang === 'en' ? 'THE EXPERIENCE' : 'LA EXPERIENCIA'}</p><h2>${lang === 'en' ? 'A plan designed for your trip.' : 'Un plan pensado para tu viaje.'}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
 const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
-document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${ui.submit}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
 if (service.id === 'pack-ajustable') {
 const packGrid = document.querySelector('.pack-service-grid');
 const count = document.querySelector('[data-pack-selection]');
