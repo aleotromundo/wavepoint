@@ -180,6 +180,10 @@
     .mobile-panel {
       position:fixed;
       inset:0 0 auto 0;
+      max-height:100vh;
+      max-height:100dvh;
+      overflow-y:auto;
+      overscroll-behavior:contain;
       z-index:999;
       transform:translateY(-110%);
       transition:transform .28s ease;
