@@ -616,13 +616,64 @@ return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.cardText)}
 }
 function renderRetreatStory(service) {
 const details = service.retreatDetails;
+const isEn = lang === 'en';
 const facts = details.facts.map(fact => `<div class="retreat-fact"><dt>${esc(fact.label)}</dt><dd>${esc(fact.value)}</dd></div>`).join('');
 const included = details.included.map(item => `<li>${esc(item)}</li>`).join('');
 const notIncluded = details.notIncluded.map(item => `<li>${esc(item)}</li>`).join('');
 const conditions = details.conditions.map(item => `<li>${esc(item)}</li>`).join('');
-const itinerary = details.itinerary.map(day => `<article class="retreat-day"><h4>${esc(day.title)}</h4><ul>${day.activities.map(activity => `<li>${esc(activity)}</li>`).join('')}</ul></article>`).join('');
+const itinerary = details.itinerary.map((day, index) => `<article class="retreat-day"><span class="retreat-day-number">${String(index + 1).padStart(2, '0')}</span><div><h4>${esc(day.title)}</h4><ul>${day.activities.map(activity => `<li>${esc(activity)}</li>`).join('')}</ul></div></article>`).join('');
 const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
-return `<p class="service-page-kicker">${lang === 'en' ? 'WAVEPOINT RETREATS · TAMARINDO' : 'WAVEPOINT RETIROS · TAMARINDO'}</p><h2>${esc(details.aboutHeading)}</h2><p class="retreat-intro">${esc(service.description)}</p><p>${esc(details.about)}</p><section class="retreat-content-section"><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></section><section class="retreat-content-section"><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></section><section class="retreat-content-section"><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</section><section class="retreat-content-section"><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p><h4>${esc(details.boatHeading)}</h4><p>${esc(details.boat)}</p></section><section class="retreat-summary"><h3>${esc(details.summaryHeading)}</h3><dl class="retreat-summary-grid">${facts}</dl><div class="retreat-lists"><section class="retreat-list retreat-list-included"><h4>${esc(details.includedHeading)}</h4><ul>${included}</ul></section><section class="retreat-list"><h4>${esc(details.notIncludedHeading)}</h4><ul>${notIncluded}</ul></section></div><section class="retreat-conditions"><h4>${esc(details.conditionsHeading)}</h4><ul>${conditions}</ul></section></section><section class="retreat-content-section retreat-itinerary-section"><h3>${esc(details.itineraryHeading)}</h3><div class="retreat-itinerary">${itinerary}</div></section><div class="detail-gallery retreat-gallery">${gallery}</div>`;
+const wavePhoto = isEn ? 'Surfer riding a wave in Costa Rica' : 'Surfista tomando una ola en Costa Rica';
+const introAlt = esc(service.imageAlts?.[0] || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
+const yogaPhoto = esc(service.imageAlts?.[4] || (isEn ? 'Tropical tree viewed from below' : 'Árbol tropical visto desde abajo'));
+const priceFact = details.facts.find(fact => fact.label === (isEn ? 'Price' : 'Precio')) || details.facts[details.facts.length - 1];
+const durationFact = details.facts.find(fact => fact.label === (isEn ? 'Duration' : 'Duración'));
+return `<div class="retreat-editorial">
+  <section class="retreat-cover">
+    <div class="retreat-cover-copy">
+      <p class="retreat-cover-kicker">${isEn ? 'WAVEPOINT RETREATS · TAMARINDO' : 'WAVEPOINT RETIROS · TAMARINDO'}</p>
+      <h2>${esc(details.aboutHeading)}</h2>
+      <p class="retreat-intro">${esc(service.description)}</p>
+      <p class="retreat-cover-about">${esc(details.about)}</p>
+      <div class="retreat-cover-facts">${durationFact ? `<span>${esc(durationFact.value)}</span>` : ''}<span>${esc(priceFact.value)}</span></div>
+    </div>
+    <figure class="retreat-cover-image"><img src="${esc(service.images[0])}" alt="${introAlt}" loading="eager" /></figure>
+  </section>
+  <div class="retreat-experience-grid">
+    <section class="retreat-experience-card retreat-destination-card">
+      <img src="${esc(service.images[1])}" alt="${esc(service.imageAlts?.[1] || introAlt)}" loading="lazy" />
+      <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
+    </section>
+    <section class="retreat-experience-card retreat-stay-card">
+      <img src="assets/img/tamarindo-beach-palm-trees-surfboards-costa-rica.jpg" alt="${isEn ? 'Palm trees and surfboards by the beach in Tamarindo' : 'Palmeras y tablas de surf junto a la playa en Tamarindo'}" loading="lazy" />
+      <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
+    </section>
+    <section class="retreat-experience-card retreat-yoga-card">
+      <img src="${esc(service.images[4])}" alt="${yogaPhoto}" loading="lazy" />
+      <div><p class="retreat-card-kicker">${isEn ? 'MOVE & RESET' : 'MOVIMIENTO Y PAUSA'}</p><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div>
+    </section>
+    <section class="retreat-experience-card retreat-surf-card">
+      <img src="assets/img/surfer-riding-wave-tamarindo-costa-rica-05.jpg" alt="${wavePhoto}" loading="lazy" />
+      <div><p class="retreat-card-kicker">${isEn ? 'IN THE WATER' : 'EN EL AGUA'}</p><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p><h4>${esc(details.boatHeading)}</h4><p>${esc(details.boat)}</p></div>
+    </section>
+  </div>
+  <section class="retreat-summary">
+    <p class="retreat-card-kicker">${isEn ? 'THE DETAILS' : 'LOS DETALLES'}</p>
+    <h3>${esc(details.summaryHeading)}</h3>
+    <dl class="retreat-summary-grid">${facts}</dl>
+    <div class="retreat-lists">
+      <section class="retreat-list retreat-list-included"><h4>${esc(details.includedHeading)}</h4><ul>${included}</ul></section>
+      <section class="retreat-list"><h4>${esc(details.notIncludedHeading)}</h4><ul>${notIncluded}</ul></section>
+    </div>
+    <section class="retreat-conditions"><h4>${esc(details.conditionsHeading)}</h4><ul>${conditions}</ul></section>
+  </section>
+  <section class="retreat-itinerary-section">
+    <p class="retreat-card-kicker">${isEn ? 'THE JOURNEY' : 'EL RECORRIDO'}</p>
+    <h3>${esc(details.itineraryHeading)}</h3>
+    <div class="retreat-itinerary">${itinerary}</div>
+  </section>
+  <div class="detail-gallery retreat-gallery">${gallery}</div>
+</div>`;
 }
 function render(service) {
 const ui = uiFor(service);
@@ -653,7 +704,7 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderRetreatStory(service)
 : `<p class="service-page-kicker">${lang === 'en' ? 'THE EXPERIENCE' : 'LA EXPERIENCIA'}</p><h2>${lang === 'en' ? 'A plan designed for your trip.' : 'Un plan pensado para tu viaje.'}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('')}</div>`;
 const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
-document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
 if (service.id === 'pack-ajustable') {
 const packGrid = document.querySelector('.pack-service-grid');
 const count = document.querySelector('[data-pack-selection]');
