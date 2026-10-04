@@ -152,6 +152,7 @@ questions: [
 ],
 en: {
 eyebrow: 'SURF TRIP · ADVENTURE',
+title: 'Witch’s Rock Surf Trip',
 cardText: 'A day of surf by boat with local guides who know the area.',
 lead: 'Some surf trips stay with you long after your last wave.',
 description: 'Head out by boat to Roca Bruja and share a day of surf with local guides who know the area. From the journey out to the time in the water, the experience is shaped by the ocean, your group and the people guiding you.',
@@ -183,6 +184,7 @@ questions: [
 ],
 en: {
 eyebrow: 'WELLNESS · PAUSE',
+title: 'Yoga',
 cardText: 'Yoga in Tamarindo · A little space to breathe.',
 description: 'Take a pause, enjoy the movement and make time for yourself. Whether you’re stepping onto the mat for the first time or continuing a practice you love, WavePoint helps you find a session that suits your experience. Connect with local instructors and explore group or private classes during your stay.',
 questions: {
@@ -362,22 +364,30 @@ modalClose: 'Close survey'
 const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
-'Alojamiento': { title: 'Stay & experience', detail: 'Un lugar cómodo y algo más para vivir Tamarindo.', image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
-'Surf lessons': { title: 'Surf lessons', detail: 'Tu primera ola o el siguiente paso.', image: 'assets/legacy/DSC02807.jpg' },
-'Surf coaching': { title: 'Surf coaching', detail: 'Entrenamiento personalizado con video-análisis.', image: 'assets/legacy/_GSK8664.jpg' },
-'Yoga': { title: 'Yoga', detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80' },
-'Witch’s Rock Surf Trip': { title: 'Witch’s Rock Surf Trip', detail: 'Una salida guiada a un spot inolvidable.', image: 'assets/legacy/bruja.jpg' },
-'Snorkeling & catamaran': { title: 'Snorkeling & catamaran', detail: 'Mar, navegación y tiempo para explorar.', image: 'assets/legacy/conchal.jpg' },
-'Buceo': { title: 'Diving', detail: 'Descubrí el mundo bajo la superficie.', image: 'assets/surf-service.jpg' },
-'ATV tours': { title: 'ATV tours', detail: 'Aventura y caminos de Guanacaste.', image: 'assets/legacy/rincon.jpg' },
-'Retreats': { title: 'Retreats', detail: 'Un viaje con programa, descanso y comunidad.', image: 'assets/legacy/ocotal.jpg' }
+'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
+'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
+'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/DSC02807.jpg' },
+'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/DSC02807.jpg' },
+'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/_GSK8664.jpg' },
+'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/_GSK8664.jpg' },
+'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80' },
+'Witch’s Rock Surf Trip': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/legacy/bruja.jpg' },
+'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/legacy/bruja.jpg' },
+'Snorkeling & catamaran': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
+'Snorkel y catamarán': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
+'Buceo': { title: { es: 'Buceo', en: 'Diving' }, detail: { es: 'Descubrí el mundo bajo la superficie.', en: 'Discover the underwater world.' }, image: 'assets/surf-service.jpg' },
+'Diving': { title: { es: 'Buceo', en: 'Diving' }, detail: { es: 'Descubrí el mundo bajo la superficie.', en: 'Discover the underwater world.' }, image: 'assets/surf-service.jpg' },
+'ATV tours': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
+'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
+'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest and community.' }, image: 'assets/legacy/ocotal.jpg' },
+'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest and community.' }, image: 'assets/legacy/ocotal.jpg' }
 };
 function renderQuestion(service, question) {
 const id = inputId(service, question);
 const optional = question.optional ? `<span class="detail-optional">${uiFor(service).optional}</span>` : '';
 if (service.id === 'pack-ajustable' && question.id === 'pack_activities') {
 const packIntro = lang === 'en' ? 'Choose two or more cards and we’ll build a custom experience for you.' : 'Elegí dos o más tarjetas y armamos una experiencia a tu medida.';
-return `<fieldset class="detail-question pack-question"><legend>${esc(question.label)} ${optional}</legend><p class="pack-question-intro">${packIntro}</p><div class="pack-service-grid">${question.options.map(option => { const card = PACK_SERVICE_CARDS[option]; const cardDetail = typeof card.detail === 'string' ? card.detail : (card.detail?.[lang] || card.detail?.es || ''); return `<label class="pack-service-card"><input type="checkbox" name="${question.id}" value="${esc(option)}" /><span class="pack-service-image"><img src="${card.image}" alt="" loading="lazy" /><span class="pack-service-check" aria-hidden="true">✓</span></span><span class="pack-service-copy"><strong>${esc(card.title)}</strong><small>${esc(cardDetail)}</small></span></label>`; }).join('')}</div><p class="pack-selection-count" data-pack-selection>${lang === 'en' ? '0 experiences selected' : '0 experiencias seleccionadas'}</p></fieldset>`;
+return `<fieldset class="detail-question pack-question"><legend>${esc(question.label)} ${optional}</legend><p class="pack-question-intro">${packIntro}</p><div class="pack-service-grid">${question.options.map(option => { const card = PACK_SERVICE_CARDS[option] || PACK_SERVICE_CARDS[Object.keys(PACK_SERVICE_CARDS).find(key => key.toLowerCase() === option.toLowerCase())]; const cardTitle = typeof card?.title === 'string' ? card.title : (card?.title?.[lang] || card?.title?.es || ''); const cardDetail = typeof card?.detail === 'string' ? card.detail : (card?.detail?.[lang] || card?.detail?.es || ''); const cardImage = card?.image || ''; return `<label class="pack-service-card"><input type="checkbox" name="${question.id}" value="${esc(option)}" /><span class="pack-service-image"><img src="${cardImage}" alt="" loading="lazy" /><span class="pack-service-check" aria-hidden="true">✓</span></span><span class="pack-service-copy"><strong>${esc(cardTitle)}</strong><small>${esc(cardDetail)}</small></span></label>`; }).join('')}</div><p class="pack-selection-count" data-pack-selection>${lang === 'en' ? '0 experiences selected' : '0 experiencias seleccionadas'}</p></fieldset>`;
 }
 if (question.type === 'headcount') return `<fieldset class="detail-question headcount-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map((field, index) => `<label for="${id}-${field.id}">${esc(field.label)}<input id="${id}-${field.id}" name="${question.id}-${field.id}" type="number" min="${index === 0 ? 1 : 0}" step="1" inputmode="numeric" placeholder="${index === 0 ? '1' : '0'}" required /></label>`).join('')}</div><p class="headcount-note">${esc(question.note)}</p><label class="headcount-ages" for="${id}-ages"><span>${esc(question.agesLabel)} <span class="detail-optional">${uiFor(service).optional}</span></span><input id="${id}-ages" name="${question.id}-ages" type="text" placeholder="${esc(question.agesPlaceholder)}" /></label></fieldset>`;
 if (question.type === 'dates') return `<fieldset class="detail-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;

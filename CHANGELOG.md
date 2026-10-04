@@ -1,5 +1,19 @@
 ## 2026-10-04
 
+### Corrección final de ES/EN en títulos y Pack ajustable
+
+- `services.js`: se corrigen los títulos que seguían quedando en español al activar inglés en `yoga` y `roca-bruja`, agregando el bloque `en.title` faltante en cada uno.
+- `services.js`: se corrige el mapeo `PACK_SERVICE_CARDS` para que los nombres y descripciones del `Pack ajustable` respeten el idioma activo y no muestren textos en inglés cuando está en español.
+- `services.js`: se mantiene la regla del proyecto: si aparece un texto nuevo en una card, servicio o pregunta, se trabaja con versión en español e inglés antes de cerrar el cambio.
+- `CHANGELOG.md`: se actualiza con esta corrección final para dejar el paso a paso visible y consistente.
+
+### Validación
+
+- Revisión visual en `service-detail.html?service=yoga`, `service-detail.html?service=roca-bruja` y `service-detail.html?service=pack-ajustable` con cambio de idioma ES/EN.
+- Confirmado: los títulos y las cards del Pack ajustable respetan el idioma activo y no quedan mezclados entre ES y EN.
+
+## 2026-10-04
+
 ### Servicios restantes: revisión completa bilingüe en ES/EN
 
 - `services.js`: se completa la pasada bilingüe de los servicios restantes (`alojamiento-experiencias`, `clases-de-surf`, `surf-coaching`, `roca-bruja`, `snorkel-catamaran`, `atv`, `pack-ajustable`, `retiros`), dejando los textos base en español y los bloques `en` completos para cada página de detalle.
