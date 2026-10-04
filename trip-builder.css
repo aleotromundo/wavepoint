@@ -291,7 +291,7 @@
 .trip-builder-hero { background: #072e3c; }
 .trip-builder-hero-image {
   z-index: 0;
-  background-image: url("assets/hero.jpg");
+  background-image: url("assets/img/optimized/retreat-tamarindo.webp");
   background-position: center 54%;
 }
 .trip-builder-hero-image::after {

@@ -617,12 +617,12 @@ return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.lead)}</h2
 }
 function renderSurfPhotographyStory(service) {
 const kicker = lang === 'en' ? 'SURF PHOTOGRAPHY · TAMARINDO' : 'FOTOGRAFÍA DE SURF · TAMARINDO';
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${kicker}</p><p>${esc(service.description)}</p><div class="detail-gallery">${gallery}</div>`;
 }
 function renderSurfskateStory(service) {
 const kicker = 'SURFSKATE · TAMARINDO';
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.cardText)}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${gallery}</div>`;
 }
 function renderRetreatStory(service) {
@@ -633,7 +633,7 @@ const included = details.included.map(item => `<li>${esc(item)}</li>`).join('');
 const notIncluded = details.notIncluded.map(item => `<li>${esc(item)}</li>`).join('');
 const conditions = details.conditions.map(item => `<li>${esc(item)}</li>`).join('');
 const itinerary = details.itinerary.map((day, index) => `<article class="retreat-day"><span class="retreat-day-number">${String(index + 1).padStart(2, '0')}</span><div><h4>${esc(day.title)}</h4><ul>${day.activities.map(activity => `<li>${esc(activity)}</li>`).join('')}</ul></div></article>`).join('');
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 const wavePhoto = isEn ? 'Surfer riding a wave in Costa Rica' : 'Surfista tomando una ola en Costa Rica';
 const introAlt = esc((isEn ? service.imageAltsEn?.[0] : service.imageAlts?.[0]) || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
 const yogaPhoto = esc(isEn ? 'Wellness room framed by tropical greenery' : 'Espacio de bienestar rodeado de naturaleza');
