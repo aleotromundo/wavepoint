@@ -1,5 +1,11 @@
 ## 2026-10-04
 
+### Estilo renovado para las fichas locales de colaboradores
+
+- `Enlaces/`: identificar cada ficha local para usar su propia fotografía como portada y fondo.
+- `styles.css`: unificar las cuatro portadas, dar legibilidad al contenido sobre un fondo fotográfico y ajustar las galerías para llenar los marcos sin bandas azules.
+- Se conservan todos los textos, enlaces y fotografías existentes.
+
 ### Legibilidad del desplegable de colaboradores
 
 - `styles.css`: evitar que la sombra fuerte del texto del header se herede al menú claro de colaboradores.
