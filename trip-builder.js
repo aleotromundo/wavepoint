@@ -8,14 +8,14 @@
   };
   const experiences = [
     { id: 'stays', image: 'https://cdn.pixabay.com/photo/2014/03/24/10/17/beach-293826_1280.jpg', dateMode: 'range', title: { es: 'Estadías y hoteles', en: 'Stays and Hotels' }, description: { es: 'Encontrá alojamiento para tu estadía.', en: 'Find a place to stay during your trip.' } },
-    { id: 'surf-lessons', image: 'https://cdn.pixabay.com/photo/2018/12/01/21/33/surfers-3850272_1280.jpg', title: { es: 'Clases de surf', en: 'Surf lessons' }, description: { es: 'Una clase adaptada al nivel de tu grupo.', en: 'A surf lesson tailored to your group’s level.' } },
-    { id: 'surf-coaching', image: 'https://cdn.pixabay.com/photo/2017/04/08/10/23/surfing-2212948_1280.jpg', title: { es: 'Surf coaching', en: 'Surf coaching' }, description: { es: 'Entrenamiento y análisis para mejorar tu surf.', en: 'Coaching and feedback to help you progress.' } },
-    { id: 'witch-rock', image: 'https://cdn.pixabay.com/photo/2024/02/18/15/59/sea-8581529_1280.jpg', title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, description: { es: 'Una salida de surf por barco.', en: 'A surf trip by boat.' } },
+    { id: 'surf-lessons', image: 'assets/legacy/clase-surf.jpeg', title: { es: 'Clases de surf', en: 'Surf lessons' }, description: { es: 'Una clase adaptada al nivel de tu grupo.', en: 'A surf lesson tailored to your group’s level.' } },
+    { id: 'surf-coaching', image: 'assets/surf-service.jpg', title: { es: 'Surf coaching', en: 'Surf coaching' }, description: { es: 'Entrenamiento y análisis para mejorar tu surf.', en: 'Coaching and feedback to help you progress.' } },
+    { id: 'witch-rock', image: 'assets/legacy/bruja.jpg', title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, description: { es: 'Una salida de surf por barco.', en: 'A surf trip by boat.' } },
     { id: 'snorkel-catamaran', image: 'https://cdn.pixabay.com/photo/2012/02/23/08/57/woman-15840_1280.jpg', title: { es: 'Snorkel y catamarán', en: 'Snorkeling and catamaran' }, description: { es: 'Explorá el mar o navegá la costa.', en: 'Explore underwater or sail along the coast.' } },
     { id: 'yoga', image: 'https://cdn.pixabay.com/photo/2016/11/18/15/05/beach-1835213_1280.jpg', title: { es: 'Yoga', en: 'Yoga' }, description: { es: 'Sumá una pausa a tu viaje.', en: 'Make room for a pause in your trip.' } },
     { id: 'atv', image: 'https://cdn.pixabay.com/photo/2023/04/18/18/38/atv-7935771_1280.jpg', title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Descubrí Guanacaste en cuatriciclo.', en: 'Explore Guanacaste by ATV.' } },
-    { id: 'surf-photography', image: 'https://cdn.pixabay.com/photo/2018/10/17/11/57/beach-3753801_1280.jpg', title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
-    { id: 'surfskate', image: 'https://cdn.pixabay.com/photo/2016/11/29/14/28/skateboard-1870039_1280.jpg', title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } },
+    { id: 'surf-photography', image: 'assets/legacy/fotodesurf.jpg', title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
+    { id: 'surfskate', image: 'assets/legacy/surfskate.png', title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } },
     { id: 'retreats', image: 'https://cdn.pixabay.com/photo/2022/01/17/09/10/retreat-6944181_1280.jpg', title: { es: 'Retiros', en: 'Retreats' }, description: { es: 'Surf, descanso, movimiento y comunidad.', en: 'Surf, rest, movement and community.' } }
   ];
   const COPY = {
@@ -212,7 +212,11 @@
     document.documentElement.lang = lang;
     document.title = `${copy.title} · WavePoint`;
     root.innerHTML = `<section class="trip-builder-hero">
-      <div class="trip-builder-hero-image" aria-hidden="true"></div>
+      <div class="trip-builder-hero-image" aria-hidden="true">
+        <video class="trip-builder-hero-video" autoplay loop muted playsinline poster="assets/hero.jpg" tabindex="-1">
+          <source src="assets/videohero0.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="container trip-builder-hero-content"><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
     </section>
     <section class="trip-builder-main"><div class="container">
@@ -319,8 +323,21 @@
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
   });
   render();
+  const heroMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const syncHeroVideoMotion = () => {
+    const video = root.querySelector('.trip-builder-hero-video');
+    if (!video) return;
+    if (heroMotion.matches) {
+      video.pause();
+      return;
+    }
+    if (video.paused) video.play().catch(error => console.error('Trip-builder background video could not play.', error));
+  };
+  syncHeroVideoMotion();
+  heroMotion.addEventListener('change', syncHeroVideoMotion);
   window.addEventListener('wavepoint:languagechange', event => {
     lang = event.detail.lang === 'en' ? 'en' : 'es';
     render();
+    syncHeroVideoMotion();
   });
 })();
