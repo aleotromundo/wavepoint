@@ -1,18 +1,17 @@
 ## 2026-10-04
 
-### Fotos de surf: nuevo servicio sin retirar Buceo
+### Ajustes del catálogo: orden, Surf Photography, Surfskate y Pack ajustable
 
-- `services.js`: se agrega `surf-fotografia` como servicio nuevo con copy, fotos y botón de solicitud en español e inglés. Se conserva el servicio `buceo` y se ajustan los números del catálogo a 11 servicios.
-- `services.js`: Fotos de surf queda disponible también como opción del Pack ajustable, con nombre e imagen localizados.
-- `index.html` y `script.js`: se agrega una tarjeta independiente de Fotos de surf con título, descripción y texto alternativo traducidos; Buceo sigue en el catálogo.
-- `api/assistant.js` y `PROJECT_GUIDE.md`: se actualiza la lista de servicios para incluir fotografía de surf y mantener buceo.
-- `CHANGELOG.md`: se registra explícitamente que la nueva tarjeta se suma y no reemplaza la de Buceo.
+- `services.js`: se aplica el orden pedido tras Roca Bruja (Snorkel, Yoga, ATV, Surf Photography, Surfskate y Retiros), se retira Buceo del catálogo y se mantiene Pack ajustable al final de la navegación.
+- `services.js`: Surf Photography y Surfskate quedan con contenido, imágenes, CTA y opciones del Pack en español e inglés; los textos existentes de Surfskate se reutilizan.
+- `index.html`: se actualiza el orden de las tarjetas, se incorpora Surfskate, se elimina Buceo y se presenta Pack ajustable separado por una etiqueta horizontal.
+- `styles.css`: el Pack se muestra como tarjeta horizontal con el título grande superpuesto a la imagen, sombra y fuente Permanent Marker ya disponible en el sitio.
+- `script.js`, `api/assistant.js` y `PROJECT_GUIDE.md`: se sincronizan traducciones, recomendaciones y documentación con los servicios vigentes.
+- `service-detail.html` y `index.html`: se actualizan las versiones de los scripts para invalidar caché.
 
 ### Validación
 
-- Revisado en navegador: detalle de Fotos de surf en inglés, con descripción completa, enlace a Buceo en la navegación y CTA “Book your session”.
-- Confirmado: se conserva la tarjeta y página de Buceo, y el catálogo ahora suma 11 servicios.
-- Se actualiza el versionado de `services.js` y `script.js` para evitar contenido anterior en caché.
+- Pendiente de validación visual en ES/EN para el nuevo orden, Surfskate y la tarjeta horizontal de Pack ajustable.
 
 ## 2026-10-04
 
