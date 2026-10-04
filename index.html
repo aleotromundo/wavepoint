@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/png" href="furgoneta-de-surf.png" sizes="512x512"/><link rel="apple-touch-icon" href="assets/wavepoint-apple-touch-icon.png"/>
 <meta content="#0a3547" name="theme-color"/>
-<link href="styles.css?v=20261006-5" rel="stylesheet"/></head>
+<link href="styles.css?v=20261006-7" rel="stylesheet"/></head>
 <body>
 <header class="topbar">
 <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint">
@@ -29,7 +29,7 @@
 <a data-i18n="navInicio" href="#inicio">Inicio</a>
 <a data-i18n="navGuia" href="guia-playas.html">Guía turística</a>
 <a data-i18n="navServicios" href="#servicios">Servicios</a>
-<a data-i18n="navNosotros" href="Enlaces/nostros.html">Nosotros</a>
+<a data-i18n="navNosotros" href="#nosotros">Nosotros</a>
 <div class="dropdown">
 <a class="dropbtn" data-i18n="navColaboradores" href="#aliados">Colaboradores ▾</a>
 <div class="menu">
@@ -55,7 +55,7 @@
 <a href="#inicio" data-i18n="navInicio">Inicio</a>
 <a href="guia-playas.html" data-i18n="navGuia">Guía turística</a>
 <a href="#servicios" data-i18n="navServicios">Servicios</a>
-<a href="Enlaces/nostros.html" data-i18n="navNosotros">Nosotros</a>
+<a href="#nosotros" data-i18n="navNosotros">Nosotros</a>
 <div class="mobile-dropdown">
 <a class="mobile-dropdown-link" href="#aliados" data-i18n="navColaboradores">Colaboradores</a>
 <button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button>
@@ -98,7 +98,7 @@
 <h1 data-i18n="heroTitle">Las mejores experiencias de Tamarindo, con los locales que mejor lo conocen</h1>
 <p data-i18n="heroText">Conocé Tamarindo a través de quienes lo llaman hogar.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" data-i18n="btnWatchCameras" href="#camaras">Ver cámaras en vivo ▸</a>
+<a class="btn btn-primary" data-i18n="heroTripBuilderButton" href="trip-builder.html">Armá tu viaje ▸</a>
 <a class="btn btn-ghost" data-i18n="btnBeachGuide" href="Enlaces/guia-playas.html">Guía de playas</a>
 </div>
 </div>
@@ -172,7 +172,88 @@
   <p class="service-rates-note"><span>*</span> Tarifas de referencia. La disponibilidad y el precio final se confirman al consultar con el proveedor.</p>
 </div></div></section>
 
-<section class="section has-px" id="guia"><div class="px-bg" aria-hidden="true"></div><div class="container why-grid"><div><div class="section-head"><div><h2 class="section-title" data-i18n="wavepointInTamarindo"><span class="sq"></span>WavePoint en Tamarindo</h2><p class="section-sub" data-i18n="wavepointInTamarindoSubtitle">Información útil para elegir mejor tu spot, planear tu sesión y moverte en Tamarindo.</p></div></div><div class="benefits"><div class="benefit"><span class="ico">◉</span><div><h3 data-i18n="benefitLiveCameras">Cámaras reales</h3><p data-i18n="benefitLiveCamerasText">Consulta el estado visual de los spots antes de salir.</p></div></div><div class="benefit"><span class="ico">≈</span><div><h3 data-i18n="benefitQuickConditions">Condiciones rápidas</h3><p data-i18n="benefitQuickConditionsText">Clima, viento, hora local y oleaje estimado en un solo lugar.</p></div></div><div class="benefit"><span class="ico">⌖</span><div><h3 data-i18n="benefitLocalGuide">Guía local</h3><p data-i18n="benefitLocalGuideText">Playas, experiencias y puntos útiles para moverte mejor.</p></div></div><div class="benefit"><span class="ico">✦</span><div><h3 data-i18n="benefitLocalAllies">Aliados locales</h3><p data-i18n="benefitLocalAlliesText">Colaboradores que ayudan a mantener la experiencia activa y útil.</p></div></div></div></div><article class="guide-card"><div class="guide-content"><h3 data-i18n="guideLiveTamarindo">Vive Tamarindo</h3><p data-i18n="guideText">Más que surf: playas, colaboradores, servicios y experiencias recomendadas.</p><a class="btn btn-primary" data-i18n="guideButton" href="Enlaces/guia-playas.html">Explorar guía</a></div></article></div></section>
+<section class="section has-px" id="guia">
+  <div class="px-bg" aria-hidden="true"></div>
+  <div class="container why-grid">
+    <div>
+      <div class="section-head"><div><h2 class="section-title" data-i18n="wavepointInTamarindo"><span class="sq"></span>WavePoint en Tamarindo</h2><p class="section-sub" data-i18n="wavepointInTamarindoSubtitle">Información útil para elegir mejor tu spot, planear tu sesión y moverte en Tamarindo.</p></div></div>
+      <div class="benefits">
+        <div class="benefit"><span class="ico">◉</span><div><h3 data-i18n="benefitLiveCameras">Cámaras reales</h3><p data-i18n="benefitLiveCamerasText">Consulta el estado visual de los spots antes de salir.</p></div></div>
+        <div class="benefit"><span class="ico">≈</span><div><h3 data-i18n="benefitQuickConditions">Condiciones rápidas</h3><p data-i18n="benefitQuickConditionsText">Clima, viento, hora local y oleaje estimado en un solo lugar.</p></div></div>
+        <div class="benefit"><span class="ico">⌖</span><div><h3 data-i18n="benefitLocalGuide">Guía local</h3><p data-i18n="benefitLocalGuideText">Playas, experiencias y puntos útiles para moverte mejor.</p></div></div>
+        <div class="benefit"><span class="ico">✦</span><div><h3 data-i18n="benefitLocalAllies">Aliados locales</h3><p data-i18n="benefitLocalAlliesText">Colaboradores que ayudan a mantener la experiencia activa y útil.</p></div></div>
+      </div>
+    </div>
+    <article class="guide-card">
+      <div class="guide-content">
+        <h3 data-i18n="guideLiveTamarindo">Vive Tamarindo</h3>
+        <p data-i18n="guideText">Más que surf: playas, colaboradores, servicios y experiencias recomendadas.</p>
+        <div class="hero-actions guide-actions">
+          <a class="btn btn-primary" data-i18n="guideButton" href="Enlaces/guia-playas.html">Explorar guía</a>
+          <a class="btn btn-ghost" data-i18n="guideCamerasButton" href="#camaras">Ver cámaras en vivo</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<div class="about-page about-home" id="nosotros">
+  <section class="about-hero">
+    <div class="about-hero-image" aria-hidden="true"></div>
+    <div class="container about-hero-inner">
+      <p class="about-kicker">WAVEPOINT · TAMARINDO</p>
+      <p class="about-index" data-i18n="aboutHomeIndex">01 / NUESTRA HISTORIA</p>
+      <h1 data-i18n="aboutHomeTitle">Una herramienta hecha por surfistas.</h1>
+      <p class="about-intro" data-i18n="aboutHomeIntro">WavePoint nació para que locales y visitantes puedan mirar las condiciones antes de acercarse al agua.</p>
+      <a class="btn btn-primary" data-i18n="aboutHomeReadMore" href="#quienes-somos">Conocé más sobre nosotros ↓</a>
+    </div>
+    <div class="about-scroll-note"><span data-i18n="aboutHomeScroll">Deslizá para conocer el proyecto</span> <span>↓</span></div>
+  </section>
+  <section class="about-opening" id="quienes-somos">
+    <div class="container about-opening-grid">
+      <div class="about-quote-wrap"><span class="about-quote-mark">“</span><p class="about-quote" data-i18n="aboutHomeQuote">La ola correcta empieza mucho antes de entrar al agua.</p></div>
+      <div class="about-opening-copy">
+        <p class="about-label" data-i18n="aboutHomeOpeningLabel">INFORMACIÓN DEL PROYECTO</p>
+        <h2 data-i18n="aboutWhoTitle">¿Quiénes somos?</h2>
+        <p data-i18n="aboutHomeWhoText">Somos dos jóvenes apasionados por el surf que hemos encontrado en las olas de Tamarindo un hogar. WavePoint nació de la necesidad de todos los surfistas locales y visitantes de poder chequear las condiciones de las olas antes de acercarse al punto. Sabemos lo cambiantes que pueden ser las condiciones del mar aquí, y por eso decidimos crear una plataforma gratuita que abarque los puntos más importantes de surf en Tamarindo.</p>
+      </div>
+    </div>
+  </section>
+  <section class="about-story">
+    <div class="container about-story-grid">
+      <article class="about-story-copy">
+        <p class="about-label" data-i18n="aboutHomeViewLabel">UNA MIRADA MÁS CLARA</p>
+        <h2 data-i18n="aboutHomeViewTitle">Leer el mar. Elegir mejor.</h2>
+        <p data-i18n="aboutHomeViewText">Nuestro proyecto cubre los spots claves con cámaras de última generación. Cada cámara está estratégicamente ubicada para ofrecer una vista en tiempo real de los diferentes puntos de surf, asegurándonos de que, sin importar a qué playa te dirijas, siempre puedas planear tu sesión con total confianza.</p>
+        <a class="about-text-link" href="#camaras"><span data-i18n="aboutHomeCameraLink">Explorar las cámaras</span> <span>↗</span></a>
+      </article>
+      <div class="about-stat-stack">
+        <div class="about-stat"><strong>01</strong><span data-i18n="aboutHomeStepOne">Mirar las condiciones antes de salir.</span></div>
+        <div class="about-stat"><strong>02</strong><span data-i18n="aboutHomeStepTwo">Elegir el spot que tiene sentido para tu sesión.</span></div>
+        <div class="about-stat"><strong>03</strong><span data-i18n="aboutHomeStepThree">Disfrutar Tamarindo con más confianza.</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="about-gallery-section">
+    <div class="container">
+      <div class="about-gallery-heading">
+        <p class="about-label" data-i18n="aboutHomeGalleryLabel">DESDE TAMARINDO</p>
+        <h2 data-i18n="aboutHomeGalleryTitle">Hecho para volver al agua.</h2>
+        <p data-i18n="aboutHomeGalleryText">Una plataforma gratuita, local y en movimiento, como el mar que la inspira.</p>
+      </div>
+      <div class="about-gallery">
+        <figure class="about-gallery-feature"><img src="assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg" alt="Equipo WavePoint en una sesión de surf" data-i18n-alt="aboutHomeAltOne" loading="lazy"/><figcaption data-i18n="aboutHomeCaptionOne">El proyecto nace de quienes viven las olas.</figcaption></figure>
+        <figure><img src="assets/legacy/DSC_0258-5.jpeg" alt="Surf en Tamarindo" data-i18n-alt="aboutHomeAltTwo" loading="lazy"/><figcaption data-i18n="aboutHomeCaptionTwo">Condiciones que cambian todo el tiempo.</figcaption></figure>
+        <figure><img src="assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg" alt="Sesión de surf en Tamarindo" data-i18n-alt="aboutHomeAltThree" loading="lazy"/><figcaption data-i18n="aboutHomeCaptionThree">Una mirada local al agua.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section class="about-closing">
+    <div class="container about-closing-grid">
+      <div><p class="about-label" data-i18n="aboutHomeWhyLabel">NUESTRO MOTIVO</p><h2 data-i18n="aboutHomeWhyTitle">La herramienta definitiva para disfrutar cada ola.</h2></div>
+      <div><p data-i18n="aboutHomeWhyText">Tamarindo es famoso por su diversidad de olas, perfectas para todos los niveles. Nuestro objetivo es que WavePoint sea la herramienta definitiva para disfrutar cada una de ellas. Este proyecto es nuestra forma de agradecerle a este lugar por todas las increíbles olas que nos ha regalado y facilitar la manera de encontrar la ola correcta.</p><a class="btn btn-primary" data-i18n="aboutHomeExplore" href="#servicios">Explorar WavePoint ↗</a></div>
+    </div>
+  </section>
+</div>
 <section class="section has-px" id="camaras"><div class="px-bg" aria-hidden="true"></div>
 <div class="container">
 <div class="section-head"><div><h2 class="section-title" data-i18n="camerasSectionTitle"><span class="sq"></span>Cámaras en vivo</h2><p class="section-sub" data-i18n="camerasSectionSubtitle">Tres puntos clave: dos cámaras activas y Red Door en preparación.</p></div><a class="link-more" data-i18n="camerasSectionLink" href="#camaras">Ver cámaras en vivo →</a></div>
@@ -260,7 +341,7 @@
 </section>
 <section class="newsletter"><div class="container newsletter-grid"><div><h2 data-i18n="newsletterTitle">Entérate primero</h2><p data-i18n="newsletterText">Recibe alertas de olas, novedades y promociones seleccionadas.</p></div><form class="signup"><input data-i18n-placeholder="newsletterEmailPlaceholder" placeholder="Tu correo electrónico" type="email"/><button type="button" data-i18n="newsletterButton">Suscribirme</button></form></div></section>
 </main>
-<footer><div class="container"><div class="foot-grid"><div><div class="foot-brand">WavePoint</div><p data-i18n="footerIntro">Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.</p></div><div><h3 data-i18n="footerQuickLinks">Enlaces rápidos</h3><a href="index.html">Home</a><a href="Enlaces/guia-playas.html" data-i18n="footerGuide">Guía turística</a><a href="#servicios" data-i18n="footerServices">Servicios</a><a href="Enlaces/nostros.html" data-i18n="footerAbout">Nosotros</a></div><div><h3 data-i18n="footerCameras">Cámaras</h3><a href="Enlaces/capitan-suizo.html">Capitán Suizo</a><a href="Enlaces/casa-maderas.html">Casa de Maderas</a><a href="Enlaces/red-door.html">Red Door</a></div><div><h3 data-i18n="footerGuide">Guía</h3><a href="Enlaces/guia-playas.html" data-i18n="footerBeaches">Playas</a><a href="Enlaces/guia-playas.html" data-i18n="footerRestaurants">Restaurantes</a><a href="Enlaces/guia-playas.html" data-i18n="footerTours">Tours</a><a href="Enlaces/guia-playas.html" data-i18n="footerSnorkeling">Snorkeling</a></div><div><h3>WavePoint</h3><p data-i18n="footerWavePointText">Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.</p><a class="btn btn-primary" href="#camaras" data-i18n="footerViewCameras">Ver cámaras</a></div></div><div class="foot-bottom"><span>© 2026 WavePoint Tamarindo.</span><span data-i18n="footerTerms">Términos · Privacidad</span></div></div></footer>
+<footer><div class="container"><div class="foot-grid"><div><div class="foot-brand">WavePoint</div><p data-i18n="footerIntro">Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.</p></div><div><h3 data-i18n="footerQuickLinks">Enlaces rápidos</h3><a href="index.html">Home</a><a href="Enlaces/guia-playas.html" data-i18n="footerGuide">Guía turística</a><a href="#servicios" data-i18n="footerServices">Servicios</a><a href="#nosotros" data-i18n="footerAbout">Nosotros</a></div><div><h3 data-i18n="footerCameras">Cámaras</h3><a href="Enlaces/capitan-suizo.html">Capitán Suizo</a><a href="Enlaces/casa-maderas.html">Casa de Maderas</a><a href="Enlaces/red-door.html">Red Door</a></div><div><h3 data-i18n="footerGuide">Guía</h3><a href="Enlaces/guia-playas.html" data-i18n="footerBeaches">Playas</a><a href="Enlaces/guia-playas.html" data-i18n="footerRestaurants">Restaurantes</a><a href="Enlaces/guia-playas.html" data-i18n="footerTours">Tours</a><a href="Enlaces/guia-playas.html" data-i18n="footerSnorkeling">Snorkeling</a></div><div><h3>WavePoint</h3><p data-i18n="footerWavePointText">Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.</p><a class="btn btn-primary" href="#camaras" data-i18n="footerViewCameras">Ver cámaras</a></div></div><div class="foot-bottom"><span>© 2026 WavePoint Tamarindo.</span><span data-i18n="footerTerms">Términos · Privacidad</span></div></div></footer>
 <a class="whatsapp-float" href="https://wa.me/543517397525" target="_blank" rel="noopener noreferrer" aria-label="Contactar WavePoint por WhatsApp al +54 351 739 7525">
 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.8Z"/><path d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.4 2 1.8.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.4-1.1.6-1.8.5-.6-.1-1.5-.4-2.6-1.1-1.4-.9-2.4-2-2.9-2.7-.5-.8-.8-1.6-.8-2.2 0-.7.4-1.3.8-1.6Z"/></svg>
 <span><small data-i18n="whatsappLabel">Escribinos por WhatsApp</small><strong>+54 351 739 7525</strong></span>

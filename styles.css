@@ -2777,6 +2777,7 @@ body { background: #071c28; }
 .about-quote-mark { display: block; height: 58px; color: #0e9a91; font: 800 100px/.7 Georgia, serif; }
 .about-quote { max-width: 420px; margin: 12px 0 0; color: #0d3744; font: 500 clamp(34px, 4.2vw, 57px)/.98 "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; }
 .about-opening-copy { max-width: 650px; padding-top: 16px; }
+.about-opening-copy > h2 { margin: 0 0 18px; color: #103a46; font: 500 clamp(38px, 4.5vw, 56px)/.98 "Barlow Condensed", Impact, sans-serif; }
 .about-opening-copy > p:last-child, .about-story-copy > p:not(.about-label), .about-closing-grid > div:last-child > p { margin: 0; color: #4a646c; font-size: 17px; line-height: 1.75; }
 .about-story { padding: 100px 0; background: linear-gradient(135deg, #092c3b, #12434a 62%, #0a2e3e); color: #effaf6; }
 .about-story-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: center; }
@@ -2803,6 +2804,92 @@ body { background: #071c28; }
 .about-closing-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: end; }
 .about-closing h2 { max-width: 620px; margin-bottom: 0; }
 .about-closing-grid > div:last-child > p { margin: 0 0 28px; color: rgba(235,248,242,.77); }
+.guide-content .guide-actions { justify-content: flex-start; gap: 12px; margin-top: 0; }
+.about-page .about-hero-image { background-attachment: fixed; }
+.about-page .about-hero-inner {
+  box-sizing: border-box;
+  padding: 28px clamp(22px, 4vw, 42px);
+  border: 1px solid rgba(226, 250, 244, .28);
+  border-radius: 18px;
+  background: rgba(4, 29, 41, .48);
+  box-shadow: 0 24px 70px rgba(2, 17, 26, .22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.about-page .about-opening {
+  background: linear-gradient(135deg, rgba(236, 247, 243, .78), rgba(229, 243, 238, .68)), url("assets/img/optimized/tamarindo-stay.webp") center / cover fixed;
+}
+.about-page .about-opening-copy,
+.about-page .about-quote-wrap {
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, .62);
+  border-radius: 16px;
+  background: rgba(246, 251, 248, .72);
+  box-shadow: 0 18px 48px rgba(7, 43, 53, .12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.about-page .about-story {
+  background: linear-gradient(115deg, rgba(4, 31, 43, .87), rgba(6, 50, 58, .7)), url("assets/img/optimized/surf-coaching.webp") center / cover fixed;
+}
+.about-page .about-story-copy {
+  padding: 30px;
+  border: 1px solid rgba(190, 241, 225, .24);
+  border-radius: 16px;
+  background: rgba(5, 28, 40, .5);
+  box-shadow: 0 22px 58px rgba(1, 15, 22, .24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.about-page .about-stat { background: rgba(7, 40, 52, .52); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.about-page .about-gallery-section {
+  background: linear-gradient(145deg, rgba(7, 35, 47, .78), rgba(7, 40, 48, .68)), url("assets/img/optimized/retreat-sunset.webp") center / cover fixed;
+}
+.about-page .about-gallery-heading {
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, .58);
+  border-radius: 16px;
+  background: rgba(241, 249, 246, .78);
+  box-shadow: 0 18px 48px rgba(3, 25, 34, .17);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.about-page .about-gallery-heading h2 { color: #103a46; }
+.about-page .about-gallery-heading > p:last-child { color: #405f68; }
+.about-page .about-gallery figure { border: 1px solid rgba(255, 255, 255, .3); box-shadow: 0 18px 50px rgba(2, 22, 31, .22); }
+.about-page .about-closing {
+  background: linear-gradient(120deg, rgba(4, 28, 40, .9), rgba(5, 42, 51, .78)), url("assets/img/optimized/retreat-sunset.webp") center / cover fixed;
+}
+.about-page .about-closing-grid > div {
+  padding: 28px;
+  border: 1px solid rgba(191, 239, 225, .2);
+  border-radius: 16px;
+  background: rgba(5, 28, 40, .48);
+  box-shadow: 0 22px 58px rgba(1, 15, 22, .22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+@media (max-width: 760px) {
+  .about-page .about-hero-inner { padding: 22px; }
+  .about-page .about-opening-copy,
+  .about-page .about-quote-wrap,
+  .about-page .about-story-copy,
+  .about-page .about-gallery-heading,
+  .about-page .about-closing-grid > div { padding: 22px; }
+  .about-page .about-hero-image,
+  .about-page .about-opening,
+  .about-page .about-story,
+  .about-page .about-gallery-section,
+  .about-page .about-closing { background-attachment: scroll; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-page .about-hero-image,
+  .about-page .about-opening,
+  .about-page .about-story,
+  .about-page .about-gallery-section,
+  .about-page .about-closing { background-attachment: scroll; }
+  .about-page .about-gallery figure:hover img { transform: none; }
+}
 @media (max-width: 760px) {
   .about-hero { min-height: 620px; padding: 145px 0 68px; }
   .about-hero-inner { margin: 0 auto; }
