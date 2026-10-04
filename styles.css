@@ -5741,7 +5741,10 @@ footer a {
   }
 }
 
-#servicios,
-#nosotros {
+#servicios {
   scroll-margin-top: -28px;
+}
+
+#nosotros {
+  scroll-margin-top: -88px;
 }
