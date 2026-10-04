@@ -2,9 +2,18 @@
 
 ## 1. Propósito
 
-WavePoint es un sitio web estático orientado a surf, clima, cámaras en vivo, servicios y experiencias locales en Tamarindo, Costa Rica. El sitio combina información útil, contenido visual, colaboradores locales y formularios de consulta que preparan mensajes para WhatsApp.
+WavePoint es un sitio web estático enfocado principalmente en experiencias de surf en Tamarindo, Costa Rica, con servicios locales, guía de viaje, clima y cámaras en vivo como recurso secundario. El sitio combina información útil, contenido visual, colaboradores locales y formularios de consulta que preparan mensajes para WhatsApp.
 
 La guía existe para que otra persona o agente pueda continuar el proyecto sin depender del contexto de un chat anterior.
+
+### Dominio público y posicionamiento
+
+- Dominio público/canónico confirmado por el usuario: `https://wavepoint-five.vercel.app/`.
+- `https://wavepointcr.com/` es un dominio futuro previsto, no activo ni verificado. No usarlo en canonical, Open Graph, JSON-LD, `robots.txt` ni `sitemap.xml` hasta confirmar la migración.
+- La portada debe posicionar WavePoint como **Surf Experiences** en Tamarindo, Costa Rica. Las cámaras siguen disponibles como una sección secundaria; no eliminarlas sin pedido explícito.
+- Mantener el contenido visible y el copy SEO en español e inglés. Evitar keyword stuffing, afirmaciones operativas no verificadas y promesas de ranking.
+- El SEO técnico de la home vive en `index.html`; su foto social es `assets/og/surf-experiences-tamarindo.jpg`, y `robots.txt` referencia `sitemap.xml`.
+- Después de publicar cambios o migrar de dominio, revisar la URL pública, verificar la propiedad en Google Search Console y enviar el sitemap manualmente. Google controla el rastreo, la indexación y la posición; no hay garantía de aparecer primero ni de hacerlo de inmediato.
 
 ## 2. Arquitectura general
 
@@ -166,16 +175,17 @@ Las secciones fuera del hero pueden usar gradientes oceánicos, capas radiales y
 
 ### Favicon y logo original
 
-El favicon es una marca de surf vectorial propia en `favicon.svg`, con respaldo PNG de 16 y 32 px, un ICO multirresolución y un icono Apple a juego. Todas las páginas enlazan los recursos con rutas relativas y versión de caché.
+El favicon usa el icono `surfing` de Google Material Icons sobre un fondo oceánico WavePoint, con respaldo PNG de 16 y 32 px, un ICO multirresolución y un icono Apple a juego. El SVG incluye la atribución y `assets/MATERIAL-ICONS-LICENSE.txt` contiene la licencia Apache 2.0. Todas las páginas enlazan los recursos localmente con versión de caché.
 
 ```text
-favicon.svg                               Favicon vectorial de surf
+favicon.svg                               Google Material Icon “surfing” con fondo WavePoint
 favicon-16.png / favicon-32.png           Respaldo PNG para navegadores
 favicon.ico                               Respaldo multirresolución (16/32/48/64/128/256)
 assets/wavepoint-apple-touch-icon.png     Icono Apple a juego (180 × 180)
+assets/MATERIAL-ICONS-LICENSE.txt         Licencia Apache 2.0 del icono
 ```
 
-No reemplazarlo con favicons cargados por el usuario ni reinterpretar esta marca sin autorización.
+Conservar la atribución, la licencia y los respaldos locales al actualizar el icono.
 
 ## 8. Responsive y accesibilidad
 
@@ -208,6 +218,7 @@ Reglas de accesibilidad:
 | --- | --- |
 | `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `favicon.ico` | Favicon vectorial de surf y respaldos de navegador. |
 | `assets/wavepoint-apple-touch-icon.png` | Icono Apple a juego. |
+| `assets/MATERIAL-ICONS-LICENSE.txt` | Licencia del icono de surf (Apache 2.0). |
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
 | `assets/wavepoint-watermark.png` | Marca sobre streams de cámara. |
@@ -332,7 +343,7 @@ Antes de publicar:
 - No modificar el hero sin permiso explícito.
 - No inventar servicios, colaboradores, precios, horarios ni disponibilidad.
 - Fotos de surf y Surfskate están incluidos en el catálogo por pedido explícito del usuario; no reintroducir Fotografía acuática como servicio separado sin confirmación.
-- No reemplazar el favicon activo (ola con punto, 2026-10-03) por una reinterpretación.
+- El favicon activo usa Google Material Icons “surfing” (Apache 2.0); mantener su atribución y licencia al cambiarlo.
 - No borrar datos ni assets sin revisar referencias y documentar la decisión.
 - No agregar dependencias o frameworks para cambios que puedan resolverse con HTML, CSS y JavaScript existentes.
 - No subir secretos, claves API ni credenciales al repositorio.

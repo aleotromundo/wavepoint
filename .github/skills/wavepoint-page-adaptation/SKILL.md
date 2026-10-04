@@ -63,9 +63,10 @@ This section preserves project decisions and completed work so future assistants
 - The Clases de surf detail gallery was given a more open 2×2 layout with controlled image heights; all secondary images remain visible and the hero image is not duplicated in the gallery.
 - Large service photos were converted to local WebP derivatives and the originals retained. Notable reductions recorded in `CHANGELOG.md`: longboard from 11.79 MB to 189 KB and surfskate from 13.49 MB to 313 KB.
 - The Nosotros section uses photographic/parallax styling and glassmorphism. Parallax is disabled on mobile and for reduced-motion preferences.
-- The homepage hero uses “A través de quienes llaman hogar a Tamarindo” / “Through the people who call it home” and its matching bilingual WavePoint subheading.
+- The homepage H1 prioritizes “Experiencias de surf en Tamarindo” / “Surf experiences in Tamarindo, Costa Rica”; “A través de quienes llaman hogar a Tamarindo” remains as supporting bilingual copy.
+- The user-confirmed current canonical host is `https://wavepoint-five.vercel.app/`. `https://wavepointcr.com/` is planned for a future migration only; do not use it until the user confirms it is active. Follow `.github/skills/wavepoint-seo/SKILL.md` for SEO and domain migration work.
 - The Witch’s Rock, snorkel and ATV catalog images include multi-panel source photos; card-only CSS zoom and positioning focus a single panel without replacing the shared source used by the detail and trip-builder surfaces. Keep their Spanish and English alternative text aligned with the visible crop.
-- The browser favicon is an original surf mark in root `favicon.svg`, with 16/32 px PNGs, a 16/32/48/64/128/256 px ICO, and a matching Apple touch icon. The user's uploaded favicon and its derivatives were removed at their request.
+- The browser favicon uses Google Material Icons `surfing` in root `favicon.svg` with a WavePoint ocean background, 16/32 px PNGs, a 16/32/48/64/128/256 px ICO, and a matching Apple touch icon. Keep the embedded attribution and `assets/MATERIAL-ICONS-LICENSE.txt` (Apache-2.0); the user's uploaded favicon and its derivatives were removed at their request.
 
 ### Validation and working preferences
 

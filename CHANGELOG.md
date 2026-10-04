@@ -30,12 +30,29 @@
 
 ## 2026-10-06
 
+### SEO de la portada y transición a Surf Experiences
+
+- `index.html`: orientar el título, descripción, H1, canonical, Open Graph y tarjeta de X/Twitter a las experiencias de surf en Tamarindo, Costa Rica; se agregan datos estructurados prudentes de `Organization` y `WebSite`.
+- `index.html` y `styles.css`: mantener un H1 descriptivo en la portada y conservar visualmente el título de Nosotros como encabezado de segundo nivel.
+- `assets/og/surf-experiences-tamarindo.jpg`: crear una portada social de 1200 × 630 con una foto local de una clase de surf, marca y ubicación.
+- `robots.txt` y `sitemap.xml`: habilitar rastreo y declarar la portada y la guía local en el dominio confirmado `https://wavepoint-five.vercel.app/`.
+- `script.js`: alinear la portada y el encabezado/descripción del catálogo en español e inglés; las cámaras siguen disponibles como sección secundaria.
+- `index.html` y `script.js`: sumar `videohero3.mp4`, reducido de 30,18 MB a 15,16 MB (49,8 % menos); rotar los tres videos activando y cargando cada uno solo cuando toca, y esperar a que el siguiente pueda reproducirse.
+- El dominio futuro `wavepointcr.com` queda registrado como plan, no como URL activa; actualizar canonical, sitemap, robots, schema y metadatos sociales solo cuando se confirme la migración.
+- La vista de la URL pública consultada aún sirve contenido previo; estos cambios requieren desplegarse antes de que Google o las plataformas sociales puedan leerlos.
+
+### Validación
+
+- `script.js` validado con Node; metadatos, schema, sitemap y tamaño de la imagen social verificados localmente.
+- Video optimizado comparado con el original respaldado en el almacenamiento persistente de la sesión; SSIM informado durante la compresión: 0,991775.
+
 ### Mensaje de portada, fotos de servicios y favicon
 
 - `index.html` y `script.js`: se actualiza el mensaje principal en español e inglés y se renueva la versión de caché del script.
 - `styles.css`: se encuadran las fotos multipanel de Roca Bruja, snorkel y ATV para destacar una sola escena en cada tarjeta sin cambiar sus imágenes compartidas con el detalle y el armador.
 - `script.js` e `index.html`: los textos alternativos ES/EN de las fotos enfocadas describen las escenas que se ven.
-- Se crea una marca vectorial de surf para `favicon.svg`, con respaldos PNG de 16/32 px, ICO multirresolución e icono Apple a juego; las páginas enlazan el nuevo set.
+- `favicon.svg`: se adopta el icono gratuito “surfing” de Google Material Icons sobre un fondo oceánico WavePoint; se generan respaldos PNG de 16/32 px, ICO multirresolución e icono Apple a juego.
+- Se conserva la atribución y la licencia Apache 2.0 en `assets/MATERIAL-ICONS-LICENSE.txt`; las páginas enlazan el set local.
 - Se retiran el JPG de favicon proporcionado por el usuario y sus variantes derivadas anteriores.
 
 ### Foto de hotel para Estadías y hoteles
