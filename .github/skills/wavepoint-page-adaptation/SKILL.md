@@ -42,7 +42,7 @@ This section preserves project decisions and completed work so future assistants
 - Each service's first image (`service.images[0]`) is the visual source of truth for both its hero and full-page/body background. Changing the service's hero photo should therefore change both. Do not introduce a separate, drifting body-background image.
 - Keep this image relationship consistent among service catalog cards, detail hero/background, and trip-builder choices wherever those surfaces represent the same service.
 - The service photo set has local optimized WebP versions under `assets/img/optimized/`; preserve source originals and avoid reintroducing the large originals to page references. Verify image subject, crop, alt text, and every consumer before replacing a path.
-- The current `alojamiento-experiencias` image is `assets/ally-capitan.jpg` (about 195 KB), shared by the hotel card, service hero/body background, accommodation pack choices, retreat stay card, and trip builder. It is intentionally kept as JPG because it is smaller than the previous WebP. `tamarindo-stay.webp` remains in the Nosotros opening background and should not be globally replaced.
+- The current `alojamiento-experiencias` image is `assets/img/hotels/stayandhotels5_resultado.webp`, shared by the hotel card, service hero/body background, accommodation pack choices, retreat stay card, and trip builder. `tamarindo-stay.webp` remains in the Nosotros opening background and should not be globally replaced.
 - Service copy, labels, image alt text, and detail-page content must remain available in Spanish and English. Follow the `wavepoint-service-bilingual` skill for service copy changes.
 
 ### Homepage, cards, and interaction
@@ -63,6 +63,9 @@ This section preserves project decisions and completed work so future assistants
 - The Clases de surf detail gallery was given a more open 2×2 layout with controlled image heights; all secondary images remain visible and the hero image is not duplicated in the gallery.
 - Large service photos were converted to local WebP derivatives and the originals retained. Notable reductions recorded in `CHANGELOG.md`: longboard from 11.79 MB to 189 KB and surfskate from 13.49 MB to 313 KB.
 - The Nosotros section uses photographic/parallax styling and glassmorphism. Parallax is disabled on mobile and for reduced-motion preferences.
+- The homepage hero uses “A través de quienes llaman hogar a Tamarindo” / “Through the people who call it home” and its matching bilingual WavePoint subheading.
+- The Witch’s Rock, snorkel and ATV catalog images include multi-panel source photos; card-only CSS zoom and positioning focus a single panel without replacing the shared source used by the detail and trip-builder surfaces. Keep their Spanish and English alternative text aligned with the visible crop.
+- The browser favicon set is generated from `assets/wavepoint-favicon-source.jpg`: 16/32 px transparent-corner PNGs and a 16/32/48/64/128/256 px ICO. Keep the Apple touch icon separate.
 
 ### Validation and working preferences
 
