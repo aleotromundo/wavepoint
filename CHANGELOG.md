@@ -11,7 +11,8 @@
 ### Descripciones desplegables en servicios
 
 - `styles.css` y `script.js`: las tarjetas de servicios comunes conservan el título y el enlace visibles sobre una mayor superficie de foto; la descripción se despliega en un panel translúcido al pasar el mouse o al centrar la tarjeta con el scroll en dispositivos táctiles.
-- La tarjeta se cierra al retirar el cursor, cambiar el foco o continuar desplazándose; Pack y Retiros conservan su composición destacada.
+- En tablets y móviles el scroll activa automáticamente la fila de tarjetas más próxima al centro de la pantalla; se repliega al avanzar a otra fila. Pack y Retiros conservan su composición destacada.
+- `styles.css`: un brillo turquesa muy sutil recorre periódicamente el contorno de las tarjetas y respeta la preferencia por movimiento reducido.
 - `index.html`: se renuevan las versiones de caché de los estilos y el script.
 
 ## 2026-10-04

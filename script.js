@@ -1019,33 +1019,46 @@
   function bindServiceCardReveals(){
     const cards=[...document.querySelectorAll('#servicios .service-grid-catalog > .service-card:not(.service-card-pack)')];
     const mobilePointer=window.matchMedia('(hover: none) and (pointer: coarse)');
-    const supportsObserver='IntersectionObserver' in window;
     if(!cards.length) return;
 
-    let observer;
-    const updateMode=()=>{
-      observer?.disconnect();
-      cards.forEach(card=>card.classList.remove('is-scroll-active'));
-      const shouldRevealOnScroll=mobilePointer.matches && supportsObserver;
-      document.documentElement.classList.toggle('service-card-scroll-enabled',shouldRevealOnScroll);
-      if(!shouldRevealOnScroll) return;
+    let scrollFrame=0;
+    const updateActiveCards=()=>{
+      scrollFrame=0;
+      const viewportCenter=window.innerHeight/2;
+      const activeZoneTop=window.innerHeight*.2;
+      const activeZoneBottom=window.innerHeight*.8;
+      const visibleCards=cards.map(card=>({card,rect:card.getBoundingClientRect()}))
+        .filter(({rect})=>rect.bottom>activeZoneTop&&rect.top<activeZoneBottom);
+      const closest=visibleCards.reduce((best,item)=>{
+        const center=item.rect.top+item.rect.height/2;
+        return !best||Math.abs(center-viewportCenter)<Math.abs(best.rect.top+best.rect.height/2-viewportCenter)?item:best;
+      },null);
 
-      const centerInset=Math.min(Math.round(window.innerHeight*.38),240);
-      observer=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            cards.forEach(card=>card.classList.toggle('is-scroll-active',card===entry.target));
-          }else{
-            entry.target.classList.remove('is-scroll-active');
-          }
-        });
-      },{rootMargin:`-${centerInset}px 0px -${centerInset}px 0px`,threshold:0});
-      cards.forEach(card=>observer.observe(card));
+      cards.forEach(card=>{
+        const item=visibleCards.find(candidate=>candidate.card===card);
+        const sameRow=closest&&item&&Math.abs(item.rect.top-closest.rect.top)<32;
+        card.classList.toggle('is-scroll-active',Boolean(sameRow));
+      });
+    };
+    const scheduleActiveCards=()=>{
+      if(!mobilePointer.matches){
+        cards.forEach(card=>card.classList.remove('is-scroll-active'));
+        return;
+      }
+      if(scrollFrame) return;
+      scrollFrame=window.requestAnimationFrame(updateActiveCards);
+    };
+    const updateMode=()=>{
+      cards.forEach(card=>card.classList.remove('is-scroll-active'));
+      const shouldRevealOnScroll=mobilePointer.matches;
+      document.documentElement.classList.toggle('service-card-scroll-enabled',shouldRevealOnScroll);
+      if(shouldRevealOnScroll) updateActiveCards();
     };
 
     updateMode();
     mobilePointer.addEventListener('change',updateMode);
-    window.addEventListener('resize',()=>{if(mobilePointer.matches) updateMode();},{passive:true});
+    window.addEventListener('scroll',scheduleActiveCards,{passive:true});
+    window.addEventListener('resize',updateMode,{passive:true});
   }
 
   function bindAlliesTickerInteraction(){
