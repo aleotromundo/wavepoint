@@ -1,5 +1,34 @@
 ## 2026-10-04
 
+### Fotos de surf: nuevo servicio sin retirar Buceo
+
+- `services.js`: se agrega `surf-fotografia` como servicio nuevo con copy, fotos y botón de solicitud en español e inglés. Se conserva el servicio `buceo` y se ajustan los números del catálogo a 11 servicios.
+- `services.js`: Fotos de surf queda disponible también como opción del Pack ajustable, con nombre e imagen localizados.
+- `index.html` y `script.js`: se agrega una tarjeta independiente de Fotos de surf con título, descripción y texto alternativo traducidos; Buceo sigue en el catálogo.
+- `api/assistant.js` y `PROJECT_GUIDE.md`: se actualiza la lista de servicios para incluir fotografía de surf y mantener buceo.
+- `CHANGELOG.md`: se registra explícitamente que la nueva tarjeta se suma y no reemplaza la de Buceo.
+
+### Validación
+
+- Pendiente: revisar la tarjeta, el detalle de Fotos de surf y el Pack ajustable en ES/EN.
+
+## 2026-10-04
+
+### ATV Tours y orden de tarjetas en catálogo
+
+- `services.js`: se reordena el catálogo para mover Yoga y Snorkel antes de Roca Bruja y se ajustan los números del hero para que coincidan con el flujo real del sitio.
+- `services.js`: se actualiza `atv` con los textos pedidos en ES/EN y se cambia la imagen de portada y la descriptiva por opciones más coherentes con la experiencia de cuatriciclo.
+- `index.html`: se mueve la tarjeta de Yoga y la de Snorkel en la grilla principal para reflejar el nuevo orden del catálogo.
+- `script.js`: se actualizan los textos de la tarjeta de ATV para que coincidan con el copy nuevo en ambos idiomas.
+- `CHANGELOG.md`: se deja registro de este ajuste final para conservar la bitácora actualizada.
+
+### Validación
+
+- Revisión visual en `index.html` y `service-detail.html?service=atv` con el idioma ES/EN.
+- Confirmado: la grilla del catálogo refleja el nuevo orden y la página de ATV muestra el copy y las imágenes correctas sin mezclas de idioma.
+
+## 2026-10-04
+
 ### Corrección final de ES/EN en títulos y Pack ajustable
 
 - `services.js`: se corrigen los títulos que seguían quedando en español al activar inglés en `yoga` y `roca-bruja`, agregando el bloque `en.title` faltante en cada uno.
