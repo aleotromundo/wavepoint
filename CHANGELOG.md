@@ -7,6 +7,14 @@
 - Se convierten también las fotos grandes usadas por las galerías de surf y Retiros; los originales se conservan. La foto de longboard baja de 11,79 MB a 189 KB y Surfskate de 13,49 MB a 313 KB.
 - Se actualizan las versiones de caché de los scripts y estilos modificados.
 
+### Integración de Nosotros y llamadas a la acción del inicio
+
+- `index.html`: se incorpora antes de las cámaras la historia completa de Nosotros, con galería, propósito y el nuevo encabezado «¿Quiénes somos?».
+- `index.html`: el menú y el pie llevan a la sección Nosotros; el hero invita a armar un viaje y «WavePoint en Tamarindo» ofrece también el acceso a las cámaras en vivo.
+- `script.js` y `lang-switch.js`: los nuevos textos y el encabezado se muestran en español e inglés; se mantiene completa la página independiente de Nosotros.
+- `styles.css`: la sección Nosotros suma fondos fotográficos con parallax y superficies glassmorphism; en móvil y con movimiento reducido el fondo vuelve al desplazamiento normal.
+- `styles.css`, `index.html` y `Enlaces/nostros.html`: se actualizan los estilos y las referencias de caché correspondientes.
+
 ### Ajustes responsive, menú y carrito del viaje
 
 - `index.html` y `styles.css`: la tabla de tarifas se reorganiza en tarjetas legibles en móvil, sin comprimir columnas ni requerir desplazamiento horizontal; se refuerza el ajuste de textos y etiquetas de la ventana de clima en pantallas estrechas.
