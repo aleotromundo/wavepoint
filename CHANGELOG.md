@@ -11,7 +11,10 @@
 
 ### Validación
 
-- Pendiente de validación visual en ES/EN para el nuevo orden, Surfskate y la tarjeta horizontal de Pack ajustable.
+- Probado en navegador: las diez tarjetas de servicio aparecen en el orden definido en español e inglés; Pack ajustable queda fuera de la grilla, después del separador, con el título superpuesto traducido.
+- Probado el cambio ES/EN en Yoga, ATV, Surf Photography, Surfskate y Pack ajustable: títulos y textos principales coinciden con cada idioma.
+- Confirmado que el catálogo no tiene enlaces activos a Buceo.
+- Revisada la tarjeta de Pack en escritorio y a 390 px de ancho: la imagen y el título se mantienen visibles sin desbordamiento horizontal.
 
 ## 2026-10-04
 
