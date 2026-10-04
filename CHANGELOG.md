@@ -6,6 +6,13 @@
 - `styles.css`: unificar las cuatro portadas, dar legibilidad al contenido sobre un fondo fotográfico y ajustar las galerías para llenar los marcos sin bandas azules.
 - Se conservan todos los textos, enlaces y fotografías existentes.
 
+### Nuevas fotos para Estadías y hoteles
+
+- `services.js`: usar las siete imágenes nuevas de `assets/img/hotels/` en la portada del servicio y agregar una galería descriptiva bilingüe.
+- `index.html`, `script.js`, `trip-builder.js` y `services.js`: compartir la nueva foto principal en la tarjeta, el armador, las opciones de alojamiento del Pack y la tarjeta de estadía del contenido de Retiros.
+- Se conservan las galerías específicas de cada alojamiento para no atribuirles fotos sin confirmar su procedencia.
+- Se renuevan los parámetros de caché de los estilos y scripts afectados.
+
 ### Legibilidad del desplegable de colaboradores
 
 - `styles.css`: evitar que la sombra fuerte del texto del header se herede al menú claro de colaboradores.
