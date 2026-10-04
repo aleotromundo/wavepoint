@@ -48,14 +48,14 @@ El catálogo confirmado tiene once servicios. No agregar servicios inventados ni
 1. **Stays and Hotels** / Estadías y hoteles — consultar Hotel Tamalodge, Casa Aura, Casa Madera o Capitán Suizo.
 2. **Surf lessons** / Clases de surf — primera ola o siguiente paso según nivel.
 3. **Surf coaching** — coaching con posibilidad de fotos o videoanálisis.
-4. **Yoga** — sesión adaptada a experiencia y horario.
-5. **Witch’s Rock surf trip** / Surf trip a Roca Bruja — salida guiada según grupo y condiciones.
-6. **Snorkeling & catamaran** / Snorkel y catamarán — opciones de navegación y snorkel.
-7. **Surf Photography** / Fotos de surf — conexión con fotógrafos locales para capturar sesiones en el agua.
-8. **Diving** / Buceo — experiencia de buceo local; puede referenciarse como Tama Dive cuando corresponda.
-9. **ATV tours** — recorridos y requisitos del operador.
-10. **Build your own experience** / Pack ajustable — combinación personalizada de actividades.
-11. **Retreats** / Retiros — viajes grupales con programa y estadía.
+4. **Witch’s Rock surf trip** / Surf trip a Roca Bruja — salida guiada según grupo y condiciones.
+5. **Snorkeling & catamaran** / Snorkel y catamarán — opciones de navegación y snorkel.
+6. **Yoga** — sesión adaptada a experiencia y horario.
+7. **ATV tours** — recorridos y requisitos del operador.
+8. **Surf Photography** / Fotos de surf — conexión con fotógrafos locales para capturar sesiones en el agua.
+9. **Surfskate lessons** / Clases de surfskate — práctica en tierra para trabajar técnica y fluidez.
+10. **Retreats** / Retiros — viajes grupales con programa y estadía.
+11. **Build your own experience** / Pack ajustable — va después de una división visual, en una tarjeta horizontal con el título sobre la imagen.
 
 Los IDs actuales de detalle son:
 
@@ -63,14 +63,14 @@ Los IDs actuales de detalle son:
 alojamiento-experiencias
 clases-de-surf
 surf-coaching
-yoga
 roca-bruja
 snorkel-catamaran
-surf-fotografia
-buceo
+yoga
 atv
-pack-ajustable
+surf-fotografia
+surfskate
 retiros
+pack-ajustable
 ```
 
 ### Regla de sincronización
@@ -338,7 +338,7 @@ Antes de publicar:
 
 - No modificar el hero sin permiso explícito.
 - No inventar servicios, colaboradores, precios, horarios ni disponibilidad.
-- No reintroducir Fotos de surf, Fotografía acuática o Surfskate como servicios del catálogo real sin confirmación.
+- Fotos de surf y Surfskate están incluidos en el catálogo por pedido explícito del usuario; no reintroducir Fotografía acuática como servicio separado sin confirmación.
 - No reemplazar el favicon activo (ola con punto, 2026-10-03) por una reinterpretación.
 - No borrar datos ni assets sin revisar referencias y documentar la decisión.
 - No agregar dependencias o frameworks para cambios que puedan resolverse con HTML, CSS y JavaScript existentes.
