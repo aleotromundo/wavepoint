@@ -35,7 +35,8 @@
 - `index.html` y `script.js`: se actualiza el mensaje principal en español e inglés y se renueva la versión de caché del script.
 - `styles.css`: se encuadran las fotos multipanel de Roca Bruja, snorkel y ATV para destacar una sola escena en cada tarjeta sin cambiar sus imágenes compartidas con el detalle y el armador.
 - `script.js` e `index.html`: los textos alternativos ES/EN de las fotos enfocadas describen las escenas que se ven.
-- Las páginas enlazan PNG transparentes de 16 y 32 px y un ICO multirresolución, generados desde `assets/wavepoint-favicon-source.jpg` con el margen blanco eliminado. Se conserva el icono Apple y se retiran los favicons duplicados anteriores.
+- Se crea una marca vectorial de surf para `favicon.svg`, con respaldos PNG de 16/32 px, ICO multirresolución e icono Apple a juego; las páginas enlazan el nuevo set.
+- Se retiran el JPG de favicon proporcionado por el usuario y sus variantes derivadas anteriores.
 
 ### Foto de hotel para Estadías y hoteles
 
