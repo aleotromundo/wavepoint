@@ -1,5 +1,11 @@
 ## 2026-10-04
 
+### Rediseño visual de Retiros inspirado en Canva
+
+- `services.js` y `styles.css`: la página de detalle de Retiros adopta una composición editorial azul profundo con fotografía local, tarjetas visuales para el destino, la estadía, yoga y surf, y una presentación renovada del paquete y el itinerario.
+- Se conserva el contenido existente en español e inglés, incluidos los datos, inclusiones, condiciones, solicitud y los ocho días del itinerario.
+- `service-detail.html`: se actualizan las versiones de CSS y JavaScript para invalidar caché.
+
 ### Integración de fotografías locales de `assets/img`
 
 - `index.html`, `services.js` y `trip-builder.js`: se asignan fotos locales a Estadías, Clases de surf, Surf coaching, Fotos de surf, Pack ajustable y Retiros.

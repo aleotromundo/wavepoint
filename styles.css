@@ -5177,6 +5177,167 @@ footer a {
 .retreat-day li { position: relative; margin: 6px 0; padding-left: 15px; color: #45606a; font-size: 13px; line-height: 1.5; }
 .retreat-day li::before { position: absolute; left: 0; color: #078f87; content: '•'; font-weight: 900; }
 .retreat-gallery { margin-top: 30px; }
+.detail-story-retreats { max-width: none; }
+.retreat-editorial {
+  display: grid;
+  gap: 24px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 8% 0%, rgba(16,164,154,.18), transparent 38%),
+    linear-gradient(155deg, #082f43, #0b4050 54%, #082d40);
+  box-shadow: 0 24px 58px rgba(8,43,58,.17);
+}
+.retreat-cover {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(220px, .9fr);
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(7,36,54,.97), rgba(7,61,75,.88));
+}
+.retreat-cover-copy { position: relative; z-index: 1; align-self: center; padding: clamp(22px, 3.2vw, 38px); }
+.retreat-cover-kicker, .retreat-card-kicker {
+  margin: 0 0 12px;
+  color: #8be6d5;
+  font: 800 10px/1.3 "DM Sans", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.retreat-cover h2 {
+  margin: 0 0 14px;
+  color: #f6fbf6;
+  font: 800 clamp(38px, 4.6vw, 58px)/.94 "Barlow Condensed", Impact, sans-serif;
+  letter-spacing: -.02em;
+}
+.retreat-cover .retreat-intro, .retreat-cover-about {
+  margin: 0 0 13px;
+  color: rgba(239,250,246,.83);
+  font-size: 14px;
+  line-height: 1.62;
+}
+.retreat-cover .retreat-intro { font-weight: 700; }
+.retreat-cover-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.retreat-cover-facts span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 7px 11px;
+  border: 1px solid rgba(137,233,214,.32);
+  border-radius: 999px;
+  background: rgba(12,154,145,.2);
+  color: #e8fff6;
+  font-size: 11px;
+  font-weight: 800;
+}
+.retreat-cover-facts span:last-child { border-color: rgba(255,203,119,.55); background: rgba(244,172,77,.17); color: #ffe4b3; }
+.retreat-cover-image { position: relative; min-height: 100%; margin: 0; }
+.retreat-cover-image::after { position: absolute; inset: 0; background: linear-gradient(90deg, #082f43 0%, rgba(8,47,67,.12) 44%, rgba(8,47,67,.03)); content: ""; }
+.retreat-cover-image img { display: block; width: 100%; height: 100%; min-height: 340px; object-fit: cover; }
+.retreat-experience-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.retreat-experience-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.045));
+  box-shadow: inset 0 1px rgba(255,255,255,.06);
+}
+.retreat-experience-card > img { display: block; width: 100%; height: 150px; object-fit: cover; }
+.retreat-experience-card > div { padding: 17px 18px 19px; }
+.retreat-experience-card .retreat-card-kicker { margin-bottom: 8px; color: #7fe0cb; }
+.retreat-experience-card h3, .retreat-experience-card h4 {
+  margin: 0 0 9px;
+  color: #f4fcf8;
+  font: 700 27px/1 "Barlow Condensed", Impact, sans-serif;
+}
+.retreat-experience-card h4 { margin-top: 20px; font-size: 22px; }
+.retreat-experience-card p:not(.retreat-card-kicker) { margin: 0 0 11px; color: rgba(236,248,244,.8); font-size: 13px; line-height: 1.62; }
+.retreat-experience-card p:last-child { margin-bottom: 0; }
+.retreat-yoga-card > img { object-position: center 56%; }
+.retreat-surf-card > img { object-position: center 43%; }
+.retreat-summary {
+  margin: 0;
+  padding: clamp(20px, 3vw, 30px);
+  border-color: rgba(151,234,218,.23);
+  background: linear-gradient(145deg, rgba(6,40,55,.9), rgba(11,75,81,.82));
+  box-shadow: inset 0 1px rgba(255,255,255,.08);
+}
+.retreat-summary .retreat-card-kicker { margin-bottom: 8px; }
+.retreat-summary h3, .retreat-itinerary-section > h3 {
+  margin: 0 0 18px;
+  color: #f4fbf8;
+  font: 700 clamp(30px, 3.5vw, 40px)/1 "Barlow Condensed", Impact, sans-serif;
+}
+.retreat-summary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.retreat-fact { border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.085); }
+.retreat-fact dt { color: #a7d5cd; }
+.retreat-fact dd { color: #f4fbf8; }
+.retreat-fact:last-child { border-color: rgba(255,201,113,.42); background: rgba(255,184,86,.15); }
+.retreat-fact:last-child dd { color: #ffe4b1; }
+.retreat-lists { gap: 14px; }
+.retreat-list, .retreat-conditions {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  background: rgba(255,255,255,.055);
+}
+.retreat-list h4, .retreat-conditions h4 { color: #e9fbf5; }
+.retreat-list li, .retreat-conditions li { color: rgba(232,246,241,.8); }
+.retreat-list li::before, .retreat-conditions li::before { color: #75e0c9; }
+.retreat-conditions { border-color: rgba(255,255,255,.1); }
+.retreat-itinerary-section { margin: 0; }
+.retreat-itinerary-section > .retreat-card-kicker { margin-bottom: 8px; }
+.retreat-itinerary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+.retreat-day {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-left: 0;
+  border-radius: 13px;
+  background: rgba(255,255,255,.065);
+}
+.retreat-day-number {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid rgba(120,227,205,.32);
+  border-radius: 50%;
+  background: rgba(16,164,154,.18);
+  color: #a6efdd;
+  font: 800 11px "DM Sans", sans-serif;
+}
+.retreat-day h4 { margin: 3px 0 10px; color: #f3fbf7; font-size: 22px; }
+.retreat-day li { color: rgba(232,246,241,.78); }
+.retreat-day li::before { color: #75e0c9; }
+.retreat-gallery { margin-top: 0; }
+.retreat-gallery img { height: 176px; border: 1px solid rgba(255,255,255,.12); object-fit: cover; }
+@media (max-width: 980px) {
+  .retreat-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .retreat-editorial { gap: 17px; padding: 11px; border-radius: 18px; }
+  .retreat-cover { grid-template-columns: 1fr; }
+  .retreat-cover-copy { padding: 23px 20px; }
+  .retreat-cover-image { grid-row: 1; min-height: 200px; }
+  .retreat-cover-image::after { background: linear-gradient(0deg, rgba(8,47,67,.1), transparent 50%); }
+  .retreat-cover-image img { min-height: 200px; max-height: 245px; }
+  .retreat-cover h2 { font-size: 43px; }
+  .retreat-experience-grid, .retreat-itinerary { grid-template-columns: 1fr; }
+  .retreat-experience-card > img { height: 175px; }
+  .retreat-summary { padding: 18px; }
+  .retreat-summary-grid, .retreat-lists { grid-template-columns: 1fr; }
+  .retreat-day { padding: 13px; }
+  .retreat-gallery img { height: 145px; }
+}
 /* Witch’s Rock Surf Trip: foto de la descripción y pregunta de cantidad de personas */
 .detail-story .witch-rock-gallery { grid-template-columns: 1fr; margin-top: 8px; }
 .detail-story .witch-rock-gallery img:first-child { display: block; }
