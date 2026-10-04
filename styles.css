@@ -4584,16 +4584,17 @@ footer a {
   line-height: 1.68;
 }
 .surf-lesson-gallery {
-  grid-template-columns: 1.35fr .8fr;
-  grid-template-rows: 145px 145px;
-  height: 294px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  height: 340px;
   margin-bottom: 27px;
 }
-.surf-lesson-gallery img:first-child { grid-row: 1 / -1; }
-.surf-lesson-gallery img:nth-child(3) { grid-column: 2; }
+.surf-lesson-gallery img:first-child { display: block; }
+.surf-lesson-gallery img { width: 100%; height: 100%; min-height: 0; object-fit: cover; }
 .surf-lesson-survey-intro {
   display: flex;
   align-items: flex-start;
+  min-width: 0;
   gap: 14px;
   margin: 8px 0 6px;
   padding: 18px;
@@ -4601,6 +4602,7 @@ footer a {
   border-radius: 15px;
   background: linear-gradient(135deg, rgba(7, 143, 145, .08), rgba(243, 182, 75, .1));
 }
+.surf-lesson-survey-intro > div { min-width: 0; }
 .surf-lesson-survey-mark {
   display: grid;
   width: 38px;
@@ -4629,9 +4631,13 @@ footer a {
 }
 @media (max-width: 640px) {
   .surf-lesson-lead { font-size: 16px; }
-  .surf-lesson-gallery { grid-template-rows: 105px 105px; height: 214px; }
+  .surf-lesson-gallery { grid-template-rows: repeat(2, minmax(0, 1fr)); height: 260px; gap: 9px; }
   .surf-lesson-survey-intro { padding: 15px; }
   .surf-lesson-survey-intro h3 { font-size: 25px; }
+}
+@media (max-width: 380px) {
+  .surf-lesson-gallery { height: 226px; }
+  .surf-lesson-survey-intro { gap: 10px; padding: 13px; }
 }
 
 
@@ -5553,4 +5559,13 @@ footer a {
   }
   .local-guide-page .guide-tip-card { padding: 19px; }
   .local-guide-page .guide-tip-card h4 { font-size: 27px; }
+}
+
+@media (max-width: 980px) {
+  .topbar > .instagram-link {
+    display: grid;
+    top: 64px;
+    right: 14px;
+    left: auto;
+  }
 }
