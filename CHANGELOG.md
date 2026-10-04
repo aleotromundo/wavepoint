@@ -1,5 +1,18 @@
 ## 2026-10-04
 
+### Contenido del retiro de surf desde Canva
+
+- `services.js`: se incorpora a Retiros la presentación de WavePoint, descripción del hospedaje, yoga y breathwork, surf coaching, tour a Roca Bruja, resumen del paquete y el itinerario completo de 8 días, con traducción ES/EN.
+- `services.js`: se muestran precio, duración, capacidad, nivel, inclusiones, exclusiones y condiciones informados para el paquete; la solicitud de consulta identifica el retiro grupal.
+- `styles.css` y `service-detail.html`: se agrega una presentación responsive para el resumen, las condiciones y las jornadas del itinerario.
+
+### Validación
+
+- Comprobadas las cifras del resumen de Canva: 7 noches / 8 días, 8–10 personas, nivel intermedio, USD 1.900 por persona, 6 desayunos y 5 sesiones de surf con instructor.
+- Revisados todos los días del itinerario y los textos del detalle en español e inglés.
+
+## 2026-10-04
+
 ### Pack ajustable como armador de viaje y Retiros como tarjeta destacada
 
 - `index.html`: las tarjetas comunes terminan en Surfskate; Pack ajustable abre `trip-builder.html` y Retiros aparece después como segunda tarjeta destacada.
