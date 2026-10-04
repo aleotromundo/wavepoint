@@ -166,15 +166,14 @@ Las secciones fuera del hero pueden usar gradientes oceánicos, capas radiales y
 
 ### Favicon y logo original
 
-Desde 2026-10-03 el favicon activo es el ícono de la ola con punto que proporcionó el usuario (fondo negro con esquinas redondeadas y las esquinas transparentes). Archivos:
+El favicon activo es la imagen `favicon.jpg` proporcionada por el usuario. Todas las páginas enlazan ese archivo con `<link rel="icon" type="image/jpeg">`. Se conserva `assets/wavepoint-apple-touch-icon.png` como icono de inicio para dispositivos Apple.
 
 ```text
-assets/wavepoint-favicon.ico              16, 32 y 48 px (también copiado en /favicon.ico)
-assets/wavepoint-favicon-16.png / -32.png / -192.png / -512.png
-assets/wavepoint-apple-touch-icon.png     180 × 180, cuadrado negro completo (iOS aplica su propia máscara)
+favicon.jpg                               Favicon de navegador proporcionado por el usuario
+assets/wavepoint-apple-touch-icon.png     Icono de inicio para dispositivos Apple
 ```
 
-Todas las páginas lo enlazan con `<link rel="icon">` (ico, 32 y 192) y `<link rel="apple-touch-icon">`. No redibujar, recolorear ni reinterpretar este ícono sin autorización explícita. Los favicons anteriores (`assets/wavepoint-favicon-original.jpeg`, `assets/wavepoint-favicon-inverted.jpeg` y `assets/wavepoint-favicon.svg`) se conservan como recursos históricos y ya no son el favicon activo.
+No sustituir ni editar `favicon.jpg` sin autorización explícita.
 
 ## 8. Responsive y accesibilidad
 
@@ -205,8 +204,8 @@ Reglas de accesibilidad:
 
 | Asset | Uso |
 | --- | --- |
-| `assets/wavepoint-favicon.ico`, `wavepoint-favicon-*.png`, `wavepoint-apple-touch-icon.png` | Favicon activo (ola con punto, esquinas transparentes). |
-| `assets/wavepoint-favicon-original.jpeg` | Favicon anterior, recurso histórico. |
+| `favicon.jpg` | Favicon de navegador. |
+| `assets/wavepoint-apple-touch-icon.png` | Icono de inicio para dispositivos Apple. |
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
 | `assets/wavepoint-watermark.png` | Marca sobre streams de cámara. |
@@ -255,20 +254,6 @@ node --check script.js
 node --check services.js
 node --check lang-switch.js
 git diff --check
-```
-
-Para validar el favicon anterior (histórico):
-
-```bash
-python3 - <<'PY'
-from pathlib import Path
-from PIL import Image
-p = Path('assets/wavepoint-favicon-original.jpeg')
-with Image.open(p) as image:
-    assert image.format == 'JPEG'
-    assert image.size == (1024, 1024)
-print('favicon original: OK')
-PY
 ```
 
 Revisar también:
