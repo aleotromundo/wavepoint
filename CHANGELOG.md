@@ -36,14 +36,14 @@
 - `index.html` y `styles.css`: mantener un H1 descriptivo en la portada y conservar visualmente el título de Nosotros como encabezado de segundo nivel.
 - `assets/og/surf-experiences-tamarindo.jpg`: crear una portada social de 1200 × 630 con una foto local de una clase de surf, marca y ubicación.
 - `robots.txt` y `sitemap.xml`: habilitar rastreo y declarar la portada y la guía local en el dominio confirmado `https://wavepoint-five.vercel.app/`.
-- `script.js`: alinear la portada y el encabezado/descripción del catálogo en español e inglés; las cámaras siguen disponibles como sección secundaria.
+- `index.html` y `script.js`: alinear la portada, el encabezado/descripción del catálogo y el relato de Nosotros en español e inglés; las cámaras siguen disponibles como sección secundaria.
 - `index.html` y `script.js`: sumar `videohero3.mp4`, reducido de 30,18 MB a 15,16 MB (49,8 % menos); rotar los tres videos activando y cargando cada uno solo cuando toca, y esperar a que el siguiente pueda reproducirse.
 - El dominio futuro `wavepointcr.com` queda registrado como plan, no como URL activa; actualizar canonical, sitemap, robots, schema y metadatos sociales solo cuando se confirme la migración.
 - La vista de la URL pública consultada aún sirve contenido previo; estos cambios requieren desplegarse antes de que Google o las plataformas sociales puedan leerlos.
 
 ### Validación
 
-- `script.js` validado con Node; metadatos, schema, sitemap y tamaño de la imagen social verificados localmente.
+- `script.js` ejecutado en Chromium; JSON-LD, título/descripción, sitemap, robots y tamaños de los iconos y la imagen social verificados localmente.
 - Video optimizado comparado con el original respaldado en el almacenamiento persistente de la sesión; SSIM informado durante la compresión: 0,991775.
 
 ### Mensaje de portada, fotos de servicios y favicon

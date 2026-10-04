@@ -113,8 +113,8 @@
       navGuia: 'Guía turística',
       navNosotros: 'Nosotros',
       navColaboradores: 'Colaboradores ▾',
-      heroTitle: 'A través de quienes llaman hogar a Tamarindo',
-      heroText: 'WavePoint te conecta con las mejores experiencias en Tamarindo.',
+      heroTitle: 'Experiencias de surf en Tamarindo',
+      heroText: 'A través de quienes llaman hogar a Tamarindo: clases, coaching y surf trips en Costa Rica.',
       heroTripBuilderButton: 'Armá tu viaje ▸',
       btnBeachGuide: 'Guía de playas',
       weatherTitle: 'Condiciones para surfear',
@@ -143,8 +143,8 @@
       camerasSectionTitle: 'Cámaras en vivo',
       camerasSectionSubtitle: 'Tres puntos clave: dos cámaras activas y Red Door en preparación.',
       camerasSectionLink: 'Ver cámaras en vivo →',
-      servicesSectionTitle: '¿Qué te gustaría hacer en Tamarindo?',
-      servicesSectionSubtitle: 'Elegí una experiencia para ver los detalles. Cuando estés listo, envianos tu fecha preferida y el tamaño de tu grupo. Consultaremos la disponibilidad con el proveedor.',
+      servicesSectionTitle: 'Experiencias de surf y más en Tamarindo',
+      servicesSectionSubtitle: 'Encontrá clases de surf, coaching, surf trips a Roca Bruja y fotografía, además de opciones locales para completar tu viaje por Guanacaste. Consultá los detalles y la disponibilidad.',
       serviceSurfLessons: 'Clases de surf',
       serviceSurfLessonsText: 'Clases para todos los niveles con instructores locales.',
       serviceSurfPhotosText: 'Captura tus mejores olas desde la playa.',
@@ -207,7 +207,7 @@
       guideCamerasButton: 'Ver cámaras en vivo',
       aboutHomeIndex: '01 / NUESTRA HISTORIA',
       aboutHomeTitle: 'Una herramienta hecha por surfistas.',
-      aboutHomeIntro: 'WavePoint nació para que locales y visitantes puedan mirar las condiciones antes de acercarse al agua.',
+      aboutHomeIntro: 'WavePoint conecta a locales y visitantes con experiencias de surf y proveedores locales en Tamarindo. También ofrece información del mar para planear el día.',
       aboutHomeReadMore: 'Conocé más sobre nosotros ↓',
       aboutHomeScroll: 'Deslizá para conocer el proyecto',
       aboutHomeQuote: 'La ola correcta empieza mucho antes de entrar al agua.',
@@ -360,8 +360,8 @@
       navGuia: 'Tourist guide',
       navNosotros: 'About us',
       navColaboradores: 'Partners ▾',
-      heroTitle: 'Through the people who call it home',
-      heroText: 'WavePoint connects you with the best experiences in Tamarindo.',
+      heroTitle: 'Surf experiences in Tamarindo, Costa Rica',
+      heroText: 'Discover lessons, coaching and surf trips in Costa Rica through the people who call Tamarindo home.',
       heroTripBuilderButton: 'Build your trip ▸',
       btnBeachGuide: 'Beach guide',
       weatherTitle: 'Surf conditions',
@@ -390,8 +390,8 @@
       camerasSectionTitle: 'Live cameras',
       camerasSectionSubtitle: 'Three key spots: two active cameras and Red Door still coming.',
       camerasSectionLink: 'View live cameras →',
-      servicesSectionTitle: 'What would you like to do in Tamarindo?',
-      servicesSectionSubtitle: 'Choose an experience to see the details. When you’re ready, send us your preferred date and group size. We’ll check availability with the provider.',
+      servicesSectionTitle: 'Surf experiences and more in Tamarindo',
+      servicesSectionSubtitle: 'Find surf lessons, coaching, Witch’s Rock surf trips and photography, plus local options to complete your Guanacaste trip. Explore the details and ask us to check availability.',
       serviceSurfLessons: 'Surf lessons',
       serviceSurfLessonsText: 'Lessons for all levels with local instructors.',
       serviceSurfPhotosText: 'Capture your best waves from the beach.',
@@ -454,7 +454,7 @@
       guideCamerasButton: 'View live cameras',
       aboutHomeIndex: '01 / OUR STORY',
       aboutHomeTitle: 'A tool made by surfers.',
-      aboutHomeIntro: 'WavePoint was created so locals and visitors can check conditions before heading to the water.',
+      aboutHomeIntro: 'WavePoint connects visitors and locals with surf experiences and local providers in Tamarindo. It also shares ocean conditions to help plan the day.',
       aboutHomeReadMore: 'Learn more about us ↓',
       aboutHomeScroll: 'Scroll to explore the project',
       aboutHomeQuote: 'The right wave starts long before you get in the water.',
@@ -975,22 +975,46 @@
     if (videos.length < 2) return;
 
     let activeIndex = 0;
-
-    const swap = () => {
-      activeIndex = (activeIndex + 1) % videos.length;
-      videos.forEach((video, index) => {
-        video.classList.toggle('is-active', index === activeIndex);
+    let swapping = false;
+    const loadVideo = video => {
+      const sources = [...video.querySelectorAll('source[data-src]')];
+      sources.forEach(source => {
+        source.src = source.dataset.src;
+        delete source.dataset.src;
       });
+      if (sources.length) video.load();
     };
 
     videos.forEach((video, index) => {
       video.muted = true;
       video.playsInline = true;
-      video.autoplay = true;
       video.loop = true;
+      video.preload = index === 0 ? 'auto' : 'none';
       video.classList.toggle('is-active', index === 0);
-      video.play().catch(() => {});
+      if (index !== 0) video.pause();
     });
+
+    loadVideo(videos[0]);
+    videos[0].play().catch(error => console.error('No se pudo reproducir el video principal de portada.', error));
+
+    const swap = async () => {
+      if (swapping) return;
+      swapping = true;
+      const nextIndex = (activeIndex + 1) % videos.length;
+      const nextVideo = videos[nextIndex];
+      try {
+        loadVideo(nextVideo);
+        await nextVideo.play();
+        videos[activeIndex].classList.remove('is-active');
+        videos[activeIndex].pause();
+        nextVideo.classList.add('is-active');
+        activeIndex = nextIndex;
+      } catch (error) {
+        console.error('No se pudo reproducir el siguiente video de portada.', error);
+      } finally {
+        swapping = false;
+      }
+    };
 
     setInterval(swap, 6000);
   }
