@@ -304,10 +304,73 @@ pack_notes: { label: 'What should the operator keep in mind?', placeholder: 'Num
 {
 id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
-description: 'Un retiro es una experiencia con su propio ritmo. Te ayudamos a encontrar una propuesta que combine las actividades que te interesan con el tipo de habitación y acompañamiento que necesitás. Si incluye surf, saber tu nivel nos permite consultar mejor; y si tenés necesidades de alimentación o alojamiento, podés compartirlas desde el inicio para buscar una opción que te haga sentir cómodo.',
+description: 'WavePoint Retiros nace de nuestro amor por el surf, la naturaleza y el estilo de vida costero. Son experiencias diseñadas para reconectar contigo mismo, con el mar y con una comunidad vibrante, en uno de los destinos más mágicos de Costa Rica: Tamarindo. Estos retiros están pensados para quienes buscan más que unas vacaciones: buscan transformación, conexión y aventura.',
 images: ['https://cdn.pixabay.com/photo/2022/01/17/09/10/retreat-6944181_1280.jpg', 'assets/legacy/IMG_1269.jpeg', 'assets/legacy/Restaurante_1.jpg'],
+retreatDetails: {
+aboutHeading: '¿Qué son los retiros WavePoint?',
+about: 'En WavePoint Retiros te llevamos a vivir días de pura conexión con el mar, el cuerpo y la naturaleza, en uno de los destinos más especiales del surf en Costa Rica. Diseñamos cada experiencia para que no tengas que preocuparte por nada: solo llegar, surfear y disfrutar.',
+destinationHeading: 'Los retiros en Tamarindo',
+destination: 'Tamarindo es uno de los destinos más consistentes y completos para surfear en Costa Rica. Con olas los 365 días del año, clima cálido todo el tiempo y una variedad de picos ideales para todos los niveles, es el lugar perfecto tanto para aprender como para perfeccionar tu surf. Desde beach breaks suaves hasta secciones más potentes, este pueblo costero lo tiene todo: energía, naturaleza y comunidad surfista.',
+stayHeading: 'Descansá en Casa Maderas',
+stay: 'Hospedaje frente al mar en uno de los lugares más tranquilos de la zona. La ola que todos los días adorna el paisaje y una travesía en barco a Tamarindo hacen de este lugar un gran punto de partida para un retiro de surf.',
+yogaHeading: 'Clases de yoga y breathwork',
+yoga: [
+'Comenzamos las mañanas o terminamos el día con prácticas guiadas que equilibran cuerpo y mente. El yoga y el breathwork (respiración consciente) te preparan para el surf, aumentan tu energía y te conectan con vos mismo. También ofrecemos talleres de meditación al atardecer para sumergirte en paz y serenidad.',
+'Después de actividades revitalizantes, relajate en nuestro espacio común, donde compartir experiencias es clave. Disfrutá de una cena saludable mientras compartís risas y experiencias.',
+'Nuestros instructores de yoga te preparan día a día para entrar al agua con más confianza y flexibilidad para los nuevos desafíos.'
+],
+surfHeading: 'Surf coaching, fotos y videoanálisis',
+surf: 'No solo vas a surfear, vas a mejorar. Nuestro equipo de coaches te acompaña en cada sesión con feedback personalizado. Además, documentamos tu progreso con fotos profesionales dentro y fuera del agua, y analizamos cada sesión para enfocarnos en los puntos a mejorar en la técnica y hacer de la experiencia algo enriquecedor.',
+boatHeading: 'Tour en barco a Roca Bruja',
+boat: 'Una aventura imperdible: navegamos hacia uno de los destinos más icónicos del surf costarricense. Una experiencia intensa, rodeada de naturaleza salvaje, olas y paisajes que no se olvidan en el Parque Nacional Santa Rosa, hogar de la mítica Roca Bruja.',
+summaryHeading: 'Resumen del paquete',
+facts: [
+{ label: 'Hospedaje', value: 'Casa de Madera' },
+{ label: 'Duración', value: '7 noches / 8 días' },
+{ label: 'Capacidad', value: 'Mínimo 8 · máximo 10 personas' },
+{ label: 'Nivel', value: 'Intermedio' },
+{ label: 'Modalidad', value: 'Surf trip grupal' },
+{ label: 'Ubicación', value: 'Tamarindo, Costa Rica' },
+{ label: 'Precio', value: 'USD 1.900 por persona' }
+],
+includedHeading: 'Incluye',
+included: [
+'6 desayunos',
+'5 almuerzos',
+'5 cenas',
+'1 merienda',
+'3 sesiones de yoga con instructor',
+'Traslados de llegada y salida al aeropuerto',
+'3 traslados a Tamarindo',
+'1 traslado de ida a Nosara',
+'1 traslado a Playa Avellanas',
+'Traslado de ida y vuelta a Roca Bruja',
+'Traslado en barco para cruzar a Tamarindo',
+'1 clase de surfskate con instructor',
+'5 sesiones de surf con instructor',
+'7 noches de alojamiento grupal en Casa de Madera'
+],
+notIncludedHeading: 'No incluye',
+notIncluded: ['Pasajes aéreos', 'Seguro de viaje', 'Comidas libres o no incluidas en el itinerario', 'Gastos personales'],
+conditionsHeading: 'A tener en cuenta',
+conditions: [
+'La salida se confirma al alcanzar el mínimo de 8 personas.',
+'El itinerario y las actividades pueden cambiar según el oleaje y las condiciones climáticas.'
+],
+itineraryHeading: 'Itinerario · 8 días',
+itinerary: [
+{ title: 'Día 1: Llegada a Costa Rica', activities: ['Recepción en el Aeropuerto Internacional Juan Santamaría.', 'Traslado al hospedaje en Tamarindo.', 'Presentación del grupo, merienda y charla sobre el itinerario.', 'Atardecer frente al mar.', 'Traslado de ida y vuelta al centro de Tamarindo para conocer el pueblo.', 'Cena libre (no incluida).'] },
+{ title: 'Día 2: Surf trip a Nosara', activities: ['Traslado a Nosara con desayuno a bordo.', 'Surf en Playa Guiones con instructor.', 'Almuerzo incluido en una soda local.', 'Clase de surfskate en el skatepark de Nosara.', 'Regreso al hospedaje.', 'Cena incluida.'] },
+{ title: 'Día 3: Playa Grande', activities: ['Yoga grupal por la mañana para activar el cuerpo.', 'Desayuno incluido.', 'Caminata a Playa Grande.', 'Sesión de surf con instructores locales.', 'Almuerzo incluido en Playa Grande.', 'Atardecer y fogón.', 'Noche de pizzas incluida.'] },
+{ title: 'Día 4: Avellanas', activities: ['Desayuno incluido.', 'Traslado a Playa Avellanas.', 'Surf con instructor.', 'Almuerzo de burritos en la playa incluido.', 'Regreso al hospedaje.', 'Atardecer y videoanálisis.', 'Noche de tacos.'] },
+{ title: 'Día 5: Roca Bruja', activities: ['Salida hacia Roca Bruja a las 5:00 a. m.', 'Sesión de surf y fotografía en Roca Bruja.', 'Instructor acompañante incluido.', 'Desayuno y almuerzo a bordo del barco.', 'Regreso al alojamiento.', 'Traslado a Tamarindo para cenar y recorrer el pueblo.', 'Cena libre (no incluida).'] },
+{ title: 'Día 6: Tamarindo', activities: ['Desayuno incluido.', 'Sesión matutina de yoga, estiramientos y breathwork.', 'Traslado en barco a Tamarindo.', 'Sesión de surf con instructor.', 'Regreso al hospedaje.', 'Atardecer y videoanálisis.', 'Cena de asado incluida.'] },
+{ title: 'Día 7: Surf y despedida', activities: ['Yoga grupal por la mañana con instructor local.', 'Desayuno incluido.', 'Sesión de surf grupal frente al hospedaje.', 'Almuerzo incluido.', 'Traslado a Tamarindo para disfrutar del atardecer.', 'Última sesión de videoanálisis.', 'Cena de despedida incluida.'] },
+{ title: 'Día 8: Regreso', activities: ['Desayuno incluido.', 'Traslado al aeropuerto.', 'Fin del surf trip.'] }
+]
+},
 questions: [
-{ id: 'retreat_choice', label: '¿Qué retiro te interesa?', type: 'choice', options: ['Selecciona un retiro', 'Quiero recomendaciones'] },
+{ id: 'retreat_choice', label: '¿Qué retiro te interesa?', type: 'choice', options: ['Surf trip grupal en Tamarindo · 7 noches / 8 días · USD 1.900 por persona', 'Quiero recomendaciones'] },
 { id: 'retreat_surf_level', label: 'Si el retiro incluye surf: ¿cuál es tu nivel?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'], optional: true },
 { id: 'room_type', label: '¿Qué tipo de habitación prefieres?', type: 'choice', options: ['Compartida', 'Privada', 'Cualquiera de las dos'], optional: true },
 { id: 'retreat_needs', label: '¿Hay alguna necesidad de alimentación o alojamiento que debamos tener en cuenta?', type: 'textarea', placeholder: 'Opcional', optional: true }
@@ -316,9 +379,72 @@ en: {
 eyebrow: 'RETREATS · EXPERIENCES',
 title: 'Retreats',
 cardText: 'Choose a pause with intention: surf, rest, movement and community in one trip.',
-description: 'A retreat is an experience with its own rhythm. We help you find a proposal that combines the activities you’re interested in with the room type and support you need. If surf is included, knowing your level helps us ask the right questions; and if you have dietary or accommodation needs, you can share them from the start so we can look for a fit that feels comfortable.',
+description: 'WavePoint Retreats grew from our love of surfing, nature and the coastal way of life. These experiences are designed to help you reconnect with yourself, the ocean and a vibrant community in Tamarindo, one of Costa Rica’s most magical destinations. They are for people looking for more than a vacation: transformation, connection and adventure.',
+retreatDetails: {
+aboutHeading: 'What are WavePoint retreats?',
+about: 'WavePoint Retreats brings you days of connection with the ocean, your body and nature in one of Costa Rica’s most special surf destinations. We design each experience so you can simply arrive, surf and enjoy.',
+destinationHeading: 'Retreats in Tamarindo',
+destination: 'Tamarindo is one of Costa Rica’s most consistent and complete surf destinations. With waves throughout the year, warm weather and a variety of breaks for different levels, it is a great place to learn or improve your surfing. From gentle beach breaks to more powerful sections, this coastal town brings together energy, nature and a surf community.',
+stayHeading: 'Stay at Casa Maderas',
+stay: 'Oceanfront accommodation in one of the area’s most peaceful spots. With a wave in the landscape and a boat crossing to Tamarindo, it makes a welcoming base for a surf retreat.',
+yogaHeading: 'Yoga and breathwork',
+yoga: [
+'Start your mornings or end your day with guided practices that balance body and mind. Yoga and breathwork prepare you for surfing, boost your energy and help you reconnect with yourself. Sunset meditation workshops invite you to slow down and find peace.',
+'After energizing activities, relax in our shared space, where sharing experiences is part of the journey. Enjoy a healthy dinner and good conversation.',
+'Our yoga instructors help you feel more confident and flexible in the water, ready for new challenges.'
+],
+surfHeading: 'Surf coaching, photos and video analysis',
+surf: 'You will not only surf; you will improve. Our coaching team gives you personalized feedback in each session. We also document your progress with professional photos in and out of the water, and review each session to focus on technique and make the experience more rewarding.',
+boatHeading: 'Boat trip to Witch’s Rock',
+boat: 'An unforgettable adventure: we head by boat to one of Costa Rica’s most iconic surf destinations. Surrounded by wild nature, waves and unforgettable scenery in Santa Rosa National Park, home of Witch’s Rock.',
+summaryHeading: 'Package overview',
+facts: [
+{ label: 'Accommodation', value: 'Casa de Madera' },
+{ label: 'Duration', value: '7 nights / 8 days' },
+{ label: 'Group size', value: 'Minimum 8 · maximum 10 people' },
+{ label: 'Level', value: 'Intermediate' },
+{ label: 'Format', value: 'Group surf trip' },
+{ label: 'Location', value: 'Tamarindo, Costa Rica' },
+{ label: 'Price', value: 'USD 1,900 per person' }
+],
+includedHeading: 'Included',
+included: [
+'6 breakfasts',
+'5 lunches',
+'5 dinners',
+'1 snack',
+'3 instructor-led yoga sessions',
+'Airport transfers on arrival and departure',
+'3 transfers to Tamarindo',
+'One-way transfer to Nosara',
+'Transfer to Playa Avellanas',
+'Round-trip transfer to Witch’s Rock',
+'Boat crossing to Tamarindo',
+'1 surfskate lesson with an instructor',
+'5 surf sessions with an instructor',
+'7 nights of shared accommodation at Casa de Madera'
+],
+notIncludedHeading: 'Not included',
+notIncluded: ['Airfare', 'Travel insurance', 'Meals marked as not included in the itinerary', 'Personal expenses'],
+conditionsHeading: 'Please note',
+conditions: [
+'The trip is confirmed once the minimum of 8 participants is reached.',
+'The itinerary and activities may change depending on the swell and weather conditions.'
+],
+itineraryHeading: 'Itinerary · 8 days',
+itinerary: [
+{ title: 'Day 1: Arrival in Costa Rica', activities: ['Welcome at Juan Santamaría International Airport.', 'Transfer to the accommodation in Tamarindo.', 'Meet the group, enjoy a snack and go over the itinerary.', 'Sunset by the ocean.', 'Round-trip transfer to downtown Tamarindo to explore the town.', 'Dinner on your own (not included).'] },
+{ title: 'Day 2: Surf trip to Nosara', activities: ['Transfer to Nosara with breakfast on board.', 'Surf at Playa Guiones with an instructor.', 'Lunch at a local soda restaurant included.', 'Surfskate lesson at the Nosara skatepark.', 'Return to the accommodation.', 'Dinner included.'] },
+{ title: 'Day 3: Playa Grande', activities: ['Morning group yoga to get the body moving.', 'Breakfast included.', 'Walk to Playa Grande.', 'Surf session with local instructors.', 'Lunch in Playa Grande included.', 'Sunset and a bonfire.', 'Pizza night included.'] },
+{ title: 'Day 4: Avellanas', activities: ['Breakfast included.', 'Transfer to Playa Avellanas.', 'Surf with an instructor.', 'Burrito lunch on the beach included.', 'Return to the accommodation.', 'Sunset and video analysis.', 'Taco night.'] },
+{ title: 'Day 5: Witch’s Rock', activities: ['Depart for Witch’s Rock at 5:00 a.m.', 'Surf and photography session at Witch’s Rock.', 'Accompanying instructor included.', 'Breakfast and lunch on board the boat.', 'Return to the accommodation.', 'Transfer to Tamarindo for dinner and an evening in town.', 'Dinner on your own (not included).'] },
+{ title: 'Day 6: Tamarindo', activities: ['Breakfast included.', 'Morning yoga, stretching and breathwork.', 'Boat transfer to Tamarindo.', 'Surf session with an instructor.', 'Return to the accommodation.', 'Sunset and video analysis.', 'Barbecue dinner included.'] },
+{ title: 'Day 7: Surf and farewell', activities: ['Morning group yoga with a local instructor.', 'Breakfast included.', 'Group surf session in front of the accommodation.', 'Lunch included.', 'Transfer to Tamarindo to enjoy the sunset.', 'Final video analysis session.', 'Farewell dinner included.'] },
+{ title: 'Day 8: Departure', activities: ['Breakfast included.', 'Transfer to the airport.', 'End of the surf trip.'] }
+]
+},
 questions: {
-retreat_choice: { label: 'Which retreat are you interested in?', options: ['Select a retreat', 'I want recommendations'] },
+retreat_choice: { label: 'Which retreat are you interested in?', options: ['Group surf trip in Tamarindo · 7 nights / 8 days · USD 1,900 per person', 'I want recommendations'] },
 retreat_surf_level: { label: 'If the retreat includes surf: what is your level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
 room_type: { label: 'What room type do you prefer?', options: ['Shared', 'Private', 'Either is fine'] },
 retreat_needs: { label: 'Are there any dietary or accommodation needs we should keep in mind?', placeholder: 'Optional' }
@@ -444,6 +570,16 @@ const kicker = 'SURFSKATE · TAMARINDO';
 const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.cardText)}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${gallery}</div>`;
 }
+function renderRetreatStory(service) {
+const details = service.retreatDetails;
+const facts = details.facts.map(fact => `<div class="retreat-fact"><dt>${esc(fact.label)}</dt><dd>${esc(fact.value)}</dd></div>`).join('');
+const included = details.included.map(item => `<li>${esc(item)}</li>`).join('');
+const notIncluded = details.notIncluded.map(item => `<li>${esc(item)}</li>`).join('');
+const conditions = details.conditions.map(item => `<li>${esc(item)}</li>`).join('');
+const itinerary = details.itinerary.map(day => `<article class="retreat-day"><h4>${esc(day.title)}</h4><ul>${day.activities.map(activity => `<li>${esc(activity)}</li>`).join('')}</ul></article>`).join('');
+const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}" loading="lazy" />`).join('');
+return `<p class="service-page-kicker">${lang === 'en' ? 'WAVEPOINT RETREATS · TAMARINDO' : 'WAVEPOINT RETIROS · TAMARINDO'}</p><h2>${esc(details.aboutHeading)}</h2><p class="retreat-intro">${esc(service.description)}</p><p>${esc(details.about)}</p><section class="retreat-content-section"><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></section><section class="retreat-content-section"><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></section><section class="retreat-content-section"><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</section><section class="retreat-content-section"><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p><h4>${esc(details.boatHeading)}</h4><p>${esc(details.boat)}</p></section><section class="retreat-summary"><h3>${esc(details.summaryHeading)}</h3><dl class="retreat-summary-grid">${facts}</dl><div class="retreat-lists"><section class="retreat-list retreat-list-included"><h4>${esc(details.includedHeading)}</h4><ul>${included}</ul></section><section class="retreat-list"><h4>${esc(details.notIncludedHeading)}</h4><ul>${notIncluded}</ul></section></div><section class="retreat-conditions"><h4>${esc(details.conditionsHeading)}</h4><ul>${conditions}</ul></section></section><section class="retreat-content-section retreat-itinerary-section"><h3>${esc(details.itineraryHeading)}</h3><div class="retreat-itinerary">${itinerary}</div></section><div class="detail-gallery retreat-gallery">${gallery}</div>`;
+}
 function render(service) {
 const ui = uiFor(service);
 document.documentElement.lang = lang;
@@ -469,6 +605,8 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderSurfPhotographyStory(service)
 : service.id === 'surfskate'
 ? renderSurfskateStory(service)
+: service.id === 'retiros'
+? renderRetreatStory(service)
 : `<p class="service-page-kicker">${lang === 'en' ? 'THE EXPERIENCE' : 'LA EXPERIENCIA'}</p><h2>${lang === 'en' ? 'A plan designed for your trip.' : 'Un plan pensado para tu viaje.'}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
 const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
 document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
