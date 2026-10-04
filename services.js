@@ -5,7 +5,7 @@ const services = [
 id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', title: 'Estadías y hoteles',
 cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
 description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
-images: ['assets/img/tamarindo-beach-palm-trees-surfboards-costa-rica.jpg', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
+images: ['assets/img/optimized/tamarindo-stay.webp', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
 accommodationOptions: [
 {
 category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
@@ -82,11 +82,11 @@ id: 'clases-de-surf', number: '02', eyebrow: 'CLASES DE SURF · TAMARINDO', titl
 cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.',
 description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
 images: [
-'assets/img/surf-lesson-students-surfing-tamarindo-01.jpg',
-'assets/img/surf-lesson-woman-surfing-tamarindo-01.jpg',
-'assets/img/5046346892610047344.jpg',
-'assets/img/surf-shop-interior-tamarindo-club-33.jpg',
-'assets/img/surfboard-rental-rack-tamarindo-club-33.jpg'
+'assets/img/optimized/surf-lesson-group.webp',
+'assets/img/optimized/surf-lesson-woman.webp',
+'assets/img/optimized/surf-lesson-wave.webp',
+'assets/img/optimized/surf-shop-interior.webp',
+'assets/img/optimized/surfboard-rental.webp'
 ],
 imageAlts: [
 'Grupo de estudiantes practicando surf en Tamarindo',
@@ -132,7 +132,7 @@ id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 
 cardText: 'Entrenamiento personalizado con video-análisis y estrategias para llevar tu surf al siguiente nivel.',
 description: 'Llevá tu surf al siguiente nivel con un entrenamiento personalizado. Análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento en el agua con la ayuda de entrenadores expertos.',
 includes: ['Sesión de video de tu sesión', 'Análisis con un instructor personalizado en tu idioma', 'Video de recuerdo'],
-images: ['assets/img/surfer-riding-wave-tamarindo-costa-rica-05.jpg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
+images: ['assets/img/optimized/surf-coaching.webp', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
 imageAlts: ['Surfista tomando una ola en Tamarindo', 'Surfista practicando una maniobra'],
 questions: [
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
@@ -162,10 +162,11 @@ id: 'yoga', number: '06', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
 cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
 description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
 images: [
-'https://cdn.pixabay.com/photo/2016/11/18/15/05/beach-1835213_1280.jpg',
+'assets/img/optimized/yoga-wellness.webp',
 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80',
 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80'
 ],
+imageAlts: ['Espacio de bienestar rodeado de naturaleza', 'Persona practicando yoga', 'Persona practicando meditación'],
 includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
 questions: [
 { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
@@ -182,14 +183,15 @@ questions: {
   yoga_format: { label: 'Would you prefer a group or private class?', options: ['Group', 'Private', 'Either is fine'] },
   yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
 },
-includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy']
+includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy'],
+imageAlts: ['Wellness room framed by tropical greenery', 'Person practicing yoga', 'Person practicing meditation']
 }
 },
 {
 id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
 cardText: 'Elegí entre explorar bajo el agua, navegar la costa o combinar las dos experiencias.',
 description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
-images: ['https://cdn.pixabay.com/photo/2012/02/23/08/57/woman-15840_1280.jpg', 'assets/legacy/catalinas.jpg'],
+images: ['assets/img/optimized/snorkel-catalinas.webp', 'assets/legacy/catalinas.jpg'],
 questions: [
 { id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
 { id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
@@ -218,7 +220,7 @@ lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
 coordination: 'WavePoint ayuda a coordinar los detalles, teniendo en cuenta el nivel de surf de tu grupo y las condiciones.',
 galleryAlt: 'Olas y costa de Guanacaste',
-images: ['https://cdn.pixabay.com/photo/2024/02/18/15/59/sea-8581529_1280.jpg', 'assets/legacy/hermosa.jpg'],
+images: ['assets/img/optimized/witch-rock.webp', 'assets/legacy/hermosa.jpg'],
 questions: [
 { id: 'group_size', label: '¿Cuántas personas se suman?', type: 'headcount', fields: [{ id: 'adults', label: 'Adultos' }, { id: 'children', label: 'Niños' }], note: 'Si se suman niños, contanos sus edades para consultar los requisitos del proveedor.', agesLabel: 'Edades de los niños', agesPlaceholder: 'Ej.: 8 y 11' },
 { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
@@ -247,7 +249,7 @@ date_flexibility: { label: 'Can you change the date if sea conditions require it
 id: 'surf-fotografia', number: '08', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fotos de surf',
 cardText: 'Tu tiempo en el agua, capturado.',
 description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
-images: ['assets/img/longboard-surfer-tamarindo-costa-rica.jpg', 'assets/photo-service.jpg'],
+images: ['assets/img/optimized/surf-photography.webp', 'assets/photo-service.jpg'],
 imageAlts: ['Surfista recorriendo una ola sobre una tabla longboard'],
 questions: [],
 submitLabel: 'RESERVÁ TU SESIÓN ↗',
@@ -266,7 +268,7 @@ id: 'surfskate', number: '09', eyebrow: 'SURFSKATE · PROGRESO', title: 'Clases 
 cardText: 'Encontrá tu flow en tierra.',
 description: 'Explorá tus giros, ganá confianza sobre la tabla y empezá a sentir movimientos que después podés llevar al agua. Ya sea que pruebes el surfskate por primera vez o quieras sumarlo a tu práctica de surf, WavePoint te conecta con instructores locales para encontrar una sesión acorde a tu nivel.',
 includes: ['Tabla de surfskate para la sesión', 'Casco y protecciones'],
-images: ['https://cdn.pixabay.com/photo/2016/11/29/14/28/skateboard-1870039_1280.jpg', 'assets/legacy/surfskate.png'],
+images: ['assets/img/optimized/surfskate.webp'],
 questions: [],
 submitLabel: 'CONSULTAR UNA CLASE ↗',
 en: {
@@ -283,7 +285,8 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['https://cdn.pixabay.com/photo/2023/04/18/18/38/atv-7935771_1280.jpg', 'assets/legacy/IMG_1269.jpeg'],
+images: ['assets/img/optimized/rincon-adventure.webp'],
+imageAlts: ['Paisaje volcánico y bosque tropical de Guanacaste'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -295,6 +298,7 @@ eyebrow: 'LAND · ADVENTURE',
 title: 'ATV Tours in Tamarindo',
 cardText: 'A little adventure beyond the beach.',
 description: 'Head out with local guides and discover the surroundings of Tamarindo on an ATV. Take in the scenery, enjoy the ride and share the adventure with the people you’re traveling with. WavePoint helps you find a tour that suits your group, with the route and details confirmed before you go.',
+imageAlts: ['Volcanic landscape and tropical forest in Guanacaste'],
 questions: {
 drivers: { label: 'How many people want to drive?' },
 passengers: { label: 'How many would be passengers?' },
@@ -307,7 +311,7 @@ licenses: { label: 'Do the drivers have a valid driver’s license?', options: [
 id: 'pack-ajustable', number: '11', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
 cardText: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje.',
 description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
-images: ['https://cdn.pixabay.com/photo/2023/02/08/22/17/sea-7777633_1280.jpg'],
+images: ['assets/img/optimized/tamarindo-stay.webp'],
 questions: [
 { id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Snorkel y catamarán', 'Yoga', 'ATV tours', 'Fotos de surf', 'Clases de surfskate', 'Retreats'] },
 { id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
@@ -330,15 +334,15 @@ id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'WavePoint Retiros nace de nuestro amor por el surf, la naturaleza y el estilo de vida costero. Son experiencias diseñadas para reconectar contigo mismo, con el mar y con una comunidad vibrante, en uno de los destinos más mágicos de Costa Rica: Tamarindo. Estos retiros están pensados para quienes buscan más que unas vacaciones: buscan transformación, conexión y aventura.',
 images: [
-'assets/img/ambarry1975-costa-rica-2646482.jpg',
-'assets/img/5046346892610047339.jpg',
-'assets/img/5046346892610047340.jpg',
-'assets/img/5046346892610047341.jpg',
-'assets/img/5046346892610047342.jpg'
+'assets/img/optimized/retreat-sunset.webp',
+'assets/img/optimized/retreat-tamarindo.webp',
+'assets/img/optimized/retreat-dinner.webp',
+'assets/img/optimized/retreat-evening.webp',
+'assets/img/optimized/retreat-palm.webp'
 ],
 imageAlts: [
+'Árbol tropical al atardecer frente al mar en Tamarindo',
 'Atardecer en la costa de Costa Rica',
-'Cielo violeta al atardecer sobre el mar',
 'Mesas junto a la playa durante el atardecer',
 'Atardecer rosado en Tamarindo',
 'Árbol tropical visto desde abajo'
@@ -418,8 +422,8 @@ title: 'Retreats',
 cardText: 'Choose a pause with intention: surf, rest, movement and community in one trip.',
 description: 'WavePoint Retreats grew from our love of surfing, nature and the coastal way of life. These experiences are designed to help you reconnect with yourself, the ocean and a vibrant community in Tamarindo, one of Costa Rica’s most magical destinations. They are for people looking for more than a vacation: transformation, connection and adventure.',
 imageAlts: [
+'A tropical tree at sunset by the ocean in Tamarindo',
 'Sunset on the coast of Costa Rica',
-'Purple sky at sunset over the ocean',
 'Tables by the beach at sunset',
 'Pink sunset in Tamarindo',
 'Tropical tree viewed from below'
@@ -548,25 +552,25 @@ modalClose: 'Close survey'
 const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
-'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
-'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
-'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/DSC02807.jpg' },
-'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/legacy/DSC02807.jpg' },
-'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/_GSK8664.jpg' },
-'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/_GSK8664.jpg' },
-'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80' },
-'Witch’s Rock Surf Trip': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/legacy/bruja.jpg' },
-'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/legacy/bruja.jpg' },
-'Fotos de surf': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/legacy/fotodesurf.jpg' },
-'Surf Photography': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/legacy/fotodesurf.jpg' },
-'Snorkeling & catamaran': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
-'Snorkel y catamarán': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/legacy/conchal.jpg' },
-'ATV tours': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
-'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/legacy/rincon.jpg' },
-'Clases de surfskate': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/legacy/surfskate.png' },
-'Surfskate lessons': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/legacy/surfskate.png' },
-'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest and community.' }, image: 'assets/legacy/ocotal.jpg' },
-'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest and community.' }, image: 'assets/legacy/ocotal.jpg' }
+'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/optimized/tamarindo-stay.webp' },
+'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/optimized/tamarindo-stay.webp' },
+'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
+'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
+'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
+'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
+'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'assets/img/optimized/yoga-wellness.webp' },
+'Witch’s Rock Surf Trip': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/optimized/witch-rock.webp' },
+'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/optimized/witch-rock.webp' },
+'Fotos de surf': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/img/optimized/surf-photography.webp' },
+'Surf Photography': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/img/optimized/surf-photography.webp' },
+'Snorkeling & catamaran': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/img/optimized/snorkel-catalinas.webp' },
+'Snorkel y catamarán': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/img/optimized/snorkel-catalinas.webp' },
+'ATV tours': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/img/optimized/rincon-adventure.webp' },
+'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/img/optimized/rincon-adventure.webp' },
+'Clases de surfskate': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/optimized/surfskate.webp' },
+'Surfskate lessons': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/optimized/surfskate.webp' },
+'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-sunset.webp' },
+'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-sunset.webp' }
 };
 function renderQuestion(service, question) {
 const id = inputId(service, question);
@@ -625,7 +629,7 @@ const itinerary = details.itinerary.map((day, index) => `<article class="retreat
 const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 const wavePhoto = isEn ? 'Surfer riding a wave in Costa Rica' : 'Surfista tomando una ola en Costa Rica';
 const introAlt = esc(service.imageAlts?.[0] || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
-const yogaPhoto = esc(service.imageAlts?.[4] || (isEn ? 'Tropical tree viewed from below' : 'Árbol tropical visto desde abajo'));
+const yogaPhoto = esc(isEn ? 'Wellness room framed by tropical greenery' : 'Espacio de bienestar rodeado de naturaleza');
 const priceFact = details.facts.find(fact => fact.label === (isEn ? 'Price' : 'Precio')) || details.facts[details.facts.length - 1];
 const durationFact = details.facts.find(fact => fact.label === (isEn ? 'Duration' : 'Duración'));
 return `<div class="retreat-editorial">
@@ -645,15 +649,15 @@ return `<div class="retreat-editorial">
       <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-stay-card">
-      <img src="assets/img/tamarindo-beach-palm-trees-surfboards-costa-rica.jpg" alt="${isEn ? 'Palm trees and surfboards by the beach in Tamarindo' : 'Palmeras y tablas de surf junto a la playa en Tamarindo'}" loading="lazy" />
+      <img src="assets/img/optimized/tamarindo-stay.webp" alt="${isEn ? 'Palm trees and surfboards by the beach in Tamarindo' : 'Palmeras y tablas de surf junto a la playa en Tamarindo'}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-yoga-card">
-      <img src="${esc(service.images[4])}" alt="${yogaPhoto}" loading="lazy" />
+      <img src="assets/img/optimized/yoga-wellness.webp" alt="${yogaPhoto}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'MOVE & RESET' : 'MOVIMIENTO Y PAUSA'}</p><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div>
     </section>
     <section class="retreat-experience-card retreat-surf-card">
-      <img src="assets/img/surfer-riding-wave-tamarindo-costa-rica-05.jpg" alt="${wavePhoto}" loading="lazy" />
+      <img src="assets/img/optimized/surf-coaching.webp" alt="${wavePhoto}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'IN THE WATER' : 'EN EL AGUA'}</p><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p><h4>${esc(details.boatHeading)}</h4><p>${esc(details.boat)}</p></div>
     </section>
   </div>

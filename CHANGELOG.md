@@ -1,5 +1,12 @@
 ## 2026-10-04
 
+### Fotos optimizadas para tarjetas de servicios
+
+- `index.html`: las tarjetas de servicios, Pack y Retiros usan fotos locales WebP seleccionadas para cada experiencia, con textos alternativos ES/EN acordes.
+- `services.js`, `trip-builder.js` y `trip-builder.css`: el catálogo, los detalles y el armador reutilizan las mismas versiones WebP para conservar la imagen entre tarjeta, hero y fondo.
+- Se convierten también las fotos grandes usadas por las galerías de surf y Retiros; los originales se conservan. La foto de longboard baja de 11,79 MB a 189 KB y Surfskate de 13,49 MB a 313 KB.
+- Se actualizan las versiones de caché de los scripts y estilos modificados.
+
 ### Ajustes responsive, menú y carrito del viaje
 
 - `index.html` y `styles.css`: la tabla de tarifas se reorganiza en tarjetas legibles en móvil, sin comprimir columnas ni requerir desplazamiento horizontal; se refuerza el ajuste de textos y etiquetas de la ventana de clima en pantallas estrechas.
