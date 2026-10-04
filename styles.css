@@ -5740,3 +5740,8 @@ footer a {
     animation: none;
   }
 }
+
+#servicios,
+#nosotros {
+  scroll-margin-top: -28px;
+}
