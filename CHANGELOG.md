@@ -1,5 +1,14 @@
 ## 2026-10-04
 
+### Ajustes responsive, menú y carrito del viaje
+
+- `index.html` y `styles.css`: la tabla de tarifas se reorganiza en tarjetas legibles en móvil, sin comprimir columnas ni requerir desplazamiento horizontal; se refuerza el ajuste de textos y etiquetas de la ventana de clima en pantallas estrechas.
+- `index.html`, `service-detail.html`, `site-nav.js` y `styles.css`: Instagram queda disponible como enlace visible dentro de todos los menús hamburguesa.
+- `trip-builder.css`: el carrito sigue el desplazamiento en escritorio, sin quedar debajo del menú fijo; se evita que el recorte horizontal de la página interfiera con `position: sticky`, y el panel puede desplazarse internamente cuando excede la altura de pantalla.
+- `trip-builder.js` y `trip-builder.css`: cada experiencia seleccionada aparece como un elemento numerado con fecha, cantidad de personas, precio estimado o estado por confirmar, y control accesible para quitarla.
+- `trip-builder.js`: al agregar o quitar experiencias se actualizan solo las tarjetas y el carrito, conservando la posición de scroll y evitando reiniciar el video de fondo.
+- Se actualizan las versiones de caché de los recursos modificados.
+
 ### Rediseño visual de Retiros inspirado en Canva
 
 - `services.js` y `styles.css`: la página de detalle de Retiros adopta una composición editorial azul profundo con fotografía local, tarjetas visuales para el destino, la estadía, yoga y surf, y una presentación renovada del paquete y el itinerario.

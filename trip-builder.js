@@ -41,7 +41,8 @@
       emptyTip: 'Sumá las experiencias que te entusiasmen y las vas a ver acá.',
       selected: 'Experiencias elegidas',
       remove: 'Quitar',
-      guestsShort: 'personas',
+      guestsShort: 'persona',
+      guestsShortPlural: 'personas',
       estimated: 'Estimado del viaje',
       noEstimate: 'A confirmar',
       totalNote: 'El total suma solo las experiencias con tarifas de referencia. Las demás se confirman con WavePoint.',
@@ -88,7 +89,8 @@
       emptyTip: 'Add the experiences you love and they’ll show up here.',
       selected: 'Selected experiences',
       remove: 'Remove',
-      guestsShort: 'guests',
+      guestsShort: 'guest',
+      guestsShortPlural: 'guests',
       estimated: 'Estimated trip total',
       noEstimate: 'To be confirmed',
       totalNote: 'The total includes only experiences with reference rates. WavePoint will confirm the others.',
@@ -160,7 +162,7 @@
     const copy = COPY[lang];
     const list = [...selected.entries()];
     let total = 0;
-    const rows = list.map(([id, state]) => {
+    const rows = list.map(([id, state], index) => {
       const experience = experiences.find(item => item.id === id);
       const price = priceFor(id, Number(state.guests));
       if (price !== null) total += price;
@@ -168,8 +170,9 @@
         ? `${copy.checkIn}: ${formatDate(state.start) || '—'} · ${copy.checkOut}: ${formatDate(state.end) || '—'}`
         : `${copy.date}: ${formatDate(state.start) || '—'}`;
       return `<li class="trip-summary-item">
-        <div><strong>${esc(experience.title[lang])}</strong><span>${esc(dates)} · ${esc(state.guests)} ${copy.guestsShort}</span></div>
-        <div class="trip-summary-price">${price === null ? `<span>${copy.noEstimate}</span>` : `<strong>${money(price)}</strong>`}<button type="button" data-remove="${id}">${copy.remove}</button></div>
+        <span class="trip-summary-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
+        <div class="trip-summary-item-copy"><strong>${esc(experience.title[lang])}</strong><span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
+        <div class="trip-summary-price">${price === null ? `<span>${copy.noEstimate}</span>` : `<strong>${money(price)}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(experience.title[lang])}">${copy.remove}</button></div>
       </li>`;
     });
     const invalidDates = list.some(([id, state]) => {
@@ -229,6 +232,10 @@
     if (!summary) return;
     summary.innerHTML = renderSummary();
   };
+  const updateExperienceCards = () => {
+    const grid = root.querySelector('.trip-experience-grid');
+    if (grid) grid.innerHTML = renderCards();
+  };
   const animateBoardIntoCart = sourceRect => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const destination = root.querySelector('.trip-cart-illustration');
@@ -277,17 +284,20 @@
       else {
         const sourceRect = event.target.getBoundingClientRect();
         selected.set(id, { ...drafts.get(id) });
-        render();
+        updateExperienceCards();
+        updateSummary();
         animateBoardIntoCart(sourceRect);
         return;
       }
-      render();
+      updateExperienceCards();
+      updateSummary();
       return;
     }
     const remove = event.target.closest('[data-remove]');
     if (remove) {
       selected.delete(remove.dataset.remove);
-      render();
+      updateExperienceCards();
+      updateSummary();
       return;
     }
     if (!event.target.matches('[data-continue]')) return;
