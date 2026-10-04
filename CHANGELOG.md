@@ -7,7 +7,7 @@
 
 ### Legibilidad y contraste en textos
 
-- `styles.css`: el menú de escritorio se apoya en una superficie oscura translúcida para mantener contraste sobre fotos y video; se refuerzan el botón hamburguesa y las etiquetas del menú móvil.
+- `styles.css`: enlaces de escritorio y botón hamburguesa usan sombra en el texto, sin una caja de fondo; también se refuerzan las etiquetas del menú móvil.
 - `styles.css` y `trip-builder.css`: se amplían los textos secundarios pequeños de clima, guía, detalles de servicios, Nosotros, formularios y armador, y se ajustan colores tenues según sus fondos.
 - Se conserva el color claro sobre superficies oscuras y el color oscuro sobre superficies claras; los ajustes responsive evitan agrandar en exceso etiquetas en pantallas angostas.
 - `styles.css`: un puente invisible conserva abierto el menú desplegable de colaboradores mientras el cursor cruza el espacio entre el título y la lista.

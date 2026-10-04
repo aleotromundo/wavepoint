@@ -42,6 +42,7 @@ This section preserves project decisions and completed work so future assistants
 - Each service's first image (`service.images[0]`) is the visual source of truth for both its hero and full-page/body background. Changing the service's hero photo should therefore change both. Do not introduce a separate, drifting body-background image.
 - Keep this image relationship consistent among service catalog cards, detail hero/background, and trip-builder choices wherever those surfaces represent the same service.
 - The service photo set has local optimized WebP versions under `assets/img/optimized/`; preserve source originals and avoid reintroducing the large originals to page references. Verify image subject, crop, alt text, and every consumer before replacing a path.
+- The current `alojamiento-experiencias` image is `assets/ally-capitan.jpg` (about 195 KB), shared by the hotel card, service hero/body background, accommodation pack choices, retreat stay card, and trip builder. It is intentionally kept as JPG because it is smaller than the previous WebP. `tamarindo-stay.webp` remains in the Nosotros opening background and should not be globally replaced.
 - Service copy, labels, image alt text, and detail-page content must remain available in Spanish and English. Follow the `wavepoint-service-bilingual` skill for service copy changes.
 
 ### Homepage, cards, and interaction
@@ -57,6 +58,7 @@ This section preserves project decisions and completed work so future assistants
 
 - The tourism guide uses its local photographic background with dark translucent glass surfaces. Its “Qué llevar” and “Transporte” practical cards were widened/reflowed to use their available width without dropping content; mobile uses a single-column layout.
 - Instagram links that previously showed a bare profile address/text have an icon, and the mobile Instagram control is positioned below the hamburger so the controls do not overlap.
+- Desktop navigation stays unboxed, with white links and a strong text shadow for contrast over photos and video; secondary labels and service/trip-builder copy have stronger contrast and larger minimum sizes.
 - The hamburger navigation includes all seven collaborators: Chop House, Capitán Suizo, Casa de Maderas, Red Door, Occidental, Eterno Verano, and Club 33. The menu can scroll to expose the full list on small screens.
 - The Clases de surf detail gallery was given a more open 2×2 layout with controlled image heights; all secondary images remain visible and the hero image is not duplicated in the gallery.
 - Large service photos were converted to local WebP derivatives and the originals retained. Notable reductions recorded in `CHANGELOG.md`: longboard from 11.79 MB to 189 KB and surfskate from 13.49 MB to 313 KB.

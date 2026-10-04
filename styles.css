@@ -5771,26 +5771,19 @@ footer a {
   scroll-margin-top: -92px;
 }
 
-/* Readable navigation over photos and video at every scroll position. */
-.nav {
-  padding: 6px 14px;
-  border: 1px solid rgba(231, 249, 247, .24);
-  border-radius: 16px;
-  background: rgba(4, 26, 39, .94);
-  box-shadow: 0 10px 28px rgba(0, 12, 20, .32);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
+/* Keep navigation legible over photos without enclosing it in a panel. */
 .navlinks,
 .navlinks > a,
 .dropbtn {
   color: #fff;
   opacity: 1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, .7);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 8px rgba(0, 0, 0, .7);
 }
 .hamb {
   color: #fff;
-  background: rgba(4, 26, 39, .96);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
   text-shadow: 0 1px 5px rgba(0, 0, 0, .65);
 }
 .mobile-menu a small {
@@ -5799,9 +5792,9 @@ footer a {
 }
 @media (max-width: 980px) {
   .hamb {
-    border-color: rgba(231, 249, 247, .52);
-    background: #062638;
-    box-shadow: 0 8px 24px rgba(0, 12, 20, .42);
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
   }
 }
 
