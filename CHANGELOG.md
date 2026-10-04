@@ -1,5 +1,19 @@
 ## 2026-10-04
 
+### Integración de fotografías locales de `assets/img`
+
+- `index.html`, `services.js` y `trip-builder.js`: se asignan fotos locales a Estadías, Clases de surf, Surf coaching, Fotos de surf, Pack ajustable y Retiros.
+- `services.js`: se incorporan a la galería de Clases de surf las fotos de estudiantes, una alumna, la tienda y las tablas; Retiros suma paisajes de playa, atardecer y naturaleza.
+- `guia-playas.html`: la foto de Playa Avellanas ahora muestra un mono aullador, en concordancia con la sección de fauna local; texto alternativo localizado en ES/EN.
+- `script.js` y `services.js`: los textos alternativos de las nuevas imágenes se traducen al español e inglés.
+
+### Validación
+
+- Confirmadas visualmente las correspondencias de las fotos con Clases de surf, Surf coaching, Fotos de surf, Tamarindo, Retiros y la fauna de Avellanas.
+- Verificadas las rutas relativas de los archivos en `assets/img`.
+
+## 2026-10-04
+
 ### Contenido del retiro de surf desde Canva
 
 - `services.js`: se incorpora a Retiros la presentación de WavePoint, descripción del hospedaje, yoga y breathwork, surf coaching, tour a Roca Bruja, resumen del paquete y el itinerario completo de 8 días, con traducción ES/EN.
