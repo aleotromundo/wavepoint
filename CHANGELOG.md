@@ -1,3 +1,10 @@
+## 2026-10-04
+
+### Franja compacta de aliados y sección After the surf
+
+- `styles.css`: reducir la altura y tipografía del encabezado de aliados y alinear su ancho máximo con el carrusel.
+- `index.html`: ocultar temporalmente `After the surf` con el atributo `hidden`, conservando su contenido para poder mostrarlo nuevamente.
+
 ## 2026-10-06
 
 ### Foto de hotel para Estadías y hoteles
