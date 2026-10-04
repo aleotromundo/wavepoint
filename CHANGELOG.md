@@ -5,6 +5,7 @@
 - `index.html`: las tarjetas comunes terminan en Surfskate; Pack ajustable abre `trip-builder.html` y Retiros aparece después como segunda tarjeta destacada.
 - `trip-builder.html`, `trip-builder.js` y `trip-builder.css`: se agrega un armador bilingüe con carrito, fecha y cantidad de personas por experiencia, solicitud única por WhatsApp y tarifas estimadas según la tabla publicada.
 - `trip-builder.js` y `trip-builder.css`: se renueva el carrito con colores vivos, contador ilustrado y una animación bilingüe de tabla de surf al agregar experiencias; respeta la preferencia de movimiento reducido.
+- `trip-builder.html`, `trip-builder.js` y `trip-builder.css`: la página suma un video local de surf como fondo dinámico, usa fotos locales en experiencias de surf y reemplaza las superficies blancas por fotografía de playa con paneles oscuros de alto contraste.
 - Solo se calculan tarifas para Clases de surf, Surf coaching, Fotos de surf y Surfskate. Las demás experiencias quedan “a confirmar” y no se incluyen en el total hasta validar el precio.
 - `services.js`: el orden de navegación de los detalles queda sincronizado con el nuevo orden del catálogo.
 - `script.js`: se agregan las traducciones ES/EN de ambas tarjetas destacadas y del enlace al armador.
