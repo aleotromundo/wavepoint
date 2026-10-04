@@ -30,6 +30,13 @@
 
 ## 2026-10-06
 
+### Mensaje de portada, fotos de servicios y favicon
+
+- `index.html` y `script.js`: se actualiza el mensaje principal en español e inglés y se renueva la versión de caché del script.
+- `styles.css`: se encuadran las fotos multipanel de Roca Bruja, snorkel y ATV para destacar una sola escena en cada tarjeta sin cambiar sus imágenes compartidas con el detalle y el armador.
+- `script.js` e `index.html`: los textos alternativos ES/EN de las fotos enfocadas describen las escenas que se ven.
+- Las páginas enlazan PNG transparentes de 16 y 32 px y un ICO multirresolución, generados desde `assets/wavepoint-favicon-source.jpg` con el margen blanco eliminado. Se conserva el icono Apple y se retiran los favicons duplicados anteriores.
+
 ### Foto de hotel para Estadías y hoteles
 
 - `index.html`, `services.js` y `trip-builder.js`: la tarjeta, el detalle, la propuesta de alojamiento y el armador comparten una foto local del hotel con piscina y jardines; se conserva el archivo JPG optimizado de 195 KB y se mantiene la foto anterior en la sección Nosotros.

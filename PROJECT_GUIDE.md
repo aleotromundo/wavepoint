@@ -166,14 +166,16 @@ Las secciones fuera del hero pueden usar gradientes oceánicos, capas radiales y
 
 ### Favicon y logo original
 
-El favicon activo es la imagen `favicon.jpg` proporcionada por el usuario. Todas las páginas enlazan ese archivo con `<link rel="icon" type="image/jpeg">`. Se conserva `assets/wavepoint-apple-touch-icon.png` como icono de inicio para dispositivos Apple.
+El set de favicon se genera desde `assets/wavepoint-favicon-source.jpg`: los PNG de 16 y 32 px y el ICO multirresolución usan un recorte cuadrado con esquinas transparentes para eliminar el margen blanco y conservar el fondo oscuro del logo. Todas las páginas enlazan esos tamaños con rutas relativas. Se conserva `assets/wavepoint-apple-touch-icon.png` como icono de inicio para dispositivos Apple.
 
 ```text
-favicon.jpg                               Favicon de navegador proporcionado por el usuario
+assets/wavepoint-favicon-source.jpg       Original proporcionado por el usuario
+favicon-16.png / favicon-32.png           Favicons PNG con esquinas transparentes
+favicon.ico                               Favicon multirresolución (16/32/48/64/128/256)
 assets/wavepoint-apple-touch-icon.png     Icono de inicio para dispositivos Apple
 ```
 
-No sustituir ni editar `favicon.jpg` sin autorización explícita.
+No sustituir ni editar el original sin autorización explícita.
 
 ## 8. Responsive y accesibilidad
 
@@ -204,7 +206,8 @@ Reglas de accesibilidad:
 
 | Asset | Uso |
 | --- | --- |
-| `favicon.jpg` | Favicon de navegador. |
+| `favicon-16.png`, `favicon-32.png`, `favicon.ico` | Favicons de navegador generados desde el original. |
+| `assets/wavepoint-favicon-source.jpg` | Original de marca proporcionado por el usuario. |
 | `assets/wavepoint-apple-touch-icon.png` | Icono de inicio para dispositivos Apple. |
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
