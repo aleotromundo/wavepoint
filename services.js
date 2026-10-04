@@ -5,9 +5,33 @@ const services = [
 id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', title: 'Estadías y hoteles',
 cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
 description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
-images: ['assets/ally-capitan.jpg', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
-imageAlts: ['Hotel junto a la playa con piscina y jardines tropicales'],
-imageAltsEn: ['Beachfront hotel with a pool and tropical gardens'],
+images: [
+'assets/img/hotels/stayandhotels6_resultado.webp',
+'assets/img/hotels/stayandhotels5_resultado.webp',
+'assets/img/hotels/stayandhotels1_resultado.webp',
+'assets/img/hotels/stayandhotels2_resultado.webp',
+'assets/img/hotels/stayandhotels3_resultado.webp',
+'assets/img/hotels/stayandhotels4_resultado.webp',
+'assets/img/hotels/stayandhotels_resultado.webp'
+],
+imageAlts: [
+'Alojamiento tropical junto a la playa con piscina',
+'Alojamiento con habitaciones y piscina exterior',
+'Tamalodge entre jardines tropicales',
+'Casa de madera con pasarela exterior',
+'Alojamiento de madera con piscina rodeada de vegetación',
+'Habitación luminosa con acceso al jardín',
+'Sala de estar de un alojamiento'
+],
+imageAltsEn: [
+'Tropical beachfront accommodation with a pool',
+'Accommodation with guest rooms and an outdoor pool',
+'Tamalodge among tropical gardens',
+'Wooden house with an outdoor walkway',
+'Wooden accommodation with a pool surrounded by greenery',
+'Bright guest room opening onto the garden',
+'Living room in an accommodation'
+],
 accommodationOptions: [
 {
 category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
@@ -563,8 +587,8 @@ modalClose: 'Close survey'
 const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
-'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/ally-capitan.jpg' },
-'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/ally-capitan.jpg' },
+'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels6_resultado.webp' },
+'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels6_resultado.webp' },
 'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
 'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-group.webp' },
 'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/optimized/surf-coaching.webp' },
@@ -609,7 +633,8 @@ return `<article class="accommodation-card accommodation-card-${index + 1}"><div
 }
 function renderAccommodationStory(service) {
 const isEn = lang === 'en';
-return `<p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 'ALOJAMIENTOS EN TAMARINDO'}</p><h2>${isEn ? 'Accommodation options in Tamarindo' : 'Opciones de alojamiento en Tamarindo'}</h2><p>${esc(service.description)}</p><div class="accommodation-rate-note"><strong>${isEn ? 'Rates in USD' : 'Tarifas en USD'}</strong><span>${isEn ? 'All rates are shown in US dollars (USD) per night.' : 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.'}</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
+const gallery = service.images.slice(1).map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index + 1] : service.imageAlts?.[index + 1]) || `${uiFor(service).galleryAlt} ${index + 2}`)}" loading="lazy" />`).join('');
+return `<p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 'ALOJAMIENTOS EN TAMARINDO'}</p><h2>${isEn ? 'Accommodation options in Tamarindo' : 'Opciones de alojamiento en Tamarindo'}</h2><p>${esc(service.description)}</p><div class="detail-gallery accommodation-photo-gallery">${gallery}</div><div class="accommodation-rate-note"><strong>${isEn ? 'Rates in USD' : 'Tarifas en USD'}</strong><span>${isEn ? 'All rates are shown in US dollars (USD) per night.' : 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.'}</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
 }
 function renderSurfLessonStory(service) {
 const ui = uiFor(service);
@@ -663,7 +688,7 @@ return `<div class="retreat-editorial">
       <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-stay-card">
-      <img src="assets/ally-capitan.jpg" alt="${isEn ? 'Beachfront hotel with a pool and tropical gardens' : 'Hotel junto a la playa con piscina y jardines tropicales'}" loading="lazy" />
+      <img src="assets/img/hotels/stayandhotels6_resultado.webp" alt="${isEn ? 'Tropical beachfront accommodation with a pool' : 'Alojamiento tropical junto a la playa con piscina'}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-yoga-card">
