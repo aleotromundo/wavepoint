@@ -227,13 +227,13 @@ cardText: 'Tu tiempo en el agua, capturado.',
 description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
 images: ['assets/legacy/fotodesurf.jpg', 'assets/photo-service.jpg'],
 questions: [],
-submitLabel: 'Reservá tu sesión ↗',
+submitLabel: 'RESERVÁ TU SESIÓN ↗',
 en: {
 eyebrow: 'SURF PHOTOGRAPHY',
 title: 'Surf Photography',
 cardText: 'Your time in the water, captured.',
 description: 'Your first wave, a turn you’ve been working on or a session shared with friends—every surfer has moments worth keeping. WavePoint connects you with local surf photographers to capture yours, so you can focus on the waves and take a little of Tamarindo home with you.',
-submitLabel: 'Book your session ↗',
+submitLabel: 'BOOK YOUR SESSION ↗',
 questions: {}
 }
 },

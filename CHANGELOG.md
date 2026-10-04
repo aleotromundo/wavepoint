@@ -10,7 +10,9 @@
 
 ### Validación
 
-- Pendiente: revisar la tarjeta, el detalle de Fotos de surf y el Pack ajustable en ES/EN.
+- Revisado en navegador: detalle de Fotos de surf en inglés, con descripción completa, enlace a Buceo en la navegación y CTA “Book your session”.
+- Confirmado: se conserva la tarjeta y página de Buceo, y el catálogo ahora suma 11 servicios.
+- Se actualiza el versionado de `services.js` y `script.js` para evitar contenido anterior en caché.
 
 ## 2026-10-04
 

@@ -43,7 +43,7 @@ El header comparte navegación hacia Inicio, Guía turística, Servicios, Nosotr
 
 ## 4. Catálogo real de servicios
 
-El catálogo confirmado tiene diez servicios. No agregar servicios inventados ni volver a mostrar servicios retirados sin confirmación explícita.
+El catálogo confirmado tiene once servicios. No agregar servicios inventados ni volver a mostrar servicios retirados sin confirmación explícita.
 
 1. **Stays and Hotels** / Estadías y hoteles — consultar Hotel Tamalodge, Casa Aura, Casa Madera o Capitán Suizo.
 2. **Surf lessons** / Clases de surf — primera ola o siguiente paso según nivel.
@@ -51,10 +51,11 @@ El catálogo confirmado tiene diez servicios. No agregar servicios inventados ni
 4. **Yoga** — sesión adaptada a experiencia y horario.
 5. **Witch’s Rock surf trip** / Surf trip a Roca Bruja — salida guiada según grupo y condiciones.
 6. **Snorkeling & catamaran** / Snorkel y catamarán — opciones de navegación y snorkel.
-7. **Diving** / Buceo — experiencia de buceo local; puede referenciarse como Tama Dive cuando corresponda.
-8. **ATV tours** — recorridos y requisitos del operador.
-9. **Build your own experience** / Pack ajustable — combinación personalizada de actividades.
-10. **Retreats** / Retiros — viajes grupales con programa y estadía.
+7. **Surf Photography** / Fotos de surf — conexión con fotógrafos locales para capturar sesiones en el agua.
+8. **Diving** / Buceo — experiencia de buceo local; puede referenciarse como Tama Dive cuando corresponda.
+9. **ATV tours** — recorridos y requisitos del operador.
+10. **Build your own experience** / Pack ajustable — combinación personalizada de actividades.
+11. **Retreats** / Retiros — viajes grupales con programa y estadía.
 
 Los IDs actuales de detalle son:
 
@@ -65,6 +66,7 @@ surf-coaching
 yoga
 roca-bruja
 snorkel-catamaran
+surf-fotografia
 buceo
 atv
 pack-ajustable
