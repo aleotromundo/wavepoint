@@ -5,7 +5,7 @@ const services = [
 id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', title: 'Estadías y hoteles',
 cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
 description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
-images: ['https://cdn.pixabay.com/photo/2014/03/24/10/17/beach-293826_1280.jpg', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
+images: ['assets/img/tamarindo-beach-palm-trees-surfboards-costa-rica.jpg', 'assets/legacy/Playa_23.jpg', 'assets/capitan.jpg'],
 accommodationOptions: [
 {
 category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
@@ -81,7 +81,20 @@ experiences: { label: 'Which experiences would you like to add?', options: ['Sur
 id: 'clases-de-surf', number: '02', eyebrow: 'CLASES DE SURF · TAMARINDO', title: 'Clases de surf',
 cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.',
 description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
-images: ['https://cdn.pixabay.com/photo/2018/12/01/21/33/surfers-3850272_1280.jpg', 'assets/legacy/clase-surf.jpeg', 'assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg'],
+images: [
+'assets/img/surf-lesson-students-surfing-tamarindo-01.jpg',
+'assets/img/surf-lesson-woman-surfing-tamarindo-01.jpg',
+'assets/img/5046346892610047344.jpg',
+'assets/img/surf-shop-interior-tamarindo-club-33.jpg',
+'assets/img/surfboard-rental-rack-tamarindo-club-33.jpg'
+],
+imageAlts: [
+'Grupo de estudiantes practicando surf en Tamarindo',
+'Alumna practicando surf en Tamarindo',
+'Surfista tomando una ola en Tamarindo',
+'Interior de una tienda local de surf',
+'Tablas de surf ordenadas en un rack'
+],
 questions: [
 { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
 { id: 'lesson_goal', label: '¿Qué te gustaría aprender?', type: 'choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
@@ -96,6 +109,13 @@ eyebrow: 'SURF LESSONS · TAMARINDO',
 title: 'Surf lessons',
 cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
 description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
+imageAlts: [
+'Group of students practicing surfing in Tamarindo',
+'Student practicing surfing in Tamarindo',
+'Surfer catching a wave in Tamarindo',
+'Interior of a local surf shop',
+'Surfboards arranged on a rack'
+],
 questions: {
 surf_level: { label: 'What’s your surfing level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
 lesson_goal: { label: 'What would you like to learn?', options: ['Try surfing', 'Improve the basics', 'Work on a specific skill'] },
@@ -112,7 +132,8 @@ id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 
 cardText: 'Entrenamiento personalizado con video-análisis y estrategias para llevar tu surf al siguiente nivel.',
 description: 'Llevá tu surf al siguiente nivel con un entrenamiento personalizado. Análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento en el agua con la ayuda de entrenadores expertos.',
 includes: ['Sesión de video de tu sesión', 'Análisis con un instructor personalizado en tu idioma', 'Video de recuerdo'],
-images: ['https://cdn.pixabay.com/photo/2017/04/08/10/23/surfing-2212948_1280.jpg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
+images: ['assets/img/surfer-riding-wave-tamarindo-costa-rica-05.jpg', 'assets/legacy/FC0F6C9F-D8FA-446B-89A7-AC3D195117B1.jpeg'],
+imageAlts: ['Surfista tomando una ola en Tamarindo', 'Surfista practicando una maniobra'],
 questions: [
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
 { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Cuéntanos brevemente.' },
@@ -125,6 +146,7 @@ eyebrow: 'COACHING · PROGRESSION',
 title: 'Surf coaching',
 cardText: 'Personalized coaching with video analysis and strategies to take your surfing to the next level.',
 description: 'Take your surfing to the next level with personalized coaching. Technique analysis, video coaching and strategies to improve your performance in the water with expert coaches.',
+imageAlts: ['Surfer catching a wave in Tamarindo', 'Surfer practicing a maneuver'],
 includes: ['Video review of your session', 'Personalized analysis with an instructor in your language', 'Memory video'],
 questions: {
 current_surf_level: { label: 'What is your current surfing level?', options: ['Beginner', 'Intermediate', 'Advanced'] },
@@ -225,7 +247,8 @@ date_flexibility: { label: 'Can you change the date if sea conditions require it
 id: 'surf-fotografia', number: '08', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fotos de surf',
 cardText: 'Tu tiempo en el agua, capturado.',
 description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
-images: ['https://cdn.pixabay.com/photo/2018/10/17/11/57/beach-3753801_1280.jpg', 'assets/photo-service.jpg'],
+images: ['assets/img/longboard-surfer-tamarindo-costa-rica.jpg', 'assets/photo-service.jpg'],
+imageAlts: ['Surfista recorriendo una ola sobre una tabla longboard'],
 questions: [],
 submitLabel: 'RESERVÁ TU SESIÓN ↗',
 en: {
@@ -233,6 +256,7 @@ eyebrow: 'SURF PHOTOGRAPHY',
 title: 'Surf Photography',
 cardText: 'Your time in the water, captured.',
 description: 'Your first wave, a turn you’ve been working on or a session shared with friends—every surfer has moments worth keeping. WavePoint connects you with local surf photographers to capture yours, so you can focus on the waves and take a little of Tamarindo home with you.',
+imageAlts: ['Surfer riding a wave on a longboard'],
 submitLabel: 'BOOK YOUR SESSION ↗',
 questions: {}
 }
@@ -305,7 +329,20 @@ pack_notes: { label: 'What should the operator keep in mind?', placeholder: 'Num
 id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'WavePoint Retiros nace de nuestro amor por el surf, la naturaleza y el estilo de vida costero. Son experiencias diseñadas para reconectar contigo mismo, con el mar y con una comunidad vibrante, en uno de los destinos más mágicos de Costa Rica: Tamarindo. Estos retiros están pensados para quienes buscan más que unas vacaciones: buscan transformación, conexión y aventura.',
-images: ['https://cdn.pixabay.com/photo/2022/01/17/09/10/retreat-6944181_1280.jpg', 'assets/legacy/IMG_1269.jpeg', 'assets/legacy/Restaurante_1.jpg'],
+images: [
+'assets/img/ambarry1975-costa-rica-2646482.jpg',
+'assets/img/5046346892610047339.jpg',
+'assets/img/5046346892610047340.jpg',
+'assets/img/5046346892610047341.jpg',
+'assets/img/5046346892610047342.jpg'
+],
+imageAlts: [
+'Atardecer en la costa de Costa Rica',
+'Cielo violeta al atardecer sobre el mar',
+'Mesas junto a la playa durante el atardecer',
+'Atardecer rosado en Tamarindo',
+'Árbol tropical visto desde abajo'
+],
 retreatDetails: {
 aboutHeading: '¿Qué son los retiros WavePoint?',
 about: 'En WavePoint Retiros te llevamos a vivir días de pura conexión con el mar, el cuerpo y la naturaleza, en uno de los destinos más especiales del surf en Costa Rica. Diseñamos cada experiencia para que no tengas que preocuparte por nada: solo llegar, surfear y disfrutar.',
@@ -380,6 +417,13 @@ eyebrow: 'RETREATS · EXPERIENCES',
 title: 'Retreats',
 cardText: 'Choose a pause with intention: surf, rest, movement and community in one trip.',
 description: 'WavePoint Retreats grew from our love of surfing, nature and the coastal way of life. These experiences are designed to help you reconnect with yourself, the ocean and a vibrant community in Tamarindo, one of Costa Rica’s most magical destinations. They are for people looking for more than a vacation: transformation, connection and adventure.',
+imageAlts: [
+'Sunset on the coast of Costa Rica',
+'Purple sky at sunset over the ocean',
+'Tables by the beach at sunset',
+'Pink sunset in Tamarindo',
+'Tropical tree viewed from below'
+],
 retreatDetails: {
 aboutHeading: 'What are WavePoint retreats?',
 about: 'WavePoint Retreats brings you days of connection with the ocean, your body and nature in one of Costa Rica’s most special surf destinations. We design each experience so you can simply arrive, surf and enjoy.',
@@ -552,7 +596,7 @@ return `<p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 
 function renderSurfLessonStory(service) {
 const ui = uiFor(service);
 const isEn = lang === 'en';
-const gallery = service.images.map((image, index) => `<img src="${image}" alt="${ui.galleryAlt} ${index + 1}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.imageAlts?.[index] || `${ui.galleryAlt} ${index + 1}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2>${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><p class="surf-lesson-description">${esc(service.description)}</p><div class="detail-gallery surf-lesson-gallery">${gallery}</div><div class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS · QUICK CHECK-IN' : 'CLASES DE SURF · CONSULTA RÁPIDA'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p><button class="surf-survey-open" type="button" data-open-surf-survey>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div></div>`;
 }
 function renderWitchRockStory(service) {
@@ -562,12 +606,12 @@ return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.lead)}</h2
 }
 function renderSurfPhotographyStory(service) {
 const kicker = lang === 'en' ? 'SURF PHOTOGRAPHY · TAMARINDO' : 'FOTOGRAFÍA DE SURF · TAMARINDO';
-const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${kicker}</p><p>${esc(service.description)}</p><div class="detail-gallery">${gallery}</div>`;
 }
 function renderSurfskateStory(service) {
 const kicker = 'SURFSKATE · TAMARINDO';
-const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.cardText)}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${gallery}</div>`;
 }
 function renderRetreatStory(service) {
@@ -577,7 +621,7 @@ const included = details.included.map(item => `<li>${esc(item)}</li>`).join('');
 const notIncluded = details.notIncluded.map(item => `<li>${esc(item)}</li>`).join('');
 const conditions = details.conditions.map(item => `<li>${esc(item)}</li>`).join('');
 const itinerary = details.itinerary.map(day => `<article class="retreat-day"><h4>${esc(day.title)}</h4><ul>${day.activities.map(activity => `<li>${esc(activity)}</li>`).join('')}</ul></article>`).join('');
-const gallery = service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}" loading="lazy" />`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 return `<p class="service-page-kicker">${lang === 'en' ? 'WAVEPOINT RETREATS · TAMARINDO' : 'WAVEPOINT RETIROS · TAMARINDO'}</p><h2>${esc(details.aboutHeading)}</h2><p class="retreat-intro">${esc(service.description)}</p><p>${esc(details.about)}</p><section class="retreat-content-section"><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></section><section class="retreat-content-section"><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></section><section class="retreat-content-section"><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</section><section class="retreat-content-section"><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p><h4>${esc(details.boatHeading)}</h4><p>${esc(details.boat)}</p></section><section class="retreat-summary"><h3>${esc(details.summaryHeading)}</h3><dl class="retreat-summary-grid">${facts}</dl><div class="retreat-lists"><section class="retreat-list retreat-list-included"><h4>${esc(details.includedHeading)}</h4><ul>${included}</ul></section><section class="retreat-list"><h4>${esc(details.notIncludedHeading)}</h4><ul>${notIncluded}</ul></section></div><section class="retreat-conditions"><h4>${esc(details.conditionsHeading)}</h4><ul>${conditions}</ul></section></section><section class="retreat-content-section retreat-itinerary-section"><h3>${esc(details.itineraryHeading)}</h3><div class="retreat-itinerary">${itinerary}</div></section><div class="detail-gallery retreat-gallery">${gallery}</div>`;
 }
 function render(service) {
@@ -607,7 +651,7 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderSurfskateStory(service)
 : service.id === 'retiros'
 ? renderRetreatStory(service)
-: `<p class="service-page-kicker">${lang === 'en' ? 'THE EXPERIENCE' : 'LA EXPERIENCIA'}</p><h2>${lang === 'en' ? 'A plan designed for your trip.' : 'Un plan pensado para tu viaje.'}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${image}" alt="${esc(service.title)} · imagen ${index + 1}" loading="lazy" />`).join('')}</div>`;
+: `<p class="service-page-kicker">${lang === 'en' ? 'THE EXPERIENCE' : 'LA EXPERIENCIA'}</p><h2>${lang === 'en' ? 'A plan designed for your trip.' : 'Un plan pensado para tu viaje.'}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('')}</div>`;
 const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
 document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero" style="--detail-hero:url('${service.images[0]}')">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" novalidate>${formQuestions}<label class="detail-question detail-field" for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
 if (service.id === 'pack-ajustable') {
