@@ -138,14 +138,29 @@ date_flexibility: { label: 'Can you change the date if sea conditions require it
 },
 {
 id: 'yoga', number: '05', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
-cardText: 'Encontrá una práctica que acompañe tu viaje, desde una primera vez hasta una sesión profunda.',
+cardText: 'Yoga in Tamarindo · A little space to breathe.',
 description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
-images: ['assets/legacy/OTAMA_HEAL_21.jpg'],
+images: [
+'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1400&q=80',
+'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80',
+'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80'
+],
+includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
 questions: [
 { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
 { id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
 { id: 'yoga_notes', label: '¿Hay algo que quieras que el instructor tenga en cuenta para adaptar la sesión?', type: 'textarea', placeholder: 'Opcional', optional: true }
-]
+],
+en: {
+cardText: 'Yoga in Tamarindo · A little space to breathe.',
+description: 'Take a pause, enjoy the movement and make time for yourself. Whether you’re stepping onto the mat for the first time or continuing a practice you love, WavePoint helps you find a session that suits your experience. Connect with local instructors and explore group or private classes during your stay.',
+questions: {
+  yoga_experience: { label: 'What is your experience with yoga?', options: ['First time', 'Some experience', 'I practice regularly'] },
+  yoga_format: { label: 'Would you prefer a group or private class?', options: ['Group', 'Private', 'Either is fine'] },
+  yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
+},
+includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy']
+}
 },
 {
 id: 'snorkel-catamaran', number: '06', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
@@ -260,7 +275,7 @@ const PACK_SERVICE_CARDS = {
 'Alojamiento': { title: 'Stay & experience', detail: 'Un lugar cómodo y algo más para vivir Tamarindo.', image: 'assets/legacy/OTAMA_VIEW_30.jpg' },
 'Surf lessons': { title: 'Surf lessons', detail: 'Tu primera ola o el siguiente paso.', image: 'assets/legacy/DSC02807.jpg' },
 'Surf coaching': { title: 'Surf coaching', detail: 'Entrenamiento personalizado con video-análisis.', image: 'assets/legacy/_GSK8664.jpg' },
-'Yoga': { title: 'Yoga', detail: 'Bajá el ritmo y encontrá tu pausa.', image: 'assets/legacy/OTAMA_HEAL_21.jpg' },
+'Yoga': { title: 'Yoga', detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80' },
 'Witch’s Rock Surf Trip': { title: 'Witch’s Rock Surf Trip', detail: 'Una salida guiada a un spot inolvidable.', image: 'assets/legacy/bruja.jpg' },
 'Snorkeling & catamaran': { title: 'Snorkeling & catamaran', detail: 'Mar, navegación y tiempo para explorar.', image: 'assets/legacy/conchal.jpg' },
 'Buceo': { title: 'Diving', detail: 'Descubrí el mundo bajo la superficie.', image: 'assets/surf-service.jpg' },
@@ -270,7 +285,10 @@ const PACK_SERVICE_CARDS = {
 function renderQuestion(service, question) {
 const id = inputId(service, question);
 const optional = question.optional ? `<span class="detail-optional">${uiFor(service).optional}</span>` : '';
-if (service.id === 'pack-ajustable' && question.id === 'pack_activities') return `<fieldset class="detail-question pack-question"><legend>${esc(question.label)} ${optional}</legend><p class="pack-question-intro">Elegí dos o más tarjetas y armamos una experiencia a tu medida.</p><div class="pack-service-grid">${question.options.map(option => { const card = PACK_SERVICE_CARDS[option]; return `<label class="pack-service-card"><input type="checkbox" name="${question.id}" value="${esc(option)}" /><span class="pack-service-image"><img src="${card.image}" alt="" loading="lazy" /><span class="pack-service-check" aria-hidden="true">✓</span></span><span class="pack-service-copy"><strong>${esc(card.title)}</strong><small>${esc(card.detail)}</small></span></label>`; }).join('')}</div><p class="pack-selection-count" data-pack-selection>0 experiencias seleccionadas</p></fieldset>`;
+if (service.id === 'pack-ajustable' && question.id === 'pack_activities') {
+const packIntro = lang === 'en' ? 'Choose two or more cards and we’ll build a custom experience for you.' : 'Elegí dos o más tarjetas y armamos una experiencia a tu medida.';
+return `<fieldset class="detail-question pack-question"><legend>${esc(question.label)} ${optional}</legend><p class="pack-question-intro">${packIntro}</p><div class="pack-service-grid">${question.options.map(option => { const card = PACK_SERVICE_CARDS[option]; const cardDetail = typeof card.detail === 'string' ? card.detail : (card.detail?.[lang] || card.detail?.es || ''); return `<label class="pack-service-card"><input type="checkbox" name="${question.id}" value="${esc(option)}" /><span class="pack-service-image"><img src="${card.image}" alt="" loading="lazy" /><span class="pack-service-check" aria-hidden="true">✓</span></span><span class="pack-service-copy"><strong>${esc(card.title)}</strong><small>${esc(cardDetail)}</small></span></label>`; }).join('')}</div><p class="pack-selection-count" data-pack-selection>${lang === 'en' ? '0 experiences selected' : '0 experiencias seleccionadas'}</p></fieldset>`;
+}
 if (question.type === 'headcount') return `<fieldset class="detail-question headcount-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map((field, index) => `<label for="${id}-${field.id}">${esc(field.label)}<input id="${id}-${field.id}" name="${question.id}-${field.id}" type="number" min="${index === 0 ? 1 : 0}" step="1" inputmode="numeric" placeholder="${index === 0 ? '1' : '0'}" required /></label>`).join('')}</div><p class="headcount-note">${esc(question.note)}</p><label class="headcount-ages" for="${id}-ages"><span>${esc(question.agesLabel)} <span class="detail-optional">${uiFor(service).optional}</span></span><input id="${id}-ages" name="${question.id}-ages" type="text" placeholder="${esc(question.agesPlaceholder)}" /></label></fieldset>`;
 if (question.type === 'dates') return `<fieldset class="detail-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
 if (question.type === 'choice' || question.type === 'multi') return `<fieldset class="detail-question"><legend>${esc(question.label)} ${optional}</legend><div class="detail-options">${question.options.map((option, index) => `<label class="detail-option"><input type="${question.type === 'multi' ? 'checkbox' : 'radio'}" name="${question.id}" value="${esc(option)}" ${question.type === 'choice' && index === 0 && !question.optional ? 'required' : ''} /><span>${esc(option)}</span></label>`).join('')}</div></fieldset>`;
@@ -323,7 +341,9 @@ const packGrid = document.querySelector('.pack-service-grid');
 const count = document.querySelector('[data-pack-selection]');
 const updatePackCount = () => {
 const selected = packGrid ? packGrid.querySelectorAll('input:checked').length : 0;
-if (count) count.textContent = `${selected} ${selected === 1 ? 'experiencia seleccionada' : 'experiencias seleccionadas'}`;
+if (count) count.textContent = lang === 'en'
+? (selected === 1 ? '1 experience selected' : `${selected} experiences selected`)
+: `${selected} ${selected === 1 ? 'experiencia seleccionada' : 'experiencias seleccionadas'}`;
 };
 packGrid?.addEventListener('change', updatePackCount);
 }

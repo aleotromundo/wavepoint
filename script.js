@@ -360,7 +360,7 @@
       serviceCardSnorkelTitle: 'Snorkeling and catamaran',
       serviceCardSnorkelText: 'Explore underwater, sail along the coast, or combine both.',
       serviceCardYogaTitle: 'Yoga',
-      serviceCardYogaText: 'A practice to complement your trip and slow things down.',
+      serviceCardYogaText: 'A little space to breathe.',
       serviceCardAtvTitle: 'ATV tours',
       serviceCardAtvText: 'Explore Guanacaste’s trails with local operators.',
       serviceCardRetreatsTitle: 'Retreats',
