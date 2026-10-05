@@ -2496,6 +2496,9 @@ body { background: #071c28; }
 .collaborator-page.collaborator-capitan-suizo { --collab-cover: url("assets/ally-capitan.jpg"); }
 .collaborator-page.collaborator-casa-maderas { --collab-cover: url("assets/ally-casa.jpg"); }
 .collaborator-page.collaborator-occidental { --collab-cover: url("assets/ally-occidental.jpg"); }
+.collaborator-page.collaborator-occidental {
+  background-image: linear-gradient(180deg, rgba(4, 24, 34, .68), rgba(4, 31, 42, .82)), url("assets/bg/atardecer.jpg");
+}
 .collab-nav { position: absolute; inset: 0 0 auto; z-index: 5; display: flex; align-items: center; justify-content: space-between; width: min(1180px, calc(100% - 42px)); margin: 0 auto; padding: 24px 0; color: #fff; }
 .collab-nav nav { display: flex; gap: 22px; font-size: 13px; font-weight: 700; }
 .collab-nav a { color: inherit; }
@@ -5677,11 +5680,6 @@ footer a {
 @media (max-width: 760px) {
   .local-guide-page .guide-practical-grid { grid-template-columns: 1fr; }
 }
-.local-guide-page .service-page-footer {
-  background: rgba(6, 26, 38, .76);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
 @media (max-width: 640px) {
   .local-guide-page {
     background-position: center;
@@ -5706,6 +5704,10 @@ footer a {
     left: 70px;
     right: auto;
   }
+}
+
+@media (max-width: 980px) {
+  .topbar > .instagram-link { display: none; }
 }
 
 /* Expand catalog service descriptions over the photo only while interacted with. */
