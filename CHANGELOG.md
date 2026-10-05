@@ -1,5 +1,11 @@
 ## 2026-10-07
 
+### Prueba visual del footer con video y glassmorphism
+
+- `index.html`, `trip-builder.html` y `guia-playas.html`: aplicar el nuevo footer visual sin cambiar enlaces ni contenido.
+- `footer-video.js`: agregar `videohero3.mp4` como fondo decorativo con desplazamiento parallax suave en escritorio; pausar el video con movimiento reducido.
+- `styles.css`: sumar superficies de vidrio, superposición para contraste y composición responsiva; en móvil se desactiva el parallax.
+
 ### Accesos fotográficos de WavePoint en Tamarindo
 
 - `index.html`: conservar el título, la descripción y todos los beneficios; reemplazar los botones pequeños por dos accesos grandes, cada uno con una fotografía propia, para la guía local y las cámaras en vivo.
