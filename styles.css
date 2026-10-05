@@ -2496,6 +2496,9 @@ body { background: #071c28; }
 .collaborator-page.collaborator-capitan-suizo { --collab-cover: url("assets/ally-capitan.jpg"); }
 .collaborator-page.collaborator-casa-maderas { --collab-cover: url("assets/ally-casa.jpg"); }
 .collaborator-page.collaborator-occidental { --collab-cover: url("assets/ally-occidental.jpg"); }
+.collaborator-page.collaborator-casa-maderas {
+  background-image: linear-gradient(180deg, rgba(4, 24, 34, .68), rgba(4, 31, 42, .82)), url("assets/bg/atardecer.jpg");
+}
 .collaborator-page.collaborator-occidental {
   background-image: linear-gradient(180deg, rgba(4, 24, 34, .68), rgba(4, 31, 42, .82)), url("assets/bg/atardecer.jpg");
 }
@@ -2518,6 +2521,7 @@ body { background: #071c28; }
 .collab-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .collab-gallery img { width: 100%; height: 190px; border: 1px solid rgba(218, 246, 238, .18); border-radius: 14px; object-fit: cover; background: transparent; box-shadow: 0 12px 28px rgba(1, 17, 24, .3); }
 .collab-gallery img:first-child { grid-column: 1 / -1; height: 270px; }
+.collaborator-casa-maderas .collab-gallery img:first-child { grid-column: auto; height: 190px; }
 @media (max-width: 760px) {
   .collab-nav { width: calc(100% - 28px); padding: 18px 0; }
   .collab-nav nav { gap: 11px; font-size: 11px; }
