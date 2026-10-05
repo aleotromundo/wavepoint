@@ -184,7 +184,13 @@
   text-shadow: 0 5px 24px rgba(0, 0, 0, .28);
 }
 .trip-builder-hero-content > p:last-child { margin-inline: auto; }
-.trip-builder-main { background: radial-gradient(ellipse at 12% 12%, rgba(255, 210, 133, .23), transparent 32%), radial-gradient(ellipse at 94% 46%, rgba(62, 189, 164, .17), transparent 36%), linear-gradient(145deg, #f4f7ef, #e1f0ea); }
+.trip-builder-main {
+  background-color: #0a3541;
+  background-image: linear-gradient(145deg, rgba(5, 31, 42, .5), rgba(7, 44, 48, .58)), url("assets/bg/atardecer.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .trip-builder-heading { margin-right: auto; margin-left: auto; text-align: center; }
 .trip-builder-heading h2 {
   font-weight: 800;
@@ -194,6 +200,10 @@
 .trip-builder-heading > p:last-child { margin-inline: auto; }
 .trip-experience {
   border-radius: 18px;
+  border-color: rgba(219, 255, 243, .32);
+  background: rgba(7, 42, 53, .62);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
   box-shadow: 0 14px 34px rgba(8, 43, 58, .1);
 }
 .trip-experience-image { height: 166px; }
@@ -244,6 +254,10 @@
 .trip-summary {
   padding: 12px;
   border-radius: 23px;
+  border-color: rgba(219, 255, 243, .3);
+  background: rgba(6, 39, 50, .76);
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
+  backdrop-filter: blur(20px) saturate(1.25);
   box-shadow: 0 24px 58px rgba(8, 43, 58, .16);
 }
 .trip-cart-top {
@@ -262,7 +276,12 @@
 .trip-cart-caption { max-width: 230px; margin: 8px auto 0; font-size: 12px; }
 .trip-cart-illustration { width: 88px; }
 .trip-cart-count { left: 50%; transform: translateX(-50%); white-space: nowrap; }
-.trip-summary-empty { background: linear-gradient(135deg, #eefaf4, #fff5e5); }
+.trip-summary-empty {
+  border-color: rgba(239, 255, 245, .62);
+  background: rgba(245, 255, 249, .84);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
 .trip-summary-empty p { font-family: "Barlow Condensed", Impact, sans-serif; font-size: 19px; font-weight: 700; }
 .trip-summary-empty small { font-size: 11px; }
 .trip-summary-total { align-items: center; }
@@ -315,7 +334,7 @@
   position: relative;
   isolation: isolate;
   background-color: #0a3541;
-  background-image: linear-gradient(rgba(6, 33, 43, .8), rgba(8, 48, 54, .88)), url("assets/bg/servicios.jpg");
+  background-image: linear-gradient(rgba(5, 31, 42, .5), rgba(7, 44, 48, .58)), url("assets/bg/atardecer.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -329,8 +348,10 @@
   color: #ffdf9b;
 }
 .trip-experience {
-  border-color: rgba(179, 238, 222, .24);
-  background: rgba(7, 42, 53, .94);
+  border-color: rgba(219, 255, 243, .32);
+  background: rgba(7, 42, 53, .62);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
   box-shadow: 0 18px 38px rgba(0, 0, 0, .24);
 }
 .trip-experience.is-added {
@@ -344,8 +365,10 @@
 .trip-experience-price { background: rgba(255, 221, 155, .13); color: #ffe4b1; }
 .trip-experience-price strong { color: #8df0d1; }
 .trip-summary {
-  border-color: rgba(179, 238, 222, .23);
-  background: rgba(6, 39, 50, .97);
+  border-color: rgba(219, 255, 243, .3);
+  background: rgba(6, 39, 50, .76);
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
+  backdrop-filter: blur(20px) saturate(1.25);
   box-shadow: 0 24px 58px rgba(0, 0, 0, .29);
 }
 .trip-summary h2 { color: #f7fcf9; }
