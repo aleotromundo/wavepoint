@@ -1,5 +1,10 @@
 ## 2026-10-07
 
+### Imágenes de clases de surf
+
+- `services.js`, `index.html`, `trip-builder.js` y `script.js`: se unifica la foto principal de clases de surf con una imagen de una alumna en el agua; la galería de detalle deja de mostrar un árbol, una tienda y tablas, y pasa a mostrar surfistas en olas. Alternativas en español e inglés; textos visibles sin cambios.
+- `styles.css`: la galería vuelve a un mosaico de dos columnas con la foto principal ocupando dos filas para mostrar las tres imágenes secundarias sin recortes estrechos.
+
 ### Guía local bilingüe
 
 - `guide-i18n.js` y `guia-playas.html`: se completa la traducción al inglés de todas las secciones, fichas, datos prácticos, navegación de categorías, enlaces y textos alternativos; el selector compartido permite cambiar entre los dos idiomas.
