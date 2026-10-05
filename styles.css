@@ -3140,7 +3140,7 @@ body { background: #071c28; }
 .px-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 24, 34, .46), rgba(3, 24, 34, .16) 45%, rgba(3, 24, 34, .4)); }
 #servicios { --px-img: url('assets/bg/servicios.jpg'); }
 #camaras { --px-img: url('assets/bg/camaras.jpg'); }
-#guia { --px-img: url('assets/bg/guia.jpg'); }
+#guia { --px-img: url('assets/img/optimized/occidental-beach.webp'); }
 #despues-del-surf { --px-img: url('assets/bg/atardecer.jpg'); }
 .has-px .section-title, .has-px .link-more { color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .35); }
 .has-px .section-sub { color: rgba(255, 255, 255, .9); text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
