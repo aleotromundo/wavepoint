@@ -66,7 +66,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261006-19"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261006-19"/><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=20261006-19"/><link rel="icon" type="image/x-icon" href="favicon.ico?v=20261006-19"/><link rel="apple-touch-icon" sizes="180x180" href="assets/wavepoint-apple-touch-icon.png?v=20261006-19"/>
 <meta content="#0a3547" name="theme-color"/>
-<link href="styles.css?v=20261007-23" rel="stylesheet"/></head>
+<link href="styles.css?v=20261007-24" rel="stylesheet"/></head>
 <body>
 <header class="topbar">
 <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint">
@@ -241,16 +241,24 @@
         <div class="benefit"><span class="ico">✦</span><div><h3 data-i18n="benefitLocalAllies">Aliados locales</h3><p data-i18n="benefitLocalAlliesText">Colaboradores que ayudan a mantener la experiencia activa y útil.</p></div></div>
       </div>
     </div>
-    <article class="guide-card">
-      <div class="guide-content">
+    <div class="guide-destinations">
+      <div class="guide-destinations-intro">
         <h3 data-i18n="guideLiveTamarindo">Vive Tamarindo</h3>
         <p data-i18n="guideText">Más que surf: playas, colaboradores, servicios y experiencias recomendadas.</p>
-        <div class="hero-actions guide-actions">
-          <a class="btn btn-primary" data-i18n="guideButton" href="Enlaces/guia-playas.html">Explorar guía</a>
-          <a class="btn btn-ghost" data-i18n="guideCamerasButton" href="#camaras">Ver cámaras en vivo</a>
-        </div>
       </div>
-    </article>
+      <div class="guide-destination-grid">
+        <a class="guide-destination guide-destination-guide" href="Enlaces/guia-playas.html">
+          <img src="assets/bg/guia.jpg" alt="Vista costera de Tamarindo desde la playa" data-i18n-alt="guideButtonImageAlt" loading="lazy"/>
+          <span class="guide-destination-label" data-i18n="guideButton">Explorar guía</span>
+          <span class="guide-destination-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="guide-destination guide-destination-cameras" href="#camaras">
+          <img src="assets/bg/camaras.jpg" alt="Surfista en una ola en Tamarindo" data-i18n-alt="guideCamerasButtonImageAlt" loading="lazy"/>
+          <span class="guide-destination-label" data-i18n="guideCamerasButton">Ver cámaras en vivo</span>
+          <span class="guide-destination-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 <div class="about-page about-home" id="nosotros">
@@ -424,5 +432,5 @@
 </div>
 <div aria-hidden="true" class="modal" id="adModal"><div class="modal-box"><div class="modal-head"><div class="modal-title">Chophouse pre-play demo</div><button class="close" id="closeAd">×</button></div><div class="modal-body" style="background:#000"><video controls="" id="adVideo" playsinline="" src="assets/chophouse-preroll-12s.mp4" style="width:100%;height:100%;display:block"></video></div><div class="modal-note">Demo del formato pre-play para Castr.</div></div></div>
 
-<script defer="True" src="script.js?v=20261007-3"></script><script defer src="lang-switch.js?v=20261007-1"></script></body>
+<script defer="True" src="script.js?v=20261007-4"></script><script defer src="lang-switch.js?v=20261007-1"></script></body>
 </html>
