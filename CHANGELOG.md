@@ -8,6 +8,10 @@
 - `styles.css` y `guia-playas.html`: se mantiene el fondo fotográfico de la guía en un plano fijo del tamaño de la ventana para que no se diluya al escalarse sobre toda la página; se reduce la opacidad de los paneles para hacer más visible el glassmorphism. Se renueva la versión de caché de estilos.
 - `styles.css` y `guia-playas.html`: se reemplaza el fondo azulado por la foto local de atardecer (`assets/bg/atardecer.jpg`) y se suaviza la capa oscura para conservar más color detrás de los paneles de vidrio.
 - `trip-builder.html`, `trip-builder.js` y `trip-builder.css`: en celular aparece un acceso flotante al carrito solo mientras el resumen completo está fuera de pantalla. Muestra `0 XP` o la cantidad elegida, cambia de aspecto al agregar experiencias y desplaza al resumen existente al tocarlo; este se conserva al final de la página.
+- `trip-builder.html` y `trip-builder.css`: se conserva el acceso flotante de WhatsApp y se suma la burbuja del asistente bilingüe; el carrito móvil queda separado de ambos. El armador gana paneles translúcidos con desenfoque sobre una foto de fondo.
+- `index.html`, `service-detail.html`, `guia-playas.html`, `trip-builder.html` y fichas de `Enlaces/`: se quita Instagram de los footers; permanece en la navegación superior de escritorio y en el menú hamburguesa móvil, sin mostrarlo dos veces.
+- `trip-builder.html` y `guia-playas.html`: se adopta el footer completo del index, con su contenido bilingüe y enlaces de regreso a las secciones correctas del sitio.
+- `Enlaces/occidental.html` y `assets/img/optimized/occidental-beach.webp`: se quitan de la galería las dos copias idénticas de la portada y se suma una foto distinta de playa obtenida de la galería oficial de Barceló (con autorización del usuario); se conservan las imágenes distintas de gastronomía y bienestar. El fondo de la ficha usa otro paisaje para que la foto de portada no se repita detrás del contenido.
 
 ## 2026-10-04
 
