@@ -18,7 +18,7 @@ Use this skill when adding a local page from a linked WavePoint page or updating
 
 ## Language and content
 
-- Spanish is the default. English mode translates interface and editorial copy, including dynamically updated statuses, modal text, form placeholders, and page-specific content.
+- English is the default. Spanish mode translates interface and editorial copy, including dynamically updated statuses, modal text, form placeholders, and page-specific content.
 - Keep local place names and established surf vocabulary such as spot, surfskate, lineup, and named beaches when a literal translation would sound unnatural.
 - Reuse the main site's `wavepoint-lang` localStorage preference and existing translation hooks where practical. Guard shared page scripts when the page does not contain a camera, weather panel, or modal.
 - Do not invent partner details, operating hours, safety claims, contact data, prices, or bookings. Verify these against the source page or ask the user.

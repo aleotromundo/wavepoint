@@ -113,8 +113,8 @@
       navGuia: 'Guía turística',
       navNosotros: 'Nosotros',
       navColaboradores: 'Colaboradores ▾',
-      heroTitle: 'Experiencias de surf en Tamarindo',
-      heroText: 'A través de quienes llaman hogar a Tamarindo: clases, coaching y surf trips en Costa Rica.',
+      heroTitle: 'A través de quienes llaman hogar a Tamarindo',
+      heroText: 'WavePoint te conecta con las mejores experiencias en Tamarindo.',
       heroTripBuilderButton: 'Armá tu viaje ▸',
       btnBeachGuide: 'Guía de playas',
       weatherTitle: 'Condiciones para surfear',
@@ -360,8 +360,8 @@
       navGuia: 'Tourist guide',
       navNosotros: 'About us',
       navColaboradores: 'Partners ▾',
-      heroTitle: 'Surf experiences in Tamarindo, Costa Rica',
-      heroText: 'Discover lessons, coaching and surf trips in Costa Rica through the people who call Tamarindo home.',
+      heroTitle: 'Through the people who call it home',
+      heroText: 'WavePoint connects you with the best experiences in Tamarindo.',
       heroTripBuilderButton: 'Build your trip ▸',
       btnBeachGuide: 'Beach guide',
       weatherTitle: 'Surf conditions',
@@ -603,10 +603,10 @@
     }
   };
 
-  const languageState = { current: localStorage.getItem('wavepoint-lang') || 'es' };
+  const languageState = { current: localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en' };
 
   function applyTranslations(lang = languageState.current) {
-    const dict = translations[lang] || translations.es;
+    const dict = translations[lang] || translations.en;
     languageState.current = lang;
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach(node => {
@@ -626,7 +626,7 @@
     if (langToggle) {
       const isSpanish = lang === 'es';
       langToggle.dataset.language = lang;
-      langToggle.setAttribute('aria-label', isSpanish ? 'Switch to English' : 'Cambiar a español');
+      langToggle.setAttribute('aria-label', isSpanish ? 'Cambiar a inglés' : 'Switch to Spanish');
       langToggle.setAttribute('aria-pressed', String(!isSpanish));
     }
     document.getElementById('assistantLauncher')?.setAttribute('aria-label', dict.assistantLauncherLabel);
