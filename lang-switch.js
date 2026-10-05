@@ -21,7 +21,7 @@
     { selector: '.navlinks > a[href$="#inicio"], .mobile-menu > a[href$="#inicio"]', es: 'Inicio', en: 'Home' },
     { selector: '.navlinks > a[href$="guia-playas.html"], .mobile-menu > a[href$="guia-playas.html"]', es: 'Guía turística', en: 'Tourist guide' },
     { selector: '.navlinks > a[href$="#servicios"], .mobile-menu > a[href$="#servicios"]', es: 'Servicios', en: 'Services' },
-    { selector: '.navlinks > a[href$="nostros.html"], .mobile-menu > a[href$="nostros.html"]', es: 'Nosotros', en: 'About us' },
+    { selector: '.navlinks > a[href$="#nosotros"], .mobile-menu > a[href$="#nosotros"]', es: 'Nosotros', en: 'About us' },
     { selector: '.about-opening-copy > h2', es: '¿Quiénes somos?', en: 'Who are we?' },
     { selector: '.navlinks .dropbtn', es: 'Colaboradores ▾', en: 'Partners ▾' },
     { selector: '.mobile-dropdown-link', es: 'Colaboradores', en: 'Partners' },

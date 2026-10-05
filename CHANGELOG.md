@@ -1,5 +1,11 @@
 ## 2026-10-07
 
+### Accesos fotográficos de WavePoint en Tamarindo
+
+- `index.html`: conservar el título, la descripción y todos los beneficios; reemplazar los botones pequeños por dos accesos grandes, cada uno con una fotografía propia, para la guía local y las cámaras en vivo.
+- `script.js`: agregar textos alternativos equivalentes en español e inglés para ambas imágenes.
+- `styles.css`: diseñar las tarjetas fotográficas responsivas, con foco de teclado y movimiento reducido.
+
 ### Imágenes de clases de surf
 
 - `services.js`, `index.html`, `trip-builder.js` y `script.js`: se unifica la foto principal de clases de surf con una imagen de una alumna en el agua; la galería de detalle deja de mostrar un árbol, una tienda y tablas, y pasa a mostrar surfistas en olas. Alternativas en español e inglés; textos visibles sin cambios.
