@@ -125,6 +125,8 @@
   let customerName = '';
   let customerExtra = '';
   const root = document.getElementById('tripBuilderRoot');
+  const mobileCart = document.getElementById('tripMobileCart');
+  let cartHeaderObserver;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const priceFor = (id, guests) => {
     const rates = RATE_BY_GUESTS[id];
@@ -158,6 +160,33 @@
       </div>
     </article>`;
   }).join('');
+  const updateMobileCart = () => {
+    if (!mobileCart) return;
+    const copy = COPY[lang];
+    const count = selected.size;
+    mobileCart.querySelector('[data-cart-count]').textContent = String(count);
+    mobileCart.setAttribute('aria-label', `${copy.trip}: ${count} ${count === 1 ? copy.itemCount : copy.itemsCount}`);
+    mobileCart.classList.toggle('is-filled', count > 0);
+    mobileCart.classList.toggle('is-empty', count === 0);
+    if (cartHeaderObserver) cartHeaderObserver.disconnect();
+
+    const cartSummary = root.querySelector('.trip-summary');
+    if (!cartSummary || !window.matchMedia('(max-width: 600px)').matches) {
+      mobileCart.hidden = true;
+      return;
+    }
+
+    const updateVisibility = entry => {
+      mobileCart.hidden = entry.isIntersecting;
+    };
+    const bounds = cartSummary.getBoundingClientRect();
+    const visibleHeight = Math.max(0, Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0));
+    mobileCart.hidden = visibleHeight > 0;
+    cartHeaderObserver = new IntersectionObserver(entries => {
+      entries.forEach(updateVisibility);
+    }, { threshold: 0 });
+    cartHeaderObserver.observe(cartSummary);
+  };
   const renderSummary = () => {
     const copy = COPY[lang];
     const list = [...selected.entries()];
@@ -226,11 +255,13 @@
       <header class="trip-builder-heading"><p class="trip-kicker">WAVEPOINT · TAMARINDO</p><h2>${copy.sectionTitle}</h2><p>${copy.sectionIntro}</p></header>
       <div class="trip-builder-layout"><div class="trip-experience-grid">${renderCards()}</div><aside class="trip-summary" aria-label="${copy.trip}" id="tripSummary">${renderSummary()}</aside></div>
     </div></section>`;
+    updateMobileCart();
   };
   const updateSummary = () => {
     const summary = document.getElementById('tripSummary');
     if (!summary) return;
     summary.innerHTML = renderSummary();
+    updateMobileCart();
   };
   const updateExperienceCards = () => {
     const grid = root.querySelector('.trip-experience-grid');
@@ -332,6 +363,19 @@
     lines.push('', COPY[lang].priceNote);
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
   });
+  if (mobileCart) {
+    mobileCart.addEventListener('click', () => {
+      const cartHeader = root.querySelector('.trip-cart-top');
+      if (!cartHeader) return;
+      cartHeader.setAttribute('tabindex', '-1');
+      cartHeader.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
+      cartHeader.focus({ preventScroll: true });
+    });
+    window.addEventListener('resize', updateMobileCart);
+  }
   render();
   const heroMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const syncHeroVideoMotion = () => {
