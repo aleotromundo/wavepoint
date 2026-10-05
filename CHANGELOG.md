@@ -28,6 +28,18 @@
 - `styles.css`: reducir la altura y tipografía del encabezado de aliados y alinear su ancho máximo con el carrusel.
 - `index.html`: ocultar temporalmente `After the surf` con el atributo `hidden`, conservando su contenido para poder mostrarlo nuevamente.
 
+### Inglés como idioma inicial
+
+- `index.html`, `lang-switch.js`, `script.js`, `services.js` y `trip-builder.js`: usar inglés cuando no exista una preferencia guardada y conservar español al seleccionarlo.
+- `Enlaces/`: agregar versiones inglesas para las fichas de aliados y Nosotros, manteniendo el texto español existente.
+- `index.html`: mantener la vista previa social y los metadatos SEO de la portada en inglés.
+- `service-detail.html`, `trip-builder.html` y `guia-playas.html`: declarar inglés como idioma inicial y actualizar títulos y descripciones.
+- Skills del proyecto: alinear sus reglas de idioma predeterminado con esta decisión.
+
+### Mensaje principal de portada
+
+- `index.html` y `script.js`: aplicar literalmente “Through the people who call it home” y “WavePoint connects you with the best experiences in Tamarindo”, con su traducción al español.
+
 ## 2026-10-06
 
 ### SEO de la portada y transición a Surf Experiences

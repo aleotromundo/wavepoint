@@ -17,7 +17,7 @@ Use this skill when changing WavePoint search metadata, social previews, structu
 
 ## Content and ranking
 
-- Keep Spanish as the default and maintain equivalent English copy whenever visible content is changed. Follow `wavepoint-service-bilingual` for service content.
+- Keep English as the default and maintain equivalent Spanish copy whenever visible content is changed. Follow `wavepoint-service-bilingual` for service content.
 - Write naturally for visitors seeking surf experiences in Tamarindo and Guanacaste. Prioritize a clear title, one descriptive H1, useful page copy, internal links, image alt text, and accurate service names.
 - Never promise a Google ranking, first-place placement, or immediate indexing. Avoid keyword stuffing and do not invent locations, operators, prices, availability, safety claims, or business details.
 - Do not add `LocalBusiness`, address, hours, reviews, prices, or other structured-data claims unless confirmed by the user or source content. Prefer accurate `Organization`/`WebSite` schema for the current homepage.

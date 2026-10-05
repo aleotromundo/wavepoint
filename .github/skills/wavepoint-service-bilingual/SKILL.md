@@ -9,8 +9,8 @@ Use this skill whenever you change service content, copy, labels, cards, questio
 
 ## Core rule
 
-- Spanish is the default language of the site.
-- English is the alternate language exposed through the language toggle.
+- English is the default language of the site.
+- Spanish is the alternate language exposed through the language toggle.
 - If you add or edit any text, you must provide the equivalent in Spanish and English.
 - Do not leave hardcoded strings in one language when a service uses the active `wavepoint-lang` preference.
 - Preserve existing behavior and avoid breaking the `wavepoint:languagechange` flow.

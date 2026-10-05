@@ -117,8 +117,8 @@
     }
   };
   let lang = (() => {
-    try { return localStorage.getItem('wavepoint-lang') === 'en' ? 'en' : 'es'; }
-    catch (error) { return 'es'; }
+    try { return localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en'; }
+    catch (error) { return 'en'; }
   })();
   const selected = new Map();
   const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1' }]));
