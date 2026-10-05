@@ -5,6 +5,8 @@
 - `index.html`, `trip-builder.html` y `guia-playas.html`: aplicar el nuevo footer visual sin cambiar enlaces ni contenido.
 - `footer-video.js`: agregar `videohero3.mp4` como fondo decorativo con desplazamiento parallax suave en escritorio; pausar el video con movimiento reducido.
 - `styles.css`: sumar superficies de vidrio, superposición para contraste y composición responsiva; en móvil se desactiva el parallax.
+- `index.html` y `styles.css`: cambiar las dos apariciones de la foto repetida en “WavePoint en Tamarindo” por una vista aérea en el acceso a la guía y una foto de playa diferente como fondo de sección. Se conserva la imagen del acceso a cámaras.
+- `script.js`: alinear en inglés y español el texto alternativo de la nueva imagen de guía.
 
 ### Accesos fotográficos de WavePoint en Tamarindo
 
