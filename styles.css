@@ -5602,13 +5602,20 @@ footer a {
   .weather-list .w-row { padding-inline: 4px; }
 }
 
-/* Tourism guide: carry the local photo through the full page with readable glass panels. */
+/* Keep the guide photo viewport-sized so it remains visible along the full page. */
 .local-guide-page {
+  isolation: isolate;
+  position: relative;
   background-color: #082633;
-  background-image: linear-gradient(145deg, rgba(4, 24, 34, .66), rgba(5, 43, 52, .72)), url("assets/bg/guia.jpg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-image: none;
+}
+.local-guide-page::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(4, 24, 34, .2), rgba(5, 43, 52, .3)), url("assets/bg/atardecer.jpg") center / cover no-repeat;
+  content: "";
+  pointer-events: none;
 }
 .local-guide-page .guide-original-content {
   background: transparent;
@@ -5617,7 +5624,7 @@ footer a {
 .local-guide-page .guide-practical,
 .local-guide-page .guide-callout {
   border-color: rgba(207, 239, 229, .25);
-  background: rgba(7, 39, 51, .58);
+  background: rgba(7, 39, 51, .4);
   box-shadow: inset 0 1px rgba(255, 255, 255, .09), 0 16px 34px rgba(0, 0, 0, .16);
   backdrop-filter: blur(14px) saturate(120%);
   -webkit-backdrop-filter: blur(14px) saturate(120%);
@@ -5627,12 +5634,12 @@ footer a {
 }
 .local-guide-page .guide-detail-card {
   border-color: rgba(207, 239, 229, .28);
-  background: rgba(5, 30, 41, .56);
+  background: rgba(5, 30, 41, .36);
   backdrop-filter: blur(12px) saturate(118%);
   -webkit-backdrop-filter: blur(12px) saturate(118%);
 }
 .local-guide-page .guide-detail-card > div {
-  background: rgba(5, 32, 43, .66);
+  background: rgba(5, 32, 43, .42);
   backdrop-filter: blur(12px) saturate(118%);
   -webkit-backdrop-filter: blur(12px) saturate(118%);
 }
@@ -5677,8 +5684,7 @@ footer a {
 }
 @media (max-width: 640px) {
   .local-guide-page {
-    background-attachment: scroll;
-    background-position: center top;
+    background-position: center;
   }
   .local-guide-page .guide-tip-card { padding: 19px; }
   .local-guide-page .guide-tip-card h4 { font-size: 27px; }

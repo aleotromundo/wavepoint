@@ -12,6 +12,7 @@ La guía existe para que otra persona o agente pueda continuar el proyecto sin d
 - `https://wavepointcr.com/` es un dominio futuro previsto, no activo ni verificado. No usarlo en canonical, Open Graph, JSON-LD, `robots.txt` ni `sitemap.xml` hasta confirmar la migración.
 - La portada debe posicionar WavePoint como **Surf Experiences** en Tamarindo, Costa Rica. Las cámaras siguen disponibles como una sección secundaria; no eliminarlas sin pedido explícito.
 - Mantener el contenido visible y el copy SEO en español e inglés. Evitar keyword stuffing, afirmaciones operativas no verificadas y promesas de ranking.
+- El inglés es el idioma inicial; el selector permite cambiar a español y guarda la preferencia. Los títulos y textos visibles aprobados por el usuario son literales: no reescribirlos por SEO ni modificarlos sin permiso explícito. El SEO puede optimizarse en metadatos sin cambiar el copy visible.
 - El SEO técnico de la home vive en `index.html`; su foto social es `assets/og/surf-experiences-tamarindo.jpg`, y `robots.txt` referencia `sitemap.xml`.
 - Después de publicar cambios o migrar de dominio, revisar la URL pública, verificar la propiedad en Google Search Console y enviar el sitemap manualmente. Google controla el rastreo, la indexación y la posición; no hay garantía de aparecer primero ni de hacerlo de inmediato.
 
@@ -81,6 +82,14 @@ surfskate
 retiros
 pack-ajustable
 ```
+
+## Pendientes confirmados por el usuario
+
+- **Completado — guía bilingüe en `guia-playas.html`.** `guide-i18n.js` traduce todo el contenido editorial, las categorías, los datos de cada lugar, las recomendaciones prácticas, los enlaces accesibles y los textos alternativos. El selector compartido ES/EN restaura el contenido y el formato españoles originales; no se reescribieron los títulos ni los datos fuente.
+- **Formulario antes del footer:** la idea descrita en `GUIA 2.0.pdf` como “Why book with WavePoint?” debe resolverse como un formulario de contacto antes del footer, no como una sección editorial de beneficios. Definir con el usuario campos y envío antes de implementar.
+- **Confirmaciones después de mensajes y formularios:** revisar solicitudes de servicios y armador de viaje para dar una confirmación posterior al envío. Acordar el flujo y copy; el mensaje de referencia aclara que se recibió la solicitud, que la reserva aún no está confirmada y que no se tomó pago.
+- Club 33 y Eterno Verano permanecen enlazados directamente a sus sitios oficiales; no crear fichas locales.
+- Registrar una tarea no autoriza a implementarla. No cambiar títulos ni copy aprobado sin permiso explícito.
 
 ### Regla de sincronización
 

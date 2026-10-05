@@ -19,6 +19,7 @@ Use this skill when adding a local page from a linked WavePoint page or updating
 ## Language and content
 
 - English is the default. Spanish mode translates interface and editorial copy, including dynamically updated statuses, modal text, form placeholders, and page-specific content.
+- `guia-playas.html` uses `guide-i18n.js` for its complete ES/EN editorial content, practical advice, image alternatives, metadata, and accessible labels. Preserve its Spanish HTML source and test both language directions when editing the guide.
 - Keep local place names and established surf vocabulary such as spot, surfskate, lineup, and named beaches when a literal translation would sound unnatural.
 - Reuse the main site's `wavepoint-lang` localStorage preference and existing translation hooks where practical. Guard shared page scripts when the page does not contain a camera, weather panel, or modal.
 - Do not invent partner details, operating hours, safety claims, contact data, prices, or bookings. Verify these against the source page or ask the user.
@@ -67,6 +68,13 @@ This section preserves project decisions and completed work so future assistants
 - The user-confirmed current canonical host is `https://wavepoint-five.vercel.app/`. `https://wavepointcr.com/` is planned for a future migration only; do not use it until the user confirms it is active. Follow `.github/skills/wavepoint-seo/SKILL.md` for SEO and domain migration work.
 - The Witch’s Rock, snorkel and ATV catalog images include multi-panel source photos; card-only CSS zoom and positioning focus a single panel without replacing the shared source used by the detail and trip-builder surfaces. Keep their Spanish and English alternative text aligned with the visible crop.
 - The browser favicon uses Google Material Icons `surfing` in root `favicon.svg` with a WavePoint ocean background, 16/32 px PNGs, a 16/32/48/64/128/256 px ICO, and a matching Apple touch icon. Keep the embedded attribution and `assets/MATERIAL-ICONS-LICENSE.txt` (Apache-2.0); the user's uploaded favicon and its derivatives were removed at their request.
+
+### User-approved pending work and content constraints
+
+- English is the initial site language; Spanish remains available through the language selector and saved preference.
+- Approved visible copy and headings are literal. Do not rewrite them for SEO or otherwise without explicit user approval; SEO metadata may be optimized independently.
+- Completed: translate `guia-playas.html` into English while preserving all Spanish source content. Remaining pending work: add a contact form before the footer (not an editorial “Why book” section) and agree on post-submission confirmations for service and trip-builder forms. Pending notes are not authorization to implement.
+- Club 33 and Eterno Verano cards remain direct links to their official websites; do not create local profile pages unless explicitly requested.
 
 ### Validation and working preferences
 

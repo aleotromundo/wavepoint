@@ -1,4 +1,22 @@
+## 2026-10-07
+
+### Guía local bilingüe
+
+- `guide-i18n.js` y `guia-playas.html`: se completa la traducción al inglés de todas las secciones, fichas, datos prácticos, navegación de categorías, enlaces y textos alternativos; el selector compartido permite cambiar entre los dos idiomas.
+- El texto fuente español, sus títulos aprobados, enlaces, datos y formato se conservan y se restauran al cambiar de idioma. También se localizan los metadatos y nombres accesibles de la guía.
+- Validación en navegador: se verificaron inglés y español, restauración del marcado en español, etiquetas de listas y saltos de línea de Palo Verde; sin desbordamiento horizontal en móvil.
+- `styles.css` y `guia-playas.html`: se mantiene el fondo fotográfico de la guía en un plano fijo del tamaño de la ventana para que no se diluya al escalarse sobre toda la página; se reduce la opacidad de los paneles para hacer más visible el glassmorphism. Se renueva la versión de caché de estilos.
+- `styles.css` y `guia-playas.html`: se reemplaza el fondo azulado por la foto local de atardecer (`assets/bg/atardecer.jpg`) y se suaviza la capa oscura para conservar más color detrás de los paneles de vidrio.
+
 ## 2026-10-04
+
+### Pendientes confirmados a partir de GUIA 2.0.pdf
+
+- Se confirma mantener las tarjetas de Club 33 y Eterno Verano enlazadas directamente a sus sitios oficiales.
+- “Why book with WavePoint?” queda pendiente como formulario de contacto antes del footer, no como sección editorial.
+- Queda pendiente revisar las confirmaciones después de enviar mensajes/formularios de servicios y del armador de viaje.
+- La traducción completa de la guía Guanacaste (`guia-playas.html`) al inglés es urgente y delicada; preservar íntegro el original español y no reescribir ni inventar contenido. Esperar autorización antes de realizarla.
+- No cambiar títulos ni copy visible aprobado sin permiso explícito. Estos pendientes se registran sin cambios en el frontend.
 
 ### Estilo renovado para las fichas locales de colaboradores
 
