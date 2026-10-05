@@ -12,14 +12,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=20261006-19" />
-  <link rel="stylesheet" href="trip-builder.css?v=20261006-6" />
+  <link rel="stylesheet" href="trip-builder.css?v=20261007-8" />
 </head>
 <body class="trip-builder-page">
   <header class="topbar service-topbar"></header>
   <main id="tripBuilderRoot" aria-live="polite"></main>
+  <button class="trip-mobile-cart" id="tripMobileCart" type="button" aria-label="Your trip: 0 experiences" hidden>
+    <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false">
+      <path d="M3.5 5.5h3l2.7 14.1a2 2 0 0 0 2 1.6h12.2a2 2 0 0 0 1.9-1.4l3-9.4H8"/>
+      <path d="m13 11 3 7m6-7-2 7"/>
+      <circle cx="13" cy="26" r="1.7"/><circle cx="24" cy="26" r="1.7"/>
+    </svg>
+    <span class="trip-mobile-cart-count" data-cart-count>0</span>
+    <span class="trip-mobile-cart-unit" aria-hidden="true">XP</span>
+  </button>
+  <a class="whatsapp-float" href="https://wa.me/543517397525" target="_blank" rel="noopener noreferrer" aria-label="Contact WavePoint on WhatsApp at +54 351 739 7525" data-aria-label-en="Contact WavePoint on WhatsApp at +54 351 739 7525" data-aria-label-es="Contactar WavePoint por WhatsApp al +54 351 739 7525">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.8Z"/><path d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.4 2 1.8.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.4-1.1.6-1.8.5-.6-.1-1.5-.4-2.6-1.1-1.4-.9-2.4-2-2.9-2.7-.5-.8-.8-1.6-.8-2.2 0-.7.4-1.3.8-1.6Z"/></svg>
+    <span><small data-i18n="whatsappLabel">Chat on WhatsApp</small><strong>+54 351 739 7525</strong></span>
+  </a>
   <footer class="service-page-footer"><div class="container"><a href="index.html#servicios">← Volver a Servicios</a><a class="instagram-footer-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint" title="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span class="visually-hidden">Instagram WavePoint</span></a></div></footer>
   <script defer src="site-nav.js?v=20261006-1"></script>
+  <script defer src="script.js?v=20261007-2"></script>
   <script defer src="lang-switch.js?v=20261007-1"></script>
-  <script defer src="trip-builder.js?v=20261007-1"></script>
+  <script defer src="trip-builder.js?v=20261007-3"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 - Validación en navegador: se verificaron inglés y español, restauración del marcado en español, etiquetas de listas y saltos de línea de Palo Verde; sin desbordamiento horizontal en móvil.
 - `styles.css` y `guia-playas.html`: se mantiene el fondo fotográfico de la guía en un plano fijo del tamaño de la ventana para que no se diluya al escalarse sobre toda la página; se reduce la opacidad de los paneles para hacer más visible el glassmorphism. Se renueva la versión de caché de estilos.
 - `styles.css` y `guia-playas.html`: se reemplaza el fondo azulado por la foto local de atardecer (`assets/bg/atardecer.jpg`) y se suaviza la capa oscura para conservar más color detrás de los paneles de vidrio.
+- `trip-builder.html`, `trip-builder.js` y `trip-builder.css`: en celular aparece un acceso flotante al carrito solo mientras el resumen completo está fuera de pantalla. Muestra `0 XP` o la cantidad elegida, cambia de aspecto al agregar experiencias y desplaza al resumen existente al tocarlo; este se conserva al final de la página.
 
 ## 2026-10-04
 
