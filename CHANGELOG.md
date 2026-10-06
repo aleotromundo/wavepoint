@@ -1,5 +1,11 @@
 ## 2026-10-07
 
+### Imágenes de servicios y tarjeta de cuatriciclos
+
+- `index.html`, `services.js`, `trip-builder.js` y `piloto.html`: actualizar las fotos de Roca Bruja (sitio oficial de Witch’s Rock), snorkel (Subtle Cinematics/Unsplash), fotografía de surf (Zak Mogel/Pexels) y ATV (King Caplis/Pexels); alts sincronizados en español e inglés.
+- `styles.css`: dar espacio suficiente a los títulos de dos líneas y quitar el zoom que recortaba la foto de ATV.
+- `index.html`, `script.js` y `piloto.html`: cambiar el título español a “A través de quienes lo llaman hogar”; conservar el título inglés.
+
 ### Prueba visual del footer con video y glassmorphism
 
 - `index.html`, `trip-builder.html` y `guia-playas.html`: aplicar el nuevo footer visual sin cambiar enlaces ni contenido.
