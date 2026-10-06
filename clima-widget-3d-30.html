@@ -1,0 +1,292 @@
+<!--
+  Widget de clima 3D con 30 combinaciones (15 condiciones x día/noche).
+  Integración: pegá <style> (entre comentarios), <div class="wx3d"> y el <script>.
+  Uso:  wx3dSet({cond:'storm', night:true, temp:17, city:'Montevideo', waves:1.8, wind:34})   // time:'14:35' es opcional; si falta, se usa la hora de tz (por defecto America/Montevideo)
+  Condiciones: clear fewclouds partly mostly overcast drizzle rain heavy storm sleet snow blizzard hail fog wind
+  El bloque .demo y el fondo del body son solo para probar: borralos al integrar.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Widget clima 3D · 30 estados</title>
+<style>
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;gap:22px;align-items:center;justify-content:center;background:#e9edf2;font-family:system-ui,sans-serif}
+.demo{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-size:14px}
+.demo select,.demo button{font:inherit;padding:6px 10px;border-radius:8px;border:1px solid #9aa8b6;background:#fff}
+.demo label{display:flex;align-items:center;gap:4px}
+
+/* ===== WIDGET: copiar desde acá ===== */
+.wx3d{--wx-w:340px;--wx-ink:#f2f8ff;--wx-ink2:#c3d6e8;--wx-edge:#16324d;--b1:#4f86bd;--b2:#1c3f68;
+  width:min(var(--wx-w),100%);perspective:900px;touch-action:pan-y;
+  font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;color:var(--wx-ink)}
+.wx3d *{box-sizing:border-box}
+.wx3d-card{position:relative;transform-style:preserve-3d;transition:transform .18s ease-out;
+  transform:rotateX(4deg) rotateY(-14deg);animation:wx3d-float 7s ease-in-out infinite}
+.wx3d.is-active .wx3d-card{animation:none}
+.wx3d-layer{position:absolute;inset:0;border-radius:24px;background:var(--b2)}
+.wx3d-layer:nth-child(1){transform:translateZ(-5px);filter:brightness(.8)}
+.wx3d-layer:nth-child(2){transform:translateZ(-10px);filter:brightness(.65)}
+.wx3d-layer:nth-child(3){transform:translateZ(-15px);filter:brightness(.5);box-shadow:0 40px 50px -15px rgba(10,25,45,.45)}
+.wx3d-face{position:relative;transform-style:preserve-3d;border-radius:24px;padding:26px}
+.wx3d-bg{position:absolute;inset:0;border-radius:24px;overflow:hidden;
+  background:linear-gradient(160deg,var(--b1),var(--b2));border:1px solid rgba(255,255,255,.35);transition:background .5s}
+.wx3d-bg>*,.wx3d-fx>*,.wx3d-stars>*{position:absolute}
+.wx3d-stars{inset:-12px;transform:translate(calc(var(--px,0)*-7px),calc(var(--py,0)*-7px));transition:transform .18s ease-out}
+.wx3d-glassfx{inset:0;width:100%;height:100%;opacity:0;transition:opacity .5s}.wx3d-glassfx.on{opacity:1}
+.wx3d-lite{inset:0;opacity:0}
+.wx3d-bolts{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;transform:translateZ(40px)}
+.wx3d.shake .wx3d-face{animation:wx3d-shake .35s}
+.wx3d-milky{inset:-10%;background:linear-gradient(115deg,transparent 32%,rgba(170,190,255,.16) 50%,transparent 68%);filter:blur(6px)}
+.wx3d-sky{top:-40px;right:-40px;width:190px;aspect-ratio:1;
+  transform:translate(calc(var(--px,0)*-16px),calc(var(--py,0)*-16px));transition:transform .18s ease-out}
+.wx3d-sunwrap{inset:0}
+.wx3d-sunwrap>*{position:absolute}
+.wx3d-rays{inset:0;border-radius:50%;background:repeating-conic-gradient(rgba(255,220,110,.6) 0 5deg,transparent 5deg 18deg);
+  -webkit-mask:radial-gradient(circle,transparent 26%,#000 32%,transparent 68%);mask:radial-gradient(circle,transparent 26%,#000 32%,transparent 68%);
+  animation:wx3d-spin 45s linear infinite}
+.wx3d-rays.r2{animation-duration:30s;animation-direction:reverse;opacity:.55;transform:scale(.85)}
+.wx3d-core{inset:30%;border-radius:50%;background:radial-gradient(circle at 40% 38%,#fffbe0,#ffc431 70%);
+  box-shadow:0 0 40px 16px rgba(255,200,70,.55);animation:wx3d-pulse 4s ease-in-out infinite}
+.wx3d-moon{position:absolute;inset:34%;border-radius:50%;box-shadow:inset -16px -6px 0 0 #f5f3ce;
+  filter:drop-shadow(0 0 14px rgba(245,243,206,.6));transform:rotate(-20deg)}
+.wx3d-clouds,.wx3d-fx{inset:0}
+.wx3d-cloud{position:absolute;display:block;width:3.2em;height:1em;border-radius:1em;background:var(--cl);
+  filter:drop-shadow(0 6px 6px rgba(20,50,90,.3));animation:wx3d-pass 16s ease-in-out infinite alternate}
+.wx3d-cloud::before,.wx3d-cloud::after{content:"";position:absolute;background:inherit;border-radius:50%}
+.wx3d-cloud::before{width:1.3em;height:1.3em;left:.45em;top:-.65em}
+.wx3d-cloud::after{width:1em;height:1em;left:1.6em;top:-.4em}
+.t-w{--cl:rgba(255,255,255,.93)}.t-g{--cl:#bcc7d2}.t-d{--cl:#7b8798}
+.wx3d.night .t-w{--cl:#c9d4e6}.wx3d.night .t-g{--cl:#8996a8}.wx3d.night .t-d{--cl:#5d6777}
+/* capa 3D: las partículas viven delante y detrás del contenido */
+.wx3d-p3{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none}
+.wx3d-p3>*{position:absolute}
+.wx3d-d{top:0;left:0}
+.wx3d-rain{width:var(--w);height:var(--l)}
+.wx3d-rain::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2.5px;transform:translateX(-50%);border-radius:2px;
+  background:linear-gradient(transparent,rgba(120,215,255,.9))}
+.wx3d-rain::after{content:"";position:absolute;left:0;bottom:0;width:var(--w);height:var(--w);border-radius:0 50% 50% 50%;transform:rotate(45deg);
+  background:radial-gradient(circle at 35% 35%,#fff 0 13%,#9fe8ff 38%,#18b0ff);
+  box-shadow:inset -2px -3px 5px rgba(0,100,200,.55),0 0 14px 2px rgba(60,200,255,.85)}
+.wx3d-snow{border-radius:50%;background:#fff}
+.wx3d-hail{border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#b9d4ee)}
+.wx3d-glass{width:9px;height:12px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+  background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.95),rgba(255,255,255,.2) 45%,rgba(170,205,240,.18));
+  box-shadow:0 2px 3px rgba(0,0,0,.28);opacity:0;animation:wx3d-slide ease-in infinite}
+.wx3d-leaf{left:0;top:0;width:14px;height:7px;border-radius:70% 0 70% 0;background:#8fbf6a;opacity:.9;animation:wx3d-leaf linear infinite}
+.wx3d-flare{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,240,200,.5),transparent 70%);animation:wx3d-twinkle 4s ease-in-out infinite}
+.wx3d-shoot{top:14%;left:78%;width:70px;height:2px;background:linear-gradient(90deg,#fff,transparent);opacity:0;animation:wx3d-shoot 7s ease-in infinite}
+.wx3d-frost{inset:0;border-radius:24px;box-shadow:inset 0 0 36px rgba(255,255,255,.45),inset 0 0 6px rgba(255,255,255,.6)}
+.wx3d-pile{left:-5%;right:-5%;bottom:-6px;border-radius:50% 50% 0 0/100% 100% 0 0;background:#fff;box-shadow:0 -6px 18px rgba(255,255,255,.5)}
+.wx3d-star{width:3px;height:3px;border-radius:50%;background:#fff;animation:wx3d-twinkle 3s ease-in-out infinite}
+.wx3d-fog{left:-10%;width:120%;height:64px;border-radius:50%;background:rgba(232,240,246,.4);filter:blur(12px);animation:wx3d-fogdrift 14s ease-in-out infinite alternate}
+.wx3d-streak{left:0;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);animation:wx3d-gust linear infinite}
+.wx3d-flash{inset:0;background:radial-gradient(circle at var(--fx,60%) 15%,var(--c),transparent 75%);opacity:0;animation:wx3d-flash 7s infinite}
+.wx3d-bolt{opacity:0;overflow:visible;animation:wx3d-bolt 7s infinite;filter:drop-shadow(0 0 5px var(--c)) drop-shadow(0 0 16px var(--c))}
+.wx3d-glare{inset:0;border-radius:24px;pointer-events:none;background:radial-gradient(circle at var(--gx,30%) var(--gy,20%),rgba(255,255,255,.25),transparent 55%)}
+.wx3d-content{position:relative;transform-style:preserve-3d;text-shadow:0 2px 8px rgba(5,15,30,.35)}
+.wx3d-city{font-size:15px;color:var(--wx-ink2);transform:translateZ(18px)}
+.wx3d-temp{font-size:84px;font-weight:700;line-height:1;margin:8px 0 4px;transform:translateZ(55px);text-shadow:0 14px 18px rgba(5,15,30,.45)}
+.wx3d-status{font-size:17px;margin-bottom:20px;transform:translateZ(30px)}
+.wx3d-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;transform-style:preserve-3d}
+.wx3d-stat{padding:10px 9px;border-radius:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  transform:translateZ(26px);box-shadow:0 12px 14px -8px rgba(5,15,30,.5)}
+.wx3d-stat b{display:block;font-size:17px;white-space:nowrap}.wx3d-stat span{font-size:13px;color:var(--wx-ink2)}
+@keyframes wx3d-fall{from{transform:translate3d(0,-30px,var(--z))}to{transform:translate3d(0,var(--h),var(--z))}}
+@keyframes wx3d-snow{from{transform:translate3d(0,-20px,var(--z))}to{transform:translate3d(var(--sw),var(--h),var(--z))}}
+@keyframes wx3d-hail{0%{transform:translate3d(0,-30px,var(--z))}78%{transform:translate3d(0,var(--h),var(--z))}86%{transform:translate3d(0,calc(var(--h) - 16px),var(--z))}94%,100%{transform:translate3d(0,var(--h),var(--z))}}
+@keyframes wx3d-slide{0%{opacity:0;transform:translate3d(0,0,80px) scale(.5)}12%{opacity:1;transform:translate3d(0,0,80px) scale(1)}55%{transform:translate3d(0,30px,80px)}100%{opacity:0;transform:translate3d(0,150px,80px)}}
+@keyframes wx3d-leaf{from{transform:translate3d(-20px,var(--y),var(--z)) rotate(0)}to{transform:translate3d(360px,calc(var(--y) + 40px),var(--z)) rotate(540deg)}}
+@keyframes wx3d-shoot{0%,72%{opacity:0;transform:translate(0,0) rotate(-25deg)}74%{opacity:1}84%,100%{opacity:0;transform:translate(-110px,52px) rotate(-25deg)}}
+@keyframes wx3d-float{50%{transform:rotateX(2deg) rotateY(-8deg) translateY(-6px)}}
+@keyframes wx3d-spin{to{transform:rotate(360deg)}}
+@keyframes wx3d-pulse{50%{transform:scale(1.08)}}
+@keyframes wx3d-pass{from{transform:translateX(-12px)}to{transform:translateX(34px)}}
+@keyframes wx3d-twinkle{50%{opacity:.2}}
+@keyframes wx3d-fogdrift{from{transform:translate3d(0,0,var(--z,0))}to{transform:translate3d(9%,0,var(--z,0))}}
+@keyframes wx3d-gust{from{transform:translateX(-140px)}to{transform:translateX(480px)}}
+@keyframes wx3d-shake{20%{transform:translate(-3px,1px)}40%{transform:translate(3px,-1px)}60%{transform:translate(-2px,0)}80%{transform:translate(1px,1px)}}
+@keyframes wx3d-bolt{0%,84%,92%,100%{opacity:0}85%{opacity:1}87%{opacity:.25}89%{opacity:1}90%{opacity:.6}}
+@keyframes wx3d-flash{0%,84%,92%,100%{opacity:0}86%{opacity:.75}89%{opacity:.2}90%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.wx3d *{animation:none!important}.wx3d-d,.wx3d-glass,.wx3d-leaf,.wx3d-streak{display:none}}
+/* ===== hasta acá (falta el <div> y el <script> de abajo) ===== */
+</style>
+</head>
+<body>
+
+<div class="wx3d" id="wx3d">
+  <div class="wx3d-card">
+    <div class="wx3d-layer"></div><div class="wx3d-layer"></div><div class="wx3d-layer"></div>
+    <div class="wx3d-face">
+      <div class="wx3d-bg">
+        <canvas class="wx3d-glassfx" aria-hidden="true"></canvas>
+        <div class="wx3d-sky" aria-hidden="true"></div><div class="wx3d-clouds" aria-hidden="true"></div>
+        <div class="wx3d-fx" aria-hidden="true"></div><div class="wx3d-lite"></div><div class="wx3d-glare"></div>
+      </div>
+      <div class="wx3d-p3" aria-hidden="true"></div>
+      <canvas class="wx3d-bolts" aria-hidden="true"></canvas>
+      <div class="wx3d-content">
+        <div class="wx3d-city" data-f="city"></div>
+        <div class="wx3d-temp" data-f="temp"></div>
+        <div class="wx3d-status" data-f="status"></div>
+        <div class="wx3d-stats">
+          <div class="wx3d-stat"><b data-f="waves"></b><span>Oleaje estimado</span></div>
+          <div class="wx3d-stat"><b data-f="wind"></b><span>Viento</span></div>
+          <div class="wx3d-stat"><b data-f="time"></b><span>Hora local</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="demo">
+  <select id="d-cond"></select>
+  <label><input type="checkbox" id="d-night"> Noche</label>
+  <button id="d-cycle">Recorrer las 30</button>
+</div>
+
+<!-- Librería de gotas sobre vidrio (WebGL2, MIT). Si no carga, el widget usa sus gotas CSS. Podés descargarla y alojarla vos. -->
+<script src="https://cdn.jsdelivr.net/npm/raindrop-fx@1.0.8/bundle/index.js"></script>
+<script>
+(function(){
+  var G={c:['#4f86bd','#1c3f68','#1b2a55','#0c1430'],p:['#5d84ab','#2f4f73','#232f55','#10183a'],
+    o:['#6b7d8e','#3c4b5a','#2a3340','#151b24'],r:['#50647a','#2a3a4c','#1f2937','#0f151e'],
+    t:['#3d4659','#1b2130','#1a1d2e','#0a0c16'],s:['#7790a8','#41576d','#2b3a4f','#141d2a'],
+    f:['#7f8e99','#4b5963','#353e46','#1b2025'],w:['#5a89a8','#2c5470','#1d2c4d','#0d1630']};
+  var gy=[[34,'g',40,22,26],[30,'g',60,6,30],[26,'g',54,42,22]],
+      dk=[[38,'d',40,18,24],[32,'d',60,4,28],[28,'d',54,40,22]];
+  // l=texto, e=emoji día|noche, g=gradiente, s=visibilidad sol/luna, k=nubes [tamaño,tono,x%,y%,seg], p=precipitación, b=rayo, f=niebla, w=viento
+  var C={
+    clear:{l:'Despejado',e:'☀️|🌙',g:'c',s:1,k:[]},
+    fewclouds:{l:'Mayormente despejado',e:'🌤️|🌙',g:'c',s:1,k:[[20,'w',58,40,16]]},
+    partly:{l:'Parcialmente nublado',e:'⛅|☁️',g:'p',s:.95,k:[[30,'w',48,34,15],[20,'w',66,10,22]]},
+    mostly:{l:'Mayormente nublado',e:'🌥️|☁️',g:'p',s:.4,k:[[32,'w',44,30,18],[26,'g',64,8,24],[22,'w',58,40,20]]},
+    overcast:{l:'Nublado',e:'☁️',g:'o',s:0,k:gy},
+    drizzle:{l:'Llovizna',e:'🌦️|🌧️',g:'r',s:0,k:gy.slice(0,2),p:['rain',16,1.4,10],gl:3},
+    rain:{l:'Lluvia',e:'🌧️',g:'r',s:0,k:gy,p:['rain',34,.9,16],gl:5},
+    heavy:{l:'Lluvia intensa',e:'🌧️',g:'r',s:0,k:dk,p:['rain',70,.6,22],gl:8},
+    storm:{l:'Tormenta eléctrica',e:'⛈️',g:'t',s:0,k:dk,p:['rain',55,.65,20],b:1,gl:8},
+    sleet:{l:'Aguanieve',e:'🌨️',g:'r',s:0,k:gy,p:['mix',40,5,12],gl:4},
+    snow:{l:'Nevada leve',e:'🌨️',g:'s',s:0,k:gy.slice(0,2),p:['snow',22,6]},
+    blizzard:{l:'Nevada intensa',e:'❄️',g:'s',s:0,k:gy,p:['snow',60,3.5],w:1},
+    hail:{l:'Granizo',e:'🌨️',g:'t',s:0,k:dk,p:['hail',40,.7]},
+    fog:{l:'Niebla',e:'🌫️',g:'f',s:.3,k:[],f:1},
+    wind:{l:'Ventoso',e:'💨',g:'w',s:.9,k:[[24,'w',50,34,8],[18,'w',66,12,10]],w:2}
+  };
+  var root=document.getElementById('wx3d'),card=root.querySelector('.wx3d-card'),glare=root.querySelector('.wx3d-glare'),
+      sky=root.querySelector('.wx3d-sky'),clouds=root.querySelector('.wx3d-clouds'),fx=root.querySelector('.wx3d-fx'),p3=root.querySelector('.wx3d-p3');
+  var S={cond:'partly',night:false,city:'Montevideo · Ahora',temp:22,waves:0.8,wind:18,time:'',tz:'America/Montevideo'};
+  function R(a,b){return a+Math.random()*(b-a)}
+  function set(d){
+    for(var k in d)S[k]=d[k];
+    var c=C[S.cond]||C.clear,n=!!S.night,g=G[c.g],h='',i;
+    root.classList.toggle('night',n);
+    root.style.setProperty('--b1',g[n?2:0]);root.style.setProperty('--b2',g[n?3:1]);
+    sky.innerHTML=c.s>0?(n?'<div class="wx3d-moon" style="opacity:'+c.s+'"></div>'
+      :'<div class="wx3d-sunwrap" style="opacity:'+c.s+'"><div class="wx3d-rays"></div><div class="wx3d-rays r2"></div><div class="wx3d-core"></div></div>'):'';
+    clouds.innerHTML=c.k.map(function(k,i){return '<i class="wx3d-cloud t-'+k[1]+'" style="font-size:'+k[0]+'px;left:'+k[2]+'%;top:'+k[3]+'%;animation-duration:'+k[4]+'s;animation-delay:-'+(i*5)+'s"></i>'}).join('');
+    if(n){var ns=c.s>=.9?46:c.s>=.4?18:c.s>0?8:0;
+      if(ns){h+='<div class="wx3d-stars">'+(c.s>=.9?'<b class="wx3d-milky"></b>':'');
+        for(i=0;i<ns;i++){var r=Math.random(),sz=r>.9?3.4:r>.6?2.2:1.4;
+          h+='<b class="wx3d-star" style="left:'+R(0,100).toFixed(1)+'%;top:'+(75*Math.pow(Math.random(),1.4)).toFixed(1)+'%;width:'+sz+'px;height:'+sz+'px;background:'+['#fff','#dbe8ff','#fff3d6'][i%3]+(sz>3?';box-shadow:0 0 6px rgba(255,255,255,.9)':'')+';animation-duration:'+R(2,5).toFixed(1)+'s;animation-delay:-'+R(0,4).toFixed(1)+'s"></b>'}
+        h+='</div>'}}
+    var q='',H=card.offsetHeight||340,z,k;
+    p3.style.setProperty('--h',H+'px');
+    if(c.f)for(i=0;i<3;i++)q+='<b class="wx3d-fog" style="--z:'+[-8,25,75][i]+'px;top:'+(22+i*24)+'%;animation-delay:-'+(i*4)+'s"></b>';
+    if(c.p){var p=c.p,N=p[1];for(i=0;i<N;i++){
+      var t=p[0]=='mix'?(i%2?'snow':'rain'):p[0],du=(t=='rain'&&p[0]=='mix')?1:p[2];
+      z=R(-14,85);k=(z+14)/99;var sw=R(-26,26).toFixed(0),w,st='left:'+R(0,100).toFixed(1)+'%;opacity:'+(t=='rain'?.6+k*.4:.3+k*.65).toFixed(2)+';';
+      if(t=='rain'){w=7+k*16;st+='--w:'+w.toFixed(1)+'px;--l:'+(p[3]*(1+k*2)+w).toFixed(0)+'px'}
+      else{w=t=='snow'?3+k*6:4+k*5;st+='width:'+w.toFixed(1)+'px;height:'+w.toFixed(1)+'px'}
+      q+='<b class="wx3d-d wx3d-'+t+'" style="'+st+'" data-z="'+z.toFixed(0)+'" data-d="'+(du*(1.2-k*.5)).toFixed(2)+'" data-s="'+sw+'"></b>'}}
+    for(i=0;i<(gok?0:(c.gl||0));i++)q+='<b class="wx3d-glass" style="left:'+R(4,94).toFixed(0)+'%;top:'+R(2,50).toFixed(0)+'%;animation-delay:-'+R(0,6).toFixed(1)+'s;animation-duration:'+R(5,9).toFixed(1)+'s"></b>';
+    if(c.w==2)for(i=0;i<8;i++)q+='<b class="wx3d-leaf" style="--z:'+R(-10,80).toFixed(0)+'px;--y:'+R(10,H-30).toFixed(0)+'px;animation-delay:-'+R(0,5).toFixed(1)+'s;animation-duration:'+R(3.5,6).toFixed(1)+'s"></b>';
+    p3.innerHTML=q;
+    if(!matchMedia('(prefers-reduced-motion:reduce)').matches)[].forEach.call(p3.querySelectorAll('.wx3d-d'),function(el){
+      var zz=+el.dataset.z,d=+el.dataset.d*1000,sw=+el.dataset.s,cl=el.classList,T=function(y,x){return 'translate3d('+(x||0)+'px,'+y+'px,'+zz+'px)'},
+      f=cl.contains('wx3d-hail')?[{transform:T(-30),offset:0},{transform:T(H),offset:.78},{transform:T(H-16),offset:.86},{transform:T(H),offset:.94},{transform:T(H),offset:1}]
+        :[{transform:T(-30)},{transform:T(H,cl.contains('wx3d-snow')?sw:0)}];
+      el.animate(f,{duration:d,iterations:Infinity,delay:-Math.random()*d})});
+    if(c.w)for(i=0;i<7;i++)h+='<b class="wx3d-streak" style="top:'+R(10,90).toFixed(0)+'%;width:'+R(60,120).toFixed(0)+'px;animation-delay:-'+R(0,2).toFixed(1)+'s;animation-duration:'+R(1.4,2.4).toFixed(1)+'s"></b>';
+    if(!n&&c.s>=.9)h+='<b class="wx3d-flare" style="left:62%;top:30%;width:34px"></b><b class="wx3d-flare" style="left:48%;top:42%;width:18px;animation-delay:-1s"></b>';
+    if(n&&c.s>=.9)h+='<b class="wx3d-shoot"></b>';
+    if(c.p&&(c.p[0]=='snow'||c.p[0]=='mix'))h+='<b class="wx3d-frost"></b><b class="wx3d-pile" style="height:'+(c.p[1]>40?26:14)+'px"></b>';
+    fx.innerHTML=h;
+    var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    bc.width=card.offsetWidth;bc.height=card.offsetHeight;
+    glass(rm?0:c.gl,g,n);storm(!rm&&!!c.b);
+    var e=c.e.split('|'),set_=function(f,v){root.querySelector('[data-f='+f+']').textContent=v};
+    set_('city',S.city);set_('temp',S.temp+'°');set_('status',(e[n?1:0]||e[0])+' '+c.l);
+    set_('waves',S.waves+' m');set_('wind',S.wind+' km/h');clock();
+  }
+  function clock(){var t=S.time||new Date().toLocaleTimeString('es-UY',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:S.tz});
+    root.querySelector('[data-f=time]').textContent=t}
+  setInterval(clock,30000);
+  // ===== Gotas sobre vidrio con la librería raindrop-fx (WebGL2) =====
+  var gcv=root.querySelector('.wx3d-glassfx'),gfx=null,gon=false,
+      gok=(function(){try{return !!window.RaindropFX&&!!document.createElement('canvas').getContext('webgl2')}catch(e){return false}})();
+  function paint(W,H,g,n){ // fondo que la lente de las gotas deforma: degradado + luces desenfocadas
+    var cv=document.createElement('canvas');cv.width=W;cv.height=H;var x=cv.getContext('2d'),gr=x.createLinearGradient(0,0,W*.4,H);
+    gr.addColorStop(0,g[n?2:0]);gr.addColorStop(1,g[n?3:1]);x.fillStyle=gr;x.fillRect(0,0,W,H);
+    for(var i=0;i<16;i++){var r=R(12,36),px=R(0,W),py=R(H*.1,H),col=['255,214,120','120,210,255','255,255,255','190,140,255'][i%4],rg=x.createRadialGradient(px,py,0,px,py,r);
+      rg.addColorStop(0,'rgba('+col+','+(n?.9:.6)+')');rg.addColorStop(1,'rgba('+col+',0)');x.fillStyle=rg;x.fillRect(px-r,py-r,2*r,2*r)}
+    return cv} // se pasa el canvas directo (sin URL): evita el fetch que Chrome bloquea desde file://
+  function glass(gl,g,n){
+    if(!gok||!gl){if(gfx&&gon){gfx.stop();gon=false}gcv.classList.remove('on');return}
+    var W=card.offsetWidth,H=card.offsetHeight,iv=0.9/gl,url=paint(W,H,g,n);
+    try{
+      if(!gfx){gcv.width=W;gcv.height=H;
+        gfx=new RaindropFX({canvas:gcv,background:url,spawnSize:[16,34],dropletSize:[5,14],gravity:900,trailDistance:[8,14],mist:false,
+          spawnInterval:[iv*.7,iv*1.3],spawnLimit:gl*10,dropletsPerSeconds:gl*35})}
+      else{var o=gfx.options;o.spawnInterval=[iv*.7,iv*1.3];o.spawnLimit=gl*10;o.dropletsPerSeconds=gl*35;
+        if(gcv.width!=W||gcv.height!=H){gcv.width=W;gcv.height=H;gfx.resize(W,H)}gfx.setBackground(url)}
+      if(!gon){gfx.start();gon=true}
+      gcv.classList.add('on')
+    }catch(e){gok=false;gcv.classList.remove('on')}
+  }
+  // ===== Rayos fractales: zigzag con ramas, brillo de color, destello y sacudida =====
+  var bc=root.querySelector('.wx3d-bolts'),bx=bc.getContext('2d'),lite=root.querySelector('.wx3d-lite'),stT=0,stOn=false;
+  function seg(x0,y0,x1,y1,d,o){if(d<3){o.push([x0,y0,x1,y1]);return}
+    var mx=(x0+x1)/2+R(-d,d),my=(y0+y1)/2+R(-d*.3,d*.3);seg(x0,y0,mx,my,d/2,o);seg(mx,my,x1,y1,d/2,o)}
+  function strike(){
+    var W=bc.width,H=bc.height,col=['#ffe14d','#c07bff','#4de1ff','#ff6bd6'][Math.floor(R(0,4))],x=R(W*.3,W*.95),m=[],br=[],i;
+    seg(x,0,x+R(-60,60),H*R(.55,.92),64,m);
+    for(i=0;i<4;i++){var q=m[Math.floor(R(2,m.length-2))];seg(q[2],q[3],q[2]+R(-90,90),q[3]+R(40,110),26,br)}
+    bx.clearRect(0,0,W,H);bx.lineCap='round';bx.lineJoin='round';
+    [[16,.25,col,26],[7,.6,col,14],[2.4,1,'#fff',6]].forEach(function(p){
+      bx.strokeStyle=p[2];bx.shadowColor=col;bx.shadowBlur=p[3];bx.lineWidth=p[0];bx.globalAlpha=p[1];
+      [m,br].forEach(function(L,j){bx.lineWidth=j?p[0]*.55:p[0];bx.beginPath();L.forEach(function(s){bx.moveTo(s[0],s[1]);bx.lineTo(s[2],s[3])});bx.stroke()})});
+    bx.globalAlpha=1;
+    bc.animate([{opacity:1},{opacity:.15},{opacity:1},{opacity:.4},{opacity:0}],{duration:650});
+    lite.style.background='radial-gradient(circle at '+(x/W*100).toFixed(0)+'% 10%,'+col+',transparent 75%)';
+    lite.animate([{opacity:0},{opacity:.85},{opacity:.1},{opacity:.7},{opacity:0}],{duration:650});
+    root.classList.add('shake');setTimeout(function(){root.classList.remove('shake')},400)}
+  function storm(on){stOn=on;clearTimeout(stT);
+    if(on)(function loop(f){stT=setTimeout(function(){if(!stOn)return;strike();loop()},f||R(1500,4500))})(500)}
+  window.wx3dSet=set;
+  window.addEventListener('resize',function(){set({})});
+  // inclinación 3D con mouse/dedo
+  root.addEventListener('pointermove',function(e){
+    var r=root.getBoundingClientRect(),x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)),y=Math.max(0,Math.min(1,(e.clientY-r.top)/r.height));
+    root.classList.add('is-active');
+    card.style.transform='rotateX('+((0.5-y)*22)+'deg) rotateY('+((x-0.5)*30)+'deg)';
+    glare.style.setProperty('--gx',(x*100)+'%');glare.style.setProperty('--gy',(y*100)+'%');
+    root.style.setProperty('--px',(x-0.5)*2);root.style.setProperty('--py',(y-0.5)*2);
+  });
+  root.addEventListener('pointerleave',function(){root.classList.remove('is-active');card.style.transform='';root.style.setProperty('--px',0);root.style.setProperty('--py',0)});
+  // ---- demo (borrar al integrar) ----
+  var sel=document.getElementById('d-cond'),nt=document.getElementById('d-night'),keys=Object.keys(C),tm=null;
+  keys.forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=C[k].l;sel.appendChild(o)});
+  sel.value='partly';
+  function fromUI(){set({cond:sel.value,night:nt.checked})}
+  sel.onchange=nt.onchange=fromUI;
+  document.getElementById('d-cycle').onclick=function(){
+    if(tm){clearInterval(tm);tm=null;this.textContent='Recorrer las 30';return}
+    var i=0,b=this;b.textContent='Detener';
+    tm=setInterval(function(){var k=keys[Math.floor(i/2)%keys.length];sel.value=k;nt.checked=i%2==1;fromUI();i++},2200)};
+  set({});
+})();
+</script>
+</body>
+</html>
