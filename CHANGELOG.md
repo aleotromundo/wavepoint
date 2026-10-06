@@ -1,6 +1,15 @@
 ## 2026-10-07
 
 <<<<<<< HEAD
+### Fotos y composición de Retiros alineadas con el PDF de Canva / Retreat photos and layout aligned with the Canva PDF
+
+- `services.js`: usar las fotos extraídas y optimizadas de `retiros.pdf` para portada, destino, Casa Maderas, yoga, surf trips, Roca Bruja, coaching y fotografía; ordenar esas secciones como en el folleto y conservar el resumen e itinerario.
+- `index.html`, `piloto.html`, `trip-builder.js` y `script.js`: compartir la portada del folleto en las tarjetas de Retiros y actualizar sus textos alternativos en español e inglés.
+- `styles.css`: reflejar la composición fotográfica del folleto en las secciones, el resumen y el itinerario, conservando legibilidad y adaptación móvil.
+- `services.js`: use optimized photos extracted from `retiros.pdf` for the cover, destination, Casa Maderas, yoga, surf trips, Witch’s Rock, coaching and photography; order the sections like the brochure while retaining the overview and itinerary.
+- `index.html`, `piloto.html`, `trip-builder.js` and `script.js`: share the brochure cover in Retreats cards and update Spanish and English alt text.
+- `styles.css`: echo the brochure’s photo-led composition in the sections, overview and itinerary while preserving readability and mobile layout.
+
 ### Fotos de yoga en la playa y ATV en la selva / Beach yoga and jungle ATV photos
 
 - `index.html`, `piloto.html`, `services.js`, `trip-builder.js` y `script.js`: reemplazar las fotos y textos alternativos ES/EN de yoga y tours en cuatriciclo. Yoga: foto de Unsplash; ATV: foto de Pexels.

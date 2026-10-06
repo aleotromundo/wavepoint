@@ -184,7 +184,7 @@
 
       serviceCardRetreatsTitle: 'Retiros',
       serviceCardRetreatsText: 'Surf, descanso, movimiento y comunidad en un mismo viaje.',
-      serviceCardRetreatsAlt: 'Atardecer rosado sobre el mar en Tamarindo',
+      serviceCardRetreatsAlt: 'Vista aérea de una playa y la costa de Tamarindo',
       serviceRetreatDivider: 'RETIROS · UNA EXPERIENCIA PARA VIVIR MÁS A FONDO',
       serviceRetreatTag: 'SURF · DESCANSO · COMUNIDAD',
       serviceRetreatsButton: 'Descubrí los retiros ↗',
@@ -433,7 +433,7 @@
 
       serviceCardRetreatsTitle: 'Retreats',
       serviceCardRetreatsText: 'Surf, rest, movement, and community in one trip.',
-      serviceCardRetreatsAlt: 'Pink sunset over the ocean in Tamarindo',
+      serviceCardRetreatsAlt: 'Aerial view of a beach and coastline in Tamarindo',
       serviceRetreatDivider: 'RETREATS · AN EXPERIENCE TO GO DEEPER',
       serviceRetreatTag: 'SURF · REST · COMMUNITY',
       serviceRetreatsButton: 'Explore retreats ↗',

@@ -16,7 +16,7 @@
     { id: 'atv', image: 'assets/img/optimized/atv-forest-tour.jpg', imageAlt: { es: 'Conductor en un cuatriciclo por un sendero selvático', en: 'Rider driving an ATV along a dense jungle trail' }, title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Descubrí Guanacaste en cuatriciclo.', en: 'Explore Guanacaste by ATV.' } },
     { id: 'surf-photography', image: 'assets/img/optimized/surf-photographer-wave.jpg', imageAlt: { es: 'Fotógrafo de surf en el agua con una cámara frente a una ola', en: 'Surf photographer in the water with a camera beside a breaking wave' }, title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
     { id: 'surfskate', image: 'assets/img/optimized/surfskate.webp', title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } },
-    { id: 'retreats', image: 'assets/img/optimized/retreat-evening.webp', title: { es: 'Retiros', en: 'Retreats' }, description: { es: 'Surf, descanso, movimiento y comunidad.', en: 'Surf, rest, movement and community.' } }
+    { id: 'retreats', image: 'assets/img/optimized/retreat-canva-cover.webp', imageAlt: { es: 'Vista aérea de una playa y la costa de Tamarindo', en: 'Aerial view of a beach and coastline in Tamarindo' }, title: { es: 'Retiros', en: 'Retreats' }, description: { es: 'Surf, descanso, movimiento y comunidad.', en: 'Surf, rest, movement and community.' } }
   ];
   const COPY = {
     es: {
