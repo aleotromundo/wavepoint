@@ -172,6 +172,15 @@
 - `Enlaces/occidental.html` y `assets/img/optimized/occidental-beach.webp`: se quitan de la galería las dos copias idénticas de la portada y se suma una foto distinta de playa obtenida de la galería oficial de Barceló (con autorización del usuario); se conservan las imágenes distintas de gastronomía y bienestar. El fondo de la ficha usa otro paisaje para que la foto de portada no se repita detrás del contenido.
 - `Enlaces/casa-maderas.html`, `styles.css` y `assets/img/optimized/casa-maderas-*.jpg`: se reemplaza la galería que repetía la foto de portada y contenía una foto de otro colaborador por dos fotos distintas obtenidas del sitio oficial de Casa de Maderas; también se cambia el fondo para evitar repetir la portada. Textos alternativos en español e inglés; se actualizan las referencias de caché de `styles.css`.
 
+## 2026-10-05
+
+### Integración local del gadget de clima 3D
+
+- `index.html`, `weather-widget-3d.css` y `weather-widget-3d.js`: adaptar el diseño final del prototipo entregado, con escenas día/noche, lluvia en canvas detrás y delante del contenido, métricas interactivas y etiquetas en español e inglés.
+- El widget muestra Tamarindo · CR, temperatura, condición, viento y oleaje estimado desde Open-Meteo; la hora se calcula para Costa Rica. El fondo adopta transparencia y desenfoque tipo glassmorphism, el widget se reduce un 10% y el modo nocturno representa la fase lunar calculada desde el ciclo sinódico.
+- Se restaura bajo las métricas el aviso bilingüe de cámaras nocturnas fuera de servicio hasta alrededor de las 4:45 a. m.; se respeta la preferencia del sistema de reducir movimiento.
+- La integración permanece en la rama local `prueba-widget-clima`; no se hizo push ni se publicó a producción.
+
 ## 2026-10-04
 
 ### Pendientes confirmados a partir de GUIA 2.0.pdf
