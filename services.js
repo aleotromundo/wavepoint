@@ -669,8 +669,8 @@ const PACK_SERVICE_CARDS = {
 'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/img/optimized/atv-forest-tour.jpg' },
 'Clases de surfskate': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/optimized/surfskate.webp' },
 'Surfskate lessons': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/optimized/surfskate.webp' },
-'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-evening.webp' },
-'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-evening.webp' }
+'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-canva-cover.webp' },
+'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/optimized/retreat-canva-cover.webp' }
 };
 function renderQuestion(service, question) {
 const id = inputId(service, question);

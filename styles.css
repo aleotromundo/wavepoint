@@ -5545,6 +5545,17 @@ footer a {
 }
 .retreat-experience-card > img { display: block; width: 100%; height: 150px; object-fit: cover; }
 .retreat-experience-card > div { padding: 17px 18px 19px; }
+.retreat-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; overflow: hidden; }
+.retreat-photo-grid img { display: block; width: 100%; height: 142px; object-fit: cover; }
+.retreat-destination-photos { grid-template-columns: 1.2fr .8fr; }
+.retreat-destination-photos img { height: 165px; }
+.retreat-stay-photos img { height: 125px; }
+.retreat-yoga-photos img { height: 155px; }
+.retreat-surf-trip-photos img { height: 105px; }
+.retreat-boat-photos img { height: 150px; }
+.retreat-coaching-photos { grid-template-columns: 1fr 1fr; }
+.retreat-coaching-photos img { height: 130px; }
+.retreat-coaching-photos img:first-child { grid-column: 1 / -1; height: 145px; }
 .retreat-experience-card .retreat-card-kicker { margin-bottom: 8px; color: #7fe0cb; }
 .retreat-experience-card h3, .retreat-experience-card h4 {
   margin: 0 0 9px;
@@ -5554,13 +5565,13 @@ footer a {
 .retreat-experience-card h4 { margin-top: 20px; font-size: 22px; }
 .retreat-experience-card p:not(.retreat-card-kicker) { margin: 0 0 11px; color: rgba(236,248,244,.8); font-size: 13px; line-height: 1.62; }
 .retreat-experience-card p:last-child { margin-bottom: 0; }
-.retreat-yoga-card > img { object-position: center 56%; }
-.retreat-surf-card > img { object-position: center 43%; }
+.retreat-yoga-card .retreat-photo-grid img:last-child { object-position: center 58%; }
+.retreat-surf-card .retreat-photo-grid img:nth-child(2) { object-position: center 42%; }
 .retreat-summary {
   margin: 0;
   padding: clamp(20px, 3vw, 30px);
   border-color: rgba(151,234,218,.23);
-  background: linear-gradient(145deg, rgba(6,40,55,.9), rgba(11,75,81,.82));
+  background: linear-gradient(145deg, rgba(6,40,55,.87), rgba(11,75,81,.78)), url("assets/img/optimized/retreat-canva-wave-background.webp") center 43% / cover;
   box-shadow: inset 0 1px rgba(255,255,255,.08);
 }
 .retreat-summary .retreat-card-kicker { margin-bottom: 8px; }
@@ -5587,7 +5598,13 @@ footer a {
 .retreat-list li, .retreat-conditions li { color: rgba(232,246,241,.8); }
 .retreat-list li::before, .retreat-conditions li::before { color: #75e0c9; }
 .retreat-conditions { border-color: rgba(255,255,255,.1); }
-.retreat-itinerary-section { margin: 0; }
+.retreat-itinerary-section {
+  margin: 0;
+  padding: clamp(20px, 3vw, 30px);
+  border: 1px solid rgba(151,234,218,.23);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(6,40,55,.88), rgba(11,75,81,.8)), url("assets/img/optimized/retreat-canva-wave-background.webp") center 58% / cover;
+}
 .retreat-itinerary-section > .retreat-card-kicker { margin-bottom: 8px; }
 .retreat-itinerary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
 .retreat-day {
@@ -5629,7 +5646,16 @@ footer a {
   .retreat-cover h2 { font-size: 43px; }
   .retreat-experience-grid, .retreat-itinerary { grid-template-columns: 1fr; }
   .retreat-experience-card > img { height: 175px; }
+  .retreat-photo-grid img,
+  .retreat-destination-photos img,
+  .retreat-yoga-photos img,
+  .retreat-boat-photos img { height: 155px; }
+  .retreat-stay-photos img { height: 125px; }
+  .retreat-surf-trip-photos img { height: 108px; }
+  .retreat-coaching-photos img { height: 125px; }
+  .retreat-coaching-photos img:first-child { height: 135px; }
   .retreat-summary { padding: 18px; }
+  .retreat-itinerary-section { padding: 18px; }
   .retreat-summary-grid, .retreat-lists { grid-template-columns: 1fr; }
   .retreat-day { padding: 13px; }
   .retreat-gallery img { height: 145px; }
