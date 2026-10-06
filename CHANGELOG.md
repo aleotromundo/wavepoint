@@ -41,7 +41,8 @@
 - `index.html`, `weather-widget-3d.css` y `weather-widget-3d.js`: adaptar el diseño final del prototipo entregado, con escenas día/noche, lluvia en canvas detrás y delante del contenido, métricas interactivas y etiquetas en español e inglés.
 - El widget muestra Tamarindo · CR, temperatura, condición, viento y oleaje estimado desde Open-Meteo; la hora se calcula para Costa Rica. El fondo adopta transparencia y desenfoque tipo glassmorphism, el widget se reduce un 10% y el modo nocturno representa la fase lunar calculada desde el ciclo sinódico.
 - Se restaura bajo las métricas el aviso bilingüe de cámaras nocturnas fuera de servicio hasta alrededor de las 4:45 a. m.; se respeta la preferencia del sistema de reducir movimiento.
-- La integración permanece en la rama local `prueba-widget-clima`; no se hizo push ni se publicó a producción.
+- `index.html`, `script.js` y `styles.css`: reemplazar el enlace pequeño de cada tarjeta de servicio por una cinta de papel rasgado, con el texto centrado y más grande, bilingüe y accesible; se conservan destinos e interacciones existentes.
+- La integración se desarrolla en la rama de preview `piloto`; no se combina con producción.
 
 ## 2026-10-04
 

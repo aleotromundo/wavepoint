@@ -3984,7 +3984,7 @@ body { background: #071c28; }
   border-radius: 50%;
   background: rgba(4, 22, 30, .86);
   color: #fff;
-  font-size: 26px;
+  font-size: 26px !important;
   line-height: 1;
   cursor: pointer;
 }
@@ -5854,7 +5854,7 @@ footer a {
 #servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body {
   position: absolute;
   inset: auto 0 0;
-  max-height: 104px;
+  max-height: 150px;
   margin: 0;
   overflow: hidden;
   border-top-color: rgba(255, 255, 255, .24);
@@ -5886,7 +5886,7 @@ footer a {
 #servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover .service-body,
 #servicios .service-grid-catalog > .service-card:not(.service-card-pack):focus-within .service-body,
 #servicios .service-grid-catalog > .service-card:not(.service-card-pack).is-scroll-active .service-body {
-  max-height: 320px;
+  max-height: 360px;
   background: rgba(6, 24, 34, .86);
 }
 #servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover .service-body p,
@@ -5896,6 +5896,77 @@ footer a {
   margin: 0 0 16px;
   opacity: 1;
   transform: translateY(0);
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"] {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 10px 52px;
+  border: 0;
+  background:
+    repeating-linear-gradient(3deg, transparent 0 7px, rgba(93, 65, 32, .035) 7px 8px),
+    linear-gradient(105deg, #f8e9c9, #fff4dc 48%, #f1dfb9);
+  clip-path: polygon(
+    0 8%, 5% 12%, 4% 3%, 11% 9%, 17% 4%, 24% 11%, 31% 4%, 39% 10%,
+    46% 3%, 54% 11%, 62% 5%, 69% 10%, 77% 3%, 84% 9%, 92% 4%, 100% 10%,
+    98% 25%, 100% 38%, 97% 51%, 100% 64%, 98% 78%, 100% 91%, 93% 88%,
+    87% 97%, 79% 90%, 71% 96%, 64% 90%, 55% 97%, 47% 90%, 39% 96%,
+    31% 90%, 23% 97%, 15% 90%, 8% 96%, 0 90%, 2% 76%, 0 63%, 3% 50%,
+    0 37%, 2% 23%
+  );
+  box-shadow: 0 7px 18px rgba(0, 0, 0, .28);
+  color: #103d48 !important;
+  filter: drop-shadow(0 5px 7px rgba(0, 0, 0, .28));
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 26px !important;
+  font-weight: 800;
+  letter-spacing: .075em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: filter .2s ease, transform .2s ease;
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"]::after {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  color: #087f88;
+  content: "↗";
+  font-family: "DM Sans", sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: .8;
+  transform: translateY(-50%);
+  transition: transform .2s ease;
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"]:hover {
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .35));
+  transform: rotate(-1deg) scale(1.025);
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"]:hover::after {
+  transform: translate(3px, calc(-50% - 2px));
+}
+#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"]:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+@media (max-width: 400px) {
+  #servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"] {
+    min-height: 54px;
+    padding-inline: 46px;
+    font-size: 24px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"],
+  #servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body > a[data-i18n="serviceMoreInfo"]::after {
+    transition: none;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   #servicios .service-grid-catalog > .service-card:not(.service-card-pack):hover .service-img img {
