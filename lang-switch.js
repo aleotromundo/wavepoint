@@ -1,4 +1,10 @@
 (() => {
+  const ua = navigator.userAgent || '';
+  const safariStable = /AppleWebKit/i.test(ua)
+    && /Safari/i.test(ua)
+    && /Apple Computer/i.test(navigator.vendor || '')
+    && !/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua);
+  document.documentElement.classList.toggle('safari-stable', safariStable);
   const STORAGE_KEY = 'wavepoint-lang';
 
   const readLang = () => {
