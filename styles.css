@@ -6127,3 +6127,104 @@ footer a {
 #servicios .service-grid-catalog > .service-card-atv .service-image-link:focus-visible .service-img img {
   transform: scale(1.85);
 }
+
+/* Safari stability mode: preserve the visual language while avoiding fragile GPU compositing. */
+html.safari-stable body,
+html.safari-stable .hero,
+html.safari-stable .sponsor-strip,
+html.safari-stable .after-surf,
+html.safari-stable .services,
+html.safari-stable .service-detail-page,
+html.safari-stable .collaborator-page,
+html.safari-stable .about-page .about-hero-image,
+html.safari-stable .about-page .about-closing {
+  background-attachment: scroll !important;
+}
+
+html.safari-stable .site-footer .footer-video,
+html.safari-stable .trip-builder-hero-video {
+  display: none !important;
+}
+
+html.safari-stable .hero {
+  background-position: center 58%;
+  background-size: cover;
+}
+
+html.safari-stable .scroll-reveal,
+html.safari-stable .scroll-reveal.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+html.safari-stable #servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-body p {
+  max-height: 160px !important;
+  margin: 0 0 16px !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+html.safari-stable #servicios .service-grid-catalog > .service-card:not(.service-card-pack)::after {
+  animation: none !important;
+}
+
+html.safari-stable .nav,
+html.safari-stable .eyebrow,
+html.safari-stable .btn-ghost,
+html.safari-stable .weather-card,
+html.safari-stable .menu,
+html.safari-stable .coming-mask,
+html.safari-stable .promo-kicker,
+html.safari-stable .signup,
+html.safari-stable .modal,
+html.safari-stable .detail-request,
+html.safari-stable .service-page-footer,
+html.safari-stable .collab-layout article,
+html.safari-stable .guide-destination-feature,
+html.safari-stable .trip-experience,
+html.safari-stable .trip-summary,
+html.safari-stable .surf-survey-modal::backdrop {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html.safari-stable #servicios .service-card,
+html.safari-stable #camaras .camera-card {
+  background: rgba(6, 24, 34, .94) !important;
+}
+
+html.safari-stable .trip-experience {
+  background: rgba(7, 42, 53, .94) !important;
+}
+
+html.safari-stable .trip-summary {
+  background: rgba(6, 39, 50, .96) !important;
+}
+
+html.safari-stable .detail-request,
+html.safari-stable .accommodation-detail-page .accommodation-card {
+  background: rgba(255, 255, 255, .96) !important;
+}
+
+html.safari-stable .service-page-footer {
+  background: rgba(6, 26, 38, .94) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.safari-stable *,
+  html.safari-stable *::before,
+  html.safari-stable *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Safari fallback: descriptions never depend on scroll state or card hierarchy. */
+html.safari-stable #servicios .service-card .service-body p {
+  max-height: 160px !important;
+  margin: 0 0 16px !important;
+  opacity: 1 !important;
+  transform: none !important;
+}

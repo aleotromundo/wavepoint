@@ -1,5 +1,19 @@
 ## 2026-10-07
 
+### Modo Safari estable
+
+- `script.js` y `lang-switch.js`: detectar Safari de Apple sin afectar Chrome, Edge, Firefox, Windows ni Android.
+- `styles.css`: en Safari se usan fondos con scroll en lugar de `fixed`, superficies opacas sin `backdrop-filter`, contenido visible desde el inicio y sin animaciones de revelado o brillo que puedan parpadear. El hero conserva sus videos y su poster de respaldo.
+- `script.js`: Safari conserva la rotación de videos del hero y evita cambiar las tarjetas de servicios durante el scroll; el footer y el armador mantienen sus videos decorativos desactivados como respaldo estable.
+- `script.js` y `styles.css`: las descripciones de las tarjetas de servicios quedan siempre expandidas en Safari, sin depender del scroll ni del hover.
+- HTML: se actualiza la versión de caché de `styles.css` a `20261007-27`.
+- Validación: sintaxis JavaScript, formato Git, revisión de reglas de compatibilidad y prueba de detección en navegador Chromium (modo Safari desactivado).
+
+### Corrección de galería de Surfskate
+
+- `services.js`: se corrige el atributo `src` de la galería de Surfskate, que estaba usando el texto alternativo como URL y mostraba la imagen rota.
+- Validación: `node --check services.js`, `git diff --check` y comprobación en navegador de la carga de `assets/img/optimized/surfskate.webp`.
+
 ### Prueba visual del footer con video y glassmorphism
 
 - `index.html`, `trip-builder.html` y `guia-playas.html`: aplicar el nuevo footer visual sin cambiar enlaces ni contenido.
