@@ -1,5 +1,10 @@
 ## 2026-10-07
 
+### Fotos de yoga en la playa y ATV en la selva / Beach yoga and jungle ATV photos
+
+- `index.html`, `piloto.html`, `services.js`, `trip-builder.js` y `script.js`: reemplazar las fotos y textos alternativos ES/EN de yoga y tours en cuatriciclo. Yoga: foto de Unsplash; ATV: foto de Pexels.
+- `index.html`, `piloto.html`, `services.js`, `trip-builder.js` and `script.js`: replace the yoga and ATV tour photos and bilingual alt text. Yoga photo from Unsplash; ATV photo from Pexels.
+
 ### Imágenes de servicios y tarjeta de cuatriciclos
 
 - `index.html`, `services.js`, `trip-builder.js` y `piloto.html`: actualizar las fotos de Roca Bruja (sitio oficial de Witch’s Rock), snorkel (Subtle Cinematics/Unsplash), fotografía de surf (Zak Mogel/Pexels) y ATV (King Caplis/Pexels); alts sincronizados en español e inglés.
