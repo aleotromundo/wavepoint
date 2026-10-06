@@ -187,11 +187,11 @@ id: 'yoga', number: '06', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
 cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
 description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
 images: [
-'assets/img/optimized/yoga-wellness.webp',
+'assets/img/optimized/yoga-beach-woman.jpg',
 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80',
 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80'
 ],
-imageAlts: ['Espacio de bienestar rodeado de naturaleza', 'Persona practicando yoga', 'Persona practicando meditación'],
+imageAlts: ['Mujer practicando yoga frente al mar en la playa', 'Persona practicando yoga', 'Persona practicando meditación'],
 includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
 questions: [
 { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
@@ -209,7 +209,7 @@ questions: {
   yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
 },
 includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy'],
-imageAlts: ['Wellness room framed by tropical greenery', 'Person practicing yoga', 'Person practicing meditation']
+imageAlts: ['Woman practicing yoga on a beach by the ocean', 'Person practicing yoga', 'Person practicing meditation']
 }
 },
 {
@@ -318,8 +318,8 @@ id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatric
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
 images: ['assets/img/optimized/atv-forest-tour.jpg'],
-imageAlts: ['Dos personas recorriendo un sendero tropical en cuatriciclos'],
-imageAltsEn: ['Two people riding ATVs along a tropical trail'],
+imageAlts: ['Conductor en un cuatriciclo por un sendero selvático'],
+imageAltsEn: ['Rider driving an ATV along a dense jungle trail'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -331,7 +331,7 @@ eyebrow: 'LAND · ADVENTURE',
 title: 'ATV Tours in Tamarindo',
 cardText: 'A little adventure beyond the beach.',
 description: 'Head out with local guides and discover the surroundings of Tamarindo on an ATV. Take in the scenery, enjoy the ride and share the adventure with the people you’re traveling with. WavePoint helps you find a tour that suits your group, with the route and details confirmed before you go.',
-imageAlts: ['Two people riding ATVs along a tropical trail'],
+imageAlts: ['Rider driving an ATV along a dense jungle trail'],
 questions: {
 drivers: { label: 'How many people want to drive?' },
 passengers: { label: 'How many would be passengers?' },
@@ -598,7 +598,7 @@ const PACK_SERVICE_CARDS = {
 'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/optimized/surf-lesson-woman.webp' },
 'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/DSC02807.jpg' },
 'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/legacy/DSC02807.jpg' },
-'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'assets/img/optimized/yoga-wellness.webp' },
+'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'assets/img/optimized/yoga-beach-woman.jpg' },
 'Witch’s Rock Surf Trip': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/optimized/witch-rock-surf-trip.webp' },
 'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/optimized/witch-rock-surf-trip.webp' },
 'Fotos de surf': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/img/optimized/surf-photographer-wave.jpg' },
@@ -673,7 +673,7 @@ const itinerary = details.itinerary.map((day, index) => `<article class="retreat
 const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
 const wavePhoto = isEn ? 'Surfer riding a wave in Costa Rica' : 'Surfista tomando una ola en Costa Rica';
 const introAlt = esc((isEn ? service.imageAltsEn?.[0] : service.imageAlts?.[0]) || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
-const yogaPhoto = esc(isEn ? 'Wellness room framed by tropical greenery' : 'Espacio de bienestar rodeado de naturaleza');
+const yogaPhoto = esc(isEn ? 'Woman practicing yoga on a beach by the ocean' : 'Mujer practicando yoga frente al mar en la playa');
 const priceFact = details.facts.find(fact => fact.label === (isEn ? 'Price' : 'Precio')) || details.facts[details.facts.length - 1];
 const durationFact = details.facts.find(fact => fact.label === (isEn ? 'Duration' : 'Duración'));
 return `<div class="retreat-editorial">
@@ -697,7 +697,7 @@ return `<div class="retreat-editorial">
       <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-yoga-card">
-      <img src="assets/img/optimized/yoga-wellness.webp" alt="${yogaPhoto}" loading="lazy" />
+      <img src="assets/img/optimized/yoga-beach-woman.jpg" alt="${yogaPhoto}" loading="lazy" />
       <div><p class="retreat-card-kicker">${isEn ? 'MOVE & RESET' : 'MOVIMIENTO Y PAUSA'}</p><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div>
     </section>
     <section class="retreat-experience-card retreat-surf-card">
