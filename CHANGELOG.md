@@ -1,5 +1,6 @@
 ## 2026-10-07
 
+<<<<<<< HEAD
 ### Fotos de yoga en la playa y ATV en la selva / Beach yoga and jungle ATV photos
 
 - `index.html`, `piloto.html`, `services.js`, `trip-builder.js` y `script.js`: reemplazar las fotos y textos alternativos ES/EN de yoga y tours en cuatriciclo. Yoga: foto de Unsplash; ATV: foto de Pexels.
@@ -10,6 +11,21 @@
 - `index.html`, `services.js`, `trip-builder.js` y `piloto.html`: actualizar las fotos de Roca Bruja (sitio oficial de Witch’s Rock), snorkel (Subtle Cinematics/Unsplash), fotografía de surf (Zak Mogel/Pexels) y ATV (King Caplis/Pexels); alts sincronizados en español e inglés.
 - `styles.css`: dar espacio suficiente a los títulos de dos líneas y quitar el zoom que recortaba la foto de ATV.
 - `index.html`, `script.js` y `piloto.html`: cambiar el título español a “A través de quienes lo llaman hogar”; conservar el título inglés.
+=======
+### Modo Safari estable
+
+- `script.js` y `lang-switch.js`: detectar Safari de Apple sin afectar Chrome, Edge, Firefox, Windows ni Android.
+- `styles.css`: en Safari se usan fondos con scroll en lugar de `fixed`, superficies opacas sin `backdrop-filter`, contenido visible desde el inicio y sin animaciones de revelado o brillo que puedan parpadear. El hero conserva sus videos y su poster de respaldo.
+- `script.js`: Safari conserva la rotación de videos del hero y evita cambiar las tarjetas de servicios durante el scroll; el footer y el armador mantienen sus videos decorativos desactivados como respaldo estable.
+- `script.js` y `styles.css`: las descripciones de las tarjetas de servicios quedan siempre expandidas en Safari, sin depender del scroll ni del hover.
+- HTML: se actualiza la versión de caché de `styles.css` a `20261007-27`.
+- Validación: sintaxis JavaScript, formato Git, revisión de reglas de compatibilidad y prueba de detección en navegador Chromium (modo Safari desactivado).
+
+### Corrección de galería de Surfskate
+
+- `services.js`: se corrige el atributo `src` de la galería de Surfskate, que estaba usando el texto alternativo como URL y mostraba la imagen rota.
+- Validación: `node --check services.js`, `git diff --check` y comprobación en navegador de la carga de `assets/img/optimized/surfskate.webp`.
+>>>>>>> 524537a8e7ac595312b16b615bd4b9c3367341b5
 
 ### Prueba visual del footer con video y glassmorphism
 
