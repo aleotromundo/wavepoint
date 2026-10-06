@@ -367,25 +367,67 @@ id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'WavePoint Retiros nace de nuestro amor por el surf, la naturaleza y el estilo de vida costero. Son experiencias diseñadas para reconectar contigo mismo, con el mar y con una comunidad vibrante, en uno de los destinos más mágicos de Costa Rica: Tamarindo. Estos retiros están pensados para quienes buscan más que unas vacaciones: buscan transformación, conexión y aventura.',
 images: [
-'assets/img/optimized/retreat-evening.webp',
-'assets/img/optimized/retreat-sunset.webp',
-'assets/img/optimized/retreat-tamarindo.webp',
-'assets/img/optimized/retreat-dinner.webp',
-'assets/img/optimized/retreat-palm.webp'
+'assets/img/optimized/retreat-canva-cover.webp',
+'assets/img/optimized/retreat-canva-destination-town.webp',
+'assets/img/optimized/retreat-canva-destination-coast.webp',
+'assets/img/optimized/retreat-canva-stay-pool.webp',
+'assets/img/optimized/retreat-canva-stay-aerial.webp',
+'assets/img/optimized/retreat-canva-stay-lounge.webp',
+'assets/img/optimized/retreat-canva-stay-coast.webp',
+'assets/img/optimized/retreat-canva-yoga-studio.webp',
+'assets/img/optimized/retreat-canva-yoga-beach.webp',
+'assets/img/optimized/retreat-canva-surf-avellanas.webp',
+'assets/img/optimized/retreat-canva-surf-grande.webp',
+'assets/img/optimized/retreat-canva-surf-tamarindo.webp',
+'assets/img/optimized/retreat-canva-surf-nosara.webp',
+'assets/img/optimized/retreat-canva-witch-rock-1.webp',
+'assets/img/optimized/retreat-canva-witch-rock-2.webp',
+'assets/img/optimized/retreat-canva-coaching-team.webp',
+'assets/img/optimized/retreat-canva-surf-photo-1.webp',
+'assets/img/optimized/retreat-canva-surf-photo-2.webp',
+'assets/img/optimized/retreat-canva-wave-background.webp'
 ],
 imageAlts: [
-'Atardecer rosado en Tamarindo',
-'Surfistas caminando con sus tablas por la playa',
-'Atardecer en la costa de Costa Rica',
-'Mesas junto a la playa durante el atardecer',
-'Cielo violeta sobre el mar al atardecer'
+'Vista aérea de una playa y la costa de Tamarindo',
+'Vista aérea de un pueblo costero y su playa',
+'Vista aérea de la costa tropical y el mar',
+'Piscina y alojamiento de Casa Maderas',
+'Casa Maderas rodeada de palmeras',
+'Sala de estar de Casa Maderas',
+'Vista aérea de Casa Maderas junto a la costa',
+'Clase grupal de yoga en un espacio abierto',
+'Grupo practicando yoga al aire libre junto a la playa',
+'Surfista tomando una ola en Guanacaste',
+'Surfista surcando una ola en Costa Rica',
+'Surfista surcando una ola en Tamarindo',
+'Surfista tomando una ola en Guanacaste',
+'Surfista bajo la formación rocosa de Roca Bruja',
+'Surfista tomando una ola frente a Roca Bruja',
+'Grupo realizando ejercicios de entrenamiento de surf',
+'Surfista surcando una ola en Costa Rica',
+'Surfista sobre su tabla en el mar',
+'Ola turquesa vista desde el aire, como fondo decorativo'
 ],
 imageAltsEn: [
-'Pink sunset over the ocean in Tamarindo',
-'Surfers walking along the beach with their boards',
-'Sunset on the Costa Rican coast',
-'Tables by the beach at sunset',
-'Violet sky over the ocean at sunset'
+'Aerial view of a beach and coastline in Tamarindo',
+'Aerial view of a coastal town and beach',
+'Aerial view of a tropical coastline and ocean',
+'Pool and accommodation at Casa Maderas',
+'Casa Maderas surrounded by palm trees',
+'Lounge at Casa Maderas',
+'Aerial view of Casa Maderas by the coast',
+'Group yoga class in an open-air space',
+'Group practicing yoga outdoors by the beach',
+'Surfer riding a wave in Guanacaste',
+'Surfer riding a wave in Costa Rica',
+'Surfer riding a wave in Tamarindo',
+'Surfer riding a wave in Guanacaste',
+'Surfer beneath the rock formation at Witch’s Rock',
+'Surfer riding a wave in front of Witch’s Rock',
+'Group doing surf training exercises',
+'Surfer riding a wave in Costa Rica',
+'Surfer on a board in the ocean',
+'Turquoise wave seen from above, used as a decorative background'
 ],
 retreatDetails: {
 aboutHeading: '¿Qué son los retiros WavePoint?',
@@ -400,6 +442,8 @@ yoga: [
 'Después de actividades revitalizantes, relajate en nuestro espacio común, donde compartir experiencias es clave. Disfrutá de una cena saludable mientras compartís risas y experiencias.',
 'Nuestros instructores de yoga te preparan día a día para entrar al agua con más confianza y flexibilidad para los nuevos desafíos.'
 ],
+surfTripsHeading: 'Surf trips guiados a las mejores olas de la zona',
+surfTrips: 'Te llevamos a conocer y surfear los mejores picos del área en un horario privado, con todas las tablas incluidas y un profesor local experto en la zona.',
 surfHeading: 'Surf coaching, fotos y videoanálisis',
 surf: 'No solo vas a surfear, vas a mejorar. Nuestro equipo de coaches te acompaña en cada sesión con feedback personalizado. Además, documentamos tu progreso con fotos profesionales dentro y fuera del agua, y analizamos cada sesión para enfocarnos en los puntos a mejorar en la técnica y hacer de la experiencia algo enriquecedor.',
 boatHeading: 'Tour en barco a Roca Bruja',
@@ -462,11 +506,25 @@ title: 'Retreats',
 cardText: 'Choose a pause with intention: surf, rest, movement and community in one trip.',
 description: 'WavePoint Retreats grew from our love of surfing, nature and the coastal way of life. These experiences are designed to help you reconnect with yourself, the ocean and a vibrant community in Tamarindo, one of Costa Rica’s most magical destinations. They are for people looking for more than a vacation: transformation, connection and adventure.',
 imageAlts: [
-'A tropical tree at sunset by the ocean in Tamarindo',
-'Sunset on the coast of Costa Rica',
-'Tables by the beach at sunset',
-'Pink sunset in Tamarindo',
-'Tropical tree viewed from below'
+'Aerial view of a beach and coastline in Tamarindo',
+'Aerial view of a coastal town and beach',
+'Aerial view of a tropical coastline and ocean',
+'Pool and accommodation at Casa Maderas',
+'Casa Maderas surrounded by palm trees',
+'Lounge at Casa Maderas',
+'Aerial view of Casa Maderas by the coast',
+'Group yoga class in an open-air space',
+'Group practicing yoga outdoors by the beach',
+'Surfer riding a wave in Guanacaste',
+'Surfer riding a wave in Costa Rica',
+'Surfer riding a wave in Tamarindo',
+'Surfer riding a wave in Guanacaste',
+'Surfer beneath the rock formation at Witch’s Rock',
+'Surfer riding a wave in front of Witch’s Rock',
+'Group doing surf training exercises',
+'Surfer riding a wave in Costa Rica',
+'Surfer on a board in the ocean',
+'Turquoise wave seen from above, used as a decorative background'
 ],
 retreatDetails: {
 aboutHeading: 'What are WavePoint retreats?',
@@ -481,6 +539,8 @@ yoga: [
 'After energizing activities, relax in our shared space, where sharing experiences is part of the journey. Enjoy a healthy dinner and good conversation.',
 'Our yoga instructors help you feel more confident and flexible in the water, ready for new challenges.'
 ],
+surfTripsHeading: 'Guided surf trips to the best waves in the area',
+surfTrips: 'We take you to explore and surf the area’s best breaks in a private session, with all boards included and an experienced local instructor.',
 surfHeading: 'Surf coaching, photos and video analysis',
 surf: 'You will not only surf; you will improve. Our coaching team gives you personalized feedback in each session. We also document your progress with professional photos in and out of the water, and review each session to focus on technique and make the experience more rewarding.',
 boatHeading: 'Boat trip to Witch’s Rock',
@@ -670,10 +730,9 @@ const included = details.included.map(item => `<li>${esc(item)}</li>`).join('');
 const notIncluded = details.notIncluded.map(item => `<li>${esc(item)}</li>`).join('');
 const conditions = details.conditions.map(item => `<li>${esc(item)}</li>`).join('');
 const itinerary = details.itinerary.map((day, index) => `<article class="retreat-day"><span class="retreat-day-number">${String(index + 1).padStart(2, '0')}</span><div><h4>${esc(day.title)}</h4><ul>${day.activities.map(activity => `<li>${esc(activity)}</li>`).join('')}</ul></div></article>`).join('');
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
-const wavePhoto = isEn ? 'Surfer riding a wave in Costa Rica' : 'Surfista tomando una ola en Costa Rica';
+const photo = index => `<img src="${esc(service.images[index])}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`;
+const photoGrid = (indexes, className) => `<div class="retreat-photo-grid ${className}">${indexes.map(photo).join('')}</div>`;
 const introAlt = esc((isEn ? service.imageAltsEn?.[0] : service.imageAlts?.[0]) || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
-const yogaPhoto = esc(isEn ? 'Woman practicing yoga on a beach by the ocean' : 'Mujer practicando yoga frente al mar en la playa');
 const priceFact = details.facts.find(fact => fact.label === (isEn ? 'Price' : 'Precio')) || details.facts[details.facts.length - 1];
 const durationFact = details.facts.find(fact => fact.label === (isEn ? 'Duration' : 'Duración'));
 return `<div class="retreat-editorial">
@@ -689,20 +748,28 @@ return `<div class="retreat-editorial">
   </section>
   <div class="retreat-experience-grid">
     <section class="retreat-experience-card retreat-destination-card">
-      <img src="${esc(service.images[1])}" alt="${esc((isEn ? service.imageAltsEn?.[1] : service.imageAlts?.[1]) || introAlt)}" loading="lazy" />
+      ${photoGrid([1, 2], 'retreat-destination-photos')}
       <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-stay-card">
-      <img src="assets/img/hotels/stayandhotels5_resultado.webp" alt="${isEn ? 'Tropical wooden accommodation with an outdoor walkway' : 'Alojamiento tropical de madera con pasarela exterior'}" loading="lazy" />
+      ${photoGrid([3, 4, 5, 6], 'retreat-stay-photos')}
       <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-yoga-card">
-      <img src="assets/img/optimized/yoga-beach-woman.jpg" alt="${yogaPhoto}" loading="lazy" />
+      ${photoGrid([7, 8], 'retreat-yoga-photos')}
       <div><p class="retreat-card-kicker">${isEn ? 'MOVE & RESET' : 'MOVIMIENTO Y PAUSA'}</p><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div>
     </section>
+    <section class="retreat-experience-card retreat-surf-trips-card">
+      ${photoGrid([9, 10, 11, 12], 'retreat-surf-trip-photos')}
+      <div><p class="retreat-card-kicker">${isEn ? 'GUIDED SURF TRIPS' : 'SURF TRIPS GUIADOS'}</p><h3>${esc(details.surfTripsHeading)}</h3><p>${esc(details.surfTrips)}</p></div>
+    </section>
+    <section class="retreat-experience-card retreat-boat-card">
+      ${photoGrid([13, 14], 'retreat-boat-photos')}
+      <div><p class="retreat-card-kicker">${isEn ? 'BOAT TRIP · ADVENTURE' : 'TOUR EN BARCO · AVENTURA'}</p><h3>${esc(details.boatHeading)}</h3><p>${esc(details.boat)}</p></div>
+    </section>
     <section class="retreat-experience-card retreat-surf-card">
-      <img src="assets/legacy/DSC02807.jpg" alt="${wavePhoto}" loading="lazy" />
-      <div><p class="retreat-card-kicker">${isEn ? 'IN THE WATER' : 'EN EL AGUA'}</p><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p><h4>${esc(details.boatHeading)}</h4><p>${esc(details.boat)}</p></div>
+      ${photoGrid([15, 16, 17], 'retreat-coaching-photos')}
+      <div><p class="retreat-card-kicker">${isEn ? 'COACHING · PHOTOS · VIDEO ANALYSIS' : 'COACHING · FOTOS · VIDEOANÁLISIS'}</p><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p></div>
     </section>
   </div>
   <section class="retreat-summary">
@@ -720,7 +787,6 @@ return `<div class="retreat-editorial">
     <h3>${esc(details.itineraryHeading)}</h3>
     <div class="retreat-itinerary">${itinerary}</div>
   </section>
-  <div class="detail-gallery retreat-gallery">${gallery}</div>
 </div>`;
 }
 function render(service) {
