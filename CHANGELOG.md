@@ -1,5 +1,17 @@
 ## 2026-10-07
 
+### Encuestas de servicios más interactivas
+
+- `services.js`: agregar una barra de progreso bilingüe a los formularios de solicitudes, estados de respuesta y conteo dinámico sin eliminar preguntas, opciones, campos opcionales ni el flujo existente hacia WhatsApp.
+- `styles.css`: mejorar la lectura y sensación de interacción de las opciones con estados seleccionados, foco visible, confirmación visual por pregunta, microanimaciones y soporte para `prefers-reduced-motion`.
+- Validación: revisar el renderizado de todos los tipos de pregunta, confirmar que el marcado nuevo se monta en el formulario compartido y ejecutar `git diff --check`. La validación con `node --check` queda pendiente porque Node.js no está instalado en este entorno.
+
+### Logo de Servicios con aura del hero y protocolo de continuidad para IA
+
+- `index.html`, `piloto.html` y `styles.css`: agrandar moderadamente el segundo logo ubicado después de las tarjetas de servicios; envolverlo en una pieza visual con las mismas ondas, brillo, sombra y entrada elástica del logo del hero, con tamaños adaptados a tablet y móvil sin alterar el hero y manteniendo sincronizada la vista piloto.
+- `README.md`, `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `PROJECT_GUIDE.md` y `AUDIT.md`: dejar un punto de entrada común para cualquier IA, reglas de colaboración en español, flujo de inspección/implementación/validación, restricciones del producto y estado de la auditoría.
+- Validación: comprobación de referencias del nuevo marcado, revisión de reglas responsive y `git diff --check`. `node --check` quedó documentado como validación requerida, pero no pudo ejecutarse en este entorno porque Node.js no está instalado.
+
 ### Corrección de fotos de Avellanas y Capitán Suizo / Avellanas and Capitán Suizo photo correction
 
 - `guia-playas.html` y `guide-i18n.js`: reemplazar la foto del mono aullador en la tarjeta de Playa Avellanas por `assets/img/guide/beaches/playa-avellanas.jpg` y actualizar el texto alternativo ES/EN.
