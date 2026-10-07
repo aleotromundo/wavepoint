@@ -2,8 +2,17 @@
 ### Servicios — título, descripción y fotos en orden editorial
 - En los servicios estándar, excepto Clases de surf, el contenido ahora queda en una secuencia vertical clara: título completo, descripción con contraste reforzado y galería debajo.
 - Las galerías estándar ocupan todo el ancho disponible, usan fotos más grandes y mantienen un tratamiento específico para escritorio, tablet y celular.
-- Clases de surf conserva su composición y estilos propios; alojamiento y retiros mantienen sus plantillas editoriales especiales.
+- Clases de surf conserva su composición y estilos propios. Alojamiento y Retiros también pasan a priorizar copy antes de fotos dentro de sus plantillas especiales.
 - Actualizadas las cachés de `service-detail.html` para CSS y `services.js`.
+
+### Cobertura de copy antes de fotos en plantillas especiales
+- Alojamiento ahora muestra nombre, resumen y contenido antes de la galería de cada opción.
+- Retiros presenta el copy principal y el texto de cada experiencia antes de sus fotos, con paneles de mejor contraste.
+
+### Galerías con tamaños y encuadres consistentes
+- Las galerías estándar usan ahora un mosaico de cuatro fotos de proporciones equivalentes, en lugar de una imagen dominante y otras más pequeñas.
+- Las fotos mantienen `object-fit: cover` y encuadre centrado en escritorio, tablet y celular para evitar sujetos corridos o bordes sin contenido.
+- Alojamiento conserva sus mosaicos cuadrados y Retiros centra sus fotos; también se reforzó el contraste del texto principal de Retiros.
 
 ## 2026-10-07
 ### Preloader real y navegación de logos
