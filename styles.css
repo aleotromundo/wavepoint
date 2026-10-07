@@ -3782,6 +3782,12 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
    WIDGET DEL CLIMA MODO SAMSUNG WEATHER / ONE UI PRO
    ========================================================= */
 
+/* Al llegar desde Colaboradores, conservar visible el encabezado externo y su línea. */
+#aliados { scroll-margin-top: 148px; }
+@media (max-width: 640px) {
+  #aliados { scroll-margin-top: 118px; }
+}
+
 /* Contenedor principal de cristal esmerilado */
 .weather-card {
   position: relative !important;

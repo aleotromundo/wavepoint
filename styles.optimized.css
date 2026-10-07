@@ -1705,6 +1705,10 @@ to{transform:translateX(-50%)}
 .ally-tile small{font-size:10px!important}
 .ally-tile span{padding:10px 12px!important}
 }
+#aliados{scroll-margin-top:148px}
+@media (max-width:640px){
+#aliados{scroll-margin-top:118px}
+}
 .weather-card{position:relative!important;overflow:hidden!important;width:min(100%,390px)!important;border-radius:24px!important;border:1px solid rgba(179,237,230,.28)!important;background:radial-gradient(circle at 85% 15%,rgba(0,210,225,.22),transparent 48%),radial-gradient(circle at 12% 88%,rgba(243,182,75,.14),transparent 42%),linear-gradient(155deg,rgba(6,32,46,.88),rgba(4,18,27,.94))!important;backdrop-filter:blur(28px) saturate(190%)!important;-webkit-backdrop-filter:blur(28px) saturate(190%)!important;box-shadow:0 24px 60px rgba(0,10,16,.5),inset 0 1px 1px rgba(255,255,255,.35),inset 0 -1px 2px rgba(0,0,0,.5)!important;animation:samsung-ambient-float 6s ease-in-out infinite alternate!important}
 @keyframes samsung-ambient-float{
 0%{transform:translateY(0)}
