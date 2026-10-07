@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Invalidación de caché del fix de overscroll
+- Páginas HTML del sitio: actualizar la versión de `styles.optimized.css` para que Vercel y los navegadores carguen las reglas nuevas de fondo raíz y overscroll, en lugar de conservar la copia anterior.
+- Validación: confirmar que no queden referencias `20261007-22`, ejecutar `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### Refuerzo contra el rebote visual táctil
 - `styles.css` y `styles.optimized.css`: aplicar `overscroll-behavior: none` al documento raíz y al cuerpo, fijar la altura del lienzo `html`, establecer el esquema oscuro del viewport y mantener un fondo oscuro sólido para evitar franjas blancas arriba o abajo en Chromebook, tablets y escritorio.
 - Validación: `node --check` sobre los scripts globales y `git diff --check`.
