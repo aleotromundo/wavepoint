@@ -1632,17 +1632,20 @@ footer a.footer-logo-link{display:inline-flex;align-items:center;width:fit-conte
 #camaras .cam-link:not(.primary){background:rgba(255,255,255,.1);color:#8fe9ee}
 #camaras .cam-link:not(.primary):hover{background:rgba(255,255,255,.18)}
 #camaras .cam-action,#camaras .cam-action *{color:#8fe9ee}
-.services-logo-wrap{grid-column:span 3;position:relative;display:grid;place-items:center;width:min(88%,370px);min-height:410px;justify-self:center;align-self:stretch;isolation:isolate;animation:logo-wave-arrive 1.25s cubic-bezier(.2,.8,.25,1) both;transform-origin:center bottom}
+.services-logo-wrap{grid-column:span 3;position:relative;display:grid;place-items:center;width:min(100%,470px);min-height:470px;justify-self:center;align-self:stretch;isolation:isolate;transform-origin:center bottom;cursor:pointer}
+.services-logo-wrap.is-arriving{animation:logo-wave-arrive 1.25s cubic-bezier(.2,.8,.25,1) both}
+.services-logo-wrap.is-user-replay{animation:logo-wave-arrive .85s cubic-bezier(.2,.8,.25,1) both}
+.services-logo-wrap:focus-visible{outline:2px solid var(--wp-aqua);outline-offset:5px;border-radius:8px}
 .services-logo-wrap .logo-wave-aura{inset:-14% -10% -8%}
 .services-logo-wrap .services-watermark{grid-column:auto;width:100%;height:auto;min-height:0;max-height:100%;object-fit:contain;opacity:.92;filter:drop-shadow(0 8px 20px rgba(0, 167, 189, .22));pointer-events:none;transform:none;position:relative;z-index:1}
 @media (max-width:980px){
-.services-logo-wrap{grid-column:1/-1;width:min(72%,320px);min-height:300px}
+.services-logo-wrap{grid-column:1/-1;width:min(84%,390px);min-height:350px}
 }
 @media (max-width:640px){
-.services-logo-wrap{grid-column:1;width:min(82vw,270px);min-height:220px;margin:8px auto 0}
+.services-logo-wrap{grid-column:1;width:min(88vw,320px);min-height:260px;margin:8px auto 0}
 }
 @media (prefers-reduced-motion:reduce){
-.services-logo-wrap{animation:none}
+.services-logo-wrap.is-arriving,.services-logo-wrap.is-user-replay{animation:none}
 }
 .service-img{background:0 0}
 .service-img img{object-fit:cover;background:0 0}
