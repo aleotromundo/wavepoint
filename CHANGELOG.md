@@ -1,4 +1,12 @@
 ## 2026-10-07
+### Corrección definitiva del logo de WhatsApp
+- Unificado el SVG de WhatsApp en todas las páginas con la versión correcta del header de la home.
+- Corregida la variante deformada que había quedado en `service-detail.html` y `Enlaces/casa-aura.html`.
+- Fijada la proporción cuadrada del ícono en el header y en el botón flotante.
+- CSS cacheado actualizado a `20261007-35`.
+- Validación: todas las variantes HTML usan ahora el mismo SVG, `node --check` y `git diff --check`.
+
+## 2026-10-07
 ### Clases de surf — composición corregida
 - Rehecha la sección principal con una composición abierta inspirada en Estadías y hoteles.
 - Galería integrada al bloque introductorio, con tres fotos grandes y ampliables.

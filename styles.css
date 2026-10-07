@@ -7750,3 +7750,17 @@ footer a {
   .surf-lesson-detail-page .surf-lesson-survey-intro { margin-top: 36px; padding: 18px; }
   .surf-lesson-detail-page .detail-request { margin-top: 26px; padding: 20px; border-radius: 18px; }
 }
+
+/* WhatsApp: conservar proporción del SVG en header y botón flotante. */
+.navlinks .header-whatsapp-link svg,
+.whatsapp-float .whatsapp-brand-icon {
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  aspect-ratio: 1 / 1;
+  preserve-aspect-ratio: xMidYMid meet;
+}
+@media (max-width: 980px) {
+  .whatsapp-float .whatsapp-brand-icon { flex-basis: 46px; width: 46px; height: 46px; }
+}
