@@ -7528,3 +7528,25 @@ footer a {
   transform: translateY(-2px);
 }
 .guide-destination[data-destination-href] { cursor: pointer; }
+
+/* Acabado final: vidrio translúcido para que el fondo del hero se perciba detrás. */
+.weather-card {
+  background:
+    radial-gradient(circle at 86% 0%, rgba(71, 218, 218, .2), transparent 46%),
+    radial-gradient(circle at 8% 100%, rgba(243, 182, 75, .1), transparent 42%),
+    linear-gradient(145deg, rgba(12, 78, 91, .4), rgba(4, 27, 40, .5)) !important;
+  border-color: rgba(225, 255, 251, .3) !important;
+  backdrop-filter: blur(18px) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(155%) !important;
+  box-shadow:
+    0 24px 60px rgba(0, 10, 16, .34),
+    inset 0 1px 1px rgba(255, 255, 255, .28),
+    inset 0 -1px 2px rgba(0, 0, 0, .22) !important;
+}
+.weather-card .weather-head,
+.weather-card .weather-main {
+  background-color: rgba(255, 255, 255, .025) !important;
+}
+.weather-card .w-row {
+  background: rgba(255, 255, 255, .055) !important;
+}
