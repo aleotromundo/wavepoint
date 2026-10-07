@@ -3251,14 +3251,14 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 
 .navlinks { gap: 26px; font-family: var(--font-menu); font-size: 19px; font-weight: 500; letter-spacing: .01em; }
 .navlinks>a, .dropbtn { padding: 9px 3px; }
-.menu a { font-family: var(--font-menu); font-size: 16px; font-weight: 500; padding: 12px 14px; }
-.dropdown .menu { left: auto; right: 0; }
+.menu a { font-family: var(--font-menu); font-size: 16px; font-weight: 500; padding: 10px 14px; text-align: center; line-height: 1.2; }
+.dropdown .menu { left: auto; right: 0; min-width: 0; width: max-content; max-width: min(260px, calc(100vw - 32px)); }
 
 .mobile-panel { max-height: 100dvh; overflow-y: auto; padding-bottom: 100px; }
 .mobile-menu a,
 .mobile-dropdown-link,
 .mobile-dropdown-toggle { font-family: var(--font-menu); font-size: 21px; font-weight: 500; text-transform: none; letter-spacing: 0; padding: 16px; }
-.mobile-submenu a { font-size: 17px; padding: 12px 14px; }
+.mobile-submenu a { font-size: 17px; padding: 11px 14px; text-align: center; line-height: 1.2; }
 
 @media (min-width: 981px) and (max-width: 1180px) {
   .navlinks { gap: 18px; font-size: 17px; }

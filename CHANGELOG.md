@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Ajuste visual del menú de colaboradores
+- `styles.css` y `styles.optimized.css`: hacer que el cuadro desktop se adapte al contenido, reducir el espaciado y centrar los nombres; aplicar el mismo centrado y espaciado compacto al submenú móvil.
+- Validación: `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### Nombres limpios en el menú de colaboradores
 - `index.html`: quitar las ubicaciones redundantes del menú de Partners/Colaboradores en desktop y móvil, dejando únicamente el nombre de cada lugar.
 - Validación: confirmar que ambos submenús no contienen Tamarindo, Palm Beach, Casitas ni Langosta; ejecutar `git diff --check` y las comprobaciones de sintaxis JavaScript.
