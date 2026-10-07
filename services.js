@@ -705,6 +705,47 @@ modalClose: 'Close survey'
 };
 const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
+function setupQuickRequestPanel(form) {
+  if (!form) return;
+  const panel = document.getElementById('detailRequestPanel');
+  const launcher = document.getElementById('quickRequestLauncher');
+  const close = document.getElementById('quickRequestClose');
+  const next = form.querySelector('[data-survey-next]');
+  if (!panel || !launcher || !close || !next) return;
+  const units = [...form.querySelectorAll('[data-survey-question]')];
+  let visibleCount = Math.min(2, units.length);
+  const updateSteps = () => {
+    units.forEach((unit, index) => unit.classList.toggle('quick-step-hidden', index >= visibleCount));
+    const complete = visibleCount >= units.length;
+    next.hidden = complete;
+    next.disabled = complete;
+    const submit = form.querySelector('.detail-submit');
+    if (submit) submit.disabled = !complete;
+    if (!complete) next.innerHTML = `${lang === 'en' ? 'Continue' : 'Continuar'} <span aria-hidden="true">→</span>`;
+  };
+  const open = () => {
+    panel.classList.add('is-open');
+    launcher.setAttribute('aria-expanded', 'true');
+    panel.setAttribute('aria-modal', 'true');
+    document.body.classList.add('quick-request-is-open');
+    window.setTimeout(() => form.querySelector('.quick-step-hidden') ? form.querySelector('[data-survey-question]:not(.quick-step-hidden) input, [data-survey-question]:not(.quick-step-hidden) textarea')?.focus() : form.querySelector('input, textarea')?.focus(), 180);
+  };
+  const hide = () => {
+    panel.classList.remove('is-open');
+    launcher.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-modal', 'false');
+    document.body.classList.remove('quick-request-is-open');
+  };
+  launcher.addEventListener('click', open);
+  close.addEventListener('click', hide);
+  next.addEventListener('click', () => {
+    visibleCount = Math.min(units.length, visibleCount + 2);
+    updateSteps();
+    units[Math.min(visibleCount - 1, units.length - 1)]?.querySelector('input, textarea')?.focus();
+  });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && panel.classList.contains('is-open')) hide(); });
+  updateSteps();
+}
 function setupSurveyInteractions(form) {
 if (!form) return;
 const progress = form.querySelector('[data-survey-progress]');
@@ -905,7 +946,7 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderRetreatStory(service)
 : `<p class="service-page-kicker">${lang === 'en' ? 'THE EXPERIENCE' : 'LA EXPERIENCIA'}</p><h2>${lang === 'en' ? 'A plan designed for your trip.' : 'Un plan pensado para tu viaje.'}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('')}</div>`;
 const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : '';
- document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><aside class="detail-request" id="detailRequestPanel"><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+ document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.cardText)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="quickRequestTitle"><div class="quick-request-panel-bar"><div><p class="service-page-kicker">${lang === 'en' ? 'QUICK REQUEST' : 'CONSULTA RÁPIDA'}</p><h2 id="quickRequestTitle">${lang === 'en' ? 'Let’s find the right option.' : 'Encontramos la opción para vos.'}</h2></div><button class="quick-request-close" id="quickRequestClose" type="button" aria-label="${lang === 'en' ? 'Close quick request' : 'Cerrar consulta rápida'}">×</button></div><div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2>${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="survey-next-step" type="button" data-survey-next>${lang === 'en' ? 'Continue' : 'Continuar'} <span aria-hidden="true">→</span></button><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
 if (service.id === 'pack-ajustable') {
 const packGrid = document.querySelector('.pack-service-grid');
 const count = document.querySelector('[data-pack-selection]');
@@ -919,6 +960,7 @@ packGrid?.addEventListener('change', updatePackCount);
 }
 const requestForm = document.getElementById('serviceRequestForm');
 setupSurveyInteractions(requestForm);
+setupQuickRequestPanel(requestForm);
 if (service.id === 'clases-de-surf') {
 const modal = document.getElementById('surfSurveyModal');
 const modalBody = document.getElementById('surfSurveyModalBody');
