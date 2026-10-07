@@ -25,6 +25,7 @@
 ### Servicios — logo flotante y separación de formulario
 - Se agregó nuevamente el logo flotante WavePoint a todas las páginas de detalle de servicios, con enlace a Inicio y posición segura sobre WhatsApp/chat.
 - Se verificó la separación real entre galería y formulario en Yoga, Surf coaching, Clases de surf y Estadías; el margen queda en cero y no en los márgenes antiguos mayores.
+- El logo usa ahora exactamente el componente transparente `collab-floating-brand` de la Guía turística y las páginas de Colaboradores, incluyendo sus ondas y posición responsive; se eliminó la caja custom anterior.
 
 ### Tours en cuatriciclo — galería ATV
 - La galería de ATV ahora incluye dos fotos optimizadas de paseos en cuatriciclo por playa y costa.
