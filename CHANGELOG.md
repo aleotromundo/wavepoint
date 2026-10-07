@@ -1,5 +1,16 @@
 ## 2026-10-07
 
+### Biblioteca de fotos de estadías y servicios / Stays and services photo library
+
+- `assets/img/stays/` y `assets/img/services/`: organizar las fotos activas por alojamiento y servicio; actualizar sus referencias en páginas, datos, estilos y el armador de viajes.
+- Retirar de las galerías de Capitán Suizo y Occidental las fotos repetidas o sin atribución confirmada; dejar Casa Aura sin fotos hasta contar con imágenes verificadas y corregir los textos alternativos ES/EN de Red Door.
+- Mantener sin asignar las fotos heredadas de edificio y piscina sin identificación fiable; usar fotos centradas que llenan sus cuadros y glassmorphism en los paneles de colaboradores.
+- Eliminar únicamente cuatro copias idénticas verificadas por SHA-256; conservar las demás imágenes originales, incluidas las que todavía no tienen uso confirmado.
+- `assets/img/stays/` and `assets/img/services/`: organize active photos by accommodation and service; update references in pages, data, styles and the trip builder.
+- Remove repeated or unverified photos from the Capitán Suizo and Occidental galleries; leave Casa Aura without photos until verified images are available and correct Red Door’s Spanish and English alternative text.
+- Keep legacy building and pool photos with unverified ownership unassigned; center photos to fill their frames and use glassmorphism on collaborator panels.
+- Delete only four SHA-256-verified exact duplicates; retain all other originals, including images whose use is not yet confirmed.
+
 ### Foto repetida en la ficha de Red Door / Duplicate photo on the Red Door page
 
 - `Enlaces/red-door.html`: reemplazar en la galería la imagen repetida de la portada por una foto distinta de la entrada del hotel; actualizar el texto alternativo en español e inglés.
