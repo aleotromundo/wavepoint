@@ -822,7 +822,7 @@ to{background-position:100% 100%}
 .hero-logo-wrap.is-arriving,.logo-wave-aura::after,.logo-wave-aura::before{animation:none}
 }
 .hero-logo-wrap.is-user-replay{animation:logo-wave-arrive .85s cubic-bezier(.2,.8,.25,1) both;transform-origin:center bottom}
-html{background:#071c28;overscroll-behavior-y:none}body{background:#071c28;min-height:100%;overscroll-behavior-y:none}
+html{height:100%;background:#071c28;color-scheme:dark;overscroll-behavior:none!important}body{min-height:100vh;background:#071c28;overscroll-behavior:none!important}
 #camaras{background:linear-gradient(135deg,#0a3443,#0d4650 56%,#092c3b)}
 #camaras:before{background:repeating-radial-gradient(ellipse at 14% 108%,transparent 0 34px,rgba(139,235,224,.11) 36px 38px,transparent 40px 70px),radial-gradient(ellipse at 82% 16%,rgba(195,245,234,.12),transparent 42%)}
 #aliados .section-title,#camaras .section-title,#guia .section-title,#servicios .section-title,.after-surf .section-title{color:#f3fbf7}
