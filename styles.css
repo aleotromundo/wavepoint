@@ -6928,3 +6928,25 @@ html.safari-stable #servicios .service-card .service-body p {
 @media (prefers-reduced-motion: reduce) {
   .site-footer .foot-grid > div::after { animation: none; }
 }
+
+/* Variante horizontal del cromo: la luz cruza cada ficha de izquierda a derecha. */
+.site-footer .foot-grid > div::after {
+  top: 28%;
+  left: -125%;
+  width: 170%;
+  height: 44%;
+  transform: translateX(-120%) rotate(-7deg);
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(255,255,255,.03) 22%,
+    rgba(222,255,249,.22) 43%,
+    rgba(255,255,255,.38) 50%,
+    rgba(162,244,232,.14) 58%,
+    transparent 82%);
+}
+@keyframes footer-chrome-pass {
+  0%, 8% { opacity: 0; transform: translateX(-120%) rotate(-7deg); }
+  12% { opacity: .72; }
+  23% { opacity: .9; transform: translateX(115%) rotate(-7deg); }
+  31%, 100% { opacity: 0; transform: translateX(135%) rotate(-7deg); }
+}
