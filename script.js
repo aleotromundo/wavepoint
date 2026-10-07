@@ -73,6 +73,8 @@
 }
 
   async function loadWeather(){
+    // El widget 3D ya gestiona su propio clima; no ejecutar el widget legacy en paralelo.
+    if(document.getElementById('wx3d')) return;
     const lat=10.2993, lon=-85.8371;
     const icon=document.getElementById('weatherIcon');
     if(!icon || !document.getElementById('temp')) return;
@@ -1454,15 +1456,27 @@
   bindSiteAssistant();
   applyTranslations();
   bindMobileMenu();
-  bindGuideImageModal();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();
-  bindAlliesTickerInteraction();
-  bindWeatherCardDrag();
-  bindScrollReveals();
-  bindServiceCardReveals();
-  bindSpotModal();
-  applyCameraState(); loadWeather(); bindCameraModal(); bindAdModal(); setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
+  applyCameraState();
+  loadWeather();
+
+  // No bloqueamos el primer render con interacciones y reveals secundarios.
+  const runWhenIdle=callback=>{
+    if('requestIdleCallback' in window) window.requestIdleCallback(callback,{timeout:1200});
+    else window.setTimeout(callback,120);
+  };
+  runWhenIdle(()=>{
+    bindGuideImageModal();
+    bindAlliesTickerInteraction();
+    bindWeatherCardDrag();
+    bindScrollReveals();
+    bindServiceCardReveals();
+    bindSpotModal();
+    bindCameraModal();
+    bindAdModal();
+  });
+  setInterval(()=>{ applyCameraState(); const localTime=document.getElementById('localTime'); if(localTime) localTime.textContent=formatTimeCR(); }, 30000);
 
 
 // Soporte automatico para multiples formatos de imagen (.webp, .jpg, .jpeg)

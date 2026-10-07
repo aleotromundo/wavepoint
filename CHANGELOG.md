@@ -1,4 +1,13 @@
 ## 2026-10-07
+### Inicialización más liviana del JavaScript
+- `script.js`: no ejecutar el clima legacy cuando está presente el widget 3D, evitando dos cargas y dos actualizaciones para el mismo gadget.
+- Diferir hasta el primer momento idle los modales, ticker, reveals, seguimiento de tarjetas y demás interacciones secundarias.
+- Mantener inmediatos el video adaptativo, navegación móvil, traducciones, logo y estado esencial de cámaras.
+- No se eliminan efectos: solo se inicializan después del primer render para mejorar fluidez.
+- Páginas HTML: actualizar JavaScript a `20261007-21`.
+- Validación: `node --check script.js` y `git diff --check`.
+
+## 2026-10-07
 ### Evitar la descarga doble de video en móviles
 - `index.html` y `piloto.html`: `videohero0.mp4` deja de tener `src` directo y pasa a `data-src`, por lo que el navegador no lo descarga antes de que JavaScript seleccione el video móvil.
 - En celular se descarga únicamente `videohero1.mp4`; en escritorio JavaScript sigue cargando el carrusel completo cuando corresponde.
