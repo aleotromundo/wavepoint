@@ -1,5 +1,5 @@
 # Casa Aura
 
-No verified Casa Aura photos are currently available in the repository. Add only images confirmed by the property or supplied by the user.
+The gallery includes the Casa Aura image identified by the user and two photos stored in this property-specific folder. Keep these photos assigned only to Casa Aura.
 
-Todavía no hay fotos verificadas de Casa Aura en el repositorio. Agregar únicamente imágenes confirmadas por el alojamiento o proporcionadas por el usuario.
+La galería incluye la imagen de Casa Aura identificada por el usuario y dos fotos guardadas en esta carpeta específica del alojamiento. Mantener estas fotos asignadas únicamente a Casa Aura.
