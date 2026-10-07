@@ -6637,11 +6637,7 @@ html.safari-stable #servicios .service-card .service-body p {
   margin-top: -110px;
 }
 .about-hero-inner > .services-logo-wrap-rates .services-watermark { width: 100%; }
-.about-hero-inner > h2,
-.about-hero-inner > .about-intro { max-width: 58%; }
 @media (max-width: 760px) {
-  .about-hero-inner > h2,
-  .about-hero-inner > .about-intro { max-width: 100%; }
   .about-hero-inner > .services-logo-wrap-rates {
     position: relative;
     top: auto;

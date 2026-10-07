@@ -2414,8 +2414,6 @@ to{filter:brightness(1.18)}
 }
 .about-hero-inner>.services-logo-wrap-rates{grid-column:auto;position:absolute;top:50%;right:clamp(20px,4vw,42px);width:min(34%,320px);min-height:220px;margin-top:-110px}
 .about-hero-inner>.services-logo-wrap-rates .services-watermark{width:100%}
-.about-hero-inner>.about-intro,.about-hero-inner>h2{max-width:58%}
 @media (max-width:760px){
-.about-hero-inner>.about-intro,.about-hero-inner>h2{max-width:100%}
 .about-hero-inner>.services-logo-wrap-rates{position:relative;top:auto;right:auto;width:min(82vw,290px);min-height:180px;margin:14px auto 0}
 }
