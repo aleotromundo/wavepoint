@@ -35,6 +35,10 @@
 - Corregido el selector de las tarjetas de servicios de la portada: “Más información →” ahora usa tipografía compacta, altura reducida y una sola línea en escritorio y móvil.
 - Actualizada la caché de la portada para que el cambio sea visible sin depender de estilos antiguos.
 
+### Parallax móvil reactivado
+- Reactivadas las capas fotográficas fijas en touch/mobile para que las imágenes acompañen el desplazamiento con efecto parallax.
+- Eliminado el override que convertía `.px-bg` en una capa absoluta estática y actualizada la caché de las páginas principales.
+
 ## 2026-10-07
 ### Imágenes ampliables en todo el sitio
 - El modal de imágenes ahora incluye Retiros, galerías de servicios, alojamientos, guía, colaboradores y tarjetas visuales.

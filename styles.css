@@ -6389,9 +6389,8 @@ footer a {
   .service-rates tbody td::before { font-size: 12px; }
 }
 
-/* Tablet/touch stability: avoid fixed-background repaints during fast scroll. */
+/* Touch/mobile: keep the photographic layers fixed so the section parallax remains active. */
 @media (hover: none), (pointer: coarse), (max-width: 1024px) {
-  body,
   .hero,
   .services,
   .sponsor-strip,
@@ -6403,10 +6402,10 @@ footer a {
   .about-page .about-gallery-section,
   .about-page .about-closing,
   .px-bg {
-    background-attachment: scroll !important;
+    background-attachment: fixed !important;
   }
   .px-bg {
-    position: absolute;
+    position: fixed;
     inset: 0;
   }
 }
@@ -7600,7 +7599,7 @@ footer a {
 @media (hover: none) and (pointer: coarse), (max-width: 640px) {
   .hero-video-stack { display: block !important; }
   .hero-video:not(.is-active) { display: none !important; }
-  .hero { background-attachment: scroll !important; }
+  .hero { background-attachment: fixed !important; }
 }
 
 /* Clases de surf: presentación editorial basada en Estadías y hoteles. */
