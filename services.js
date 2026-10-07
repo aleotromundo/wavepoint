@@ -43,7 +43,14 @@ imageAlt: 'Entrada de Hotel Tamalodge entre jardines',
 imageAlts: ['Entrada de Hotel Tamalodge entre jardines'],
 imageAltsEn: ['Hotel Tamalodge entrance among the gardens'],
 details: ['Habitación privada con baño privado.'],
-amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong']
+amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong'],
+en: {
+category: 'BUDGET OPTION',
+priceNote: 'per room · per night',
+summary: 'A private room with a private bathroom for a simple, functional stay.',
+details: ['Private room with a private bathroom.'],
+amenities: ['Pool', 'Shared kitchen', 'WiFi', 'Ping-pong table']
+}
 },
 {
 id: 'casa-aura',
@@ -64,7 +71,19 @@ details: [
 'Habitación cuádruple con terraza — USD 130 · dos camas matrimoniales · baño privado · terraza · desayuno incluido · 1 habitación.',
 'Apartamento completo — USD 210 · capacidad para 8 personas · dos habitaciones con camas matrimoniales y literas · un baño · living y cocina · 2 apartamentos.'
 ],
-amenities: ['Frente al mar', 'Desayuno incluido según la unidad']
+amenities: ['Frente al mar', 'Desayuno incluido según la unidad'],
+en: {
+category: 'MID-RANGE OPTION',
+priceNote: 'per unit · per night',
+summary: 'Beachfront accommodation with rooms, apartments, and breakfast included depending on the unit.',
+details: [
+'Double room — USD 80 · private bathroom · breakfast included · 1 room.',
+'Quadruple room — USD 120 · one double bed and one bunk bed · private bathroom · breakfast included · 3 rooms.',
+'Quadruple room with terrace — USD 130 · two double beds · private bathroom · terrace · breakfast included · 1 room.',
+'Full apartment — USD 210 · sleeps 8 · two bedrooms with double beds and bunk beds · one bathroom · living room and kitchen · 2 apartments.'
+],
+amenities: ['Beachfront', 'Breakfast included depending on the unit']
+}
 },
 {
 id: 'casa-madera',
@@ -83,7 +102,21 @@ details: [
 '1 de octubre al 30 de noviembre: USD 250 · estadía mínima de 2 noches.',
 'Resto de las fechas: USD 300 · estadía mínima de 2 noches.'
 ],
-amenities: ['Frente al mar', 'Tarifas para hasta 10 personas, incluidos adultos y niños', 'Máximo de 5 personas adicionales · capacidad total de 15 personas', 'Semana Santa: consultar tarifas especiales']
+amenities: ['Frente al mar', 'Tarifas para hasta 10 personas, incluidos adultos y niños', 'Máximo de 5 personas adicionales · capacidad total de 15 personas', 'Semana Santa: consultar tarifas especiales'],
+en: {
+category: 'GROUP OPTION',
+priceNote: 'per night · up to 10 guests',
+summary: 'A beachfront house for groups, with rates that vary by season.',
+details: [
+'December 24 to January 2: USD 500 · 5-night minimum stay.',
+'January 2 to February 2: USD 400 · 5-night minimum stay.',
+'February 3 to April 30: USD 350 · 3-night minimum stay · except Easter week.',
+'July 1 to 15: USD 350 · 3-night minimum stay.',
+'October 1 to November 30: USD 250 · 2-night minimum stay.',
+'All other dates: USD 300 · 2-night minimum stay.'
+],
+amenities: ['Beachfront', 'Rates include up to 10 guests, adults and children', 'Up to 5 additional guests · 15 guests total', 'Ask about special Easter week rates']
+}
 },
 {
 id: 'capitan-suizo',
@@ -95,7 +128,14 @@ imageAlt: 'Vista aérea del hotel Capitán Suizo junto a la playa',
 imageAlts: ['Vista aérea del hotel Capitán Suizo junto a la playa', 'Playa frente a Capitán Suizo'],
 imageAltsEn: ['Aerial view of Hotel Capitan Suizo beside the beach', 'Beach in front of Capitan Suizo'],
 details: ['Tarifa: USD 600 por noche.', 'Consultar disponibilidad.'],
-amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios']
+amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios'],
+en: {
+category: 'DELUXE OPTION',
+priceNote: 'per night · check availability',
+summary: 'A beachfront hotel with wellness services, a pool, and spaces to enjoy your stay.',
+details: ['Rate: USD 600 per night.', 'Please check availability.'],
+amenities: ['Beachfront hotel', 'Outdoor pool', 'Spa and massage services', 'Gardens', 'Meeting rooms', 'Shops', 'Private parking', 'WiFi in the business center']
+}
 }
 ],
 questions: [
@@ -700,16 +740,18 @@ const type = question.type === 'number' ? 'number' : question.type === 'money' ?
 return `<label class="detail-question detail-field" for="${id}"><span>${esc(question.label)} ${optional}</span><${question.type === 'textarea' ? 'textarea' : 'input'} id="${id}" name="${question.id}" type="${type}" placeholder="${esc(question.placeholder || '')}" ${question.optional ? '' : 'required'}></${question.type === 'textarea' ? 'textarea' : 'input'}></label>`;
 }
 function renderAccommodationOption(option, index) {
+const isEn = lang === 'en';
+const localized = isEn ? option.en || option : option;
 const gallery = option.images.map((image, imageIndex) => {
 const localizedAlt = lang === 'en' ? option.imageAltsEn?.[imageIndex] : option.imageAlts?.[imageIndex];
 return `<img src="${image}" alt="${esc(localizedAlt || `${option.imageAlt} · ${lang === 'en' ? 'view' : 'vista'} ${imageIndex + 1}`)}" loading="lazy" />`;
 }).join('');
-const details = option.details.map(detail => `<li>${esc(detail)}</li>`).join('');
-const amenities = option.amenities.map(item => `<li>${esc(item)}</li>`).join('');
-const detailsHeading = lang === 'en' ? 'Options & rates' : 'Opciones y tarifas';
-const amenitiesHeading = lang === 'en' ? 'Services & conditions' : 'Servicios y condiciones';
+const details = localized.details.map(detail => `<li>${esc(detail)}</li>`).join('');
+const amenities = localized.amenities.map(item => `<li>${esc(item)}</li>`).join('');
+const detailsHeading = isEn ? 'Options & rates' : 'Opciones y tarifas';
+const amenitiesHeading = isEn ? 'Services & conditions' : 'Servicios y condiciones';
 const galleryMarkup = gallery ? `<div class="accommodation-gallery">${gallery}</div>` : '';
-return `<article class="accommodation-card accommodation-card-${index + 1}" id="accommodation-${esc(option.id)}">${galleryMarkup}<div class="accommodation-card-body"><p class="accommodation-category">${esc(option.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(option.priceNote)}</span></div></div><p class="accommodation-summary">${esc(option.summary)}</p><div class="accommodation-columns"><div><h4>${detailsHeading}</h4><ul>${details}</ul></div><div><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></div></div></div></article>`;
+return `<article class="accommodation-card accommodation-card-${index + 1}" id="accommodation-${esc(option.id)}">${galleryMarkup}<div class="accommodation-card-body"><p class="accommodation-category">${esc(localized.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(localized.priceNote)}</span></div></div><p class="accommodation-summary">${esc(localized.summary)}</p><div class="accommodation-columns"><div><h4>${detailsHeading}</h4><ul>${details}</ul></div><div><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></div></div></div></article>`;
 }
 function renderAccommodationStory(service) {
 const isEn = lang === 'en';
