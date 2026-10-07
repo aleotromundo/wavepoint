@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Clases de surf — limpiar encabezados del formulario
+- Quitadas las etiquetas “Consulta rápida” y “Encontramos la opción para vos” de Clases de surf.
+- El resto de los formularios conserva sus encabezados originales.
+- JavaScript cacheado actualizado a `20261007-17`.
+
+## 2026-10-07
 ### Clases de surf — quitar scroll interno
 - Eliminado el `max-height` heredado del contenedor de la primera sección.
 - El contenido y las fotos ahora fluyen con la página, sin marco ni desplazamiento interno.
