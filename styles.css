@@ -6624,3 +6624,19 @@ html.safari-stable #servicios .service-card .service-body p {
     margin-top: 0;
   }
 }
+
+/* El tercer logo acompaña el mensaje principal dentro del panel Nosotros. */
+.about-hero-inner > .services-logo-wrap-rates {
+  grid-column: auto;
+  width: min(72%, 360px);
+  min-height: 220px;
+  margin: 18px auto 0;
+}
+.about-hero-inner > .services-logo-wrap-rates .services-watermark { width: 100%; }
+@media (max-width: 760px) {
+  .about-hero-inner > .services-logo-wrap-rates {
+    width: min(82vw, 290px);
+    min-height: 180px;
+    margin-top: 14px;
+  }
+}
