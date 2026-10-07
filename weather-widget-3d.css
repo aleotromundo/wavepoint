@@ -277,3 +277,21 @@
   .wx3d[data-respect-motion] .wx3d-leaf,
   .wx3d[data-respect-motion] .wx3d-streak { display: none !important; }
 }
+
+/* Vidrio real del widget 3D: las capas traseras ya no tapan la imagen del hero. */
+.wx3d-layer {
+  background: color-mix(in srgb, var(--b2) 22%, transparent) !important;
+}
+.wx3d-layer:nth-child(2) {
+  background: color-mix(in srgb, var(--b2) 15%, transparent) !important;
+}
+.wx3d-layer:nth-child(3) {
+  background: color-mix(in srgb, var(--b2) 9%, transparent) !important;
+}
+.wx3d-bg {
+  background: linear-gradient(160deg,
+    color-mix(in srgb, var(--b1) 36%, transparent),
+    color-mix(in srgb, var(--b2) 27%, transparent)) !important;
+  backdrop-filter: blur(14px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(145%) !important;
+}

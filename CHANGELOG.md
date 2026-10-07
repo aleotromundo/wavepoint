@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Corrección del vidrio visible en el gadget climático
+- `weather-widget-3d.css`: reducir las tres capas traseras del widget 3D de aproximadamente 65% a 22%/15%/9% de mezcla, y bajar el fondo interno a 36%/27%.
+- Mantener el color, blur y saturación del clima, pero permitir que la imagen del hero se vea claramente a través del gadget.
+- Páginas principales: actualizar la caché de `weather-widget-3d.css` a `20261007-6`.
+- Validación: estilos computados inspeccionados en producción, `git diff --check`.
+
+## 2026-10-07
 ### Actualización consciente por cinco toques del logo
 - `script.js`: reemplazar la cuenta regresiva automática por un gesto de cinco toques sobre el logo principal, inspirado en la activación de opciones de desarrollador de Android.
 - Cada toque descuenta uno, muestra brevemente el número restante (`4 → 3 → 2 → 1 → 0`) y el indicador desaparece enseguida.
