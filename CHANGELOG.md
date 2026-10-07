@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Corrección del parallax fijo en dispositivos táctiles
+- `styles.css` y `styles.optimized.css`: convertir las capas `.px-bg` de `position: fixed` a `position: absolute` en touch/tablet y mantener `background-attachment: scroll` para evitar repaints desfasados que dibujan franjas al arrastrar lentamente.
+- Páginas HTML: actualizar la versión cacheada del CSS a `20261007-24`.
+- Validación: `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### Invalidación de caché del fix de overscroll
 - Páginas HTML del sitio: actualizar la versión de `styles.optimized.css` para que Vercel y los navegadores carguen las reglas nuevas de fondo raíz y overscroll, en lugar de conservar la copia anterior.
 - Validación: confirmar que no queden referencias `20261007-22`, ejecutar `node --check` sobre los scripts globales y `git diff --check`.

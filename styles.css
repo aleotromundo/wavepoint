@@ -6390,8 +6390,13 @@ footer a {
   .about-page .about-opening,
   .about-page .about-story,
   .about-page .about-gallery-section,
-  .about-page .about-closing {
+  .about-page .about-closing,
+  .px-bg {
     background-attachment: scroll !important;
+  }
+  .px-bg {
+    position: absolute;
+    inset: 0;
   }
 }
 
