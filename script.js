@@ -1477,3 +1477,57 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
     window.location.href = card.dataset.destinationHref;
   });
 });
+
+// Atajo de actualización: tocar el logo inicia una cuenta regresiva y
+// recarga la página con una URL nueva, sin tocar la preferencia de idioma.
+(function bindLogoCacheRefresh(){
+  const logo=document.querySelector('.hero-logo-wrap');
+  if(!logo) return;
+  let timer=null;
+  let remaining=0;
+  const badge=document.createElement('span');
+  badge.className='logo-refresh-countdown';
+  badge.setAttribute('aria-live','polite');
+  badge.setAttribute('aria-label','Actualizando la página');
+  badge.hidden=true;
+  logo.appendChild(badge);
+
+  const refresh=async()=>{
+    if('caches' in window){
+      try{
+        const cacheNames=await caches.keys();
+        await Promise.all(cacheNames.map(name=>caches.delete(name)));
+      }catch(error){
+        // El caché HTTP del navegador no se puede borrar desde una página;
+        // la URL con timestamp fuerza igualmente una nueva solicitud HTML.
+      }
+    }
+    const url=new URL(window.location.href);
+    url.searchParams.set('wp_refresh',Date.now().toString());
+    window.location.replace(url.toString());
+  };
+
+  const start=()=>{
+    window.clearInterval(timer);
+    remaining=5;
+    badge.textContent=String(remaining);
+    badge.hidden=false;
+    logo.classList.add('is-cache-refreshing');
+    timer=window.setInterval(()=>{
+      remaining-=1;
+      badge.textContent=String(Math.max(remaining,0));
+      if(remaining<=0){
+        window.clearInterval(timer);
+        refresh();
+      }
+    },1000);
+  };
+
+  logo.addEventListener('click',start);
+  logo.addEventListener('keydown',event=>{
+    if(event.key==='Enter' || event.key===' '){
+      event.preventDefault();
+      start();
+    }
+  });
+})();

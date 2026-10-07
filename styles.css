@@ -7550,3 +7550,32 @@ footer a {
 .weather-card .w-row {
   background: rgba(255, 255, 255, .055) !important;
 }
+
+/* Indicador discreto del atajo de actualización del logo. */
+.logo-refresh-countdown {
+  position: absolute;
+  top: 7%;
+  right: 8%;
+  z-index: 3;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgba(231, 255, 250, .72);
+  border-radius: 50%;
+  background: rgba(4, 28, 39, .42);
+  color: #f4fffb;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .22), inset 0 1px rgba(255, 255, 255, .22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font: 800 13px/1 "DM Sans", sans-serif;
+  pointer-events: none;
+  animation: logo-refresh-countdown-in .18s ease-out both;
+}
+.logo-refresh-countdown[hidden] { display: none; }
+.hero-logo-wrap.is-cache-refreshing .logo-refresh-countdown { animation: logo-refresh-countdown-pulse .95s ease-in-out infinite; }
+@keyframes logo-refresh-countdown-in { from { opacity: 0; transform: scale(.65); } to { opacity: 1; transform: scale(1); } }
+@keyframes logo-refresh-countdown-pulse { 50% { transform: scale(1.12); background: rgba(15, 139, 145, .55); } }
+@media (prefers-reduced-motion: reduce) {
+  .logo-refresh-countdown { animation: none; }
+}
