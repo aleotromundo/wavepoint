@@ -1302,7 +1302,7 @@
   }
 
   function bindGuideImageModal(){
-    const images = [...document.querySelectorAll('.guide-detail-card img, .collab-gallery img')];
+    const images = [...document.querySelectorAll('.guide-detail-card img, .collab-gallery img, .surf-lesson-gallery img')];
     if (!images.length) return;
 
     const modal = document.createElement('div');
