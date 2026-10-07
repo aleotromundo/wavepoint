@@ -17,7 +17,7 @@
     return data;
   }
 
-  function showEditor() { $('loginView').hidden = true; $('editorView').hidden = false; loadCatalog(); }
+  function showEditor() { window.location.href = 'editor/index.html'; }
   function logout() { sessionStorage.removeItem(SESSION_KEY); location.reload(); }
 
   async function loadCatalog() {
