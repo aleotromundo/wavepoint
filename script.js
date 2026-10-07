@@ -1302,7 +1302,7 @@
   }
 
   function bindGuideImageModal(){
-    const images = [...document.querySelectorAll('.guide-detail-card img, .collab-gallery img, .surf-lesson-gallery img')];
+    const images = [...new Set([...document.querySelectorAll('.guide-detail-card img, .collab-gallery img, .surf-lesson-gallery img, .detail-gallery img, .retreat-editorial img, .accommodation-gallery img, .service-card img, .service-offering img, .service-pack-image, .about-page img')])];
     if (!images.length) return;
 
     const modal = document.createElement('div');
@@ -1339,6 +1339,7 @@
 
     images.forEach(source=>{
       source.tabIndex = 0;
+      source.classList.add('image-zoomable');
       source.setAttribute('role', 'button');
       source.setAttribute('aria-label', `${languageState.current === 'en' ? 'View enlarged image: ' : 'Ver imagen ampliada: '}${source.alt || ''}`);
       source.addEventListener('click', ()=>openModal(source));

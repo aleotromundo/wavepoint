@@ -8043,3 +8043,8 @@ footer a {
   .service-detail-page:not(.accommodation-detail-page) .quick-request-panel .detail-request-head,
   .service-detail-page:not(.accommodation-detail-page) .quick-request-panel .service-survey-form { margin-inline: 0; padding-inline: 20px; }
 }
+
+/* Todas las imágenes editoriales y de servicio se pueden abrir en grande. */
+.image-zoomable { cursor: zoom-in !important; transition: filter .22s ease, transform .22s ease, outline-color .22s ease; }
+.image-zoomable:hover,
+.image-zoomable:focus-visible { filter: brightness(1.06) saturate(1.05); outline: 3px solid rgba(156, 232, 215, .72); outline-offset: -3px; }

@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Imágenes ampliables en todo el sitio
+- El modal de imágenes ahora incluye Retiros, galerías de servicios, alojamientos, guía, colaboradores y tarjetas visuales.
+- Las fotos reciben foco de teclado, `Enter`/`Space` para abrir y `Escape` para cerrar.
+- JavaScript actualizado a `20261007-22` y CSS a `20261007-46`.
+
+## 2026-10-07
 ### Visibilidad final de formularios
 - Corregida la regla heredada que ocultaba los formularios unificados.
 - El panel queda visible debajo del contenido en todas las páginas de servicio.
