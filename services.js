@@ -37,8 +37,10 @@ accommodationOptions: [
 category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
 price: 'USD 50', priceNote: 'por habitación · por noche',
 summary: 'Una habitación privada con baño privado para una estadía simple y funcional.',
-images: ['assets/legacy/B_03.jpg', 'assets/legacy/Piscina_16.jpg'],
+images: ['assets/img/stays/tamalodge/guesthouse.jpg', 'assets/img/stays/tamalodge/pool.jpg', 'assets/img/stays/tamalodge/cover.jpg'],
 imageAlt: 'Alojamiento tropical con jardín y piscina',
+imageAlts: ['Alojamiento rodeado de vegetación tropical', 'Piscina rodeada de jardines tropicales', 'Entrada de Hotel Tamalodge entre jardines'],
+imageAltsEn: ['Accommodation surrounded by tropical greenery', 'Pool surrounded by tropical gardens', 'Hotel Tamalodge entrance among the gardens'],
 details: ['Habitación privada con baño privado.'],
 amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong']
 },
@@ -46,7 +48,7 @@ amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong']
 category: 'OPCIÓN MEDIA', name: 'Casa Aura',
 price: 'USD 80–210', priceNote: 'por unidad · por noche',
 summary: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno incluido según la unidad.',
-images: ['assets/legacy/OTAMA_VIEW_30.jpg', 'assets/legacy/OTAMA_GAST_102.jpg', 'assets/legacy/Playa_23.jpg'],
+images: [],
 imageAlt: 'Alojamiento frente al mar con piscina y espacios interiores',
 details: [
 'Habitación doble — USD 80 · baño privado · desayuno incluido · 1 habitación.',
@@ -60,8 +62,10 @@ amenities: ['Frente al mar', 'Desayuno incluido según la unidad']
 category: 'OPCIÓN GRUPAL', name: 'Casa Madera',
 price: 'USD 250–500', priceNote: 'por noche · hasta 10 personas',
 summary: 'Una casa frente al mar para grupos, con tarifas que cambian según la temporada.',
-images: ['assets/ally-casa.jpg', 'assets/legacy/Playa_23.jpg', 'assets/legacy/B_03.jpg'],
+images: ['assets/img/stays/casa-maderas/cover.jpg', 'assets/img/stays/casa-maderas/house.jpg', 'assets/img/stays/casa-maderas/aerial.jpg'],
 imageAlt: 'Casa de alojamiento frente a la playa',
+imageAlts: ['Vista aérea de Casa de Maderas junto a Playa Grande', 'Casa de Maderas rodeada de vegetación tropical', 'Piscina y entorno natural de Casa de Maderas'],
+imageAltsEn: ['Aerial view of Casa de Maderas beside Playa Grande', 'Casa de Maderas surrounded by tropical greenery', 'Pool and natural surroundings at Casa de Maderas'],
 details: [
 '24 de diciembre al 2 de enero: USD 500 · estadía mínima de 5 noches.',
 '2 de enero al 2 de febrero: USD 400 · estadía mínima de 5 noches.',
@@ -76,10 +80,10 @@ amenities: ['Frente al mar', 'Tarifas para hasta 10 personas, incluidos adultos 
 category: 'OPCIÓN DELUXE', name: 'Capitán Suizo',
 price: 'USD 600', priceNote: 'por noche · consultar disponibilidad',
 summary: 'Hotel frente a la playa con servicios de bienestar, piscina y espacios para disfrutar la estadía.',
-images: ['assets/capitan.jpg', 'assets/ally-capitan.jpg', 'assets/legacy/Piscina_16.jpg'],
-imageAlt: 'Playa frente a Capitán Suizo',
-imageAlts: ['Playa frente a Capitán Suizo', 'Hotel Capitán Suizo con piscina y jardines tropicales', 'Piscina al aire libre del hotel Capitán Suizo'],
-imageAltsEn: ['Beach at Capitan Suizo', 'Capitan Suizo hotel with a pool and tropical gardens', 'Outdoor pool at the Capitan Suizo hotel'],
+images: ['assets/img/stays/capitan-suizo/cover.jpg', 'assets/img/stays/capitan-suizo/beach.jpg'],
+imageAlt: 'Vista aérea del hotel Capitán Suizo junto a la playa',
+imageAlts: ['Vista aérea del hotel Capitán Suizo junto a la playa', 'Playa frente a Capitán Suizo'],
+imageAltsEn: ['Aerial view of Hotel Capitan Suizo beside the beach', 'Beach in front of Capitan Suizo'],
 details: ['Tarifa: USD 600 por noche.', 'Consultar disponibilidad.'],
 amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios']
 }
