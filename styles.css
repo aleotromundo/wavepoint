@@ -2554,12 +2554,15 @@ body { background: #071c28; }
 }
 .collaborator-page:not(.about-page) .collab-layout {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .collaborator-page:not(.about-page) .collab-layout article {
   position: relative;
-  z-index: 2;
-  width: min(74%, 780px);
+  z-index: 1;
+  order: 2;
+  width: 100%;
   max-width: none;
   margin: 0;
   border-color: rgba(193, 244, 232, .34);
@@ -2572,16 +2575,26 @@ body { background: #071c28; }
 .collaborator-page:not(.about-page) .collab-gallery {
   position: relative;
   z-index: 1;
-  width: calc(100% - 10%);
-  margin: -92px 0 0 10%;
+  order: 1;
+  width: 100%;
+  margin: 0;
   padding: 0;
   gap: 16px;
 }
 .collaborator-page:not(.about-page) .collab-gallery img {
+  cursor: zoom-in;
   border: 1px solid rgba(218, 255, 244, .3);
   border-radius: 14px;
   box-shadow: 0 18px 44px rgba(1, 17, 24, .3);
   filter: saturate(.94) brightness(.86);
+  transition: filter .22s ease, transform .22s ease, outline-color .22s ease;
+}
+.collaborator-page:not(.about-page) .collab-gallery img:hover,
+.collaborator-page:not(.about-page) .collab-gallery img:focus-visible {
+  filter: saturate(1.04) brightness(1.02);
+  outline: 2px solid #9ce8d7;
+  outline-offset: -2px;
+  transform: translateY(-2px);
 }
 .collab-floating-brand {
   position: fixed;
