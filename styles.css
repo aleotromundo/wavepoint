@@ -2586,21 +2586,43 @@ body { background: #071c28; }
 .collab-floating-brand {
   position: fixed;
   z-index: 1001;
-  right: 94px;
-  bottom: 88px;
+  right: 116px;
+  bottom: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 122px;
-  min-height: 54px;
+  width: 168px;
+  min-height: 74px;
   padding: 0;
   border: 0;
   background: transparent;
   box-shadow: none;
   transition: transform .22s ease;
 }
+.collab-floating-brand::before,
+.collab-floating-brand::after {
+  position: absolute;
+  left: 50%;
+  top: 72%;
+  width: 116%;
+  height: 74%;
+  border: 1px solid transparent;
+  border-top-color: rgba(15, 199, 215, .72);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 8px rgba(0, 167, 189, .55));
+  transform: translate(-50%, -50%) rotate(-7deg) scale(.82);
+  animation: logo-wave-ripple 5.2s ease-out infinite;
+  content: "";
+  pointer-events: none;
+}
+.collab-floating-brand::after {
+  top: 80%;
+  width: 92%;
+  border-top-color: rgba(0, 167, 189, .5);
+  animation-delay: 2.6s;
+}
 .collab-floating-brand:hover { transform: translateY(-3px); }
-.collab-floating-brand img { display: block; width: 100%; height: auto; object-fit: contain; }
+.collab-floating-brand img { position: relative; z-index: 1; display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 8px 20px rgba(0, 167, 189, .22)); }
 .service-page-footer {
   padding: 14px 0 28px;
   border-top-color: rgba(220, 244, 236, .18);
@@ -2625,7 +2647,7 @@ body { background: #071c28; }
 @media (max-width: 760px) {
   .collaborator-page:not(.about-page) .collab-layout article { width: 100%; }
   .collaborator-page:not(.about-page) .collab-gallery { width: 100%; margin: 18px 0 0; }
-  .collab-floating-brand { right: 84px; bottom: 78px; width: 96px; min-height: 46px; }
+  .collab-floating-brand { right: 124px; bottom: 78px; width: 136px; min-height: 60px; }
 }
 /* Compact sponsor rail directly below the hero. */
 .allies-ticker {
