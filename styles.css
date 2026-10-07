@@ -2125,6 +2125,7 @@ body { background: #071c28; }
 }
 
 @media (max-width: 560px) {
+  .site-footer { padding-bottom: 108px; }
   .whatsapp-float { right: 82px; bottom: 16px; width: min(220px, calc(100vw - 112px)); min-height: 52px; padding: 8px 11px; }
   .whatsapp-float svg { width: 26px; height: 26px; flex-basis: 26px; }
   .whatsapp-float small { font-size: 10px; }
