@@ -8179,3 +8179,58 @@ footer a {
   .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); height: 435px; }
   .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery img { aspect-ratio: 1 / 1; }
 }
+
+
+/* Formularios de servicios: una única piel visual para Estadías, Clases de surf y el resto. */
+.service-detail-page .quick-request-panel {
+  position: static !important;
+  inset: auto !important;
+  z-index: 1;
+  width: 100% !important;
+  max-width: 900px;
+  max-height: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(198, 251, 244, .14) !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, #083643, #052c3b) !important;
+  color: #f5fffc;
+  box-shadow: 0 24px 60px rgba(4, 29, 40, .18) !important;
+  transform: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: none !important;
+  scroll-margin-top: 100px;
+}
+.service-detail-page .quick-request-panel .detail-request-head { margin: 0 !important; padding: 24px 28px 18px !important; border-bottom: 1px solid rgba(198, 251, 244, .14); }
+.service-detail-page .quick-request-panel .detail-request-head h2 { color: #fff !important; font-size: clamp(32px, 3.6vw, 44px); }
+.service-detail-page .quick-request-panel .detail-request-head p:last-child { color: #e0edf0 !important; }
+.service-detail-page .quick-request-panel .service-survey-form { margin: 0 !important; padding: 22px 28px 32px !important; }
+.service-detail-page .quick-request-panel .survey-progress { border-color: rgba(141, 222, 211, .2); background: rgba(255, 255, 255, .07); }
+.service-detail-page .quick-request-panel .survey-progress-copy { color: rgba(237, 255, 251, .78); }
+.service-detail-page .quick-request-panel .survey-progress-copy strong { color: #8ee9df; }
+.service-detail-page .quick-request-panel .detail-date-grid label { color: #e2eef0 !important; }
+.service-detail-page .quick-request-panel .detail-question input,
+.service-detail-page .quick-request-panel .detail-question textarea,
+.service-detail-page .quick-request-panel .detail-option,
+.service-detail-page .quick-request-panel .pack-service-card { background-color: rgba(255, 255, 255, .12); border-color: rgba(181, 246, 239, .42); }
+.service-detail-page .quick-request-panel .detail-question input::placeholder,
+.service-detail-page .quick-request-panel .detail-question textarea::placeholder { color: #d1e2e6 !important; opacity: 1; }
+.service-detail-page .quick-request-panel .detail-optional,
+.service-detail-page .quick-request-panel .detail-form-note { color: #d1e2e6 !important; }
+.service-detail-page .quick-request-panel .detail-submit { background: #075e66 !important; color: #fff !important; border-color: #70e7dc !important; }
+@media (max-width: 980px) {
+  .service-detail-page .detail-layout { gap: 16px; }
+  .service-detail-page .quick-request-panel { margin-top: 0 !important; }
+}
+@media (max-width: 640px) {
+  .service-detail-page .quick-request-panel { border-radius: 18px !important; }
+  .service-detail-page .quick-request-panel .detail-request-head { padding: 22px 20px 16px !important; }
+  .service-detail-page .quick-request-panel .service-survey-form { padding: 20px 20px 27px !important; }
+}
+
+
+/* Override final: la separación entre galería y formulario queda en 16px en todos los breakpoints. */
+.service-detail-page:not(.accommodation-detail-page) .quick-request-panel,
+.service-detail-page.accommodation-detail-page .quick-request-panel { margin: 16px auto 0 !important; }
