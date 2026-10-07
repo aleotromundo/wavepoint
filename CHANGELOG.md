@@ -1,4 +1,14 @@
 ## 2026-10-07
+### Clases de surf — primera página rediseñada
+- Galería de tres fotos más grande, con recorte editorial y ampliación al tocar o hacer click.
+- Texto principal más ancho, legible y con mayor contraste.
+- Formulario completo movido debajo del contenido, siguiendo la lógica visual de Estadías y hoteles.
+- El CTA de consulta ahora desplaza suavemente hacia el formulario en lugar de abrir una ventana aparte.
+- No se quitó contenido ni ninguna foto.
+- JavaScript de servicios actualizado a `20261007-13`; CSS optimizado a `20261007-33`.
+- Validación: `node --check script.js`, `node --check services.js` y `git diff --check`.
+
+## 2026-10-07
 ### Restaurar fondo de opciones de alojamiento
 - La página de opciones de alojamiento vuelve a mostrar el fondo fotográfico asociado al servicio.
 - El contenido conserva su legibilidad con una capa clara translúcida y las tarjetas mantienen su fondo propio.
