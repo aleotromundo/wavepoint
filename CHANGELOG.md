@@ -1,4 +1,11 @@
 ## 2026-10-07
+### CTA de viaje y retiros con cinta destacada
+- `styles.css` y `styles.optimized.css`: aplicar a los enlaces de “Armar tu viaje por Tamarindo” y “Descubrí los retiros” el mismo tratamiento visual de cinta rasgada que usan los botones “More info”, con tipografía grande, flecha y estados hover/focus.
+- Mantener el botón principal del hero separado de esta variante.
+- Páginas HTML: actualizar la versión cacheada del CSS a `20261007-27`.
+- Validación: `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### Carrusel de aliados más ancho
 - `styles.css` y `styles.optimized.css`: ampliar el viewport del carrusel en pantallas mayores a móvil para alinearlo con los márgenes de las secciones fotográficas inferiores, sin extenderlo hasta el borde de la pantalla.
 - Mantener el ancho actual en móvil.
