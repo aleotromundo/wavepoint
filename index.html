@@ -66,7 +66,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261006-19"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261006-19"/><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=20261006-19"/><link rel="icon" type="image/x-icon" href="favicon.ico?v=20261006-19"/><link rel="apple-touch-icon" sizes="180x180" href="assets/wavepoint-apple-touch-icon.png?v=20261006-19"/>
 <meta content="#0a3547" name="theme-color"/>
-<link href="styles.css?v=20261007-35" rel="stylesheet"/></head>
+<link href="styles.css?v=20261007-38" rel="stylesheet"/></head>
 <body>
 <header class="topbar">
 <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint">
@@ -81,9 +81,6 @@
 <div class="container nav">
 <nav class="navlinks">
 <a data-i18n="navInicio" href="#inicio">Inicio</a>
-<a data-i18n="navGuia" href="guia-playas.html">Guía turística</a>
-<a data-i18n="navServicios" href="#servicios">Servicios</a>
-<a data-i18n="navNosotros" href="#nosotros">Nosotros</a>
 <div class="dropdown">
 <a class="dropbtn" data-i18n="navColaboradores" href="#aliados">Colaboradores ▾</a>
 <div class="menu">
@@ -96,6 +93,9 @@
 <a href="https://www.club33cr.com/" target="_blank" rel="noopener noreferrer">Club 33 Surf Shop</a>
 </div>
 </div>
+<a data-i18n="navServicios" href="#servicios">Servicios</a>
+<a data-i18n="navNosotros" href="#nosotros">Nosotros</a>
+<a data-i18n="navGuia" href="guia-playas.html">Guía turística</a>
 </nav>
 <button aria-label="Abrir menú" class="hamb" id="hamb">☰</button>
 </div>
@@ -107,9 +107,6 @@
 </div>
 <nav class="mobile-menu">
 <a href="#inicio" data-i18n="navInicio">Inicio</a>
-<a href="guia-playas.html" data-i18n="navGuia">Guía turística</a>
-<a href="#servicios" data-i18n="navServicios">Servicios</a>
-<a href="#nosotros" data-i18n="navNosotros">Nosotros</a>
 <div class="mobile-dropdown">
 <a class="mobile-dropdown-link" href="#aliados" data-i18n="navColaboradores">Colaboradores</a>
 <button class="mobile-dropdown-toggle" type="button" aria-label="Abrir colaboradores">▾</button>
@@ -123,6 +120,9 @@
 <a href="https://www.club33cr.com/" target="_blank" rel="noopener noreferrer">Club 33 Surf Shop</a>
 </div>
 </div>
+<a href="#servicios" data-i18n="navServicios">Servicios</a>
+<a href="#nosotros" data-i18n="navNosotros">Nosotros</a>
+<a href="guia-playas.html" data-i18n="navGuia">Guía turística</a>
 <a class="mobile-instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg><span>Instagram</span><span aria-hidden="true">↗</span></a>
 </nav>
 </div>
@@ -296,20 +296,6 @@
       </div>
     </div>
   </section>
-  <section class="about-gallery-section">
-    <div class="container">
-      <div class="about-gallery-heading">
-        <p class="about-label" data-i18n="aboutHomeGalleryLabel">DESDE TAMARINDO</p>
-        <h2 data-i18n="aboutHomeGalleryTitle">Hecho para volver al agua.</h2>
-        <p data-i18n="aboutHomeGalleryText">Una plataforma gratuita, local y en movimiento, como el mar que la inspira.</p>
-      </div>
-      <div class="about-gallery">
-        <figure class="about-gallery-feature"><img src="assets/legacy/A7833108-3E71-4EAC-830C-057BD7B5B0BD.jpeg" alt="Equipo WavePoint en una sesión de surf" data-i18n-alt="aboutHomeAltOne" loading="lazy"/><figcaption data-i18n="aboutHomeCaptionOne">El proyecto nace de quienes viven las olas.</figcaption></figure>
-        <figure><img src="assets/legacy/DSC_0258-5.jpeg" alt="Surf en Tamarindo" data-i18n-alt="aboutHomeAltTwo" loading="lazy"/><figcaption data-i18n="aboutHomeCaptionTwo">Condiciones que cambian todo el tiempo.</figcaption></figure>
-        <figure><img src="assets/img/services/surf-coaching/surf-coaching-action.jpeg" alt="Sesión de surf en Tamarindo" data-i18n-alt="aboutHomeAltThree" loading="lazy"/><figcaption data-i18n="aboutHomeCaptionThree">Una mirada local al agua.</figcaption></figure>
-      </div>
-    </div>
-  </section>
   <section class="about-closing">
     <div class="container about-closing-grid">
       <div><p class="about-label" data-i18n="aboutHomeWhyLabel">NUESTRO MOTIVO</p><h2 data-i18n="aboutHomeWhyTitle">La herramienta definitiva para disfrutar cada ola.</h2></div>
@@ -430,5 +416,5 @@
 </div>
 <div aria-hidden="true" class="modal" id="adModal"><div class="modal-box"><div class="modal-head"><div class="modal-title">Chophouse pre-play demo</div><button class="close" id="closeAd">×</button></div><div class="modal-body" style="background:#000"><video controls="" id="adVideo" playsinline="" src="assets/chophouse-preroll-12s.mp4" style="width:100%;height:100%;display:block"></video></div><div class="modal-note">Demo del formato pre-play para Castr.</div></div></div>
 
-<script defer="True" src="script.js?v=20261007-8"></script><script defer src="lang-switch.js?v=20261007-3"></script><script defer src="footer-video.js?v=20261007-1"></script></body>
+<script defer="True" src="script.js?v=20261007-8"></script><script defer src="site-nav.js?v=20261007-3"></script><script defer src="lang-switch.js?v=20261007-3"></script><script defer src="footer-video.js?v=20261007-1"></script></body>
 </html>
