@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Clases de surf — barra del formulario sincronizada
+- Igualada la barra interna del formulario con Estadías y hoteles: degradado, padding, borde y posición.
+- CSS cacheado actualizado a `20261007-38`.
+
+## 2026-10-07
 ### Clases de surf — formulario igual a Estadías y hoteles
 - Aplicado el mismo panel teal oscuro de Estadías y hoteles.
 - Copiados el contraste, bordes, progreso, campos, opciones y botones del formulario existente.
