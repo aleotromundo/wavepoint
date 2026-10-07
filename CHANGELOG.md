@@ -6,6 +6,7 @@
 - `script.js`, `lang-switch.js` y CSS: retirar el modo Safari personalizado solicitado; ocultar de verdad los paneles fijos cerrados para que no conserven capas borrosas fuera de pantalla y dejar el desplazamiento estándar para tablet/touch.
 - Actualizar las referencias cacheadas de CSS y scripts en las rutas que los cargan.
 - Validación: sintaxis JS, `git diff --check`, barrido de 21 rutas públicas a 768 px con desplazamiento abajo/arriba; Stays and Hotels revisado a 390, 768 y 1280 px; las nueve imágenes de galería cargan y no aparecen errores JavaScript. El rectángulo blanco no se reprodujo en Chromium.
+- Seguimiento solicitado: recuperar las cuatro fotos individuales como accesos sin texto a sus alojamientos, aumentarlas ligeramente y aclarar el texto auxiliar, placeholders y errores del formulario final para mejorar el contraste.
 
 ### Auditoría y corrección de imagen repetida
 
