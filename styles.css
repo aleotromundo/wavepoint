@@ -3180,6 +3180,61 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 #camaras .cam-link:not(.primary):hover { background: rgba(255, 255, 255, .18); }
 #camaras .cam-action, #camaras .cam-action * { color: #8fe9ee; }
 
+/* Logo de servicios: misma aura de ondas y entrada elástica que la marca del hero. */
+.services-logo-wrap {
+  grid-column: span 3;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(88%, 370px);
+  min-height: 410px;
+  justify-self: center;
+  align-self: stretch;
+  isolation: isolate;
+  animation: logo-wave-arrive 1.25s cubic-bezier(.2, .8, .25, 1) both;
+  transform-origin: center bottom;
+}
+
+.services-logo-wrap .logo-wave-aura {
+  inset: -14% -10% -8%;
+}
+
+.services-logo-wrap .services-watermark {
+  grid-column: auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: .92;
+  filter: drop-shadow(0 8px 20px rgba(0, 167, 189, .22));
+  pointer-events: none;
+  transform: none;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 980px) {
+  .services-logo-wrap {
+    grid-column: 1 / -1;
+    width: min(72%, 320px);
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-logo-wrap {
+    grid-column: 1;
+    width: min(82vw, 270px);
+    min-height: 220px;
+    margin: 8px auto 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-logo-wrap { animation: none; }
+}
+
 /* Foto de las tarjetas de servicios: llena todo el espacio, sin franjas de fondo */
 .service-img { background: transparent; }
 .service-img img { object-fit: cover; background: none; }
