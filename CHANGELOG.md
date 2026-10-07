@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Formularios — mejorar contraste del ítem seleccionado
+- El ítem seleccionado ahora usa fondo teal fuerte, borde claro y texto blanco.
+- Aplicado tanto a opciones de radio como a tarjetas seleccionables.
+- CSS cacheado actualizado a `20261007-39`.
+
+## 2026-10-07
 ### Clases de surf — barra del formulario sincronizada
 - Igualada la barra interna del formulario con Estadías y hoteles: degradado, padding, borde y posición.
 - CSS cacheado actualizado a `20261007-38`.
