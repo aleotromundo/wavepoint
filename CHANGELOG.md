@@ -13,8 +13,12 @@
 
 ### Logotipo en los pies de página / Footer logo
 
-- `index.html`, `piloto.html`, `trip-builder.html`, `guia-playas.html` y las fichas de colaboradores: reemplazar la marca textual del pie por el logotipo mediano y conservar el enlace de regreso al inicio.
-- `index.html`, `piloto.html`, `trip-builder.html`, `guia-playas.html` and collaborator pages: replace the footer wordmark with the medium logo and keep the link back to the home page.
+- `index.html`, `piloto.html`, `trip-builder.html` y `guia-playas.html`: usar el logo blanco sin borde del hero en el lugar de la marca del pie.
+- Fichas de colaboradores: mostrar «← Volver» junto al logo blanco tanto en la navegación superior como al pie; conservar ambos enlaces al inicio y traducir el texto sin reemplazar la imagen.
+- `index.html`, `piloto.html`, `trip-builder.html` and `guia-playas.html`: use the borderless white hero logo in the footer brand position.
+- Collaborator pages: show “← Back” beside the white logo in both the top navigation and footer; retain both links home and translate the label without replacing the image.
+- `styles.css`: quitar el marco y la caja translúcida de las galerías de colaboradores para presentar las fotos directamente, centradas y sin bordes.
+- `styles.css`: remove the frame and translucent gallery box from collaborator galleries, presenting centered photos directly without borders.
 
 ### Foto repetida en la ficha de Red Door / Duplicate photo on the Red Door page
 
