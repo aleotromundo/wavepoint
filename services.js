@@ -6,13 +6,13 @@ id: 'alojamiento-experiencias', number: '01', eyebrow: 'ESTADÍAS · HOTELES', t
 cardText: 'Hoteles y alojamientos frente al mar para cada tipo de viaje.',
 description: 'Encontrá una opción de alojamiento que se adapte a tu presupuesto, el tamaño de tu grupo y el ritmo de tu estadía en Tamarindo. Estas tarifas están expresadas en dólares estadounidenses (USD), por noche. WavePoint consulta disponibilidad y condiciones con el alojamiento antes de acercarte una propuesta.',
 images: [
-'assets/img/hotels/stayandhotels5_resultado.webp',
-'assets/img/hotels/stayandhotels6_resultado.webp',
+'assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp',
+'assets/img/stays/unverified/hotels/stayandhotels6_resultado.webp',
 'assets/img/stays/tamalodge/cover.webp',
-'assets/img/hotels/stayandhotels2_resultado.webp',
-'assets/img/hotels/stayandhotels3_resultado.webp',
-'assets/img/hotels/stayandhotels4_resultado.webp',
-'assets/img/hotels/stayandhotels_resultado.webp'
+'assets/img/stays/unverified/hotels/stayandhotels2_resultado.webp',
+'assets/img/stays/unverified/hotels/stayandhotels3_resultado.webp',
+'assets/img/stays/casa-aura/stayandhotels4_resultado.webp',
+'assets/img/stays/unverified/hotels/stayandhotels_resultado.webp'
 ],
 imageAlts: [
 'Alojamiento tropical de madera con pasarela exterior',
@@ -60,7 +60,7 @@ summary: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno in
 images: [
 'assets/img/stays/casa-aura/casa-aura-exterior.jpg',
 'assets/img/stays/casa-aura/casa-aura-common-area.jpg',
-'assets/img/hotels/stayandhotels4_resultado.webp'
+'assets/img/stays/casa-aura/stayandhotels4_resultado.webp'
 ],
 imageAlt: 'Entrada de Casa Aura en Tamarindo',
 imageAlts: ['Entrada de Casa Aura en Tamarindo', 'Área común de madera de Casa Aura', 'Interior de Casa Aura con sala y cocina'],
@@ -706,8 +706,8 @@ modalClose: 'Close survey'
 const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 const PACK_SERVICE_CARDS = {
-'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels5_resultado.webp' },
-'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/hotels/stayandhotels5_resultado.webp' },
+'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp' },
+'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp' },
 'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/services/surf-lessons/surf-lesson-woman.webp' },
 'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/services/surf-lessons/surf-lesson-woman.webp' },
 'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/services/surf-coaching/surf-coaching-session.jpg' },

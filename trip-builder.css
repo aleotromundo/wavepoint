@@ -186,7 +186,7 @@
 .trip-builder-hero-content > p:last-child { margin-inline: auto; }
 .trip-builder-main {
   background-color: #0a3541;
-  background-image: linear-gradient(145deg, rgba(5, 31, 42, .5), rgba(7, 44, 48, .58)), url("assets/bg/atardecer.jpg");
+  background-image: linear-gradient(145deg, rgba(5, 31, 42, .5), rgba(7, 44, 48, .58)), url("assets/img/site/backgrounds/atardecer.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -334,7 +334,7 @@
   position: relative;
   isolation: isolate;
   background-color: #0a3541;
-  background-image: linear-gradient(rgba(5, 31, 42, .5), rgba(7, 44, 48, .58)), url("assets/bg/atardecer.jpg");
+  background-image: linear-gradient(rgba(5, 31, 42, .5), rgba(7, 44, 48, .58)), url("assets/img/site/backgrounds/atardecer.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

@@ -10,7 +10,7 @@
   video.muted = true;
   video.playsInline = true;
   video.preload = 'metadata';
-  video.poster = 'assets/hero.jpg';
+  video.poster = 'assets/img/site/home-hero.jpg';
   video.src = 'assets/videoheroxx3.mp4';
   footer.prepend(video);
 

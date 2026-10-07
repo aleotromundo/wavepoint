@@ -43,7 +43,7 @@ This section preserves project decisions and completed work so future assistants
 - Each service's first image (`service.images[0]`) is the visual source of truth for both its hero and full-page/body background. Changing the service's hero photo should therefore change both. Do not introduce a separate, drifting body-background image.
 - Keep this image relationship consistent among service catalog cards, detail hero/background, and trip-builder choices wherever those surfaces represent the same service.
 - The service photo set has local optimized WebP versions under `assets/img/optimized/`; preserve source originals and avoid reintroducing the large originals to page references. Verify image subject, crop, alt text, and every consumer before replacing a path.
-- The current `alojamiento-experiencias` image is `assets/img/hotels/stayandhotels5_resultado.webp`, shared by the hotel card, service hero/body background, accommodation pack choices, retreat stay card, and trip builder. `tamarindo-stay.webp` remains in the Nosotros opening background and should not be globally replaced.
+- The current `alojamiento-experiencias` image is `assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp`, shared by the hotel card, service hero/body background, accommodation pack choices, retreat stay card, and trip builder. `tamarindo-stay.webp` remains in the Nosotros opening background and should not be globally replaced.
 - Service copy, labels, image alt text, and detail-page content must remain available in Spanish and English. Follow the `wavepoint-service-bilingual` skill for service copy changes.
 
 ### Homepage, cards, and interaction
