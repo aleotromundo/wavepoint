@@ -3096,6 +3096,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .about-page .about-hero-image { background-attachment: fixed; }
 .about-page .about-hero-inner {
   box-sizing: border-box;
+  position: relative;
   padding: 28px clamp(22px, 4vw, 42px);
   border: 1px solid rgba(226, 250, 244, .28);
   border-radius: 18px;
@@ -6628,15 +6629,25 @@ html.safari-stable #servicios .service-card .service-body p {
 /* El tercer logo acompaña el mensaje principal dentro del panel Nosotros. */
 .about-hero-inner > .services-logo-wrap-rates {
   grid-column: auto;
-  width: min(72%, 360px);
+  position: absolute;
+  top: 50%;
+  right: clamp(20px, 4vw, 42px);
+  width: min(34%, 320px);
   min-height: 220px;
-  margin: 18px auto 0;
+  margin-top: -110px;
 }
 .about-hero-inner > .services-logo-wrap-rates .services-watermark { width: 100%; }
+.about-hero-inner > h2,
+.about-hero-inner > .about-intro { max-width: 58%; }
 @media (max-width: 760px) {
+  .about-hero-inner > h2,
+  .about-hero-inner > .about-intro { max-width: 100%; }
   .about-hero-inner > .services-logo-wrap-rates {
+    position: relative;
+    top: auto;
+    right: auto;
     width: min(82vw, 290px);
     min-height: 180px;
-    margin-top: 14px;
+    margin: 14px auto 0;
   }
 }
