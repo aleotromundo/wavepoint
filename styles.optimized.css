@@ -2469,3 +2469,9 @@ to{filter:brightness(1.18)}
 @media (min-width:761px){
 .about-hero-inner>.services-logo-wrap-rates{top:calc(50% + 46px)}
 }
+@media (min-width:761px){
+.about-scroll-note{bottom:112px}
+}
+@media (min-width:761px){
+.about-hero-inner>.services-logo-wrap-rates{top:auto;bottom:22px;min-height:170px;margin-top:0}
+}
