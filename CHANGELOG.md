@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Nombres limpios en el menú de colaboradores
+- `index.html`: quitar las ubicaciones redundantes del menú de Partners/Colaboradores en desktop y móvil, dejando únicamente el nombre de cada lugar.
+- Validación: confirmar que ambos submenús no contienen Tamarindo, Palm Beach, Casitas ni Langosta; ejecutar `git diff --check` y las comprobaciones de sintaxis JavaScript.
+
+## 2026-10-07
 ### Accesos globales en subpáginas
 - `service-detail.html`: mostrar los íconos de WhatsApp e Instagram en la navegación, sumar el botón flotante de WhatsApp y cargar el bot WavePoint mediante `script.js`.
 - Confirmado visualmente en el detalle de Clases de surf: ambos íconos aparecen en desktop y el launcher del bot queda disponible.
