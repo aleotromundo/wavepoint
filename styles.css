@@ -6851,3 +6851,11 @@ html.safari-stable #servicios .service-card .service-body p {
   .quick-request-panel > .detail-request-head,
   .quick-request-panel > form { margin-left: 24px; margin-right: 24px; }
 }
+
+
+/* El título de Nuestra historia comparte la tipografía característica del hero. */
+.about-home .about-hero h2 {
+  font-family: 'Shadows Into Light', 'Rock Salt', 'Permanent Marker', 'Segoe Print', cursive;
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
