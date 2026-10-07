@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Accesos globales en subpáginas
+- `service-detail.html`: mostrar los íconos de WhatsApp e Instagram en la navegación, sumar el botón flotante de WhatsApp y cargar el bot WavePoint mediante `script.js`.
+- Confirmado visualmente en el detalle de Clases de surf: ambos íconos aparecen en desktop y el launcher del bot queda disponible.
+
+## 2026-10-07
 ### Unificación visual de detalles de servicios
 - `styles.css` y `styles.optimized.css`: extender a los detalles de surf, aventura, yoga, snorkeling, fotografía, surfskate y retiros el tratamiento editorial de Stays & Hotels: paneles claros con vidrio, bordes, galerías con tarjetas, bloques de incluidos y mejor contraste.
 - Mantener intactos las preguntas, el progreso, la validación y el flujo de solicitudes a WhatsApp del formulario compartido.
