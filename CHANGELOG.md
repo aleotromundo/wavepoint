@@ -1,4 +1,12 @@
 ## 2026-10-07
+### Un solo video en loop para celulares
+- `script.js`: en dispositivos táctiles y pantallas pequeñas se reproduce únicamente `videohero0.mp4`, en loop, sin alternar entre los tres videos del hero.
+- Los videos secundarios quedan pausados y ocultos en mobile; escritorio conserva el carrusel de videos.
+- `styles.css` y `styles.optimized.css`: mostrar solo el video activo en mobile y mantener el fondo del hero con `background-attachment: scroll`.
+- Páginas HTML: actualizar JavaScript a `20261007-19`.
+- Validación: `node --check script.js` y `git diff --check`.
+
+## 2026-10-07
 ### Hero móvil más fluido y gadget climático legible
 - `script.js`: en celulares y tablets táctiles no se cargan ni reproducen los videos del hero; se usa la imagen fija de fondo para evitar tirones, consumo innecesario y problemas durante el scroll.
 - `styles.css` y `styles.optimized.css`: ocultar visualmente la pila de video y asegurar `background-attachment: scroll` en touch/mobile.

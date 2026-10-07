@@ -977,20 +977,21 @@
 
   function bindHeroVideoSwap(){
     const videos = [...document.querySelectorAll('.hero-video')];
-    if (videos.length < 2) return;
-
-    // En celulares/tablets usamos la imagen fija del hero: evita consumo,
-    // tirones durante el scroll y competencia visual con el gadget climático.
+    if (!videos.length) return;
     const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     if (touchDevice || window.matchMedia('(max-width: 640px)').matches) {
-      videos.forEach(video=>{
-        video.pause();
-        video.preload='none';
-        video.classList.remove('is-active');
+      // En celulares dejamos solo el primer video, en loop, sin alternar archivos.
+      videos.forEach((video,index)=>{
+        video.muted=true;
+        video.playsInline=true;
+        video.loop=true;
+        video.preload=index===0?'auto':'none';
+        video.classList.toggle('is-active',index===0);
+        if(index!==0) video.pause();
       });
+      videos[0].play().catch(error=>console.error('No se pudo reproducir el video móvil de portada.',error));
       return;
     }
-
     let activeIndex = 0;
     let swapping = false;
     const loadVideo = video => {

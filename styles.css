@@ -7583,8 +7583,9 @@ footer a {
   .logo-refresh-countdown.is-visible { animation: none; }
 }
 
-/* En touch/mobile, la imagen fija del hero reemplaza el video para evitar tirones. */
+/* En touch/mobile se reproduce solo el primer video, en loop, sin alternar archivos. */
 @media (hover: none) and (pointer: coarse), (max-width: 640px) {
-  .hero-video-stack { display: none !important; }
+  .hero-video-stack { display: block !important; }
+  .hero-video:not(.is-active) { display: none !important; }
   .hero { background-attachment: scroll !important; }
 }
