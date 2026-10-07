@@ -41,6 +41,14 @@ El piloto CMS agregado en esta entrega se accede desde `/admin.html`. Permite au
 - Se mantiene como riesgo abierto la ausencia de persistencia CMS de producción, autenticación robusta para el panel, límites globales del asistente y optimización del peso multimedia. Esta auditoría no convierte esos pendientes en autorización de implementación.
 - El cambio visual del logo posterior a las tarjetas de servicios quedó limitado a `index.html`, `piloto.html` y `styles.css`; no se modificó el hero.
 
+## Auditoría de imágenes — 2026-10-07
+
+- Se revisaron 182 archivos raster/vectoriales locales mediante SHA-256. Se encontraron siete grupos de duplicados exactos.
+- Seis grupos corresponden a archivos archivados en `assets/img/archive/duplicates/`, copias históricas o assets de marca sin uso equivalente activo. No se eliminaron ni reemplazaron porque no afectan la experiencia publicada.
+- Un grupo sí estaba activo en dos contextos: `assets/img/site/home-hero.jpg` y `assets/img/guide/after-guide.jpg` eran exactamente la misma imagen. `after-guide.jpg` se usaba en la tarjeta `Explora Tamarindo` de `index.html` y `piloto.html`.
+- Se reemplazó únicamente esa referencia por `assets/img/guide/cover.jpg`, una composición específica de la guía con playa, atardecer y vista aérea. El hero conserva su imagen original.
+- No se cambió ningún asset de alojamiento, servicio o colaborador sin una alternativa local confiable. La comparación perceptual automatizada quedó limitada porque Python no está instalado en este entorno; la coincidencia aplicada fue exacta por hash y se verificó visualmente.
+
 ## Qué cubre el piloto
 
 - Login en `/admin.html` mediante `POST /api/admin-auth`.
