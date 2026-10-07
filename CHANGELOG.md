@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Formularios — limpiar indicadores duplicados
+- Ocultado el bloque “Tu progreso” en todos los formularios.
+- Eliminado el círculo blanco adicional de las opciones seleccionables.
+- Se conserva únicamente el control de selección propio de cada opción.
+- CSS cacheado actualizado a `20261007-40`.
+
+## 2026-10-07
 ### Formularios — mejorar contraste del ítem seleccionado
 - El ítem seleccionado ahora usa fondo teal fuerte, borde claro y texto blanco.
 - Aplicado tanto a opciones de radio como a tarjetas seleccionables.
