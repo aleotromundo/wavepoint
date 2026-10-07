@@ -745,6 +745,11 @@ function setupQuickRequestPanel(form) {
   });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && panel.classList.contains('is-open')) hide(); });
   updateSteps();
+  if (window.matchMedia('(min-width: 981px)').matches) {
+    panel.classList.add('is-open');
+    launcher.setAttribute('aria-expanded', 'true');
+    panel.setAttribute('aria-modal', 'false');
+  }
 }
 function setupSurveyInteractions(form) {
 if (!form) return;
