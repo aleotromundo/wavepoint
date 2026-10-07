@@ -7888,3 +7888,8 @@ footer a {
 .quick-request-panel .pack-service-card:has(input:checked) * { color: #fff !important; }
 .quick-request-panel .detail-option:has(input:checked)::after { border-color: #fff !important; background: #fff !important; box-shadow: 0 0 0 4px rgba(164, 240, 233, .24); }
 .quick-request-panel .pack-service-card:has(input:checked) .pack-service-check { border-color: #fff; background: #fff; color: #087f87; }
+
+/* Formularios: mantenerlos limpios, sin el bloque de progreso ni círculo duplicado. */
+.quick-request-panel .survey-progress { display: none !important; }
+.quick-request-panel .detail-option::after,
+.quick-request-panel .detail-option:has(input:checked)::after { display: none !important; }
