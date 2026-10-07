@@ -14,37 +14,30 @@
       <div class="brand-mark">W</div>
       <p class="eyebrow">WAVEPOINT · PILOTO CMS</p>
       <h1>Editar el sitio</h1>
-      <p class="muted">Ingresá la contraseña del piloto para editar el sitio visualmente.</p>
+      <p class="muted">Ingresá la contraseña del piloto para editar textos e imágenes desde este navegador.</p>
       <form id="loginForm" class="stack">
         <label for="password">Contraseña piloto</label>
         <input id="password" type="password" autocomplete="current-password" placeholder="Ingresá la contraseña" required />
         <button class="primary" type="submit">Entrar al editor</button>
         <p class="form-error" id="loginError" role="alert"></p>
       </form>
-      <p class="security-note">Piloto local: los cambios se guardan en este navegador. Las zonas protegidas evitan romper el diseño responsive.</p>
+      <p class="security-note">Piloto local: los cambios se guardan en este navegador. No reemplaza un CMS con base de datos.</p>
     </section>
 
     <section id="editorView" hidden>
       <header class="topbar">
-        <div><p class="eyebrow">WAVEPOINT · EDITOR VISUAL</p><h1>Construí tu página</h1></div>
+        <div><p class="eyebrow">WAVEPOINT · EDITOR</p><h1>Contenido del sitio</h1></div>
         <div class="toolbar"><a class="secondary" href="index.html" target="_blank" rel="noopener">Ver sitio</a><button class="secondary" id="logoutButton" type="button">Salir</button></div>
       </header>
-      <div class="notice"><strong>Editor protegido:</strong> elegí una zona, agregá o quitá bloques permitidos y editá sus propiedades. El layout, los breakpoints y la estructura principal quedan protegidos.</div>
-      <div class="actions"><button class="primary" id="saveButton" type="button">Guardar cambios</button><button class="secondary" id="exportButton" type="button">Exportar contenido</button><button class="secondary" id="exportModelButton" type="button">Exportar bloques</button><label class="secondary file-button">Importar contenido<input id="importInput" type="file" accept="application/json" /></label><button class="danger" id="resetButton" type="button">Restaurar contenido</button><button class="danger" id="resetModelButton" type="button">Restaurar bloques</button><span class="status" id="saveStatus" aria-live="polite"></span></div>
-
-      <section class="visual-editor" aria-label="Editor visual por zonas">
-        <div class="visual-toolbar"><div><p class="eyebrow">ZONAS PROTEGIDAS</p><p class="muted compact">El contenido cambia; el diseño se mantiene.</p></div><label class="preview-page">Vista<select id="visualPageSelect"><option value="index.html">Inicio</option><option value="trip-builder.html">Armá tu viaje</option><option value="guia-playas.html">Guía turística</option><option value="service-detail.html">Detalle de servicio</option></select></label></div>
-        <div class="visual-layout">
-          <aside class="zone-sidebar"><p class="sidebar-label">ZONAS</p><nav id="zoneList" class="zone-list" aria-label="Zonas editables"></nav></aside>
-          <section class="site-preview"><div class="preview-head"><span>Vista previa del sitio original</span><span class="preview-dot">●</span></div><iframe id="sitePreview" title="Vista previa del sitio WavePoint" src="index.html"></iframe></section>
-          <aside class="block-sidebar"><div class="block-head"><div><p class="sidebar-label">BLOQUES</p><h2 id="selectedZoneTitle">Seleccioná una zona</h2></div><span id="zoneCount" class="count"></span></div><div id="blockList" class="block-list"></div><button id="addBlockButton" class="add-block" type="button">＋ Agregar bloque</button><div id="blockInspector" class="block-inspector"><p class="empty">Seleccioná un bloque para editar sus propiedades.</p></div></aside>
-        </div>
-      </section>
-
-      <details class="legacy-editor"><summary>Contenido detallado: textos e imágenes existentes</summary><div class="filters"><label>Página<select id="pageSelect"><option value="index.html">Inicio</option><option value="trip-builder.html">Armá tu viaje</option><option value="guia-playas.html">Guía turística</option><option value="service-detail.html">Detalle de servicio</option></select></label><label>Buscar contenido<input id="searchInput" type="search" placeholder="Ej.: hero, servicios, cámara…" /></label><div class="language-tabs" role="group" aria-label="Idioma"><button type="button" data-lang="es" class="active">ES</button><button type="button" data-lang="en">EN</button></div></div><div class="editor-grid"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">TEXTOS</p><h2>Copys editables</h2></div><span id="textCount" class="count"></span></div><div id="textFields" class="field-list"></div></section><section class="panel"><div class="panel-heading"><div><p class="eyebrow">IMÁGENES</p><h2>Imágenes del sitio</h2></div><span id="imageCount" class="count"></span></div><div id="imageFields" class="field-list"></div></section></div></details>
+      <div class="notice"><strong>Piloto:</strong> editá, guardá y abrí el sitio en este mismo navegador para ver los cambios. Exportá una copia para compartirlos o respaldarlos.</div>
+      <div class="actions"><button class="primary" id="saveButton" type="button">Guardar cambios</button><button class="secondary" id="exportButton" type="button">Exportar JSON</button><label class="secondary file-button">Importar JSON<input id="importInput" type="file" accept="application/json" /></label><button class="danger" id="resetButton" type="button">Restaurar originales</button><span class="status" id="saveStatus" aria-live="polite"></span></div>
+      <div class="filters"><label>Página<select id="pageSelect"><option value="index.html">Inicio</option><option value="trip-builder.html">Armá tu viaje</option><option value="guia-playas.html">Guía turística</option><option value="service-detail.html">Detalle de servicio</option></select></label><label>Buscar contenido<input id="searchInput" type="search" placeholder="Ej.: hero, servicios, cámara…" /></label><div class="language-tabs" role="group" aria-label="Idioma"><button type="button" data-lang="es" class="active">ES</button><button type="button" data-lang="en">EN</button></div></div>
+      <div class="editor-grid">
+        <section class="panel"><div class="panel-heading"><div><p class="eyebrow">TEXTOS</p><h2>Copys editables</h2></div><span id="textCount" class="count"></span></div><div id="textFields" class="field-list"></div></section>
+        <section class="panel"><div class="panel-heading"><div><p class="eyebrow">IMÁGENES</p><h2>Imágenes del sitio</h2></div><span id="imageCount" class="count"></span></div><div id="imageFields" class="field-list"></div></section>
+      </div>
     </section>
   </main>
   <script src="admin.js"></script>
-  <script src="admin-zones.js"></script>
 </body>
 </html>
