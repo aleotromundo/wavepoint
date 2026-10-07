@@ -31,6 +31,11 @@
 - La galería de ATV ahora incluye dos fotos optimizadas de paseos en cuatriciclo por playa y costa.
 - Las imágenes fueron descargadas desde resultados de Tour Guanacaste y guardadas localmente como WebP para evitar dependencias externas en producción.
 
+### Detalles de servicios — hero único y formulario sin huecos
+- Los servicios estándar ya no repiten en el body el título, la descripción, la coordinación ni los bloques editoriales que ya aparecen en el hero.
+- El body queda reducido a la galería y el formulario, en ese orden y sin espacio vacío entre ambos.
+- Las galerías dejaron de usar alturas fijas que reservaban una zona invisible debajo de las imágenes; ahora su contenedor termina exactamente con la última fila de fotos.
+
 ## 2026-10-07
 ### Preloader real y navegación de logos
 - Agregado en la portada un preloader sincronizado con el primer video del hero, el gadget meteorológico, el logo y dos fondos críticos; la barra refleja tareas reales y cuenta con fallback para no bloquear la página si falla un recurso externo.
