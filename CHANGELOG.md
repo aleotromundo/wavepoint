@@ -1,5 +1,16 @@
 ## 2026-10-07
 
+### Auditoría y corrección de imagen repetida
+
+- `index.html` y `piloto.html`: reemplazar únicamente la foto de `Explora Tamarindo`, que repetía exactamente `assets/img/site/home-hero.jpg`, por `assets/img/guide/cover.jpg`, una composición creada para representar la guía turística. El hero no se modificó.
+- `AUDIT.md`: registrar los siete grupos de duplicados exactos encontrados, distinguir archivos archivados o intencionales de la única repetición activa corregida y documentar la limitación de no contar con Python para una comparación perceptual automatizada.
+- Validación: SHA-256 sobre 182 imágenes locales, revisión visual de la imagen repetida y del reemplazo, referencias activas revisadas y `git diff --check`.
+
+### Logo de cierre después de tarifas
+
+- `index.html`, `piloto.html` y `styles.css`: agregar una segunda aparición del logo WavePoint debajo de la tabla de tarifas, reutilizando el aura de ondas del hero con una escala más contenida y ajustes responsive para que funcione como cierre de la sección sin competir con la información.
+- Validación: revisar la posición del nuevo bloque después de la nota de tarifas y mantener `git diff --check` como control de formato.
+
 ### Encuestas de servicios más interactivas
 
 - `services.js`: agregar una barra de progreso bilingüe a los formularios de solicitudes, estados de respuesta y conteo dinámico sin eliminar preguntas, opciones, campos opcionales ni el flujo existente hacia WhatsApp.
