@@ -28,6 +28,9 @@
 - Recuperada una proporción más equilibrada entre foto y texto para evitar tarjetas excesivamente altas.
 - Reducidos de forma fluida el padding, el cuerpo de texto y las listas en función del ancho disponible; en móvil se conserva el apilado.
 
+### Enlace de información más compacto
+- Reducido el tamaño y el padding del enlace final de cada tarjeta para que entre en una sola línea sin agrandar el bloque.
+
 ## 2026-10-07
 ### Imágenes ampliables en todo el sitio
 - El modal de imágenes ahora incluye Retiros, galerías de servicios, alojamientos, guía, colaboradores y tarjetas visuales.
