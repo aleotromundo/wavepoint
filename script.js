@@ -979,6 +979,18 @@
     const videos = [...document.querySelectorAll('.hero-video')];
     if (videos.length < 2) return;
 
+    // En celulares/tablets usamos la imagen fija del hero: evita consumo,
+    // tirones durante el scroll y competencia visual con el gadget climático.
+    const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (touchDevice || window.matchMedia('(max-width: 640px)').matches) {
+      videos.forEach(video=>{
+        video.pause();
+        video.preload='none';
+        video.classList.remove('is-active');
+      });
+      return;
+    }
+
     let activeIndex = 0;
     let swapping = false;
     const loadVideo = video => {

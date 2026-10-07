@@ -1,4 +1,12 @@
 ## 2026-10-07
+### Hero móvil más fluido y gadget climático legible
+- `script.js`: en celulares y tablets táctiles no se cargan ni reproducen los videos del hero; se usa la imagen fija de fondo para evitar tirones, consumo innecesario y problemas durante el scroll.
+- `styles.css` y `styles.optimized.css`: ocultar visualmente la pila de video y asegurar `background-attachment: scroll` en touch/mobile.
+- `weather-widget-3d.css`: reducir en mobile la intensidad del vidrio a 28%/20%, conservar blur y detener la flotación 3D del gadget para priorizar fluidez.
+- Páginas HTML: actualizar JavaScript a `20261007-18` y CSS del widget a `20261007-7`.
+- Validación: `node --check script.js` y `git diff --check`.
+
+## 2026-10-07
 ### Corrección del vidrio visible en el gadget climático
 - `weather-widget-3d.css`: reducir las tres capas traseras del widget 3D de aproximadamente 65% a 22%/15%/9% de mezcla, y bajar el fondo interno a 36%/27%.
 - Mantener el color, blur y saturación del clima, pero permitir que la imagen del hero se vea claramente a través del gadget.
