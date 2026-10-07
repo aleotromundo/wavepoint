@@ -1,4 +1,13 @@
 ## 2026-10-07
+### Atajo de actualización desde el logo
+- `script.js`: al tocar o activar con teclado el logo principal comienza una cuenta regresiva visible `5 → 4 → 3 → 2 → 1 → 0` y luego recarga la página con un parámetro único para solicitar la versión más reciente.
+- La cuenta reinicia el ciclo si se vuelve a tocar el logo antes de terminar.
+- Se eliminan las cachés de la Cache API cuando el navegador las expone; la caché HTTP del navegador no se puede borrar directamente desde JavaScript.
+- `styles.css` y `styles.optimized.css`: añadir el numerito discreto, efecto de pulso y soporte para reducción de movimiento.
+- Páginas HTML: actualizar CSS a `20261007-30` y JavaScript a `20261007-16`.
+- Validación: `node --check script.js` y `git diff --check`.
+
+## 2026-10-07
 ### Gadget climático con efecto vidrio translúcido
 - `styles.css` y `styles.optimized.css`: reducir la opacidad del fondo del gadget para que la imagen del hero se perciba detrás, manteniendo contraste, blur, saturación y legibilidad.
 - Añadir reflejos turquesa/dorados sutiles, borde luminoso y capas internas semitransparentes.
