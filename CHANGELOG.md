@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Gadget del clima más compacto en celular
+- Reducido el ancho, padding, temperatura y tarjetas internas solo hasta 640px.
+- Ajuste adicional para pantallas de hasta 400px.
+- Escritorio y tablet permanecen sin cambios.
+- CSS del gadget actualizado a `20261007-8`.
+
+## 2026-10-07
 ### Imágenes ampliables en todo el sitio
 - El modal de imágenes ahora incluye Retiros, galerías de servicios, alojamientos, guía, colaboradores y tarjetas visuales.
 - Las fotos reciben foco de teclado, `Enter`/`Space` para abrir y `Escape` para cerrar.
