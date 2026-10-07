@@ -6342,3 +6342,133 @@ html.safari-stable #servicios .service-card .service-body p {
   opacity: 1 !important;
   transform: none !important;
 }
+
+
+/* Encuestas y solicitudes: más ritmo visual sin ocultar preguntas ni contenido. */
+.service-survey-form {
+  position: relative;
+}
+.survey-progress {
+  margin: 0 0 20px;
+  padding: 12px 14px 13px;
+  border: 1px solid rgba(7, 143, 145, .18);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(7, 143, 145, .08), rgba(243, 182, 75, .1));
+}
+.survey-progress-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #466770;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.survey-progress-copy strong {
+  color: #087f87;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.survey-progress-track {
+  height: 7px;
+  margin-top: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(8, 127, 135, .12);
+}
+.survey-progress-track > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #087f87, #10a49a 68%, #f3b64b);
+  box-shadow: 0 0 12px rgba(16, 164, 154, .28);
+  transition: width .45s cubic-bezier(.2, .8, .25, 1);
+}
+.detail-question[data-survey-question] > legend,
+.detail-question[data-survey-question] > span {
+  position: relative;
+}
+.detail-question[data-survey-question].is-answered > legend::after,
+.detail-question[data-survey-question].is-answered > span::after {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  margin-left: 7px;
+  place-items: center;
+  border-radius: 50%;
+  background: #0a8f85;
+  color: #fff;
+  content: "✓";
+  font-size: 11px;
+  vertical-align: -2px;
+  animation: survey-answer-pop .28s ease both;
+}
+.detail-option {
+  position: relative;
+  overflow: hidden;
+  min-height: 48px;
+  border-color: rgba(8, 127, 135, .16);
+  background: linear-gradient(120deg, #fbfefd, #f4faf7);
+  transition: border-color .22s ease, background .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+.detail-option::after {
+  position: absolute;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid rgba(8, 127, 135, .22);
+  border-radius: 50%;
+  content: "";
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.detail-option:has(input:checked) {
+  border-color: #0a9b91;
+  background: linear-gradient(120deg, #e8faf4, #fff6df);
+  box-shadow: 0 8px 20px rgba(8, 127, 135, .13), inset 0 0 0 1px rgba(255, 255, 255, .75);
+  color: #143f48;
+  transform: translateX(3px);
+}
+.detail-option:has(input:checked)::after {
+  border-color: #0a9b91;
+  background: #0a9b91;
+  box-shadow: 0 0 0 4px rgba(10, 155, 145, .13);
+  transform: scale(1.05);
+}
+.detail-option:focus-within {
+  outline: 3px solid rgba(16, 164, 154, .16);
+  outline-offset: 2px;
+}
+.detail-field input:focus,
+.detail-field textarea:focus,
+.detail-date-grid input:focus {
+  border-color: #0a9b91;
+  box-shadow: 0 0 0 4px rgba(16, 164, 154, .12), 0 8px 20px rgba(8, 127, 135, .08);
+}
+.service-survey-form.is-survey-complete .survey-progress {
+  border-color: rgba(10, 143, 133, .35);
+  background: linear-gradient(135deg, rgba(10, 143, 133, .13), rgba(243, 182, 75, .12));
+}
+.service-survey-form.is-survey-complete .survey-progress-track > span {
+  animation: survey-complete-glow 1.6s ease-in-out infinite alternate;
+}
+@keyframes survey-answer-pop {
+  from { opacity: 0; transform: scale(.55); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes survey-complete-glow {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.18); }
+}
+@media (max-width: 640px) {
+  .survey-progress { margin-bottom: 16px; padding: 11px 12px 12px; }
+  .detail-option { min-height: 50px; padding-right: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .survey-progress-track > span,
+  .detail-question[data-survey-question].is-answered > legend::after,
+  .detail-question[data-survey-question].is-answered > span::after,
+  .service-survey-form.is-survey-complete .survey-progress-track > span { animation: none; transition: none; }
+}

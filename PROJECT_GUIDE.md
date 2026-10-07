@@ -359,3 +359,11 @@ Antes de publicar:
 - No agregar dependencias o frameworks para cambios que puedan resolverse con HTML, CSS y JavaScript existentes.
 - No subir secretos, claves API ni credenciales al repositorio.
 - Mantener la comunicación con el usuario en español salvo que solicite otro idioma.
+
+## 17. Perfil de colaboración con el usuario y agentes
+
+`README.md` es el punto de entrada general; `AGENTS.md`, `CLAUDE.md` y `.github/copilot-instructions.md` adaptan estas reglas a distintas herramientas. Todos deben apuntar a esta guía y no reemplazarla.
+
+El usuario espera un colaborador senior que inspeccione el contexto, tome decisiones razonables de bajo riesgo, implemente el pedido completo, valide el resultado y registre los cambios. La interacción debe ser en español, breve y concreta. No pedir confirmaciones rutinarias: consultar solo si falta una elección que pueda cambiar el producto, el contenido, la seguridad, los permisos, los datos o la intención del usuario.
+
+Cada agente debe, antes de editar, leer `README.md`, esta guía y la entrada más reciente de `CHANGELOG.md`; revisar el estado de Git; preservar cambios ajenos; evitar frameworks nuevos; no inventar datos; respetar el hero, el copy aprobado, el catálogo y los assets protegidos; y actualizar el changelog con archivos, motivo, comportamiento esperado y validaciones. No crear commits, hacer push, publicar ni modificar servicios externos sin pedido o autorización explícita.

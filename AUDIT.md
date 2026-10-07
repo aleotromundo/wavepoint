@@ -33,6 +33,14 @@ El piloto CMS agregado en esta entrega se accede desde `/admin.html`. Permite au
 9. **Secretos:** no se detectaron claves secretas versionadas; `OPENAI_API_KEY` se consume desde entorno serverless.
 10. **Peso del repo:** 441 MB es elevado para un sitio estático; conviene comprimir videos, usar formatos modernos y CDN/storage para medios.
 
+## Revisión de continuidad — 2026-10-07
+
+- Se confirmó que el proyecto sigue siendo estático, sin `package.json` ni build obligatorio, con HTML/CSS/JavaScript vanilla y Vercel como hosting.
+- La sintaxis JavaScript existente fue revisada con `node --check`; no se detectaron errores de sintaxis en los archivos JavaScript del proyecto.
+- Se agregaron `README.md` y `AGENTS.md` como entradas de trabajo, además de `CLAUDE.md` y `.github/copilot-instructions.md` como adaptadores para herramientas específicas. La fuente de verdad de producto continúa siendo `PROJECT_GUIDE.md`.
+- Se mantiene como riesgo abierto la ausencia de persistencia CMS de producción, autenticación robusta para el panel, límites globales del asistente y optimización del peso multimedia. Esta auditoría no convierte esos pendientes en autorización de implementación.
+- El cambio visual del logo posterior a las tarjetas de servicios quedó limitado a `index.html`, `piloto.html` y `styles.css`; no se modificó el hero.
+
 ## Qué cubre el piloto
 
 - Login en `/admin.html` mediante `POST /api/admin-auth`.
