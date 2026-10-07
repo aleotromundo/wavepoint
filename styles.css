@@ -2512,8 +2512,8 @@ body { background: #071c28; }
 .collab-layout article { max-width: 680px; padding: clamp(24px, 3vw, 40px); border: 1px solid rgba(173, 232, 222, .2); border-radius: 18px; background: rgba(5, 30, 40, .78); box-shadow: 0 18px 48px rgba(1, 17, 24, .24); backdrop-filter: blur(14px); }
 .collab-layout article p:not(.collab-label) { margin: 0 0 22px; color: rgba(239, 249, 246, .88); font-size: 17px; line-height: 1.72; }
 .collab-label { margin: 0 0 18px; color: #9ce8d7; }
-.collab-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 10px; border: 1px solid rgba(173, 232, 222, .18); border-radius: 18px; background: rgba(5, 30, 40, .42); box-shadow: 0 18px 48px rgba(1, 17, 24, .2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.collab-gallery img { width: 100%; height: 190px; box-sizing: border-box; padding: 6px; border: 1px solid rgba(218, 246, 238, .18); border-radius: 14px; object-fit: cover; object-position: center; background: #061d2a; box-shadow: 0 12px 28px rgba(1, 17, 24, .3); }
+.collab-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.collab-gallery img { display: block; width: 100%; height: 190px; box-sizing: border-box; padding: 0; border: 0; border-radius: 8px; object-fit: cover; object-position: center; background: transparent; box-shadow: none; }
 .collab-gallery img:first-child { grid-column: 1 / -1; height: 270px; }
 .collaborator-casa-maderas .collab-gallery img:first-child,
 .collaborator-occidental .collab-gallery img:first-child { grid-column: auto; height: 190px; }
@@ -2742,7 +2742,8 @@ body { background: #071c28; }
 .detail-gallery img { height: auto; min-height: 188px; aspect-ratio: auto; }
 .detail-gallery img:first-child { height: auto; min-height: 0; }
 .accommodation-photo-gallery img { object-fit: cover; background: transparent; }
-.collab-gallery img { height: 190px; min-height: 0; object-fit: cover; object-position: center; background: #061d2a; }
+.collab-gallery { gap: 14px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.collab-gallery img { height: 190px; min-height: 0; padding: 0; border: 0; border-radius: 8px; object-fit: cover; object-position: center; background: transparent; box-shadow: none; }
 .collab-gallery img:first-child { height: 270px; }
 @media (max-width: 980px) {
   .topbar, .service-topbar { padding-top: 10px; }
@@ -2951,10 +2952,16 @@ body { background: #071c28; }
 .site-footer .foot-grid > div > p { color: rgba(237,248,245,.82); }
 .site-footer .foot-grid > div > a:not(.btn) { color: rgba(237,248,245,.76); transition: color .2s ease, transform .2s ease; }
 .site-footer .foot-grid > div > a:not(.btn):hover { color: #a9f3ec; transform: translateX(2px); }
-.site-footer .foot-brand { text-shadow: 0 2px 18px rgba(0,0,0,.24); }
+.site-footer .foot-brand { text-shadow: none; }
 footer a.footer-logo-link { display: inline-flex; align-items: center; width: fit-content; max-width: 100%; margin: 0; }
-.footer-logo { display: block; width: 160px; max-width: min(100%, 70vw); height: auto; object-fit: contain; }
+.footer-logo { display: block; width: 160px; max-width: min(100%, 70vw); height: auto; object-fit: contain; border: 0; border-radius: 0; box-shadow: none; }
 .site-footer .foot-grid > div > a.footer-logo-link { margin: 0 0 12px; }
+.logo-return { display: inline-flex; align-items: center; gap: 8px; }
+.logo-return .footer-logo { width: 96px; max-width: 22vw; }
+.collab-nav .logo-return { gap: 7px; font-size: 13px; font-weight: 800; }
+.collab-nav .footer-logo { width: 94px; max-width: 24vw; }
+.service-page-footer .logo-return { gap: 8px; }
+.service-page-footer .footer-logo { width: 112px; max-width: 34vw; }
 .site-footer .foot-bottom { border-color: rgba(220,244,236,.2); color: rgba(237,248,245,.72); }
 @media (max-width: 980px) {
   .site-footer .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }

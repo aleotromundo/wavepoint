@@ -31,7 +31,7 @@
     { selector: '.about-opening-copy > h2', es: '¿Quiénes somos?', en: 'Who are we?' },
     { selector: '.navlinks .dropbtn', es: 'Colaboradores ▾', en: 'Partners ▾' },
     { selector: '.mobile-dropdown-link', es: 'Colaboradores', en: 'Partners' },
-    { selector: '.service-page-footer a[href$="index.html"]:not(.footer-logo-link)', es: '← Volver a WavePoint', en: '← Back to WavePoint' },
+    { selector: '.service-page-footer a[href$="index.html"]:not(.footer-logo-link):not(.logo-return)', es: '← Volver a WavePoint', en: '← Back to WavePoint' },
     { selector: '.service-page-footer a[href$="index.html#servicios"]', es: '← Volver a Servicios', en: '← Back to Services' }
   ];
   // Accessible names. They are only updated where the attribute already exists.
