@@ -1,5 +1,10 @@
 ## 2026-10-07
 
+### Foto repetida en la ficha de Red Door / Duplicate photo on the Red Door page
+
+- `Enlaces/red-door.html`: reemplazar en la galería la imagen repetida de la portada por una foto distinta de la entrada del hotel; actualizar el texto alternativo en español e inglés.
+- `Enlaces/red-door.html`: replace the gallery photo duplicated from the hero with a different hotel entrance photo; update the Spanish and English alternative text.
+
 ### Estabilidad del carrusel de aliados / Allies carousel stability
 
 - `styles.css`: quitar las perforaciones decorativas que cruzaban el carrusel, evitar filtros y escalados por hover que podían parpadear mientras las tarjetas se desplazan, y alinear el recorrido del loop con el ancho exacto del contenido duplicado.
