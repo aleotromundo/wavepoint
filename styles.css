@@ -7648,3 +7648,105 @@ footer a {
   .surf-lesson-detail-page .surf-lesson-gallery img:nth-child(2), .surf-lesson-detail-page .surf-lesson-gallery img:nth-child(3) { grid-row: 2; }
   .surf-lesson-detail-page .detail-request { margin-top: 30px; padding: 21px; border-radius: 20px; }
 }
+
+/* Clases de surf: composición abierta inspirada en Estadías y hoteles. */
+.surf-lesson-detail-page .detail-story {
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.surf-lesson-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(430px, 1.1fr);
+  gap: clamp(32px, 5vw, 76px);
+  align-items: center;
+}
+.surf-lesson-intro-copy { min-width: 0; }
+.surf-lesson-intro-copy h2 {
+  max-width: 620px;
+  margin: 0 0 20px;
+  color: #123d49;
+  font: 700 clamp(52px, 6vw, 84px)/.92 "Barlow Condensed", Impact, sans-serif;
+}
+.surf-lesson-detail-page .surf-lesson-lead {
+  max-width: 620px;
+  margin: 0 0 18px;
+  color: #244d58;
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1.55;
+  font-weight: 650;
+}
+.surf-lesson-detail-page .surf-lesson-description {
+  max-width: 650px;
+  margin: 0 0 24px;
+  color: #45636c;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.surf-lesson-detail-page .surf-lesson-gallery {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+  grid-template-rows: repeat(2, minmax(150px, 1fr));
+  height: 420px;
+  gap: 8px;
+  margin: 0;
+}
+.surf-lesson-detail-page .surf-lesson-gallery img {
+  min-height: 0;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #dceae5;
+  cursor: zoom-in;
+  box-shadow: 0 12px 28px rgba(8, 43, 58, .12);
+}
+.surf-lesson-detail-page .surf-lesson-gallery img:first-child { display: block; grid-row: 1 / -1; }
+.surf-lesson-detail-page .surf-survey-open {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: #087f87;
+  color: #fff;
+  font: 800 13px "DM Sans", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(8, 127, 135, .2);
+}
+.surf-lesson-detail-page .surf-survey-open:hover { background: #096d74; transform: translateY(-1px); }
+.surf-lesson-detail-page .surf-lesson-survey-intro {
+  max-width: 900px;
+  margin: 54px 0 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(7, 143, 145, .18);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(7, 143, 145, .08), rgba(243, 182, 75, .1));
+}
+.surf-lesson-detail-page .surf-lesson-survey-intro h3 { font-size: clamp(30px, 4vw, 44px); }
+.surf-lesson-detail-page .detail-request {
+  position: static;
+  max-width: 900px;
+  margin: 36px auto 0;
+  padding: clamp(24px, 4vw, 44px);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 20px 52px rgba(8, 43, 58, .12);
+}
+.surf-lesson-detail-page .quick-request-launcher { display: none; }
+@media (max-width: 980px) {
+  .surf-lesson-intro { grid-template-columns: 1fr; gap: 30px; }
+  .surf-lesson-detail-page .surf-lesson-gallery { max-width: 760px; }
+}
+@media (max-width: 640px) {
+  .surf-lesson-intro-copy h2 { font-size: 58px; }
+  .surf-lesson-detail-page .surf-lesson-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 230px 150px; height: 389px; }
+  .surf-lesson-detail-page .surf-lesson-gallery img:first-child { grid-column: 1 / -1; grid-row: 1; }
+  .surf-lesson-detail-page .surf-lesson-gallery img:nth-child(2), .surf-lesson-detail-page .surf-lesson-gallery img:nth-child(3) { grid-row: 2; }
+  .surf-lesson-detail-page .surf-lesson-survey-intro { margin-top: 36px; padding: 18px; }
+  .surf-lesson-detail-page .detail-request { margin-top: 26px; padding: 20px; border-radius: 18px; }
+}

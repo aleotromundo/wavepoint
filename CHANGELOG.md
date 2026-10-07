@@ -1,4 +1,13 @@
 ## 2026-10-07
+### Clases de surf — composición corregida
+- Rehecha la sección principal con una composición abierta inspirada en Estadías y hoteles.
+- Galería integrada al bloque introductorio, con tres fotos grandes y ampliables.
+- Formulario ancho debajo del contenido, sin panel lateral ni modal.
+- Header y logo de WhatsApp no fueron modificados.
+- Versiones de página: `services.js?v=20261007-14` y `styles.optimized.css?v=20261007-34`.
+- Validación: `node --check services.js`, `node --check script.js` y `git diff --check`.
+
+## 2026-10-07
 ### Clases de surf — primera página rediseñada
 - Galería de tres fotos más grande, con recorte editorial y ampliación al tocar o hacer click.
 - Texto principal más ancho, legible y con mayor contraste.
