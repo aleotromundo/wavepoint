@@ -295,3 +295,16 @@
   backdrop-filter: blur(14px) saturate(145%) !important;
   -webkit-backdrop-filter: blur(14px) saturate(145%) !important;
 }
+
+
+/* En mobile el vidrio es más liviano para que se note el fondo sin perder contraste. */
+@media (hover: none) and (pointer: coarse), (max-width: 640px) {
+  .wx3d-bg {
+    background: linear-gradient(160deg,
+      color-mix(in srgb, var(--b1) 28%, transparent),
+      color-mix(in srgb, var(--b2) 20%, transparent)) !important;
+    backdrop-filter: blur(10px) saturate(130%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(130%) !important;
+  }
+  .wx3d-card { animation: none; }
+}
