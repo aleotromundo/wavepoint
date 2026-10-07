@@ -8002,6 +8002,7 @@ footer a {
 }
 .service-detail-page:not(.accommodation-detail-page) .quick-request-launcher { display: none !important; }
 .service-detail-page:not(.accommodation-detail-page) .quick-request-panel {
+  display: block !important;
   position: static !important;
   width: 100% !important;
   max-width: 900px;

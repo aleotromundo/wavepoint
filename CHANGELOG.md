@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Visibilidad final de formularios
+- Corregida la regla heredada que ocultaba los formularios unificados.
+- El panel queda visible debajo del contenido en todas las páginas de servicio.
+- CSS cacheado actualizado a `20261007-45`.
+
+## 2026-10-07
 ### Formularios — formato limpio unificado
 - Todos los formularios ahora siguen el formato limpio de Clases de surf.
 - Eliminada la barra genérica repetida de “Consulta rápida / Encontramos la opción para vos”.
