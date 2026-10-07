@@ -3145,7 +3145,3 @@ to{filter:brightness(1.18)}
 
 /* Yoga: la foto del fondo no se repite dentro de la galería; quedan solo las otras dos. */
 .service-detail-page.yoga-detail-page .service-editorial-gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);height:clamp(300px,32vw,430px)}.service-detail-page.yoga-detail-page .service-editorial-gallery img{grid-column:auto!important;grid-row:auto!important}@media (max-width:640px){.service-detail-page.yoga-detail-page .service-editorial-gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);height:220px}}
-
-
-/* Logo flotante persistente en páginas de servicios. */
-.service-floating-brand{position:fixed;right:28px;bottom:148px;z-index:1001;display:grid;place-items:center;width:118px;min-height:70px;padding:8px;border-radius:14px;background:rgba(4,30,42,.34);backdrop-filter:blur(8px);transition:transform .22s ease,filter .22s ease}.service-floating-brand:hover,.service-floating-brand:focus-visible{transform:translateY(-3px);filter:brightness(1.08)}.service-floating-brand .logo-wave-aura{inset:-14% -10% -8%}.service-floating-brand img{position:relative;z-index:1;display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,167,189,.3))}@media (max-width:640px){.service-floating-brand{right:12px;bottom:154px;width:92px;min-height:56px;padding:5px;border-radius:11px}}
