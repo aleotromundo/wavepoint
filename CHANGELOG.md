@@ -26,6 +26,10 @@
 - Se agregó nuevamente el logo flotante WavePoint a todas las páginas de detalle de servicios, con enlace a Inicio y posición segura sobre WhatsApp/chat.
 - Se verificó la separación real entre galería y formulario en Yoga, Surf coaching, Clases de surf y Estadías; el margen queda en cero y no en los márgenes antiguos mayores.
 
+### Tours en cuatriciclo — galería ATV
+- La galería de ATV ahora incluye dos fotos optimizadas de paseos en cuatriciclo por playa y costa.
+- Las imágenes fueron descargadas desde resultados de Tour Guanacaste y guardadas localmente como WebP para evitar dependencias externas en producción.
+
 ## 2026-10-07
 ### Preloader real y navegación de logos
 - Agregado en la portada un preloader sincronizado con el primer video del hero, el gadget meteorológico, el logo y dos fondos críticos; la barra refleja tareas reales y cuenta con fallback para no bloquear la página si falla un recurso externo.
