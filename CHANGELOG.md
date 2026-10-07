@@ -1,5 +1,10 @@
 ## 2026-10-07
 
+### Logo decorativo en el espacio libre de Servicios / Decorative logo in Services whitespace
+
+- `index.html`, `piloto.html` y `styles.css`: sumar el logo blanco del hero, en una escala menor y con baja opacidad, como marca decorativa en el espacio libre del fondo fotográfico de Servicios; ocultarlo en móvil para preservar la lectura de las tarjetas.
+- `index.html`, `piloto.html` and `styles.css`: add the smaller, low-opacity white hero logo as a decorative mark in the open area of the Services photographic background; hide it on mobile to preserve card readability.
+
 ### Biblioteca de fotos de estadías y servicios / Stays and services photo library
 
 - `assets/img/stays/` y `assets/img/services/`: organizar las fotos activas por alojamiento y servicio; actualizar sus referencias en páginas, datos, estilos y el armador de viajes.
