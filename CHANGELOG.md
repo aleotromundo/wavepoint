@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Gadget climático con efecto vidrio translúcido
+- `styles.css` y `styles.optimized.css`: reducir la opacidad del fondo del gadget para que la imagen del hero se perciba detrás, manteniendo contraste, blur, saturación y legibilidad.
+- Añadir reflejos turquesa/dorados sutiles, borde luminoso y capas internas semitransparentes.
+- Páginas HTML: actualizar la versión cacheada del CSS a `20261007-29`.
+- Validación: `git diff --check`.
+
+## 2026-10-07
 ### Acciones independientes en las tarjetas de guía y cámaras
 - `index.html` y `piloto.html`: convertir las dos tarjetas grandes en contenedores con acción principal en el área libre y enlaces internos independientes, sin cambiar los textos visibles.
 - “Explorar guía” y “Guía local”: enlazan a la guía turística.
