@@ -2499,7 +2499,7 @@ body { background: #071c28; }
 .collaborator-page.collaborator-red-door { --collab-cover: url("assets/img/stays/red-door/cover.jpg"); }
 .collaborator-page.collaborator-capitan-suizo { --collab-cover: url("assets/img/stays/capitan-suizo/cover.jpg"); }
 .collaborator-page.collaborator-casa-maderas { --collab-cover: url("assets/img/stays/casa-maderas/cover.jpg"); }
-.collaborator-page.collaborator-occidental { --collab-cover: url("assets/img/stays/occidental/cover.jpg"); }
+.collaborator-page.collaborator-occidental { --collab-cover: url("assets/img/stays/occidental/cover.webp"); }
 .collab-nav { position: absolute; inset: 0 0 auto; z-index: 5; display: flex; align-items: center; justify-content: space-between; width: min(1180px, calc(100% - 42px)); margin: 0 auto; padding: 24px 0; color: #fff; }
 .collab-nav nav { display: flex; gap: 22px; font-size: 13px; font-weight: 700; }
 .collab-nav a { color: inherit; }
@@ -2917,7 +2917,7 @@ body { background: #071c28; }
   isolation: isolate;
   overflow: hidden;
   padding: 62px 0 28px;
-  background: #061e2f url("assets/img/site/home-hero.jpg") center / cover no-repeat;
+  background: #061e2f url("assets/img/site/backgrounds/footer-surf.webp") center / cover no-repeat;
 }
 .site-footer::before {
   position: absolute;
@@ -2925,18 +2925,6 @@ body { background: #071c28; }
   inset: 0;
   background: linear-gradient(145deg, rgba(3,22,34,.78), rgba(4,30,42,.68) 48%, rgba(4,20,32,.86));
   content: "";
-}
-.site-footer .footer-video {
-  position: absolute;
-  z-index: -2;
-  top: -8%;
-  left: 0;
-  width: 100%;
-  height: 116%;
-  object-fit: cover;
-  object-position: center 56%;
-  pointer-events: none;
-  will-change: transform;
 }
 .site-footer > .container { position: relative; z-index: 1; }
 .site-footer .foot-grid > div {
@@ -2975,12 +2963,6 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
   .site-footer .foot-grid > div:first-child, .site-footer .foot-grid > div:last-child { grid-column: auto; }
   .site-footer .foot-grid > div { padding: 17px; }
   .site-footer .foot-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
-}
-@media (max-width: 760px), (prefers-reduced-motion: reduce) {
-  .site-footer .footer-video { will-change: auto; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .site-footer .footer-video { display: none; }
 }
 .about-page .about-hero-image { background-attachment: fixed; }
 .about-page .about-hero-inner {
@@ -6197,9 +6179,25 @@ html.safari-stable .about-page .about-closing {
   background-attachment: scroll !important;
 }
 
-html.safari-stable .site-footer .footer-video,
 html.safari-stable .trip-builder-hero-video {
   display: none !important;
+}
+
+/* Tablet/touch stability: avoid fixed-background repaints during fast scroll. */
+@media (hover: none), (pointer: coarse), (max-width: 1024px) {
+  body,
+  .hero,
+  .services,
+  .sponsor-strip,
+  .after-surf,
+  .service-detail-page,
+  .about-page .about-hero-image,
+  .about-page .about-opening,
+  .about-page .about-story,
+  .about-page .about-gallery-section,
+  .about-page .about-closing {
+    background-attachment: scroll !important;
+  }
 }
 
 html.safari-stable .hero {
