@@ -996,24 +996,63 @@ const form = event.currentTarget;
 const ui = uiFor(service);
 const error = document.getElementById('detailError');
 if (!form.checkValidity()) { form.reportValidity(); error.textContent = ui.error; return; }
-const lines = [`${ui.waIntro} ${service.title}`, ''];
+const isSpanish = lang !== 'en';
+const clean = value => String(value || '').replace(/^¿|[?]$/g, '').trim().toLowerCase();
 const name = form.elements['request-name']?.value.trim();
 const extra = form.elements['request-contact']?.value.trim();
-if (service.id === 'clases-de-surf' && name) lines.push(`${ui.waName} ${name}`);
-service.questions.forEach(question => {
-if (question.type === 'headcount') {
-const parts = question.fields.map(field => { const value = form.elements[`${question.id}-${field.id}`]?.value.trim(); return value ? `${field.label}: ${value}` : ''; }).filter(Boolean);
-const ages = form.elements[`${question.id}-ages`]?.value.trim();
-if (parts.length) lines.push(`${question.label} ${parts.join(' / ')}`);
-if (ages) lines.push(`${question.agesLabel}: ${ages}`);
-return;
+const getValues = question => {
+  if (question.type === 'headcount') {
+    return question.fields.map(field => form.elements[`${question.id}-${field.id}`]?.value.trim()).filter(Boolean);
+  }
+  return [...form.querySelectorAll(`[name="${question.id}"], [name^="${question.id}-"]`)]
+    .map(input => input.type === 'checkbox' || input.type === 'radio' ? (input.checked ? input.value : '') : input.value)
+    .map(value => value.trim())
+    .filter(Boolean);
+};
+const groupQuestion = service.questions.find(question => ['group_size', 'snorkel_people'].includes(question.id));
+const groupValue = groupQuestion ? Number(form.elements[groupQuestion.id]?.value || 1) : 1;
+const plural = groupValue > 1;
+const subject = clean(service.title);
+const lines = isSpanish
+  ? [`Hola, WavePoint. Quiero consultar por ${subject}.`]
+  : [`Hi WavePoint. I’d like to ask about ${subject}.`];
+if (name) {
+  lines.push(isSpanish
+    ? (plural ? `Soy ${name} y somos ${groupValue} personas.` : `Soy ${name}.`)
+    : (plural ? `I’m ${name} and there are ${groupValue} of us.` : `I’m ${name}.`));
 }
-const values = [...form.querySelectorAll(`[name="${question.id}"], [name^="${question.id}-"]`)].map(input => input.type === 'checkbox' || input.type === 'radio' ? (input.checked ? input.value : '') : input.value).filter(Boolean);
-if (values.length) lines.push(`${question.label} ${values.join(' / ')}`);
+const naturalAnswers = {
+  surf_level: isSpanish ? (plural ? 'Nuestro nivel de surf es' : 'Mi nivel de surf es') : (plural ? 'Our surfing level is' : 'My surfing level is'),
+  current_surf_level: isSpanish ? (plural ? 'Nuestro nivel actual de surf es' : 'Mi nivel actual de surf es') : (plural ? 'Our current surfing level is' : 'My current surfing level is'),
+  lesson_goal: isSpanish ? (plural ? 'Nos gustaría' : 'Me gustaría') : (plural ? 'We’d like to' : 'I’d like to'),
+  improvement_goal: isSpanish ? (plural ? 'Nos gustaría mejorar' : 'Me gustaría mejorar') : (plural ? 'We’d like to improve' : 'I’d like to improve'),
+  group_levels: isSpanish ? 'Los niveles de surf del grupo son' : 'The group’s surfing levels are',
+  preferred_schedule: isSpanish ? (plural ? 'Preferimos el horario de' : 'Prefiero el horario de') : (plural ? 'We prefer' : 'I prefer'),
+  session_schedule: isSpanish ? (plural ? 'Preferimos el horario de' : 'Prefiero el horario de') : (plural ? 'We prefer' : 'I prefer'),
+  board_need: isSpanish ? (plural ? 'Sobre las tablas, necesitamos' : 'Sobre la tabla, necesito') : (plural ? 'For boards, we need' : 'For a board, I need'),
+  own_board: isSpanish ? (plural ? 'Sobre las tablas, ' : 'Sobre la tabla, ') : (plural ? 'For boards, ' : 'For a board, '),
+  own_boards: isSpanish ? 'Sobre las tablas, ' : 'For boards, ',
+  origin: isSpanish ? (plural ? 'Venimos de' : 'Vengo de') : (plural ? 'We’re visiting from' : 'I’m visiting from'),
+  preferred_fruit: isSpanish ? (plural ? 'Después de la clase, preferimos comer' : 'Después de la clase, prefiero comer') : (plural ? 'After the lesson, we’d like' : 'After the lesson, I’d like'),
+  analysis_time: isSpanish ? (plural ? 'Preferimos recibir el análisis' : 'Prefiero recibir el análisis') : (plural ? 'We’d like to receive the analysis' : 'I’d like to receive the analysis'),
+  date_flexibility: isSpanish ? 'Sobre la fecha, ' : 'Regarding the date, ',
+  swimming_comfort: isSpanish ? 'Sobre nadar en el mar, ' : 'About swimming in the sea, '
+};
+service.questions.forEach(question => {
+  const values = getValues(question);
+  if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
+  const joined = values.join(isSpanish ? ', ' : ', ');
+  const prefix = naturalAnswers[question.id];
+  if (prefix) {
+    lines.push(`${prefix} ${clean(joined)}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
+  } else if (isSpanish) {
+    lines.push(`También quería contarte que, sobre ${clean(question.label)}, ${clean(joined)}.`);
+  } else {
+    lines.push(`I’d also like to mention that for ${clean(question.label)}, ${clean(joined)}.`);
+  }
 });
-if (service.id !== 'clases-de-surf' && name) lines.push(`${ui.waName} ${name}`);
-if (extra) lines.push(`${ui.waExtra} ${extra}`);
-lines.push('', ui.waThanks);
+if (extra) lines.push(isSpanish ? `Además, ${extra}.` : `Also, ${extra}.`);
+lines.push('', isSpanish ? 'Gracias. Quedo atento/a.' : 'Thank you. Looking forward to your reply.');
 window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
 }
 render(localizeService(getService()));

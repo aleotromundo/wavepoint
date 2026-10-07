@@ -1,4 +1,12 @@
 ## 2026-10-07
+### Mensajes de WhatsApp naturales
+- Los formularios ahora arman mensajes conversacionales, como si la persona escribiera directamente a WavePoint.
+- El texto cambia a primera persona singular o plural según la cantidad de personas.
+- Clases de surf genera frases naturales para nombre, nivel, objetivo, procedencia, horario y tabla.
+- Aplicado el mismo criterio al resto de los formularios, con versión en español e inglés.
+- JavaScript cacheado actualizado a `20261007-15`.
+
+## 2026-10-07
 ### Formularios — punto blanco compatible en el selector
 - Corregido el indicador seleccionado para dibujarlo dentro del input real.
 - Ahora usa un fondo radial blanco compatible con navegadores móviles y de escritorio.
