@@ -8234,3 +8234,11 @@ footer a {
 /* Override final: la separación entre galería y formulario queda en 16px en todos los breakpoints. */
 .service-detail-page:not(.accommodation-detail-page) .quick-request-panel,
 .service-detail-page.accommodation-detail-page .quick-request-panel { margin: 16px auto 0 !important; }
+
+
+/* Yoga: la foto del fondo no se repite dentro de la galería; quedan solo las otras dos. */
+.service-detail-page.yoga-detail-page .service-editorial-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: minmax(0, 1fr); height: clamp(300px, 32vw, 430px); }
+.service-detail-page.yoga-detail-page .service-editorial-gallery img { grid-column: auto !important; grid-row: auto !important; }
+@media (max-width: 640px) {
+  .service-detail-page.yoga-detail-page .service-editorial-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: minmax(0, 1fr); height: 220px; }
+}
