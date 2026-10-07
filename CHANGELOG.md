@@ -20,6 +20,23 @@
 - `styles.css`: quitar el marco y la caja translúcida de las galerías de colaboradores para presentar las fotos directamente, centradas y sin bordes.
 - `styles.css`: remove the frame and translucent gallery box from collaborator galleries, presenting centered photos directly without borders.
 
+### Galería de fotos de Nosotros / About page photo gallery
+
+- `index.html`, `piloto.html` y `Enlaces/nostros.html`: quitar la galería de fotos “Hecho para volver al agua” y el encabezado que la acompañaba.
+- `index.html`, `piloto.html` and `Enlaces/nostros.html`: remove the “Made to get back in the water” photo gallery and its heading.
+
+### Índice visual de alojamientos / Accommodation photo index
+
+- `services.js` y `styles.css`: reemplazar la galería inicial por una foto por alojamiento con enlaces a las fichas inferiores; Casa Aura queda sin foto hasta verificar una propia.
+- `services.js` and `styles.css`: replace the opening gallery with one photo per accommodation linking to its details below; Casa Aura stays photo-free until its own image is verified.
+
+### Orden y subrayado animado de navegación / Navigation order and animated underline
+
+- Menú de escritorio y móvil: ordenar los enlaces como Inicio, Colaboradores, Servicios, Nosotros y Guía turística.
+- `site-nav.js` y `styles.css`: añadir en escritorio un subrayado turquesa que se desliza entre enlaces con movimiento elástico y responde también al foco de teclado; ocultarlo en móvil y respetar movimiento reducido.
+- Desktop and mobile menus: order links as Home, Partners, Services, About and Tourist guide.
+- `site-nav.js` and `styles.css`: add a turquoise underline that glides between desktop links with an elastic motion and keyboard-focus support; hide it on mobile and respect reduced motion.
+
 ### Foto repetida en la ficha de Red Door / Duplicate photo on the Red Door page
 
 - `Enlaces/red-door.html`: reemplazar en la galería la imagen repetida de la portada por una foto distinta de la entrada del hotel; actualizar el texto alternativo en español e inglés.

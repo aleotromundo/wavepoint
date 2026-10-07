@@ -34,6 +34,7 @@ imageAltsEn: [
 ],
 accommodationOptions: [
 {
+id: 'tamalodge',
 category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
 price: 'USD 50', priceNote: 'por habitación · por noche',
 summary: 'Una habitación privada con baño privado para una estadía simple y funcional.',
@@ -45,6 +46,7 @@ details: ['Habitación privada con baño privado.'],
 amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong']
 },
 {
+id: 'casa-aura',
 category: 'OPCIÓN MEDIA', name: 'Casa Aura',
 price: 'USD 80–210', priceNote: 'por unidad · por noche',
 summary: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno incluido según la unidad.',
@@ -59,6 +61,7 @@ details: [
 amenities: ['Frente al mar', 'Desayuno incluido según la unidad']
 },
 {
+id: 'casa-madera',
 category: 'OPCIÓN GRUPAL', name: 'Casa Madera',
 price: 'USD 250–500', priceNote: 'por noche · hasta 10 personas',
 summary: 'Una casa frente al mar para grupos, con tarifas que cambian según la temporada.',
@@ -77,6 +80,7 @@ details: [
 amenities: ['Frente al mar', 'Tarifas para hasta 10 personas, incluidos adultos y niños', 'Máximo de 5 personas adicionales · capacidad total de 15 personas', 'Semana Santa: consultar tarifas especiales']
 },
 {
+id: 'capitan-suizo',
 category: 'OPCIÓN DELUXE', name: 'Capitán Suizo',
 price: 'USD 600', priceNote: 'por noche · consultar disponibilidad',
 summary: 'Hotel frente a la playa con servicios de bienestar, piscina y espacios para disfrutar la estadía.',
@@ -699,12 +703,20 @@ const amenities = option.amenities.map(item => `<li>${esc(item)}</li>`).join('')
 const detailsHeading = lang === 'en' ? 'Options & rates' : 'Opciones y tarifas';
 const amenitiesHeading = lang === 'en' ? 'Services & conditions' : 'Servicios y condiciones';
 const galleryMarkup = gallery ? `<div class="accommodation-gallery">${gallery}</div>` : '';
-return `<article class="accommodation-card accommodation-card-${index + 1}">${galleryMarkup}<div class="accommodation-card-body"><p class="accommodation-category">${esc(option.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(option.priceNote)}</span></div></div><p class="accommodation-summary">${esc(option.summary)}</p><div class="accommodation-columns"><div><h4>${detailsHeading}</h4><ul>${details}</ul></div><div><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></div></div></div></article>`;
+return `<article class="accommodation-card accommodation-card-${index + 1}" id="accommodation-${esc(option.id)}">${galleryMarkup}<div class="accommodation-card-body"><p class="accommodation-category">${esc(option.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(option.priceNote)}</span></div></div><p class="accommodation-summary">${esc(option.summary)}</p><div class="accommodation-columns"><div><h4>${detailsHeading}</h4><ul>${details}</ul></div><div><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></div></div></div></article>`;
 }
 function renderAccommodationStory(service) {
 const isEn = lang === 'en';
-const gallery = service.images.slice(1).map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index + 1] : service.imageAlts?.[index + 1]) || `${uiFor(service).galleryAlt} ${index + 2}`)}" loading="lazy" />`).join('');
-return `<p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 'ALOJAMIENTOS EN TAMARINDO'}</p><h2>${isEn ? 'Accommodation options in Tamarindo' : 'Opciones de alojamiento en Tamarindo'}</h2><p>${esc(service.description)}</p><div class="detail-gallery accommodation-photo-gallery">${gallery}</div><div class="accommodation-rate-note"><strong>${isEn ? 'Rates in USD' : 'Tarifas en USD'}</strong><span>${isEn ? 'All rates are shown in US dollars (USD) per night.' : 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.'}</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
+const destinations = service.accommodationOptions.map(option => {
+const image = option.images[0];
+const alt = isEn ? option.imageAltsEn?.[0] : option.imageAlts?.[0];
+const media = image
+? `<img src="${esc(image)}" alt="${esc(alt || option.imageAlt)}" loading="lazy" />`
+: `<span class="accommodation-destination-placeholder">${isEn ? 'No verified photo' : 'Sin foto verificada'}</span>`;
+const ariaLabel = isEn ? `View ${option.name} details` : `Ver detalles de ${option.name}`;
+return `<a class="accommodation-destination" href="#accommodation-${esc(option.id)}" aria-label="${esc(ariaLabel)}">${media}<span class="accommodation-destination-name">${esc(option.name)}<span aria-hidden="true">↓</span></span></a>`;
+}).join('');
+return `<p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 'ALOJAMIENTOS EN TAMARINDO'}</p><h2>${isEn ? 'Accommodation options in Tamarindo' : 'Opciones de alojamiento en Tamarindo'}</h2><p>${esc(service.description)}</p><nav class="accommodation-destinations" aria-label="${isEn ? 'Jump to an accommodation' : 'Ir a un alojamiento'}">${destinations}</nav><div class="accommodation-rate-note"><strong>${isEn ? 'Rates in USD' : 'Tarifas en USD'}</strong><span>${isEn ? 'All rates are shown in US dollars (USD) per night.' : 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.'}</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
 }
 function renderSurfLessonStory(service) {
 const ui = uiFor(service);
