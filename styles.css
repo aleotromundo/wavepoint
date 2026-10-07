@@ -3297,14 +3297,17 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
   position: relative;
   display: grid;
   place-items: center;
-  width: min(88%, 370px);
-  min-height: 410px;
+  width: min(100%, 470px);
+  min-height: 470px;
   justify-self: center;
   align-self: stretch;
   isolation: isolate;
-  animation: logo-wave-arrive 1.25s cubic-bezier(.2, .8, .25, 1) both;
   transform-origin: center bottom;
+  cursor: pointer;
 }
+.services-logo-wrap.is-arriving { animation: logo-wave-arrive 1.25s cubic-bezier(.2, .8, .25, 1) both; }
+.services-logo-wrap.is-user-replay { animation: logo-wave-arrive .85s cubic-bezier(.2, .8, .25, 1) both; }
+.services-logo-wrap:focus-visible { outline: 2px solid var(--wp-aqua); outline-offset: 5px; border-radius: 8px; }
 
 .services-logo-wrap .logo-wave-aura {
   inset: -14% -10% -8%;
@@ -3328,22 +3331,23 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 @media (max-width: 980px) {
   .services-logo-wrap {
     grid-column: 1 / -1;
-    width: min(72%, 320px);
-    min-height: 300px;
+    width: min(84%, 390px);
+    min-height: 350px;
   }
 }
 
 @media (max-width: 640px) {
   .services-logo-wrap {
     grid-column: 1;
-    width: min(82vw, 270px);
-    min-height: 220px;
+    width: min(88vw, 320px);
+    min-height: 260px;
     margin: 8px auto 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .services-logo-wrap { animation: none; }
+  .services-logo-wrap.is-arriving,
+  .services-logo-wrap.is-user-replay { animation: none; }
 }
 
 /* Foto de las tarjetas de servicios: llena todo el espacio, sin franjas de fondo */

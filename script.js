@@ -1188,35 +1188,38 @@
   }
 
   function bindHeroLogoEntrance(){
-    const logo=document.querySelector('.hero-logo-wrap');
-    if(!logo) return;
+    const logos=[...document.querySelectorAll('.hero-logo-wrap, .services-logo-wrap')];
+    if(!logos.length) return;
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    const replay=()=>{
+    const replay=logo=>{
       logo.classList.remove('is-arriving','is-user-replay');
       void logo.offsetWidth;
       logo.classList.add(reduceMotion.matches?'is-user-replay':'is-arriving');
     };
 
-    if(!reduceMotion.matches) logo.classList.add('is-arriving');
-    logo.addEventListener('click', replay);
-    logo.addEventListener('keydown', e=>{
-      if(e.key==='Enter' || e.key===' '){
-        e.preventDefault();
-        replay();
-      }
+    logos.forEach(logo=>{
+      if(!reduceMotion.matches) logo.classList.add('is-arriving');
+      logo.addEventListener('click', ()=>replay(logo));
+      logo.addEventListener('keydown', e=>{
+        if(e.key==='Enter' || e.key===' '){
+          e.preventDefault();
+          replay(logo);
+        }
+      });
     });
-    document.querySelectorAll('a[href="#inicio"]').forEach(link=>link.addEventListener('click', replay));
+    const hero=logos.find(logo=>logo.classList.contains('hero-logo-wrap'));
+    document.querySelectorAll('a[href="#inicio"]').forEach(link=>link.addEventListener('click', ()=>hero && replay(hero)));
 
-    if('IntersectionObserver' in window && !reduceMotion.matches){
+    if(hero && 'IntersectionObserver' in window && !reduceMotion.matches){
       let firstObservation=true;
       const observer=new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
-          if(entry.isIntersecting && !firstObservation) replay();
-          firstObservation=false;
+          if(entry.isIntersecting && !firstObservation) replay(hero);
+          if(entry.isIntersecting) firstObservation=false;
         });
-      }, {threshold:.65});
-      observer.observe(logo);
+      },{threshold:.38});
+      observer.observe(hero);
     }
   }
 
