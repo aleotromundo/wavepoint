@@ -31,6 +31,10 @@
 ### Enlace de información más compacto
 - Reducido el tamaño y el padding del enlace final de cada tarjeta para que entre en una sola línea sin agrandar el bloque.
 
+### Botón de información de servicios más compacto
+- Corregido el selector de las tarjetas de servicios de la portada: “Más información →” ahora usa tipografía compacta, altura reducida y una sola línea en escritorio y móvil.
+- Actualizada la caché de la portada para que el cambio sea visible sin depender de estilos antiguos.
+
 ## 2026-10-07
 ### Imágenes ampliables en todo el sitio
 - El modal de imágenes ahora incluye Retiros, galerías de servicios, alojamientos, guía, colaboradores y tarjetas visuales.
