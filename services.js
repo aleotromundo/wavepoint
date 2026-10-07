@@ -842,21 +842,25 @@ const isEn = lang === 'en';
 const gallery = service.images.slice(1).map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index + 1] || `${ui.galleryAlt} ${index + 2}`)}" loading="lazy" />`).join('');
 return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><p class="surf-lesson-description">${esc(service.description)}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : 'Fotos de las clases de surf'}">${gallery}</div></section><section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
 }
-function renderWitchRockStory(service) {
+function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
-const kicker = isEn ? 'SURF TRIP · ADVENTURE' : 'VIAJE DE SURF · AVENTURA';
-return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.lead)}</h2><p>${esc(service.description)}</p><p>${esc(service.coordination)}</p><div class="detail-gallery witch-rock-gallery"><img src="${service.images[1]}" alt="${esc(service.galleryAlt)}" loading="lazy" /></div>`;
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
+const title = service.lead || service.cardText || service.title;
+const includes = service.includes ? `<div class="service-includes"><h3>${isEn ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
+return `<section class="service-editorial-story"><div class="service-editorial-copy"><p class="service-page-kicker">${esc(service.eyebrow)}</p><h2>${esc(title)}</h2><p class="service-editorial-lead">${esc(service.description)}</p>${extra ? `<p class="service-editorial-extra">${esc(extra)}</p>` : ''}${includes}</div><div class="detail-gallery service-editorial-gallery" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div></section>`;
 }
+function renderWitchRockStory(service) {
+return renderStandardStory(service, service.coordination);
+}
+
 function renderSurfPhotographyStory(service) {
-const kicker = lang === 'en' ? 'SURF PHOTOGRAPHY · TAMARINDO' : 'FOTOGRAFÍA DE SURF · TAMARINDO';
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
-return `<p class="service-page-kicker">${kicker}</p><p>${esc(service.description)}</p><div class="detail-gallery">${gallery}</div>`;
+return renderStandardStory(service);
 }
+
 function renderSurfskateStory(service) {
-const kicker = 'SURFSKATE · TAMARINDO';
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
-return `<p class="service-page-kicker">${kicker}</p><h2>${esc(service.cardText)}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${gallery}</div>`;
+return renderStandardStory(service);
 }
+
 function renderRetreatStory(service) {
 const details = service.retreatDetails;
 const isEn = lang === 'en';
@@ -954,7 +958,7 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderSurfskateStory(service)
 : service.id === 'retiros'
 ? renderRetreatStory(service)
-: `<p class="service-page-kicker">${lang === 'en' ? 'THE EXPERIENCE' : 'LA EXPERIENCIA'}</p><h2>${lang === 'en' ? 'A plan designed for your trip.' : 'Un plan pensado para tu viaje.'}</h2><p>${esc(service.description)}</p>${service.includes ? `<div class="service-includes"><h3>${lang === 'en' ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="detail-gallery">${service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('')}</div>`;
+: renderStandardStory(service);
 const surfSurveyModal = '' /* El formulario de clases queda visible debajo del contenido. */;
 const surfFormBar = service.id === 'clases-de-surf' ? '' : `<div class="quick-request-panel-bar"><div><p class="service-page-kicker">${lang === 'en' ? 'QUICK REQUEST' : 'CONSULTA RÁPIDA'}</p><h2 id="quickRequestTitle">${lang === 'en' ? 'Let’s find the right option.' : 'Encontramos la opción para vos.'}</h2></div><button class="quick-request-close" id="quickRequestClose" type="button" aria-label="${lang === 'en' ? 'Close quick request' : 'Cerrar consulta rápida'}">×</button></div>`;
 /* const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : ''; */
