@@ -8080,7 +8080,7 @@ footer a {
 .local-guide-page .guide-detail-card p { font-size: clamp(13px,1.05vw,15px); line-height: 1.6; color: rgba(246,255,251,.9); }
 .local-guide-page .guide-detail-card ul { gap: clamp(7px,.7vw,10px); font-size: clamp(11px,.9vw,13px); line-height: 1.5; color: rgba(239,255,247,.86); }
 .local-guide-page .guide-detail-card li strong { color: #d6faed; }
-.local-guide-page .guide-detail-card a { display: inline-flex; margin-top: 4px; padding: 9px 0; color: #baf5e3; font-size: 14px; text-decoration: underline; text-decoration-color: rgba(186,245,227,.45); text-underline-offset: 4px; }
+.local-guide-page .guide-detail-card a { display: inline-flex; max-width: 100%; margin-top: 2px; padding: 5px 0; color: #baf5e3; font-size: clamp(11px,.85vw,13px); line-height: 1.2; white-space: nowrap; text-decoration: underline; text-decoration-color: rgba(186,245,227,.45); text-underline-offset: 3px; }
 .local-guide-page .guide-detail-card-text-only { grid-template-columns: 1fr; }
 .local-guide-page .guide-detail-card-text-only > div { border-left: 0; }
 .local-guide-page .guide-image-modal img { border: 0; border-radius: 0; }
