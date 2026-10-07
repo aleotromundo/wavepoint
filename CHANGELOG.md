@@ -1,4 +1,15 @@
 ## 2026-10-07
+### Acciones independientes en las tarjetas de guía y cámaras
+- `index.html` y `piloto.html`: convertir las dos tarjetas grandes en contenedores con acción principal en el área libre y enlaces internos independientes, sin cambiar los textos visibles.
+- “Explorar guía” y “Guía local”: enlazan a la guía turística.
+- “Aliados locales”: enlaza a Partners (`#aliados`).
+- “Ver cámaras en vivo”, “Cámaras reales” y “Condiciones rápidas”: enlazan a cámaras (`#camaras`).
+- `script.js`: navegar desde el área libre de cada tarjeta sin interferir con sus enlaces internos.
+- CSS: preservar el diseño original y añadir estados de foco/hover a los enlaces internos.
+- Páginas HTML: actualizar la versión cacheada del CSS a `20261007-28`.
+- Validación: `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### CTA de viaje y retiros con cinta destacada
 - `styles.css` y `styles.optimized.css`: aplicar a los enlaces de “Armar tu viaje por Tamarindo” y “Descubrí los retiros” el mismo tratamiento visual de cinta rasgada que usan los botones “More info”, con tipografía grande, flecha y estados hover/focus.
 - Mantener el botón principal del hero separado de esta variante.

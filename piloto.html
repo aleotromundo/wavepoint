@@ -65,7 +65,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261006-19"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261006-19"/><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=20261006-19"/><link rel="icon" type="image/x-icon" href="favicon.ico?v=20261006-19"/><link rel="apple-touch-icon" sizes="180x180" href="assets/wavepoint-apple-touch-icon.png?v=20261006-19"/>
 <meta content="#0a3547" name="theme-color"/>
-<link href="styles.optimized.css?v=20261007-27" rel="stylesheet"/><link href="weather-widget-3d.css?v=20261007-5" rel="stylesheet"/></head>
+<link href="styles.optimized.css?v=20261007-28" rel="stylesheet"/><link href="weather-widget-3d.css?v=20261007-5" rel="stylesheet"/></head>
 <body>
 <header class="topbar">
 <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint">
@@ -274,22 +274,22 @@
         <p data-i18n="guideText">Más que surf: playas, colaboradores, servicios y experiencias recomendadas.</p>
       </div>
       <div class="guide-destination-grid">
-        <a class="guide-destination guide-destination-guide" href="Enlaces/guia-playas.html">
+        <div class="guide-destination guide-destination-guide" data-destination-href="Enlaces/guia-playas.html">
           <img src="assets/img/stays/capitan-suizo/cover.jpg" alt="Vista aérea de un resort junto a la playa" data-i18n-alt="guideButtonImageAlt" loading="lazy"/>
-          <span class="guide-destination-heading"><span class="guide-destination-label" data-i18n="guideButton">Explorar guía</span><span class="guide-destination-arrow" aria-hidden="true">↗</span></span>
+          <a class="guide-destination-heading" href="Enlaces/guia-playas.html"><span class="guide-destination-label" data-i18n="guideButton">Explorar guía</span><span class="guide-destination-arrow" aria-hidden="true">↗</span></a>
           <span class="guide-destination-features">
-            <span class="guide-destination-feature"><span class="guide-destination-icon" aria-hidden="true">⌖</span><span><strong data-i18n="benefitLocalGuide">Guía local</strong><span data-i18n="benefitLocalGuideText">Playas, experiencias y puntos útiles para moverte mejor.</span></span></span>
-            <span class="guide-destination-feature"><span class="guide-destination-icon" aria-hidden="true">✦</span><span><strong data-i18n="benefitLocalAllies">Aliados locales</strong><span data-i18n="benefitLocalAlliesText">Colaboradores que ayudan a mantener la experiencia activa y útil.</span></span></span>
+            <a class="guide-destination-feature" href="Enlaces/guia-playas.html"><span class="guide-destination-icon" aria-hidden="true">⌖</span><span><strong data-i18n="benefitLocalGuide">Guía local</strong><span data-i18n="benefitLocalGuideText">Playas, experiencias y puntos útiles para moverte mejor.</span></span></a>
+            <a class="guide-destination-feature" href="#aliados"><span class="guide-destination-icon" aria-hidden="true">✦</span><span><strong data-i18n="benefitLocalAllies">Aliados locales</strong><span data-i18n="benefitLocalAlliesText">Colaboradores que ayudan a mantener la experiencia activa y útil.</span></span></a>
           </span>
-        </a>
-        <a class="guide-destination guide-destination-cameras" href="#camaras">
+        </div>
+        <div class="guide-destination guide-destination-cameras" data-destination-href="#camaras">
           <img src="assets/img/site/backgrounds/camaras.jpg" alt="Surfista en una ola en Tamarindo" data-i18n-alt="guideCamerasButtonImageAlt" loading="lazy"/>
-          <span class="guide-destination-heading"><span class="guide-destination-label" data-i18n="guideCamerasButton">Ver cámaras en vivo</span><span class="guide-destination-arrow" aria-hidden="true">↗</span></span>
+          <a class="guide-destination-heading" href="#camaras"><span class="guide-destination-label" data-i18n="guideCamerasButton">Ver cámaras en vivo</span><span class="guide-destination-arrow" aria-hidden="true">↗</span></a>
           <span class="guide-destination-features">
-            <span class="guide-destination-feature"><span class="guide-destination-icon" aria-hidden="true">◉</span><span><strong data-i18n="benefitLiveCameras">Cámaras reales</strong><span data-i18n="benefitLiveCamerasText">Consulta el estado visual de los spots antes de salir.</span></span></span>
-            <span class="guide-destination-feature"><span class="guide-destination-icon" aria-hidden="true">≈</span><span><strong data-i18n="benefitQuickConditions">Condiciones rápidas</strong><span data-i18n="benefitQuickConditionsText">Clima, viento, hora local y oleaje estimado en un solo lugar.</span></span></span>
+            <a class="guide-destination-feature" href="#camaras"><span class="guide-destination-icon" aria-hidden="true">◉</span><span><strong data-i18n="benefitLiveCameras">Cámaras reales</strong><span data-i18n="benefitLiveCamerasText">Consulta el estado visual de los spots antes de salir.</span></span></a>
+            <a class="guide-destination-feature" href="#camaras"><span class="guide-destination-icon" aria-hidden="true">≈</span><span><strong data-i18n="benefitQuickConditions">Condiciones rápidas</strong><span data-i18n="benefitQuickConditionsText">Clima, viento, hora local y oleaje estimado en un solo lugar.</span></span></a>
           </span>
-        </a>
+        </div>
       </div>
     </div>
   </div>

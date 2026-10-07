@@ -1468,3 +1468,12 @@ document.addEventListener('error', function(e) {
     }
   }
 }, true);
+
+// Las tarjetas mantienen una acción principal en el área libre, mientras que
+// sus enlaces internos conservan destinos independientes.
+document.querySelectorAll('.guide-destination[data-destination-href]').forEach(card => {
+  card.addEventListener('click', event => {
+    if (event.target.closest('a')) return;
+    window.location.href = card.dataset.destinationHref;
+  });
+});
