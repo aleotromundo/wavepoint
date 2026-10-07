@@ -7918,3 +7918,8 @@ footer a {
   transition: transform .16s ease;
 }
 .quick-request-panel .detail-option input[type="radio"]:checked::before { transform: scale(1); }
+
+/* El punto seleccionado se dibuja en el propio input para asegurar compatibilidad. */
+.quick-request-panel .detail-option input[type="radio"]:checked {
+  background: radial-gradient(circle, #fff 0 4px, transparent 4.5px) !important;
+}

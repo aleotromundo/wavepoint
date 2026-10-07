@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Formularios — punto blanco compatible en el selector
+- Corregido el indicador seleccionado para dibujarlo dentro del input real.
+- Ahora usa un fondo radial blanco compatible con navegadores móviles y de escritorio.
+- CSS cacheado actualizado a `20261007-42`.
+
+## 2026-10-07
 ### Formularios — indicador circular seleccionado
 - Restaurado el círculo selector junto a cada opción.
 - El estado seleccionado ahora muestra un punto blanco centrado.
