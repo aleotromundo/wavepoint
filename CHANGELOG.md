@@ -11,6 +11,11 @@
 - Keep legacy building and pool photos with unverified ownership unassigned; center photos to fill their frames and use glassmorphism on collaborator panels.
 - Delete only four SHA-256-verified exact duplicates; retain all other originals, including images whose use is not yet confirmed.
 
+### Logotipo en los pies de página / Footer logo
+
+- `index.html`, `piloto.html`, `trip-builder.html`, `guia-playas.html` y las fichas de colaboradores: reemplazar la marca textual del pie por el logotipo mediano y conservar el enlace de regreso al inicio.
+- `index.html`, `piloto.html`, `trip-builder.html`, `guia-playas.html` and collaborator pages: replace the footer wordmark with the medium logo and keep the link back to the home page.
+
 ### Foto repetida en la ficha de Red Door / Duplicate photo on the Red Door page
 
 - `Enlaces/red-door.html`: reemplazar en la galería la imagen repetida de la portada por una foto distinta de la entrada del hotel; actualizar el texto alternativo en español e inglés.
