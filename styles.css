@@ -6867,3 +6867,20 @@ html.safari-stable #servicios .service-card .service-body p {
     top: calc(50% + 46px);
   }
 }
+
+
+/* Centrar mejor la indicación vertical respecto del panel de Nuestra historia. */
+@media (min-width: 761px) {
+  .about-scroll-note { bottom: 112px; }
+}
+
+
+/* Posición final del logo en Nosotros: hueco inferior derecho, fuera del flujo del texto. */
+@media (min-width: 761px) {
+  .about-hero-inner > .services-logo-wrap-rates {
+    top: auto;
+    bottom: 22px;
+    min-height: 170px;
+    margin-top: 0;
+  }
+}
