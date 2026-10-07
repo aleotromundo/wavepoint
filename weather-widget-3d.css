@@ -1,0 +1,279 @@
+.weather-card.weather-card-3d {
+  position: relative !important;
+  z-index: 3;
+  width: min(100%, 340px) !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.wx3d {
+  --wx-w: 340px;
+  --wx-ink: #f2f8ff;
+  --wx-ink2: #c3d6e8;
+  --wx-edge: #16324d;
+  --b1: #4f86bd;
+  --b2: #1c3f68;
+  width: min(var(--wx-w), 100%);
+  perspective: 900px;
+  touch-action: pan-y;
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  color: var(--wx-ink);
+}
+
+.wx3d *,
+.wx3d *::before,
+.wx3d *::after { box-sizing: border-box; }
+
+.wx3d-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .18s ease-out;
+  transform: scale(.9) rotateX(4deg) rotateY(-14deg);
+  animation: wx3d-float 7s ease-in-out infinite;
+}
+.wx3d.is-active .wx3d-card { animation: none; }
+.wx3d-layer { position: absolute; inset: 0; border-radius: 24px; background: var(--b2); }
+.wx3d-layer:nth-child(1) { transform: translateZ(-5px); filter: brightness(.8); }
+.wx3d-layer:nth-child(2) { transform: translateZ(-10px); filter: brightness(.65); }
+.wx3d-layer:nth-child(3) { transform: translateZ(-15px); filter: brightness(.5); box-shadow: 0 40px 50px -15px rgba(10,25,45,.45); }
+.wx3d-face { position: relative; transform-style: preserve-3d; border-radius: 24px; padding: 26px; }
+.wx3d-bg {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--b1), var(--b2));
+  transition: background .5s;
+}
+.wx3d-bg > *,
+.wx3d-fx > *,
+.wx3d-stars > * { position: absolute; }
+.wx3d-stars { inset: -12px; transform: translate(calc(var(--px,0)*-7px),calc(var(--py,0)*-7px)); transition: transform .18s ease-out; }
+.wx3d-glassfx { inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .5s; }
+.wx3d-glassfx.on { opacity: 1; }
+.wx3d-lite { inset: 0; opacity: 0; }
+.wx3d-bolts { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; transform: translateZ(40px); }
+.wx3d.shake .wx3d-face { animation: wx3d-shake .35s; }
+.wx3d-milky { inset: -10%; background: linear-gradient(115deg,transparent 32%,rgba(170,190,255,.16) 50%,transparent 68%); filter: blur(6px); }
+.wx3d-sky { top: -40px; right: -40px; width: 190px; aspect-ratio: 1; transform: translate(calc(var(--px,0)*-16px),calc(var(--py,0)*-16px)); transition: transform .18s ease-out; }
+.wx3d-sunwrap { inset: 0; }
+.wx3d-sunwrap > * { position: absolute; }
+.wx3d-rays {
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255,220,110,.6) 0 5deg,transparent 5deg 18deg);
+  -webkit-mask: radial-gradient(circle,transparent 26%,#000 32%,transparent 68%);
+  mask: radial-gradient(circle,transparent 26%,#000 32%,transparent 68%);
+  animation: wx3d-spin 45s linear infinite;
+}
+.wx3d-rays.r2 { animation-duration: 30s; animation-direction: reverse; opacity: .55; transform: scale(.85); }
+.wx3d-core { inset: 30%; border-radius: 50%; background: radial-gradient(circle at 40% 38%,#fffbe0,#ffc431 70%); box-shadow: 0 0 40px 16px rgba(255,200,70,.55); animation: wx3d-pulse 4s ease-in-out infinite; }
+.wx3d-moon { position: absolute; }
+.wx3d-clouds,
+.wx3d-fx { inset: 0; }
+.wx3d-cloud { position: absolute; display: block; width: 3.2em; height: 1em; border-radius: 1em; background: var(--cl); filter: drop-shadow(0 6px 6px rgba(20,50,90,.3)); animation: wx3d-pass 16s ease-in-out infinite alternate; }
+.wx3d-cloud::before,
+.wx3d-cloud::after { position: absolute; border-radius: 50%; background: inherit; content: ""; }
+.wx3d-cloud::before { top: -.65em; left: .45em; width: 1.3em; height: 1.3em; }
+.wx3d-cloud::after { top: -.4em; left: 1.6em; width: 1em; height: 1em; }
+.t-w { --cl: rgba(255,255,255,.93); }
+.t-g { --cl: #bcc7d2; }
+.t-d { --cl: #7b8798; }
+.wx3d.night .t-w { --cl: #c9d4e6; }
+.wx3d.night .t-g { --cl: #8996a8; }
+.wx3d.night .t-d { --cl: #5d6777; }
+.wx3d-p3 { position: absolute; inset: 0; transform-style: preserve-3d; pointer-events: none; }
+.wx3d-p3 > * { position: absolute; }
+.wx3d-d { top: 0; left: 0; }
+.wx3d-rain { width: var(--w); height: var(--l); }
+.wx3d-rain::before { position: absolute; top: 0; bottom: 0; left: 50%; width: 2.5px; border-radius: 2px; background: linear-gradient(transparent,rgba(120,215,255,.9)); transform: translateX(-50%); content: ""; }
+.wx3d-rain::after { position: absolute; bottom: 0; left: 0; width: var(--w); height: var(--w); border-radius: 0 50% 50% 50%; background: radial-gradient(circle at 35% 35%,#fff 0 13%,#9fe8ff 38%,#18b0ff); box-shadow: inset -2px -3px 5px rgba(0,100,200,.55),0 0 14px 2px rgba(60,200,255,.85); transform: rotate(45deg); content: ""; }
+.wx3d-snow { border-radius: 50%; background: #fff; }
+.wx3d-hail { border-radius: 50%; background: radial-gradient(circle at 35% 30%,#fff,#b9d4ee); }
+.wx3d-glass { width: 9px; height: 12px; border-radius: 50% 50% 50% 50%/60% 60% 40% 40%; background: radial-gradient(circle at 35% 30%,rgba(255,255,255,.95),rgba(255,255,255,.2) 45%,rgba(170,205,240,.18)); box-shadow: 0 2px 3px rgba(0,0,0,.28); opacity: 0; animation: wx3d-slide ease-in infinite; }
+.wx3d-leaf { top: 0; left: 0; width: 14px; height: 7px; border-radius: 70% 0 70% 0; background: #8fbf6a; opacity: .9; animation: wx3d-leaf linear infinite; }
+.wx3d-flare { aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle,rgba(255,240,200,.5),transparent 70%); animation: wx3d-twinkle 4s ease-in-out infinite; }
+.wx3d-shoot { top: 14%; left: 78%; width: 70px; height: 2px; background: linear-gradient(90deg,#fff,transparent); opacity: 0; animation: wx3d-shoot 7s ease-in infinite; }
+.wx3d-frost { inset: 0; border-radius: 24px; box-shadow: inset 0 0 36px rgba(255,255,255,.45),inset 0 0 6px rgba(255,255,255,.6); }
+.wx3d-pile { right: -5%; bottom: -6px; left: -5%; border-radius: 50% 50% 0 0/100% 100% 0 0; background: #fff; box-shadow: 0 -6px 18px rgba(255,255,255,.5); }
+.wx3d-star { width: 3px; height: 3px; border-radius: 50%; background: #fff; animation: wx3d-twinkle 3s ease-in-out infinite; }
+.wx3d-fog { left: -10%; width: 120%; height: 64px; border-radius: 50%; background: rgba(232,240,246,.4); filter: blur(12px); animation: wx3d-fogdrift 14s ease-in-out infinite alternate; }
+.wx3d-streak { left: 0; height: 2px; border-radius: 2px; background: linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent); animation: wx3d-gust linear infinite; }
+.wx3d-flash { inset: 0; background: radial-gradient(circle at var(--fx,60%) 15%,var(--c),transparent 75%); opacity: 0; animation: wx3d-flash 7s infinite; }
+.wx3d-bolt { opacity: 0; overflow: visible; animation: wx3d-bolt 7s infinite; filter: drop-shadow(0 0 5px var(--c)) drop-shadow(0 0 16px var(--c)); }
+.wx3d-glare { inset: 0; border-radius: 24px; pointer-events: none; background: radial-gradient(circle at var(--gx,30%) var(--gy,20%),rgba(255,255,255,.25),transparent 55%); }
+.wx3d-content { position: relative; transform-style: preserve-3d; text-shadow: 0 2px 8px rgba(5,15,30,.35); }
+.wx3d-city { color: var(--wx-ink2); font-size: 15px; transform: translateZ(18px); }
+.wx3d-temp { margin: 8px 0 4px; font-size: 84px; font-weight: 700; line-height: 1; text-shadow: 0 14px 18px rgba(5,15,30,.45); transform: translateZ(55px); }
+.wx3d-status { margin-bottom: 20px; font-size: 17px; transform: translateZ(30px); }
+.wx3d-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; transform-style: preserve-3d; }
+.wx3d-stat { padding: 10px 9px; border: 1px solid rgba(255,255,255,.28); border-radius: 12px; background: rgba(255,255,255,.14); box-shadow: 0 12px 14px -8px rgba(5,15,30,.5); transform: translateZ(26px); }
+.wx3d-stat b { display: block; font-size: 17px; white-space: nowrap; }
+.wx3d-stat span { color: var(--wx-ink2); font-size: 13px; }
+@keyframes wx3d-fall { from { transform: translate3d(0,-30px,var(--z)); } to { transform: translate3d(0,var(--h),var(--z)); } }
+@keyframes wx3d-snow { from { transform: translate3d(0,-20px,var(--z)); } to { transform: translate3d(var(--sw),var(--h),var(--z)); } }
+@keyframes wx3d-hail { 0% { transform: translate3d(0,-30px,var(--z)); } 78% { transform: translate3d(0,var(--h),var(--z)); } 86% { transform: translate3d(0,calc(var(--h) - 16px),var(--z)); } 94%,100% { transform: translate3d(0,var(--h),var(--z)); } }
+@keyframes wx3d-slide { 0% { opacity: 0; transform: translate3d(0,0,80px) scale(.5); } 12% { opacity: 1; transform: translate3d(0,0,80px) scale(1); } 55% { transform: translate3d(0,30px,80px); } 100% { opacity: 0; transform: translate3d(0,150px,80px); } }
+@keyframes wx3d-leaf { from { transform: translate3d(-20px,var(--y),var(--z)) rotate(0); } to { transform: translate3d(360px,calc(var(--y) + 40px),var(--z)) rotate(540deg); } }
+@keyframes wx3d-shoot { 0%,72% { opacity: 0; transform: translate(0,0) rotate(-25deg); } 74% { opacity: 1; } 84%,100% { opacity: 0; transform: translate(-110px,52px) rotate(-25deg); } }
+@keyframes wx3d-float {
+  0%,100% { transform: scale(.9) rotateX(4deg) rotateY(-14deg); }
+  50% { transform: scale(.9) rotateX(2deg) rotateY(-8deg) translateY(-6px); }
+}
+@keyframes wx3d-spin { to { transform: rotate(360deg); } }
+@keyframes wx3d-pulse { 50% { transform: scale(1.08); } }
+@keyframes wx3d-pass { from { transform: translateX(-12px); } to { transform: translateX(34px); } }
+@keyframes wx3d-twinkle { 50% { opacity: .2; } }
+@keyframes wx3d-fogdrift { from { transform: translate3d(0,0,var(--z,0)); } to { transform: translate3d(9%,0,var(--z,0)); } }
+@keyframes wx3d-gust { from { transform: translateX(-140px); } to { transform: translateX(480px); } }
+@keyframes wx3d-shake { 20% { transform: translate(-3px,1px); } 40% { transform: translate(3px,-1px); } 60% { transform: translate(-2px,0); } 80% { transform: translate(1px,1px); } }
+@keyframes wx3d-bolt { 0%,84%,92%,100% { opacity: 0; } 85% { opacity: 1; } 87% { opacity: .25; } 89% { opacity: 1; } 90% { opacity: .6; } }
+@keyframes wx3d-flash { 0%,84%,92%,100% { opacity: 0; } 86% { opacity: .75; } 89% { opacity: .2; } 90% { opacity: .55; } }
+
+@media (max-width: 640px) {
+  .weather-card.weather-card-3d { width: min(100%, 390px) !important; }
+  .wx3d-card { transform: scale(.9); animation-duration: 8s; }
+  .wx3d-face { padding: 22px; }
+  .wx3d-temp { font-size: 70px; }
+  .wx3d-stat { padding: 8px 7px; }
+  .wx3d-stat b { font-size: 14px; }
+  .wx3d-stat span { font-size: 11px; }
+}
+
+@media (max-width: 380px) {
+  .wx3d-face { padding: 18px 15px; }
+  .wx3d-temp { font-size: 64px; }
+  .wx3d-stats { gap: 5px; }
+  .wx3d-stat { padding-inline: 5px; }
+  .wx3d-stat b { font-size: 12px; }
+  .wx3d-stat span { font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wx3d *,
+  .wx3d *::before,
+  .wx3d *::after { animation: none !important; }
+  .wx3d-d,
+  .wx3d-glass,
+  .wx3d-leaf,
+  .wx3d-streak { display: none !important; }
+}
+
+/* Final prototype proportions and interactive data tiles. */
+.weather-card.weather-card-3d { width: min(100%, 380px) !important; }
+.wx3d { --wx-w: 380px; }
+.wx3d-face { padding: 28px; }
+.wx3d-layer {
+  background: rgba(28,63,104,.55);
+  background: color-mix(in srgb, var(--b2) 65%, transparent);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.wx3d-bg {
+  background: linear-gradient(160deg,rgba(79,134,189,.62),rgba(28,63,104,.52));
+  background: linear-gradient(160deg,
+    color-mix(in srgb, var(--b1) 68%, transparent),
+    color-mix(in srgb, var(--b2) 58%, transparent));
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+}
+.wx3d-moon {
+  inset: auto;
+  top: 26px;
+  right: 28px;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%,#fff9df,#f4e8b8 68%,#cec49c);
+  box-shadow: inset -6px -5px 10px rgba(90,80,55,.2);
+  filter: drop-shadow(0 0 14px rgba(245,243,206,.6));
+  transform: rotate(-20deg);
+}
+.wx3d-moon::after {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%,#78839a,#27334a 66%,#111a2c);
+  box-shadow: inset 2px 0 8px rgba(255,255,255,.12);
+  content: "";
+  transform: translateX(var(--moon-shadow-offset,0px));
+}
+.wx3d-pback,
+.wx3d-pfront { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.wx3d-pfront { transform: translateZ(60px); }
+.wx3d-city { color: var(--wx-ink-muted); font-size: 19px; font-weight: 600; }
+.wx3d-temp { margin: 6px 0; font-size: 112px; letter-spacing: -3px; line-height: .95; }
+.wx3d-status { margin-bottom: 26px; font-size: 24px; font-weight: 600; }
+.wx3d-camera-status {
+  display: none;
+  width: 100%;
+  margin: 12px 0 0 !important;
+  padding: 9px 10px !important;
+  border: 1px solid rgba(243,182,75,.2);
+  border-radius: 10px;
+  background: rgba(243,182,75,.1);
+  color: #ffe1a2;
+  font-size: 11px !important;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: none;
+  transform: translateZ(20px);
+}
+.wx3d-camera-status.show { display: block; }
+.wx3d-stats { gap: 10px; }
+.wx3d-stat {
+  position: relative;
+  display: flex;
+  min-height: 112px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 6px 12px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 18px;
+  background: linear-gradient(160deg,rgba(255,255,255,.26),rgba(255,255,255,.08));
+  box-shadow: 0 14px 16px -8px rgba(5,15,30,.55);
+  cursor: pointer;
+  outline: none;
+  transform-style: preserve-3d;
+  transform: translateZ(26px);
+  transition: transform .2s ease-out, box-shadow .2s;
+}
+.wx3d-stat:hover,
+.wx3d-stat:focus-visible,
+.wx3d-stat.open { transform: translateZ(48px) scale(1.04); box-shadow: 0 22px 24px -8px rgba(5,15,30,.6),0 0 0 1.5px var(--ac); }
+.wx3d-ico { width: 44px; height: 44px; overflow: visible; filter: drop-shadow(0 0 7px var(--ac)); transform: translateZ(14px); animation: wx3d-bob 3.2s ease-in-out infinite; }
+.wx3d-stat b { display: block; font-size: 30px; line-height: 1; text-align: center; white-space: nowrap; }
+.wx3d-stat b small { display: block; margin-top: 3px; color: var(--wx-ink-muted); font-size: 14px; font-weight: 600; }
+.wx3d-stat > span { position: absolute; bottom: calc(100% + 10px); left: 50%; padding: 6px 14px; border: 1px solid var(--ac); border-radius: 999px; background: rgba(8,22,40,.92); font-size: 15px; font-weight: 600; opacity: 0; pointer-events: none; transform: translate(-50%,8px) translateZ(20px); transition: opacity .18s,transform .18s; white-space: nowrap; }
+.wx3d-stat:hover > span,
+.wx3d-stat:focus-visible > span,
+.wx3d-stat.open > span { opacity: 1; transform: translate(-50%,0) translateZ(20px); }
+.wx3d-sec { transform-origin: 24px 24px; animation: wx3d-spin 60s linear infinite; }
+@keyframes wx3d-bob { 50% { transform: translateZ(14px) translateY(-3px); } }
+
+@media (max-width: 640px) {
+  .weather-card.weather-card-3d { width: min(100%, 380px) !important; }
+}
+@media (max-width: 400px) {
+  .wx3d-face { padding: 22px 16px; }
+  .wx3d-temp { font-size: 92px; }
+  .wx3d-stat { min-height: 104px; }
+  .wx3d-stat b { font-size: 25px; }
+  .wx3d-status { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wx3d[data-respect-motion] * { animation: none !important; }
+  .wx3d[data-respect-motion] .wx3d-glass,
+  .wx3d[data-respect-motion] .wx3d-leaf,
+  .wx3d[data-respect-motion] .wx3d-streak { display: none !important; }
+}

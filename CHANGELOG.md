@@ -1,6 +1,19 @@
 ## 2026-10-07
 
-<<<<<<< HEAD
+### Estabilidad del carrusel de aliados / Allies carousel stability
+
+- `styles.css`: quitar las perforaciones decorativas que cruzaban el carrusel, evitar filtros y escalados por hover que podían parpadear mientras las tarjetas se desplazan, y alinear el recorrido del loop con el ancho exacto del contenido duplicado.
+- `styles.css`: resolver los marcadores de conflicto conservando ambos grupos de cambios; actualizar las versiones de caché en `index.html` y `piloto.html`.
+- `styles.css`: remove decorative perforations crossing the carousel, avoid hover filters and scaling that could flicker while cards move, and align the loop travel with the exact width of the duplicated content.
+- `styles.css`: clear the conflict markers while preserving both change sets; update cache versions in `index.html` and `piloto.html`.
+
+### Recuperación del gadget del piloto y robots.txt / Restored the pilot widget and robots.txt
+
+- `weather-widget-3d.js` y `weather-widget-3d.css`: recuperar los activos que `piloto.html` ya referenciaba para que el gadget vuelva a cargar; verificar datos del clima y oleaje en el navegador.
+- `robots.txt`: restaurar el permiso de rastreo y la URL del sitemap de `wavepoint-five.vercel.app`.
+- `weather-widget-3d.js` and `weather-widget-3d.css`: restore the assets already referenced by `piloto.html` so the widget loads again; verify weather and swell data in the browser.
+- `robots.txt`: restore crawl access and the sitemap URL for `wavepoint-five.vercel.app`.
+
 ### Fotos y composición de Retiros alineadas con el PDF de Canva / Retreat photos and layout aligned with the Canva PDF
 
 - `services.js`: usar las fotos extraídas y optimizadas de `retiros.pdf` para portada, destino, Casa Maderas, yoga, surf trips, Roca Bruja, coaching y fotografía; ordenar esas secciones como en el folleto y conservar el resumen e itinerario.
@@ -20,7 +33,7 @@
 - `index.html`, `services.js`, `trip-builder.js` y `piloto.html`: actualizar las fotos de Roca Bruja (sitio oficial de Witch’s Rock), snorkel (Subtle Cinematics/Unsplash), fotografía de surf (Zak Mogel/Pexels) y ATV (King Caplis/Pexels); alts sincronizados en español e inglés.
 - `styles.css`: dar espacio suficiente a los títulos de dos líneas y quitar el zoom que recortaba la foto de ATV.
 - `index.html`, `script.js` y `piloto.html`: cambiar el título español a “A través de quienes lo llaman hogar”; conservar el título inglés.
-=======
+
 ### Modo Safari estable
 
 - `script.js` y `lang-switch.js`: detectar Safari de Apple sin afectar Chrome, Edge, Firefox, Windows ni Android.
@@ -34,7 +47,6 @@
 
 - `services.js`: se corrige el atributo `src` de la galería de Surfskate, que estaba usando el texto alternativo como URL y mostraba la imagen rota.
 - Validación: `node --check services.js`, `git diff --check` y comprobación en navegador de la carga de `assets/img/optimized/surfskate.webp`.
->>>>>>> 524537a8e7ac595312b16b615bd4b9c3367341b5
 
 ### Prueba visual del footer con video y glassmorphism
 
