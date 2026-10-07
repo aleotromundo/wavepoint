@@ -2887,6 +2887,11 @@ to{filter:brightness(1.18)}
 @media (max-width:640px){.accommodation-destinations{gap:10px}.accommodation-destination{border-radius:15px}.accommodation-destination>img{height:clamp(160px,42vw,182px)}}
 @media (prefers-reduced-motion:reduce){.accommodation-destination,.accommodation-destination>img{transition:none}}
 
+/* Keep the photo index aligned with the accommodation heading, not the full copy block. */
+.accommodation-intro{align-items:start}
+.accommodation-overview-meta{margin-top:32px}
+@media (max-width:980px){.accommodation-overview-meta{margin-top:0}}
+
 /* High-contrast form copy: keep secondary guidance readable on the deep teal panel. */
 .quick-request-panel .detail-request-head p:last-child{color:#e0edf0!important}
 .quick-request-panel .survey-progress-copy>span{color:#dce9ed!important}
