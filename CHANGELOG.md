@@ -1,5 +1,12 @@
 ## 2026-10-07
 
+### Auditoría de render y rediseño de Stays and Hotels
+
+- `services.js`, `styles.css` y `styles.optimized.css`: reorganizar la ficha de alojamientos en una portada editorial más amplia, accesos directos a cada propiedad, galerías adaptables y una consulta completa al final; mantener las fotos y tarifas existentes.
+- `script.js`, `lang-switch.js` y CSS: retirar el modo Safari personalizado solicitado; ocultar de verdad los paneles fijos cerrados para que no conserven capas borrosas fuera de pantalla y dejar el desplazamiento estándar para tablet/touch.
+- Actualizar las referencias cacheadas de CSS y scripts en las rutas que los cargan.
+- Validación: sintaxis JS, `git diff --check`, barrido de 21 rutas públicas a 768 px con desplazamiento abajo/arriba; Stays and Hotels revisado a 390, 768 y 1280 px; las nueve imágenes de galería cargan y no aparecen errores JavaScript. El rectángulo blanco no se reprodujo en Chromium.
+
 ### Auditoría y corrección de imagen repetida
 
 - `index.html` y `piloto.html`: reemplazar únicamente la foto de `Explora Tamarindo`, que repetía exactamente `assets/img/site/home-hero.jpg`, por `assets/img/guide/cover.jpg`, una composición creada para representar la guía turística. El hero no se modificó.

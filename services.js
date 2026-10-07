@@ -819,18 +819,19 @@ const details = localized.details.map(detail => `<li>${esc(detail)}</li>`).join(
 const amenities = localized.amenities.map(item => `<li>${esc(item)}</li>`).join('');
 const detailsHeading = isEn ? 'Options & rates' : 'Opciones y tarifas';
 const amenitiesHeading = isEn ? 'Services & conditions' : 'Servicios y condiciones';
-const galleryMarkup = gallery ? `<div class="accommodation-gallery">${gallery}</div>` : '';
-return `<article class="accommodation-card accommodation-card-${index + 1}" id="accommodation-${esc(option.id)}">${galleryMarkup}<div class="accommodation-card-body"><p class="accommodation-category">${esc(localized.category)}</p><div class="accommodation-card-title"><h3>${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(localized.priceNote)}</span></div></div><p class="accommodation-summary">${esc(localized.summary)}</p><div class="accommodation-columns"><div><h4>${detailsHeading}</h4><ul>${details}</ul></div><div><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></div></div></div></article>`;
+const titleId = `accommodation-title-${option.id}`;
+const galleryLabel = isEn ? `Photos of ${option.name}` : `Fotos de ${option.name}`;
+const galleryMarkup = gallery ? `<div class="accommodation-gallery" role="group" aria-label="${esc(galleryLabel)}">${gallery}</div>` : '';
+return `<article class="accommodation-card accommodation-card-${index + 1}" id="accommodation-${esc(option.id)}" aria-labelledby="${esc(titleId)}">${galleryMarkup}<div class="accommodation-card-body"><p class="accommodation-category">${esc(localized.category)}</p><div class="accommodation-card-title"><h3 id="${esc(titleId)}">${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(localized.priceNote)}</span></div></div><p class="accommodation-summary">${esc(localized.summary)}</p><div class="accommodation-columns"><section><h4>${detailsHeading}</h4><ul>${details}</ul></section><section><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></section></div></div></article>`;
 }
 function renderAccommodationStory(service) {
 const isEn = lang === 'en';
-const destinations = service.accommodationOptions.map(option => {
-const image = option.images[0];
-const alt = isEn ? option.imageAltsEn?.[0] : option.imageAlts?.[0];
+const destinations = service.accommodationOptions.map((option, index) => {
 const ariaLabel = isEn ? `View ${option.name} details` : `Ver detalles de ${option.name}`;
-return `<a class="accommodation-destination" href="#accommodation-${esc(option.id)}" aria-label="${esc(ariaLabel)}"><img src="${esc(image)}" alt="${esc(alt || option.imageAlt)}" loading="lazy" /></a>`;
+return `<a class="accommodation-destination" href="#accommodation-${esc(option.id)}" aria-label="${esc(ariaLabel)}"><span class="accommodation-destination-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><span class="accommodation-destination-name">${esc(option.name)}</span><span class="accommodation-destination-arrow" aria-hidden="true">↘</span></a>`;
 }).join('');
-return `<p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 'ALOJAMIENTOS EN TAMARINDO'}</p><h2>${isEn ? 'Accommodation options in Tamarindo' : 'Opciones de alojamiento en Tamarindo'}</h2><p>${esc(service.description)}</p><nav class="accommodation-destinations" aria-label="${isEn ? 'Jump to an accommodation' : 'Ir a un alojamiento'}">${destinations}</nav><div class="accommodation-rate-note"><strong>${isEn ? 'Rates in USD' : 'Tarifas en USD'}</strong><span>${isEn ? 'All rates are shown in US dollars (USD) per night.' : 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.'}</span></div><div class="accommodation-grid">${service.accommodationOptions.map(renderAccommodationOption).join('')}</div>`;
+const checkLabel = isEn ? 'Check availability' : 'Consultar disponibilidad';
+return `<section class="accommodation-intro" aria-labelledby="accommodation-options-heading"><div class="accommodation-intro-copy"><p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 'ALOJAMIENTOS EN TAMARINDO'}</p><h2 id="accommodation-options-heading">${isEn ? 'Accommodation options in Tamarindo' : 'Opciones de alojamiento en Tamarindo'}</h2><p>${esc(service.description)}</p><a class="accommodation-check-link" href="#detailRequestPanel">${checkLabel}<span aria-hidden="true">↗</span></a></div><div class="accommodation-overview-meta"><nav class="accommodation-destinations" aria-label="${isEn ? 'Jump to an accommodation' : 'Ir a un alojamiento'}">${destinations}</nav><div class="accommodation-rate-note"><strong>${isEn ? 'Rates in USD' : 'Tarifas en USD'}</strong><span>${isEn ? 'All rates are shown in US dollars (USD) per night.' : 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.'}</span></div></div></section><section class="accommodation-grid" aria-label="${isEn ? 'Accommodation options' : 'Opciones de alojamiento'}">${service.accommodationOptions.map(renderAccommodationOption).join('')}</section>`;
 }
 function renderSurfLessonStory(service) {
 const ui = uiFor(service);
