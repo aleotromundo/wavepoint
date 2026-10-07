@@ -66,8 +66,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261006-19"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261006-19"/><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=20261006-19"/><link rel="icon" type="image/x-icon" href="favicon.ico?v=20261006-19"/><link rel="apple-touch-icon" sizes="180x180" href="assets/wavepoint-apple-touch-icon.png?v=20261006-19"/>
 <meta content="#0a3547" name="theme-color"/>
-<link href="styles.optimized.css?v=20261007-49" rel="stylesheet"/><link href="weather-widget-3d.css?v=20261007-8" rel="stylesheet"/></head>
+<link href="styles.optimized.css?v=20261007-51" rel="stylesheet"/><link href="weather-widget-3d.css?v=20261007-8" rel="stylesheet"/></head>
 <body>
+<div class="wavepoint-preloader" id="wavepointPreloader" role="status" aria-live="polite" aria-label="Cargando WavePoint">
+  <div class="wavepoint-preloader-inner">
+    <img class="wavepoint-preloader-logo" src="assets/wavepoint-hero-mark.png" alt="WavePoint" width="520" height="190" decoding="async">
+    <span class="wavepoint-preloader-wave" aria-hidden="true"></span>
+    <p class="wavepoint-preloader-label" data-i18n="preloaderLoading">Loading the surf experience…</p>
+    <div class="wavepoint-preloader-track" role="progressbar" aria-label="Page loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="wavepointPreloaderProgress"></span></div>
+  </div>
+</div>
+<noscript><style>#wavepointPreloader{display:none!important}</style></noscript>
 <header class="topbar">
 <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint">
 <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg>
@@ -244,7 +253,7 @@
 <article class="service-card service-card-atv"><a class="service-image-link" href="service-detail.html?service=atv"><div class="service-img"><img alt="Conductor en un cuatriciclo por un sendero selvático" data-i18n-alt="serviceCardAtvAlt" src="assets/img/services/atv/atv-forest-tour.webp" loading="lazy" decoding="async"></div></a><div class="service-body"><h3><a data-i18n="serviceCardAtvTitle" href="service-detail.html?service=atv">Tours en cuatriciclo — ATV</a></h3><p data-i18n="serviceCardAtvText">Recorré los caminos de Guanacaste con operadores locales.</p><a data-i18n="serviceMoreInfo" href="service-detail.html?service=atv">Más información →</a></div></article>
 <article class="service-card"><a class="service-image-link" href="service-detail.html?service=surf-fotografia"><div class="service-img"><img alt="Fotógrafo de surf en el agua con una cámara frente a una ola" data-i18n-alt="serviceCardSurfPhotosAlt" src="assets/img/services/surf-photography/surf-photographer-wave.jpg" loading="lazy" decoding="async"></div></a><div class="service-body"><h3><a data-i18n="serviceCardSurfPhotosTitle" href="service-detail.html?service=surf-fotografia">Fotos de surf</a></h3><p data-i18n="serviceCardSurfPhotosText">Tu tiempo en el agua, capturado.</p><a data-i18n="serviceMoreInfo" href="service-detail.html?service=surf-fotografia">Más información →</a></div></article>
 <article class="service-card"><a class="service-image-link" href="service-detail.html?service=surfskate"><div class="service-img"><img alt="Persona practicando skate sobre una tabla larga" data-i18n-alt="serviceCardSurfskateAlt" src="assets/img/services/surfskate/surfskate.webp" loading="lazy" decoding="async"></div></a><div class="service-body"><h3><a data-i18n="serviceCardSurfskateTitle" href="service-detail.html?service=surfskate">Clases de surfskate</a></h3><p data-i18n="serviceCardSurfskateText">Encontrá tu flow en tierra.</p><a data-i18n="serviceMoreInfo" href="service-detail.html?service=surfskate">Más información →</a></div></article>
-<div class="services-logo-wrap" aria-label="Volver a animar el logo WavePoint" role="button" tabindex="0"><span class="logo-wave-aura"></span><img class="services-watermark" src="assets/wavepoint-hero-mark.png" alt="" decoding="async" loading="lazy"></div>
+<a href="index.html" class="services-logo-wrap" aria-label="Ir a la página principal de WavePoint"><span class="logo-wave-aura"></span><img class="services-watermark" src="assets/wavepoint-hero-mark.png" alt="" decoding="async" loading="lazy"></a>
 <div class="service-pack-divider" role="separator"><span></span><p data-i18n="servicePackDivider">EXPERIENCIA A MEDIDA</p><span></span></div>
 <article class="service-card service-card-pack"><a class="service-pack-image" href="trip-builder.html"><img alt="Atardecer en la costa bajo ramas de un árbol tropical" data-i18n-alt="serviceCardPackImageAlt" src="assets/img/services/retreats/retreat-tamarindo.webp" loading="lazy" decoding="async"><span class="service-pack-image-title" data-i18n="serviceCardPackTitle">Tu viaje, a tu manera</span></a><div class="service-pack-body"><span class="service-pack-tag" data-i18n="servicePackTag">ARMÁ TU VIAJE A TU MANERA</span><p data-i18n="serviceCardPackText">¿Viajás con amigos, planeás un viaje de surf o buscás dónde alojarte y sumar algunas actividades? Contanos tus fechas, cuántos son y qué te interesa. Armaremos una propuesta según la disponibilidad.</p><a data-i18n="servicePackBuildButton" href="trip-builder.html">Armar tu viaje por Tamarindo ↗</a></div></article>
 <div class="service-pack-divider service-retreat-divider" role="separator"><span></span><p data-i18n="serviceRetreatDivider">RETIROS · UNA EXPERIENCIA PARA VIVIR MÁS A FONDO</p><span></span></div>
@@ -305,7 +314,7 @@
       <p class="about-index" data-i18n="aboutHomeIndex">01 / NUESTRA HISTORIA</p>
       <h2 data-i18n="aboutHomeTitle">Una herramienta hecha por surfistas.</h2>
       <p class="about-intro" data-i18n="aboutHomeIntro">WavePoint conecta a locales y visitantes con experiencias de surf y proveedores locales en Tamarindo. También ofrece información del mar para planear el día.</p>
-      <a class="btn btn-primary" data-i18n="aboutHomeReadMore" href="#quienes-somos">Conocé más sobre nosotros ↓</a><div class="services-logo-wrap services-logo-wrap-rates" aria-label="Volver a animar el logo WavePoint" role="button" tabindex="0"><span class="logo-wave-aura"></span><img class="services-watermark" src="assets/wavepoint-hero-mark.png" alt="" decoding="async" loading="lazy"></div>
+      <a class="btn btn-primary" data-i18n="aboutHomeReadMore" href="#quienes-somos">Conocé más sobre nosotros ↓</a><a href="index.html" class="services-logo-wrap services-logo-wrap-rates" aria-label="Ir a la página principal de WavePoint"><span class="logo-wave-aura"></span><img class="services-watermark" src="assets/wavepoint-hero-mark.png" alt="" decoding="async" loading="lazy"></a>
     </div>
       <div class="about-scroll-note"><span data-i18n="aboutHomeScroll">Deslizá para conocer el proyecto</span> <span>→</span></div>
   </section>
@@ -454,6 +463,6 @@
 </div>
 <div aria-hidden="true" class="modal" id="adModal"><div class="modal-box"><div class="modal-head"><div class="modal-title">Chophouse pre-play demo</div><button class="close" id="closeAd">×</button></div><div class="modal-body" style="background:#000"><video controls="" id="adVideo" playsinline="" src="assets/chophouse-preroll-12s.mp4" style="width:100%;height:100%;display:block"></video></div><div class="modal-note">Demo del formato pre-play para Castr.</div></div></div>
 
-<script defer="True" src="script.js?v=20261007-22"></script><script defer src="site-nav.js?v=20261007-5"></script><script defer src="lang-switch.js?v=20261007-4"></script><script defer src="/content-overrides.js?v=1"></script><script defer src="https://cdn.jsdelivr.net/npm/raindrop-fx@1.0.8/bundle/index.js"></script><script defer src="weather-widget-3d.js?v=20261007-4"></script>
+<script defer="True" src="script.js?v=20261007-23"></script><script defer src="site-nav.js?v=20261007-5"></script><script defer src="lang-switch.js?v=20261007-4"></script><script defer src="/content-overrides.js?v=1"></script><script defer src="https://cdn.jsdelivr.net/npm/raindrop-fx@1.0.8/bundle/index.js"></script><script defer src="weather-widget-3d.js?v=20261007-4"></script>
 </body>
 </html>

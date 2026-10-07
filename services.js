@@ -845,7 +845,7 @@ return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
 const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
-const title = service.lead || service.cardText || service.title;
+const title = service.title;
 const includes = service.includes ? `<div class="service-includes"><h3>${isEn ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 return `<section class="service-editorial-story"><div class="service-editorial-copy"><p class="service-page-kicker">${esc(service.eyebrow)}</p><h2>${esc(title)}</h2><p class="service-editorial-lead">${esc(service.description)}</p>${extra ? `<p class="service-editorial-extra">${esc(extra)}</p>` : ''}${includes}</div><div class="detail-gallery service-editorial-gallery" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div></section>`;
 }

@@ -117,6 +117,8 @@
       navColaboradoresMobile: 'Colaboradores',
       heroTitle: 'A través de quienes lo llaman hogar',
       heroText: 'WavePoint te conecta con las mejores experiencias en Tamarindo.',
+      preloaderLoading: 'Cargando la experiencia de surf…',
+      preloaderReady: 'Listo para surfear',
       heroTripBuilderButton: 'Armá tu viaje ▸',
       btnBeachGuide: 'Guía de playas',
       weatherTitle: 'Condiciones para surfear',
@@ -367,6 +369,8 @@
       navColaboradoresMobile: 'Partners',
       heroTitle: 'Through the people who call it home',
       heroText: 'WavePoint connects you with the best experiences in Tamarindo.',
+      preloaderLoading: 'Loading the surf experience…',
+      preloaderReady: 'Ready to surf',
       heroTripBuilderButton: 'Build your trip ▸',
       btnBeachGuide: 'Beach guide',
       weatherTitle: 'Surf conditions',
@@ -948,6 +952,72 @@
   window.closeAd = closeAd;
 }
 
+  function bindWavepointPreloader(){
+    const root=document.getElementById('wavepointPreloader');
+    if(!root) return;
+    const progress=root.querySelector('#wavepointPreloaderProgress');
+    const track=root.querySelector('[role="progressbar"]');
+    const label=root.querySelector('.wavepoint-preloader-label');
+    const tasks={hero:false,weather:false,logo:false,backgrounds:false};
+    const weights={hero:45,weather:25,logo:15,backgrounds:15};
+    let closed=false;
+    const update=()=>{
+      const value=Math.round(Object.entries(tasks).reduce((sum,[key,ready])=>sum+(ready?weights[key]:0),0));
+      if(progress) progress.style.width=`${value}%`;
+      if(track) track.setAttribute('aria-valuenow',String(value));
+      if(value<100 || closed) return;
+      closed=true;
+      if(label) label.textContent=translations[languageState.current]?.preloaderReady||'Ready to surf';
+      window.setTimeout(()=>{
+        root.classList.add('is-ready');
+        document.documentElement.classList.remove('is-preloading');
+        document.body.style.overflow='';
+      },180);
+    };
+    const complete=key=>{ if(tasks[key]) return; tasks[key]=true; update(); };
+    document.documentElement.classList.add('is-preloading');
+    document.body.style.overflow='hidden';
+
+    const logo=root.querySelector('.wavepoint-preloader-logo');
+    if(logo?.complete) complete('logo');
+    else logo?.addEventListener('load',()=>complete('logo'),{once:true});
+    logo?.addEventListener('error',()=>complete('logo'),{once:true});
+    if(!logo) complete('logo');
+
+    const backgroundSources=['assets/img/site/backgrounds/servicios.jpg','assets/img/site/backgrounds/atardecer.jpg'];
+    let remainingBackgrounds=backgroundSources.length;
+    backgroundSources.forEach(src=>{
+      const image=new Image();
+      const done=()=>{ remainingBackgrounds-=1; if(remainingBackgrounds<=0) complete('backgrounds'); };
+      image.onload=done; image.onerror=done; image.src=src;
+    });
+    if(!remainingBackgrounds) complete('backgrounds');
+
+    const videos=[...document.querySelectorAll('.hero-video')];
+    const mobile=window.matchMedia('(hover: none) and (pointer: coarse)').matches||window.matchMedia('(max-width: 640px)').matches;
+    const heroVideo=mobile?(videos[1]||videos[0]):videos[0];
+    if(heroVideo){
+      const source=heroVideo.querySelector('source[data-src]');
+      if(source){ source.src=source.dataset.src; delete source.dataset.src; }
+      heroVideo.preload='auto'; heroVideo.muted=true; heroVideo.playsInline=true;
+      const heroDone=()=>complete('hero');
+      heroVideo.addEventListener('canplay',heroDone,{once:true});
+      heroVideo.addEventListener('error',heroDone,{once:true});
+      if(heroVideo.readyState>=3) heroDone();
+      heroVideo.load();
+    } else complete('hero');
+
+    const weather=document.getElementById('wx3d');
+    if(weather){
+      const weatherReady=()=>{ if(weather.dataset.weatherStatus!=='loading') complete('weather'); };
+      const observer=new MutationObserver(weatherReady);
+      observer.observe(weather,{attributes:true,attributeFilter:['data-weather-status']});
+      weatherReady();
+      window.setTimeout(()=>{ observer.disconnect(); complete('weather'); },8000);
+    } else complete('weather');
+    window.setTimeout(()=>Object.keys(tasks).forEach(complete),8000);
+    update();
+  }
 
   function bindMobileMenu(){
     const panel=document.getElementById('mobilePanel');
@@ -1205,6 +1275,7 @@
       if(!reduceMotion.matches) logo.classList.add('is-arriving');
       logo.addEventListener('click', ()=>replay(logo));
       logo.addEventListener('keydown', e=>{
+        if(e.key==='Enter' && logo.tagName==='A') return;
         if(e.key==='Enter' || e.key===' '){
           e.preventDefault();
           replay(logo);
@@ -1456,6 +1527,7 @@
 
   bindSiteAssistant();
   applyTranslations();
+  bindWavepointPreloader();
   bindMobileMenu();
   bindHeroVideoSwap();
   bindHeroLogoEntrance();

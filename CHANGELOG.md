@@ -1,4 +1,18 @@
 ## 2026-10-07
+### Servicios — título, descripción y fotos en orden editorial
+- En los servicios estándar, excepto Clases de surf, el contenido ahora queda en una secuencia vertical clara: título completo, descripción con contraste reforzado y galería debajo.
+- Las galerías estándar ocupan todo el ancho disponible, usan fotos más grandes y mantienen un tratamiento específico para escritorio, tablet y celular.
+- Clases de surf conserva su composición y estilos propios; alojamiento y retiros mantienen sus plantillas editoriales especiales.
+- Actualizadas las cachés de `service-detail.html` para CSS y `services.js`.
+
+## 2026-10-07
+### Preloader real y navegación de logos
+- Agregado en la portada un preloader sincronizado con el primer video del hero, el gadget meteorológico, el logo y dos fondos críticos; la barra refleja tareas reales y cuenta con fallback para no bloquear la página si falla un recurso externo.
+- Incluidos logo WavePoint animado, línea tipo ola, barra de progreso, cierre suave y soporte para `prefers-reduced-motion`, en escritorio y móvil.
+- El logo principal del hero conserva su interacción de cuenta regresiva. Los dos logos secundarios de servicios en `index.html` y `piloto.html` ahora enlazan a la página principal y mantienen activada su animación visual.
+- Validaciones previstas: sintaxis JavaScript, rutas, idiomas ES/EN, responsive 320/375/430/768/1280 px, accesibilidad, ausencia de overflow y prueba pública.
+
+## 2026-10-07
 ### Gadget del clima más compacto en celular
 - Reducido el ancho, padding, temperatura y tarjetas internas solo hasta 640px.
 - Ajuste adicional para pantallas de hasta 400px.
