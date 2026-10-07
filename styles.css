@@ -2156,6 +2156,9 @@ body { background: #071c28; }
   .nav { border: 0; background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
+@media (max-width: 980px) {
+  .services-watermark { grid-column: 1 / -1; width: min(62%, 280px); min-height: 260px; }
+}
 @media (max-width: 640px) {
   .services-watermark { display: none; }
   .hero { padding-top: 76px; padding-bottom: 24px; background-attachment: scroll; background-position: center 58%; }
@@ -3158,7 +3161,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 #camaras { --px-img: url('assets/img/site/backgrounds/camaras.jpg'); }
 #guia { --px-img: url('assets/img/stays/occidental/optimized/occidental-beach.webp'); }
 #despues-del-surf { --px-img: url('assets/img/site/backgrounds/atardecer.jpg'); }
-.services-watermark { position: absolute; top: 31%; right: clamp(28px, 7vw, 110px); z-index: -1; width: clamp(190px, 21vw, 310px); opacity: .68; filter: drop-shadow(0 12px 24px rgba(2, 18, 27, .24)); pointer-events: none; transform: translateY(-50%) rotate(-4deg); }
+.services-watermark { grid-column: span 3; width: min(76%, 310px); min-height: 370px; align-self: stretch; justify-self: center; object-fit: contain; opacity: .72; filter: drop-shadow(0 12px 24px rgba(2, 18, 27, .24)); pointer-events: none; transform: rotate(-4deg); }
 .has-px .section-title, .has-px .link-more { color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .35); }
 .has-px .section-sub { color: rgba(255, 255, 255, .9); text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
 #guia .benefit h3 { color: #fff; }
