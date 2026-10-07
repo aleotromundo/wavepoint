@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Evitar la descarga doble de video en móviles
+- `index.html` y `piloto.html`: `videohero0.mp4` deja de tener `src` directo y pasa a `data-src`, por lo que el navegador no lo descarga antes de que JavaScript seleccione el video móvil.
+- En celular se descarga únicamente `videohero1.mp4`; en escritorio JavaScript sigue cargando el carrusel completo cuando corresponde.
+- Validación: marcado HTML revisado y `git diff --check`.
+
+## 2026-10-07
 ### Carga de imágenes más eficiente
 - Todas las imágenes fuera de logos y elementos de identidad reciben `loading="lazy"` y `decoding="async"` para no bloquear el primer render.
 - Se conserva la carga prioritaria de logos y del arte principal del hero.
