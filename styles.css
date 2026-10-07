@@ -8149,3 +8149,33 @@ footer a {
   .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 250px 175px; height: 435px; gap: 9px; }
   .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery img { height: 100%; object-fit: cover; border-radius: 12px; }
 }
+
+
+/* Cobertura de plantillas especiales: también prioriza copy antes de fotos, excepto Clases de surf. */
+.service-detail-page.accommodation-detail-page .accommodation-card { display: flex; flex-direction: column; }
+.service-detail-page.accommodation-detail-page .accommodation-card-body { order: 1; }
+.service-detail-page.accommodation-detail-page .accommodation-gallery { order: 2; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-cover { display: block; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-cover-copy { max-width: none; margin-bottom: clamp(28px, 4vw, 52px); padding: clamp(26px, 4vw, 50px); border: 1px solid rgba(255, 255, 255, .46); border-radius: 24px; background: linear-gradient(135deg, rgba(255, 255, 255, .93), rgba(246, 252, 249, .84)); box-shadow: 0 18px 46px rgba(8, 43, 58, .14); }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-cover-image { margin: 0; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-experience-card { display: flex; flex-direction: column; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-experience-card > .retreat-photo-grid { order: 2; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-experience-card > div:not(.retreat-photo-grid) { order: 1; }
+@media (max-width: 640px) {
+  .service-detail-page:not(.surf-lesson-detail-page) .retreat-cover-copy { margin-bottom: 22px; padding: 22px 18px; border-radius: 18px; }
+}
+
+
+/* Galerías de servicios: mosaicos equilibrados y encuadre estable en todos los tamaños. */
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); }
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery img { grid-column: auto !important; grid-row: auto !important; object-position: center center; }
+.service-detail-page.accommodation-detail-page .accommodation-gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center center; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-photo-grid img { object-fit: cover; object-position: center center; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-cover-copy { color: #244653; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-cover-copy p { color: #355965; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-cover-copy .retreat-cover-kicker { color: #087f87; }
+.service-detail-page:not(.surf-lesson-detail-page) .retreat-cover-facts span { color: #164653; }
+@media (max-width: 640px) {
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); height: 435px; }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery img { aspect-ratio: 1 / 1; }
+}
