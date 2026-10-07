@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Hero móvil más compacto
+- `styles.css` y `styles.optimized.css`: reducir únicamente en móvil/tablet el espacio superior del hero para acercar el logo al borde superior y compactar levemente el gadget climático en encabezado, cuerpo, ícono y filas.
+- Mantener sin cambios el tamaño y espaciado del gadget en escritorio.
+- Páginas HTML: actualizar la versión cacheada del CSS a `20261007-25`.
+- Validación: `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### Corrección del parallax fijo en dispositivos táctiles
 - `styles.css` y `styles.optimized.css`: convertir las capas `.px-bg` de `position: fixed` a `position: absolute` en touch/tablet y mantener `background-attachment: scroll` para evitar repaints desfasados que dibujan franjas al arrastrar lentamente.
 - Páginas HTML: actualizar la versión cacheada del CSS a `20261007-24`.
