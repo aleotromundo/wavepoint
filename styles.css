@@ -8072,13 +8072,13 @@ footer a {
 .local-guide-page .guide-detail-category h3 { font-size: 44px; }
 .local-guide-page .guide-detail-category > p:last-child { font-size: 15px; line-height: 1.7; color: rgba(246,255,251,.88); }
 .local-guide-page .guide-detail-grid { grid-template-columns: 1fr; gap: 22px; margin-bottom: 72px; }
-.local-guide-page .guide-detail-card { grid-template-columns: minmax(280px,.86fr) minmax(0,1.14fr); overflow: hidden; border: 1px solid rgba(224,255,246,.2); border-radius: 20px; background: rgba(5,31,42,.48); box-shadow: 0 24px 54px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.08); backdrop-filter: blur(14px) saturate(118%); -webkit-backdrop-filter: blur(14px) saturate(118%); }
+.local-guide-page .guide-detail-card { grid-template-columns: minmax(300px,.9fr) minmax(0,1.1fr); overflow: hidden; border: 1px solid rgba(224,255,246,.2); border-radius: 20px; background: rgba(5,31,42,.48); box-shadow: 0 24px 54px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.08); backdrop-filter: blur(14px) saturate(118%); -webkit-backdrop-filter: blur(14px) saturate(118%); }
 .local-guide-page .guide-detail-card img { display: block; width: 100%; height: 100%; min-height: 360px; border: 0; border-radius: 0; object-fit: cover; filter: saturate(.96) brightness(.92); transition: filter .22s ease,transform .45s ease; }
 .local-guide-page .guide-detail-card:hover img,.local-guide-page .guide-detail-card:focus-within img { filter: saturate(1.08) brightness(1.02); transform: scale(1.025); }
-.local-guide-page .guide-detail-card > div { padding: clamp(26px,3vw,42px); border-left: 1px solid rgba(224,255,246,.16); background: linear-gradient(135deg,rgba(4,27,38,.66),rgba(8,57,61,.34)); backdrop-filter: blur(12px) saturate(115%); -webkit-backdrop-filter: blur(12px) saturate(115%); }
-.local-guide-page .guide-detail-card h4 { font-size: clamp(32px,3.5vw,46px); margin-bottom: 12px; }
-.local-guide-page .guide-detail-card p { font-size: 15px; line-height: 1.7; color: rgba(246,255,251,.9); }
-.local-guide-page .guide-detail-card ul { gap: 10px; font-size: 13px; line-height: 1.58; color: rgba(239,252,247,.86); }
+.local-guide-page .guide-detail-card > div { padding: clamp(20px,2.2vw,32px); border-left: 1px solid rgba(224,255,246,.16); background: linear-gradient(135deg,rgba(4,27,38,.66),rgba(8,57,61,.34)); backdrop-filter: blur(12px) saturate(115%); -webkit-backdrop-filter: blur(12px) saturate(115%); }
+.local-guide-page .guide-detail-card h4 { font-size: clamp(30px,3vw,42px); margin-bottom: 10px; overflow-wrap: normal; word-break: normal; text-wrap: balance; }
+.local-guide-page .guide-detail-card p { font-size: clamp(13px,1.05vw,15px); line-height: 1.6; color: rgba(246,255,251,.9); }
+.local-guide-page .guide-detail-card ul { gap: clamp(7px,.7vw,10px); font-size: clamp(11px,.9vw,13px); line-height: 1.5; color: rgba(239,255,247,.86); }
 .local-guide-page .guide-detail-card li strong { color: #d6faed; }
 .local-guide-page .guide-detail-card a { display: inline-flex; margin-top: 4px; padding: 9px 0; color: #baf5e3; font-size: 14px; text-decoration: underline; text-decoration-color: rgba(186,245,227,.45); text-underline-offset: 4px; }
 .local-guide-page .guide-detail-card-text-only { grid-template-columns: 1fr; }

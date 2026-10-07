@@ -16,6 +16,18 @@
 - Reforzado el botón de WhatsApp en móvil y ampliado el fondo fijo de la guía para mantener el parallax sin bordes visibles durante el desplazamiento.
 - Actualizada la versión de caché de la guía a `20261007-49`.
 
+### Fotos más grandes en las tarjetas de la guía
+- Aumentada la proporción de la columna de imagen a poco más de la mitad de cada tarjeta en escritorio, aprovechando mejor el espacio disponible.
+- En móvil se conserva el apilado de imagen a ancho completo antes del texto.
+
+### Títulos completos en escritorio
+- Los títulos de las tarjetas ya no se cortan en medio de una palabra: se ajustan naturalmente en una o dos líneas según el espacio disponible.
+- Reducido levemente el tamaño máximo del título para mantener la foto grande y mejorar la lectura del contenido completo.
+
+### Tarjetas de guía más compactas
+- Recuperada una proporción más equilibrada entre foto y texto para evitar tarjetas excesivamente altas.
+- Reducidos de forma fluida el padding, el cuerpo de texto y las listas en función del ancho disponible; en móvil se conserva el apilado.
+
 ## 2026-10-07
 ### Imágenes ampliables en todo el sitio
 - El modal de imágenes ahora incluye Retiros, galerías de servicios, alojamientos, guía, colaboradores y tarjetas visuales.
