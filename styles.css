@@ -7893,3 +7893,28 @@ footer a {
 .quick-request-panel .survey-progress { display: none !important; }
 .quick-request-panel .detail-option::after,
 .quick-request-panel .detail-option:has(input:checked)::after { display: none !important; }
+
+/* Selector de formularios: punto blanco dentro del círculo, siempre junto al texto. */
+.quick-request-panel .detail-option input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin: 0;
+  border: 2px solid rgba(164, 240, 233, .72);
+  border-radius: 50%;
+  background: transparent;
+  display: grid;
+  place-content: center;
+  accent-color: #fff;
+}
+.quick-request-panel .detail-option input[type="radio"]::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+  transform: scale(0);
+  transition: transform .16s ease;
+}
+.quick-request-panel .detail-option input[type="radio"]:checked::before { transform: scale(1); }

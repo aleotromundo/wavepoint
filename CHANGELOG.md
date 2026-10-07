@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Formularios — indicador circular seleccionado
+- Restaurado el círculo selector junto a cada opción.
+- El estado seleccionado ahora muestra un punto blanco centrado.
+- Eliminado cualquier indicador desplazado hacia el otro lado.
+- CSS cacheado actualizado a `20261007-41`.
+
+## 2026-10-07
 ### Formularios — limpiar indicadores duplicados
 - Ocultado el bloque “Tu progreso” en todos los formularios.
 - Eliminado el círculo blanco adicional de las opciones seleccionables.
