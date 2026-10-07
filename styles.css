@@ -2160,7 +2160,7 @@ body { background: #071c28; }
   .services-watermark { grid-column: 1 / -1; width: min(62%, 280px); min-height: 260px; }
 }
 @media (max-width: 640px) {
-  .services-watermark { display: none; }
+  .services-watermark { grid-column: 1; width: min(72vw, 230px); min-height: 180px; margin: 8px auto 0; }
   .hero { padding-top: 76px; padding-bottom: 24px; background-attachment: scroll; background-position: center 58%; }
   .hero-video { object-position: center 58%; }
   .hero-grid { gap: 16px; }
