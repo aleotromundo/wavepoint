@@ -2593,16 +2593,13 @@ body { background: #071c28; }
   justify-content: center;
   width: 122px;
   min-height: 54px;
-  padding: 8px 12px;
-  border: 1px solid rgba(215, 255, 244, .34);
-  border-radius: 16px;
-  background: rgba(4, 28, 39, .72);
-  box-shadow: 0 14px 36px rgba(0, 20, 30, .32), inset 0 1px rgba(255, 255, 255, .12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform .22s ease, background-color .22s ease;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: transform .22s ease;
 }
-.collab-floating-brand:hover { transform: translateY(-3px); background: rgba(6, 49, 58, .86); }
+.collab-floating-brand:hover { transform: translateY(-3px); }
 .collab-floating-brand img { display: block; width: 100%; height: auto; object-fit: contain; }
 .service-page-footer {
   padding: 14px 0 28px;
@@ -2628,7 +2625,7 @@ body { background: #071c28; }
 @media (max-width: 760px) {
   .collaborator-page:not(.about-page) .collab-layout article { width: 100%; }
   .collaborator-page:not(.about-page) .collab-gallery { width: 100%; margin: 18px 0 0; }
-  .collab-floating-brand { right: 84px; bottom: 78px; width: 96px; min-height: 46px; padding: 7px 9px; border-radius: 13px; }
+  .collab-floating-brand { right: 84px; bottom: 78px; width: 96px; min-height: 46px; }
 }
 /* Compact sponsor rail directly below the hero. */
 .allies-ticker {
