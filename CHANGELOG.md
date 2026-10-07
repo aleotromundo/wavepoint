@@ -1,4 +1,13 @@
 ## 2026-10-07
+### Actualización consciente por cinco toques del logo
+- `script.js`: reemplazar la cuenta regresiva automática por un gesto de cinco toques sobre el logo principal, inspirado en la activación de opciones de desarrollador de Android.
+- Cada toque descuenta uno, muestra brevemente el número restante (`4 → 3 → 2 → 1 → 0`) y el indicador desaparece enseguida.
+- La secuencia se reinicia si pasan tres segundos entre toques; no se actualiza con un solo toque accidental.
+- `styles.css` y `styles.optimized.css`: mover el indicador flotante al lado izquierdo del logo y darle una animación breve de entrada/salida.
+- Páginas HTML: actualizar CSS a `20261007-31` y JavaScript a `20261007-17`.
+- Validación: `node --check script.js` y `git diff --check`.
+
+## 2026-10-07
 ### Atajo de actualización desde el logo
 - `script.js`: al tocar o activar con teclado el logo principal comienza una cuenta regresiva visible `5 → 4 → 3 → 2 → 1 → 0` y luego recarga la página con un parámetro único para solicitar la versión más reciente.
 - La cuenta reinicia el ciclo si se vuelve a tocar el logo antes de terminar.
