@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Clases de surf — quitar scroll interno
+- Eliminado el `max-height` heredado del contenedor de la primera sección.
+- El contenido y las fotos ahora fluyen con la página, sin marco ni desplazamiento interno.
+- CSS cacheado actualizado a `20261007-43`.
+
+## 2026-10-07
 ### Mensajes de WhatsApp — pulido de redacción
 - “Primera vez” ahora se expresa como “la primera vez que hago surf”.
 - Las respuestas de tabla se convierten en frases naturales según singular o plural.
