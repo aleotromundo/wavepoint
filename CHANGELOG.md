@@ -18,6 +18,10 @@
 - Todos los formularios de servicios comparten ahora la misma piel oscura, bordes turquesa, encabezado, campos y botón de envío que Estadías y Clases de surf.
 - Se redujo la separación entre la galería y el formulario en tablet y celular para evitar el espacio vacío innecesario.
 
+### Yoga — galería sin repetición del fondo
+- La foto de la mujer rubia meditando queda únicamente como fondo del hero y del detalle.
+- La galería interna de Yoga ahora muestra solo las otras dos imágenes, en un mosaico de dos fotos equilibradas.
+
 ## 2026-10-07
 ### Preloader real y navegación de logos
 - Agregado en la portada un preloader sincronizado con el primer video del hero, el gadget meteorológico, el logo y dos fondos críticos; la barra refleja tareas reales y cuenta con fallback para no bloquear la página si falla un recurso externo.

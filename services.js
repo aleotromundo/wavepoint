@@ -844,7 +844,8 @@ return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
-const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
+const galleryImages = service.id === 'yoga' ? service.images.slice(1) : service.images;
+const gallery = galleryImages.map((image, index) => { const altIndex = service.id === 'yoga' ? index + 1 : index; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
 const title = service.title;
 const includes = service.includes ? `<div class="service-includes"><h3>${isEn ? 'Includes' : 'Incluye'}</h3><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 return `<section class="service-editorial-story"><div class="service-editorial-copy"><p class="service-page-kicker">${esc(service.eyebrow)}</p><h2>${esc(title)}</h2><p class="service-editorial-lead">${esc(service.description)}</p>${extra ? `<p class="service-editorial-extra">${esc(extra)}</p>` : ''}${includes}</div><div class="detail-gallery service-editorial-gallery" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div></section>`;
@@ -934,6 +935,7 @@ document.documentElement.lang = lang;
 document.title = `${service.title} · WavePoint`;
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
+document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
 document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.images[0])})`);
 const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
