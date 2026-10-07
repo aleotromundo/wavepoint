@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Carga de imágenes más eficiente
+- Todas las imágenes fuera de logos y elementos de identidad reciben `loading="lazy"` y `decoding="async"` para no bloquear el primer render.
+- Se conserva la carga prioritaria de logos y del arte principal del hero.
+- Aplicado en inicio, piloto, guía, trip builder, service detail y páginas de colaboradores.
+- Validación: no quedan imágenes de contenido sin `loading` y `git diff --check`.
+
+## 2026-10-07
 ### Videohero1 como fondo móvil
 - `script.js`: el único video reproducido en celulares y tablets táctiles pasa a ser `videohero1.mp4`, en loop continuo.
 - Escritorio y tablet grande conservan el carrusel completo con todos los videos.
