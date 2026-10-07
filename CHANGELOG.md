@@ -14,6 +14,10 @@
 - Las fotos mantienen `object-fit: cover` y encuadre centrado en escritorio, tablet y celular para evitar sujetos corridos o bordes sin contenido.
 - Alojamiento conserva sus mosaicos cuadrados y Retiros centra sus fotos; también se reforzó el contraste del texto principal de Retiros.
 
+### Formularios con sistema visual común
+- Todos los formularios de servicios comparten ahora la misma piel oscura, bordes turquesa, encabezado, campos y botón de envío que Estadías y Clases de surf.
+- Se redujo la separación entre la galería y el formulario en tablet y celular para evitar el espacio vacío innecesario.
+
 ## 2026-10-07
 ### Preloader real y navegación de logos
 - Agregado en la portada un preloader sincronizado con el primer video del hero, el gadget meteorológico, el logo y dos fondos críticos; la barra refleja tareas reales y cuenta con fallback para no bloquear la página si falla un recurso externo.
