@@ -7864,3 +7864,14 @@ footer a {
   .service-detail-page.surf-lesson-detail-page .quick-request-panel > .detail-request-head { margin: 0; padding: 24px 20px 18px; }
   .service-detail-page.surf-lesson-detail-page .quick-request-panel > form { margin: 0; padding: 20px 20px 27px; }
 }
+
+/* La barra interna también debe coincidir exactamente con el formulario de Estadías. */
+.service-detail-page.surf-lesson-detail-page .detail-request .quick-request-panel-bar {
+  position: relative !important;
+  top: auto !important;
+  padding: 24px 24px 18px !important;
+  background: linear-gradient(180deg, rgba(8, 44, 58, .99), rgba(8, 44, 58, .90)) !important;
+  border-bottom: 1px solid rgba(198, 251, 244, .12) !important;
+  backdrop-filter: none !important;
+}
+.service-detail-page.surf-lesson-detail-page .detail-request .quick-request-panel-bar h2 { font-size: clamp(32px, 4vw, 44px) !important; }
