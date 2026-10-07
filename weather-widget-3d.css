@@ -308,3 +308,24 @@
   }
   .wx3d-card { animation: none; }
 }
+
+/* En celular: un poco más compacto para liberar espacio en el hero sin perder lectura. */
+@media (max-width: 640px) {
+  .weather-card.weather-card-3d { width: min(100%, 330px) !important; }
+  .wx3d { --wx-w: 330px; }
+  .wx3d-face { padding: 20px 18px; }
+  .wx3d-temp { font-size: 84px; }
+  .wx3d-status { margin-bottom: 20px; font-size: 19px; }
+  .wx3d-stat { min-height: 98px; padding: 11px 6px 10px; }
+  .wx3d-stat b { font-size: 27px; }
+}
+@media (max-width: 400px) {
+  .weather-card.weather-card-3d { width: min(100%, 300px) !important; }
+  .wx3d { --wx-w: 300px; }
+  .wx3d-face { padding: 18px 14px; }
+  .wx3d-temp { font-size: 78px; }
+  .wx3d-status { margin-bottom: 17px; font-size: 18px; }
+  .wx3d-stat { min-height: 90px; padding-inline: 5px; }
+  .wx3d-stat b { font-size: 23px; }
+  .wx3d-stat span { font-size: 12px; }
+}
