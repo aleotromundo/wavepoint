@@ -13,7 +13,7 @@ La guía existe para que otra persona o agente pueda continuar el proyecto sin d
 - La portada debe posicionar WavePoint como **Surf Experiences** en Tamarindo, Costa Rica. Las cámaras siguen disponibles como una sección secundaria; no eliminarlas sin pedido explícito.
 - Mantener el contenido visible y el copy SEO en español e inglés. Evitar keyword stuffing, afirmaciones operativas no verificadas y promesas de ranking.
 - El inglés es el idioma inicial; el selector permite cambiar a español y guarda la preferencia. Los títulos y textos visibles aprobados por el usuario son literales: no reescribirlos por SEO ni modificarlos sin permiso explícito. El SEO puede optimizarse en metadatos sin cambiar el copy visible.
-- El SEO técnico de la home vive en `index.html`; su foto social es `assets/og/surf-experiences-tamarindo.jpg`, y `robots.txt` referencia `sitemap.xml`.
+- El SEO técnico de la home vive en `index.html`; su foto social es `assets/img/site/share/surf-experiences-tamarindo.jpg`, y `robots.txt` referencia `sitemap.xml`.
 - Después de publicar cambios o migrar de dominio, revisar la URL pública, verificar la propiedad en Google Search Console y enviar el sitemap manualmente. Google controla el rastreo, la indexación y la posición; no hay garantía de aparecer primero ni de hacerlo de inmediato.
 
 ## 2. Arquitectura general
