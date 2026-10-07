@@ -36,6 +36,7 @@
 - El body queda reducido a la galería y el formulario, en ese orden y sin espacio vacío entre ambos.
 - Las galerías dejaron de usar alturas fijas que reservaban una zona invisible debajo de las imágenes; ahora su contenedor termina exactamente con la última fila de fotos.
 - Se agregó una separación breve y consistente, con un pequeño detalle luminoso inspirado en una ola para unir visualmente las fotos con la solicitud sin dejar un hueco muerto.
+- El hero vuelve a mostrar la descripción completa y se restauraron los textos de apoyo, coordinación, destacados e incluidos sin repetir la descripción en las plantillas especiales.
 
 ## 2026-10-07
 ### Preloader real y navegación de logos
