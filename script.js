@@ -1478,17 +1478,20 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
   });
 });
 
-// Atajo de actualización: tocar el logo inicia una cuenta regresiva y
-// recarga la página con una URL nueva, sin tocar la preferencia de idioma.
+// Atajo de actualización: requiere cinco toques conscientes sobre el logo.
 (function bindLogoCacheRefresh(){
   const logo=document.querySelector('.hero-logo-wrap');
   if(!logo) return;
-  let timer=null;
-  let remaining=0;
+  const REQUIRED_TAPS=5;
+  const TAP_WINDOW=3000;
+  let taps=0;
+  let resetTimer=null;
+  let hideTimer=null;
+  let refreshTimer=null;
   const badge=document.createElement('span');
   badge.className='logo-refresh-countdown';
   badge.setAttribute('aria-live','polite');
-  badge.setAttribute('aria-label','Actualizando la página');
+  badge.setAttribute('aria-label','Toques restantes para actualizar');
   badge.hidden=true;
   logo.appendChild(badge);
 
@@ -1498,8 +1501,8 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
         const cacheNames=await caches.keys();
         await Promise.all(cacheNames.map(name=>caches.delete(name)));
       }catch(error){
-        // El caché HTTP del navegador no se puede borrar desde una página;
-        // la URL con timestamp fuerza igualmente una nueva solicitud HTML.
+        // La caché HTTP del navegador no se puede borrar desde una página;
+        // el parámetro único fuerza igualmente una nueva solicitud HTML.
       }
     }
     const url=new URL(window.location.href);
@@ -1507,27 +1510,37 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
     window.location.replace(url.toString());
   };
 
-  const start=()=>{
-    window.clearInterval(timer);
-    remaining=5;
+  const showTapNumber=(remaining)=>{
+    window.clearTimeout(hideTimer);
     badge.textContent=String(remaining);
     badge.hidden=false;
-    logo.classList.add('is-cache-refreshing');
-    timer=window.setInterval(()=>{
-      remaining-=1;
-      badge.textContent=String(Math.max(remaining,0));
-      if(remaining<=0){
-        window.clearInterval(timer);
-        refresh();
-      }
-    },1000);
+    badge.classList.remove('is-visible');
+    void badge.offsetWidth;
+    badge.classList.add('is-visible');
+    hideTimer=window.setTimeout(()=>{
+      badge.hidden=true;
+      badge.classList.remove('is-visible');
+    },700);
   };
 
-  logo.addEventListener('click',start);
+  const handleTap=()=>{
+    if(refreshTimer) return;
+    window.clearTimeout(resetTimer);
+    taps+=1;
+    const remaining=REQUIRED_TAPS-taps;
+    showTapNumber(Math.max(remaining,0));
+    if(taps>=REQUIRED_TAPS){
+      refreshTimer=window.setTimeout(refresh,700);
+      return;
+    }
+    resetTimer=window.setTimeout(()=>{ taps=0; },TAP_WINDOW);
+  };
+
+  logo.addEventListener('click',handleTap);
   logo.addEventListener('keydown',event=>{
     if(event.key==='Enter' || event.key===' '){
       event.preventDefault();
-      start();
+      handleTap();
     }
   });
 })();

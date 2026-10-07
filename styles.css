@@ -7551,11 +7551,12 @@ footer a {
   background: rgba(255, 255, 255, .055) !important;
 }
 
-/* Indicador discreto del atajo de actualización del logo. */
+
+/* Numerito flotante del desbloqueo por cinco toques sobre el logo. */
 .logo-refresh-countdown {
   position: absolute;
   top: 7%;
-  right: 8%;
+  left: 8%;
   z-index: 3;
   display: grid;
   width: 25px;
@@ -7570,12 +7571,14 @@ footer a {
   -webkit-backdrop-filter: blur(8px);
   font: 800 13px/1 "DM Sans", sans-serif;
   pointer-events: none;
-  animation: logo-refresh-countdown-in .18s ease-out both;
 }
 .logo-refresh-countdown[hidden] { display: none; }
-.hero-logo-wrap.is-cache-refreshing .logo-refresh-countdown { animation: logo-refresh-countdown-pulse .95s ease-in-out infinite; }
-@keyframes logo-refresh-countdown-in { from { opacity: 0; transform: scale(.65); } to { opacity: 1; transform: scale(1); } }
-@keyframes logo-refresh-countdown-pulse { 50% { transform: scale(1.12); background: rgba(15, 139, 145, .55); } }
+.logo-refresh-countdown.is-visible { animation: logo-refresh-tap .7s ease-out both; }
+@keyframes logo-refresh-tap {
+  0% { opacity: 0; transform: translateY(5px) scale(.7); }
+  18% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-8px) scale(.92); }
+}
 @media (prefers-reduced-motion: reduce) {
-  .logo-refresh-countdown { animation: none; }
+  .logo-refresh-countdown.is-visible { animation: none; }
 }
