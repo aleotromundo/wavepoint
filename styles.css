@@ -6972,3 +6972,43 @@ html.safari-stable #servicios .service-card .service-body p {
   23% { opacity: .9; transform: translateX(315%) rotate(7deg); }
   31%, 100% { opacity: 0; transform: translateX(360%) rotate(7deg); }
 }
+
+/* Una única espada cromada atraviesa toda la grilla del footer. */
+.site-footer .foot-grid {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.site-footer .foot-grid > div::after {
+  display: none;
+}
+.site-footer .foot-grid::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: -18%;
+  left: -96px;
+  width: 76px;
+  height: 136%;
+  pointer-events: none;
+  opacity: 0;
+  transform: rotate(7deg);
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,.08) 25%,
+    rgba(225,255,249,.38) 45%,
+    rgba(255,255,255,.78) 50%,
+    rgba(153,242,229,.28) 57%,
+    transparent 82%);
+  filter: blur(3px) drop-shadow(0 0 12px rgba(182,255,242,.32));
+  animation: footer-chrome-sword 22s cubic-bezier(.3,.7,.2,1) infinite;
+}
+@keyframes footer-chrome-sword {
+  0%, 3% { left: -96px; opacity: 0; }
+  5% { opacity: .9; }
+  14% { left: calc(100% + 96px); opacity: .92; }
+  18%, 100% { left: calc(100% + 120px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .foot-grid::after { animation: none; }
+}
