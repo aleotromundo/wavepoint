@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Refuerzo contra el rebote visual táctil
+- `styles.css` y `styles.optimized.css`: aplicar `overscroll-behavior: none` al documento raíz y al cuerpo, fijar la altura del lienzo `html`, establecer el esquema oscuro del viewport y mantener un fondo oscuro sólido para evitar franjas blancas arriba o abajo en Chromebook, tablets y escritorio.
+- Validación: `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### Corrección del rebote blanco al hacer overscroll
 - `styles.css` y `styles.optimized.css`: dar al lienzo `html` el mismo fondo oscuro del sitio, asegurar la altura mínima del `body` y limitar el overscroll vertical para evitar que aparezca el fondo blanco al arrastrar más allá del inicio o final, manteniendo el scroll normal.
 - Validación: `node --check` sobre los scripts globales y `git diff --check`.

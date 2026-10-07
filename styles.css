@@ -1939,8 +1939,8 @@ html { scroll-padding-top: 0; }
   transform-origin: center bottom;
 }
 
-html { background: #071c28; overscroll-behavior-y: none; }
-body { background: #071c28; min-height: 100%; overscroll-behavior-y: none; }
+html { height: 100%; background: #071c28; color-scheme: dark; overscroll-behavior: none !important; }
+body { min-height: 100vh; background: #071c28; overscroll-behavior: none !important; }
 
 #camaras {
   background: linear-gradient(135deg, #0a3443, #0d4650 56%, #092c3b);
