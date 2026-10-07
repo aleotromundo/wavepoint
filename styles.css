@@ -4697,15 +4697,13 @@ footer a {
   display: block;
   min-width: 0;
   overflow: hidden;
-  border-radius: 14px;
-  background: rgba(11, 49, 60, .08);
+  border-radius: 12px;
+  background: transparent;
   text-decoration: none;
-  box-shadow: 0 14px 32px rgba(8, 43, 58, .14);
-  transition: transform .2s ease, box-shadow .2s ease, outline-color .2s ease;
+  transition: transform .2s ease, outline-color .2s ease;
 }
 .accommodation-destination:hover {
   transform: translateY(-2px);
-  box-shadow: 0 17px 36px rgba(8, 43, 58, .2);
 }
 .accommodation-destination:focus-visible {
   outline: 3px solid #078f91;
@@ -4715,8 +4713,8 @@ footer a {
   display: block;
   width: 100%;
   height: 188px;
-  object-fit: contain;
-  background: rgba(11, 49, 60, .08);
+  object-fit: cover;
+  background: transparent;
 }
 .accommodation-grid { display: grid; gap: 18px; }
 .accommodation-card {

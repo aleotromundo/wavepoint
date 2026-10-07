@@ -11,7 +11,7 @@
   video.playsInline = true;
   video.preload = 'metadata';
   video.poster = 'assets/hero.jpg';
-  video.src = 'assets/videohero3.mp4';
+  video.src = 'assets/videoheroxx3.mp4';
   footer.prepend(video);
 
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');

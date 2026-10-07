@@ -50,8 +50,14 @@ id: 'casa-aura',
 category: 'OPCIÓN MEDIA', name: 'Casa Aura',
 price: 'USD 80–210', priceNote: 'por unidad · por noche',
 summary: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno incluido según la unidad.',
-images: [],
-imageAlt: 'Alojamiento frente al mar con piscina y espacios interiores',
+images: [
+'assets/img/hotels/stayandhotels4_resultado.webp',
+'assets/img/stays/casa-aura/images.jpg',
+'assets/img/stays/casa-aura/images (1).jpg'
+],
+imageAlt: 'Interior de Casa Aura con sala y cocina',
+imageAlts: ['Interior de Casa Aura con sala y cocina', 'Entrada de Casa Aura en Tamarindo', 'Área común de madera de Casa Aura'],
+imageAltsEn: ['Casa Aura living room and kitchen', 'Casa Aura entrance in Tamarindo', 'Casa Aura wooden common area'],
 details: [
 'Habitación doble — USD 80 · baño privado · desayuno incluido · 1 habitación.',
 'Habitación cuádruple — USD 120 · una cama matrimonial y una litera · baño privado · desayuno incluido · 3 habitaciones.',
@@ -707,7 +713,7 @@ return `<article class="accommodation-card accommodation-card-${index + 1}" id="
 }
 function renderAccommodationStory(service) {
 const isEn = lang === 'en';
-const destinations = service.accommodationOptions.filter(option => option.images[0]).map(option => {
+const destinations = service.accommodationOptions.map(option => {
 const image = option.images[0];
 const alt = isEn ? option.imageAltsEn?.[0] : option.imageAlts?.[0];
 const ariaLabel = isEn ? `View ${option.name} details` : `Ver detalles de ${option.name}`;

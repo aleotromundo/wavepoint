@@ -27,8 +27,12 @@
 
 ### Índice visual de alojamientos / Accommodation photo index
 
-- `services.js` y `styles.css`: mostrar solo fotos enlazadas (sin nombres ni tarjetas), conservar su tamaño original de galería y deslizar a la ficha correspondiente; Casa Aura se omite del índice hasta verificar una foto propia.
-- `services.js` and `styles.css`: show only linked photos (no names or cards), preserve their original gallery size, and scroll to each matching detail; omit Casa Aura from the index until its own image is verified.
+- `services.js` y `styles.css`: mostrar las cuatro fotos enlazadas (sin nombres ni tarjetas), asignar a Casa Aura `stayandhotels4_resultado.webp`, llenar el espacio de cada imagen y deslizar a la ficha correspondiente.
+- `services.js` and `styles.css`: show all four linked photos (no names or cards), assign `stayandhotels4_resultado.webp` to Casa Aura, fill each image area, and scroll to the matching detail.
+- `services.js` y `assets/img/stays/casa-aura/`: sumar las fotos de Casa Aura a su ficha con textos alternativos ES/EN.
+- `index.html`, `piloto.html` y `footer-video.js`: corregir la referencia al video tras su cambio de nombre a `videoheroxx3.mp4`.
+- `services.js` and `assets/img/stays/casa-aura/`: add Casa Aura photos to its detail with Spanish and English alternative text.
+- `index.html`, `piloto.html` and `footer-video.js`: fix the video reference after it was renamed to `videoheroxx3.mp4`.
 
 ### Orden y subrayado animado de navegación / Navigation order and animated underline
 
