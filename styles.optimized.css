@@ -2961,3 +2961,130 @@ to{filter:brightness(1.18)}
 .service-detail-page.surf-lesson-detail-page .detail-story{max-height:none!important;height:auto!important;overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important}
 .service-detail-page:not(.accommodation-detail-page) .detail-layout{display:block}.service-detail-page:not(.accommodation-detail-page) .detail-story{max-width:none;height:auto!important;max-height:none!important;min-height:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;backdrop-filter:none;-webkit-backdrop-filter:none}.service-detail-page:not(.accommodation-detail-page) .service-editorial-story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(430px,1.1fr);gap:clamp(32px,5vw,76px);align-items:center}.service-editorial-copy{min-width:0}.service-editorial-copy h2{max-width:650px;margin:0 0 20px;color:#123d49;font:700 clamp(48px,5.8vw,82px)/.94 "Barlow Condensed",Impact,sans-serif}.service-editorial-lead,.service-editorial-extra{max-width:650px;color:#45636c;font-size:16px;line-height:1.75}.service-editorial-lead{margin:0 0 20px}.service-editorial-extra{margin:0 0 24px}.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);grid-template-rows:repeat(2,minmax(150px,1fr));height:420px;gap:8px;margin:0;min-width:0}.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery img{min-height:0;border-radius:12px;object-fit:cover;background:#dceae5;cursor:zoom-in;box-shadow:0 12px 28px rgba(8,43,58,.12)}.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery img:first-child{display:block;grid-row:1/-1}.service-detail-page:not(.accommodation-detail-page) .service-includes{margin-top:24px;padding:20px 22px;border:1px solid rgba(8,127,128,.16);border-radius:18px;background:rgba(255,255,255,.58)}.service-detail-page:not(.accommodation-detail-page) .quick-request-launcher{display:none!important}.service-detail-page:not(.accommodation-detail-page) .quick-request-panel{display:block!important;position:static!important;width:100%!important;max-width:900px;max-height:none!important;margin:clamp(62px,8vw,108px) auto 0!important;padding:0!important;overflow:visible!important;border:1px solid rgba(164,240,233,.25)!important;border-radius:28px!important;background:linear-gradient(145deg,#083643,#052c3b)!important;box-shadow:0 24px 60px rgba(4,29,40,.18)!important;transform:none!important;visibility:visible!important;opacity:1!important;transition:none!important}.service-detail-page:not(.accommodation-detail-page) .quick-request-panel-bar{position:relative;top:auto;padding:24px 24px 18px;background:linear-gradient(180deg,rgba(8,44,58,.99),rgba(8,44,58,.90));border-bottom:1px solid rgba(198,251,244,.12);backdrop-filter:none}.service-detail-page:not(.accommodation-detail-page) .quick-request-panel .detail-request-head{margin:0 24px}.service-detail-page:not(.accommodation-detail-page) .quick-request-panel .service-survey-form{padding:0 24px 28px}@media (max-width:980px){.service-detail-page:not(.accommodation-detail-page) .service-editorial-story{grid-template-columns:1fr;gap:30px}.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery{max-width:760px}}@media (max-width:640px){.service-editorial-copy h2{font-size:58px}.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery{grid-template-columns:1fr 1fr;grid-template-rows:230px 150px;height:389px}.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery img:first-child{grid-column:1/-1;grid-row:1}.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery img:nth-child(2),.service-detail-page:not(.accommodation-detail-page) .service-editorial-gallery img:nth-child(3){grid-row:2}.service-detail-page:not(.accommodation-detail-page) .quick-request-panel{margin-top:30px!important;border-radius:20px!important}.service-detail-page:not(.accommodation-detail-page) .quick-request-panel .detail-request-head,.service-detail-page:not(.accommodation-detail-page) .quick-request-panel .service-survey-form{margin-inline:0;padding-inline:20px}}
 .image-zoomable{cursor:zoom-in!important;transition:filter .22s ease,transform .22s ease,outline-color .22s ease}.image-zoomable:hover,.image-zoomable:focus-visible{filter:brightness(1.06) saturate(1.05);outline:3px solid rgba(156,232,215,.72);outline-offset:-3px}
+
+/* Guía turística · rediseño editorial final: contenido abierto, vidrio legible y fotos protagonistas. */
+.local-guide-page {
+  background-color: #082633;
+}
+.local-guide-page::before {
+  background: linear-gradient(145deg, rgba(3, 20, 29, .42), rgba(4, 48, 53, .28)), url("assets/img/site/backgrounds/atardecer.jpg") center / cover no-repeat;
+}
+.local-guide-page .guide-original-content {
+  padding-top: 82px;
+  padding-bottom: 104px;
+}
+.local-guide-page .guide-detail-heading {
+  max-width: 920px;
+  margin-bottom: 34px;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid rgba(224, 255, 246, .24);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(5, 31, 42, .62), rgba(11, 70, 73, .34));
+  box-shadow: inset 0 1px rgba(255, 255, 255, .12), 0 24px 58px rgba(0, 0, 0, .18);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+.local-guide-page .guide-detail-heading h2 {
+  max-width: 780px;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: .98;
+}
+.local-guide-page .guide-detail-heading > p:last-child {
+  max-width: 760px;
+  font-size: 16px;
+  line-height: 1.72;
+  color: rgba(246, 255, 251, .9);
+}
+.local-guide-page .guide-glossary {
+  gap: 14px;
+  margin-bottom: 72px;
+}
+.local-guide-page .guide-glossary a {
+  min-height: 128px;
+  padding: 20px;
+  border: 1px solid rgba(224, 255, 246, .24);
+  border-radius: 16px;
+  background: rgba(5, 34, 44, .46);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .08), 0 16px 34px rgba(0, 0, 0, .14);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+.local-guide-page .guide-glossary strong { font-size: 25px; }
+.local-guide-page .guide-glossary span { color: rgba(246, 255, 251, .8); font-size: 13px; line-height: 1.5; }
+.local-guide-page .guide-detail-category {
+  max-width: 920px;
+  margin: 0 0 24px;
+  padding: 26px 30px;
+  border: 1px solid rgba(224, 255, 246, .2);
+  border-radius: 20px;
+  background: rgba(5, 33, 44, .46);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .1), 0 20px 44px rgba(0, 0, 0, .14);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+}
+.local-guide-page .guide-detail-category h3 { font-size: 44px; }
+.local-guide-page .guide-detail-category > p:last-child { font-size: 15px; line-height: 1.7; color: rgba(246, 255, 251, .88); }
+.local-guide-page .guide-detail-grid {
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-bottom: 72px;
+}
+.local-guide-page .guide-detail-card {
+  grid-template-columns: minmax(280px, .86fr) minmax(0, 1.14fr);
+  overflow: hidden;
+  border: 1px solid rgba(224, 255, 246, .2);
+  border-radius: 20px;
+  background: rgba(5, 31, 42, .48);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, .2), inset 0 1px rgba(255, 255, 255, .08);
+  backdrop-filter: blur(14px) saturate(118%);
+  -webkit-backdrop-filter: blur(14px) saturate(118%);
+}
+.local-guide-page .guide-detail-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+  filter: saturate(.96) brightness(.92);
+  transition: filter .22s ease, transform .45s ease;
+}
+.local-guide-page .guide-detail-card:hover img,
+.local-guide-page .guide-detail-card:focus-within img {
+  filter: saturate(1.08) brightness(1.02);
+  transform: scale(1.025);
+}
+.local-guide-page .guide-detail-card > div {
+  padding: clamp(26px, 3vw, 42px);
+  border-left: 1px solid rgba(224, 255, 246, .16);
+  background: linear-gradient(135deg, rgba(4, 27, 38, .66), rgba(8, 57, 61, .34));
+  backdrop-filter: blur(12px) saturate(115%);
+  -webkit-backdrop-filter: blur(12px) saturate(115%);
+}
+.local-guide-page .guide-detail-card h4 { font-size: clamp(32px, 3.5vw, 46px); margin-bottom: 12px; }
+.local-guide-page .guide-detail-card p { font-size: 15px; line-height: 1.7; color: rgba(246, 255, 251, .9); }
+.local-guide-page .guide-detail-card ul { gap: 10px; font-size: 13px; line-height: 1.58; color: rgba(239, 252, 247, .86); }
+.local-guide-page .guide-detail-card li strong { color: #d6faed; }
+.local-guide-page .guide-detail-card a { display: inline-flex; margin-top: 4px; padding: 9px 0; color: #baf5e3; font-size: 14px; text-decoration: underline; text-decoration-color: rgba(186, 245, 227, .45); text-underline-offset: 4px; }
+.local-guide-page .guide-detail-card-text-only { grid-template-columns: 1fr; }
+.local-guide-page .guide-detail-card-text-only > div { border-left: 0; }
+.local-guide-page .guide-image-modal img { border: 0; border-radius: 0; }
+.local-guide-page .guide-practical { margin-top: 8px; padding: 30px; border-radius: 22px; background: rgba(5, 32, 43, .46); }
+.local-guide-page .guide-practical .guide-detail-heading { margin-bottom: 24px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.local-guide-page .guide-tip-card { padding: 26px 28px; }
+.local-guide-page .guide-tip-card h4 { font-size: 34px; }
+@media (max-width: 760px) {
+  .local-guide-page .guide-original-content { padding-top: 56px; padding-bottom: 76px; }
+  .local-guide-page .guide-detail-grid { gap: 18px; margin-bottom: 54px; }
+  .local-guide-page .guide-detail-card { grid-template-columns: 1fr; }
+  .local-guide-page .guide-detail-card img { height: clamp(220px, 58vw, 310px); min-height: 0; }
+  .local-guide-page .guide-detail-card > div { border-top: 1px solid rgba(224, 255, 246, .16); border-left: 0; padding: 23px 21px 26px; }
+  .local-guide-page .guide-detail-category { padding: 21px 20px; }
+  .local-guide-page .guide-detail-category h3 { font-size: 36px; }
+  .local-guide-page .guide-detail-heading h2 { font-size: 42px; }
+  .local-guide-page .guide-practical { padding: 22px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .local-guide-page .guide-detail-card img { transition: none; }
+}
