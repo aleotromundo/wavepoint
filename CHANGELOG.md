@@ -1,4 +1,12 @@
 ## 2026-10-07
+### Estandarización de secciones de servicios
+- Aplicada una plantilla editorial abierta al resto de servicios: texto legible, galería amplia y fotos ampliables.
+- Unificado el formulario debajo del contenido, con el mismo panel visual de Clases de surf.
+- Eliminados marcos y scroll interno heredados en las páginas de servicio.
+- Manteniendo la grilla específica de Estadías y hoteles y la experiencia editorial especial de Retiros.
+- CSS cacheado actualizado a `20261007-44`.
+
+## 2026-10-07
 ### Clases de surf — limpiar encabezados del formulario
 - Quitadas las etiquetas “Consulta rápida” y “Encontramos la opción para vos” de Clases de surf.
 - El resto de los formularios conserva sus encabezados originales.
