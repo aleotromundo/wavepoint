@@ -6133,19 +6133,10 @@ footer a {
 #servicios .service-grid-catalog > .service-card-snorkel .service-img img {
   transform: scale(1.85);
 }
-
-#servicios .service-grid-catalog > .service-card-atv .service-img img {
-  object-position: left center;
-  transform: scale(1.85);
-  transform-origin: left center;
-}
-
 #servicios .service-grid-catalog > .service-card-witch-rock:hover .service-img img,
 #servicios .service-grid-catalog > .service-card-witch-rock .service-image-link:focus-visible .service-img img,
 #servicios .service-grid-catalog > .service-card-snorkel:hover .service-img img,
-#servicios .service-grid-catalog > .service-card-snorkel .service-image-link:focus-visible .service-img img,
-#servicios .service-grid-catalog > .service-card-atv:hover .service-img img,
-#servicios .service-grid-catalog > .service-card-atv .service-image-link:focus-visible .service-img img {
+#servicios .service-grid-catalog > .service-card-snorkel .service-image-link:focus-visible .service-img img {
   transform: scale(1.85);
 }
 
