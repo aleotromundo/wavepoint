@@ -1,5 +1,19 @@
 ## 2026-10-07
 
+### Corrección de fotos de Avellanas y Capitán Suizo / Avellanas and Capitán Suizo photo correction
+
+- `guia-playas.html` y `guide-i18n.js`: reemplazar la foto del mono aullador en la tarjeta de Playa Avellanas por `assets/img/guide/beaches/playa-avellanas.jpg` y actualizar el texto alternativo ES/EN.
+- `Enlaces/capitan-suizo.html`, `services.js`, `styles.css`, `index.html` y `piloto.html`: reemplazar la foto de playa genérica repetida por `assets/img/stays/capitan-suizo/capitan.jpg`, una imagen específica del bungalow y sus jardines; actualizar textos alternativos y referencias comentadas.
+- Validación: rutas de imágenes, `node --check`, `git diff --check` y revisión visual de la guía y la ficha de Capitán Suizo en el navegador.
+
+### Correction of Avellanas and Capitán Suizo photos
+
+- `guia-playas.html` and `guide-i18n.js`: replace the howler monkey photo in the Playa Avellanas card with `assets/img/guide/beaches/playa-avellanas.jpg` and update the Spanish/English alt text.
+- `Enlaces/capitan-suizo.html`, `services.js`, `styles.css`, `index.html` and `piloto.html`: replace the repeated generic beach photo with `assets/img/stays/capitan-suizo/capitan.jpg`, a property-specific bungalow and garden photo; update alt text and commented references.
+- Validation: image paths, `node --check`, `git diff --check`, and browser visual review of the guide and Capitán Suizo page.
+
+## 2026-10-07
+
 ### Logo decorativo en el espacio libre de Servicios / Decorative logo in Services whitespace
 
 - `index.html`, `piloto.html` y `styles.css`: ubicar el logo blanco del hero como una pieza de grilla que ocupa las tres columnas libres después de la tarjeta de Surfskate, al final de la primera grilla de Servicios, en una escala menor y con baja opacidad; adaptarlo a una sola columna y un tamaño compacto en móvil para preservar la lectura de las tarjetas.

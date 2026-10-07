@@ -147,7 +147,7 @@
     imageAlts: [
       'Playa Ventanas',
       'Playa Danta',
-      'Howler monkey in a tropical tree',
+      'Playa Avellanas',
       'Playa Naranjo and Witch’s Rock',
       'Playa Conchal',
       'Llanos de Cortés',
