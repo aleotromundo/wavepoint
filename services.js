@@ -371,9 +371,9 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['assets/img/services/atv/atv-beach-tour.webp', 'assets/img/services/atv/atv-beach-convoy.webp'],
-imageAlts: ['Cuatriciclo recorriendo la playa durante un tour guiado', 'Grupo de cuatriciclos avanzando por la costa'],
-imageAltsEn: ['ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast'],
+images: ['assets/img/services/atv/atv-forest-tour.webp', 'assets/img/services/atv/atv-beach-tour.webp', 'assets/img/services/atv/atv-beach-convoy.webp'],
+imageAlts: ['Cuatriciclo recorriendo un sendero tropical durante un tour guiado', 'Cuatriciclo recorriendo la playa durante un tour guiado', 'Grupo de cuatriciclos avanzando por la costa'],
+imageAltsEn: ['ATV riding along a tropical trail during a guided tour', 'ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -846,9 +846,8 @@ function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
 const galleryImages = service.id === 'yoga' ? service.images.slice(1) : service.images;
 const gallery = galleryImages.map((image, index) => { const altIndex = service.id === 'yoga' ? index + 1 : index; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
-const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
-const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
-return `<section class="service-editorial-story"><div class="detail-gallery service-editorial-gallery" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>${supporting}</section>`;
+const supporting = service.lead || extra ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}</div>` : '';
+return `<section class="service-editorial-story"><div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>${supporting}</section>`;
 }
 function renderWitchRockStory(service) {
 return renderStandardStory(service, service.coordination);
