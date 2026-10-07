@@ -6859,3 +6859,11 @@ html.safari-stable #servicios .service-card .service-body p {
   font-weight: 800;
   letter-spacing: -.035em;
 }
+
+
+/* Ajuste fino: el logo ocupa el hueco inferior derecho sin empujar el contenido. */
+@media (min-width: 761px) {
+  .about-hero-inner > .services-logo-wrap-rates {
+    top: calc(50% + 46px);
+  }
+}
