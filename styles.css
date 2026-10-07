@@ -7290,3 +7290,79 @@ footer a {
   .accommodation-check-link,
   .accommodation-destination { transition: none; }
 }
+
+
+/* Keep the four accommodation shortcuts photo-only, clickable and comfortably large. */
+.accommodation-destinations { gap: 12px; }
+.accommodation-destination {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(18, 61, 73, .18);
+  border-radius: 18px;
+  background: #dbe7e2;
+  box-shadow: 0 10px 24px rgba(22, 56, 58, .12);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.accommodation-destination:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(22, 56, 58, .2); }
+.accommodation-destination:focus-visible { outline: 3px solid #087f87; outline-offset: 3px; }
+.accommodation-destination > img {
+  display: block;
+  width: 100%;
+  height: clamp(200px, 17vw, 220px);
+  object-fit: cover;
+  background: #dbe7e2;
+  transition: transform .32s ease;
+}
+.accommodation-destination:hover > img { transform: scale(1.035); }
+@media (max-width: 640px) {
+  .accommodation-destinations { gap: 10px; }
+  .accommodation-destination { border-radius: 15px; }
+  .accommodation-destination > img { height: clamp(160px, 42vw, 182px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .accommodation-destination,
+  .accommodation-destination > img { transition: none; }
+}
+
+/* High-contrast form copy: keep secondary guidance readable on the deep teal panel. */
+.quick-request-panel .detail-request-head p:last-child { color: #e0edf0 !important; }
+.quick-request-panel .survey-progress-copy > span { color: #dce9ed !important; }
+.quick-request-panel .detail-date-grid label { color: #e2eef0 !important; }
+.quick-request-panel .detail-optional,
+.quick-request-panel .detail-form-note { color: #d1e2e6 !important; }
+.quick-request-panel .detail-question input::placeholder,
+.quick-request-panel .detail-question textarea::placeholder { color: #d1e2e6 !important; opacity: 1; }
+.quick-request-panel .detail-question input,
+.quick-request-panel .detail-question textarea,
+.quick-request-panel .detail-option,
+.quick-request-panel .pack-service-card {
+  background-color: rgba(255, 255, 255, .12);
+  border-color: rgba(181, 246, 239, .42);
+}
+.quick-request-panel .detail-question input:focus-visible,
+.quick-request-panel .detail-question textarea:focus-visible,
+.quick-request-panel .detail-option:focus-within {
+  outline: 3px solid #70e7dc;
+  outline-offset: 2px;
+}
+.quick-request-panel .detail-error { color: #ffb9b0 !important; }
+.quick-request-panel .detail-submit { background: #075e66 !important; color: #fff !important; border-color: #70e7dc !important; }
+
+
+/* Question prompts had a legacy dark color; keep every prompt readable on the dark form. */
+.quick-request-panel .detail-question legend,
+.quick-request-panel .detail-question > span { color: #f4fffc !important; }
+
+.quick-request-panel .detail-question input[type="date"] { color-scheme: dark; }
+.quick-request-panel .detail-submit:disabled {
+  opacity: 1 !important;
+  filter: none !important;
+  background: #335a60 !important;
+  color: #fff !important;
+  border-color: #9bb6b8 !important;
+  box-shadow: none !important;
+  cursor: not-allowed;
+}
