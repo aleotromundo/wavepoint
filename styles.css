@@ -6472,3 +6472,24 @@ html.safari-stable #servicios .service-card .service-body p {
   .detail-question[data-survey-question].is-answered > span::after,
   .service-survey-form.is-survey-complete .survey-progress-track > span { animation: none; transition: none; }
 }
+
+
+/* Logo de cierre debajo de tarifas: acompaña la sección sin competir con la tabla. */
+.services-logo-wrap-rates {
+  width: min(64%, 270px);
+  min-height: 260px;
+  margin: 4px auto 0;
+}
+@media (max-width: 980px) {
+  .services-logo-wrap-rates {
+    width: min(56%, 250px);
+    min-height: 220px;
+  }
+}
+@media (max-width: 640px) {
+  .services-logo-wrap-rates {
+    width: min(64vw, 210px);
+    min-height: 170px;
+    margin-top: 0;
+  }
+}
