@@ -7430,3 +7430,11 @@ footer a {
   .service-detail-page:not(.accommodation-detail-page) .detail-gallery img { min-height: 0; border-radius: 14px; }
   .service-detail-page:not(.accommodation-detail-page) .service-includes { padding: 17px; }
 }
+
+/* Alinear el carrusel con las secciones fotográficas inferiores sin llevarlo al borde. */
+@media (min-width: 641px) {
+  .allies-ticker-viewport {
+    width: calc(100% - clamp(28px, 3.2vw, 76px));
+    max-width: 1400px;
+  }
+}
