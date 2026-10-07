@@ -371,9 +371,9 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['assets/img/services/atv/atv-forest-tour.webp'],
-imageAlts: ['Conductor en un cuatriciclo por un sendero selvático'],
-imageAltsEn: ['Rider driving an ATV along a dense jungle trail'],
+images: ['assets/img/services/atv/atv-beach-tour.webp', 'assets/img/services/atv/atv-beach-convoy.webp'],
+imageAlts: ['Cuatriciclo recorriendo la playa durante un tour guiado', 'Grupo de cuatriciclos avanzando por la costa'],
+imageAltsEn: ['ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
