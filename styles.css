@@ -6129,17 +6129,6 @@ footer a {
   .service-rates tbody td::before { font-size: 12px; }
 }
 
-#servicios .service-grid-catalog > .service-card-witch-rock .service-img img,
-#servicios .service-grid-catalog > .service-card-snorkel .service-img img {
-  transform: scale(1.85);
-}
-#servicios .service-grid-catalog > .service-card-witch-rock:hover .service-img img,
-#servicios .service-grid-catalog > .service-card-witch-rock .service-image-link:focus-visible .service-img img,
-#servicios .service-grid-catalog > .service-card-snorkel:hover .service-img img,
-#servicios .service-grid-catalog > .service-card-snorkel .service-image-link:focus-visible .service-img img {
-  transform: scale(1.85);
-}
-
 /* Safari stability mode: preserve the visual language while avoiding fragile GPU compositing. */
 html.safari-stable body,
 html.safari-stable .hero,
