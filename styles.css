@@ -7373,3 +7373,5 @@ footer a {
   box-shadow: none !important;
   cursor: not-allowed;
 }
+/* Casa Aura partner page cover. */
+.collaborator-page.collaborator-casa-aura { --collab-cover: url("assets/img/stays/casa-aura/stayandhotels4_resultado.webp"); }
