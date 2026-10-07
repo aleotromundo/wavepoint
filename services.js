@@ -1042,9 +1042,25 @@ service.questions.forEach(question => {
   const values = getValues(question);
   if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
   const joined = values.join(isSpanish ? ', ' : ', ');
+  const normalized = clean(joined);
+  if (question.id === 'surf_level' || question.id === 'current_surf_level') {
+    const level = normalized === 'primera vez' ? (isSpanish ? 'la primera vez que hago surf' : 'my first time surfing') : normalized;
+    lines.push(`${naturalAnswers[question.id]} ${level}.`);
+    return;
+  }
+  if (question.id === 'board_need' || question.id === 'own_board' || question.id === 'own_boards') {
+    const boardValue = normalized;
+    const sentence = isSpanish
+      ? (boardValue === 'sí' ? (plural ? 'necesitamos tablas' : 'necesito una tabla') : boardValue.includes('asesoramiento') ? (plural ? 'necesitamos asesoramiento con las tablas' : 'necesito asesoramiento con la tabla') : boardValue.includes('llevamos') ? (plural ? 'llevamos nuestras propias tablas' : 'llevo mi propia tabla') : boardValue)
+      : (boardValue === 'yes' ? (plural ? 'we need boards' : 'I need a board') : boardValue.includes('advice') ? (plural ? 'we need advice about boards' : 'I need advice about a board') : boardValue.includes('bring') ? (plural ? 'we bring our own boards' : 'I bring my own board') : boardValue);
+    lines.push(`${isSpanish ? 'Sobre el equipo,' : 'About equipment,'} ${sentence}.`);
+    return;
+  }
   const prefix = naturalAnswers[question.id];
   if (prefix) {
-    lines.push(`${prefix} ${clean(joined)}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
+    const value = question.id === 'origin' ? joined : normalized;
+    const schedule = question.id === 'preferred_schedule' || question.id === 'session_schedule' ? joined.toLowerCase() : value;
+    lines.push(`${prefix} ${schedule}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
   } else if (isSpanish) {
     lines.push(`También quería contarte que, sobre ${clean(question.label)}, ${clean(joined)}.`);
   } else {

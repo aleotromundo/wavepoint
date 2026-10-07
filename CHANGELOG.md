@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Mensajes de WhatsApp — pulido de redacción
+- “Primera vez” ahora se expresa como “la primera vez que hago surf”.
+- Las respuestas de tabla se convierten en frases naturales según singular o plural.
+- Se conserva la capitalización de ciudad y país.
+- JavaScript cacheado actualizado a `20261007-16`.
+
+## 2026-10-07
 ### Mensajes de WhatsApp naturales
 - Los formularios ahora arman mensajes conversacionales, como si la persona escribiera directamente a WavePoint.
 - El texto cambia a primera persona singular o plural según la cantidad de personas.
