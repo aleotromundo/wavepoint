@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Integración de Casa Aura como colaborador
+- Crear `Enlaces/casa-aura.html` con ficha bilingüe, CTA oficial de Cloudbeds y las tres imágenes asignadas a Casa Aura.
+- Agregar Casa Aura a los menús desktop/móvil, carruseles duplicados de aliados y footer de `index.html`, `piloto.html` y `service-detail.html`.
+- Registrar la portada en `sitemap.xml` y `manus-routes.json`; corregir la ruta documental del asset horizontal de Casa Aura.
+- Validación: referencias locales, imágenes asignadas, sintaxis JS, `git diff --check` y revisión de enlaces/rutas antes de publicar.
+
+## 2026-10-07
 
 ### Alineación del índice visual de alojamientos
 
