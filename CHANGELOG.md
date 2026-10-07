@@ -1,4 +1,13 @@
 ## 2026-10-07
+### Restaurar fondo de opciones de alojamiento
+- La página de opciones de alojamiento vuelve a mostrar el fondo fotográfico asociado al servicio.
+- El contenido conserva su legibilidad con una capa clara translúcida y las tarjetas mantienen su fondo propio.
+- En móvil el fondo sigue usando `background-attachment: scroll` para evitar tirones.
+- Corregida la sintaxis de atributos `loading` y `decoding` en imágenes HTML.
+- CSS cacheado actualizado a `20261007-32`.
+- Validación: `git diff --check`.
+
+## 2026-10-07
 ### Inicialización más liviana del JavaScript
 - `script.js`: no ejecutar el clima legacy cuando está presente el widget 3D, evitando dos cargas y dos actualizaciones para el mismo gadget.
 - Diferir hasta el primer momento idle los modales, ticker, reveals, seguimiento de tarjetas y demás interacciones secundarias.

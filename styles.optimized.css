@@ -2628,12 +2628,14 @@ to{filter:brightness(1.18)}
 /* Stays and Hotels: open, photo-led accommodation catalogue. */
 .accommodation-detail-page {
   background-color: #edf3ef;
-  background-image: none;
-  background-attachment: scroll !important;
+  background-image: linear-gradient(145deg, rgba(241, 245, 243, .68), rgba(223, 237, 233, .72)), var(--service-detail-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .accommodation-detail-page .detail-content {
   padding: clamp(58px, 8vw, 112px) 0 clamp(72px, 9vw, 128px);
-  background: linear-gradient(180deg, #f2f6f2 0%, #e9f0eb 100%);
+  background: transparent;
 }
 .accommodation-detail-page .detail-layout {
   display: block;
