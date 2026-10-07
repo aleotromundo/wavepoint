@@ -1,13 +1,3 @@
-
-  const safariStable = (() => {
-    const ua = navigator.userAgent || '';
-    const vendor = navigator.vendor || '';
-    return /AppleWebKit/i.test(ua)
-      && /Safari/i.test(ua)
-      && /Apple Computer/i.test(vendor)
-      && !/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua);
-  })();
-  document.documentElement.classList.toggle('safari-stable', safariStable);
   const CR_TZ='America/Costa_Rica';
   const reducedMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
@@ -1061,18 +1051,6 @@
     const cards=[...document.querySelectorAll('#servicios .service-grid-catalog > .service-card:not(.service-card-pack)')];
     const mobilePointer=window.matchMedia('(hover: none) and (pointer: coarse)');
     if(!cards.length) return;
-    if(safariStable){
-      cards.forEach(card=>{
-        const description=card.querySelector('.service-body p');
-        if(!description) return;
-        description.style.maxHeight='160px';
-        description.style.margin='0 0 16px';
-        description.style.opacity='1';
-        description.style.transform='none';
-      });
-      return;
-    }
-
     let scrollFrame=0;
     const updateActiveCards=()=>{
       scrollFrame=0;
