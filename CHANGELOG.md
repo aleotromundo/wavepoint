@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Corrección del rebote blanco al hacer overscroll
+- `styles.css` y `styles.optimized.css`: dar al lienzo `html` el mismo fondo oscuro del sitio, asegurar la altura mínima del `body` y limitar el overscroll vertical para evitar que aparezca el fondo blanco al arrastrar más allá del inicio o final, manteniendo el scroll normal.
+- Validación: `node --check` sobre los scripts globales y `git diff --check`.
+
+## 2026-10-07
 ### Ajuste visual del menú de colaboradores
 - `styles.css` y `styles.optimized.css`: hacer que el cuadro desktop se adapte al contenido, reducir el espaciado y centrar los nombres; aplicar el mismo centrado y espaciado compacto al submenú móvil.
 - Validación: `node --check` sobre los scripts globales y `git diff --check`.
