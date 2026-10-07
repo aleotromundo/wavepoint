@@ -58,13 +58,13 @@ category: 'OPCIÓN MEDIA', name: 'Casa Aura',
 price: 'USD 80–210', priceNote: 'por unidad · por noche',
 summary: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno incluido según la unidad.',
 images: [
-'assets/img/hotels/stayandhotels4_resultado.webp',
-'assets/img/stays/casa-aura/images.jpg',
-'assets/img/stays/casa-aura/images (1).jpg'
+'assets/img/stays/casa-aura/casa-aura-exterior.jpg',
+'assets/img/stays/casa-aura/casa-aura-common-area.jpg',
+'assets/img/hotels/stayandhotels4_resultado.webp'
 ],
-imageAlt: 'Interior de Casa Aura con sala y cocina',
-imageAlts: ['Interior de Casa Aura con sala y cocina', 'Entrada de Casa Aura en Tamarindo', 'Área común de madera de Casa Aura'],
-imageAltsEn: ['Casa Aura living room and kitchen', 'Casa Aura entrance in Tamarindo', 'Casa Aura wooden common area'],
+imageAlt: 'Entrada de Casa Aura en Tamarindo',
+imageAlts: ['Entrada de Casa Aura en Tamarindo', 'Área común de madera de Casa Aura', 'Interior de Casa Aura con sala y cocina'],
+imageAltsEn: ['Casa Aura entrance in Tamarindo', 'Casa Aura wooden common area', 'Casa Aura living room and kitchen'],
 details: [
 'Habitación doble — USD 80 · baño privado · desayuno incluido · 1 habitación.',
 'Habitación cuádruple — USD 120 · una cama matrimonial y una litera · baño privado · desayuno incluido · 3 habitaciones.',

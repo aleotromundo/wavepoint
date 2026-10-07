@@ -1,5 +1,5 @@
 # Casa Aura
 
-The gallery includes the Casa Aura image identified by the user and two photos stored in this property-specific folder. Keep these photos assigned only to Casa Aura.
+The gallery uses `casa-aura-exterior.jpg` and `casa-aura-common-area.jpg`, supplied by the user, plus `assets/img/hotels/stayandhotels4_resultado.webp`, identified by the user as Casa Aura. Keep these photos assigned only to Casa Aura. The official booking page was also reviewed for further imagery: https://hotels.cloudbeds.com/en/reservation/KcVYvB.
 
-La galería incluye la imagen de Casa Aura identificada por el usuario y dos fotos guardadas en esta carpeta específica del alojamiento. Mantener estas fotos asignadas únicamente a Casa Aura.
+La galería usa `casa-aura-exterior.jpg` y `casa-aura-common-area.jpg`, proporcionadas por el usuario, además de `assets/img/hotels/stayandhotels4_resultado.webp`, identificada por el usuario como Casa Aura. Mantener estas fotos asignadas únicamente a Casa Aura. También se revisó la página oficial de reservas en busca de más imágenes: https://hotels.cloudbeds.com/en/reservation/KcVYvB.
