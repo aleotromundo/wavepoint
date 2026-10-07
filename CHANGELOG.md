@@ -1,4 +1,12 @@
 ## 2026-10-07
+### Clases de surf — eliminar cajas heredadas
+- Eliminado el cuadro grande heredado del layout genérico.
+- Eliminado el fondo, borde y sombra innecesarios del bloque de consulta rápida.
+- La composición queda abierta, siguiendo la estructura de Estadías y hoteles.
+- El formulario permanece debajo como único bloque funcional contenido.
+- CSS cacheado actualizado a `20261007-36`.
+
+## 2026-10-07
 ### Corrección definitiva del logo de WhatsApp
 - Unificado el SVG de WhatsApp en todas las páginas con la versión correcta del header de la home.
 - Corregida la variante deformada que había quedado en `service-detail.html` y `Enlaces/casa-aura.html`.
