@@ -6,6 +6,17 @@
 - CSS del gadget actualizado a `20261007-8`.
 
 ## 2026-10-07
+### Alinear paneles de la guía turística
+- Eliminado el tope de 920 px en el encabezado inicial y los paneles de categoría para alinearlos con los cuatro accesos y las tarjetas de contenido.
+- Sin cambios en el contenido ni en la distribución responsive; actualizado el CSS optimizado y la versión de caché de `guia-playas.html`.
+- Validaciones: `git diff --check`, verificación de rutas de imágenes y revisión de reglas de ancho en escritorio y móvil.
+
+### Controles flotantes y parallax móvil de la guía
+- Agregado el logo flotante de WavePoint a `guia-playas.html`, con enlace de regreso al inicio y posición compatible con WhatsApp y el asistente.
+- Reforzado el botón de WhatsApp en móvil y ampliado el fondo fijo de la guía para mantener el parallax sin bordes visibles durante el desplazamiento.
+- Actualizada la versión de caché de la guía a `20261007-49`.
+
+## 2026-10-07
 ### Imágenes ampliables en todo el sitio
 - El modal de imágenes ahora incluye Retiros, galerías de servicios, alojamientos, guía, colaboradores y tarjetas visuales.
 - Las fotos reciben foco de teclado, `Enter`/`Space` para abrir y `Escape` para cerrar.

@@ -2967,14 +2967,27 @@ to{filter:brightness(1.18)}
   background-color: #082633;
 }
 .local-guide-page::before {
+  inset: -8%;
+  width: 116%;
+  height: 116%;
   background: linear-gradient(145deg, rgba(3, 20, 29, .42), rgba(4, 48, 53, .28)), url("assets/img/site/backgrounds/atardecer.jpg") center / cover no-repeat;
+}
+@media (max-width: 640px) {
+  .local-guide-page::before {
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }
 .local-guide-page .guide-original-content {
   padding-top: 82px;
   padding-bottom: 104px;
 }
 .local-guide-page .guide-detail-heading {
-  max-width: 920px;
+  width: 100%;
+  max-width: none;
   margin-bottom: 34px;
   padding: clamp(24px, 3vw, 38px);
   border: 1px solid rgba(224, 255, 246, .24);
@@ -3012,7 +3025,8 @@ to{filter:brightness(1.18)}
 .local-guide-page .guide-glossary strong { font-size: 25px; }
 .local-guide-page .guide-glossary span { color: rgba(246, 255, 251, .8); font-size: 13px; line-height: 1.5; }
 .local-guide-page .guide-detail-category {
-  max-width: 920px;
+  width: 100%;
+  max-width: none;
   margin: 0 0 24px;
   padding: 26px 30px;
   border: 1px solid rgba(224, 255, 246, .2);
