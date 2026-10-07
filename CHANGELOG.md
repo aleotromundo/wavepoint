@@ -1,5 +1,10 @@
 ## 2026-10-07
 
+### Alineación del índice visual de alojamientos
+
+- `styles.css` y `styles.optimized.css`: alinear el bloque de fotos de Stayinn Hotels con el inicio del título en escritorio, evitando que las imágenes queden elevadas respecto del encabezado; conservar el apilado natural en tablet y móvil.
+- Validación: revisar la posición calculada del título y las imágenes en escritorio, comprobar el breakpoint de 980 px y ejecutar `node --check` y `git diff --check`.
+
 ### Auditoría de render y rediseño de Stays and Hotels
 
 - `services.js`, `styles.css` y `styles.optimized.css`: reorganizar la ficha de alojamientos en una portada editorial más amplia, accesos directos a cada propiedad, galerías adaptables y una consulta completa al final; mantener las fotos y tarifas existentes.

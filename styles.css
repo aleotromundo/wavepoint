@@ -7324,7 +7324,14 @@ footer a {
 }
 @media (prefers-reduced-motion: reduce) {
   .accommodation-destination,
-  .accommodation-destination > img { transition: none; }
+.accommodation-destination > img { transition: none; }
+}
+
+/* Keep the photo index aligned with the accommodation heading, not the full copy block. */
+.accommodation-intro { align-items: start; }
+.accommodation-overview-meta { margin-top: 32px; }
+@media (max-width: 980px) {
+  .accommodation-overview-meta { margin-top: 0; }
 }
 
 /* High-contrast form copy: keep secondary guidance readable on the deep teal panel. */
