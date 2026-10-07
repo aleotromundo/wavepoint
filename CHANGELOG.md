@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Formularios — formato limpio unificado
+- Todos los formularios ahora siguen el formato limpio de Clases de surf.
+- Eliminada la barra genérica repetida de “Consulta rápida / Encontramos la opción para vos”.
+- Conservadas todas las preguntas, validaciones, traducciones y mensajes de WhatsApp.
+- JavaScript cacheado actualizado a `20261007-18`.
+
+## 2026-10-07
 ### Estandarización de secciones de servicios
 - Aplicada una plantilla editorial abierta al resto de servicios: texto legible, galería amplia y fotos ampliables.
 - Unificado el formulario debajo del contenido, con el mismo panel visual de Clases de surf.
