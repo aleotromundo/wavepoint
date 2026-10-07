@@ -980,16 +980,24 @@
     if (!videos.length) return;
     const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     if (touchDevice || window.matchMedia('(max-width: 640px)').matches) {
-      // En celulares dejamos solo el primer video, en loop, sin alternar archivos.
-      videos.forEach((video,index)=>{
+      // En celulares dejamos solo videohero1.mp4, en loop, sin alternar archivos.
+      const mobileVideo=videos[1]||videos[0];
+      videos.forEach(video=>{
+        const isMobileVideo=video===mobileVideo;
         video.muted=true;
         video.playsInline=true;
         video.loop=true;
-        video.preload=index===0?'auto':'none';
-        video.classList.toggle('is-active',index===0);
-        if(index!==0) video.pause();
+        video.preload=isMobileVideo?'auto':'none';
+        video.classList.toggle('is-active',isMobileVideo);
+        if(!isMobileVideo) video.pause();
       });
-      videos[0].play().catch(error=>console.error('No se pudo reproducir el video móvil de portada.',error));
+      const mobileSources=[...mobileVideo.querySelectorAll('source[data-src]')];
+      mobileSources.forEach(source=>{
+        source.src=source.dataset.src;
+        delete source.dataset.src;
+      });
+      if(mobileSources.length) mobileVideo.load();
+      mobileVideo.play().catch(error=>console.error('No se pudo reproducir el video móvil de portada.',error));
       return;
     }
     let activeIndex = 0;

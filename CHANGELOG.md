@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Videohero1 como fondo móvil
+- `script.js`: el único video reproducido en celulares y tablets táctiles pasa a ser `videohero1.mp4`, en loop continuo.
+- Escritorio y tablet grande conservan el carrusel completo con todos los videos.
+- Páginas HTML: actualizar JavaScript a `20261007-20`.
+- Validación: `node --check script.js` y `git diff --check`.
+
+## 2026-10-07
 ### Un solo video en loop para celulares
 - `script.js`: en dispositivos táctiles y pantallas pequeñas se reproduce únicamente `videohero0.mp4`, en loop, sin alternar entre los tres videos del hero.
 - Los videos secundarios quedan pausados y ocultos en mobile; escritorio conserva el carrusel de videos.
