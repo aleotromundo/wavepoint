@@ -27,8 +27,8 @@
 
 ### Índice visual de alojamientos / Accommodation photo index
 
-- `services.js` y `styles.css`: reemplazar la galería inicial por una foto por alojamiento con enlaces a las fichas inferiores; Casa Aura queda sin foto hasta verificar una propia.
-- `services.js` and `styles.css`: replace the opening gallery with one photo per accommodation linking to its details below; Casa Aura stays photo-free until its own image is verified.
+- `services.js` y `styles.css`: mostrar solo fotos enlazadas (sin nombres ni tarjetas), conservar su tamaño original de galería y deslizar a la ficha correspondiente; Casa Aura se omite del índice hasta verificar una foto propia.
+- `services.js` and `styles.css`: show only linked photos (no names or cards), preserve their original gallery size, and scroll to each matching detail; omit Casa Aura from the index until its own image is verified.
 
 ### Orden y subrayado animado de navegación / Navigation order and animated underline
 
