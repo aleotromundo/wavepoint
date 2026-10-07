@@ -28,7 +28,11 @@
 - El logo usa ahora exactamente el componente transparente `collab-floating-brand` de la Guía turística y las páginas de Colaboradores, incluyendo sus ondas y posición responsive; se eliminó la caja custom anterior.
 
 ### Tours en cuatriciclo — galería ATV
-- La galería de ATV ahora incluye dos fotos optimizadas de paseos en cuatriciclo por playa y costa.
+- La galería de ATV ahora combina tres fotos distintas: la imagen original del sendero y las dos fotos nuevas de playa y convoy.
+- En escritorio, tablet y celular las tres fotos se ordenan como dos arriba y una panorámica abajo, sin dejar una celda vacía.
+
+### Corrección de contenido visual — tarjeta “Incluye”
+- Se eliminó la tarjeta visual “Incluye” de las secciones estándar; sus datos originales y las preguntas específicas de cada formulario permanecen intactos en `services.js`.
 - Las imágenes fueron descargadas desde resultados de Tour Guanacaste y guardadas localmente como WebP para evitar dependencias externas en producción.
 
 ### Detalles de servicios — hero único y formulario sin huecos
@@ -37,6 +41,7 @@
 - Las galerías dejaron de usar alturas fijas que reservaban una zona invisible debajo de las imágenes; ahora su contenedor termina exactamente con la última fila de fotos.
 - Se agregó una separación breve y consistente, con un pequeño detalle luminoso inspirado en una ola para unir visualmente las fotos con la solicitud sin dejar un hueco muerto.
 - El hero vuelve a mostrar la descripción completa y se restauraron los textos de apoyo, coordinación, destacados e incluidos sin repetir la descripción en las plantillas especiales.
+- El panel del hero se amplió hasta el mismo ancho útil de la galería inferior, conservando márgenes laterales seguros en escritorio y tablet.
 
 ## 2026-10-07
 ### Preloader real y navegación de logos

@@ -8272,7 +8272,7 @@ footer a {
 
 /* Recuperación editorial: hero más amplio y contenido adicional en una tarjeta compacta. */
 @media (min-width: 981px) {
-  .detail-hero-content { width: min(980px, calc(100% - 96px)); }
+  .detail-hero-content { width: min(1180px, calc(100% - 42px)); margin-left: max(21px, calc((100% - 1180px) / 2)); }
   .detail-hero h1 { max-width: 900px; }
   .detail-hero-intro { max-width: 860px; font-size: clamp(19px, 1.55vw, 23px); line-height: 1.58; }
 }
@@ -8288,3 +8288,8 @@ footer a {
   .service-supporting-content { grid-template-columns: 1fr; gap: 14px; margin-top: 16px; padding: 17px; border-radius: 16px; }
   .service-supporting-lead, .service-supporting-extra { font-size: 15px; line-height: 1.55; }
 }
+
+
+/* Galerías triples: dos imágenes arriba y una panorámica abajo, sin celda vacía. */
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-triple { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-triple img:nth-child(3) { grid-column: 1 / -1 !important; grid-row: auto !important; }
