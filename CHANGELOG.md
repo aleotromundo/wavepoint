@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Unificación visual de detalles de servicios
+- `styles.css` y `styles.optimized.css`: extender a los detalles de surf, aventura, yoga, snorkeling, fotografía, surfskate y retiros el tratamiento editorial de Stays & Hotels: paneles claros con vidrio, bordes, galerías con tarjetas, bloques de incluidos y mejor contraste.
+- Mantener intactos las preguntas, el progreso, la validación y el flujo de solicitudes a WhatsApp del formulario compartido.
+- Validación: revisar una página de servicio no residencial en escritorio y comprobar el comportamiento responsive en los breakpoints existentes.
+
+## 2026-10-07
 ### Integración de Casa Aura como colaborador
 - Crear `Enlaces/casa-aura.html` con ficha bilingüe, CTA oficial de Cloudbeds y las tres imágenes asignadas a Casa Aura.
 - Agregar Casa Aura a los menús desktop/móvil, carruseles duplicados de aliados y footer de `index.html`, `piloto.html` y `service-detail.html`.
