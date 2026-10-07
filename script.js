@@ -1296,7 +1296,7 @@
   }
 
   function bindGuideImageModal(){
-    const images = [...document.querySelectorAll('.guide-detail-card img')];
+    const images = [...document.querySelectorAll('.guide-detail-card img, .collab-gallery img')];
     if (!images.length) return;
 
     const modal = document.createElement('div');
