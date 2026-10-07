@@ -1,4 +1,11 @@
 ## 2026-10-07
+### Clases de surf — formulario igual a Estadías y hoteles
+- Aplicado el mismo panel teal oscuro de Estadías y hoteles.
+- Copiados el contraste, bordes, progreso, campos, opciones y botones del formulario existente.
+- El formulario queda debajo del contenido y el botón de cierre lateral permanece oculto.
+- CSS cacheado actualizado a `20261007-37`.
+
+## 2026-10-07
 ### Clases de surf — eliminar cajas heredadas
 - Eliminado el cuadro grande heredado del layout genérico.
 - Eliminado el fondo, borde y sombra innecesarios del bloque de consulta rápida.
