@@ -1,5 +1,5 @@
 (() => {
-  const WHATSAPP = '543517397525';
+  const WHATSAPP = '50660399194';
   const RATE_BY_GUESTS = {
     'surf-lessons': [70, 65, 60, 55, 50, 50],
     'surf-coaching': [45, 45, 45, 45, 45, 45],
