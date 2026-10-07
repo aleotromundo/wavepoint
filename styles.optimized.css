@@ -2349,7 +2349,8 @@ html:not(.service-card-scroll-enabled) #servicios .service-grid-catalog>.service
 
 
 @media (hover:none),(pointer:coarse),(max-width:1024px){
-.about-page .about-closing,.about-page .about-gallery-section,.about-page .about-hero-image,.about-page .about-opening,.about-page .about-story,.after-surf,.hero,.service-detail-page,.services,.sponsor-strip,body{background-attachment:scroll!important}
+.about-page .about-closing,.about-page .about-gallery-section,.about-page .about-hero-image,.about-page .about-opening,.about-page .about-story,.after-surf,.hero,.service-detail-page,.services,.sponsor-strip,body,.px-bg{background-attachment:scroll!important}
+.px-bg{position:absolute;inset:0}
 }
 
 
