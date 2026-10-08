@@ -2,7 +2,7 @@
 ### Portada — retirar piloto y separar el hero del header
 - Se elimina `piloto.html`, portada duplicada sin enlaces activos; `index.html` queda como portada única.
 - `styles.css` y `styles.optimized.css`: retirar reglas de compactación residual que no correspondían al diseño aprobado y sumar 12 px de separación al contenido del hero en tablet y móvil, sin reescalar sus elementos.
-- `index.html`: renovar la versión de caché de estilos. Pendiente validar visualmente en 640 × 480 y móvil vertical.
+- `index.html`: renovar la versión de caché de estilos. Validado en navegador a 640 × 480 y 390 × 844: acciones visibles y sin desbordamiento horizontal.
 
 ## 2026-10-07
 ### Surf coaching — reparar referencias de la imagen movida
