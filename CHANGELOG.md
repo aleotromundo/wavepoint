@@ -2,6 +2,7 @@
 ### Prueba — desactivar parallax en escritorio
 - `styles.css` y `styles.optimized.css`: en pantallas mayores de 1024 px, las capas `.px-bg` dejan de estar fijas al viewport y quedan dentro de su sección.
 - Se conservan móviles, tablets y el hero. Renovada la caché CSS de `index.html` y `piloto.html` para facilitar la prueba.
+- Validado en navegador local: a 1440 px `.px-bg` usa `position: absolute`; a 390 px conserva `position: fixed`.
 
 ## 2026-10-07
 ### Clima — restaurar gadget clásico
