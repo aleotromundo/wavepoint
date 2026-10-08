@@ -1,7 +1,7 @@
 ## 2026-10-07
 ### Prueba — desactivar parallax en escritorio
-- `styles.css` y `styles.optimized.css`: en pantallas mayores de 1024 px, hacer que los fondos sigan el desplazamiento normal y que las capas `.px-bg` queden dentro de su sección.
-- Se conservan móviles, tablets y la composición del hero. Renovada la caché CSS de `index.html` y `piloto.html` para facilitar la prueba.
+- `styles.css` y `styles.optimized.css`: en pantallas mayores de 1024 px, las capas `.px-bg` dejan de estar fijas al viewport y quedan dentro de su sección.
+- Se conservan móviles, tablets y el hero. Renovada la caché CSS de `index.html` y `piloto.html` para facilitar la prueba.
 
 ## 2026-10-07
 ### Clima — restaurar gadget clásico
