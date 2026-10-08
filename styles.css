@@ -6415,6 +6415,11 @@ footer a {
     position: absolute;
     inset: 0;
   }
+  #servicios .px-bg {
+    inset: 0 0 auto;
+    height: 100vh;
+    background-position: center top;
+  }
 }
 
 @media (min-width: 981px) {
@@ -7352,11 +7357,17 @@ footer a {
 .accommodation-destination > img { transition: none; }
 }
 
-/* Keep the photo index aligned with the accommodation heading, not the full copy block. */
-.accommodation-intro { align-items: start; }
-.accommodation-overview-meta { margin-top: 32px; }
+/* Put the accommodation heading above a full-width row of four photo shortcuts. */
+.accommodation-intro { grid-template-columns: 1fr; align-items: start; gap: clamp(24px, 3vw, 38px); }
+.accommodation-overview-meta { max-width: none; margin-top: 0; }
+.accommodation-destinations { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 980px) {
-  .accommodation-overview-meta { margin-top: 0; }
+  .accommodation-intro { grid-template-columns: 1fr; gap: 28px; }
+  .accommodation-overview-meta { max-width: 680px; }
+  .accommodation-destinations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .accommodation-intro { gap: 24px; }
 }
 
 /* High-contrast form copy: keep secondary guidance readable on the deep teal panel. */

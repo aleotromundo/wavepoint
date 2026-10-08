@@ -2355,6 +2355,7 @@ html:not(.service-card-scroll-enabled) #servicios .service-grid-catalog>.service
 
 @media (min-width:1025px){
 .has-px .px-bg{position:absolute;inset:0}
+#servicios .px-bg{inset:0 0 auto;height:100vh;background-position:center top}
 }
 
 
@@ -2894,10 +2895,12 @@ to{filter:brightness(1.18)}
 @media (max-width:640px){.accommodation-destinations{gap:10px}.accommodation-destination{border-radius:15px}.accommodation-destination>img{height:clamp(160px,42vw,182px)}}
 @media (prefers-reduced-motion:reduce){.accommodation-destination,.accommodation-destination>img{transition:none}}
 
-/* Keep the photo index aligned with the accommodation heading, not the full copy block. */
-.accommodation-intro{align-items:start}
-.accommodation-overview-meta{margin-top:32px}
-@media (max-width:980px){.accommodation-overview-meta{margin-top:0}}
+/* Put the accommodation heading above a full-width row of four photo shortcuts. */
+.accommodation-intro{grid-template-columns:1fr;align-items:start;gap:clamp(24px,3vw,38px)}
+.accommodation-overview-meta{max-width:none;margin-top:0}
+.accommodation-destinations{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:980px){.accommodation-intro{grid-template-columns:1fr;gap:28px}.accommodation-overview-meta{max-width:680px}.accommodation-destinations{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.accommodation-intro{gap:24px}}
 
 /* High-contrast form copy: keep secondary guidance readable on the deep teal panel. */
 .quick-request-panel .detail-request-head p:last-child{color:#e0edf0!important}

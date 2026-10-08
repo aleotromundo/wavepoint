@@ -1,4 +1,16 @@
 ## 2026-10-07
+### Servicios — recuperar nitidez del fondo sin parallax
+- `styles.css` y `styles.optimized.css`: limitar la capa fotográfica de Servicios a la altura visible de la ventana y alinearla arriba; la imagen ya no se amplía para cubrir los 3052 px de la sección y el gradiente existente continúa debajo.
+- Se conserva el parallax desactivado en escritorio y se actualiza la caché CSS de `index.html` y `piloto.html`.
+- Validado en navegador local: 1440 px muestra una capa de 900 px de alto sin ampliar la imagen fuente; a 390 px se conserva la capa fija.
+
+## 2026-10-07
+### Estadías — encabezado y cuatro fotos en una fila
+- `styles.css` y `styles.optimized.css`: poner el encabezado de “ACCOMMODATIONS IN TAMARINDO” encima de las cuatro imágenes y distribuirlas en una fila uniforme a todo el ancho disponible en escritorio.
+- En tablet y celular se conservan dos columnas. Renovada la caché de estilos de `service-detail.html`.
+- Validado en navegador local: escritorio 1440 px muestra cuatro imágenes iguales en una fila; tablet 768 px y móvil 390 px conservan dos columnas.
+
+## 2026-10-07
 ### Catálogo — separar navegación de ampliación de fotos
 - `script.js`: excluir del modal las imágenes que ya están dentro de enlaces; las tarjetas de servicio navegan solo al detalle y las fotos de galerías mantienen la ampliación.
 - Validación: comprobar rol, foco y cursor de las fotos del catálogo, y probar la navegación al detalle desde una tarjeta.
