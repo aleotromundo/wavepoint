@@ -1,4 +1,8 @@
 ## 2026-10-08
+### Retiros — retirar fondo fotográfico repetido
+- `retiros.pdf`: eliminar la imagen vertical de atardecer con palmeras de la página 3, detrás de “¿Qué ofrecemos?”, y conservar el contenido sobre un fondo limpio. Las otras páginas e imágenes permanecen sin cambios.
+- Validación: PDF conserva 10 páginas y el texto completo; página 3 renderizada para revisión visual.
+
 ### Fallback inteligente del hero en dispositivos con movimiento o datos reducidos
 - `index.html`: agregar una capa de poster explícita y marcar los videos con `data-fallback="poster"`; actualizar la versión de caché de CSS.
 - `styles.css` y `styles.optimized.css`: mantener el poster visible hasta que el video activo se revele, ocultar videos no activos y usar el poster para `prefers-reduced-motion` y `prefers-reduced-data`; en móvil el poster conserva el mismo encuadre del hero.
