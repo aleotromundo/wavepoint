@@ -3178,3 +3178,6 @@ to{filter:brightness(1.18)}
 
 /* Retiros: el detalle conserva el bloque editorial, sin la foto grande bajo el encabezado. */
 .retreat-cover{grid-template-columns:1fr}
+
+/* Hero móvil: mantener el texto del CTA secundario dentro del botón en español. */
+@media (max-width:640px){.hero-actions .btn-ghost{white-space:normal;text-align:center}}
