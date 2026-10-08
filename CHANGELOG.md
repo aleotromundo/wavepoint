@@ -1,4 +1,9 @@
 ## 2026-10-08
+### Fallback inteligente del hero en dispositivos con movimiento o datos reducidos
+- `index.html`: agregar una capa de poster explícita y marcar los videos con `data-fallback="poster"`; actualizar la versión de caché de CSS.
+- `styles.css` y `styles.optimized.css`: mantener el poster visible hasta que el video activo se revele, ocultar videos no activos y usar el poster para `prefers-reduced-motion` y `prefers-reduced-data`; en móvil el poster conserva el mismo encuadre del hero.
+- Validación: HTML/CSS revisados, sin cambios de JavaScript ni de los archivos de video.
+
 ### Retiros — centrar el título y ampliar el logo
 - `styles.css` y `styles.optimized.css`: centrar verticalmente el título sobre la imagen y ampliar aproximadamente un 10% el logo, manteniendo reglas propias para móvil y el respeto a movimiento reducido.
 - `index.html`: renovar la versión de caché CSS. Verificado en escritorio y celular, sin desbordamiento horizontal.
