@@ -1,8 +1,8 @@
 ## 2026-10-08
 ### Portada — retirar piloto y separar el hero del header
 - Se elimina `piloto.html`, portada duplicada sin enlaces activos; `index.html` queda como portada única.
-- `styles.css` y `styles.optimized.css`: retirar reglas de compactación residual que no correspondían al diseño aprobado y sumar 12 px de separación al contenido del hero en tablet y móvil, sin reescalar sus elementos.
-- `index.html`: renovar la versión de caché de estilos. Validado en navegador a 640 × 480 y 390 × 844: acciones visibles y sin desbordamiento horizontal.
+- `styles.css` y `styles.optimized.css`: retirar reglas de compactación residual que no correspondían al diseño aprobado. Se revirtió el espacio extra del hero en tablet y móvil para conservar la posición original del contenido y evitar que el gadget de clima quede parcialmente fuera de pantalla.
+- Validado en navegador a 640 × 480 y 390 × 844: el espaciado vuelve al valor responsive previo y no hay desbordamiento horizontal.
 
 ## 2026-10-07
 ### Surf coaching — reparar referencias de la imagen movida
