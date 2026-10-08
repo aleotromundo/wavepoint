@@ -2,6 +2,7 @@
 ### Hero — reducir logo en escritorio
 - `styles.css` y `styles.optimized.css`: reducir un 5% el ancho del logo del hero solo a partir de 981 px, para darle un poco más de aire bajo el header; tablet y móvil conservan su tamaño.
 - `index.html`: renovar la versión de caché. Validado en navegador en escritorio y móvil; sin desbordamiento horizontal.
+- Hero móvil: subir 12 px el contenido completo (logo, acciones y widget del clima) para recuperar espacio visible en celular; no cambia el tamaño del logo.
 
 ### Portada — retirar piloto y separar el hero del header
 - Se elimina `piloto.html`, portada duplicada sin enlaces activos; `index.html` queda como portada única.

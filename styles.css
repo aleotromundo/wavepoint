@@ -2167,7 +2167,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 }
 @media (max-width: 640px) {
   .services-watermark { grid-column: 1; width: min(72vw, 230px); min-height: 180px; margin: 8px auto 0; }
-  .hero { padding-top: 62px; padding-bottom: 24px; background-attachment: scroll; background-position: center 58%; }
+  .hero { padding-top: 50px; padding-bottom: 24px; background-attachment: scroll; background-position: center 58%; }
   .hero-video { object-position: center 58%; }
   .hero-grid { gap: 16px; }
   .hero-logo-wrap { width: min(100%, 360px); margin-bottom: 8px; }
@@ -2189,7 +2189,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 }
 
 @media (max-width: 380px) {
-  .hero { padding-top: 70px; padding-bottom: 16px; }
+  .hero { padding-top: 58px; padding-bottom: 16px; }
   .hero-logo-wrap { width: min(100%, 320px); }
   .hero h1 { margin: 9px 0 7px; font-size: 36px; }
   .hero p { font-size: 15px; line-height: 1.3; }
