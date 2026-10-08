@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Servicios — fondo fotográfico completo sin parallax en escritorio
+- `index.html`, `piloto.html`, `styles.css` y `styles.optimized.css`: reemplazar el fondo único limitado a la ventana por tres franjas fotográficas locales, suavemente encadenadas a lo largo de toda la sección Servicios.
+- Se reutilizan imágenes optimizadas de clases, surf y fotografía al atardecer con una capa oscura para sostener el contraste. En escritorio el fondo sigue dentro de la sección y no usa `position: fixed`; se conserva el comportamiento móvil existente.
+- Actualizada la versión de caché CSS de ambas portadas. Validado en navegador a 1440, 768, 430, 390 y 320 px: escritorio cubre los 3052 px de la sección con `position: absolute`, móviles conservan el fondo fijo existente, sin overflow horizontal y sin animaciones con movimiento reducido. `git diff --check` limpio; no se ejecutó `node --check` porque Node.js no está disponible en el entorno.
+
+## 2026-10-07
 ### Servicios — logo WavePoint encima del título de Retiros
 - `index.html`, `piloto.html`, `styles.css` y `styles.optimized.css`: bajar un poco el título de la tarjeta de retiros y agregar un logo dinámico WavePoint encima del texto sin afectar el resto del catálogo.
 - Validación: revisión del bloque en la portada y control de `git diff --check` para evitar regresiones de formato.
