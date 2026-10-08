@@ -73,8 +73,6 @@
 }
 
   async function loadWeather(){
-    // El widget 3D ya gestiona su propio clima; no ejecutar el widget legacy en paralelo.
-    if(document.getElementById('wx3d')) return;
     const lat=10.2993, lon=-85.8371;
     const icon=document.getElementById('weatherIcon');
     if(!icon || !document.getElementById('temp')) return;

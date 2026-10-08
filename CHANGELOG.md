@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Clima — restaurar gadget clásico
+- `index.html` y `piloto.html`: volver a la tarjeta clásica de clima que estaba antes del widget 3D, manteniendo temperatura, condición, viento, oleaje, hora local y aviso nocturno.
+- Desconectados los recursos exclusivos del widget 3D; `script.js` vuelve a cargar los datos para la tarjeta clásica y se conservan los estilos responsive existentes.
+
+## 2026-10-07
 ### Servicios — título, descripción y fotos en orden editorial
 - En los servicios estándar, excepto Clases de surf, el contenido ahora queda en una secuencia vertical clara: título completo, descripción con contraste reforzado y galería debajo.
 - Las galerías estándar ocupan todo el ancho disponible, usan fotos más grandes y mantienen un tratamiento específico para escritorio, tablet y celular.

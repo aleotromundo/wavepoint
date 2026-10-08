@@ -65,7 +65,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&family=Orbitron:wght@900&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261006-19"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261006-19"/><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=20261006-19"/><link rel="icon" type="image/x-icon" href="favicon.ico?v=20261006-19"/><link rel="apple-touch-icon" sizes="180x180" href="assets/wavepoint-apple-touch-icon.png?v=20261006-19"/>
 <meta content="#0a3547" name="theme-color"/>
-<link href="styles.optimized.css?v=20261007-51" rel="stylesheet"/><link href="weather-widget-3d.css?v=20261007-8" rel="stylesheet"/></head>
+<link href="styles.optimized.css?v=20261007-51" rel="stylesheet"/></head>
 <body>
 <header class="topbar">
 <a class="social-link instagram-link" href="https://www.instagram.com/wavepointcr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WavePoint">
@@ -160,46 +160,15 @@
 <a class="btn btn-ghost" data-i18n="btnBeachGuide" href="Enlaces/guia-playas.html">Guía de playas</a>
 </div>
 </div>
-<aside aria-label="Condiciones para surfear" data-aria-label-en="Surf conditions" data-aria-label-es="Condiciones para surfear" class="weather-card weather-card-3d">
-<div class="wx3d" id="wx3d" data-weather-status="loading" data-respect-motion aria-busy="true">
-  <div class="wx3d-card">
-    <div class="wx3d-layer" aria-hidden="true"></div><div class="wx3d-layer" aria-hidden="true"></div><div class="wx3d-layer" aria-hidden="true"></div>
-    <div class="wx3d-face">
-      <div class="wx3d-bg" aria-hidden="true">
-        <canvas class="wx3d-glassfx" aria-hidden="true"></canvas>
-        <div class="wx3d-sky" aria-hidden="true"></div><div class="wx3d-clouds" aria-hidden="true"></div>
-        <div class="wx3d-fx" aria-hidden="true"></div><div class="wx3d-lite" aria-hidden="true"></div><div class="wx3d-glare" aria-hidden="true"></div>
-      </div>
-      <canvas class="wx3d-pback" aria-hidden="true"></canvas>
-      <div class="wx3d-p3" aria-hidden="true"></div>
-      <canvas class="wx3d-bolts" aria-hidden="true"></canvas>
-      <canvas class="wx3d-pfront" aria-hidden="true"></canvas>
-      <div class="wx3d-content">
-        <div class="wx3d-city" data-f="city">Tamarindo · CR</div>
-        <div class="wx3d-temp" data-f="temp">--</div>
-        <div class="wx3d-status" data-f="status" aria-live="polite">Cargando clima</div>
-        <div class="wx3d-stats">
-        <div class="wx3d-stat" tabindex="0" role="button" aria-expanded="false" style="--ac:#4de1ff">
-          <svg class="wx3d-ico" viewBox="0 0 48 48" fill="none" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="wxgW" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a6f4ff"/><stop offset="1" stop-color="#1e90ff"/></linearGradient></defs><path d="M4 16q5-6 10 0t10 0 10 0 10 0" stroke="url(#wxgW)" stroke-width="4"/><path d="M4 26q5-6 10 0t10 0 10 0 10 0" stroke="url(#wxgW)" stroke-width="4" opacity=".8"/><path d="M4 36q5-6 10 0t10 0 10 0 10 0" stroke="url(#wxgW)" stroke-width="4" opacity=".55"/></svg>
-          <b data-f="waves">--</b><span data-f="wavesLabel">Oleaje estimado</span>
-        </div>
-        <div class="wx3d-stat" tabindex="0" role="button" aria-expanded="false" style="--ac:#5cf0c0">
-          <svg class="wx3d-ico" viewBox="0 0 48 48" fill="none" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="wxgV" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0fffb"/><stop offset="1" stop-color="#22d3a5"/></linearGradient></defs><path d="M6 18h24a6 6 0 1 0-6-6" stroke="url(#wxgV)" stroke-width="4"/><path d="M6 28h32a6 6 0 1 1-6 6" stroke="url(#wxgV)" stroke-width="4"/><path d="M6 38h14" stroke="url(#wxgV)" stroke-width="4" opacity=".7"/></svg>
-          <b data-f="wind">--</b><span data-f="windLabel">Viento</span>
-        </div>
-        <div class="wx3d-stat" tabindex="0" role="button" aria-expanded="false" style="--ac:#ffc14d">
-          <svg class="wx3d-ico" viewBox="0 0 48 48" fill="none" stroke-linecap="round" aria-hidden="true"><defs><linearGradient id="wxgT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe49a"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient></defs><circle cx="24" cy="24" r="19" stroke="url(#wxgT)" stroke-width="4"/><path d="M24 12v12l8 5" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"/><line class="wx3d-sec" x1="24" y1="24" x2="24" y2="9" stroke="#ff7a59" stroke-width="2"/><circle cx="24" cy="24" r="2.5" fill="#fff"/></svg>
-          <b data-f="time">--:--</b><span data-f="timeLabel">Hora local</span>
-        </div>
-        </div>
-        <div class="wx3d-camera-status camera-status-night" id="cameraNightNotice"
-          data-i18n="cameraNightNotice" role="status" aria-live="polite">
-          Night cameras off · Back around 4:45 a.m.
-        </div>
-      </div>
-    </div>
+<aside aria-label="Condiciones generales" class="weather-card">
+  <div aria-label="Mover tarjeta del clima; usar las flechas para ajustar" class="weather-head" tabindex="0"><div class="weather-heading"><span class="weather-live-dot" aria-hidden="true"></span><span data-i18n="weatherTitle">Condiciones generales</span></div><small id="updatedText">Actualizando…</small></div>
+  <div class="weather-main"><div class="weather-temp-block"><div class="weather-place">Tamarindo, CR</div><div class="temp"><span id="temp">--</span><span class="temp-unit">°</span></div></div><div class="weather-condition"><div class="weather-icon" id="weatherIcon" data-meteocon="clear-day" aria-hidden="true"><img alt="" src="assets/meteocons/clear-day-static.svg"/></div><div class="weather-state" id="weatherState" data-i18n="weatherLoading">Cargando clima</div></div></div>
+  <div class="weather-list">
+  <div class="w-row"><span class="w-ico weather-wave-icon" id="waveIcon" data-meteocon="water-tide-high" aria-hidden="true"><img alt="" src="assets/meteocons/water-tide-high-static.svg"/></span><div><div class="w-value"><span id="waveHeight">--</span><small>m</small></div><div class="w-label" data-i18n="weatherWave">Oleaje estimado</div></div></div>
+  <div class="w-row"><span class="w-ico" aria-hidden="true">↗</span><div><div class="w-value"><span id="wind">--</span><small>km/h</small></div><div class="w-label" data-i18n="weatherWind">Viento</div></div></div>
+  <div class="w-row"><span class="w-ico" aria-hidden="true">◷</span><div><div class="w-value" id="localTime">--:--</div><div class="w-label" data-i18n="weatherTime">Hora local</div></div></div>
   </div>
-</div>
+  <div class="camera-status-night" data-i18n="cameraNightNotice" id="cameraNightNotice">Cámaras en descanso nocturno · Vuelven aprox. 4:45 a.m.</div>
 </aside>
 </div>
 </section>
@@ -451,6 +420,6 @@
 </div>
 <div aria-hidden="true" class="modal" id="adModal"><div class="modal-box"><div class="modal-head"><div class="modal-title">Chophouse pre-play demo</div><button class="close" id="closeAd">×</button></div><div class="modal-body" style="background:#000"><video controls="" id="adVideo" playsinline="" src="assets/chophouse-preroll-12s.mp4" style="width:100%;height:100%;display:block"></video></div><div class="modal-note">Demo del formato pre-play para Castr.</div></div></div>
 
-<script defer="True" src="script.js?v=20261007-23"></script><script defer src="site-nav.js?v=20261007-5"></script><script defer src="lang-switch.js?v=20261007-4"></script><script defer src="https://cdn.jsdelivr.net/npm/raindrop-fx@1.0.8/bundle/index.js"></script><script defer src="weather-widget-3d.js?v=20261007-5"></script><script defer src="/content-overrides.js?v=1"></script>
+<script defer="True" src="script.js?v=20261007-23"></script><script defer src="site-nav.js?v=20261007-5"></script><script defer src="lang-switch.js?v=20261007-4"></script><script defer src="/content-overrides.js?v=1"></script>
 </body>
 </html>
