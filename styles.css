@@ -5439,7 +5439,10 @@ footer a {
     transform: translateY(8px);
   }
 }
-@media (prefers-reduced-motion: reduce) {
+
+  
+
+  @media (prefers-reduced-motion: reduce) {
   .service-card-retreats .service-pack-retreat-mark {
     animation: none;
   }
