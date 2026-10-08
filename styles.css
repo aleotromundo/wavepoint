@@ -5420,9 +5420,12 @@ footer a {
   height: auto;
 }
 .service-card-retreats .service-pack-image-title {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 0;
   z-index: 2;
-  padding: 0 28px 20px;
+  padding: 0 28px;
+  transform: translateY(-50%);
 }
 @keyframes retreat-logo-sway {
   0%,
@@ -5432,9 +5435,6 @@ footer a {
 @media (max-width: 640px) {
   .service-card-retreats .service-pack-retreat-mark {
     width: min(52%, 156px);
-  }
-  .service-card-retreats .service-pack-image-title {
-    padding-bottom: 16px;
   }
 }
 
