@@ -5392,6 +5392,52 @@ footer a {
   text-shadow: 0 4px 5px rgba(0, 0, 0, .94), 0 9px 24px rgba(0, 0, 0, .88);
   text-wrap: balance;
 }
+.service-card-retreats .service-pack-image {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6px;
+}
+.service-card-retreats .service-pack-retreat-mark {
+  position: absolute;
+  top: clamp(18px, 2vw, 28px);
+  left: 50%;
+  z-index: 1;
+  width: min(44%, 168px);
+  transform: translateX(-50%);
+  filter: drop-shadow(0 10px 20px rgba(10, 216, 228, .18));
+  animation: retreat-logo-sway 4.2s ease-in-out infinite;
+}
+.service-card-retreats .service-pack-retreat-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.service-card-retreats .service-pack-image-title {
+  position: relative;
+  z-index: 2;
+  padding: 0 28px 12px;
+  transform: translateY(12px);
+}
+@keyframes retreat-logo-sway {
+  0%,
+  100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+@media (max-width: 640px) {
+  .service-card-retreats .service-pack-retreat-mark {
+    width: min(48%, 142px);
+  }
+  .service-card-retreats .service-pack-image-title {
+    padding-bottom: 8px;
+    transform: translateY(8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card-retreats .service-pack-retreat-mark {
+    animation: none;
+  }
+}
 .service-pack-body {
   display: flex;
   flex-direction: column;
