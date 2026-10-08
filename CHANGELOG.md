@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Prueba — desactivar parallax en escritorio
+- `styles.css` y `styles.optimized.css`: en pantallas mayores de 1024 px, hacer que los fondos sigan el desplazamiento normal y que las capas `.px-bg` queden dentro de su sección.
+- Se conservan móviles, tablets y la composición del hero. Renovada la caché CSS de `index.html` y `piloto.html` para facilitar la prueba.
+
+## 2026-10-07
 ### Clima — restaurar gadget clásico
 - `index.html` y `piloto.html`: volver a la tarjeta clásica de clima que estaba antes del widget 3D, manteniendo temperatura, condición, viento, oleaje, hora local y aviso nocturno.
 - Desconectados los recursos exclusivos del widget 3D; `script.js` vuelve a cargar los datos para la tarjeta clásica y se conservan los estilos responsive existentes.
