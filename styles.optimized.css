@@ -3170,3 +3170,5 @@ to{filter:brightness(1.18)}
 
 /* Galerías triples: dos imágenes arriba y una panorámica abajo, sin celda vacía. */
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-triple{grid-template-columns:repeat(2,minmax(0,1fr))}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-triple img:nth-child(3){grid-column:1/-1!important;grid-row:auto!important}
+
+@media (min-width:981px){#inicio .hero-logo-wrap{width:min(95%,589px)}}
