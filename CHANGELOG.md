@@ -1,4 +1,9 @@
 ## 2026-10-07
+### Catálogo — separar navegación de ampliación de fotos
+- `script.js`: excluir del modal las imágenes que ya están dentro de enlaces; las tarjetas de servicio navegan solo al detalle y las fotos de galerías mantienen la ampliación.
+- Validación: comprobar rol, foco y cursor de las fotos del catálogo, y probar la navegación al detalle desde una tarjeta.
+
+## 2026-10-07
 ### Prueba — desactivar parallax en escritorio
 - `styles.css` y `styles.optimized.css`: en pantallas mayores de 1024 px, las capas `.px-bg` dejan de estar fijas al viewport y quedan dentro de su sección.
 - Se conservan móviles, tablets y el hero. Renovada la caché CSS de `index.html` y `piloto.html` para facilitar la prueba.
