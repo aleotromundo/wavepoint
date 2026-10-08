@@ -3269,8 +3269,14 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
    La foto es position:fixed a tamaño de pantalla y el panel (clip-path) la recorta: el contenido se desliza sobre una foto que queda quieta. */
 .has-px { --px-r: clamp(22px, 2.6vw, 38px); position: relative; isolation: isolate; margin: clamp(10px, 1.6vw, 24px) clamp(8px, 1.6vw, 24px); border-radius: var(--px-r); clip-path: inset(0 round var(--px-r)); }
 .px-bg { position: fixed; inset: 0; z-index: -2; pointer-events: none; background: var(--px-img) center / cover no-repeat; }
+.px-bg-image { position: absolute; inset-inline: 0; height: 36%; background-position: center; background-size: cover; background-repeat: no-repeat; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent); }
+.px-bg-image-surf-lessons { top: 0; background-image: url("assets/img/services/surf-lessons/optimized/surf-lesson-group.webp"); }
+.px-bg-image-surf-photo { top: 32%; background-image: url("assets/img/services/surf-photography/surf-photographer-wave.jpg"); }
+.px-bg-image-surf-sunset { top: 64%; background-image: url("assets/img/photography/ambarry1975/optimized/ambarry1975-costa-rica-2646482.jpg"); }
 .px-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 24, 34, .46), rgba(3, 24, 34, .16) 45%, rgba(3, 24, 34, .4)); }
-#servicios { --px-img: url('assets/img/site/backgrounds/servicios.jpg'); }
+#servicios { --px-img: none; }
+#servicios .px-bg { background: none; }
+#servicios .px-bg::after { background: linear-gradient(180deg, rgba(3, 24, 34, .5), rgba(3, 24, 34, .28) 48%, rgba(3, 24, 34, .52)); }
 #camaras { --px-img: url('assets/img/site/backgrounds/camaras.jpg'); }
 #guia { --px-img: url('assets/img/stays/occidental/optimized/occidental-beach.webp'); }
 #despues-del-surf { --px-img: url('assets/img/site/backgrounds/atardecer.jpg'); }
@@ -6462,8 +6468,7 @@ footer a {
     inset: 0;
   }
   #servicios .px-bg {
-    inset: 0 0 auto;
-    height: 100vh;
+    inset: 0;
     background-position: center top;
   }
 }
