@@ -6410,6 +6410,25 @@ footer a {
   }
 }
 
+@media (min-width: 1025px) {
+  .hero,
+  .services,
+  .sponsor-strip,
+  .after-surf,
+  .service-detail-page,
+  .about-page .about-hero-image,
+  .about-page .about-opening,
+  .about-page .about-story,
+  .about-page .about-gallery-section,
+  .about-page .about-closing {
+    background-attachment: scroll !important;
+  }
+  .has-px .px-bg {
+    position: absolute;
+    inset: 0;
+  }
+}
+
 @media (min-width: 981px) {
   .topbar .navlinks {
     position: relative;
