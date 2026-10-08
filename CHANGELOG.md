@@ -1,3 +1,9 @@
+## 2026-10-08
+### Portada — retirar piloto y separar el hero del header
+- Se elimina `piloto.html`, portada duplicada sin enlaces activos; `index.html` queda como portada única.
+- `styles.css` y `styles.optimized.css`: retirar reglas de compactación residual que no correspondían al diseño aprobado y sumar 12 px de separación al contenido del hero en tablet y móvil, sin reescalar sus elementos.
+- `index.html`: renovar la versión de caché de estilos. Pendiente validar visualmente en 640 × 480 y móvil vertical.
+
 ## 2026-10-07
 ### Surf coaching — reparar referencias de la imagen movida
 - `index.html`, `piloto.html`, `services.js` y `trip-builder.js`: apuntar a la nueva ruta `assets/img/services/surf-photography/surf-coaching-session.jpg` en las tarjetas, el detalle y el armador de viaje.
