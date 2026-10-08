@@ -1,4 +1,7 @@
 ## 2026-10-08
+### Hero móvil — contener el texto del CTA secundario
+- `styles.css` y `styles.optimized.css`: permitir que “Guía de playas” se ajuste dentro de su botón en español, sin modificar el layout, el gadget ni los demás elementos.
+- `index.html`: actualizar la versión de caché de CSS.
 ### Retiros — retirar imagen grande del detalle
 - `services.js`: retirar únicamente la imagen aérea grande debajo del encabezado “¿Qué son los retiros?” en el detalle de Retiros.
 - `index.html`: conservar la imagen original de la tarjeta de Retiros en la portada.
