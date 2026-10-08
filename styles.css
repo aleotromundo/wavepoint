@@ -5409,7 +5409,7 @@ footer a {
   top: clamp(18px, 2vw, 28px);
   left: 50%;
   z-index: 1;
-  width: min(44%, 168px);
+  width: min(48%, 184px);
   transform: translateX(-50%);
   filter: drop-shadow(0 10px 20px rgba(10, 216, 228, .18));
   animation: retreat-logo-sway 4.2s ease-in-out infinite;
@@ -5422,8 +5422,7 @@ footer a {
 .service-card-retreats .service-pack-image-title {
   position: relative;
   z-index: 2;
-  padding: 0 28px 12px;
-  transform: translateY(12px);
+  padding: 0 28px 20px;
 }
 @keyframes retreat-logo-sway {
   0%,
@@ -5432,11 +5431,10 @@ footer a {
 }
 @media (max-width: 640px) {
   .service-card-retreats .service-pack-retreat-mark {
-    width: min(48%, 142px);
+    width: min(52%, 156px);
   }
   .service-card-retreats .service-pack-image-title {
-    padding-bottom: 8px;
-    transform: translateY(8px);
+    padding-bottom: 16px;
   }
 }
 

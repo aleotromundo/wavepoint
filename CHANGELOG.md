@@ -1,4 +1,8 @@
 ## 2026-10-08
+### Retiros — centrar el título y ampliar el logo
+- `styles.css` y `styles.optimized.css`: subir el título dentro de la imagen para que quede más centrado y ampliar aproximadamente un 10% el logo, manteniendo reglas propias para móvil y el respeto a movimiento reducido.
+- `index.html`: renovar la versión de caché CSS.
+
 ### Hero — reducir logo en escritorio
 - `styles.css` y `styles.optimized.css`: reducir un 5% el ancho del logo del hero solo a partir de 981 px, para darle un poco más de aire bajo el header; tablet y móvil conservan su tamaño.
 - `index.html`: renovar la versión de caché. Validado en navegador en escritorio y móvil; sin desbordamiento horizontal.
