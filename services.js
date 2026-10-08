@@ -882,7 +882,6 @@ return `<div class="retreat-editorial">
       <p class="retreat-cover-about">${esc(details.about)}</p>
       <div class="retreat-cover-facts">${durationFact ? `<span>${esc(durationFact.value)}</span>` : ''}<span>${esc(priceFact.value)}</span></div>
     </div>
-    <figure class="retreat-cover-image"><img src="${esc(service.images[0])}" alt="${introAlt}" loading="eager" /></figure>
   </section>
   <div class="retreat-experience-grid">
     <section class="retreat-experience-card retreat-destination-card">

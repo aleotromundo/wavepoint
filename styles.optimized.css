@@ -3174,3 +3174,7 @@ to{filter:brightness(1.18)}
 @media (min-width:981px){#inicio .hero-logo-wrap{width:min(95%,589px)}}
 /* Fallback final del hero: el poster siempre queda disponible detrás del video. */
 @media (hover:none) and (pointer:coarse),(max-width:640px){.hero-video-stack{display:block!important}.hero-video:not(.is-active){display:block!important;visibility:hidden!important}.hero{background-attachment:scroll!important}}@media (prefers-reduced-motion:reduce),(prefers-reduced-data:reduce){.hero-video-stack .hero-video{display:none!important;opacity:0!important;visibility:hidden!important}.hero-video-poster{display:block!important}}
+
+
+/* Retiros: el detalle conserva el bloque editorial, sin la foto grande bajo el encabezado. */
+.retreat-cover{grid-template-columns:1fr}
