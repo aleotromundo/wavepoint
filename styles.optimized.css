@@ -2061,6 +2061,7 @@ footer a,footer p{font-size:13px!important}
 .service-pack-body p{margin:18px 0 20px;color:rgba(231,245,239,.82);font:500 16px/1.6 "DM Sans",sans-serif}
 .service-pack-body>a:last-child{color:#ffd98a;font:800 13px/1.4 "DM Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase}
 .service-pack-body>a:last-child:hover{color:#fff}
+
 @media (max-width:640px){
 .service-pack-divider{gap:10px;margin:30px 0 14px}
 .service-pack-divider p{max-width:62%;font-size:10px}

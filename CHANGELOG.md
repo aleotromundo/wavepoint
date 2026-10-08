@@ -1,4 +1,10 @@
 ## 2026-10-07
+### Surf coaching — reparar referencias de la imagen movida
+- `index.html`, `piloto.html`, `services.js` y `trip-builder.js`: apuntar a la nueva ruta `assets/img/services/surf-photography/surf-coaching-session.jpg` en las tarjetas, el detalle y el armador de viaje.
+- La ruta anterior ya no existe desde que se movió el archivo; se actualizan todos sus usos para que no fallen las imágenes de Surf Coaching.
+- Verificado: no quedan referencias a la ruta anterior y la foto carga en el armador y en la primera imagen de la galería de detalle.
+
+## 2026-10-07
 ### Servicios — fondo fotográfico completo sin parallax en escritorio
 - `index.html`, `piloto.html`, `styles.css` y `styles.optimized.css`: reemplazar el fondo único limitado a la ventana por tres franjas fotográficas locales, suavemente encadenadas a lo largo de toda la sección Servicios.
 - Se reutilizan imágenes optimizadas de clases, surf y fotografía al atardecer con una capa oscura para sostener el contraste. En escritorio el fondo sigue dentro de la sección y no usa `position: fixed`; se conserva el comportamiento móvil existente.
