@@ -1,7 +1,9 @@
 ## 2026-10-08
-### Retiros — retirar fondo fotográfico repetido
-- `retiros.pdf`: eliminar la imagen vertical de atardecer con palmeras de la página 3, detrás de “¿Qué ofrecemos?”, y conservar el contenido sobre un fondo limpio. Las otras páginas e imágenes permanecen sin cambios.
-- Validación: PDF conserva 10 páginas y el texto completo; página 3 renderizada para revisión visual.
+### Retiros — retirar imagen grande del detalle
+- `services.js`: retirar únicamente la imagen aérea grande debajo del encabezado “¿Qué son los retiros?” en el detalle de Retiros.
+- `index.html`: conservar la imagen original de la tarjeta de Retiros en la portada.
+- `styles.css` y `styles.optimized.css`: expandir el bloque editorial a una columna sin dejar un hueco vacío.
+- `retiros.pdf`: restaurado sin modificaciones.
 
 ### Fallback inteligente del hero en dispositivos con movimiento o datos reducidos
 - `index.html`: agregar una capa de poster explícita y marcar los videos con `data-fallback="poster"`; actualizar la versión de caché de CSS.

@@ -8386,3 +8386,7 @@ footer a {
   .hero-video-stack .hero-video { display: none !important; opacity: 0 !important; visibility: hidden !important; }
   .hero-video-poster { display: block !important; }
 }
+
+
+/* Retiros: el detalle conserva el bloque editorial, sin la foto grande bajo el encabezado. */
+.retreat-cover { grid-template-columns: 1fr; }
