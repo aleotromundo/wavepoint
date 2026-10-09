@@ -38,10 +38,10 @@ id: 'tamalodge',
 category: 'OPCIÓN ECONÓMICA', name: 'Hotel Tamalodge',
 price: 'USD 50', priceNote: 'por habitación · por noche',
 summary: 'Una habitación privada con baño privado para una estadía simple y funcional.',
-images: ['assets/img/stays/tamalodge/cover.webp'],
+images: ['assets/img/stays/tamalodge/cover.webp', 'assets/img/stays/tamalodge/room-with-kitchen.jpg', 'assets/img/stays/tamalodge/simple-room.jpg'],
 imageAlt: 'Entrada de Hotel Tamalodge entre jardines',
-imageAlts: ['Entrada de Hotel Tamalodge entre jardines'],
-imageAltsEn: ['Hotel Tamalodge entrance among the gardens'],
+imageAlts: ['Entrada de Hotel Tamalodge entre jardines', 'Habitación de Hotel Tamalodge con cocina', 'Habitación sencilla de Hotel Tamalodge'],
+imageAltsEn: ['Hotel Tamalodge entrance among the gardens', 'Hotel Tamalodge room with a kitchen', 'Simple room at Hotel Tamalodge'],
 details: ['Habitación privada con baño privado.'],
 amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong'],
 en: {
@@ -60,7 +60,7 @@ summary: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno in
 images: [
 'assets/img/stays/casa-aura/casa-aura-exterior.webp',
 'assets/img/stays/casa-aura/casa-aura-common-area.webp',
-'assets/img/stays/casa-aura/stayandhotels4_resultado.webp'
+'assets/img/stays/casa-aura/stayandhotels4_resultados.webp'
 ],
 imageAlt: 'Entrada de Casa Aura en Tamarindo',
 imageAlts: ['Entrada de Casa Aura en Tamarindo', 'Área común de madera de Casa Aura', 'Interior de Casa Aura con sala y cocina'],
@@ -123,10 +123,10 @@ id: 'capitan-suizo',
 category: 'OPCIÓN DELUXE', name: 'Capitán Suizo',
 price: 'USD 600', priceNote: 'por noche · consultar disponibilidad',
 summary: 'Hotel frente a la playa con servicios de bienestar, piscina y espacios para disfrutar la estadía.',
-images: ['assets/img/stays/capitan-suizo/cover.webp', 'assets/img/stays/capitan-suizo/capitan.webp'],
+images: ['assets/img/stays/capitan-suizo/cover.webp', 'assets/img/stays/capitan-suizo/capitan.webp', 'assets/img/stays/capitan-suizo/beachfront-bungalow.webp'],
 imageAlt: 'Vista aérea del hotel Capitán Suizo junto a la playa',
-imageAlts: ['Vista aérea del hotel Capitán Suizo junto a la playa', 'Bungalow de Capitán Suizo rodeado de jardines tropicales'],
-imageAltsEn: ['Aerial view of Hotel Capitan Suizo beside the beach', 'Capitán Suizo bungalow surrounded by tropical gardens'],
+imageAlts: ['Vista aérea del hotel Capitán Suizo junto a la playa', 'Bungalow de Capitán Suizo rodeado de jardines tropicales', 'Interior de bungalow frente a la playa en Capitán Suizo'],
+imageAltsEn: ['Aerial view of Hotel Capitan Suizo beside the beach', 'Capitán Suizo bungalow surrounded by tropical gardens', 'Interior of a beachfront bungalow at Capitán Suizo'],
 details: ['Tarifa: USD 600 por noche.', 'Consultar disponibilidad.'],
 amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios'],
 en: {
@@ -242,12 +242,12 @@ id: 'yoga', number: '06', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
 cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
 description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
 images: [
-'assets/img/services/yoga/yoga-beach-woman.webp',
+'assets/img/services/yoga/yoga-beach-practice.webp',
 'assets/img/services/yoga/yoga-group-meditation.webp',
 'assets/img/services/yoga/yoga-retreat-group-class.webp'
 ],
-imageAlts: ['Mujer practicando yoga frente al mar en la playa', 'Grupo meditando dentro de un rancho tropical con techo de paja', 'Clase grupal de yoga en un espacio abierto entre palmeras'],
-imageAltsEn: ['Woman practicing yoga on a beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees'],
+imageAlts: ['Mujer meditando en la playa frente al mar', 'Grupo meditando dentro de un rancho tropical con techo de paja', 'Clase grupal de yoga en un espacio abierto entre palmeras'],
+imageAltsEn: ['Woman meditating on the beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees'],
 includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
 questions: [
 { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
@@ -265,7 +265,7 @@ questions: {
   yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
 },
 includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy'],
-imageAlts: ['Woman practicing yoga on a beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees']
+imageAlts: ['Woman meditating on the beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees']
 }
 },
 {
@@ -303,10 +303,10 @@ cardText: 'Un día de surf en barco con guías locales que conocen la zona.',
 lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
 coordination: 'WavePoint ayuda a coordinar los detalles, teniendo en cuenta el nivel de surf de tu grupo y las condiciones.',
-galleryAlt: 'Olas y costa de Guanacaste',
-images: ['assets/img/services/witchs-rock/witch-rock-surf-trip.webp', 'assets/img/services/witchs-rock/hermosa.webp', 'assets/img/services/witchs-rock/roca-bruja-surfing.webp'],
-imageAlts: ['Ola rompiendo frente a la formación rocosa de Roca Bruja', 'Costa y olas de Guanacaste', 'Surfista surfeando en Roca Bruja'],
-imageAltsEn: ['Breaking wave in front of the rock formation at Witch’s Rock', 'Waves and coastline in Guanacaste', 'Surfer riding a wave at Witch’s Rock'],
+galleryAlt: 'Roca y olas de Roca Bruja',
+images: ['assets/img/services/witchs-rock/roca-bruja-rock.webp', 'assets/img/services/witchs-rock/roca-bruja-surfing.webp'],
+imageAlts: ['Formación rocosa de Roca Bruja frente a la costa', 'Surfista surfeando en Roca Bruja'],
+imageAltsEn: ['Rock formation at Witch’s Rock along the coast', 'Surfer riding a wave at Witch’s Rock'],
 questions: [
 { id: 'group_size', label: '¿Cuántas personas se suman?', type: 'headcount', fields: [{ id: 'adults', label: 'Adultos' }, { id: 'children', label: 'Niños' }], note: 'Si se suman niños, contanos sus edades para consultar los requisitos del proveedor.', agesLabel: 'Edades de los niños', agesPlaceholder: 'Ej.: 8 y 11' },
 { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
@@ -322,7 +322,7 @@ lead: 'Some surf trips stay with you long after your last wave.',
 description: 'Head out by boat to Roca Bruja and share a day of surf with local guides who know the area. From the journey out to the time in the water, the experience is shaped by the ocean, your group and the people guiding you.',
 coordination: 'WavePoint helps coordinate the details, taking your group’s surf level and the conditions into account.',
 galleryAlt: 'Waves and coastline in Guanacaste',
-imageAlts: ['Breaking wave in front of the rock formation at Witch’s Rock', 'Waves and coastline in Guanacaste'],
+imageAlts: ['Rock formation at Witch’s Rock along the coast', 'Surfer riding a wave at Witch’s Rock'],
 questions: {
 group_size: { label: 'How many people are joining?', fields: [{ id: 'adults', label: 'Adults' }, { id: 'children', label: 'Children' }], note: 'If children are joining, please tell us their ages so we can check the provider’s requirements.', agesLabel: 'Children’s ages', agesPlaceholder: 'e.g. 8 and 11' },
 group_levels: { label: 'What is each participant’s surf level?', placeholder: 'Please share everyone’s level.' },
@@ -375,9 +375,9 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-forest-convoy.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
-imageAlts: ['Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Grupo de personas recorriendo un camino rural en cuatriciclos', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste', 'Grupo de cuatriciclos avanzando por un sendero de bosque tropical'],
-imageAltsEn: ['Two people on an ATV with Arenal Volcano in the background', 'Group of riders travelling along a rural road on ATVs', 'Two ATVs at a viewpoint above the Guanacaste coast', 'Group of ATVs riding along a tropical forest trail'],
+images: ['assets/img/services/atv/atv-forest-convoy.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
+imageAlts: ['Grupo de cuatriciclos recorriendo un sendero de bosque tropical', 'Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste', 'Grupo de cuatriciclos avanzando por un sendero de bosque tropical'],
+imageAltsEn: ['Group of ATVs riding along a tropical forest trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast', 'Group of ATVs riding along a tropical forest trail'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -389,7 +389,7 @@ eyebrow: 'LAND · ADVENTURE',
 title: 'ATV Tours in Tamarindo',
 cardText: 'A little adventure beyond the beach.',
 description: 'Head out with local guides and discover the surroundings of Tamarindo on an ATV. Take in the scenery, enjoy the ride and share the adventure with the people you’re traveling with. WavePoint helps you find a tour that suits your group, with the route and details confirmed before you go.',
-imageAlts: ['Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
+imageAlts: ['Group of ATVs riding along a tropical forest trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast', 'Group of ATVs riding along a tropical forest trail'],
 questions: {
 drivers: { label: 'How many people want to drive?' },
 passengers: { label: 'How many would be passengers?' },
@@ -783,11 +783,9 @@ return `<label class="detail-question detail-field" data-survey-question for="${
 function renderAccommodationOption(option, index) {
 const isEn = lang === 'en';
 const localized = isEn ? option.en || option : option;
-const galleryImages = option.images.slice(1);
-const gallery = galleryImages.map((image, index) => {
-const imageIndex = index + 1;
-const localizedAlt = lang === 'en' ? option.imageAltsEn?.[imageIndex] : option.imageAlts?.[imageIndex];
-return `<img src="${image}" alt="${esc(localizedAlt || `${option.imageAlt} · ${lang === 'en' ? 'view' : 'vista'} ${imageIndex + 1}`)}" loading="lazy" />`;
+const gallery = option.images.map((image, index) => {
+const localizedAlt = lang === 'en' ? option.imageAltsEn?.[index] : option.imageAlts?.[index];
+return `<img src="${esc(image)}" alt="${esc(localizedAlt || `${option.imageAlt} · ${lang === 'en' ? 'view' : 'vista'} ${index + 1}`)}" loading="lazy" />`;
 }).join('');
 const details = localized.details.map(detail => `<li>${esc(detail)}</li>`).join('');
 const amenities = localized.amenities.map(item => `<li>${esc(item)}</li>`).join('');
@@ -818,7 +816,7 @@ return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
-const galleryStart = service.id === 'atv' ? 2 : 1;
+const galleryStart = 1;
 const galleryImages = service.images.slice(galleryStart);
 const gallery = galleryImages.map((image, index) => { const altIndex = index + galleryStart; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
 const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
@@ -827,7 +825,11 @@ const supporting = service.lead || extra ? `<div class="service-supporting-conte
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
 }
 function renderWitchRockStory(service) {
-return renderStandardStory(service, service.coordination);
+const story = renderStandardStory(service, service.coordination);
+const credit = lang === 'en'
+? `Photo credits: <a href="https://commons.wikimedia.org/wiki/File:Roca_Bruja_-_Guanacaste_-_Costa_Rica.jpg" target="_blank" rel="noopener noreferrer">“Roca Bruja — Guanacaste — Costa Rica”</a> and <a href="https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG" target="_blank" rel="noopener noreferrer">“Surfing — Roca Bruja — Guanacaste — Costa Rica”</a> by dog4aday, under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.`
+: `Créditos de las fotos: <a href="https://commons.wikimedia.org/wiki/File:Roca_Bruja_-_Guanacaste_-_Costa_Rica.jpg" target="_blank" rel="noopener noreferrer">“Roca Bruja — Guanacaste — Costa Rica”</a> y <a href="https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG" target="_blank" rel="noopener noreferrer">“Surfing — Roca Bruja — Guanacaste — Costa Rica”</a>, de dog4aday, bajo <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.`;
+return story.replace('</section>', `<p class="service-photo-credit">${credit}</p></section>`);
 }
 
 function renderSurfPhotographyStory(service) {
@@ -910,7 +912,7 @@ document.title = `${service.title} · WavePoint`;
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
 document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
-document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.id === 'atv' ? service.images[1] : service.images[0])})`);
+document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.images[0])})`);
 const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
 const nextService = services[(position + 1) % services.length];
