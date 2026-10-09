@@ -233,9 +233,8 @@ Reglas de accesibilidad:
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
 | `assets/wavepoint-watermark.png` | Marca sobre streams de cámara. |
-| `assets/videohero0.mp4` | Video ambiental y prueba de video ligado al scroll. |
-| `assets/videohero1.mp4` | Video alternativo del hero. |
-| `assets/videohero0-mobile.mp4` | Variante móvil completa de Giro 0, 704×396 a 29,97 fps, seleccionada exclusivamente en móviles para el hero. |
+| `assets/videohero0.mp4` | Giro 0 / Palmeras para escritorio y video ambiental de `Build your trip`. |
+| `assets/videohero1.mp4` | Giro 1 de mayor calidad, usado en escritorio y como video inicial del hero móvil. |
 | `assets/camera-rest.png` | Estado de descanso nocturno de cámaras. |
 | `assets/meteocons/` | Iconos locales del clima, animados y estáticos. |
 | `assets/legacy/` | Fotografías históricas y de servicios. |
