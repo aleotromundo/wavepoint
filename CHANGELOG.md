@@ -1,4 +1,9 @@
 ## 2026-10-08
+### Casa Aura — portada de la página de Partner
+- La portada grande (`collab-hero`) de `Enlaces/casa-aura.html` ahora usa `assets/img/services/retreats/retreat-canva-stay-aerial.webp`, la vista aérea elegida.
+- El carrusel general de Partners conserva `assets/img/stays/casa-aura/stayandhotels4_resultado.webp`; no se modificó esa foto ni la galería interna de Casa Aura.
+- Se actualizó la caché CSS a `styles.optimized.css?v=20261009-70`.
+
 ### Hero — no ocultar el fallback si autoplay está bloqueado
 - La imagen ya no se oculta con `canplay` —que solo confirma que el archivo se puede preparar— sino con `playing`, que confirma que el navegador realmente está reproduciendo el video.
 - Esto conserva el fondo visible en computadoras donde el video carga pero el autoplay, la aceleración gráfica o la política del navegador impiden que arranque.
