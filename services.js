@@ -356,9 +356,9 @@ id: 'surfskate', number: '09', eyebrow: 'SURFSKATE · PROGRESO', title: 'Clases 
 cardText: 'Encontrá tu flow en tierra.',
 description: 'Explorá tus giros, ganá confianza sobre la tabla y empezá a sentir movimientos que después podés llevar al agua. Ya sea que pruebes el surfskate por primera vez o quieras sumarlo a tu práctica de surf, WavePoint te conecta con instructores locales para encontrar una sesión acorde a tu nivel.',
 includes: ['Tabla de surfskate para la sesión', 'Casco y protecciones'],
-images: ['assets/img/services/surfskate/surfskate-speed.webp', 'assets/img/services/surfskate/surfskate-flow.webp', 'assets/img/services/surfskate/surfskate-board-detail.webp', 'assets/img/services/surfskate/surfskate-sunset.webp'],
-imageAlts: ['Persona haciendo carving en surfskate con casco y protecciones', 'Pies sobre una tabla de surfskate durante una sesión', 'Detalle de una tabla de surfskate en movimiento', 'Persona practicando longboard al atardecer junto al mar'],
-imageAltsEn: ['Person carving on a surfskate wearing a helmet and protective gear', 'Feet on a surfskate during a session', 'Close-up of a surfskate moving across the pavement', 'Person riding a longboard at sunset by the sea'],
+images: ['assets/img/services/surfskate/surfskate-speed.webp', 'assets/img/services/surfskate/surfskate-flow.webp', 'assets/img/services/surfskate/surfskate-board-detail.webp', 'assets/img/services/surfskate/surfskate-sunset.webp', 'assets/img/services/surfskate/surfskate.webp'],
+imageAlts: ['Persona haciendo carving en surfskate con casco y protecciones', 'Pies sobre una tabla de surfskate durante una sesión', 'Detalle de una tabla de surfskate en movimiento', 'Persona practicando longboard al atardecer junto al mar', 'Instructor corrigiendo la posición de otra persona sobre una tabla de surfskate'],
+imageAltsEn: ['Person carving on a surfskate wearing a helmet and protective gear', 'Feet on a surfskate during a session', 'Close-up of a surfskate moving across the pavement', 'Person riding a longboard at sunset by the sea', 'Instructor correcting another person’s stance on a surfskate'],
 questions: [],
 submitLabel: 'CONSULTAR UNA CLASE ↗',
 en: {

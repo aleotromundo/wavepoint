@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Surfskate — conservar la foto original de instrucción
+- `services.js`: se reincorporó `assets/img/services/surfskate/surfskate.webp` al final de la galería; la foto de los dos instructores se conserva como material aportado por ellos y no se usa como tarjeta ni portada.
+- `script.js`: se corrigieron los textos alternativos para escribir **surfskate** como una sola palabra en español e inglés.
+- Validación: referencia local existente, galería con cinco fotos distintas y `git diff --check`.
+
 ### Surfskate — renovar tarjeta, portada y galería
 - `services.js`: Surfskate ahora cuenta con cuatro fotos distintas; la primera se usa en la tarjeta, el armador y la portada del detalle, y las otras tres completan la galería.
 - `index.html` y `trip-builder.js`: se actualizó la imagen de la tarjeta de Surfskate y se sincronizaron los textos alternativos en español e inglés.
