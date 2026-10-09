@@ -1,3 +1,8 @@
+### Snorkel y catamarán — nueva galería de cuatro fotos
+- Se reemplazaron las fotos anteriores por las cuatro imágenes aportadas en `assets/`.
+- Se convirtieron a WebP de calidad optimizada y se ubicaron en `assets/img/services/snorkel-catamaran/`; se eliminaron los JPEG originales del directorio raíz y las imágenes antiguas del servicio.
+- `services.js`: la galería ahora usa las cuatro imágenes nuevas con textos alternativos en español e inglés.
+
 ### Armá tu viaje — Retiros queda como servicio independiente
 - `trip-builder.js`: se retiró la tarjeta interna de Retiros del armador; Retiros continúa disponible como portada independiente en la navegación de servicios.
 
