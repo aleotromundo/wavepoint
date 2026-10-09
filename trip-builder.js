@@ -22,6 +22,8 @@
     es: {
       eyebrow: 'DISEÑÁ TU VIAJE',
       title: 'Tu viaje, a tu manera.',
+      previousService: 'Servicio anterior',
+      nextService: 'Siguiente servicio',
       intro: '¿Viajás con amigos, planeás un viaje de surf o buscás dónde alojarte y sumar algunas actividades? Contanos tus fechas, cuántos son y qué te interesa. Armaremos una propuesta según la disponibilidad.',
       sectionTitle: 'Armá tu viaje por Tamarindo',
       sectionIntro: 'Elegí las experiencias que querés incluir. Agregá fechas y cuántas personas van a participar en cada una; las sumamos a una sola solicitud.',
@@ -70,6 +72,8 @@
     en: {
       eyebrow: 'PLAN YOUR TRIP',
       title: 'Your trip, your way.',
+      previousService: 'Previous service',
+      nextService: 'Next service',
       intro: 'Travelling with friends, planning a surf trip or looking for a place to stay with a few activities? Tell us your dates, group size and interests. We’ll put together a proposal based on what’s available.',
       sectionTitle: 'Build your Tamarindo trip',
       sectionIntro: 'Choose the experiences you’d like to include. Add dates and the number of people for each one, and we’ll put everything into one booking request.',
@@ -249,6 +253,10 @@
           <source src="assets/videohero0.mp4?v=20261009-giro0" type="video/mp4" />
         </video>
       </div>
+      <nav class="detail-hero-arrows trip-builder-hero-arrows" aria-label="${lang === 'es' ? 'Navegar entre servicios' : 'Browse services'}">
+        <a class="detail-arrow detail-arrow-prev" href="service-detail.html?service=surfskate" rel="prev" aria-label="${copy.previousService}: ${lang === 'es' ? 'Clases de surfskate' : 'Surfskate Lessons'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="M20 2 3 20l17 18" /></svg></a>
+        <a class="detail-arrow detail-arrow-next" href="service-detail.html?service=retiros" rel="next" aria-label="${copy.nextService}: ${lang === 'es' ? 'Retiros' : 'Retreats'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="m4 2 17 18L4 38" /></svg></a>
+      </nav>
       <div class="container trip-builder-hero-content"><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
     </section>
     <section class="trip-builder-main"><div class="container">
