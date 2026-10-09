@@ -1,4 +1,15 @@
 ## 2026-10-08
+### Menú móvil — abrir colaboradores
+- `site-nav.js`: el nombre “Colaboradores” y la flecha ahora abren y cierran el submenú en celular; antes el enlace cerraba el panel sin mostrar sus opciones.
+- Se agregó `aria-expanded` y se actualizó la versión de caché del script en las páginas que usan la navegación compartida.
+
+### Auditoría y optimización de imágenes
+- Las fotos activas del sitio se convirtieron a WebP con compresión de alta calidad; las imágenes sobredimensionadas se limitaron a un máximo de 2560 px en su lado mayor sin cambiar proporciones, recortes ni estilos del front-end.
+- `index.html`, `guia-playas.html`, `services.js`, `script.js`, `trip-builder.js`, `trip-builder.css`, las páginas de `Enlaces/` y las hojas de estilo actualizan sus referencias a las variantes WebP. La imagen social de Open Graph/Twitter también usa WebP.
+- Se creó `cosas al pedo/` con los assets sin referencias activas detectables para revisión manual; se conservaron allí los originales reemplazados como respaldo. Se dejaron fuera los íconos meteorológicos cargados dinámicamente y los assets SEO necesarios.
+- Validación: referencias locales, sintaxis JavaScript, `git diff --check` y auditoría de dimensiones/pesos.
+
+## 2026-10-08
 ### Home móvil — ajustar scroll inicial
 - `script.js`: al abrir la home en un viewport de hasta 640 px, iniciar el scroll 12 px más abajo (contenido visible más arriba); el enlace Inicio de ambos menús reutiliza el mismo destino. No desplaza bloques ni modifica escritorio.
 - Escritorio (>980 px): `.hero-grid` pasa de 2 a 14 px de desplazamiento vertical (12 px más abajo); tablet y celular conservan su regla propia. `styles.optimized.css` sincronizado.
