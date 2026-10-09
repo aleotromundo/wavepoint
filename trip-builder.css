@@ -30,6 +30,7 @@
 .trip-experience.is-added { border-color: rgba(7, 143, 145, .62); box-shadow: 0 0 0 2px rgba(7, 143, 145, .13), 0 16px 36px rgba(8, 43, 58, .12); }
 .trip-experience-image { height: 150px; overflow: hidden; background: #0a2c3b; }
 .trip-experience-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.trip-experience[data-experience="surf-lessons"] .trip-experience-image img { object-position: center top; }
 .trip-experience:hover .trip-experience-image img { transform: scale(1.035); }
 .trip-experience-content { padding: 17px; }
 .trip-experience-content h3 { margin: 0; color: #123946; font: 700 26px/1.05 "Barlow Condensed", Impact, sans-serif; }
