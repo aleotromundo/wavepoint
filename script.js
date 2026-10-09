@@ -1063,7 +1063,7 @@
     if (!videos.length) return;
     const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     if (touchDevice || window.matchMedia('(max-width: 640px)').matches) {
-      // En celulares dejamos solo Giro 0, en loop, sin alternar archivos.
+      // En celulares dejamos solo el video móvil configurado (Giro 1), en loop, sin alternar archivos.
       const mobileVideo=videos[0];
       videos.forEach(video=>{
         const isMobileVideo=video===mobileVideo;

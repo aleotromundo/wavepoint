@@ -1,4 +1,10 @@
 ## 2026-10-08
+### Hero — nuevo Giro 1 de mayor calidad
+- El archivo remoto `assets/hero0.mp4` se identificó visualmente como la versión original del video del surfista colorado que estaba comprimido como Giro 1.
+- Se publicó como `assets/videohero1.mp4` en 720×1280, 30 fps, duración completa de 17,4 segundos y sin audio; se eliminó el nombre equivocado `hero0.mp4`.
+- En celular el inicio usa ahora este mismo Giro 1, sin alternar videos. Palmeras (`assets/videohero0.mp4`) queda reservado para escritorio y para el video de `Build your trip` en `trip-builder.js`.
+- Se eliminó la variante móvil anterior de Palmeras porque ya no corresponde al flujo móvil actual.
+
 ### Hero — póster solo como fallback de carga
 - `script.js` marca el stack como listo únicamente cuando el primer video emite `canplay`; los errores siguen dejando disponible la imagen de respaldo.
 - `styles.css` y `styles.optimized.css` ocultan definitivamente `.hero-video-poster` después de esa señal, evitando que la imagen reaparezca o interrumpa los cambios del carrusel.
