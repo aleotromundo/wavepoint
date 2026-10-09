@@ -1,4 +1,11 @@
 ## 2026-10-09
+### Surfskate — renovar tarjeta, portada y galería
+- `services.js`: Surfskate ahora cuenta con cuatro fotos distintas; la primera se usa en la tarjeta, el armador y la portada del detalle, y las otras tres completan la galería.
+- `index.html` y `trip-builder.js`: se actualizó la imagen de la tarjeta de Surfskate y se sincronizaron los textos alternativos en español e inglés.
+- Se incorporaron versiones WebP locales en `assets/img/services/surfskate/` para evitar dependencias remotas y mantener el peso optimizado.
+- Fuentes consultadas: [SPEED en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:SPEED_(2916292323).jpg), CC BY-SA 2.0, Cristian Janke; [Person Wearing Blue Skinny Jeans Riding Black Longboard en Pexels](https://www.pexels.com/photo/person-wearing-blue-skinny-jeans-riding-black-longboard-3018938/); [A Person using Longboard en Pexels](https://www.pexels.com/photo/a-person-using-longboard-13941263/); y [Girl riding her longboard in the sunset en Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Girl_riding_her_longboard_in_the_sunset.jpg), CC BY 2.0, elise.y.
+- Validación: sintaxis JavaScript, rutas locales, cuatro WebP distintos por debajo de 500 KB, galería sin repetición y `git diff --check`.
+
 ### Footer y tarjetas de servicios — transparencia y separación visual
 - `styles.css` y `styles.optimized.css`: los enlaces “Términos · Privacidad” quedan centrados en la franja inferior del footer para evitar el choque con el logo flotante; en móvil se mantienen apilados.
 - Las tarjetas de servicios usan una capa normal más transparente (`48%`) y una capa hover moderada (`72%`), conservando la legibilidad del contenido.
