@@ -1,6 +1,7 @@
 ### Build your Tamarindo Trip — tarjetas de alojamientos y clases de surf
 - La tarjeta `Stay at Hotels` ahora usa `assets/img/stays/casa-maderas/house.webp`, una imagen colorida de Casa de Maderas con piscina.
 - La tarjeta `Surf Lessons` conserva su foto actual, pero el punto focal queda alineado arriba para mostrar completa la cabeza de la surfista sin agregar bordes ni cambiar el diseño de la tarjeta.
+- La tarjeta `Surfskate Lessons` también alinea el punto focal arriba para conservar visibles las cabezas de ambos instructores en el recorte horizontal.
 - Se renovaron las versiones de caché de `trip-builder.css` y `trip-builder.js`.
 
 ### Hero — retirar rótulos incrustados de Giro 2
