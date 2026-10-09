@@ -267,7 +267,7 @@ Para probar una página de detalle:
 http://localhost:4173/service-detail.html?service=surfskate
 ```
 
-La vista previa pública temporal del sandbox usa la plantilla de URL del entorno activo. No compartir endpoints de administración.
+La vista previa pública temporal del sandbox usa la plantilla de URL del entorno activo. No compartir endpoints internos del entorno.
 
 ## 11. Validación antes de entregar
 
