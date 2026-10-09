@@ -1,4 +1,9 @@
 ## 2026-10-08
+### Menú móvil — Partners/Colaboradores
+- `site-nav.js` ahora mantiene el submenú cerrado al inicializar, lo abre y cierra únicamente desde el botón de flecha y usa `hidden` como estado real de visibilidad.
+- El enlace de texto navega a la sección de colaboradores sin abrir el submenú accidentalmente; se detuvo la propagación del toque del botón.
+- Se actualizó la versión de caché a `site-nav.js?v=20261009-mobile5` en todas las páginas.
+
 ### Hero — nuevo Giro 1 de mayor calidad
 - El archivo remoto `assets/hero0.mp4` se identificó visualmente como la versión original del video del surfista colorado que estaba comprimido como Giro 1.
 - Se publicó como `assets/videohero1.mp4` en 720×1280, 30 fps, duración completa de 17,4 segundos y sin audio; se eliminó el nombre equivocado `hero0.mp4`.
