@@ -211,6 +211,10 @@ Reglas de accesibilidad:
 - Respetar `prefers-reduced-motion`.
 - Los videos de fondo deben ser silenciosos y no bloquear interacción.
 
+### Política de fotos por sección
+
+Toda sección con tarjeta, portada, fondo y galería debe reunir al menos cuatro fotos visualmente distintas. La foto más llamativa y representativa se usa como portada y como imagen de la tarjeta; el fondo usa una segunda foto distinta, preferentemente horizontal y con espacio para texto; la galería muestra como mínimo dos fotos adicionales, distintas de la portada, del fondo y entre sí. Las copias JPG/WebP o versiones optimizadas de una misma foto cuentan como una sola. Si el inventario no alcanza, buscar una foto nueva o pedirla antes de duplicar. Auditar las referencias visualmente, mantener `alt` bilingües cuando corresponda, optimizar el peso sin pixelar la imagen y registrar la distribución en `CHANGELOG.md`.
+
 ## 9. Assets importantes
 
 | Asset | Uso |

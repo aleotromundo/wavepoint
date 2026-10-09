@@ -1,4 +1,16 @@
 ## 2026-10-09
+### WavePoint — política permanente de fotos por sección
+- `PROJECT_GUIDE.md`: se documentó que cada sección debe usar la foto más llamativa en portada y tarjeta, una foto distinta para el fondo y al menos dos fotos adicionales y no repetidas en la galería.
+- La regla también exige auditar copias JPG/WebP como una misma foto, buscar una imagen nueva cuando no alcance el inventario, conservar textos alternativos y validar rutas, calidad y peso.
+
+## 2026-10-09
+### ATV — completar portada, fondo, galería y armador sin repetir fotos
+- Se mantuvieron las dos fotos ATV existentes y se incorporaron tres fotos distintas encontradas en búsquedas públicas: convoy rural, sendero de bosque y recorrido de playa.
+- La tarjeta/portada usa Arenal; el hero y fondo del detalle usan el convoy rural; la galería muestra el mirador costero y el sendero de bosque; el armador usa la foto de playa. No se repite una foto entre esos usos.
+- `services.js`, `trip-builder.js`, `service-detail.html` y `dashboard-catalog.js` quedaron actualizados con referencias, textos alternativos bilingües y caché nueva. Fuentes consultadas: `superquadscr.com` y Native's Way Tours & Transfers mediante búsqueda de imágenes.
+- Se optimizaron las nuevas fotos a WebP y se verificaron sintaxis, rutas locales, pesos, galería y `git diff --check`.
+
+## 2026-10-09
 ### ATV — retirar imágenes antiguas y evitar fotos pixeladas
 - Se quitaron de portada, detalle, armador y fondos de sección las tres fotos ATV anteriores; también se retiraron sus archivos activos y el duplicado de Picasa.
 - Solo se conservan para el servicio las dos fotos nuevas de 736 × 736 px: Arenal para tarjeta/portada y mirador costero para galería y armador. Se descartó el JPEG de 236 × 295 px y su WebP por baja resolución.
