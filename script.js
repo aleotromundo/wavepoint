@@ -1006,10 +1006,10 @@
 
     const videos=[...document.querySelectorAll('.hero-video')];
     const mobile=window.matchMedia('(hover: none) and (pointer: coarse)').matches||window.matchMedia('(max-width: 640px)').matches;
-    const heroVideo=mobile?(videos[1]||videos[0]):videos[0];
+    const heroVideo=videos[0];
     if(heroVideo){
       const source=heroVideo.querySelector('source[data-src]');
-      if(source){ source.src=source.dataset.src; delete source.dataset.src; }
+      if(source){ source.src=mobile?(source.dataset.srcMobile||source.dataset.src):source.dataset.src; delete source.dataset.src; delete source.dataset.srcMobile; }
       heroVideo.preload='auto'; heroVideo.muted=true; heroVideo.playsInline=true;
       const heroDone=()=>complete('hero');
       heroVideo.addEventListener('canplay',heroDone,{once:true});
@@ -1063,8 +1063,8 @@
     if (!videos.length) return;
     const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     if (touchDevice || window.matchMedia('(max-width: 640px)').matches) {
-      // En celulares dejamos solo videohero1.mp4, en loop, sin alternar archivos.
-      const mobileVideo=videos[1]||videos[0];
+      // En celulares dejamos solo Giro 0, en loop, sin alternar archivos.
+      const mobileVideo=videos[0];
       videos.forEach(video=>{
         const isMobileVideo=video===mobileVideo;
         video.muted=true;
