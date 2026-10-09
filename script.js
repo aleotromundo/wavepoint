@@ -1011,10 +1011,10 @@
       const source=heroVideo.querySelector('source[data-src]');
       if(source){ source.src=mobile?(source.dataset.srcMobile||source.dataset.src):source.dataset.src; delete source.dataset.src; delete source.dataset.srcMobile; }
       heroVideo.preload='auto'; heroVideo.muted=true; heroVideo.playsInline=true;
-      const heroDone=()=>complete('hero');
-      heroVideo.addEventListener('canplay',heroDone,{once:true});
-      heroVideo.addEventListener('error',heroDone,{once:true});
-      if(heroVideo.readyState>=3) heroDone();
+      const markVideoReady=()=>{ document.querySelector('.hero-video-stack')?.classList.add('is-video-ready'); complete('hero'); };
+      heroVideo.addEventListener('canplay',markVideoReady,{once:true});
+      heroVideo.addEventListener('error',()=>complete('hero'),{once:true});
+      if(heroVideo.readyState>=3) markVideoReady();
       heroVideo.load();
     } else complete('hero');
 
