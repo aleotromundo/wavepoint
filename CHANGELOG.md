@@ -1556,3 +1556,8 @@
 - `Your trip, your way` y `Retiros` recuperan el comportamiento visual anterior de sus imágenes: proporción de tarjeta original, `object-fit: cover` y zoom hover sutil.
 - El modo de imagen completa queda aplicado únicamente a las tarjetas normales del catálogo de Servicios y del constructor.
 - Se renovó la caché global a `styles.optimized.css?v=20261009-74`.
+
+### Tarjetas — restaurar imágenes a pantalla completa
+- Se revierte el uso de `object-fit: contain`, que generaba bandas/rectángulos azules en las tarjetas.
+- Todas las tarjetas vuelven a ocupar completamente su marco con `object-fit: cover`, sin bordes ni franjas visibles, conservando el comportamiento visual original.
+- Se renovaron las cachés a `styles.optimized.css?v=20261009-75` y `trip-builder.css?v=20261009-tripcards4`.

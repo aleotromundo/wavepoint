@@ -3219,3 +3219,21 @@ to{filter:brightness(1.18)}
 #servicios .service-grid-catalog .service-card-pack .service-pack-image:focus-visible > img {
   transform: scale(1.04) !important;
 }
+
+/* Restauración solicitada: todas las tarjetas llenan completamente su marco,
+   sin bandas ni rectángulos de fondo visibles. */
+.service-card .service-img img,
+.service-card .service-pack-image > img,
+#servicios .service-grid-catalog .service-card .service-img img,
+#servicios .service-grid-catalog .service-card .service-pack-image > img {
+  object-fit: cover !important;
+  object-position: center !important;
+}
+.service-card:hover .service-img img,
+.service-card:hover .service-pack-image > img {
+  transform: scale(1.08) !important;
+}
+#servicios .service-grid-catalog .service-card:hover .service-img img,
+#servicios .service-grid-catalog .service-card:hover .service-pack-image > img {
+  transform: scale(1.04) !important;
+}
