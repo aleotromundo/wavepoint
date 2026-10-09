@@ -373,9 +373,9 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['assets/img/services/atv/atv-forest-tour.webp', 'assets/img/services/atv/atv-beach-tour.webp', 'assets/img/services/atv/atv-beach-convoy.webp', 'assets/img/services/atv/atv-tamarindo-muddy-trail.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp'],
-imageAlts: ['Cuatriciclo recorriendo un sendero tropical durante un tour guiado', 'Cuatriciclo recorriendo la playa durante un tour guiado', 'Grupo de cuatriciclos avanzando por la costa', 'Dos cuatriciclos cruzando un tramo embarrado de un sendero tropical', 'Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste'],
-imageAltsEn: ['ATV riding along a tropical trail during a guided tour', 'ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast', 'Two ATVs crossing a muddy stretch of tropical trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
+images: ['assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp'],
+imageAlts: ['Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste'],
+imageAltsEn: ['Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -387,7 +387,7 @@ eyebrow: 'LAND · ADVENTURE',
 title: 'ATV Tours in Tamarindo',
 cardText: 'A little adventure beyond the beach.',
 description: 'Head out with local guides and discover the surroundings of Tamarindo on an ATV. Take in the scenery, enjoy the ride and share the adventure with the people you’re traveling with. WavePoint helps you find a tour that suits your group, with the route and details confirmed before you go.',
-imageAlts: ['ATV riding along a tropical trail during a guided tour', 'ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast', 'Two ATVs crossing a muddy stretch of tropical trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
+imageAlts: ['Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
 questions: {
 drivers: { label: 'How many people want to drive?' },
 passengers: { label: 'How many would be passengers?' },
@@ -906,7 +906,7 @@ document.title = `${service.title} · WavePoint`;
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
 document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
-document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.images[0])})`);
+document.body.style.setProperty('--service-detail-image', service.id === 'atv' ? 'none' : `url(${JSON.stringify(service.images[0])})`);
 const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
 const nextService = services[(position + 1) % services.length];

@@ -1,4 +1,10 @@
 ## 2026-10-09
+### ATV — retirar imágenes antiguas y evitar fotos pixeladas
+- Se quitaron de portada, detalle, armador y fondos de sección las tres fotos ATV anteriores; también se retiraron sus archivos activos y el duplicado de Picasa.
+- Solo se conservan para el servicio las dos fotos nuevas de 736 × 736 px: Arenal para tarjeta/portada y mirador costero para galería y armador. Se descartó el JPEG de 236 × 295 px y su WebP por baja resolución.
+- El fondo de la sección Servicios usa `assets/img/site/backgrounds/servicios.webp` (1920 × 1080 px); el hero del detalle ATV queda sin foto ampliada para evitar pixelación.
+- Se actualizaron `dashboard-catalog.js`, textos alternativos bilingües y cachés. Validación: referencias sin restos, sintaxis, calidad/rutas y renderizado del detalle.
+
 ### Servicios — clasificar y organizar siete fotos nuevas
 - `assets/img/services/atv/`: se añadieron tres fotos de cuatriciclos (sendero embarrado, volcán Arenal y mirador costero).
 - `assets/img/services/yoga/`: se añadieron dos fotos de meditación y yoga grupal; reemplazan las fotos remotas anteriores de la galería.

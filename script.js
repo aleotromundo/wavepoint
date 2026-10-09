@@ -185,7 +185,7 @@
       serviceCardYogaAlt: 'Mujer practicando yoga frente al mar en la playa',
       serviceCardYogaText: 'Una práctica para acompañar tu viaje y bajar el ritmo.',
       serviceCardAtvTitle: 'Tours en cuatriciclo — ATV',
-      serviceCardAtvAlt: 'Conductor en un cuatriciclo por un sendero selvático',
+      serviceCardAtvAlt: 'Dos personas en un cuatriciclo con el volcán Arenal al fondo',
       serviceCardAtvText: 'Un poco de aventura más allá de la playa.',
 
       serviceCardRetreatsTitle: 'Retiros',
@@ -438,7 +438,7 @@
       serviceCardYogaAlt: 'Woman practicing yoga on a beach by the ocean',
       serviceCardYogaText: 'A little space to breathe.',
       serviceCardAtvTitle: 'ATV Tours in Tamarindo',
-      serviceCardAtvAlt: 'Rider driving an ATV along a dense jungle trail',
+      serviceCardAtvAlt: 'Two people on an ATV with Arenal Volcano in the background',
       serviceCardAtvText: 'A little adventure beyond the beach.',
 
       serviceCardRetreatsTitle: 'Retreats',
