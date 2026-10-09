@@ -2,7 +2,8 @@
 ### Casa Aura — portada Casitas en mayor calidad
 - Se incorporó `assets/img/stays/casa-aura/casitas.webp` desde la foto original `Casitas` de 960×540 px.
 - La portada grande de Casa Aura ahora usa esta versión WebP, de 960×540 px y aproximadamente 230 KB, en lugar de la copia anterior de 576×324 px.
-- El carrusel general de Partners y la galería interna mantienen sus imágenes actuales.
+- La primera imagen de la galería interna de Casa Aura también usa `casitas.webp` para evitar la copia pixelada.
+- El carrusel general de Partners y las otras imágenes de la galería interna mantienen sus archivos actuales.
 - Auditoría de imágenes activas: las fotos WebP no superan 500 KB. Las excepciones no fotográficas son PNG de íconos/logos; se conserva el JPG de fallback del hero por compatibilidad con navegadores antiguos.
 - Se actualizó la caché CSS a `styles.optimized.css?v=20261009-71`.
 
