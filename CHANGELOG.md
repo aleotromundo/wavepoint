@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Footer y tarjetas de servicios — transparencia y separación visual
+- `styles.css` y `styles.optimized.css`: los enlaces “Términos · Privacidad” quedan centrados en la franja inferior del footer para evitar el choque con el logo flotante; en móvil se mantienen apilados.
+- Las tarjetas de servicios usan una capa normal más transparente (`48%`) y una capa hover moderada (`72%`), conservando la legibilidad del contenido.
+- Validación: `git diff --check`, CSS fuente y optimizado sincronizados.
+
 ### WavePoint — política permanente de fotos por sección
 - `PROJECT_GUIDE.md`: se documentó que cada sección debe usar la foto más llamativa en portada y tarjeta, una foto distinta para el fondo y al menos dos fotos adicionales y no repetidas en la galería.
 - La regla también exige auditar copias JPG/WebP como una misma foto, buscar una imagen nueva cuando no alcance el inventario, conservar textos alternativos y validar rutas, calidad y peso.
