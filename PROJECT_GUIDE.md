@@ -235,7 +235,7 @@ Reglas de accesibilidad:
 | `assets/wavepoint-watermark.png` | Marca sobre streams de cámara. |
 | `assets/videohero0.mp4` | Video ambiental y prueba de video ligado al scroll. |
 | `assets/videohero1.mp4` | Video alternativo del hero. |
-| `assets/videohero1-mobile.mp4` | Versión vertical 360×640 a 24 fps, seleccionada solo en móviles para el hero. |
+| `assets/videohero0-mobile.mp4` | Variante móvil completa de Giro 0, 704×396 a 29,97 fps, seleccionada exclusivamente en móviles para el hero. |
 | `assets/camera-rest.png` | Estado de descanso nocturno de cámaras. |
 | `assets/meteocons/` | Iconos locales del clima, animados y estáticos. |
 | `assets/legacy/` | Fotografías históricas y de servicios. |

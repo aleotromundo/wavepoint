@@ -1,6 +1,12 @@
 ## 2026-10-08
+### Hero — mapeo de Giros y versión móvil
+- `assets/videohero0.mp4` queda como **Giro 0 / Palmeras** para escritorio; `assets/videohero1.mp4` queda como **Giro 1** y `assets/videoheroxx3.mp4` como **Giro 2**.
+- En celular se carga exclusivamente `assets/videohero0-mobile.mp4`, una variante completa de Giro 0 en 704×396, 29,97 fps y aproximadamente 2,8 MB, sin audio.
+- El original `assets/videohero3x.mp4` se identificó como Giro 2: se rotó 90° para corregir su orientación, se conservó su duración completa de 27 segundos y se publicó como `assets/videoheroxx3.mp4` en 1280×720 y aproximadamente 6,5 MB, sin audio.
+- Se eliminaron la referencia móvil anterior de Giro 1 y el original redundante `assets/palmeras.mp4`; no se recortó la duración ni el contenido de los videos.
+
 ### Video Palmeras — versión web liviana
-- Se conservó `assets/palmeras.mp4` como original de 2560×1440 y 39 MB.
+- Se procesó el original de Palmeras de 2560×1440 y 39 MB.
 - Se reemplazó `assets/videohero0.mp4` por la versión de Palmeras en H.264, 1600×900, 29,97 fps y sin pista de audio.
 - El archivo activo pesa aproximadamente 5,7 MB: reducción cercana al 85% respecto de `palmeras.mp4`, manteniendo el encuadre 16:9 y una calidad alta para fondo de página.
 
