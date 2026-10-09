@@ -3194,3 +3194,17 @@ to{filter:brightness(1.18)}
 .service-card .service-pack-image > img { object-fit:contain; object-position:center; transform:none; }
 .service-card:hover .service-img img,
 .service-card:hover .service-pack-image > img { transform:none; }
+
+/* Prioridad final para el catálogo: algunas reglas responsive antiguas de #servicios
+   imponían cover y volvían a recortar sujetos, especialmente en Surf Lessons. */
+#servicios .service-grid-catalog .service-card .service-img img,
+#servicios .service-grid-catalog .service-card .service-pack-image > img {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: none !important;
+}
+#servicios .service-grid-catalog .service-card:hover .service-img img,
+#servicios .service-grid-catalog .service-card:hover .service-pack-image > img,
+#servicios .service-grid-catalog .service-image-link:focus-visible .service-img img {
+  transform: none !important;
+}

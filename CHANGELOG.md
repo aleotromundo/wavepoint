@@ -1546,3 +1546,8 @@
 - La imagen original no fue sobrescrita.
 - La variante invertida conserva formato JPEG y tamaño 1024 × 1024 px.
 - Se actualizaron las nueve referencias activas del favicon.
+
+### Servicios — corregir override responsive de encuadre
+- Se detectó que reglas posteriores y más específicas bajo `#servicios` volvían a imponer `object-fit: cover` en el catálogo, especialmente al pasar a un viewport estrecho.
+- Se agregó un override final con prioridad explícita para mantener `object-fit: contain`, centrar la imagen y eliminar el zoom en todas las tarjetas, incluida `Surf Lessons`.
+- Se renovó la caché global a `styles.optimized.css?v=20261009-73`.
