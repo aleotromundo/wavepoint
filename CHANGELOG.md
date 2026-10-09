@@ -1,8 +1,7 @@
 ## 2026-10-09
 ### Fondo de Servicios — sumar foto superior a la composición
 - `index.html`, `styles.css` y `styles.optimized.css`: la franja superior usa ahora `surfing-drone-pexels-5232570.webp`, una foto local nueva sin otros usos, en WebP de 2400×3000 (318 KB). Foto de Jess Loiterton, descargada de [Pexels](https://www.pexels.com/photo/man-creating-waves-wile-surfi-5232570/) bajo la [licencia gratuita de Pexels](https://www.pexels.com/license/).
-- La segunda foto se reemplazó por una imagen de una surfista en una ola, `surf-coaching.webp` (1920×1440), distinta de las demás franjas y de las tarjetas visibles del catálogo.
-- Se redujo el solapamiento entre la primera y la segunda franja del 4% al 2%.
+- La composición conserva tres franjas fotográficas principales con un solapamiento leve; se quitó la segunda imagen de surf a pedido.
 - La capa sigue siendo decorativa y conserva la máscara degradada existente; no cambia el contenido de las tarjetas ni el hero.
 - Validación: imagen local confirmada, reglas fuente y optimizadas sincronizadas, `git diff --check`.
 
