@@ -1011,10 +1011,11 @@
       const source=heroVideo.querySelector('source[data-src]');
       if(source){ source.src=mobile?(source.dataset.srcMobile||source.dataset.src):source.dataset.src; delete source.dataset.src; delete source.dataset.srcMobile; }
       heroVideo.preload='auto'; heroVideo.muted=true; heroVideo.playsInline=true;
-      const markVideoReady=()=>{ document.querySelector('.hero-video-stack')?.classList.add('is-video-ready'); complete('hero'); };
-      heroVideo.addEventListener('canplay',markVideoReady,{once:true});
+      const markVideoPlaying=()=>{ document.querySelector('.hero-video-stack')?.classList.add('is-video-ready'); };
+      heroVideo.addEventListener('playing',markVideoPlaying,{once:true});
+      heroVideo.addEventListener('canplay',()=>complete('hero'),{once:true});
       heroVideo.addEventListener('error',()=>{ heroVideo.classList.add('video-failed'); heroVideo.classList.remove('is-active'); complete('hero'); },{once:true});
-      if(heroVideo.readyState>=3) markVideoReady();
+      if(heroVideo.readyState>=3) complete('hero');
       heroVideo.load();
     } else complete('hero');
 
@@ -1063,7 +1064,7 @@
     if (!videos.length) return;
     const videoStack=document.querySelector('.hero-video-stack');
     videos.forEach(video=>{
-      video.addEventListener('canplay',()=>videoStack?.classList.add('is-video-ready'),{once:true});
+      video.addEventListener('playing',()=>videoStack?.classList.add('is-video-ready'),{once:true});
       video.addEventListener('error',()=>{
         video.classList.add('video-failed');
         video.classList.remove('is-active');
