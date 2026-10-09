@@ -1,4 +1,12 @@
 ## 2026-10-09
+### Alojamientos y servicios — completar galerías y corregir fotografías
+- `services.js`: cada alojamiento muestra tres fotos distintas. Tamalodge y Capitán Suizo suman imágenes de sus galerías oficiales, autorizadas para reutilización por el usuario; Casa Aura usa su foto interior distinta en lugar de una copia de la foto exterior. Las cuatro referencias superiores siguen enlazando a cada alojamiento y su primera foto es la única repetida.
+- `styles.css` y `styles.optimized.css`: las galerías usan `cover`, sin separaciones, marcos ni franjas y con altura limitada para escritorio y móvil.
+- `services.js`, `index.html`, `trip-builder.js` y `script.js`: Roca Bruja usa únicamente dos fotos identificadas del lugar, en la portada y el detalle; Yoga adopta una foto local WebP de alta resolución de [Unsplash, por Alonso Reyes](https://unsplash.com/photos/a-woman-sitting-in-a-yoga-position-on-the-beach-PxOCVsAy5uo); la tarjeta y el armador de ATV ahora usan la misma foto de convoy que la portada del detalle.
+- Las fotos de Roca Bruja son de dog4aday, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/): [formación rocosa](https://commons.wikimedia.org/wiki/File:Roca_Bruja_-_Guanacaste_-_Costa_Rica.jpg) y [surf](https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG). Se añadió la atribución bilingüe visible en el detalle.
+- `styles.css` y `styles.optimized.css`: se ajustó el foco de la portada de Clases de surf manteniendo `cover`, también en móvil.
+- Validación: las cuatro galerías cargan tres imágenes cada una; las 12 fotos tienen hashes distintos entre sí y solo se repiten en las cuatro referencias superiores. Se comprobaron los enlaces de esas referencias, los alts ES/EN, el detalle de Roca Bruja, las portadas de Yoga y ATV y el render responsive en navegador; `git diff --check`.
+
 ### Fondo de Servicios — sumar foto superior a la composición
 - `index.html`, `styles.css` y `styles.optimized.css`: la franja superior usa ahora `surfing-drone-pexels-5232570.webp`, una foto local nueva sin otros usos, en WebP de 2400×3000 (318 KB). Foto de Jess Loiterton, descargada de [Pexels](https://www.pexels.com/photo/man-creating-waves-wile-surfi-5232570/) bajo la [licencia gratuita de Pexels](https://www.pexels.com/license/).
 - La composición conserva tres franjas fotográficas principales con un solapamiento leve; se quitó la segunda imagen de surf a pedido.
