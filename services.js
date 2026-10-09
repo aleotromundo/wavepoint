@@ -779,7 +779,9 @@ return `<label class="detail-question detail-field" data-survey-question for="${
 function renderAccommodationOption(option, index) {
 const isEn = lang === 'en';
 const localized = isEn ? option.en || option : option;
-const gallery = option.images.map((image, imageIndex) => {
+const galleryImages = option.images.slice(1);
+const gallery = galleryImages.map((image, index) => {
+const imageIndex = index + 1;
 const localizedAlt = lang === 'en' ? option.imageAltsEn?.[imageIndex] : option.imageAlts?.[imageIndex];
 return `<img src="${image}" alt="${esc(localizedAlt || `${option.imageAlt} · ${lang === 'en' ? 'view' : 'vista'} ${imageIndex + 1}`)}" loading="lazy" />`;
 }).join('');
@@ -812,10 +814,11 @@ return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
-const galleryImages = service.id === 'yoga' ? service.images.slice(1) : service.images;
-const gallery = galleryImages.map((image, index) => { const altIndex = service.id === 'yoga' ? index + 1 : index; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
+const galleryImages = service.images.slice(1);
+const gallery = galleryImages.map((image, index) => { const altIndex = index + 1; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
+const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
 const supporting = service.lead || extra ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}</div>` : '';
-return `<section class="service-editorial-story"><div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>${supporting}</section>`;
+return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
 }
 function renderWitchRockStory(service) {
 return renderStandardStory(service, service.coordination);
