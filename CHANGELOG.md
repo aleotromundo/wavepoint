@@ -1,4 +1,12 @@
 ## 2026-10-08
+### Videos — eliminar audio y reducir peso para escritorio y móvil
+- Los cinco MP4 de `assets/` quedan sin pista de audio y en H.264 con `faststart`; se mantienen sus nombres y proporciones para compatibilidad.
+- Reducidas las resoluciones según el uso: fondo compartido del hero/armador a 1600×900, video móvil de 720×1280 a 540×960, video panorámico de escritorio a 1600×900 y demo a 1280×720; el asset vertical legado conserva 480×854.
+- Acortados solo los clips de fondo que se alternan/recorren antes de su final: móvil a 12 s y tercer video de escritorio a 8 s. Se mantienen completos los clips compartidos con el armador y el video de demo.
+- `index.html`, `trip-builder.js` y `trip-builder.html`: versiones de URL actualizadas para evitar servir recursos antiguos desde caché.
+- Validado: los cinco MP4 decodifican completos y no tienen pistas de audio; `node --check` en los scripts pertinentes y `git diff --check` terminan sin errores.
+- Peso conjunto: 31.50 MB → 8.63 MB (reducción del 72.61 %).
+
 ### Hero móvil — contener el texto del CTA secundario
 - `styles.css` y `styles.optimized.css`: permitir que “Guía de playas” se ajuste dentro de su botón en español, sin modificar el layout, el gadget ni los demás elementos.
 - `index.html`: actualizar la versión de caché de CSS.
