@@ -1,4 +1,10 @@
 ## 2026-10-09
+### Roca Bruja — galería completa y nueva foto de surf
+- `services.js`: se mantiene intacta la portada y se suma `roca-bruja-surfing.webp` a la galería junto a la foto panorámica existente.
+- `styles.css` y `styles.optimized.css`: las dos fotos de la galería se muestran completas, sin deformación ni recorte, en dos paneles equilibrados; en móvil se apilan sin desbordamiento.
+- Fuente de la nueva imagen: [Wikimedia Commons — Surfing-Roca Bruja-Guanacaste-Costa Rica](https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG), autor `dog4aday`, licencia [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
+- Validación: sintaxis JavaScript, rutas locales, WebP optimizado por debajo de 500 KB, portada conservada y `git diff --check`.
+
 ### Surfskate — tarjeta independiente y galería en composición equilibrada
 - `index.html` y `trip-builder.js`: la tarjeta usa la foto original de los dos instructores, mientras la portada del detalle conserva la foto de la clase grupal.
 - `services.js`: se reemplazó la última foto del skater agachado por `surfskate-bowl.webp`, una imagen de skate dentro de una bowl de concreto.

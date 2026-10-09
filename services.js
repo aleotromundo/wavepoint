@@ -304,9 +304,9 @@ lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
 coordination: 'WavePoint ayuda a coordinar los detalles, teniendo en cuenta el nivel de surf de tu grupo y las condiciones.',
 galleryAlt: 'Olas y costa de Guanacaste',
-images: ['assets/img/services/witchs-rock/witch-rock-surf-trip.webp', 'assets/img/services/witchs-rock/hermosa.webp'],
-imageAlts: ['Ola rompiendo frente a la formación rocosa de Roca Bruja', 'Costa y olas de Guanacaste'],
-imageAltsEn: ['Breaking wave in front of the rock formation at Witch’s Rock', 'Waves and coastline in Guanacaste'],
+images: ['assets/img/services/witchs-rock/witch-rock-surf-trip.webp', 'assets/img/services/witchs-rock/hermosa.webp', 'assets/img/services/witchs-rock/roca-bruja-surfing.webp'],
+imageAlts: ['Ola rompiendo frente a la formación rocosa de Roca Bruja', 'Costa y olas de Guanacaste', 'Surfista surfeando en Roca Bruja'],
+imageAltsEn: ['Breaking wave in front of the rock formation at Witch’s Rock', 'Waves and coastline in Guanacaste', 'Surfer riding a wave at Witch’s Rock'],
 questions: [
 { id: 'group_size', label: '¿Cuántas personas se suman?', type: 'headcount', fields: [{ id: 'adults', label: 'Adultos' }, { id: 'children', label: 'Niños' }], note: 'Si se suman niños, contanos sus edades para consultar los requisitos del proveedor.', agesLabel: 'Edades de los niños', agesPlaceholder: 'Ej.: 8 y 11' },
 { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
@@ -821,7 +821,7 @@ const isEn = lang === 'en';
 const galleryStart = service.id === 'atv' ? 2 : 1;
 const galleryImages = service.images.slice(galleryStart);
 const gallery = galleryImages.map((image, index) => { const altIndex = index + galleryStart; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
-const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : '';
+const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
 const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
 const supporting = service.lead || extra ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
