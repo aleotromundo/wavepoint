@@ -1,4 +1,8 @@
 ## 2026-10-09
+### Formularios de servicios — quitar botón «Continuar» sin acción
+- `services.js`: se quitó el botón inoperante «Continuar» del formulario de solicitud en las fichas de servicios; se conserva «Armar solicitud en WhatsApp» como acción de envío.
+- Validación: en navegador, la ficha de alojamiento carga sin el control `data-survey-next` y conserva un botón «Armar solicitud en WhatsApp»; `git diff --check`.
+
 ### Alojamiento — quitar pregunta de presupuesto del formulario
 - `services.js`: se eliminó del formulario bilingüe la pregunta de presupuesto por noche para el grupo; los precios establecidos de cada alojamiento y las demás preguntas permanecen.
 - Validación: no quedan referencias a `nightly_budget`; `git diff --check`.
