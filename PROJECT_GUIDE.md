@@ -53,7 +53,7 @@ El header comparte navegación hacia Inicio, Guía turística, Servicios, Nosotr
 
 ## 4. Catálogo real de servicios
 
-El catálogo confirmado tiene once servicios. No agregar servicios inventados ni volver a mostrar servicios retirados sin confirmación explícita.
+El catálogo confirmado tiene diez servicios. No agregar servicios inventados ni volver a mostrar servicios retirados sin confirmación explícita.
 
 1. **Stays and Hotels** / Estadías y hoteles — consultar Hotel Tamalodge, Casa Aura, Casa Madera o Capitán Suizo.
 2. **Surf lessons** / Clases de surf — primera ola o siguiente paso según nivel.
@@ -65,7 +65,6 @@ El catálogo confirmado tiene once servicios. No agregar servicios inventados ni
 8. **Surf Photography** / Fotos de surf — conexión con fotógrafos locales para capturar sesiones en el agua.
 9. **Surfskate lessons** / Clases de surfskate — práctica en tierra para trabajar técnica y fluidez.
 10. **Retreats** / Retiros — viajes grupales con programa y estadía.
-11. **Build your own experience** / Pack ajustable — va después de una división visual, en una tarjeta horizontal con el título sobre la imagen.
 
 Los IDs actuales de detalle son:
 
@@ -80,7 +79,6 @@ atv
 surf-fotografia
 surfskate
 retiros
-pack-ajustable
 ```
 
 ## Pendientes confirmados por el usuario
@@ -103,19 +101,9 @@ Cuando cambie el catálogo, actualizar de forma coordinada:
 - El contexto del asistente en `api/assistant.js` si afecta sus recomendaciones.
 - El `CHANGELOG.md` con archivos, decisión y validación.
 
-## 5. Pack ajustable
+## 5. Armá tu viaje por Tamarindo
 
-El Pack ajustable tiene un selector visual de experiencias. Las tarjetas deben conservar:
-
-- Imagen del servicio.
-- Título.
-- Descripción breve.
-- Checkbox accesible.
-- Estado visual de selección.
-- Contador dinámico de experiencias seleccionadas.
-- Integración con el formulario que genera la consulta de WhatsApp.
-
-No reemplazar el selector por una lista simple sin una razón de producto clara. Si se agregan servicios al pack, deben existir también en el catálogo real.
+La experiencia combinada se gestiona en `trip-builder.html`, enlazada desde la tarjeta **Tu viaje, a tu manera**. No reintroducir el flujo legacy retirado ni su antigua ruta.
 
 ## 6. Clima y cámaras
 

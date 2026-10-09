@@ -1561,3 +1561,9 @@
 - Se revierte el uso de `object-fit: contain`, que generaba bandas/rectángulos azules en las tarjetas.
 - Todas las tarjetas vuelven a ocupar completamente su marco con `object-fit: cover`, sin bordes ni franjas visibles, conservando el comportamiento visual original.
 - Se renovaron las cachés a `styles.optimized.css?v=20261009-75` y `trip-builder.css?v=20261009-tripcards4`.
+
+### Armá tu viaje — retirar Pack ajustable obsoleto
+- Se eliminó del catálogo y del detalle dinámico el servicio legacy `pack-ajustable`, junto con sus preguntas, selector visual y contador antiguos.
+- La tarjeta vigente `Tu viaje, a tu manera` conserva su enlace directo a `trip-builder.html` y su CTA `Armar tu viaje por Tamarindo`.
+- Las URLs antiguas `service-detail.html?service=pack-ajustable` redirigen al armador nuevo para no dejar una pantalla incorrecta en favoritos o historial.
+- Se actualizó la guía vigente y se renovó la caché de `services.js`.
