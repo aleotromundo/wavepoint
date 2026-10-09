@@ -8526,3 +8526,24 @@ footer a {
 @media (max-width: 640px) {
   .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate { height: 390px !important; }
 }
+
+/* Roca Bruja: las fotos de la galería se muestran completas y en dos paneles equilibrados. */
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
+  height: clamp(300px, 32vw, 430px) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+}
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  object-fit: contain !important;
+  background: rgba(8, 43, 58, .08);
+}
+@media (max-width: 640px) {
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: 220px !important;
+  }
+}
