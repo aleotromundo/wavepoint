@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Armador de viaje — reubicar carrito flotante en móvil
+- `trip-builder.css`: el acceso flotante al carrito queda debajo del menú hamburguesa, en vez de compartir la esquina inferior derecha con WhatsApp y el asistente.
+- `trip-builder.html`: se actualizó la versión de caché de la hoja de estilos del armador.
+- Validación: comprobar separación del menú, WhatsApp y asistente en móvil; interacción del carrito y `git diff --check`.
+
 ### Términos y servicios — agregar modal informativo
 - `script.js`: el texto del pie ahora es un botón que abre un modal bilingüe; informa que WavePoint conecta con proveedores locales, que consultar por WhatsApp no confirma una reserva y que disponibilidad y precio final deben confirmarse antes del pago.
 - `styles.css` y `styles.optimized.css`: estilos del modal, botón de cierre, foco visible y adaptación a móvil.

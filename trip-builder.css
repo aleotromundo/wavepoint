@@ -467,7 +467,7 @@
     position: fixed;
     z-index: 100;
     right: max(18px, env(safe-area-inset-right));
-    bottom: calc(84px + env(safe-area-inset-bottom));
+    top: calc(72px + env(safe-area-inset-top));
     display: inline-flex;
     min-width: 92px;
     min-height: 56px;
