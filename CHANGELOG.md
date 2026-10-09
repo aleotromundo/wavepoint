@@ -1,4 +1,9 @@
 ## 2026-10-08
+### Video Palmeras — versión web liviana
+- Se conservó `assets/palmeras.mp4` como original de 2560×1440 y 39 MB.
+- Se reemplazó `assets/videohero0.mp4` por la versión de Palmeras en H.264, 1600×900, 29,97 fps y sin pista de audio.
+- El archivo activo pesa aproximadamente 5,7 MB: reducción cercana al 85% respecto de `palmeras.mp4`, manteniendo el encuadre 16:9 y una calidad alta para fondo de página.
+
 ### Fondo compuesto de Servicios — nueva capa superior
 - Se agregó una cuarta foto de surf encima de la composición fija para cubrir el exceso de cielo gris en el inicio de la sección.
 - La nueva capa usa `assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05.webp`, optimizada a 2304×1728 y 391 KB, con una máscara suave y superposición parcial para conservar la fusión visual.
