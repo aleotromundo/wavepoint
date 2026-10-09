@@ -242,12 +242,12 @@ id: 'yoga', number: '06', eyebrow: 'BIENESTAR · PAUSA', title: 'Yoga',
 cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
 description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
 images: [
-'assets/img/services/yoga/yoga-beach-practice.webp',
+'assets/img/services/yoga/yoga-coastal-pose.webp',
 'assets/img/services/yoga/yoga-group-meditation.webp',
 'assets/img/services/yoga/yoga-retreat-group-class.webp'
 ],
-imageAlts: ['Mujer meditando en la playa frente al mar', 'Grupo meditando dentro de un rancho tropical con techo de paja', 'Clase grupal de yoga en un espacio abierto entre palmeras'],
-imageAltsEn: ['Woman meditating on the beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees'],
+imageAlts: ['Mujer practicando una postura de yoga frente al mar', 'Grupo meditando dentro de un rancho tropical con techo de paja', 'Clase grupal de yoga en un espacio abierto entre palmeras'],
+imageAltsEn: ['Woman practicing a yoga pose beside the sea', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees'],
 includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
 questions: [
 { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
