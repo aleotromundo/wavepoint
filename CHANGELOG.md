@@ -1,3 +1,8 @@
+### Hero — retirar rótulos incrustados de Giro 2
+- `assets/videoheroxx3.mp4` conserva su resolución 1280×720, duración completa de 27,07 segundos y ausencia de audio.
+- Se retiraron únicamente los rótulos incrustados “TAMARINDO” del comienzo y “COSTA RICA” del cierre mediante máscaras temporales localizadas; no se recortó el encuadre ni se modificó el resto del giro.
+- Se actualizó la versión de caché de la fuente para evitar que los navegadores mantengan el archivo anterior.
+
 ## 2026-10-09
 ### Dashboard temporal de fotos y limpieza del editor anterior
 - Se creó `dashboard.html`, con estilos en `dashboard.css`, lógica en `dashboard.js` y catálogo generado en `dashboard-catalog.js`.
