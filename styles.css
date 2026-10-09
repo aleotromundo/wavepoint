@@ -8415,3 +8415,76 @@ footer a {
     transform: none;
   }
 }
+
+
+/* Footer final: navegación editorial y marca alineadas en una misma franja inferior. */
+.service-detail-page .service-page-footer,
+.collaborator-page .service-page-footer {
+  padding: 16px 0 20px;
+  border-top: 1px solid rgba(156, 232, 215, .24);
+  background: linear-gradient(180deg, rgba(4, 25, 35, .94), rgba(3, 20, 29, .98));
+}
+.service-detail-page .service-page-footer .container,
+.collaborator-page .service-page-footer .container {
+  width: min(calc(100% - 42px), 1180px);
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.service-detail-page .service-page-footer > .container > a,
+.collaborator-page .service-page-footer > .container > a,
+.service-detail-page .collab-footer-links a,
+.collaborator-page .collab-footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 15px;
+  border: 1px solid rgba(156, 232, 215, .28);
+  border-radius: 999px;
+  background: rgba(12, 70, 76, .34);
+  color: rgba(235, 249, 244, .9);
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+.service-detail-page .service-page-footer > .container > a:hover,
+.collaborator-page .service-page-footer > .container > a:hover,
+.service-detail-page .collab-footer-links a:hover,
+.collaborator-page .collab-footer-links a:hover {
+  border-color: #9ce8d7;
+  background: rgba(12, 100, 102, .52);
+  color: #a9f3ec;
+  transform: translateY(-2px);
+}
+.collab-floating-brand {
+  right: max(100px, calc((100vw - 1180px) / 2));
+  bottom: 16px;
+  width: 128px;
+  min-height: 56px;
+}
+@media (max-width: 760px) {
+  .service-detail-page .service-page-footer .container,
+  .collaborator-page .service-page-footer .container {
+    min-height: 52px;
+  }
+  .service-detail-page .service-page-footer > .container > a,
+  .collaborator-page .service-page-footer > .container > a,
+  .service-detail-page .collab-footer-links a,
+  .collaborator-page .collab-footer-links a {
+    min-height: 33px;
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+  .collab-floating-brand {
+    right: 100px;
+    bottom: 12px;
+    width: 104px;
+    min-height: 48px;
+  }
+}
