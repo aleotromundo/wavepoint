@@ -3186,3 +3186,11 @@ to{filter:brightness(1.18)}
 
 /* Hero móvil: evitar el filtro y escalado CSS durante la decodificación del video. */
 @media (hover:none) and (pointer:coarse),(max-width:640px){#inicio .hero-video{filter:none;transform:none}}
+
+/* Tarjetas: conservar siempre la foto completa al cambiar la relación de aspecto. */
+.service-card .service-img,
+.service-card .service-pack-image { background:#0a2c3b; }
+.service-card .service-img img,
+.service-card .service-pack-image > img { object-fit:contain; object-position:center; transform:none; }
+.service-card:hover .service-img img,
+.service-card:hover .service-pack-image > img { transform:none; }
