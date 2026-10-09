@@ -511,3 +511,7 @@
 .trip-experience-image { background: #0a2c3b; }
 .trip-experience-image img { object-fit: contain; object-position: center; transform: none; }
 .trip-experience:hover .trip-experience-image img { transform: none; }
+
+/* Restauración: la imagen vuelve a llenar toda la tarjeta, sin bandas laterales. */
+.trip-experience-image img { object-fit: cover; object-position: center; }
+.trip-experience:hover .trip-experience-image img { transform: scale(1.035); }
