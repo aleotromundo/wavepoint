@@ -1,4 +1,7 @@
 ## 2026-10-08
+### Hero apaisado en celular — mostrar la portada completa
+- `styles.css` y `styles.optimized.css`: compactar únicamente el hero en orientación horizontal y pantallas de hasta 600 px de alto para que logo, ubicación, mensaje, botones y gadget entren en el primer viewport. El layout vertical no cambia.
+- `index.html`: actualizar la versión de caché de CSS.
 ### Hero móvil — contener el texto del CTA secundario
 - `styles.css` y `styles.optimized.css`: permitir que “Guía de playas” se ajuste dentro de su botón en español, sin modificar el layout, el gadget ni los demás elementos.
 - `index.html`: actualizar la versión de caché de CSS.
