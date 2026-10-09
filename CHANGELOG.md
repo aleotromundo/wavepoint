@@ -1551,3 +1551,8 @@
 - Se detectó que reglas posteriores y más específicas bajo `#servicios` volvían a imponer `object-fit: cover` en el catálogo, especialmente al pasar a un viewport estrecho.
 - Se agregó un override final con prioridad explícita para mantener `object-fit: contain`, centrar la imagen y eliminar el zoom en todas las tarjetas, incluida `Surf Lessons`.
 - Se renovó la caché global a `styles.optimized.css?v=20261009-73`.
+
+### Tarjetas especiales — restaurar encuadre de portada
+- `Your trip, your way` y `Retiros` recuperan el comportamiento visual anterior de sus imágenes: proporción de tarjeta original, `object-fit: cover` y zoom hover sutil.
+- El modo de imagen completa queda aplicado únicamente a las tarjetas normales del catálogo de Servicios y del constructor.
+- Se renovó la caché global a `styles.optimized.css?v=20261009-74`.

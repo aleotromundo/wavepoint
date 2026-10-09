@@ -3208,3 +3208,14 @@ to{filter:brightness(1.18)}
 #servicios .service-grid-catalog .service-image-link:focus-visible .service-img img {
   transform: none !important;
 }
+
+/* Las tarjetas especiales de portada conservan su encuadre y proporciones originales. */
+#servicios .service-grid-catalog .service-card-pack .service-pack-image > img {
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: none !important;
+}
+#servicios .service-grid-catalog .service-card-pack .service-pack-image:hover > img,
+#servicios .service-grid-catalog .service-card-pack .service-pack-image:focus-visible > img {
+  transform: scale(1.04) !important;
+}
