@@ -1,4 +1,8 @@
 ## 2026-10-08
+### Hero — póster solo como fallback de carga
+- `script.js` marca el stack como listo únicamente cuando el primer video emite `canplay`; los errores siguen dejando disponible la imagen de respaldo.
+- `styles.css` y `styles.optimized.css` ocultan definitivamente `.hero-video-poster` después de esa señal, evitando que la imagen reaparezca o interrumpa los cambios del carrusel.
+
 ### Hero — mapeo de Giros y versión móvil
 - `assets/videohero0.mp4` queda como **Giro 0 / Palmeras** para escritorio; `assets/videohero1.mp4` queda como **Giro 1** y `assets/videoheroxx3.mp4` como **Giro 2**.
 - En celular se carga exclusivamente `assets/videohero0-mobile.mp4`, una variante completa de Giro 0 en 704×396, 29,97 fps y aproximadamente 2,8 MB, sin audio.
