@@ -2923,7 +2923,7 @@ to{filter:brightness(1.18)}
 .quick-request-panel .detail-question input[type=date]{color-scheme:dark}
 .quick-request-panel .detail-submit:disabled{opacity:1!important;filter:none!important;background:#335a60!important;color:#fff!important;border-color:#9bb6b8!important;box-shadow:none!important;cursor:not-allowed}
 /* Casa Aura partner page cover. */
-.collaborator-page.collaborator-casa-aura { --collab-cover: url("assets/img/services/retreats/retreat-canva-stay-aerial.webp"); }
+.collaborator-page.collaborator-casa-aura { --collab-cover: url("assets/img/stays/casa-aura/casitas.webp"); }
 
 
 /* Pulido editorial compartido para todos los detalles que no son alojamientos. */
