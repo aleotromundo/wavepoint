@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Fondo de Servicios — sumar foto superior a la composición
+- `index.html`, `styles.css` y `styles.optimized.css`: se agregó una foto local de surf coaching al inicio del fondo de Servicios y se redistribuyeron las cuatro franjas con un solapamiento leve.
+- La capa sigue siendo decorativa y conserva la máscara degradada existente; no cambia el contenido de las tarjetas ni el hero.
+- Validación: imagen local confirmada, reglas fuente y optimizadas sincronizadas, `git diff --check`.
+
 ### Fondo parallax de Servicios — separar las capas de surf
 - `styles.css` y `styles.optimized.css`: la capa superior con la mujer surfeando (`surf-top`) ahora queda más arriba y ocupa menos alto, reduciendo la superposición con la foto grupal inferior.
 - Se conserva la sincronización/parallax de las imágenes y se ajusta también el comportamiento en pantallas de hasta 1024 px.

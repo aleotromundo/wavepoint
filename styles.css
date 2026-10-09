@@ -3286,6 +3286,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .has-px { --px-r: clamp(22px, 2.6vw, 38px); position: relative; isolation: isolate; margin: clamp(10px, 1.6vw, 24px) clamp(8px, 1.6vw, 24px); border-radius: var(--px-r); clip-path: inset(0 round var(--px-r)); }
 .px-bg { position: fixed; inset: 0; z-index: -2; pointer-events: none; background: var(--px-img) center / cover no-repeat; }
 .px-bg-image { position: absolute; inset-inline: 0; height: 36%; background-position: center; background-size: cover; background-repeat: no-repeat; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent); }
+.px-bg-image-surf-extra { background-image: url("assets/img/services/surf-coaching/surf-coaching-group-beach.webp"); background-position: center 62%; }
 .px-bg-image-surf-lessons { top: 0; background-image: url("assets/img/services/surf-lessons/optimized/surf-lesson-group.webp"); }
 .px-bg-image-surf-photo { top: 32%; background-image: url("assets/img/site/backgrounds/servicios.webp"); }
 .px-bg-image-surf-sunset { top: 64%; background-image: url("assets/img/photography/ambarry1975/optimized/ambarry1975-costa-rica-2646482.webp"); }
@@ -8584,10 +8585,11 @@ footer a {
 }
 
 
-/* Servicios: cada imagen de fondo ocupa su propia franja, sin superponer la primera con la segunda. */
-#servicios .px-bg-image-surf-lessons { top: 0; height: 33.3333%; }
-#servicios .px-bg-image-surf-photo { top: 33.3333%; height: 33.3333%; }
-#servicios .px-bg-image-surf-sunset { top: 66.6667%; height: 33.3333%; }
+/* Servicios: cuatro franjas fotográficas con un solapamiento leve. */
+#servicios .px-bg-image-surf-extra { top: 0; height: 28%; }
+#servicios .px-bg-image-surf-lessons { top: 24%; height: 28%; }
+#servicios .px-bg-image-surf-photo { top: 48%; height: 28%; }
+#servicios .px-bg-image-surf-sunset { top: 72%; height: 28%; }
 #servicios .px-bg-image-surf-top { top: -18%; height: 18%; opacity: .48; }
 @media (max-width: 1024px) {
   #servicios .px-bg-image-surf-top { top: -14%; height: 14%; }
