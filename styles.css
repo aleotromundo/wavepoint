@@ -3281,6 +3281,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .px-bg-image-surf-lessons { top: 0; background-image: url("assets/img/services/surf-lessons/optimized/surf-lesson-group.webp"); }
 .px-bg-image-surf-photo { top: 32%; background-image: url("assets/img/services/surf-photography/surf-photographer-wave.webp"); }
 .px-bg-image-surf-sunset { top: 64%; background-image: url("assets/img/photography/ambarry1975/optimized/ambarry1975-costa-rica-2646482.webp"); }
+.px-bg-image-surf-top { top: -12%; height: 48%; z-index: 1; background-position: center 55%; background-image: url("assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05.webp"); }
 .px-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 24, 34, .46), rgba(3, 24, 34, .16) 45%, rgba(3, 24, 34, .4)); }
 #servicios { --px-img: none; }
 #servicios .px-bg { background: none; }

@@ -1,4 +1,8 @@
 ## 2026-10-08
+### Fondo compuesto de Servicios — nueva capa superior
+- Se agregó una cuarta foto de surf encima de la composición fija para cubrir el exceso de cielo gris en el inicio de la sección.
+- La nueva capa usa `assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05.webp`, optimizada a 2304×1728 y 391 KB, con una máscara suave y superposición parcial para conservar la fusión visual.
+
 ### Menú móvil — abrir colaboradores
 - `site-nav.js`: el nombre “Colaboradores” y la flecha ahora abren y cierran el submenú en celular; antes el enlace cerraba el panel sin mostrar sus opciones.
 - Se agregó `aria-expanded` y se actualizó la versión de caché del script en las páginas que usan la navegación compartida.
