@@ -1,4 +1,9 @@
 ## 2026-10-08
+### Home móvil — ajustar scroll inicial
+- `script.js`: al abrir la home en un viewport de hasta 640 px, iniciar el scroll 12 px más abajo (contenido visible más arriba); el enlace Inicio de ambos menús reutiliza el mismo destino. No desplaza bloques ni modifica escritorio.
+- Escritorio (>980 px): `.hero-grid` pasa de 2 a 14 px de desplazamiento vertical (12 px más abajo); tablet y celular conservan su regla propia. `styles.optimized.css` sincronizado.
+- `index.html`: renovar la versión de caché de JavaScript.
+
 ### Videos — eliminar audio y reducir peso para escritorio y móvil
 - Los cinco MP4 de `assets/` quedan sin pista de audio y en H.264 con `faststart`; se mantienen sus nombres y proporciones para compatibilidad.
 - Reducidas las resoluciones según el uso: fondo compartido del hero/armador a 1600×900, video móvil de 720×1280 a 540×960, video panorámico de escritorio a 1600×900 y demo a 1280×720; el asset vertical legado conserva 480×854.
