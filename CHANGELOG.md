@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Galerías — armonía de tamaños y contenedores invisibles
+- `styles.css` y `styles.optimized.css`: Roca Bruja usa dos imágenes con la misma proporción visual, sin fondos de contenedor visibles; el collage existente puede perder apenas los costados para mantener el rectángulo parejo.
+- La composición conserva el equilibrio en escritorio y móvil, y las imágenes nuevas no quedan dentro de cuadros más grandes que su área visible.
+- Validación: render visual del detalle de Roca Bruja, sintaxis JavaScript y `git diff --check`.
+
 ### Roca Bruja — galería completa y nueva foto de surf
 - `services.js`: se mantiene intacta la portada y se suma `roca-bruja-surfing.webp` a la galería junto a la foto panorámica existente.
 - `styles.css` y `styles.optimized.css`: las dos fotos de la galería se muestran completas, sin deformación ni recorte, en dos paneles equilibrados; en móvil se apilan sin desbordamiento.
