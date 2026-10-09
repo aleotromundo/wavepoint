@@ -356,9 +356,9 @@ id: 'surfskate', number: '09', eyebrow: 'SURFSKATE · PROGRESO', title: 'Clases 
 cardText: 'Encontrá tu flow en tierra.',
 description: 'Explorá tus giros, ganá confianza sobre la tabla y empezá a sentir movimientos que después podés llevar al agua. Ya sea que pruebes el surfskate por primera vez o quieras sumarlo a tu práctica de surf, WavePoint te conecta con instructores locales para encontrar una sesión acorde a tu nivel.',
 includes: ['Tabla de surfskate para la sesión', 'Casco y protecciones'],
-images: ['assets/img/services/surfskate/surfskate-speed.webp', 'assets/img/services/surfskate/surfskate-flow.webp', 'assets/img/services/surfskate/surfskate-board-detail.webp', 'assets/img/services/surfskate/surfskate-sunset.webp', 'assets/img/services/surfskate/surfskate.webp'],
-imageAlts: ['Persona haciendo carving en surfskate con casco y protecciones', 'Pies sobre una tabla de surfskate durante una sesión', 'Detalle de una tabla de surfskate en movimiento', 'Persona practicando longboard al atardecer junto al mar', 'Instructor corrigiendo la posición de otra persona sobre una tabla de surfskate'],
-imageAltsEn: ['Person carving on a surfskate wearing a helmet and protective gear', 'Feet on a surfskate during a session', 'Close-up of a surfskate moving across the pavement', 'Person riding a longboard at sunset by the sea', 'Instructor correcting another person’s stance on a surfskate'],
+images: ['assets/img/services/surfskate/surfskate-training.webp', 'assets/img/services/surfskate/surfskate-wave.webp', 'assets/img/services/surfskate/surfskate-surf-lesson.webp', 'assets/img/services/surfskate/surfskate-class.webp', 'assets/img/services/surfskate/surfskate.webp'],
+imageAlts: ['Persona practicando surfskate en una vereda tropical', 'Surfista surfeando una ola en el mar', 'Alumna practicando surf con un instructor en la playa', 'Clase grupal de surfskate con varias personas sobre tablas', 'Instructor corrigiendo la posición de otra persona sobre una tabla de surfskate'],
+imageAltsEn: ['Person practicing surfskate on a tropical sidewalk', 'Surfer riding a wave in the ocean', 'Student practicing surfing with an instructor on the beach', 'Group surfskate class with several people on boards', 'Instructor correcting another person’s stance on a surfskate'],
 questions: [],
 submitLabel: 'CONSULTAR UNA CLASE ↗',
 en: {

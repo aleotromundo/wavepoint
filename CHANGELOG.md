@@ -1,4 +1,11 @@
 ## 2026-10-09
+### Surfskate — nueva selección visual más representativa
+- Se eliminaron las cuatro fotos nuevas anteriores (`surfskate-speed`, `surfskate-flow`, `surfskate-board-detail` y `surfskate-sunset`) porque no comunicaban bien la relación entre surfskate y surf.
+- `services.js`: la galería ahora combina una persona practicando surfskate, una clase grupal, una clase de surf con instructor y una persona surfeando una ola; la foto original de los dos instructores se mantiene al final.
+- `index.html` y `trip-builder.js`: la tarjeta y el armador usan la foto de práctica de surfskate, mientras la galería incluye también agua y clases.
+- Fuentes visuales consultadas: [San Diego Surf School](https://www.sandiegosurfingschool.com/) para entrenamiento de surfskate, [Whitezu Surfskate Waves](https://www.whitezu.com/) para clase grupal, [Pixabay — surf skate y mar](https://pixabay.com/images/search/surf%20skate/) para la ola y [Pexels — Woman Learning Surfing with Instructor](https://www.pexels.com/photo/woman-learning-surfing-with-instructor-19756565/) para la clase de surf.
+- Validación: sintaxis JavaScript, rutas locales, cinco WebP distintos por debajo de 500 KB, galería sin repetición y `git diff --check`.
+
 ### Surfskate — conservar la foto original de instrucción
 - `services.js`: se reincorporó `assets/img/services/surfskate/surfskate.webp` al final de la galería; la foto de los dos instructores se conserva como material aportado por ellos y no se usa como tarjeta ni portada.
 - `script.js`: se corrigieron los textos alternativos para escribir **surfskate** como una sola palabra en español e inglés.
