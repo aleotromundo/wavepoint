@@ -995,7 +995,7 @@
     logo?.addEventListener('error',()=>complete('logo'),{once:true});
     if(!logo) complete('logo');
 
-    const backgroundSources=['assets/img/site/backgrounds/servicios.jpg','assets/img/site/backgrounds/atardecer.jpg'];
+    const backgroundSources=['assets/img/site/backgrounds/servicios.webp','assets/img/site/backgrounds/atardecer.webp'];
     let remainingBackgrounds=backgroundSources.length;
     backgroundSources.forEach(src=>{
       const image=new Image();
