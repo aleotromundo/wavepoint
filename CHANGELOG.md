@@ -1,4 +1,24 @@
 ## 2026-10-08
+### Casa Aura — portada de la página de Partner
+- La portada grande (`collab-hero`) de `Enlaces/casa-aura.html` ahora usa `assets/img/services/retreats/retreat-canva-stay-aerial.webp`, la vista aérea elegida.
+- El carrusel general de Partners conserva `assets/img/stays/casa-aura/stayandhotels4_resultado.webp`; no se modificó esa foto ni la galería interna de Casa Aura.
+- Se actualizó la caché CSS a `styles.optimized.css?v=20261009-70`.
+
+### Hero — no ocultar el fallback si autoplay está bloqueado
+- La imagen ya no se oculta con `canplay` —que solo confirma que el archivo se puede preparar— sino con `playing`, que confirma que el navegador realmente está reproduciendo el video.
+- Esto conserva el fondo visible en computadoras donde el video carga pero el autoplay, la aceleración gráfica o la política del navegador impiden que arranque.
+- Se renovó la caché a `script.js?v=20261009-hero-fallback2`.
+
+### Hero — fallback para navegadores sin reproducción de video
+- Si un video emite `error`, se marca como fallido y se retira visualmente para que `home-hero-fallback.jpg` quede visible en vez de quedar una capa negra o vacía.
+- El primer video ya no arranca activo desde el HTML: JavaScript lo activa solo después de preparar su fuente, manteniendo la imagen visible mientras carga o si falla.
+- Se renovaron las cachés de `styles.optimized.css` y `script.js` para evitar que equipos de escritorio con archivos viejos conserven el fondo vacío.
+
+### Menú móvil — Partners/Colaboradores
+- `site-nav.js` ahora mantiene el submenú cerrado al inicializar, lo abre y cierra únicamente desde el botón de flecha y usa `hidden` como estado real de visibilidad.
+- El enlace de texto navega a la sección de colaboradores sin abrir el submenú accidentalmente; se detuvo la propagación del toque del botón.
+- Se actualizó la versión de caché a `site-nav.js?v=20261009-mobile5` en todas las páginas.
+
 ### Hero — nuevo Giro 1 de mayor calidad
 - El archivo remoto `assets/hero0.mp4` se identificó visualmente como la versión original del video del surfista colorado que estaba comprimido como Giro 1.
 - Se publicó como `assets/videohero1.mp4` en 720×1280, 30 fps, duración completa de 17,4 segundos y sin audio; se eliminó el nombre equivocado `hero0.mp4`.
@@ -6,7 +26,7 @@
 - Se eliminó la variante móvil anterior de Palmeras porque ya no corresponde al flujo móvil actual.
 
 ### Hero — póster solo como fallback de carga
-- `script.js` marca el stack como listo únicamente cuando el primer video emite `canplay`; los errores siguen dejando disponible la imagen de respaldo.
+- `script.js` marca el stack como listo únicamente cuando un video emite `playing`; los errores siguen dejando disponible la imagen de respaldo.
 - `styles.css` y `styles.optimized.css` ocultan definitivamente `.hero-video-poster` después de esa señal, evitando que la imagen reaparezca o interrumpa los cambios del carrusel.
 
 ### Hero — mapeo de Giros y versión móvil
