@@ -8399,3 +8399,12 @@ footer a {
     text-align: center;
   }
 }
+
+
+/* Hero móvil: evitar el filtro y escalado CSS durante la decodificación del video. */
+@media (hover: none) and (pointer: coarse), (max-width: 640px) {
+  #inicio .hero-video {
+    filter: none;
+    transform: none;
+  }
+}

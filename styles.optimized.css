@@ -3181,3 +3181,7 @@ to{filter:brightness(1.18)}
 
 /* Hero móvil: mantener el texto del CTA secundario dentro del botón en español. */
 @media (max-width:640px){.hero-actions .btn-ghost{white-space:normal;text-align:center}}
+
+
+/* Hero móvil: evitar el filtro y escalado CSS durante la decodificación del video. */
+@media (hover:none) and (pointer:coarse),(max-width:640px){#inicio .hero-video{filter:none;transform:none}}
