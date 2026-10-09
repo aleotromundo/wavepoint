@@ -1,4 +1,8 @@
 ## 2026-10-09
+### Servicios — restaurar textos de lo que incluye cada experiencia
+- `services.js`: el detalle vuelve a mostrar los bloques de contenido `includes` existentes en Entrenamiento de surf, Yoga y Clases de surfskate, con el rótulo localizado en español e inglés. Se conservan las listas actuales y los estilos previos; no se agregan beneficios nuevos.
+- Validación: sintaxis de `services.js`, renderizado bilingüe de los tres bloques y `git diff --check`.
+
 ### Alojamientos y servicios — completar galerías y corregir fotografías
 - `services.js`: cada alojamiento muestra tres fotos distintas. Tamalodge y Capitán Suizo suman imágenes de sus galerías oficiales, autorizadas para reutilización por el usuario; Casa Aura usa su foto interior distinta en lugar de una copia de la foto exterior. Las cuatro referencias superiores siguen enlazando a cada alojamiento y su primera foto es la única repetida.
 - `styles.css` y `styles.optimized.css`: las galerías usan `cover`, sin separaciones, marcos ni franjas y con altura limitada para escritorio y móvil.
