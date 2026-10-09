@@ -373,9 +373,9 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp'],
-imageAlts: ['Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste'],
-imageAltsEn: ['Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
+images: ['assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-forest-convoy.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
+imageAlts: ['Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Grupo de personas recorriendo un camino rural en cuatriciclos', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste', 'Grupo de cuatriciclos avanzando por un sendero de bosque tropical'],
+imageAltsEn: ['Two people on an ATV with Arenal Volcano in the background', 'Group of riders travelling along a rural road on ATVs', 'Two ATVs at a viewpoint above the Guanacaste coast', 'Group of ATVs riding along a tropical forest trail'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -816,8 +816,9 @@ return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
-const galleryImages = service.images.slice(1);
-const gallery = galleryImages.map((image, index) => { const altIndex = index + 1; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
+const galleryStart = service.id === 'atv' ? 2 : 1;
+const galleryImages = service.images.slice(galleryStart);
+const gallery = galleryImages.map((image, index) => { const altIndex = index + galleryStart; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
 const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
 const supporting = service.lead || extra ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
@@ -906,7 +907,7 @@ document.title = `${service.title} · WavePoint`;
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
 document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
-document.body.style.setProperty('--service-detail-image', service.id === 'atv' ? 'none' : `url(${JSON.stringify(service.images[0])})`);
+document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.id === 'atv' ? service.images[1] : service.images[0])})`);
 const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
 const nextService = services[(position + 1) % services.length];
