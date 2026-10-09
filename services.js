@@ -142,7 +142,6 @@ questions: [
 { id: 'stay_dates', label: '¿Cuándo quieres alojarte?', type: 'dates', fields: ['Llegada', 'Salida'] },
 { id: 'accommodation_type', label: '¿Qué alojamiento te interesa?', type: 'choice', options: ['Hotel Tamalodge', 'Casa Aura', 'Casa Madera', 'Capitán Suizo', 'Quiero recomendaciones'] },
 { id: 'group_size', label: '¿Cuántas personas viajarían?', type: 'number' },
-{ id: 'nightly_budget', label: '¿Cuál es tu presupuesto aproximado por noche para todo el grupo?', type: 'money', optional: true },
 { id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'] }
 ],
 en: {
@@ -154,7 +153,6 @@ questions: {
 stay_dates: { label: 'When would you like to stay?', fields: ['Arrival', 'Departure'] },
 accommodation_type: { label: 'What accommodation are you interested in?', options: ['Hotel Tamalodge', 'Casa Aura', 'Casa Madera', 'Capitán Suizo', 'I want recommendations'] },
 group_size: { label: 'How many people would be traveling?' },
-nightly_budget: { label: 'What is your approximate budget per night for the whole group?' },
 experiences: { label: 'Which experiences would you like to add?', options: ['Surf', 'Surf coaching', 'Witch’s Rock', 'Snorkel', 'Catamaran', 'Yoga', 'ATV', 'I still don’t know'] }
 }
 }

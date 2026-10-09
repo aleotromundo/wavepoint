@@ -1,4 +1,8 @@
 ## 2026-10-09
+### Alojamiento — quitar pregunta de presupuesto del formulario
+- `services.js`: se eliminó del formulario bilingüe la pregunta de presupuesto por noche para el grupo; los precios establecidos de cada alojamiento y las demás preguntas permanecen.
+- Validación: no quedan referencias a `nightly_budget`; `git diff --check`.
+
 ### Yoga — aplicar la nueva foto costera en todas las tarjetas
 - `services.js`, `index.html`, `trip-builder.js` y `script.js`: Yoga ahora usa `yoga-coastal-pose.webp` en la tarjeta, el hero/fondo del detalle y el armador, con textos alternativos coordinados en español e inglés. Foto de Matea Brajdić vía [Unsplash](https://unsplash.com/photos/a-woman-doing-a-yoga-pose-in-front-of-a-body-of-water-nBX2VPpn64k), bajo la [Unsplash License](https://unsplash.com/license).
 - Validación: referencias de imagen y alts sincronizados; confirmar carga del archivo y `git diff --check`.
