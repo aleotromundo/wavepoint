@@ -8635,3 +8635,48 @@ footer a {
 @media (max-width: 1024px) {
   #servicios .px-bg-image-surf-top { top: -14%; height: 14%; }
 }
+
+/* Términos del servicio: modal compartido en las páginas principales. */
+.footer-terms-trigger {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: rgba(220, 236, 240, .42);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.footer-terms-trigger:hover,
+.footer-terms-trigger:focus-visible { color: #baf5e3; }
+.footer-terms-trigger:focus-visible,
+.terms-dialog-close:focus-visible { outline: 2px solid #9ce8d7; outline-offset: 4px; }
+.terms-dialog {
+  width: min(600px, calc(100% - 32px));
+  max-width: none;
+  max-height: min(84vh, 700px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(156, 232, 215, .36);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #0b3544, #092632);
+  color: #f1fbf7;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .48);
+}
+.terms-dialog::backdrop { background: rgba(2, 10, 16, .76); backdrop-filter: blur(4px); }
+.terms-dialog-panel { padding: clamp(23px, 5vw, 38px); }
+.terms-dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.terms-dialog-kicker { margin: 0 0 8px; color: #9ce8d7; font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+.terms-dialog-header h2 { margin: 0; color: #fff; font: 700 clamp(32px, 6vw, 44px)/1 "Barlow Condensed", Impact, sans-serif; }
+.terms-dialog-close { display: grid; width: 40px; height: 40px; flex: 0 0 40px; place-items: center; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: rgba(255,255,255,.08); color: #fff; font: 400 28px/1 "DM Sans", sans-serif; cursor: pointer; }
+.terms-dialog-intro { margin: 24px 0 12px; color: rgba(241,251,247,.9); font-size: 15px; line-height: 1.55; }
+.terms-dialog-list { display: grid; gap: 12px; margin: 0; padding-left: 21px; color: rgba(241,251,247,.84); font-size: 14px; line-height: 1.65; }
+.terms-dialog-list li::marker { color: #9ce8d7; }
+@media (max-width: 640px) {
+  .terms-dialog { width: calc(100% - 24px); max-height: 86vh; border-radius: 18px; }
+  .terms-dialog-panel { padding: 22px 20px 25px; }
+  .terms-dialog-list { font-size: 13px; }
+}

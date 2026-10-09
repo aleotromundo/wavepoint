@@ -309,7 +309,13 @@
       footerSnorkeling: 'Snorkeling',
       footerWavePointText: 'Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.',
       footerViewCameras: 'Ver cámaras',
-      footerTerms: 'Términos · Privacidad',
+      footerTerms: 'Términos y servicios',
+      termsDialogTitle: 'Términos y servicios',
+      termsDialogIntro: 'Antes de enviar una consulta, tené en cuenta:',
+      termsDialogPoint1: 'WavePoint conecta a las personas viajeras con proveedores locales; cada experiencia es brindada por el proveedor correspondiente.',
+      termsDialogPoint2: 'Enviar una consulta por WhatsApp no confirma una reserva.',
+      termsDialogPoint3: 'La disponibilidad y el precio final deben confirmarse con el proveedor antes de cualquier pago.',
+      termsDialogClose: 'Cerrar',
       whatsappLabel: 'Escribinos por WhatsApp',
       assistantGreeting: 'Hola, hello. Tu guía local en Tamarindo. ¿Qué te gustaría saber?',
       assistantEyebrow: 'WAVEPOINT · TAMARINDO',
@@ -562,7 +568,13 @@
       footerSnorkeling: 'Snorkeling',
       footerWavePointText: 'Cameras, spots, local guide, and experiences for surfers and visitors in Tamarindo.',
       footerViewCameras: 'View cameras',
-      footerTerms: 'Terms · Privacy',
+      footerTerms: 'Terms of service',
+      termsDialogTitle: 'Terms of service',
+      termsDialogIntro: 'Before sending an inquiry, please keep in mind:',
+      termsDialogPoint1: 'WavePoint connects travelers with local providers; each experience is delivered by the corresponding provider.',
+      termsDialogPoint2: 'Sending an inquiry through WhatsApp does not confirm a booking.',
+      termsDialogPoint3: 'Availability and the final price must be confirmed with the provider before any payment.',
+      termsDialogClose: 'Close',
       whatsappLabel: 'Chat on WhatsApp',
       assistantGreeting: 'Hi! Hola. Your local Tamarindo guide is here. What would you like to know?',
       assistantEyebrow: 'WAVEPOINT · TAMARINDO',
@@ -1548,7 +1560,48 @@
     document.addEventListener('keydown',event=>{if(event.key==='Escape' && !panel.hidden) hide();});
   }
 
+  function bindTermsDialog(){
+    const labels=[...document.querySelectorAll('[data-i18n="footerTerms"]')];
+    if(!labels.length) return;
+    const dialog=document.createElement('dialog');
+    dialog.id='termsOfServiceDialog';
+    dialog.className='terms-dialog';
+    dialog.setAttribute('aria-labelledby','termsDialogTitle');
+    dialog.innerHTML=`
+      <div class="terms-dialog-panel">
+        <header class="terms-dialog-header">
+          <div>
+            <p class="terms-dialog-kicker">WAVEPOINT · TAMARINDO</p>
+            <h2 id="termsDialogTitle" data-i18n="termsDialogTitle">Terms of service</h2>
+          </div>
+          <button class="terms-dialog-close" type="button" data-terms-close>
+            <span class="sr-only" data-i18n="termsDialogClose">Close</span>
+            <span aria-hidden="true">×</span>
+          </button>
+        </header>
+        <p class="terms-dialog-intro" data-i18n="termsDialogIntro">Before sending an inquiry, please keep in mind:</p>
+        <ul class="terms-dialog-list">
+          <li data-i18n="termsDialogPoint1">WavePoint connects travelers with local providers; each experience is delivered by the corresponding provider.</li>
+          <li data-i18n="termsDialogPoint2">Sending an inquiry through WhatsApp does not confirm a booking.</li>
+          <li data-i18n="termsDialogPoint3">Availability and the final price must be confirmed with the provider before any payment.</li>
+        </ul>
+      </div>`;
+    document.body.append(dialog);
+    labels.forEach(label=>{
+      const button=document.createElement('button');
+      button.type='button';
+      button.className='footer-terms-trigger';
+      button.dataset.i18n='footerTerms';
+      button.textContent=label.textContent;
+      label.replaceWith(button);
+      button.addEventListener('click',()=>dialog.showModal());
+    });
+    dialog.querySelector('[data-terms-close]').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('click',event=>{if(event.target===dialog) dialog.close();});
+  }
+
   bindSiteAssistant();
+  bindTermsDialog();
   applyTranslations();
   bindWavepointPreloader();
   bindMobileMenu();
