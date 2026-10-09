@@ -69,7 +69,21 @@
   };
   open.addEventListener('click', () => setOpen(true));
   close.addEventListener('click', () => setOpen(false));
-  panel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
-  panel.querySelector('.mobile-dropdown-toggle')?.addEventListener('click', () => panel.querySelector('.mobile-dropdown')?.classList.toggle('is-open'));
+  panel.querySelectorAll('a:not(.mobile-dropdown-link)').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  const mobileDropdown = panel.querySelector('.mobile-dropdown');
+  const mobileDropdownLink = panel.querySelector('.mobile-dropdown-link');
+  const mobileDropdownToggle = panel.querySelector('.mobile-dropdown-toggle');
+  const setCollaboratorsOpen = isOpen => {
+    mobileDropdown?.classList.toggle('is-open', isOpen);
+    mobileDropdownToggle?.setAttribute('aria-expanded', String(isOpen));
+  };
+  mobileDropdownLink?.addEventListener('click', event => {
+    event.preventDefault();
+    setCollaboratorsOpen(!mobileDropdown?.classList.contains('is-open'));
+  });
+  mobileDropdownToggle?.addEventListener('click', event => {
+    event.preventDefault();
+    setCollaboratorsOpen(!mobileDropdown?.classList.contains('is-open'));
+  });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
 })();
