@@ -4783,6 +4783,9 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
   color: rgba(238, 250, 246, .88) !important;
   text-shadow: 0 1px 12px rgba(0, 0, 0, .28);
 }
+#servicios .section-sub {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .72), 0 0 3px rgba(0, 0, 0, .75);
+}
 .cam-body p,
 .service-body p {
   font-size: 15px !important;
