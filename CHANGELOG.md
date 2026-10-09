@@ -1,3 +1,13 @@
+## 2026-10-09
+### Servicios — evitar repetir portada y fondo en las galerías
+- `services.js`: las galerías editoriales de servicios excluyen la primera imagen, que ya se usa como portada de tarjeta y fondo de la página. Se aplica a snorkel y catamarán, yoga, coaching, Roca Bruja, fotografía, surfskate y ATV; Clases de surf y Retiros ya tenían galerías específicas sin esa repetición.
+- Alojamientos: las miniaturas de acceso conservan la imagen de portada y las galerías de cada alojamiento muestran solo las fotos restantes. Si no quedan fotos distintas, no se genera una galería vacía ni se duplica la portada.
+- `index.html`: la tarjeta “Después del surf” ahora usa otra imagen y un texto alternativo propio en español e inglés, en vez de repetir la foto de la tarjeta “Fotos de surf”. El fondo de la sección Servicios también pasa a una foto distinta a la de esa tarjeta; `styles.css` y `styles.optimized.css` quedan sincronizados.
+- Se renovaron las cachés de la portada y del detalle de servicios para aplicar los cambios de imágenes y traducciones.
+- Se mantienen las fotos disponibles y sus textos alternativos; no se inventaron ni agregaron assets.
+- `service-detail.html`: se renovó la versión de caché de `services.js`.
+- Validación: sintaxis JavaScript, comprobación de que las galerías no incluyan la primera imagen del conjunto, rutas locales y `git diff --check`.
+
 ### Snorkel y catamarán — nueva galería de cuatro fotos
 - Se reemplazaron las fotos anteriores por las cuatro imágenes aportadas en `assets/`.
 - Se convirtieron a WebP de calidad optimizada y se ubicaron en `assets/img/services/snorkel-catamaran/`; se eliminaron los JPEG originales del directorio raíz y las imágenes antiguas del servicio.
