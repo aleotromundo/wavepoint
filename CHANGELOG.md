@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Términos y servicios — agregar modal informativo
+- `script.js`: el texto del pie ahora es un botón que abre un modal bilingüe; informa que WavePoint conecta con proveedores locales, que consultar por WhatsApp no confirma una reserva y que disponibilidad y precio final deben confirmarse antes del pago.
+- `styles.css` y `styles.optimized.css`: estilos del modal, botón de cierre, foco visible y adaptación a móvil.
+- Validación: el modal abrió y cerró con su botón y Escape; se comprobó el texto en ES/EN y que cabe en un viewport móvil de 390×844; `git diff --check`.
+
 ### Formularios de servicios — quitar botón «Continuar» sin acción
 - `services.js`: se quitó el botón inoperante «Continuar» del formulario de solicitud en las fichas de servicios; se conserva «Armar solicitud en WhatsApp» como acción de envío.
 - Validación: en navegador, la ficha de alojamiento carga sin el control `data-survey-next` y conserva un botón «Armar solicitud en WhatsApp»; `git diff --check`.
