@@ -165,13 +165,13 @@ cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontr
 description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
 images: [
 'assets/img/services/surf-lessons/surf-lesson-woman.webp',
-'assets/img/services/surf-lessons/surf-lesson-wave.webp',
+'assets/img/services/surf-lessons/optimized/surf-lesson-group.webp',
 'assets/img/services/surf-lessons/surf-photography.webp',
 'assets/img/services/surf-coaching/surf-coaching.webp'
 ],
 imageAlts: [
 'Alumna practicando surf en Tamarindo',
-'Dos surfistas practicando en una ola en Tamarindo',
+'Dos surfistas practicando juntos en una ola en Tamarindo',
 'Surfera tomando una ola en Tamarindo',
 'Surfista entrenando en una ola en Tamarindo'
 ],
@@ -191,7 +191,7 @@ cardText: 'Tell us your level and what you’d like to learn. We’ll find a les
 description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
 imageAlts: [
 'Student practicing surfing in Tamarindo',
-'Two surfers practicing on a wave in Tamarindo',
+'Two surfers practicing together on a wave in Tamarindo',
 'Surfer riding a wave in Tamarindo',
 'Surfer training on a wave in Tamarindo'
 ],
