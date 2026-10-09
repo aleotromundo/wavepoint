@@ -1063,8 +1063,9 @@
       });
       const mobileSources=[...mobileVideo.querySelectorAll('source[data-src]')];
       mobileSources.forEach(source=>{
-        source.src=source.dataset.src;
+        source.src=source.dataset.srcMobile||source.dataset.src;
         delete source.dataset.src;
+        delete source.dataset.srcMobile;
       });
       if(mobileSources.length) mobileVideo.load();
       mobileVideo.play().catch(error=>console.error('No se pudo reproducir el video móvil de portada.',error));

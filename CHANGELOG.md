@@ -7,6 +7,11 @@
 - Validado: los cinco MP4 decodifican completos y no tienen pistas de audio; `node --check` en los scripts pertinentes y `git diff --check` terminan sin errores.
 - Peso conjunto: 31.50 MB → 8.63 MB (reducción del 72.61 %).
 
+### Hero móvil — reducir trabajo de decodificación
+- El teléfono usa ahora `assets/videohero1-mobile.mp4` (360×640, 24 fps, sin audio, GOP de 2 s y ~0.68 MB); escritorio conserva `assets/videohero1.mp4` para no perder definición.
+- `script.js` elige la fuente móvil solo en dispositivos táctiles o viewport de hasta 640 px. En esos mismos casos, `styles.css` y `styles.optimized.css` quitan el filtro y la escala CSS del video para evitar postprocesado por cuadro.
+- `index.html`: renovadas las versiones de caché de CSS y JavaScript. Validación: archivo decodificado completo, fotogramas revisados y fuente móvil reproducida en el navegador de prueba con dimensiones esperadas.
+
 ### Hero móvil — contener el texto del CTA secundario
 - `styles.css` y `styles.optimized.css`: permitir que “Guía de playas” se ajuste dentro de su botón en español, sin modificar el layout, el gadget ni los demás elementos.
 - `index.html`: actualizar la versión de caché de CSS.
