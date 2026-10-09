@@ -356,9 +356,9 @@ id: 'surfskate', number: '09', eyebrow: 'SURFSKATE · PROGRESO', title: 'Clases 
 cardText: 'Encontrá tu flow en tierra.',
 description: 'Explorá tus giros, ganá confianza sobre la tabla y empezá a sentir movimientos que después podés llevar al agua. Ya sea que pruebes el surfskate por primera vez o quieras sumarlo a tu práctica de surf, WavePoint te conecta con instructores locales para encontrar una sesión acorde a tu nivel.',
 includes: ['Tabla de surfskate para la sesión', 'Casco y protecciones'],
-images: ['assets/img/services/surfskate/surfskate-class.webp', 'assets/img/services/surfskate/surfskate-wave.webp', 'assets/img/services/surfskate/surfskate.webp', 'assets/img/services/surfskate/surfskate-training.webp'],
-imageAlts: ['Clase grupal de surfskate con varias personas sobre tablas', 'Surfista surfeando una ola en el mar', 'Instructor corrigiendo la posición de otra persona sobre una tabla de surfskate', 'Persona practicando surfskate en una vereda tropical'],
-imageAltsEn: ['Group surfskate class with several people on boards', 'Surfer riding a wave in the ocean', 'Instructor correcting another person’s stance on a surfskate', 'Person practicing surfskate on a tropical sidewalk'],
+images: ['assets/img/services/surfskate/surfskate-class.webp', 'assets/img/services/surfskate/surfskate-wave.webp', 'assets/img/services/surfskate/surfskate.webp', 'assets/img/services/surfskate/surfskate-bowl.webp'],
+imageAlts: ['Clase grupal de surfskate con varias personas sobre tablas', 'Surfista surfeando una ola en el mar', 'Dos instructores practicando surfskate sobre una tabla', 'Skater haciendo un truco dentro de una bowl de concreto'],
+imageAltsEn: ['Group surfskate class with several people on boards', 'Surfer riding a wave in the ocean', 'Two instructors practicing surfskate on a board', 'Skateboarder performing a trick inside a concrete bowl'],
 questions: [],
 submitLabel: 'CONSULTAR UNA CLASE ↗',
 en: {
@@ -821,7 +821,8 @@ const isEn = lang === 'en';
 const galleryStart = service.id === 'atv' ? 2 : 1;
 const galleryImages = service.images.slice(galleryStart);
 const gallery = galleryImages.map((image, index) => { const altIndex = index + galleryStart; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
-const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
+const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : '';
+const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
 const supporting = service.lead || extra ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
 }
