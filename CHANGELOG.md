@@ -1,4 +1,10 @@
 ## 2026-10-09
+### Surfskate — priorizar instrucción y clase en la selección visual
+- Se eliminó `surfskate-surf-lesson.webp`, la foto de la chica parada sobre la tabla en la arena.
+- La foto original de los dos instructores ayudándose ocupa ahora ese lugar dentro de la galería.
+- La tarjeta, el armador y la portada del detalle dejaron de usar la imagen del skater haciendo cuernitos y ahora usan la foto de la clase grupal de surfskate.
+- Validación: sintaxis JavaScript, cuatro imágenes en la galería, foto original conservada y `git diff --check`.
+
 ### Surfskate — nueva selección visual más representativa
 - Se eliminaron las cuatro fotos nuevas anteriores (`surfskate-speed`, `surfskate-flow`, `surfskate-board-detail` y `surfskate-sunset`) porque no comunicaban bien la relación entre surfskate y surf.
 - `services.js`: la galería ahora combina una persona practicando surfskate, una clase grupal, una clase de surf con instructor y una persona surfeando una ola; la foto original de los dos instructores se mantiene al final.

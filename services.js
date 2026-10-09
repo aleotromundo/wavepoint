@@ -356,9 +356,9 @@ id: 'surfskate', number: '09', eyebrow: 'SURFSKATE · PROGRESO', title: 'Clases 
 cardText: 'Encontrá tu flow en tierra.',
 description: 'Explorá tus giros, ganá confianza sobre la tabla y empezá a sentir movimientos que después podés llevar al agua. Ya sea que pruebes el surfskate por primera vez o quieras sumarlo a tu práctica de surf, WavePoint te conecta con instructores locales para encontrar una sesión acorde a tu nivel.',
 includes: ['Tabla de surfskate para la sesión', 'Casco y protecciones'],
-images: ['assets/img/services/surfskate/surfskate-training.webp', 'assets/img/services/surfskate/surfskate-wave.webp', 'assets/img/services/surfskate/surfskate-surf-lesson.webp', 'assets/img/services/surfskate/surfskate-class.webp', 'assets/img/services/surfskate/surfskate.webp'],
-imageAlts: ['Persona practicando surfskate en una vereda tropical', 'Surfista surfeando una ola en el mar', 'Alumna practicando surf con un instructor en la playa', 'Clase grupal de surfskate con varias personas sobre tablas', 'Instructor corrigiendo la posición de otra persona sobre una tabla de surfskate'],
-imageAltsEn: ['Person practicing surfskate on a tropical sidewalk', 'Surfer riding a wave in the ocean', 'Student practicing surfing with an instructor on the beach', 'Group surfskate class with several people on boards', 'Instructor correcting another person’s stance on a surfskate'],
+images: ['assets/img/services/surfskate/surfskate-class.webp', 'assets/img/services/surfskate/surfskate-wave.webp', 'assets/img/services/surfskate/surfskate.webp', 'assets/img/services/surfskate/surfskate-training.webp'],
+imageAlts: ['Clase grupal de surfskate con varias personas sobre tablas', 'Surfista surfeando una ola en el mar', 'Instructor corrigiendo la posición de otra persona sobre una tabla de surfskate', 'Persona practicando surfskate en una vereda tropical'],
+imageAltsEn: ['Group surfskate class with several people on boards', 'Surfer riding a wave in the ocean', 'Instructor correcting another person’s stance on a surfskate', 'Person practicing surfskate on a tropical sidewalk'],
 questions: [],
 submitLabel: 'CONSULTAR UNA CLASE ↗',
 en: {
