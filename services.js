@@ -211,8 +211,9 @@ id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 
 cardText: 'Entrenamiento personalizado con video-análisis y estrategias para llevar tu surf al siguiente nivel.',
 description: 'Llevá tu surf al siguiente nivel con un entrenamiento personalizado. Análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento en el agua con la ayuda de entrenadores expertos.',
 includes: ['Sesión de video de tu sesión', 'Análisis con un instructor personalizado en tu idioma', 'Video de recuerdo'],
-images: ['assets/img/services/surf-photography/surf-coaching-session.webp', 'assets/img/services/surf-coaching/surf-coaching-action.webp'],
-imageAlts: ['Surfista surcando una ola sobre una tabla roja', 'Surfista practicando una maniobra'],
+images: ['assets/img/services/surf-photography/surf-coaching-session.webp', 'assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp'],
+imageAlts: ['Surfista surcando una ola sobre una tabla roja', 'Tres surfistas compartiendo una sesión en la playa con sus tablas', 'Grupo de surfistas reuniéndose con sus tablas en la playa de Tamarindo'],
+imageAltsEn: ['Surfer riding a wave on a red board', 'Three surfers sharing a beach session with their boards', 'Group of surfers gathering with their boards on Tamarindo Beach'],
 questions: [
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
 { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Cuéntanos brevemente.' },
@@ -225,7 +226,7 @@ eyebrow: 'COACHING · PROGRESSION',
 title: 'Surf coaching',
 cardText: 'Personalized coaching with video analysis and strategies to take your surfing to the next level.',
 description: 'Take your surfing to the next level with personalized coaching. Technique analysis, video coaching and strategies to improve your performance in the water with expert coaches.',
-imageAlts: ['Surfer riding a wave on a red board', 'Surfer practicing a maneuver'],
+imageAlts: ['Surfer riding a wave on a red board', 'Three surfers sharing a beach session with their boards', 'Group of surfers gathering with their boards on Tamarindo Beach'],
 includes: ['Video review of your session', 'Personalized analysis with an instructor in your language', 'Memory video'],
 questions: {
 current_surf_level: { label: 'What is your current surfing level?', options: ['Beginner', 'Intermediate', 'Advanced'] },
@@ -242,10 +243,11 @@ cardText: 'Yoga en Tamarindo · Un espacio para respirar.',
 description: 'El yoga puede ser una forma de despertar el cuerpo, bajar el ritmo después del surf o regalarte una pausa durante el viaje. Buscamos la modalidad y el formato que mejor encajen con tu grupo: una clase compartida, una sesión privada o una práctica adaptada a una experiencia previa y a necesidades puntuales.',
 images: [
 'assets/img/services/yoga/yoga-beach-woman.webp',
-'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80',
-'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80'
+'assets/img/services/yoga/yoga-group-meditation.webp',
+'assets/img/services/yoga/yoga-retreat-group-class.webp'
 ],
-imageAlts: ['Mujer practicando yoga frente al mar en la playa', 'Persona practicando yoga', 'Persona practicando meditación'],
+imageAlts: ['Mujer practicando yoga frente al mar en la playa', 'Grupo meditando dentro de un rancho tropical con techo de paja', 'Clase grupal de yoga en un espacio abierto entre palmeras'],
+imageAltsEn: ['Woman practicing yoga on a beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees'],
 includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
 questions: [
 { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
@@ -263,7 +265,7 @@ questions: {
   yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
 },
 includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy'],
-imageAlts: ['Woman practicing yoga on a beach by the ocean', 'Person practicing yoga', 'Person practicing meditation']
+imageAlts: ['Woman practicing yoga on a beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees']
 }
 },
 {
@@ -371,9 +373,9 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['assets/img/services/atv/atv-forest-tour.webp', 'assets/img/services/atv/atv-beach-tour.webp', 'assets/img/services/atv/atv-beach-convoy.webp'],
-imageAlts: ['Cuatriciclo recorriendo un sendero tropical durante un tour guiado', 'Cuatriciclo recorriendo la playa durante un tour guiado', 'Grupo de cuatriciclos avanzando por la costa'],
-imageAltsEn: ['ATV riding along a tropical trail during a guided tour', 'ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast'],
+images: ['assets/img/services/atv/atv-forest-tour.webp', 'assets/img/services/atv/atv-beach-tour.webp', 'assets/img/services/atv/atv-beach-convoy.webp', 'assets/img/services/atv/atv-tamarindo-muddy-trail.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp'],
+imageAlts: ['Cuatriciclo recorriendo un sendero tropical durante un tour guiado', 'Cuatriciclo recorriendo la playa durante un tour guiado', 'Grupo de cuatriciclos avanzando por la costa', 'Dos cuatriciclos cruzando un tramo embarrado de un sendero tropical', 'Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste'],
+imageAltsEn: ['ATV riding along a tropical trail during a guided tour', 'ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast', 'Two ATVs crossing a muddy stretch of tropical trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
@@ -385,7 +387,7 @@ eyebrow: 'LAND · ADVENTURE',
 title: 'ATV Tours in Tamarindo',
 cardText: 'A little adventure beyond the beach.',
 description: 'Head out with local guides and discover the surroundings of Tamarindo on an ATV. Take in the scenery, enjoy the ride and share the adventure with the people you’re traveling with. WavePoint helps you find a tour that suits your group, with the route and details confirmed before you go.',
-imageAlts: ['Rider driving an ATV along a dense jungle trail'],
+imageAlts: ['ATV riding along a tropical trail during a guided tour', 'ATV riding along the beach during a guided tour', 'Group of ATVs riding along the coast', 'Two ATVs crossing a muddy stretch of tropical trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast'],
 questions: {
 drivers: { label: 'How many people want to drive?' },
 passengers: { label: 'How many would be passengers?' },

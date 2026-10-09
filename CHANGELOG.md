@@ -1,4 +1,11 @@
 ## 2026-10-09
+### Servicios — clasificar y organizar siete fotos nuevas
+- `assets/img/services/atv/`: se añadieron tres fotos de cuatriciclos (sendero embarrado, volcán Arenal y mirador costero).
+- `assets/img/services/yoga/`: se añadieron dos fotos de meditación y yoga grupal; reemplazan las fotos remotas anteriores de la galería.
+- `assets/img/services/surf-coaching/`: se añadieron dos fotos de coaching/campamento de surf para la galería de Entrenamiento de surf.
+- Las siete imágenes se convirtieron a WebP conservando resolución, se integraron con textos alternativos en español e inglés y se quitaron los JPEG originales de la raíz.
+- `service-detail.html`: se renovó la caché de `services.js`; se validaron sintaxis, galerías y rutas.
+
 ### Servicios — evitar repetir portada y fondo en las galerías
 - `services.js`: las galerías editoriales de servicios excluyen la primera imagen, que ya se usa como portada de tarjeta y fondo de la página. Se aplica a snorkel y catamarán, yoga, coaching, Roca Bruja, fotografía, surfskate y ATV; Clases de surf y Retiros ya tenían galerías específicas sin esa repetición.
 - Alojamientos: las miniaturas de acceso conservan la imagen de portada y las galerías de cada alojamiento muestran solo las fotos restantes. Si no quedan fotos distintas, no se genera una galería vacía ni se duplica la portada.
