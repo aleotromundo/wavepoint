@@ -1691,3 +1691,10 @@
 - La tarjeta vigente `Tu viaje, a tu manera` conserva su enlace directo a `trip-builder.html` y su CTA `Armar tu viaje por Tamarindo`.
 - Las URLs antiguas `service-detail.html?service=pack-ajustable` redirigen al armador nuevo para no dejar una pantalla incorrecta en favoritos o historial.
 - Se actualizó la guía vigente y se renovó la caché de `services.js`.
+
+
+### Estadías y hoteles — restaurar organización editorial anterior
+- `services.js`: se recupera la introducción con descripción, la galería general y el flujo de tarifas antes de las fichas; Tamalodge vuelve a mostrar su única imagen dentro de la tarjeta.
+- `styles.css` y `styles.optimized.css`: las fichas vuelven a mostrar la galería arriba del contenido, el formulario queda en columna lateral sticky en escritorio y el layout se apila en tablet/móvil.
+- Se corrigió el contraste del formulario sobre fondo claro y se actualizó la caché de `service-detail.html`.
+- Validación: comparación con el estado anterior al rediseño, render en inglés y español, revisión responsive, sintaxis JavaScript y `git diff --check`.

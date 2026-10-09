@@ -66,3 +66,11 @@ El sitio se mantiene como una experiencia estática. La herramienta temporal de 
 6. Añadir historial de versiones, borrador/publicado, preview y rollback.
 7. Agregar historial de versiones y rollback si el sitio evoluciona hacia un CMS persistente.
 8. Optimizar medios y revisar CSP, headers de seguridad, sitemap, canonical y metadatos OG.
+
+## Auditoría de Estadías y hoteles — 2026-10-09
+
+- Se comparó la versión actual con el estado previo al commit `5c358bc` (rediseño de Estadías y hoteles).
+- Se confirmó una regresión: las imágenes de las fichas podían quedar debajo del texto, Tamalodge quedaba sin galería al excluir su única imagen y la página perdía la organización de contenido principal + formulario lateral.
+- Se restauró la estructura anterior: descripción editorial, galería general de alojamientos, aviso de tarifas, fichas con galería superior y formulario lateral sticky en escritorio.
+- Se conservaron las mejoras de accesibilidad existentes: nombres de títulos, grupos de imágenes, textos alternativos bilingües y navegación del formulario.
+- Se validó en el navegador la ruta `service-detail.html?service=alojamiento-experiencias` en inglés y español; se revisaron escritorio y el quiebre responsive de hasta 980 px. También se validaron sintaxis JavaScript y `git diff --check`.
