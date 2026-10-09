@@ -3281,7 +3281,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .px-bg-image-surf-lessons { top: 0; background-image: url("assets/img/services/surf-lessons/optimized/surf-lesson-group.webp"); }
 .px-bg-image-surf-photo { top: 32%; background-image: url("assets/img/services/surf-photography/surf-photographer-wave.webp"); }
 .px-bg-image-surf-sunset { top: 64%; background-image: url("assets/img/photography/ambarry1975/optimized/ambarry1975-costa-rica-2646482.webp"); }
-.px-bg-image-surf-top { top: -12%; height: 48%; z-index: 1; background-position: center 55%; background-image: url("assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05.webp"); }
+.px-bg-image-surf-top { top: -12%; height: 48%; z-index: 1; opacity: .64; background-position: center 55%; background-image: url("assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05.webp"); }
 .px-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 24, 34, .46), rgba(3, 24, 34, .16) 45%, rgba(3, 24, 34, .4)); }
 #servicios { --px-img: none; }
 #servicios .px-bg { background: none; }
@@ -3290,8 +3290,8 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 #guia { --px-img: url('assets/img/stays/occidental/optimized/occidental-beach.webp'); }
 #despues-del-surf { --px-img: url('assets/img/site/backgrounds/atardecer.webp'); }
 .services-watermark { grid-column: span 3; width: min(76%, 310px); min-height: 370px; align-self: stretch; justify-self: center; object-fit: contain; opacity: .72; filter: drop-shadow(0 12px 24px rgba(2, 18, 27, .24)); pointer-events: none; transform: rotate(-4deg); }
-.has-px .section-title, .has-px .link-more { color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .35); }
-.has-px .section-sub { color: rgba(255, 255, 255, .9); text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
+.has-px .section-title, .has-px .link-more { color: #fff; text-shadow: 0 3px 22px rgba(0, 0, 0, .62); }
+.has-px .section-sub { color: rgba(255, 255, 255, .92); text-shadow: 0 2px 16px rgba(0, 0, 0, .58); }
 #guia .benefit h3 { color: #fff; }
 #guia .benefit p { color: rgba(255, 255, 255, .88); }
 #guia .px-bg::after { background: linear-gradient(90deg, rgba(3, 24, 34, .6), rgba(3, 24, 34, .28) 55%, rgba(3, 24, 34, .14)), linear-gradient(180deg, rgba(3, 24, 34, .3), rgba(3, 24, 34, 0) 40%, rgba(3, 24, 34, .3)); }
