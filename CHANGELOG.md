@@ -1,4 +1,8 @@
 ## 2026-10-09
+### Yoga — aplicar la nueva foto costera en todas las tarjetas
+- `services.js`, `index.html`, `trip-builder.js` y `script.js`: Yoga ahora usa `yoga-coastal-pose.webp` en la tarjeta, el hero/fondo del detalle y el armador, con textos alternativos coordinados en español e inglés. Foto de Matea Brajdić vía [Unsplash](https://unsplash.com/photos/a-woman-doing-a-yoga-pose-in-front-of-a-body-of-water-nBX2VPpn64k), bajo la [Unsplash License](https://unsplash.com/license).
+- Validación: referencias de imagen y alts sincronizados; confirmar carga del archivo y `git diff --check`.
+
 ### Servicios — restaurar textos de lo que incluye cada experiencia
 - `services.js`: el detalle vuelve a mostrar los bloques de contenido `includes` existentes en Entrenamiento de surf, Yoga y Clases de surfskate, con el rótulo localizado en español e inglés. Se conservan las listas actuales y los estilos previos; no se agregan beneficios nuevos.
 - Validación: sintaxis de `services.js`, renderizado bilingüe de los tres bloques y `git diff --check`.
