@@ -1,3 +1,6 @@
+### Armá tu viaje — Retiros queda como servicio independiente
+- `trip-builder.js`: se retiró la tarjeta interna de Retiros del armador; Retiros continúa disponible como portada independiente en la navegación de servicios.
+
 ### Armá tu viaje — portada integrada a la navegación de servicios
 - `trip-builder.js`: la portada ahora muestra flechas anterior/siguiente conectadas con Surfskate y Retiros, con etiquetas accesibles y bilingües.
 - `trip-builder.html` y `trip-builder.css`: se incorporó el logo pequeño de WavePoint, enlazado al inicio, con ajuste responsive.
