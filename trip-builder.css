@@ -16,6 +16,9 @@
   background: linear-gradient(0deg, rgba(4, 24, 33, .42), transparent 72%), url("assets/img/services/retreats/retreat-tamarindo.webp") center 52% / cover no-repeat;
 }
 .trip-builder-hero-content { width: 100%; }
+.trip-builder-hero-arrows { z-index: 3; }
+.trip-builder-page .trip-builder-floating-brand { right: 116px; bottom: 88px; width: 124px; min-height: 54px; }
+.trip-builder-page .trip-builder-floating-brand img { width: 100%; }
 .trip-kicker { margin: 0 0 12px; color: #087f87; font: 800 11px/1.3 "DM Sans", sans-serif; letter-spacing: .15em; text-transform: uppercase; }
 .trip-builder-hero .trip-kicker { color: #a5eee0; }
 .trip-builder-hero h1 { max-width: 860px; margin: 0; color: #f5fbf8; font: 700 clamp(56px, 8vw, 102px)/.92 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.02em; }
@@ -129,6 +132,7 @@
 @media (max-width: 600px) {
   .trip-builder-hero { min-height: 440px; padding: 122px 0 50px; }
   .trip-builder-hero-content { width: calc(100% - 42px); margin: 0 auto; }
+  .trip-builder-page .trip-builder-floating-brand { right: 124px; bottom: 78px; width: 112px; min-height: 48px; }
   .trip-builder-hero-content > p:last-child { font-size: 15px; }
   .trip-builder-main { padding: 52px 0 70px; }
   .trip-builder-heading { margin-bottom: 22px; }

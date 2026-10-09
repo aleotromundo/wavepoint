@@ -1,3 +1,8 @@
+### Armá tu viaje — portada integrada a la navegación de servicios
+- `trip-builder.js`: la portada ahora muestra flechas anterior/siguiente conectadas con Surfskate y Retiros, con etiquetas accesibles y bilingües.
+- `trip-builder.html` y `trip-builder.css`: se incorporó el logo pequeño de WavePoint, enlazado al inicio, con ajuste responsive.
+- Validación: sintaxis JavaScript, enlaces de navegación y actualización de caché.
+
 ### Colaboradores — Casa Aura queda fuera de la marquesina y del menú
 - `index.html`: se retiró Casa Aura de la marquesina de colaboradores, de sus dos copias para el movimiento continuo, de los menús desktop/móvil y del bloque de enlaces del pie.
 - `service-detail.html`: se retiró Casa Aura de los menús desktop/móvil compartidos.
