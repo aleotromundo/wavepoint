@@ -1,6 +1,11 @@
 ## 2026-10-08
+### Hero — no ocultar el fallback si autoplay está bloqueado
+- La imagen ya no se oculta con `canplay` —que solo confirma que el archivo se puede preparar— sino con `playing`, que confirma que el navegador realmente está reproduciendo el video.
+- Esto conserva el fondo visible en computadoras donde el video carga pero el autoplay, la aceleración gráfica o la política del navegador impiden que arranque.
+- Se renovó la caché a `script.js?v=20261009-hero-fallback2`.
+
 ### Hero — fallback para navegadores sin reproducción de video
-- Si un video emite `error`, se marca como fallido y se retira visualmente para que `home-hero.webp` quede visible en vez de quedar una capa negra o vacía.
+- Si un video emite `error`, se marca como fallido y se retira visualmente para que `home-hero-fallback.jpg` quede visible en vez de quedar una capa negra o vacía.
 - El primer video ya no arranca activo desde el HTML: JavaScript lo activa solo después de preparar su fuente, manteniendo la imagen visible mientras carga o si falla.
 - Se renovaron las cachés de `styles.optimized.css` y `script.js` para evitar que equipos de escritorio con archivos viejos conserven el fondo vacío.
 
@@ -16,7 +21,7 @@
 - Se eliminó la variante móvil anterior de Palmeras porque ya no corresponde al flujo móvil actual.
 
 ### Hero — póster solo como fallback de carga
-- `script.js` marca el stack como listo únicamente cuando el primer video emite `canplay`; los errores siguen dejando disponible la imagen de respaldo.
+- `script.js` marca el stack como listo únicamente cuando un video emite `playing`; los errores siguen dejando disponible la imagen de respaldo.
 - `styles.css` y `styles.optimized.css` ocultan definitivamente `.hero-video-poster` después de esa señal, evitando que la imagen reaparezca o interrumpa los cambios del carrusel.
 
 ### Hero — mapeo de Giros y versión móvil
