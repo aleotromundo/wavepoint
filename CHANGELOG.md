@@ -1,4 +1,11 @@
 ## 2026-10-09
+### Surfskate — tarjeta independiente y galería en composición equilibrada
+- `index.html` y `trip-builder.js`: la tarjeta usa la foto original de los dos instructores, mientras la portada del detalle conserva la foto de la clase grupal.
+- `services.js`: se reemplazó la última foto del skater agachado por `surfskate-bowl.webp`, una imagen de skate dentro de una bowl de concreto.
+- `styles.css` y `styles.optimized.css`: la foto vertical de los dos instructores se muestra completa a la izquierda y las otras dos imágenes quedan apiladas a la derecha, formando un rectángulo sin deformación ni recorte.
+- Fuente de la nueva imagen: [Unsplash — Skateboarder rides in a concrete skate bowl](https://unsplash.com/photos/skateboarder-rides-in-a-concrete-skate-bowl-6SLHKSF3dUA), de Didi Paul, bajo la Unsplash License.
+- Validación: sintaxis JavaScript, rutas locales, WebP optimizado por debajo de 500 KB, galería sin la foto del skater agachado y `git diff --check`.
+
 ### Surfskate — priorizar instrucción y clase en la selección visual
 - Se eliminó `surfskate-surf-lesson.webp`, la foto de la chica parada sobre la tabla en la arena.
 - La foto original de los dos instructores ayudándose ocupa ahora ese lugar dentro de la galería.
