@@ -1013,7 +1013,7 @@
       heroVideo.preload='auto'; heroVideo.muted=true; heroVideo.playsInline=true;
       const markVideoReady=()=>{ document.querySelector('.hero-video-stack')?.classList.add('is-video-ready'); complete('hero'); };
       heroVideo.addEventListener('canplay',markVideoReady,{once:true});
-      heroVideo.addEventListener('error',()=>complete('hero'),{once:true});
+      heroVideo.addEventListener('error',()=>{ heroVideo.classList.add('video-failed'); heroVideo.classList.remove('is-active'); complete('hero'); },{once:true});
       if(heroVideo.readyState>=3) markVideoReady();
       heroVideo.load();
     } else complete('hero');
@@ -1059,8 +1059,16 @@
   }
 
   function bindHeroVideoSwap(){
-    const videos = [...document.querySelectorAll('.hero-video')];
+    const videos=[...document.querySelectorAll('.hero-video')];
     if (!videos.length) return;
+    const videoStack=document.querySelector('.hero-video-stack');
+    videos.forEach(video=>{
+      video.addEventListener('canplay',()=>videoStack?.classList.add('is-video-ready'),{once:true});
+      video.addEventListener('error',()=>{
+        video.classList.add('video-failed');
+        video.classList.remove('is-active');
+      },{once:true});
+    });
     const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     if (touchDevice || window.matchMedia('(max-width: 640px)').matches) {
       // En celulares dejamos solo el video móvil configurado (Giro 1), en loop, sin alternar archivos.

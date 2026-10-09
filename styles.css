@@ -52,6 +52,7 @@
     .hero-video-stack { position:absolute; inset:0; z-index:0; overflow:hidden; background:#071821; }
     .hero-video-poster { position:absolute; inset:0; z-index:0; background:url('assets/img/site/home-hero.webp') center/cover no-repeat; }
     .hero-video { position:absolute; inset:0; z-index:1; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1.3s ease-in-out, transform 12s ease-out; filter:saturate(1.2) contrast(1.08); }
+    .hero-video.video-failed { opacity:0 !important; visibility:hidden !important; }
     .hero-video.is-active { opacity:1; }
     .hero-video:not(.is-active) { visibility:hidden; }
     .hero-video:nth-of-type(2) { transform:scale(1.05); }

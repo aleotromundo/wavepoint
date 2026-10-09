@@ -1,4 +1,9 @@
 ## 2026-10-08
+### Hero — fallback para navegadores sin reproducción de video
+- Si un video emite `error`, se marca como fallido y se retira visualmente para que `home-hero.webp` quede visible en vez de quedar una capa negra o vacía.
+- El primer video ya no arranca activo desde el HTML: JavaScript lo activa solo después de preparar su fuente, manteniendo la imagen visible mientras carga o si falla.
+- Se renovaron las cachés de `styles.optimized.css` y `script.js` para evitar que equipos de escritorio con archivos viejos conserven el fondo vacío.
+
 ### Menú móvil — Partners/Colaboradores
 - `site-nav.js` ahora mantiene el submenú cerrado al inicializar, lo abre y cierra únicamente desde el botón de flecha y usa `hidden` como estado real de visibilidad.
 - El enlace de texto navega a la sección de colaboradores sin abrir el submenú accidentalmente; se detuvo la propagación del toque del botón.
