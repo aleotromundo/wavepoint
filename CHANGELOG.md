@@ -1,6 +1,6 @@
 ## 2026-10-09
 ### Fondo de Servicios — sumar foto superior a la composición
-- `index.html`, `styles.css` y `styles.optimized.css`: se agregó una foto local de surf coaching al inicio del fondo de Servicios y se redistribuyeron las cuatro franjas con un solapamiento leve.
+- `index.html`, `styles.css` y `styles.optimized.css`: se agregó una foto local de surf coaching al inicio del fondo de Servicios y se redistribuyeron las cuatro franjas con un solapamiento leve. La imagen superior es distinta de la foto de la tarjeta de Surf Coaching.
 - La capa sigue siendo decorativa y conserva la máscara degradada existente; no cambia el contenido de las tarjetas ni el hero.
 - Validación: imagen local confirmada, reglas fuente y optimizadas sincronizadas, `git diff --check`.
 
