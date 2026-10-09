@@ -8547,3 +8547,24 @@ footer a {
     grid-auto-rows: 220px !important;
   }
 }
+
+/* Ajuste final de armonía: cada imagen de Roca Bruja define su propio rectángulo visible. */
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
+  height: auto !important;
+  grid-template-rows: none !important;
+  grid-auto-rows: auto !important;
+  align-items: start;
+  background: transparent !important;
+}
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 3 / 2;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+@media (max-width: 640px) {
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
+    grid-auto-rows: auto !important;
+  }
+}
