@@ -395,28 +395,6 @@ licenses: { label: 'Do the drivers have a valid driver’s license?', options: [
 }
 },
 {
-id: 'pack-ajustable', number: '11', eyebrow: 'DIFERENCIADOS · EXPERIENCIA A MEDIDA', title: 'Pack ajustable',
-cardText: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje.',
-description: 'Armá tu propia experiencia combinando alojamiento, surf, bienestar y aventura según el ritmo de tu viaje. Contanos qué te interesa y WavePoint consulta una propuesta ajustada a tus fechas, tu grupo y tus prioridades.',
-images: ['assets/img/stays/capitan-suizo/cover.webp'],
-questions: [
-{ id: 'pack_activities', label: '¿Qué te gustaría combinar en tu experiencia?', type: 'multi', options: ['Alojamiento', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Snorkel y catamarán', 'Yoga', 'ATV tours', 'Fotos de surf', 'Clases de surfskate', 'Retreats'] },
-{ id: 'pack_dates', label: '¿Cuándo sería tu viaje?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
-{ id: 'pack_notes', label: '¿Qué debería tener en cuenta el operador?', type: 'textarea', placeholder: 'Cantidad de personas, preferencias o necesidades especiales.', optional: true }
-],
-en: {
-eyebrow: 'CUSTOM · TAILORED EXPERIENCE',
-title: 'Custom pack',
-cardText: 'Build your own experience by combining the activities that fit your trip.',
-description: 'Create your own experience by combining accommodation, surf, wellness and adventure according to the pace of your trip. Tell us what interests you and WavePoint will request a tailored proposal based on your dates, group and priorities.',
-questions: {
-pack_activities: { label: 'What would you like to combine in your experience?', options: ['Accommodation', 'Surf lessons', 'Surf coaching', 'Witch’s Rock Surf Trip', 'Snorkeling & catamaran', 'Yoga', 'ATV tours', 'Surf Photography', 'Surfskate lessons', 'Retreats'] },
-pack_dates: { label: 'When would your trip be?', fields: ['Arrival', 'Departure'] },
-pack_notes: { label: 'What should the operator keep in mind?', placeholder: 'Number of people, preferences or special needs.' }
-}
-}
-},
-{
 id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'WavePoint Retiros nace de nuestro amor por el surf, la naturaleza y el estilo de vida costero. Son experiencias diseñadas para reconectar contigo mismo, con el mar y con una comunidad vibrante, en uno de los destinos más mágicos de Costa Rica: Tamarindo. Estos retiros están pensados para quienes buscan más que unas vacaciones: buscan transformación, conexión y aventura.',
@@ -654,10 +632,10 @@ retreat_needs: { label: 'Are there any dietary or accommodation needs we should 
 }
 }
 ];
-const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'pack-ajustable', 'retiros'];
+const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
-const getService = () => { const id = new URLSearchParams(location.search).get('service'); return services.find(item => item.id === id) || services[0]; };
+const getService = () => { const id = new URLSearchParams(location.search).get('service'); if (id === 'pack-ajustable') { location.replace('trip-builder.html'); return services[0]; } return services.find(item => item.id === id) || services[0]; };
 let lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en'; } catch (error) { return 'en'; } })();
 const hasEn = service => lang === 'en' && Boolean(service.en);
 const localizeService = service => {
@@ -774,34 +752,9 @@ form.addEventListener('input', update);
 form.addEventListener('change', update);
 update();
 }
-const PACK_SERVICE_CARDS = {
-'Alojamiento': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp' },
-'Accommodation': { title: { es: 'Estadías y hoteles', en: 'Stays & hotels' }, detail: { es: 'Un lugar cómodo y algo más para vivir Tamarindo.', en: 'A comfortable place to enjoy Tamarindo even more.' }, image: 'assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp' },
-'Surf lessons': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/services/surf-lessons/surf-lesson-woman.webp' },
-'Clases de surf': { title: { es: 'Clases de surf', en: 'Surf lessons' }, detail: { es: 'Tu primera ola o el siguiente paso.', en: 'Your first wave or the next step.' }, image: 'assets/img/services/surf-lessons/surf-lesson-woman.webp' },
-'Surf coaching': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/services/surf-photography/surf-coaching-session.webp' },
-'Entrenamiento de surf': { title: { es: 'Surf coaching', en: 'Surf coaching' }, detail: { es: 'Entrenamiento personalizado con video-análisis.', en: 'Personalized coaching with video analysis.' }, image: 'assets/img/services/surf-photography/surf-coaching-session.webp' },
-'Yoga': { title: { es: 'Yoga', en: 'Yoga' }, detail: { es: 'Bajá el ritmo y encontrá tu pausa.', en: 'A little space to breathe.' }, image: 'assets/img/services/yoga/yoga-beach-woman.webp' },
-'Witch’s Rock Surf Trip': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/services/witchs-rock/witch-rock-surf-trip.webp' },
-'Roca Bruja': { title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, detail: { es: 'Una salida guiada a un spot inolvidable.', en: 'A guided outing to an unforgettable spot.' }, image: 'assets/img/services/witchs-rock/witch-rock-surf-trip.webp' },
-'Fotos de surf': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/img/services/surf-photography/surf-photographer-wave.webp' },
-'Surf Photography': { title: { es: 'Fotos de surf', en: 'Surf Photography' }, detail: { es: 'Tus mejores olas, capturadas por fotógrafos locales.', en: 'Your best waves, captured by local photographers.' }, image: 'assets/img/services/surf-photography/surf-photographer-wave.webp' },
-'Snorkeling & catamaran': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/img/services/snorkel-catamaran/snorkel-turtle.webp' },
-'Snorkel y catamarán': { title: { es: 'Snorkel y catamarán', en: 'Snorkeling & catamaran' }, detail: { es: 'Mar, navegación y tiempo para explorar.', en: 'Sea, sailing and time to explore.' }, image: 'assets/img/services/snorkel-catamaran/snorkel-turtle.webp' },
-'ATV tours': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/img/services/atv/atv-forest-tour.webp' },
-'Tours en cuatriciclo — ATV': { title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, detail: { es: 'Aventura y caminos de Guanacaste.', en: 'Adventure and trails in Guanacaste.' }, image: 'assets/img/services/atv/atv-forest-tour.webp' },
-'Clases de surfskate': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/services/surfskate/surfskate.webp' },
-'Surfskate lessons': { title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, detail: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' }, image: 'assets/img/services/surfskate/surfskate.webp' },
-'Retreats': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/services/retreats/retreat-canva-cover.webp' },
-'Retiros': { title: { es: 'Retiros', en: 'Retreats' }, detail: { es: 'Un viaje con programa, descanso y comunidad.', en: 'A trip with a program, rest, and community.' }, image: 'assets/img/services/retreats/retreat-canva-cover.webp' }
-};
 function renderQuestion(service, question) {
 const id = inputId(service, question);
 const optional = question.optional ? `<span class="detail-optional">${uiFor(service).optional}</span>` : '';
-if (service.id === 'pack-ajustable' && question.id === 'pack_activities') {
-const packIntro = lang === 'en' ? 'Choose two or more cards and we’ll build a custom experience for you.' : 'Elegí dos o más tarjetas y armamos una experiencia a tu medida.';
-return `<fieldset class="detail-question pack-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><p class="pack-question-intro">${packIntro}</p><div class="pack-service-grid">${question.options.map(option => { const card = PACK_SERVICE_CARDS[option] || PACK_SERVICE_CARDS[Object.keys(PACK_SERVICE_CARDS).find(key => key.toLowerCase() === option.toLowerCase())]; const cardTitle = typeof card?.title === 'string' ? card.title : (card?.title?.[lang] || card?.title?.es || ''); const cardDetail = typeof card?.detail === 'string' ? card.detail : (card?.detail?.[lang] || card?.detail?.es || ''); const cardImage = card?.image || ''; return `<label class="pack-service-card"><input type="checkbox" name="${question.id}" value="${esc(option)}" /><span class="pack-service-image"><img src="${cardImage}" alt="" loading="lazy" /><span class="pack-service-check" aria-hidden="true">✓</span></span><span class="pack-service-copy"><strong>${esc(cardTitle)}</strong><small>${esc(cardDetail)}</small></span></label>`; }).join('')}</div><p class="pack-selection-count" data-pack-selection>${lang === 'en' ? '0 experiences selected' : '0 experiencias seleccionadas'}</p></fieldset>`;
-}
 if (question.type === 'headcount') return `<fieldset class="detail-question headcount-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map((field, index) => `<label for="${id}-${field.id}">${esc(field.label)}<input id="${id}-${field.id}" name="${question.id}-${field.id}" type="number" min="${index === 0 ? 1 : 0}" step="1" inputmode="numeric" placeholder="${index === 0 ? '1' : '0'}" required /></label>`).join('')}</div><p class="headcount-note">${esc(question.note)}</p><label class="headcount-ages" for="${id}-ages"><span>${esc(question.agesLabel)} <span class="detail-optional">${uiFor(service).optional}</span></span><input id="${id}-ages" name="${question.id}-ages" type="text" placeholder="${esc(question.agesPlaceholder)}" /></label></fieldset>`;
 if (question.type === 'dates') return `<fieldset class="detail-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
 if (question.type === 'choice' || question.type === 'multi') return `<fieldset class="detail-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-options">${question.options.map((option, index) => `<label class="detail-option"><input type="${question.type === 'multi' ? 'checkbox' : 'radio'}" name="${question.id}" value="${esc(option)}" ${question.type === 'choice' && index === 0 && !question.optional ? 'required' : ''} /><span>${esc(option)}</span></label>`).join('')}</div></fieldset>`;
@@ -962,17 +915,6 @@ const surfSurveyModal = '' /* El formulario de clases queda visible debajo del c
 const surfFormBar = '';
 /* const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : ''; */
  document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.description)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="serviceRequestTitle">${surfFormBar}<div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2 id="serviceRequestTitle">${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="survey-next-step" type="button" data-survey-next>${lang === 'en' ? 'Continue' : 'Continuar'} <span aria-hidden="true">→</span></button><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
-if (service.id === 'pack-ajustable') {
-const packGrid = document.querySelector('.pack-service-grid');
-const count = document.querySelector('[data-pack-selection]');
-const updatePackCount = () => {
-const selected = packGrid ? packGrid.querySelectorAll('input:checked').length : 0;
-if (count) count.textContent = lang === 'en'
-? (selected === 1 ? '1 experience selected' : `${selected} experiences selected`)
-: `${selected} ${selected === 1 ? 'experiencia seleccionada' : 'experiencias seleccionadas'}`;
-};
-packGrid?.addEventListener('change', updatePackCount);
-}
 const requestForm = document.getElementById('serviceRequestForm');
 setupSurveyInteractions(requestForm);
 setupQuickRequestPanel(requestForm);
