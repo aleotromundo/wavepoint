@@ -3,6 +3,10 @@
 - `PROJECT_GUIDE.md`: se documentó que cada sección debe usar la foto más llamativa en portada y tarjeta, una foto distinta para el fondo y al menos dos fotos adicionales y no repetidas en la galería.
 - La regla también exige auditar copias JPG/WebP como una misma foto, buscar una imagen nueva cuando no alcance el inventario, conservar textos alternativos y validar rutas, calidad y peso.
 
+### Surf Coaching — reemplazar la foto de tarjeta
+- La tarjeta, el armador y la portada del detalle ahora usan la foto de los tres surfistas saltando con sus tablas.
+- La foto anterior del surfista sobre la tabla roja se conserva dentro de la galería y ya no funciona como imagen de referencia principal.
+
 ## 2026-10-09
 ### ATV — completar portada, fondo, galería y armador sin repetir fotos
 - Se mantuvieron las dos fotos ATV existentes y se incorporaron tres fotos distintas encontradas en búsquedas públicas: convoy rural, sendero de bosque y recorrido de playa.
