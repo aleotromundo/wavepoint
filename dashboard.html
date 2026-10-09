@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#082b3a">
+  <title>WavePoint · Dashboard de fotos</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="dashboard.css?v=20261009-1">
+</head>
+<body>
+  <main class="dashboard-shell">
+    <header class="dashboard-header">
+      <div class="brand-lockup"><span class="brand-mark">W</span><div><p class="eyebrow">WAVEPOINT · HERRAMIENTA TEMPORAL</p><h1>Dashboard de fotos</h1></div></div>
+      <a class="site-link" href="index.html" target="_blank" rel="noopener">Ver sitio ↗</a>
+    </header>
+
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow">REEMPLAZO CONTROLADO DE ASSETS</p>
+        <h2>Cambiá las fotos sin romper el diseño.</h2>
+        <p>Elegí la carpeta raíz del repositorio, buscá la foto que querés reemplazar y cargá una nueva desde tu dispositivo. El dashboard la convierte a WebP, conserva la resolución original y la guarda en el destino correcto.</p>
+      </div>
+      <div class="hero-note"><strong>Importante</strong><span>Esta herramienta no sube imágenes a ningún servidor. Trabaja localmente en la carpeta que selecciones y debe borrarse cuando las fotos estén confirmadas.</span></div>
+    </section>
+
+    <section class="setup-card" aria-labelledby="setup-title">
+      <div class="section-heading"><div><p class="eyebrow">PASO 1</p><h2 id="setup-title">Conectar el repositorio</h2></div><span class="connection-pill" id="connectionState">Sin carpeta seleccionada</span></div>
+      <p class="muted">En Chrome o Edge, hacé clic y seleccioná la carpeta raíz que contiene <code>index.html</code>, <code>assets</code> y <code>dashboard.html</code>.</p>
+      <div class="setup-actions"><button class="button button-primary" id="chooseFolder" type="button">Elegir carpeta del repositorio</button><button class="button button-secondary" id="downloadManifest" type="button" disabled>Descargar registro de cambios</button><span class="status" id="globalStatus" role="status" aria-live="polite"></span></div>
+    </section>
+
+    <section class="toolbar-card" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><p class="eyebrow">PASO 2</p><h2 id="catalog-title">Fotos del sitio</h2></div><span class="asset-count" id="assetCount"></span></div>
+      <div class="filters"><label class="search-label">Buscar<input id="searchInput" type="search" placeholder="Casa Aura, hero, surf, playa…"></label><label>Grupo<select id="groupFilter"><option value="all">Todos los grupos</option></select></label><label>Formato<select id="formatFilter"><option value="all">Todos los formatos</option><option value="webp">WebP</option><option value="jpg">JPG / JPEG</option><option value="png">PNG</option></select></label></div>
+    </section>
+
+    <section class="catalog-grid" id="catalog" aria-live="polite"></section>
+    <p class="empty-state" id="emptyState" hidden>No hay fotos que coincidan con la búsqueda.</p>
+
+    <footer class="dashboard-footer"><strong>Uso temporal:</strong> confirmá los cambios en el sitio y eliminá <code>dashboard.html</code>, <code>dashboard.css</code>, <code>dashboard.js</code> y <code>dashboard-catalog.js</code> del repositorio cuando termines.</footer>
+  </main>
+  <template id="photoCardTemplate">
+    <article class="photo-card">
+      <div class="photo-preview-wrap"><img class="photo-preview" alt="" loading="lazy"><span class="format-badge"></span></div>
+      <div class="photo-card-body"><div class="photo-card-title"><div><p class="photo-group"></p><h3></h3></div><span class="photo-size"></span></div><p class="photo-path"></p><a class="photo-open" target="_blank" rel="noopener">Abrir foto actual ↗</a><label class="upload-button">Elegir reemplazo<input class="photo-input" type="file" accept="image/*"></label><div class="photo-actions"><button class="button button-primary write-button" type="button" disabled>Convertir y guardar WebP</button><button class="button button-secondary download-button" type="button">Solo descargar WebP</button></div><p class="photo-status" role="status" aria-live="polite"></p></div>
+    </article>
+  </template>
+  <script src="dashboard-catalog.js?v=20261009-1"></script>
+  <script src="dashboard.js?v=20261009-1"></script>
+</body>
+</html>

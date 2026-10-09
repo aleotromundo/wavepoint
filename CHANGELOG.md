@@ -1,8 +1,20 @@
+## 2026-10-09
+### Dashboard temporal de fotos y limpieza del editor anterior
+- Se creó `dashboard.html`, con estilos en `dashboard.css`, lógica en `dashboard.js` y catálogo generado en `dashboard-catalog.js`.
+- El dashboard cataloga 90 assets de imagen, permite buscar y filtrar por grupo/formato, seleccionar fotos desde un dispositivo, convertirlos a WebP manteniendo la resolución, descargar el resultado o escribirlo en la ruta exacta del repositorio mediante la File System Access API.
+- Cuando el asset original no era WebP, el dashboard genera el destino `.webp` y actualiza automáticamente las referencias locales detectadas en HTML, CSS y JavaScript.
+- Se eliminó el editor anterior, su endpoint de autenticación, sus estilos y su sistema de overrides, junto con todas sus referencias en las páginas y en `robots.txt`. El dashboard queda fuera de indexación y no forma parte de la navegación pública.
+- Se actualizó `AUDIT.md` para reflejar que el sitio no tiene CMS persistente y que el dashboard es una herramienta local temporal.
+
+### Casa Aura — galería sin repetir la portada
+- La primera imagen de la galería interna dejó de repetir `casitas.webp`, que queda únicamente como portada grande.
+- La galería ahora muestra `stayandhotels4_resultados.webp`, la foto interior de Casa Aura con cocina y sillones negros. Se confirmó que no pertenece a Casa de Maderas.
+
 ## 2026-10-08
 ### Casa Aura — portada Casitas en mayor calidad
 - Se incorporó `assets/img/stays/casa-aura/casitas.webp` desde la foto original `Casitas` de 960×540 px.
 - La portada grande de Casa Aura ahora usa esta versión WebP, de 960×540 px y aproximadamente 230 KB, en lugar de la copia anterior de 576×324 px.
-- La primera imagen de la galería interna de Casa Aura también usa `casitas.webp` para evitar la copia pixelada.
+- En la primera versión de esta corrección, la imagen grande de la galería usó `casitas.webp`; luego se reemplazó por `stayandhotels4_resultados.webp` para evitar repetir Casitas dentro de la galería.
 - El carrusel general de Partners y las otras imágenes de la galería interna mantienen sus archivos actuales.
 - Auditoría de imágenes activas: las fotos WebP no superan 500 KB. Las excepciones no fotográficas son PNG de íconos/logos; se conserva el JPG de fallback del hero por compatibilidad con navegadores antiguos.
 - Se actualizó la caché CSS a `styles.optimized.css?v=20261009-71`.
