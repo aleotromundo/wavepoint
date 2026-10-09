@@ -80,3 +80,7 @@ El sitio se mantiene como una experiencia estática. La herramienta temporal de 
 Se reprodujo en la portada la superposición de imágenes de fondo. La configuración anterior usaba tres capas de 36% de alto en posiciones 0%, 32% y 64%, más una capa superior de 44% que comenzaba en -20%; por eso la primera y segunda imagen se cruzaban ampliamente.
 
 La corrección asigna a las tres imágenes principales franjas consecutivas de 33.3333% en 0%, 33.3333% y 66.6667%. La capa decorativa superior queda fuera de la primera franja, con una presencia más sutil. Se validó el DOM en escritorio: las capas terminan y comienzan en los mismos límites, sin solapamiento vertical.
+
+## Corrección de dirección — Estadías y hoteles — 2026-10-09
+
+La restauración anterior había retrocedido demasiado: se tomó como referencia el estado previo al rediseño, aunque el estado correcto era la versión moderna del commit `6274861`. Se revirtió únicamente ese retroceso. La página vuelve a usar el selector visual de alojamientos, el formulario moderno actualizado y las galerías seleccionadas por ficha, conservando aparte la corrección de separación de fondos de Servicios.
