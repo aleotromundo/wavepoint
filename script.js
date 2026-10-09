@@ -1,6 +1,19 @@
   const CR_TZ='America/Costa_Rica';
   const reducedMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
+  const MOBILE_HOME_INITIAL_SCROLL_PX=12;
+  const mobileHome=document.getElementById('inicio');
+  const isMobileHomeViewport=()=>window.matchMedia('(max-width: 640px)').matches;
+  const scrollToMobileHomeStart=()=>{
+    if(!mobileHome || !isMobileHomeViewport()) return;
+    requestAnimationFrame(()=>{
+      if(!window.location.hash || window.location.hash==='#inicio') window.scrollTo(0,MOBILE_HOME_INITIAL_SCROLL_PX);
+    });
+  };
+  if(mobileHome){
+    if((!window.location.hash || window.location.hash==='#inicio') && window.scrollY===0) scrollToMobileHomeStart();
+    document.querySelectorAll('a[href="#inicio"]').forEach(link=>link.addEventListener('click',scrollToMobileHomeStart));
+  }
   function getCRDate(){ return new Date(new Date().toLocaleString('en-US',{timeZone:CR_TZ})); }
   function isCameraLiveNow(){ const d=getCRDate(); const m=d.getHours()*60+d.getMinutes(); return m>=CAM_START.hour*60+CAM_START.minute && m<=CAM_END.hour*60+CAM_END.minute; }
   function formatTimeCR(date=new Date()){ const locale = languageState.current === 'en' ? 'en-US' : 'es-CR'; return new Intl.DateTimeFormat(locale,{hour:'2-digit',minute:'2-digit',timeZone:CR_TZ}).format(date); }
