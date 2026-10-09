@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Fondo parallax de Servicios — separar las capas de surf
+- `styles.css` y `styles.optimized.css`: la capa superior con la mujer surfeando (`surf-top`) ahora queda más arriba y ocupa menos alto, reduciendo la superposición con la foto grupal inferior.
+- Se conserva la sincronización/parallax de las imágenes y se ajusta también el comportamiento en pantallas de hasta 1024 px.
+- Validación: revisión de las fotos fuente, sintaxis JavaScript y `git diff --check`.
+
 ### Galerías — armonía de tamaños y contenedores invisibles
 - `styles.css` y `styles.optimized.css`: Roca Bruja usa dos imágenes con la misma proporción visual, sin fondos de contenedor visibles; el collage existente puede perder apenas los costados para mantener el rectángulo parejo.
 - La composición conserva el equilibrio en escritorio y móvil, y las imágenes nuevas no quedan dentro de cuadros más grandes que su área visible.

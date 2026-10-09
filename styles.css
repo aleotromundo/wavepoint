@@ -8568,3 +8568,17 @@ footer a {
     grid-auto-rows: auto !important;
   }
 }
+
+/* Fondo de Servicios: separar la capa superior de surf de la foto grupal inferior. */
+#servicios .px-bg-image-surf-top {
+  top: -20%;
+  height: 44%;
+  background-position: center 45%;
+}
+@media (max-width: 1024px) {
+  #servicios .px-bg-image-surf-top {
+    top: -16%;
+    height: 43%;
+    background-position: center 44%;
+  }
+}
