@@ -1,3 +1,14 @@
+### Colaboradores — Casa Aura queda fuera de la marquesina y del menú
+- `index.html`: se retiró Casa Aura de la marquesina de colaboradores, de sus dos copias para el movimiento continuo, de los menús desktop/móvil y del bloque de enlaces del pie.
+- `service-detail.html`: se retiró Casa Aura de los menús desktop/móvil compartidos.
+- `services.js`: se conserva Casa Aura únicamente como opción de alojamiento dentro de Estadías y hoteles, junto con sus datos e imágenes.
+
+### Servicios — Armá tu viaje dentro de la navegación de portadas
+- `services.js`: la experiencia `trip-builder` ahora forma parte del catálogo que alimenta las flechas anterior/siguiente de las portadas de servicios, ubicada entre Surfskate y Retiros.
+- La entrada navega directamente a `trip-builder.html`; no se reintroduce el flujo legacy `pack-ajustable`.
+- `service-detail.html`: se actualizó la versión de caché de `services.js`.
+- Validación: sintaxis JavaScript, navegación circular y enlaces locales.
+
 ### Build your Tamarindo Trip — tarjetas de alojamientos y clases de surf
 - La tarjeta `Stay at Hotels` ahora usa `assets/img/stays/casa-maderas/house.webp`, una imagen colorida de Casa de Maderas con piscina.
 - La tarjeta `Surf Lessons` conserva su foto actual, pero el punto focal queda alineado arriba para mostrar completa la cabeza de la surfista sin agregar bordes ni cambiar el diseño de la tarjeta.
