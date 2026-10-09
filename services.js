@@ -632,10 +632,25 @@ retreat_needs: { label: 'Are there any dietary or accommodation needs we should 
 }
 }
 ];
+services.push({
+id: 'trip-builder', number: '10', eyebrow: 'EXPERIENCIA A MEDIDA', title: 'Armá tu viaje a tu manera',
+cardText: 'Combiná alojamiento y experiencias según el ritmo de tu viaje.',
+description: 'Contanos tus fechas, cuántos son y qué te interesa. Armaremos una propuesta según la disponibilidad.',
+images: ['assets/img/services/retreats/retreat-tamarindo.webp'],
+imageAlts: ['Atardecer en la costa bajo ramas de un árbol tropical'],
+questions: [],
+en: {
+eyebrow: 'TAILORED EXPERIENCE', title: 'Build your trip your way',
+cardText: 'Combine accommodation and experiences around the pace of your trip.',
+description: 'Tell us your dates, group size and interests. We’ll put together a proposal based on what’s available.',
+imageAlts: ['Sunset over the coast framed by a tropical tree']
+}
+});
 const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
+serviceOrder.splice(9, 0, 'trip-builder');
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
-const getService = () => { const id = new URLSearchParams(location.search).get('service'); if (id === 'pack-ajustable') { location.replace('trip-builder.html'); return services[0]; } return services.find(item => item.id === id) || services[0]; };
+const getService = () => { const id = new URLSearchParams(location.search).get('service'); if (id === 'pack-ajustable' || id === 'trip-builder') { location.replace('trip-builder.html'); return services[0]; } return services.find(item => item.id === id) || services[0]; };
 let lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en'; } catch (error) { return 'en'; } })();
 const hasEn = service => lang === 'en' && Boolean(service.en);
 const localizeService = service => {
@@ -891,7 +906,8 @@ const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
 const nextService = services[(position + 1) % services.length];
 const arrowLabel = { es: ['Servicio anterior', 'Servicio siguiente'], en: ['Previous service', 'Next service'] }[lang];
-const heroArrows = `<nav class="detail-hero-arrows" aria-label="${lang === 'en' ? 'Browse services' : 'Recorrer servicios'}"><a class="detail-arrow detail-arrow-prev" href="service-detail.html?service=${prevService.id}" rel="prev" aria-label="${arrowLabel[0]}: ${esc(prevService.title)}" title="${esc(prevService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M19 3 4 20l15 17"/></svg></a><a class="detail-arrow detail-arrow-next" href="service-detail.html?service=${nextService.id}" rel="next" aria-label="${arrowLabel[1]}: ${esc(nextService.title)}" title="${esc(nextService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M5 3l15 17L5 37"/></svg></a></nav>`;
+const serviceHref = item => item.id === 'trip-builder' ? 'trip-builder.html' : `service-detail.html?service=${item.id}`;
+const heroArrows = `<nav class="detail-hero-arrows" aria-label="${lang === 'en' ? 'Browse services' : 'Recorrer servicios'}"><a class="detail-arrow detail-arrow-prev" href="${serviceHref(prevService)}" rel="prev" aria-label="${arrowLabel[0]}: ${esc(prevService.title)}" title="${esc(prevService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M19 3 4 20l15 17"/></svg></a><a class="detail-arrow detail-arrow-next" href="${serviceHref(nextService)}" rel="next" aria-label="${arrowLabel[1]}: ${esc(nextService.title)}" title="${esc(nextService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M5 3l15 17L5 37"/></svg></a></nav>`;
 const nameField = service.id === 'clases-de-surf'
 ? `<label class="detail-question detail-field" data-survey-question for="request-name"><span>${ui.nameLabel}</span><input id="request-name" name="request-name" type="text" placeholder="${ui.namePlaceholder}" required /></label>`
 : `<label class="detail-question detail-field" data-survey-question for="request-name"><span>${ui.nameLabel} <span class="detail-optional">${ui.optional}</span></span><input id="request-name" name="request-name" type="text" placeholder="${ui.namePlaceholder}" /></label>`;
