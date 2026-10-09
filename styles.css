@@ -260,6 +260,7 @@
       border-left:1px solid rgba(255,255,255,.18);
     }
     .mobile-dropdown.is-open .mobile-submenu { display:grid; }
+    .mobile-submenu[hidden] { display:none !important; }
     .mobile-submenu a {
       padding:11px 12px;
       background:rgba(255,255,255,.035);
