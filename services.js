@@ -270,9 +270,9 @@ imageAlts: ['Woman practicing yoga on a beach by the ocean', 'Person practicing 
 id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
 cardText: 'Elegí entre explorar bajo el agua, navegar la costa o combinar las dos experiencias.',
 description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
-images: ['assets/img/services/snorkel-catamaran/snorkel-turtle.webp', 'assets/img/services/snorkel-catamaran/catalina-islands.webp'],
-imageAlts: ['Persona haciendo snorkel junto a una tortuga marina sobre un arrecife', 'Aguas y arrecife de las Islas Catalina'],
-imageAltsEn: ['Snorkeler swimming near a sea turtle above a coral reef', 'Clear water and reef around the Catalina Islands'],
+images: ['assets/img/services/snorkel-catamaran/snorkel-turtle.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-group.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp', 'assets/img/services/snorkel-catamaran/snorkel-fish.webp'],
+imageAlts: ['Personas haciendo snorkel junto a una tortuga marina sobre un arrecife', 'Grupo haciendo snorkel frente a una isla de la costa de Costa Rica', 'Grupo haciendo snorkel cerca de una costa tropical', 'Personas haciendo snorkel junto a peces de colores bajo el agua'],
+imageAltsEn: ['People snorkeling near a sea turtle above a reef', 'Group snorkeling beside an island off the coast of Costa Rica', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater'],
 questions: [
 { id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
 { id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
