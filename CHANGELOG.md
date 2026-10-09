@@ -7,6 +7,10 @@
 - La tarjeta, el armador y la portada del detalle ahora usan la foto de los tres surfistas saltando con sus tablas.
 - La foto anterior del surfista sobre la tabla roja se conserva dentro de la galería y ya no funciona como imagen de referencia principal.
 
+### Clases de Surf — quitar foto sin relación
+- Se retiró de la galería la foto del árbol (`surf-lesson-wave.webp`) y se reemplazó por una imagen de dos surfistas practicando juntos.
+- Se actualizaron el texto alternativo, el catálogo visual y la caché del detalle; la nueva foto no se repite dentro de la sección.
+
 ## 2026-10-09
 ### ATV — completar portada, fondo, galería y armador sin repetir fotos
 - Se mantuvieron las dos fotos ATV existentes y se incorporaron tres fotos distintas encontradas en búsquedas públicas: convoy rural, sendero de bosque y recorrido de playa.
