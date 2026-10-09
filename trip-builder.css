@@ -506,3 +506,8 @@
 @media (prefers-reduced-motion: reduce) {
   .trip-mobile-cart { transition: none; }
 }
+
+/* Las fotos se muestran completas en cualquier proporción de tarjeta o pantalla. */
+.trip-experience-image { background: #0a2c3b; }
+.trip-experience-image img { object-fit: contain; object-position: center; transform: none; }
+.trip-experience:hover .trip-experience-image img { transform: none; }

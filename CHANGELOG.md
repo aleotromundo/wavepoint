@@ -3,6 +3,8 @@
 - La tarjeta `Surf Lessons` conserva su foto actual, pero el punto focal queda alineado arriba para mostrar completa la cabeza de la surfista sin agregar bordes ni cambiar el diseño de la tarjeta.
 - La tarjeta `Surfskate Lessons` también alinea el punto focal arriba para conservar visibles las cabezas de ambos instructores en el recorte horizontal.
 - Se renovaron las versiones de caché de `trip-builder.css` y `trip-builder.js`.
+- Todas las imágenes de las tarjetas del constructor y de la sección Servicios ahora usan `object-fit: contain`: la foto completa permanece visible al cambiar el tamaño de pantalla y se eliminó el zoom hover que podía volver a cortar sujetos.
+- Se renovó la caché global de `styles.optimized.css`.
 
 ### Hero — retirar rótulos incrustados de Giro 2
 - `assets/videoheroxx3.mp4` conserva su resolución 1280×720, duración completa de 27,07 segundos y ausencia de audio.
