@@ -74,3 +74,9 @@ El sitio se mantiene como una experiencia estática. La herramienta temporal de 
 - Se restauró la estructura anterior: descripción editorial, galería general de alojamientos, aviso de tarifas, fichas con galería superior y formulario lateral sticky en escritorio.
 - Se conservaron las mejoras de accesibilidad existentes: nombres de títulos, grupos de imágenes, textos alternativos bilingües y navegación del formulario.
 - Se validó en el navegador la ruta `service-detail.html?service=alojamiento-experiencias` en inglés y español; se revisaron escritorio y el quiebre responsive de hasta 980 px. También se validaron sintaxis JavaScript y `git diff --check`.
+
+## Auditoría de fondos de Servicios — 2026-10-09
+
+Se reprodujo en la portada la superposición de imágenes de fondo. La configuración anterior usaba tres capas de 36% de alto en posiciones 0%, 32% y 64%, más una capa superior de 44% que comenzaba en -20%; por eso la primera y segunda imagen se cruzaban ampliamente.
+
+La corrección asigna a las tres imágenes principales franjas consecutivas de 33.3333% en 0%, 33.3333% y 66.6667%. La capa decorativa superior queda fuera de la primera franja, con una presencia más sutil. Se validó el DOM en escritorio: las capas terminan y comienzan en los mismos límites, sin solapamiento vertical.

@@ -1698,3 +1698,10 @@
 - `styles.css` y `styles.optimized.css`: las fichas vuelven a mostrar la galería arriba del contenido, el formulario queda en columna lateral sticky en escritorio y el layout se apila en tablet/móvil.
 - Se corrigió el contraste del formulario sobre fondo claro y se actualizó la caché de `service-detail.html`.
 - Validación: comparación con el estado anterior al rediseño, render en inglés y español, revisión responsive, sintaxis JavaScript y `git diff --check`.
+
+
+### Fondos de Servicios — eliminar solapamiento entre imágenes
+- `styles.css` y `styles.optimized.css`: las tres imágenes principales ahora ocupan franjas consecutivas de un tercio de la sección, evitando que la primera y la segunda se superpongan.
+- La capa decorativa superior de surf se desplazó fuera de la primera franja y se redujo su opacidad; el ajuste responsive se mantiene para pantallas de hasta 1024 px.
+- `index.html`: se actualizó la versión de caché de estilos para que el cambio llegue inmediatamente a producción.
+- Validación: reproducción visual en la portada, medición de posiciones de las capas en el DOM, sintaxis JavaScript y `git diff --check`.

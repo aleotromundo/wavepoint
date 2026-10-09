@@ -8642,3 +8642,13 @@ footer a {
     background-position: center 44%;
   }
 }
+
+
+/* Servicios: cada imagen de fondo ocupa su propia franja, sin superponer la primera con la segunda. */
+#servicios .px-bg-image-surf-lessons { top: 0; height: 33.3333%; }
+#servicios .px-bg-image-surf-photo { top: 33.3333%; height: 33.3333%; }
+#servicios .px-bg-image-surf-sunset { top: 66.6667%; height: 33.3333%; }
+#servicios .px-bg-image-surf-top { top: -18%; height: 18%; opacity: .48; }
+@media (max-width: 1024px) {
+  #servicios .px-bg-image-surf-top { top: -14%; height: 14%; }
+}

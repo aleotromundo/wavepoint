@@ -3282,3 +3282,11 @@ to{filter:brightness(1.18)}
 .service-detail-page.accommodation-detail-page .quick-request-panel .detail-date-grid label{color:#56717a}
 @media (max-width:980px){.service-detail-page.accommodation-detail-page .detail-layout{grid-template-columns:1fr;gap:44px}.service-detail-page.accommodation-detail-page .detail-story{max-width:none}.service-detail-page.accommodation-detail-page .quick-request-panel{position:static!important;max-width:720px}}
 @media (max-width:640px){.service-detail-page.accommodation-detail-page .accommodation-photo-gallery{margin-bottom:24px}.service-detail-page.accommodation-detail-page .accommodation-gallery{height:190px}.service-detail-page.accommodation-detail-page .accommodation-card-body{padding:17px 16px 19px}}
+
+
+/* Servicios: cada imagen de fondo ocupa su propia franja, sin superponer la primera con la segunda. */
+#servicios .px-bg-image-surf-lessons{top:0;height:33.3333%}
+#servicios .px-bg-image-surf-photo{top:33.3333%;height:33.3333%}
+#servicios .px-bg-image-surf-sunset{top:66.6667%;height:33.3333%}
+#servicios .px-bg-image-surf-top{top:-18%;height:18%;opacity:.48}
+@media (max-width:1024px){#servicios .px-bg-image-surf-top{top:-14%;height:14%}}
