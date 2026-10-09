@@ -1705,3 +1705,9 @@
 - La capa decorativa superior de surf se desplazó fuera de la primera franja y se redujo su opacidad; el ajuste responsive se mantiene para pantallas de hasta 1024 px.
 - `index.html`: se actualizó la versión de caché de estilos para que el cambio llegue inmediatamente a producción.
 - Validación: reproducción visual en la portada, medición de posiciones de las capas en el DOM, sintaxis JavaScript y `git diff --check`.
+
+
+### Corrección — conservar la versión moderna de Estadías y hoteles
+- Se deshizo la restauración excesiva de la estructura antigua y se volvió al estado moderno de referencia `6274861`.
+- Se recuperaron el selector visual de alojamientos, el formulario actualizado y la selección moderna de fotos por ficha.
+- Se conserva únicamente el ajuste independiente que separa las imágenes de fondo de Servicios.
