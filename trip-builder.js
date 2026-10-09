@@ -246,7 +246,7 @@
     root.innerHTML = `<section class="trip-builder-hero">
       <div class="trip-builder-hero-image" aria-hidden="true">
         <video class="trip-builder-hero-video" autoplay loop muted playsinline poster="assets/img/services/retreats/retreat-tamarindo.webp" tabindex="-1">
-          <source src="assets/videohero0.mp4" type="video/mp4" />
+          <source src="assets/videohero0.mp4?v=20261008-videoopt1" type="video/mp4" />
         </video>
       </div>
       <div class="container trip-builder-hero-content"><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
