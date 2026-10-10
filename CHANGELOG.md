@@ -1856,3 +1856,7 @@
 - `services.js`: se actualiza la imagen principal de ATV y se reemplazan las tres fotos de la galería por imágenes del carrusel público de [Native’s Way Costa Rica](https://www.instagram.com/p/DRUvpl2DVmK/?img_index=1).
 - `assets/img/services/atv/atv-instagram-1.webp`, `atv-instagram-2.webp` y `atv-instagram-3.webp`: fotos optimizadas localmente desde la publicación indicada.
 - Validación: las tres imágenes nuevas son distintas, cargan correctamente y la portada/fondo usan la primera foto del carrusel.
+
+### Cuatriciclos — restaurar portada y fondo originales
+- `services.js`: se restaura `atv-forest-convoy.webp` como imagen principal de la portada y del fondo; las tres fotos nuevas de Instagram permanecen únicamente en la galería.
+- Validación: portada/fondo originales y galería nueva conservados.

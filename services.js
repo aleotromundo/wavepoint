@@ -376,7 +376,7 @@ questions: {}
 id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
-images: ['assets/img/services/atv/atv-instagram-1.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
+images: ['assets/img/services/atv/atv-forest-convoy.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
 galleryImages: ['assets/img/services/atv/atv-instagram-1.webp', 'assets/img/services/atv/atv-instagram-2.webp', 'assets/img/services/atv/atv-instagram-3.webp'],
 imageAlts: ['Vehículo todoterreno cruzando un arroyo en un bosque tropical', 'Dos personas disfrutando un recorrido en vehículo todoterreno', 'Grupo de cuatriciclos recorriendo un sendero junto al río'],
 imageAltsEn: ['All-terrain vehicle crossing a stream in a tropical forest', 'Two people enjoying an all-terrain vehicle ride', 'Group of ATVs riding along a trail beside the river'],
