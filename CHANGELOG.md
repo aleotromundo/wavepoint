@@ -1,4 +1,12 @@
 ## 2026-10-10
+### Armador — recomendación algorítmica de alojamiento
+- `trip-builder.js`: la opción del modal ahora se presenta como «Pedir recomendación» en la tarjeta y solicita cantidad de personas y presupuesto máximo por noche. Un algoritmo determinista compara capacidad orientativa y rangos de tarifa existentes para elegir una sola opción.
+- `trip-builder.js`: el mensaje de WhatsApp identifica el alojamiento recomendado por el algoritmo y conserva el presupuesto usado para la decisión.
+- `trip-builder.css`: se agregaron los campos y estados responsive del formulario de recomendación.
+- `trip-builder.html`: se resolvieron marcadores de conflicto preexistentes y se renovó la versión cacheada de los scripts.
+- Validación prevista: sintaxis JavaScript, `git diff --check`, flujo singular/plural y revisión responsive en escritorio, tablet y móvil.
+
+## 2026-10-10
 ### Tarifas — compartir una sola fuente entre tabla y armador
 - `pricing-data.js`: se creó la fuente única con las tarifas por persona, el orden de filas y las etiquetas bilingües. La tabla de la home se genera desde esos datos y se actualiza al cambiar el idioma.
 - `index.html` y `trip-builder.html`: cargan la fuente compartida antes de inicializar sus vistas; la tabla conserva su estructura y clases visuales.

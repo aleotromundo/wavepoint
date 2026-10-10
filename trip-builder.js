@@ -12,10 +12,10 @@
     { id: 'surfskate', image: 'assets/img/services/surfskate/surfskate.webp', imageAlt: { es: 'Dos instructores practicando surfskate sobre una tabla', en: 'Two instructors practicing surfskate on a board' }, title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } }
   ];
   const accommodationOptions = [
-    { id: 'tamalodge', image: 'assets/img/stays/tamalodge/cover.webp', name: { es: 'Hotel Tamalodge', en: 'Hotel Tamalodge' }, category: { es: 'Opción económica', en: 'Budget option' }, price: { es: 'USD 50 · por habitación / noche', en: 'USD 50 · per room / night' }, summary: { es: 'Habitación privada con baño privado para una estadía simple y funcional.', en: 'A private room with a private bathroom for a simple, functional stay.' } },
-    { id: 'casa-aura', image: 'assets/img/stays/casa-aura/casa-aura-exterior.webp', name: { es: 'Casa Aura', en: 'Casa Aura' }, category: { es: 'Opción media', en: 'Mid-range option' }, price: { es: 'USD 80–210 · por unidad / noche', en: 'USD 80–210 · per unit / night' }, summary: { es: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno según la unidad.', en: 'Beachfront accommodation with rooms, apartments and breakfast depending on the unit.' } },
-    { id: 'casa-madera', image: 'assets/img/stays/casa-maderas/cover.webp', name: { es: 'Casa Madera', en: 'Casa Madera' }, category: { es: 'Opción grupal', en: 'Group option' }, price: { es: 'USD 250–500 · por noche', en: 'USD 250–500 · per night' }, summary: { es: 'Una casa frente al mar para grupos, con tarifas que cambian según la temporada.', en: 'A beachfront house for groups, with rates that vary by season.' } },
-    { id: 'capitan-suizo', image: 'assets/img/stays/capitan-suizo/cover.webp', name: { es: 'Capitán Suizo', en: 'Capitán Suizo' }, category: { es: 'Opción deluxe', en: 'Deluxe option' }, price: { es: 'USD 600 · por noche', en: 'USD 600 · per night' }, summary: { es: 'Hotel frente a la playa con bienestar, piscina y espacios para disfrutar la estadía.', en: 'A beachfront hotel with wellness services, a pool and spaces to enjoy your stay.' } }
+    { id: 'tamalodge', maxGuests: 2, budgetMin: 50, budgetMax: 50, image: 'assets/img/stays/tamalodge/cover.webp', name: { es: 'Hotel Tamalodge', en: 'Hotel Tamalodge' }, category: { es: 'Opción económica', en: 'Budget option' }, price: { es: 'USD 50 · por habitación / noche', en: 'USD 50 · per room / night' }, summary: { es: 'Habitación privada con baño privado para una estadía simple y funcional.', en: 'A private room with a private bathroom for a simple, functional stay.' } },
+    { id: 'casa-aura', maxGuests: 8, budgetMin: 80, budgetMax: 210, image: 'assets/img/stays/casa-aura/casa-aura-exterior.webp', name: { es: 'Casa Aura', en: 'Casa Aura' }, category: { es: 'Opción media', en: 'Mid-range option' }, price: { es: 'USD 80–210 · por unidad / noche', en: 'USD 80–210 · per unit / night' }, summary: { es: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno según la unidad.', en: 'Beachfront accommodation with rooms, apartments and breakfast depending on the unit.' } },
+    { id: 'casa-madera', maxGuests: 15, budgetMin: 250, budgetMax: 500, image: 'assets/img/stays/casa-maderas/cover.webp', name: { es: 'Casa Madera', en: 'Casa Madera' }, category: { es: 'Opción grupal', en: 'Group option' }, price: { es: 'USD 250–500 · por noche', en: 'USD 250–500 · per night' }, summary: { es: 'Una casa frente al mar para grupos, con tarifas que cambian según la temporada.', en: 'A beachfront house for groups, with rates that vary by season.' } },
+    { id: 'capitan-suizo', maxGuests: null, budgetMin: 600, budgetMax: 600, image: 'assets/img/stays/capitan-suizo/cover.webp', name: { es: 'Capitán Suizo', en: 'Capitán Suizo' }, category: { es: 'Opción deluxe', en: 'Deluxe option' }, price: { es: 'USD 600 · por noche', en: 'USD 600 · per night' }, summary: { es: 'Hotel frente a la playa con bienestar, piscina y espacios para disfrutar la estadía.', en: 'A beachfront hotel with wellness services, a pool and spaces to enjoy your stay.' } }
   ];
   const COPY = {
     es: {
@@ -59,6 +59,14 @@
       chooseAccommodation: 'Elegir alojamiento',
       changeAccommodation: 'Cambiar alojamiento',
       recommendAccommodation: 'Recomiéndenme según mi grupo y presupuesto',
+      recommendAccommodationShort: 'Pedir recomendación',
+      recommendationGuests: 'Personas del grupo',
+      recommendationBudget: 'Presupuesto máximo por noche (USD)',
+      recommendationBudgetPlaceholder: 'Ej.: 180',
+      recommendationHint: 'Con estos datos elegimos una sola opción para tu grupo. La disponibilidad se confirma después.',
+      confirmRecommendation: 'Elegir mi recomendación',
+      recommendationRequired: 'Indicá un presupuesto máximo por noche para recomendarte una opción.',
+      algorithmRecommendation: 'Recomendación del algoritmo',
       accommodationSelected: 'Alojamiento elegido',
       accommodationModalTitle: '¿Dónde te gustaría alojarte?',
       accommodationModalIntro: 'Elegí una opción o dejá que WavePoint te recomiende según tu grupo y presupuesto.',
@@ -124,6 +132,14 @@
       chooseAccommodation: 'Choose accommodation',
       changeAccommodation: 'Change accommodation',
       recommendAccommodation: 'Recommend one based on my group and budget',
+      recommendAccommodationShort: 'Ask for a recommendation',
+      recommendationGuests: 'Guests in your group',
+      recommendationBudget: 'Maximum budget per night (USD)',
+      recommendationBudgetPlaceholder: 'E.g. 180',
+      recommendationHint: 'With these details we choose one option for your group. Availability is confirmed afterwards.',
+      confirmRecommendation: 'Choose my recommendation',
+      recommendationRequired: 'Enter a maximum nightly budget so we can recommend one option.',
+      algorithmRecommendation: 'Algorithm recommendation',
       accommodationSelected: 'Selected accommodation',
       accommodationModalTitle: 'Where would you like to stay?',
       accommodationModalIntro: 'Choose an option or let WavePoint recommend one based on your group and budget.',
@@ -154,7 +170,7 @@
     catch (error) { return 'en'; }
   })();
   const selected = new Map();
-  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'stays' ? { accommodation: '' } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
+  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'stays' ? { accommodation: '', recommendation: { guests: '1', budget: '', id: '' } } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
   let customerName = '';
   let customerExtra = '';
   const root = document.getElementById('tripBuilderRoot');
@@ -201,14 +217,31 @@
   const accommodationFor = id => accommodationOptions.find(option => option.id === id);
   const accommodationField = (experience, draft, copy) => experience.id !== 'stays' ? '' : (() => {
     const selectedAccommodation = accommodationFor(draft.accommodation);
-    const label = selectedAccommodation ? selectedAccommodation.name[lang] : copy.chooseAccommodation;
-    return `<div class="trip-accommodation-field"><span>${copy.accommodationSelected}</span><button class="trip-accommodation-trigger${selectedAccommodation ? ' has-value' : ''}" type="button" data-open-accommodation aria-haspopup="dialog"><span>${esc(label)}</span><strong aria-hidden="true">${selectedAccommodation ? '↗' : '+'}</strong></button></div>`;
+    const isRecommendation = draft.accommodation === 'recommendation';
+    const recommended = accommodationFor(draft.recommendation?.id);
+    const label = selectedAccommodation ? selectedAccommodation.name[lang] : isRecommendation ? copy.recommendAccommodationShort : copy.chooseAccommodation;
+    const recommendationNote = isRecommendation && recommended ? `<small class="trip-accommodation-recommendation-note">${esc(copy.algorithmRecommendation)}: ${esc(recommended.name[lang])}</small>` : '';
+    return `<div class="trip-accommodation-field${isRecommendation ? ' is-recommendation' : ''}"><span>${copy.accommodationSelected}</span><button class="trip-accommodation-trigger${selectedAccommodation || isRecommendation ? ' has-value' : ''}" type="button" data-open-accommodation aria-haspopup="dialog"><span>${esc(label)}</span><strong aria-hidden="true">${selectedAccommodation || isRecommendation ? '↗' : '+'}</strong></button>${recommendationNote}</div>`;
   })();
+  const recommendedAccommodationFor = (guests, budget) => {
+    const groupSize = Math.max(1, Number(guests) || 1);
+    const nightlyBudget = Math.max(0, Number(budget) || 0);
+    return accommodationOptions.map((option, index) => {
+      const groupPenalty = option.maxGuests && groupSize > option.maxGuests ? 10000 + (groupSize - option.maxGuests) * 100 : 0;
+      const budgetPenalty = nightlyBudget < option.budgetMin ? (option.budgetMin - nightlyBudget) * 4 : nightlyBudget > option.budgetMax ? (nightlyBudget - option.budgetMax) * .25 : 0;
+      const fitBonus = nightlyBudget >= option.budgetMin && nightlyBudget <= option.budgetMax ? -40 : 0;
+      return { option, score: groupPenalty + budgetPenalty + fitBonus + index * .01 };
+    }).sort((a, b) => a.score - b.score)[0].option;
+  };
   const renderAccommodationModal = () => {
     const copy = COPY[lang];
-    const current = drafts.get('stays').accommodation;
+    const draft = drafts.get('stays');
+    const current = draft.accommodation;
+    const recommendation = draft.recommendation || { guests: draft.guests, budget: '', id: '' };
+    const recommended = accommodationFor(recommendation.id);
     const options = accommodationOptions.map(option => `<button class="trip-accommodation-option${current === option.id ? ' is-selected' : ''}" type="button" data-accommodation="${option.id}"><img src="${option.image}" alt="${esc(option.name[lang])}" loading="lazy"><span class="trip-accommodation-option-copy"><small>${esc(option.category[lang])}</small><strong>${esc(option.name[lang])}</strong><span>${esc(option.price[lang])}</span><em>${esc(option.summary[lang])}</em></span><b aria-hidden="true">${current === option.id ? '✓' : copy.selectAccommodation}</b></button>`).join('');
-    return `<div class="trip-accommodation-modal" data-accommodation-modal hidden><div class="trip-accommodation-backdrop" data-close-accommodation></div><section class="trip-accommodation-dialog" role="dialog" aria-modal="true" aria-labelledby="tripAccommodationTitle"><button class="trip-accommodation-close" type="button" data-close-accommodation aria-label="${esc(copy.closeAccommodation)}">×</button><p class="trip-kicker">${copy.accommodationSelected}</p><h2 id="tripAccommodationTitle">${copy.accommodationModalTitle}</h2><p class="trip-accommodation-modal-intro">${copy.accommodationModalIntro}</p><div class="trip-accommodation-options">${options}<button class="trip-accommodation-option trip-accommodation-recommendation${current === 'recommendation' ? ' is-selected' : ''}" type="button" data-accommodation="recommendation"><span class="trip-accommodation-recommendation-icon" aria-hidden="true">✦</span><span class="trip-accommodation-option-copy"><small>${copy.accommodationSelected}</small><strong>${copy.recommendAccommodation}</strong><em>${lang === 'es' ? 'WavePoint compara las opciones según las fechas, el grupo y el presupuesto.' : 'WavePoint compares the options based on your dates, group and budget.'}</em></span><b aria-hidden="true">${current === 'recommendation' ? '✓' : copy.selectAccommodation}</b></button></div></section></div>`;
+    const recommendationForm = current === 'recommendation' ? `<div class="trip-recommendation-form"><div class="trip-recommendation-fields"><label>${esc(copy.recommendationGuests)}<input type="number" min="1" max="99" step="1" value="${esc(recommendation.guests || draft.guests)}" data-recommendation-guests></label><label>${esc(copy.recommendationBudget)}<input type="number" min="1" step="10" inputmode="decimal" placeholder="${esc(copy.recommendationBudgetPlaceholder)}" value="${esc(recommendation.budget)}" data-recommendation-budget required></label></div><p>${esc(copy.recommendationHint)}</p>${recommended ? `<strong class="trip-recommendation-result">${esc(copy.algorithmRecommendation)}: ${esc(recommended.name[lang])}</strong>` : ''}<p class="trip-recommendation-error" data-recommendation-error role="alert"></p><button type="button" class="trip-recommendation-confirm" data-confirm-recommendation>${esc(copy.confirmRecommendation)}</button></div>` : '';
+    return `<div class="trip-accommodation-modal" data-accommodation-modal hidden><div class="trip-accommodation-backdrop" data-close-accommodation></div><section class="trip-accommodation-dialog" role="dialog" aria-modal="true" aria-labelledby="tripAccommodationTitle"><button class="trip-accommodation-close" type="button" data-close-accommodation aria-label="${esc(copy.closeAccommodation)}">×</button><p class="trip-kicker">${copy.accommodationSelected}</p><h2 id="tripAccommodationTitle">${copy.accommodationModalTitle}</h2><p class="trip-accommodation-modal-intro">${copy.accommodationModalIntro}</p><div class="trip-accommodation-options">${options}<button class="trip-accommodation-option trip-accommodation-recommendation${current === 'recommendation' ? ' is-selected' : ''}" type="button" data-accommodation="recommendation"><span class="trip-accommodation-recommendation-icon" aria-hidden="true">✦</span><span class="trip-accommodation-option-copy"><small>${copy.accommodationSelected}</small><strong>${copy.recommendAccommodation}</strong><em>${esc(copy.recommendationHint)}</em></span><b aria-hidden="true">${current === 'recommendation' ? '✓' : copy.selectAccommodation}</b></button></div>${recommendationForm}</section></div>`;
   };
   const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
     : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
@@ -273,7 +306,7 @@
         ? `${copy.checkIn}: ${formatDate(state.start) || '—'} · ${copy.checkOut}: ${formatDate(state.end) || '—'}`
         : `${copy.date}: ${formatDate(state.start) || '—'}`;
       const accommodation = id === 'stays' ? accommodationFor(state.accommodation) : null;
-      const accommodationLabel = id === 'stays' ? (accommodation ? accommodation.name[lang] : state.accommodation === 'recommendation' ? copy.recommendAccommodation : '—') : '';
+      const accommodationLabel = id === 'stays' ? (accommodation ? accommodation.name[lang] : state.accommodation === 'recommendation' ? copy.recommendAccommodationShort : '—') : '';
       return `<li class="trip-summary-item">
         <span class="trip-summary-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
         <div class="trip-summary-item-copy"><strong>${esc(titleFor(experience, state))}</strong>${id === 'stays' ? `<span>${esc(copy.accommodationSelected)}: ${esc(accommodationLabel)}</span>` : ''}<span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
@@ -375,6 +408,21 @@
   root.addEventListener('input', event => {
     if (event.target.matches('[data-name]')) { customerName = event.target.value; return; }
     if (event.target.matches('[data-extra]')) { customerExtra = event.target.value; return; }
+    if (event.target.matches('[data-recommendation-guests]')) {
+      const draft = drafts.get('stays');
+      draft.guests = String(Math.max(1, Math.min(99, Number(event.target.value) || 1)));
+      draft.recommendation = { ...(draft.recommendation || {}), guests: draft.guests };
+      const state = selected.get('stays');
+      if (state) Object.assign(state, draft);
+      updateExperienceCards();
+      updateSummary();
+      return;
+    }
+    if (event.target.matches('[data-recommendation-budget]')) {
+      const draft = drafts.get('stays');
+      draft.recommendation = { ...(draft.recommendation || {}), budget: event.target.value };
+      return;
+    }
     const card = event.target.closest('[data-experience]');
     if (!card) return;
     const draft = drafts.get(card.dataset.experience);
@@ -415,10 +463,42 @@
     const accommodationChoice = event.target.closest('[data-accommodation]');
     if (accommodationChoice) {
       const draft = drafts.get('stays');
+      if (accommodationChoice.dataset.accommodation === 'recommendation') {
+        draft.accommodation = 'recommendation';
+        draft.recommendation = { ...(draft.recommendation || {}), guests: draft.guests };
+        const wasHidden = accommodationModal?.hidden ?? true;
+        if (accommodationModal) accommodationModal.outerHTML = renderAccommodationModal();
+        const refreshedModal = root.querySelector('[data-accommodation-modal]');
+        if (refreshedModal) refreshedModal.hidden = wasHidden;
+        updateExperienceCards();
+        updateSummary();
+        return;
+      }
       draft.accommodation = accommodationChoice.dataset.accommodation;
+      draft.recommendation = { guests: draft.guests, budget: '', id: '' };
       const state = selected.get('stays');
       if (state) Object.assign(state, draft);
       if (accommodationModal) accommodationModal.hidden = true;
+      updateExperienceCards();
+      updateSummary();
+      return;
+    }
+    if (event.target.closest('[data-confirm-recommendation]')) {
+      const draft = drafts.get('stays');
+      const budgetInput = root.querySelector('[data-recommendation-budget]');
+      const budget = Number(budgetInput?.value || 0);
+      const error = root.querySelector('[data-recommendation-error]');
+      if (!Number.isFinite(budget) || budget <= 0) {
+        if (error) error.textContent = COPY[lang].recommendationRequired;
+        budgetInput?.focus();
+        return;
+      }
+      draft.recommendation = { guests: draft.guests, budget: String(budget), id: recommendedAccommodationFor(draft.guests, budget).id };
+      draft.accommodation = 'recommendation';
+      const state = selected.get('stays');
+      if (state) Object.assign(state, draft);
+      const modal = root.querySelector('[data-accommodation-modal]');
+      if (modal) modal.hidden = true;
       updateExperienceCards();
       updateSummary();
       return;
@@ -492,7 +572,15 @@
       lines.push(`• ${titleFor(experience, state)}`);
       if (id === 'stays') {
         const accommodation = accommodationFor(state.accommodation);
-        lines.push(`  ${COPY[lang].accommodationSelected}: ${accommodation ? accommodation.name[lang] : COPY[lang].recommendAccommodation}`);
+        if (accommodation) {
+          lines.push(`  ${COPY[lang].accommodationSelected}: ${accommodation.name[lang]}`);
+        } else if (state.accommodation === 'recommendation') {
+          const recommendation = accommodationFor(state.recommendation?.id);
+          lines.push(`  ${COPY[lang].accommodationSelected}: ${COPY[lang].recommendAccommodationShort}`);
+          if (recommendation) lines.push(`  ${COPY[lang].algorithmRecommendation}: ${recommendation.name[lang]} · ${COPY[lang].recommendationBudget}: ${money(Number(state.recommendation.budget))}`);
+        } else {
+          lines.push(`  ${COPY[lang].accommodationSelected}: ${COPY[lang].recommendAccommodationShort}`);
+        }
       }
       if (experience.dateMode === 'range') lines.push(`  ${COPY[lang].waCheckIn}: ${formatDate(state.start)} · ${COPY[lang].waCheckOut}: ${formatDate(state.end)}`);
       else lines.push(`  ${COPY[lang].waDate}: ${formatDate(state.start)}`);
