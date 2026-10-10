@@ -1837,3 +1837,8 @@
 - `services.js`: la primera imagen de la galería se reemplaza por una foto distinta con un surfista; se actualizan los textos alternativos en español e inglés.
 - `assets/img/services/witchs-rock/roca-bruja-surf.webp`: imagen optimizada desde [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG), de `dog4aday`, bajo licencia [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
 - `styles.css` y `styles.optimized.css`: la galería pasa de 560 a 700 px de ancho máximo para que las dos fotos se vean un poco más grandes sin perder el comportamiento responsive.
+
+### Roca Bruja — ampliar galería y renovar foto principal
+- `services.js`: la primera foto vuelve a ser un paisaje distinto de Roca Bruja, sin surfista ni repetición de la imagen anterior; se actualizan los textos alternativos.
+- `assets/img/services/witchs-rock/roca-bruja-landscape.webp`: imagen obtenida de [Go Visit Costa Rica](https://www.govisitcostarica.com/region/costa-rica-beaches/witchs-rock.asp) y optimizada localmente.
+- `styles.css` y `styles.optimized.css`: la galería pasa a 900 px, igualando el ancho del formulario inferior en escritorio; en móvil conserva el ancho disponible.
