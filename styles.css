@@ -8773,3 +8773,51 @@ footer a {
   .allies-showcase .ally-tile > span::before { transition: none !important; }
   .allies-showcase .allies-ticker-track { animation: none !important; }
 }
+
+/* Ajuste final de composición de aliados: encabezado compacto, alineado y próximo al carrusel. */
+.allies-showcase .allies-heading {
+  width: min(1120px, calc(100% - 40px)) !important;
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding: 28px 0 8px !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+.allies-showcase .allies-heading::before {
+  width: 34px !important;
+  height: 3px !important;
+  margin: 0 0 8px !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 10px rgba(143, 233, 238, .55) !important;
+}
+.allies-showcase .allies-main-title {
+  margin: 0 0 4px !important;
+  font-size: clamp(28px, 3.2vw, 38px) !important;
+  line-height: 1 !important;
+  letter-spacing: .025em !important;
+  text-align: left !important;
+}
+.allies-showcase .allies-sub-title {
+  max-width: 680px !important;
+  margin: 0 !important;
+  font-size: clamp(12px, 1.25vw, 15px) !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+.allies-showcase .allies-section {
+  padding: 0 0 24px !important;
+}
+.allies-showcase .allies-ticker-viewport {
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+}
+@media (max-width: 640px) {
+  .allies-showcase .allies-heading {
+    width: calc(100% - 32px) !important;
+    padding: 22px 0 7px !important;
+  }
+  .allies-showcase .allies-main-title { font-size: 29px !important; }
+  .allies-showcase .allies-sub-title { font-size: 12px !important; }
+  .allies-showcase .allies-section { padding-bottom: 18px !important; }
+}
