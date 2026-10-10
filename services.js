@@ -1007,14 +1007,13 @@ const lines = isAccommodation
     ? [`Hola, WavePoint. Les escribo por ${subject}.`]
     : [`Hi WavePoint. I’m getting in touch about ${subject}.`];
 if (name) {
-  lines.push(isAccommodation
-    ? `${isSpanish ? 'Soy' : 'I’m'} ${name}.`
-    : isSpanish
-      ? (plural ? `Soy ${name} y somos ${groupValue} personas.` : `Soy ${name}.`)
-      : (plural ? `I’m ${name} and there are ${groupValue} of us.` : `I’m ${name}.`));
-}
-if (isAccommodation && plural) {
-  lines.push(isSpanish ? `Viajamos ${groupValue} personas.` : `There will be ${groupValue} of us.`);
+  lines.push(hasGroupCount && plural
+    ? isSpanish ? `Soy ${name} y somos ${groupValue} personas.` : `I’m ${name}, and there are ${groupValue} of us.`
+    : isSpanish ? `Me llamo ${name}.` : `My name is ${name}.`);
+} else if (hasGroupCount) {
+  lines.push(isSpanish
+    ? (plural ? `Somos ${groupValue} personas.` : 'Viaja 1 persona.')
+    : (plural ? `There are ${groupValue} of us.` : 'One person will be traveling.'));
 }
 const naturalAnswers = {
   surf_level: isSpanish ? (plural ? 'Nuestro nivel de surf es' : 'Mi nivel de surf es') : (plural ? 'Our surfing level is' : 'My surfing level is'),
@@ -1087,8 +1086,13 @@ if (isAccommodation) {
       return;
     }
     if (question.id === 'surf_level' || question.id === 'current_surf_level') {
-      const level = normalized === 'primera vez' ? (isSpanish ? 'la primera vez que hago surf' : 'my first time surfing') : normalized;
-      lines.push(`${naturalAnswers[question.id]} ${level}.`);
+      if (normalized === 'primera vez' || normalized === 'first time') {
+        lines.push(isSpanish
+          ? (plural ? 'Es nuestra primera vez haciendo surf.' : 'Es mi primera vez haciendo surf.')
+          : (plural ? 'It’s our first time surfing.' : 'It’s my first time surfing.'));
+        return;
+      }
+      lines.push(`${naturalAnswers[question.id]} ${joined}.`);
       return;
     }
     if (question.id === 'board_need' || question.id === 'own_board' || question.id === 'own_boards') {
@@ -1101,8 +1105,7 @@ if (isAccommodation) {
     }
     const prefix = naturalAnswers[question.id];
     if (prefix) {
-      const value = question.id === 'origin' ? joined : normalized;
-      const schedule = question.id === 'preferred_schedule' || question.id === 'session_schedule' ? joined.toLowerCase() : value;
+      const schedule = question.id === 'preferred_schedule' || question.id === 'session_schedule' ? joined.toLowerCase() : joined;
       lines.push(`${prefix} ${schedule}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
     } else if (isSpanish) {
         lines.push(`Como dato adicional: ${joined}.`);
