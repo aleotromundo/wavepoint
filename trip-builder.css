@@ -526,3 +526,75 @@
 /* Restauración: la imagen vuelve a llenar toda la tarjeta, sin bandas laterales. */
 .trip-experience-image img { object-fit: cover; object-position: center; }
 .trip-experience:hover .trip-experience-image img { transform: scale(1.035); }
+
+.trip-experience-title-link {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+.trip-experience-title-link:hover,
+.trip-experience-title-link:focus-visible {
+  color: #8df0d1;
+  text-decoration: underline;
+}
+.trip-experience-title-link:focus-visible {
+  outline: 3px solid rgba(141, 240, 209, .35);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Estadías: fechas compactas con calendario y cantidad de personas alineada. */
+.trip-experience[data-experience="stays"] .trip-experience-fields {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+}
+.trip-date-field,
+.trip-guests-field { min-width: 0; }
+.trip-date-trigger,
+.trip-guests-stepper {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 8px 9px;
+  border: 1px solid rgba(8, 43, 58, .17);
+  border-radius: 8px;
+  background: #fff;
+  color: #183c47;
+  font: 12px "DM Sans", sans-serif;
+}
+.trip-date-trigger { cursor: pointer; }
+.trip-date-trigger svg { width: 20px; height: 20px; flex: 0 0 auto; fill: none; stroke: #087f80; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.trip-date-trigger:not(.has-value) span { display: none; }
+.trip-date-picker { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; opacity: 0; }
+.trip-date-trigger:focus-visible,
+.trip-guests-stepper:focus-within { border-color: #10a49a; outline: 3px solid rgba(16, 164, 154, .13); }
+.trip-guests-stepper { gap: 0; padding: 0; overflow: hidden; }
+.trip-guests-stepper button {
+  display: grid;
+  width: 32px;
+  min-height: 38px;
+  flex: 0 0 32px;
+  place-items: center;
+  border: 0;
+  background: #e8f5f1;
+  color: #087f80;
+  font: 700 20px/1 "DM Sans", sans-serif;
+  cursor: pointer;
+}
+.trip-guests-stepper button:hover { background: #d5eee7; }
+.trip-guests-stepper button:focus-visible { position: relative; z-index: 1; outline: 3px solid rgba(16, 164, 154, .35); outline-offset: -3px; }
+.trip-guests-stepper output { min-width: 28px; flex: 1 1 auto; text-align: center; font-weight: 700; }
+@media (max-width: 600px) {
+  .trip-experience[data-experience="stays"] .trip-experience-fields { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .trip-experience[data-experience="stays"] .trip-date-trigger,
+  .trip-experience[data-experience="stays"] .trip-guests-stepper { min-height: 36px; margin-top: 4px; padding: 6px 4px; font-size: 11px; }
+  .trip-experience[data-experience="stays"] .trip-guests-stepper button { width: 24px; min-height: 34px; flex-basis: 24px; font-size: 17px; }
+  .trip-experience[data-experience="stays"] .trip-guests-stepper output { min-width: 18px; }
+  .trip-experience[data-experience="stays"] .trip-date-trigger svg { width: 18px; height: 18px; }
+}
