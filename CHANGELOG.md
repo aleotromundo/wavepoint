@@ -1803,3 +1803,4 @@
 - Se deshizo la restauración excesiva de la estructura antigua y se volvió al estado moderno de referencia `6274861`.
 - Se recuperaron el selector visual de alojamientos, el formulario actualizado y la selección moderna de fotos por ficha.
 - Se conserva únicamente el ajuste independiente que separa las imágenes de fondo de Servicios.
+- `trip-builder.css` y `trip-builder.html`: estilo del selector y renovación de caché. Validación local: pasan `node --check`, `git diff --check`, pruebas de matrices/subtotales y verificación de las diez rutas de imágenes. Despliegue público confirmado: `trip-builder.html`, el JS y el CSS versionados responden HTTP 200 con las tarifas nuevas.
