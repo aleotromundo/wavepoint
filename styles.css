@@ -8883,3 +8883,23 @@ footer a {
   .ally-tile img { width: 58px; height: 58px; flex-basis: 58px; }
   .ally-tile strong { font-size: 20px; }
 }
+
+/* Roca Bruja: dos fotos compactas, distintas y ampliables al hacer clic. */
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
+  width: min(100%, 560px) !important;
+  max-width: 560px !important;
+  justify-self: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img {
+  aspect-ratio: 4 / 3 !important;
+  object-fit: cover !important;
+}
+@media (max-width: 640px) {
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
+    width: 100% !important;
+    max-width: none !important;
+    gap: 10px !important;
+  }
+}

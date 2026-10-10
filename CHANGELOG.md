@@ -1,4 +1,9 @@
 ## 2026-10-10
+### Roca Bruja — galería compacta con ampliación
+- `styles.css` y `styles.optimized.css`: las dos fotos se muestran en paneles más chicos, lado a lado y sin repetirse; se conserva el cursor de ampliación y el visor existente al hacer clic o usar teclado.
+- `service-detail.html`: se renueva la caché de estilos para aplicar el ajuste en producción.
+- Validación: CSS fuente y optimizado sincronizados en el bloque funcional, las dos imágenes siguen siendo distintas y pasan `git diff --check`.
+
 ### Roca Bruja — reemplazar la foto de surfista por una vista del lugar
 - `services.js`: se elimina `roca-bruja-surfing.webp` de la galería y se incorpora `roca-bruja-coast.webp`, una vista cercana de la formación rocosa desde el mar; ambas fotos de la galería ahora representan el paisaje de Roca Bruja sin surfistas.
 - `assets/img/services/witchs-rock/roca-bruja-coast.webp`: foto local optimizada desde la referencia de Visit Costa Rica, con alt bilingüe actualizado.
