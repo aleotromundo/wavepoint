@@ -157,6 +157,9 @@
   const titleFor = (experience, state) => experience.id === 'surf-photography'
     ? `${experience.title[lang]} — ${state.photoMode === 'beach' ? COPY[lang].photoBeach : COPY[lang].photoWater}`
     : experience.title[lang];
+  const experienceHref = experience => experience.id === 'stays'
+    ? 'service-detail.html?service=alojamiento-experiencias'
+    : `service-detail.html?service=${experience.id === 'surf-lessons' ? 'clases-de-surf' : experience.id === 'surf-photography' ? 'surf-fotografia' : experience.id === 'witch-rock' ? 'roca-bruja' : experience.id}`;
   const money = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'es-CR', {
     style: 'currency',
     currency: 'USD',
@@ -182,7 +185,7 @@
     return `<article class="trip-experience${state ? ' is-added' : ''}" data-experience="${experience.id}">
       <div class="trip-experience-image"><img src="${image}" alt="${esc(imageAlt || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
       <div class="trip-experience-content">
-        <h3>${esc(experience.title[lang])}</h3>
+        <h3><a class="trip-experience-title-link" href="${experienceHref(experience)}">${esc(experience.title[lang])}</a></h3>
         <p>${esc(experience.description[lang])}</p>
         <div class="trip-experience-fields">${photoModeField(experience, draft, copy)}${dateInputs(experience)}<label>${copy.guests}<input type="number" min="1" step="1" inputmode="numeric" data-guests value="${esc(guests)}" /></label></div>
         <p class="trip-experience-price"><span>${copy.estimate}</span><strong>${price === null ? copy.quote : `${money(price)} ${copy.perPersonShort}`}</strong></p>
