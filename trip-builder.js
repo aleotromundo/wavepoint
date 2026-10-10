@@ -166,16 +166,14 @@
     return `${day}/${month}`;
   };
   const calendarIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M7.5 3.5v4m9-4v4M3.5 9.5h17"/></svg>';
-  const stayDateField = (key, label) => {
-    const value = drafts.get('stays')[key];
+  const dateField = (experience, key, label) => {
+    const value = drafts.get(experience.id)[key];
     const display = formatDateShort(value);
     return `<label class="trip-date-field">${label}<button class="trip-date-trigger${display ? ' has-value' : ''}" type="button" data-date-trigger="${key}" aria-label="${esc(`${label}${display ? `: ${display}` : ''}`)}">${calendarIcon}<span data-date-value>${display}</span></button><input class="trip-date-picker" type="date" data-date="${key}" value="${esc(value)}" tabindex="-1" aria-hidden="true" /></label>`;
   };
   const dateInputs = experience => experience.dateMode === 'range'
-    ? experience.id === 'stays'
-      ? `${stayDateField('start', COPY[lang].checkIn)}${stayDateField('end', COPY[lang].checkOut)}`
-      : `<div class="trip-input-pair"><label>${COPY[lang].checkIn}<input type="date" data-date="start" value="${esc(drafts.get(experience.id).start)}" /></label><label>${COPY[lang].checkOut}<input type="date" data-date="end" value="${esc(drafts.get(experience.id).end)}" /></label></div>`
-    : `<label>${COPY[lang].date}<input type="date" data-date="start" value="${esc(drafts.get(experience.id).start)}" /></label>`;
+    ? `${dateField(experience, 'start', COPY[lang].checkIn)}${dateField(experience, 'end', COPY[lang].checkOut)}`
+    : dateField(experience, 'start', COPY[lang].date);
   const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
     : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
   const renderCards = () => experiences.map(experience => {
@@ -187,9 +185,7 @@
     const beachPhoto = experience.id === 'surf-photography' && draft.photoMode === 'beach';
     const image = beachPhoto ? experience.beachImage : experience.image;
     const imageAlt = beachPhoto ? experience.beachImageAlt?.[lang] : experience.imageAlt?.[lang];
-    const guestsField = experience.id === 'stays'
-      ? `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : 'Add one guest')}">+</button></span></label>`
-      : `<label>${copy.guests}<input type="number" min="1" step="1" inputmode="numeric" data-guests value="${esc(guests)}" /></label>`;
+    const guestsField = `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : 'Add one guest')}">+</button></span></label>`;
     return `<article class="trip-experience${state ? ' is-added' : ''}" data-experience="${experience.id}">
       <div class="trip-experience-image"><img src="${image}" alt="${esc(imageAlt || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
       <div class="trip-experience-content">
@@ -345,7 +341,7 @@
     const draft = drafts.get(card.dataset.experience);
     if (event.target.matches('[data-date]')) {
       draft[event.target.dataset.date] = event.target.value;
-      if (card.dataset.experience === 'stays') updateExperienceCards();
+      updateExperienceCards();
     }
     if (event.target.matches('[data-guests]')) draft.guests = event.target.value;
     if (event.target.matches('[data-photo-mode]')) {
@@ -377,7 +373,7 @@
       return;
     }
     const guestsStep = event.target.closest('[data-guests-step]');
-    if (guestsStep && card && card.dataset.experience === 'stays') {
+    if (guestsStep && card) {
       const draft = drafts.get(card.dataset.experience);
       const nextGuests = Number(draft.guests) + (guestsStep.dataset.guestsStep === 'increase' ? 1 : -1);
       draft.guests = String(Math.max(1, Math.min(99, nextGuests)));
