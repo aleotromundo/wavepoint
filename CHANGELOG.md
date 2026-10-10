@@ -1,4 +1,9 @@
 ## 2026-10-10
+### Carrusel de aliados — reincorporar Eterno Verano y Club 33
+- `index.html`: se suman ambos aliados al carrusel visible y a su segundo conjunto duplicado, manteniendo el diseño restaurado y el desplazamiento continuo con siete tarjetas.
+- `assets/img/collaborators/eterno-verano/ally-eterno-verano.webp` y `assets/img/collaborators/club-33/ally-club33.webp`: se restauran en rutas activas porque habían quedado archivados bajo `cosas al pedo/`.
+- Validación: ambos conjuntos contienen en el mismo orden los siete aliados; todas las imágenes locales del carrusel existen; pasan `node --check` en `script.js`, `services.js` y `lang-switch.js`, además de `git diff --check`.
+
 ### Limpieza — retirar dashboard y archivar material sin uso activo
 - `dashboard.html`, `dashboard.css`, `dashboard.js` y `dashboard-catalog.js`: se retiraron de la raíz y se archivaron en `cosas al pedo/dashboard/`; se quitó su regla de `robots.txt`.
 - Dos prototipos de clima y sus recursos independientes se archivaron en `cosas al pedo/prototipos-clima/`.
