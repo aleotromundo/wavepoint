@@ -8776,24 +8776,24 @@ footer a {
 
 /* Ajuste final de composición de aliados: encabezado compacto, alineado y próximo al carrusel. */
 .allies-showcase .allies-heading {
-  width: min(1120px, calc(100% - 40px)) !important;
-  max-width: 1120px !important;
+  width: min(980px, calc(100% - 48px)) !important;
+  max-width: 980px !important;
   margin: 0 auto !important;
-  padding: 28px 0 8px !important;
+  padding: 24px 0 5px !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
   text-align: left !important;
 }
 .allies-showcase .allies-heading::before {
-  width: 34px !important;
-  height: 3px !important;
-  margin: 0 0 8px !important;
+  width: 42px !important;
+  height: 4px !important;
+  margin: 0 0 7px !important;
   border-radius: 2px !important;
   box-shadow: 0 0 10px rgba(143, 233, 238, .55) !important;
 }
 .allies-showcase .allies-main-title {
-  margin: 0 0 4px !important;
-  font-size: clamp(28px, 3.2vw, 38px) !important;
+  margin: 0 0 3px !important;
+  font-size: clamp(27px, 3vw, 35px) !important;
   line-height: 1 !important;
   letter-spacing: .025em !important;
   text-align: left !important;
@@ -8806,18 +8806,34 @@ footer a {
   text-align: left !important;
 }
 .allies-showcase .allies-section {
-  padding: 0 0 24px !important;
+  padding: 0 0 16px !important;
 }
 .allies-showcase .allies-ticker-viewport {
-  max-width: 1120px !important;
+  max-width: 980px !important;
   margin: 0 auto !important;
+}
+.allies-showcase .allies-ticker-set {
+  gap: 11px !important;
+  padding-right: 11px !important;
+}
+.allies-showcase .ally-tile {
+  width: 205px !important;
+  height: 88px !important;
+  padding: 8px !important;
+}
+.allies-showcase .ally-tile img {
+  width: 70px !important;
+  height: 70px !important;
+  flex-basis: 70px !important;
 }
 @media (max-width: 640px) {
   .allies-showcase .allies-heading {
     width: calc(100% - 32px) !important;
-    padding: 22px 0 7px !important;
+    padding: 20px 0 5px !important;
   }
   .allies-showcase .allies-main-title { font-size: 29px !important; }
   .allies-showcase .allies-sub-title { font-size: 12px !important; }
-  .allies-showcase .allies-section { padding-bottom: 18px !important; }
+  .allies-showcase .allies-section { padding-bottom: 12px !important; }
+  .allies-showcase .ally-tile { width: 188px !important; height: 78px !important; }
+  .allies-showcase .ally-tile img { width: 60px !important; height: 60px !important; flex-basis: 60px !important; }
 }
