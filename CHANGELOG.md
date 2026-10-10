@@ -1,4 +1,10 @@
 ## 2026-10-10
+### Fondo de Servicios — optimizar foto de parallax
+- `assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp`: reencodificar en WebP calidad 82, conservando resolución de 2176 × 1632 y la ruta existente; pasa de 1.225.662 a 356.334 bytes (−70,9 %, ahorro de 869.328 bytes).
+- `styles.css` y `styles.optimized.css`: añadir versión de caché al fondo; se renueva la versión de la hoja global en las diez páginas que la cargan para que reciban la foto nueva.
+- No se cambia el encuadre.
+- Validación: muestra comparada visualmente; WebP decodificable en 2176 × 1632; las diez páginas cargan la nueva versión y las referencias existen; pasan `node --check` en los scripts del sitio y `git diff --check`.
+
 ### Carrusel de aliados — velocidad y hover
 - `styles.css`, `styles.optimized.css` y `script.js`: el carrusel avanza un poco más rápido (`26s`) y al pasar el cursor reduce suavemente la velocidad mediante playback rate (`21s` de referencia) sin pausarse. El arrastre mantiene una velocidad intermedia y se añadió `will-change: transform` para mantener el desplazamiento fluido.
 - `index.html`: se actualizaron las versiones de caché de estilos y script para que el ajuste llegue al sitio público.
