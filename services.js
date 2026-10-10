@@ -377,8 +377,11 @@ id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatric
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
 images: ['assets/img/services/atv/atv-forest-convoy.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
-imageAlts: ['Grupo de cuatriciclos recorriendo un sendero de bosque tropical', 'Dos personas en un cuatriciclo con el volcán Arenal al fondo', 'Dos cuatriciclos en un mirador sobre la costa de Guanacaste', 'Grupo de cuatriciclos avanzando por un sendero de bosque tropical'],
-imageAltsEn: ['Group of ATVs riding along a tropical forest trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast', 'Group of ATVs riding along a tropical forest trail'],
+galleryImages: ['assets/img/services/atv/atv-instagram-1.webp', 'assets/img/services/atv/atv-instagram-2.webp', 'assets/img/services/atv/atv-instagram-3.webp'],
+imageAlts: ['Vehículo todoterreno cruzando un arroyo en un bosque tropical', 'Dos personas disfrutando un recorrido en vehículo todoterreno', 'Grupo de cuatriciclos recorriendo un sendero junto al río'],
+imageAltsEn: ['All-terrain vehicle crossing a stream in a tropical forest', 'Two people enjoying an all-terrain vehicle ride', 'Group of ATVs riding along a trail beside the river'],
+galleryImageAlts: ['Vehículo todoterreno cruzando un arroyo en un bosque tropical', 'Dos personas disfrutando un recorrido en vehículo todoterreno', 'Grupo de cuatriciclos recorriendo un sendero junto al río'],
+galleryImageAltsEn: ['All-terrain vehicle crossing a stream in a tropical forest', 'Two people enjoying an all-terrain vehicle ride', 'Group of ATVs riding along a trail beside the river'],
 questions: [
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
