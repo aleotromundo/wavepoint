@@ -12,10 +12,10 @@
     { id: 'surfskate', image: 'assets/img/services/surfskate/surfskate.webp', imageAlt: { es: 'Dos instructores practicando surfskate sobre una tabla', en: 'Two instructors practicing surfskate on a board' }, title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } }
   ];
   const accommodationOptions = [
-    { id: 'tamalodge', maxGuests: 2, budgetMin: 50, budgetMax: 50, image: 'assets/img/stays/tamalodge/cover.webp', name: { es: 'Hotel Tamalodge', en: 'Hotel Tamalodge' }, category: { es: 'Opción económica', en: 'Budget option' }, price: { es: 'USD 50 · por habitación / noche', en: 'USD 50 · per room / night' }, summary: { es: 'Habitación privada con baño privado para una estadía simple y funcional.', en: 'A private room with a private bathroom for a simple, functional stay.' } },
-    { id: 'casa-aura', maxGuests: 8, budgetMin: 80, budgetMax: 210, image: 'assets/img/stays/casa-aura/casa-aura-exterior.webp', name: { es: 'Casa Aura', en: 'Casa Aura' }, category: { es: 'Opción media', en: 'Mid-range option' }, price: { es: 'USD 80–210 · por unidad / noche', en: 'USD 80–210 · per unit / night' }, summary: { es: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno según la unidad.', en: 'Beachfront accommodation with rooms, apartments and breakfast depending on the unit.' } },
-    { id: 'casa-madera', maxGuests: 15, budgetMin: 250, budgetMax: 500, image: 'assets/img/stays/casa-maderas/cover.webp', name: { es: 'Casa Madera', en: 'Casa Madera' }, category: { es: 'Opción grupal', en: 'Group option' }, price: { es: 'USD 250–500 · por noche', en: 'USD 250–500 · per night' }, summary: { es: 'Una casa frente al mar para grupos, con tarifas que cambian según la temporada.', en: 'A beachfront house for groups, with rates that vary by season.' } },
-    { id: 'capitan-suizo', maxGuests: null, budgetMin: 600, budgetMax: 600, image: 'assets/img/stays/capitan-suizo/cover.webp', name: { es: 'Capitán Suizo', en: 'Capitán Suizo' }, category: { es: 'Opción deluxe', en: 'Deluxe option' }, price: { es: 'USD 600 · por noche', en: 'USD 600 · per night' }, summary: { es: 'Hotel frente a la playa con bienestar, piscina y espacios para disfrutar la estadía.', en: 'A beachfront hotel with wellness services, a pool and spaces to enjoy your stay.' } }
+    { id: 'tamalodge', maxGuests: 2, budgetMin: 50, budgetMax: 50, priceUnit: { es: 'por habitación / noche', en: 'per room / night' }, image: 'assets/img/stays/tamalodge/cover.webp', name: { es: 'Hotel Tamalodge', en: 'Hotel Tamalodge' }, category: { es: 'Opción económica', en: 'Budget option' }, summary: { es: 'Habitación privada con baño privado para una estadía simple y funcional.', en: 'A private room with a private bathroom for a simple, functional stay.' } },
+    { id: 'casa-aura', maxGuests: 8, budgetMin: 80, budgetMax: 210, priceUnit: { es: 'por unidad / noche', en: 'per unit / night' }, image: 'assets/img/stays/casa-aura/casa-aura-exterior.webp', name: { es: 'Casa Aura', en: 'Casa Aura' }, category: { es: 'Opción media', en: 'Mid-range option' }, summary: { es: 'Alojamiento frente al mar con habitaciones, apartamentos y desayuno según la unidad.', en: 'Beachfront accommodation with rooms, apartments and breakfast depending on the unit.' } },
+    { id: 'casa-madera', maxGuests: 15, budgetMin: 250, budgetMax: 500, priceUnit: { es: 'por noche', en: 'per night' }, image: 'assets/img/stays/casa-maderas/cover.webp', name: { es: 'Casa Madera', en: 'Casa Madera' }, category: { es: 'Opción grupal', en: 'Group option' }, summary: { es: 'Una casa frente al mar para grupos, con tarifas que cambian según la temporada.', en: 'A beachfront house for groups, with rates that vary by season.' } },
+    { id: 'capitan-suizo', maxGuests: null, budgetMin: 600, budgetMax: 600, priceUnit: { es: 'por noche', en: 'per night' }, image: 'assets/img/stays/capitan-suizo/cover.webp', name: { es: 'Capitán Suizo', en: 'Capitán Suizo' }, category: { es: 'Opción deluxe', en: 'Deluxe option' }, summary: { es: 'Hotel frente a la playa con bienestar, piscina y espacios para disfrutar la estadía.', en: 'A beachfront hotel with wellness services, a pool and spaces to enjoy your stay.' } }
   ];
   const COPY = {
     es: {
@@ -33,6 +33,8 @@
       checkOut: 'Salida',
       guests: 'Cantidad de personas',
       estimate: 'Tarifa por persona',
+      accommodationEstimate: 'Tarifa aprox. por persona / noche',
+      accommodationPerNight: 'aprox. por noche',
       perPersonShort: 'c/u',
       photoMode: 'Tipo de fotografía',
       photoWater: 'Fotografía acuática',
@@ -50,7 +52,7 @@
       guestsShortPlural: 'personas',
       estimated: 'Subtotal de experiencias con precio',
       noEstimate: 'A confirmar',
-      totalNote: 'Importes estimados en USD: la tarifa por persona se multiplica por la cantidad de personas de cada experiencia. ATV y otros servicios sin tarifa visible se confirman con WavePoint.',
+      totalNote: 'Importes estimados en USD: las tarifas por persona se multiplican por la cantidad de personas. El alojamiento elegido se estima por noche según la tarifa publicada; el total final depende de las fechas, la unidad y la disponibilidad. Las recomendaciones se confirman con WavePoint.',
       priceNote: 'Precios y disponibilidad serán confirmados por el equipo de WavePoint antes de cualquier pago.',
       continue: 'Continuar a la solicitud',
       selectError: 'Agregá al menos una experiencia para continuar.',
@@ -64,6 +66,7 @@
       recommendationBudget: 'Presupuesto máximo por noche (USD)',
       recommendationBudgetPlaceholder: 'Ej.: 180',
       recommendationHint: 'Con estos datos elegimos una sola opción para tu grupo. La disponibilidad se confirma después.',
+      backToAccommodationOptions: 'Volver a alojamientos',
       confirmRecommendation: 'Elegir mi recomendación',
       recommendationRequired: 'Indicá un presupuesto máximo por noche para recomendarte una opción.',
       algorithmRecommendation: 'Recomendación del algoritmo',
@@ -108,6 +111,8 @@
       checkOut: 'Check-out',
       guests: 'Number of guests',
       estimate: 'Rate per person',
+      accommodationEstimate: 'Approx. rate per person / night',
+      accommodationPerNight: 'approx. per night',
       perPersonShort: 'per person',
       photoMode: 'Photography type',
       photoWater: 'In-water photography',
@@ -125,7 +130,7 @@
       guestsShortPlural: 'guests',
       estimated: 'Subtotal of priced experiences',
       noEstimate: 'To be confirmed',
-      totalNote: 'Estimates are in USD: each per-person rate is multiplied by the guest count for that experience. ATV and other unpriced services are confirmed by WavePoint.',
+      totalNote: 'Estimates are in USD: per-person rates are multiplied by each experience’s guest count. Selected accommodation is estimated per night from the published rate; the final total depends on dates, unit and availability. Recommendations are confirmed by WavePoint.',
       priceNote: 'Prices and availability will be confirmed by the WavePoint team before payment.',
       continue: 'Continue to booking request',
       selectError: 'Add at least one experience to continue.',
@@ -139,6 +144,7 @@
       recommendationBudget: 'Maximum budget per night (USD)',
       recommendationBudgetPlaceholder: 'E.g. 180',
       recommendationHint: 'With these details we choose one option for your group. Availability is confirmed afterwards.',
+      backToAccommodationOptions: 'Back to accommodation options',
       confirmRecommendation: 'Choose my recommendation',
       recommendationRequired: 'Enter a maximum nightly budget so we can recommend one option.',
       algorithmRecommendation: 'Algorithm recommendation',
@@ -175,6 +181,7 @@
   })();
   const selected = new Map();
   const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'stays' ? { accommodation: '', recommendation: { guests: '1', budget: '', id: '' } } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
+  let accommodationModalMode = 'options';
   let customerName = '';
   let customerExtra = '';
   const root = document.getElementById('tripBuilderRoot');
@@ -201,6 +208,17 @@
     currency: 'USD',
     maximumFractionDigits: 0
   }).format(amount);
+  const moneyApprox = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'es-CR', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: Number.isInteger(amount) ? 0 : 2
+  }).format(amount);
+  const formatMoneyRange = (min, max, format = money) => {
+    const minText = format(min);
+    const maxText = format(max);
+    return minText === maxText ? minText : `${minText}–${maxText}`;
+  };
   const formatDate = date => date
     ? new Date(`${date}T12:00:00`).toLocaleDateString(lang === 'en' ? 'en-US' : 'es-CR', { year: 'numeric', month: 'short', day: 'numeric' })
     : '';
@@ -219,6 +237,12 @@
     ? `${dateField(experience, 'start', COPY[lang].checkIn)}${dateField(experience, 'end', COPY[lang].checkOut)}`
     : dateField(experience, 'start', COPY[lang].date);
   const accommodationFor = id => accommodationOptions.find(option => option.id === id);
+  const accommodationRateFor = (id, guests) => {
+    const accommodation = accommodationFor(id);
+    if (!accommodation || !Number.isInteger(guests) || guests < 1) return null;
+    return { min: accommodation.budgetMin / guests, max: accommodation.budgetMax / guests };
+  };
+  const accommodationPriceFor = accommodation => `${formatMoneyRange(accommodation.budgetMin, accommodation.budgetMax)} · ${accommodation.priceUnit[lang]}`;
   const accommodationField = (experience, draft, copy) => experience.id !== 'stays' ? '' : (() => {
     const selectedAccommodation = accommodationFor(draft.accommodation);
     const isRecommendation = draft.accommodation === 'recommendation';
@@ -241,13 +265,14 @@
     const copy = COPY[lang];
     const draft = drafts.get('stays');
     const current = draft.accommodation;
+    const isRecommendationMode = accommodationModalMode === 'recommendation';
     const recommendation = draft.recommendation || { guests: draft.guests, budget: '', id: '' };
     const recommended = accommodationFor(recommendation.id);
-    const options = accommodationOptions.map(option => `<button class="trip-accommodation-option${current === option.id ? ' is-selected' : ''}" type="button" data-accommodation="${option.id}"><img src="${option.image}" alt="${esc(option.name[lang])}" loading="lazy"><span class="trip-accommodation-option-copy"><small>${esc(option.category[lang])}</small><strong>${esc(option.name[lang])}</strong><span>${esc(option.price[lang])}</span><em>${esc(option.summary[lang])}</em></span><b aria-hidden="true">${current === option.id ? '✓' : copy.selectAccommodation}</b></button>`).join('');
-    const recommendationForm = current === 'recommendation' ? `<div class="trip-recommendation-form"><div class="trip-recommendation-fields"><label>${esc(copy.recommendationGuests)}<input type="number" min="1" max="99" step="1" value="${esc(recommendation.guests || draft.guests)}" data-recommendation-guests></label><label>${esc(copy.recommendationBudget)}<input type="number" min="1" step="10" inputmode="decimal" placeholder="${esc(copy.recommendationBudgetPlaceholder)}" value="${esc(recommendation.budget)}" data-recommendation-budget required></label></div><p>${esc(copy.recommendationHint)}</p>${recommended ? `<strong class="trip-recommendation-result">${esc(copy.algorithmRecommendation)}: ${esc(recommended.name[lang])}</strong>` : ''}<p class="trip-recommendation-error" data-recommendation-error role="alert"></p><button type="button" class="trip-recommendation-confirm" data-confirm-recommendation>${esc(copy.confirmRecommendation)}</button></div>` : '';
-    const modalTitle = current === 'recommendation' ? copy.recommendationModalTitle : copy.accommodationModalTitle;
-    const modalIntro = current === 'recommendation' ? copy.recommendationModalIntro : copy.accommodationModalIntro;
-    return `<div class="trip-accommodation-modal" data-accommodation-modal hidden><div class="trip-accommodation-backdrop" data-close-accommodation></div><section class="trip-accommodation-dialog${current === 'recommendation' ? ' trip-recommendation-dialog' : ''}" role="dialog" aria-modal="true" aria-labelledby="tripAccommodationTitle"><button class="trip-accommodation-close" type="button" data-close-accommodation aria-label="${esc(copy.closeAccommodation)}">×</button><p class="trip-kicker">${current === 'recommendation' ? copy.recommendAccommodationShort : copy.accommodationSelected}</p><h2 id="tripAccommodationTitle">${esc(modalTitle)}</h2><p class="trip-accommodation-modal-intro">${esc(modalIntro)}</p>${current === 'recommendation' ? recommendationForm : `<div class="trip-accommodation-options">${options}<button class="trip-accommodation-option trip-accommodation-recommendation" type="button" data-accommodation="recommendation"><span class="trip-accommodation-recommendation-icon" aria-hidden="true">✦</span><span class="trip-accommodation-option-copy"><small>${copy.accommodationSelected}</small><strong>${copy.recommendAccommodation}</strong><em>${esc(copy.recommendationHint)}</em></span><b aria-hidden="true">${copy.selectAccommodation}</b></button></div>`}</section></div>`;
+    const options = accommodationOptions.map(option => `<button class="trip-accommodation-option${current === option.id ? ' is-selected' : ''}" type="button" data-accommodation="${option.id}"><img src="${option.image}" alt="${esc(option.name[lang])}" loading="lazy"><span class="trip-accommodation-option-copy"><small>${esc(option.category[lang])}</small><strong>${esc(option.name[lang])}</strong><span>${esc(accommodationPriceFor(option))}</span><em>${esc(option.summary[lang])}</em></span><b aria-hidden="true">${current === option.id ? '✓' : copy.selectAccommodation}</b></button>`).join('');
+    const recommendationForm = isRecommendationMode ? `<div class="trip-recommendation-form"><button type="button" class="trip-recommendation-back" data-back-accommodation-options>${esc(copy.backToAccommodationOptions)}</button><div class="trip-recommendation-fields"><label>${esc(copy.recommendationGuests)}<input type="number" min="1" max="99" step="1" value="${esc(recommendation.guests || draft.guests)}" data-recommendation-guests></label><label>${esc(copy.recommendationBudget)}<input type="number" min="1" step="10" inputmode="decimal" placeholder="${esc(copy.recommendationBudgetPlaceholder)}" value="${esc(recommendation.budget)}" data-recommendation-budget required></label></div><p>${esc(copy.recommendationHint)}</p>${recommended ? `<strong class="trip-recommendation-result">${esc(copy.algorithmRecommendation)}: ${esc(recommended.name[lang])}</strong>` : ''}<p class="trip-recommendation-error" data-recommendation-error role="alert"></p><button type="button" class="trip-recommendation-confirm" data-confirm-recommendation>${esc(copy.confirmRecommendation)}</button></div>` : '';
+    const modalTitle = isRecommendationMode ? copy.recommendationModalTitle : copy.accommodationModalTitle;
+    const modalIntro = isRecommendationMode ? copy.recommendationModalIntro : copy.accommodationModalIntro;
+    return `<div class="trip-accommodation-modal" data-accommodation-modal hidden><div class="trip-accommodation-backdrop" data-close-accommodation></div><section class="trip-accommodation-dialog${isRecommendationMode ? ' trip-recommendation-dialog' : ''}" role="dialog" aria-modal="true" aria-labelledby="tripAccommodationTitle"><button class="trip-accommodation-close" type="button" data-close-accommodation aria-label="${esc(copy.closeAccommodation)}">×</button><p class="trip-kicker">${isRecommendationMode ? copy.recommendAccommodationShort : copy.accommodationSelected}</p><h2 id="tripAccommodationTitle">${esc(modalTitle)}</h2><p class="trip-accommodation-modal-intro">${esc(modalIntro)}</p>${isRecommendationMode ? recommendationForm : `<div class="trip-accommodation-options">${options}<button class="trip-accommodation-option trip-accommodation-recommendation${current === 'recommendation' ? ' is-selected' : ''}" type="button" data-accommodation="recommendation"><span class="trip-accommodation-recommendation-icon" aria-hidden="true">✦</span><span class="trip-accommodation-option-copy"><small>${copy.accommodationSelected}</small><strong>${copy.recommendAccommodation}</strong><em>${esc(copy.recommendationHint)}</em></span><b aria-hidden="true">${copy.selectAccommodation}</b></button></div>`}</section></div>`;
   };
   const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
     : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
@@ -257,10 +282,15 @@
     const guests = draft.guests;
     const price = priceFor(experience.id, Number(guests), draft.photoMode);
     const copy = COPY[lang];
+    const accommodationRate = experience.id === 'stays' ? accommodationRateFor(draft.accommodation, Number(guests)) : null;
     const beachPhoto = experience.id === 'surf-photography' && draft.photoMode === 'beach';
     const image = beachPhoto ? experience.beachImage : experience.image;
     const imageAlt = beachPhoto ? experience.beachImageAlt?.[lang] : experience.imageAlt?.[lang];
     const guestsField = `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : 'Add one guest')}">+</button></span></label>`;
+    const estimateLabel = experience.id === 'stays' ? copy.accommodationEstimate : copy.estimate;
+    const estimateValue = accommodationRate
+      ? formatMoneyRange(accommodationRate.min, accommodationRate.max, moneyApprox)
+      : price === null ? copy.quote : `${money(price)} ${copy.perPersonShort}`;
     return `<article class="trip-experience${state ? ' is-added' : ''}" data-experience="${experience.id}">
       <div class="trip-experience-image"><img src="${image}" alt="${esc(imageAlt || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
       <div class="trip-experience-content">
@@ -268,7 +298,7 @@
         <p>${esc(experience.description[lang])}</p>
         <div class="trip-experience-fields">${photoModeField(experience, draft, copy)}${dateInputs(experience)}${guestsField}</div>
         ${accommodationField(experience, draft, copy)}
-        <p class="trip-experience-price"><span>${copy.estimate}</span><strong>${price === null ? copy.quote : `${money(price)} ${copy.perPersonShort}`}</strong></p>
+        <p class="trip-experience-price"><span>${estimateLabel}</span><strong>${estimateValue}</strong></p>
         <button class="trip-add-button" type="button" data-add aria-pressed="${Boolean(state)}">${state ? copy.added : copy.add}</button>
       </div>
     </article>`;
@@ -303,11 +333,26 @@
   const renderSummary = () => {
     const copy = COPY[lang];
     const list = [...selected.entries()];
-    let total = 0;
+    let totalMin = 0;
+    let totalMax = 0;
+    let hasEstimate = false;
     const rows = list.map(([id, state], index) => {
       const experience = experiences.find(item => item.id === id);
       const price = priceFor(id, Number(state.guests), state.photoMode);
-      if (price !== null) total += price * Number(state.guests);
+      const accommodationRate = id === 'stays' ? accommodationRateFor(state.accommodation, Number(state.guests)) : null;
+      const accommodationTotal = accommodationRate
+        ? { min: accommodationRate.min * Number(state.guests), max: accommodationRate.max * Number(state.guests) }
+        : null;
+      if (accommodationTotal) {
+        totalMin += accommodationTotal.min;
+        totalMax += accommodationTotal.max;
+        hasEstimate = true;
+      } else if (price !== null) {
+        const experienceTotal = price * Number(state.guests);
+        totalMin += experienceTotal;
+        totalMax += experienceTotal;
+        hasEstimate = true;
+      }
       const dates = experience.dateMode === 'range'
         ? `${copy.checkIn}: ${formatDate(state.start) || '—'} · ${copy.checkOut}: ${formatDate(state.end) || '—'}`
         : `${copy.date}: ${formatDate(state.start) || '—'}`;
@@ -316,7 +361,7 @@
       return `<li class="trip-summary-item">
         <span class="trip-summary-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
         <div class="trip-summary-item-copy"><strong>${esc(titleFor(experience, state))}</strong>${id === 'stays' ? `<span>${esc(copy.accommodationSelected)}: ${esc(accommodationLabel)}</span>` : ''}<span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
-        <div class="trip-summary-price">${price === null ? `<span>${copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
+        <div class="trip-summary-price">${accommodationTotal ? `<strong>${formatMoneyRange(accommodationTotal.min, accommodationTotal.max)}</strong><span>${copy.accommodationPerNight}</span>` : price === null ? `<span>${id === 'stays' ? copy.quote : copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
       </li>`;
     });
     const invalidDates = list.some(([id, state]) => {
@@ -346,7 +391,7 @@
         <span class="trip-cart-count" aria-live="polite">${list.length} ${list.length === 1 ? copy.itemCount : copy.itemsCount}</span>
       </div>
       ${list.length ? `<ul class="trip-summary-list">${rows.join('')}</ul>` : `<div class="trip-summary-empty"><span aria-hidden="true">✦</span><p>${copy.empty}</p><small>${copy.emptyTip}</small></div>`}
-      <div class="trip-summary-total"><span>${copy.estimated}</span><strong>${list.some(([id, state]) => priceFor(id, Number(state.guests), state.photoMode) !== null) ? money(total) : copy.noEstimate}</strong></div>
+      <div class="trip-summary-total"><span>${copy.estimated}</span><strong>${hasEstimate ? formatMoneyRange(totalMin, totalMax) : copy.noEstimate}</strong></div>
       <p class="trip-summary-note">${copy.totalNote}</p>
       <p class="trip-confirm-note">${copy.priceNote}</p>
       <label class="trip-contact-field">${copy.name}<input type="text" data-name value="${esc(customerName)}" placeholder="${copy.namePlaceholder}" /></label>
@@ -463,19 +508,33 @@
     }
     const openAccommodation = event.target.closest('[data-open-accommodation]');
     if (openAccommodation && card?.dataset.experience === 'stays') {
-      if (accommodationModal) accommodationModal.hidden = false;
+      accommodationModalMode = 'options';
+      if (accommodationModal) accommodationModal.outerHTML = renderAccommodationModal();
+      const refreshedModal = root.querySelector('[data-accommodation-modal]');
+      if (refreshedModal) refreshedModal.hidden = false;
+      return;
+    }
+    if (event.target.closest('[data-back-accommodation-options]')) {
+      accommodationModalMode = 'options';
+      const wasHidden = accommodationModal?.hidden ?? true;
+      if (accommodationModal) accommodationModal.outerHTML = renderAccommodationModal();
+      const refreshedModal = root.querySelector('[data-accommodation-modal]');
+      if (refreshedModal) {
+        refreshedModal.hidden = wasHidden;
+        refreshedModal.querySelector('[data-accommodation="recommendation"]')?.focus();
+      }
       return;
     }
     const accommodationChoice = event.target.closest('[data-accommodation]');
     if (accommodationChoice) {
       const draft = drafts.get('stays');
       if (accommodationChoice.dataset.accommodation === 'recommendation') {
-        draft.accommodation = 'recommendation';
-        draft.recommendation = { ...(draft.recommendation || {}), guests: draft.guests };
+        accommodationModalMode = 'recommendation';
         const wasHidden = accommodationModal?.hidden ?? true;
         if (accommodationModal) accommodationModal.outerHTML = renderAccommodationModal();
         const refreshedModal = root.querySelector('[data-accommodation-modal]');
         if (refreshedModal) refreshedModal.hidden = wasHidden;
+        refreshedModal?.querySelector('[data-recommendation-guests]')?.focus();
         updateExperienceCards();
         updateSummary();
         return;
@@ -575,6 +634,7 @@
     chosen.forEach(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
       const price = priceFor(id, Number(state.guests), state.photoMode);
+      const accommodationRate = id === 'stays' ? accommodationRateFor(state.accommodation, Number(state.guests)) : null;
       lines.push(`• ${titleFor(experience, state)}`);
       if (id === 'stays') {
         const accommodation = accommodationFor(state.accommodation);
@@ -591,7 +651,15 @@
       if (experience.dateMode === 'range') lines.push(`  ${COPY[lang].waCheckIn}: ${formatDate(state.start)} · ${COPY[lang].waCheckOut}: ${formatDate(state.end)}`);
       else lines.push(`  ${COPY[lang].waDate}: ${formatDate(state.start)}`);
       lines.push(`  ${COPY[lang].waGuests}: ${state.guests}`);
-      lines.push(`  ${price === null ? COPY[lang].waQuote : `${COPY[lang].waRate}: ${money(price)} ${COPY[lang].perPersonShort} × ${state.guests} · ${COPY[lang].waEstimate}: ${money(price * Number(state.guests))}`}`);
+      if (accommodationRate) {
+        const nightlyTotal = { min: accommodationRate.min * Number(state.guests), max: accommodationRate.max * Number(state.guests) };
+        lines.push(`  ${COPY[lang].waRate}: ${formatMoneyRange(accommodationRate.min, accommodationRate.max, moneyApprox)} ${COPY[lang].perPersonShort} · ${COPY[lang].accommodationPerNight}`);
+        lines.push(`  ${COPY[lang].waEstimate}: ${formatMoneyRange(nightlyTotal.min, nightlyTotal.max)} · ${COPY[lang].accommodationPerNight}`);
+      } else if (price === null) {
+        lines.push(`  ${COPY[lang].waQuote}`);
+      } else {
+        lines.push(`  ${COPY[lang].waRate}: ${money(price)} ${COPY[lang].perPersonShort} × ${state.guests} · ${COPY[lang].waEstimate}: ${money(price * Number(state.guests))}`);
+      }
     });
     const name = customerName.trim();
     const extra = customerExtra.trim();

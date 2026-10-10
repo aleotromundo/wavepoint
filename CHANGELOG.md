@@ -1,4 +1,11 @@
 ## 2026-10-10
+### Armador — recuperar la lista de alojamientos desde la recomendación
+- `trip-builder.js`: el formulario de recomendación ahora permite volver al selector sin cerrar el modal ni perder los datos ingresados. El formulario solo marca una recomendación como elegida después de validar y confirmar el presupuesto.
+- `trip-builder.js`: al inicio, la tarjeta muestra «Elegir alojamiento». Para un hotel elegido se estima el costo por persona dividiendo la tarifa publicada por el grupo; los rangos se conservan. La recomendación sigue indicando «Precio a confirmar».
+- `trip-builder.css` y `trip-builder.html`: se agregó el estilo accesible del botón para volver y se renovó la versión de caché del script.
+- Validación: navegador en español e inglés; etiqueta inicial «Elegir alojamiento»; transición de ida y vuelta conserva personas y presupuesto; recomendación muestra «Precio a confirmar»; Casa Aura para 2 personas muestra USD 40–105 c/u y USD 80–210 aprox. por noche en el resumen; selector responsive (390×844), foco al volver, cierre con Escape y `git diff --check`.
+
+## 2026-10-10
 ### Armador — mejorar la lectura del selector de alojamiento
 - `trip-builder.js`: el selector de alojamientos deja de heredar el límite de 680 px del formulario de recomendación; este conserva su ancho compacto.
 - `trip-builder.css` y `trip-builder.html`: se equilibró la jerarquía del modal, se amplió el espacio útil y se aumentó el tamaño/contraste de categorías, tarifas y descripciones; en móvil se compactan las imágenes y se mantienen las opciones en una columna. Se renovaron las versiones de caché del JS y CSS.
