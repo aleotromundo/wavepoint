@@ -1842,3 +1842,8 @@
 - `services.js`: la primera foto vuelve a ser un paisaje distinto de Roca Bruja, sin surfista ni repetición de la imagen anterior; se actualizan los textos alternativos.
 - `assets/img/services/witchs-rock/roca-bruja-landscape.webp`: imagen obtenida de [Go Visit Costa Rica](https://www.govisitcostarica.com/region/costa-rica-beaches/witchs-rock.asp) y optimizada localmente.
 - `styles.css` y `styles.optimized.css`: la galería pasa a 900 px, igualando el ancho del formulario inferior en escritorio; en móvil conserva el ancho disponible.
+
+### Roca Bruja — mejorar la calidad de la primera foto
+- `services.js`: la primera imagen se reemplaza por una toma panorámica más nítida de la formación rocosa y las olas, sin surfista.
+- `assets/img/services/witchs-rock/roca-bruja-wave.webp`: imagen de alta resolución encontrada en la guía de [Stormrider Surf Guides](https://www.stormridersurf.com/surf-guide/witches-rock-roca-bruja/), optimizada localmente.
+- Se elimina la versión anterior de baja resolución `roca-bruja-landscape.webp`.
