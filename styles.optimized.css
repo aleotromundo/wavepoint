@@ -3467,3 +3467,20 @@ to{filter:brightness(1.18)}
     padding-right: 16px !important;
   }
 }
+
+/* El encabezado vuelve al margen del contenedor original de 7c0d86e. */
+.allies-ticker > .allies-ticker-head {
+  width: min(1180px, calc(100% - 42px)) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+@media (max-width: 760px) {
+  .allies-ticker > .allies-ticker-head {
+    width: calc(100% - 32px) !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
