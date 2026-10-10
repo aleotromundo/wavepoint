@@ -1,4 +1,9 @@
 ## 2026-10-10
+### Roca Bruja — reemplazar la foto de surfista por una vista del lugar
+- `services.js`: se elimina `roca-bruja-surfing.webp` de la galería y se incorpora `roca-bruja-coast.webp`, una vista cercana de la formación rocosa desde el mar; ambas fotos de la galería ahora representan el paisaje de Roca Bruja sin surfistas.
+- `assets/img/services/witchs-rock/roca-bruja-coast.webp`: foto local optimizada desde la referencia de Visit Costa Rica, con alt bilingüe actualizado.
+- Validación: la foto anterior fue eliminada del proyecto, las dos referencias activas existen y pasan sintaxis JavaScript y `git diff --check`.
+
 ### Roca Bruja — retirar el crédito visual de las fotos
 - `services.js`: se elimina el texto pequeño de créditos del detalle de Roca Bruja; se conserva la galería con las dos fotos locales, distintas y representativas del lugar.
 - Validación: las dos imágenes siguen referenciadas desde el servicio, no quedan referencias activas al render de créditos de Roca Bruja, y pasan la sintaxis JavaScript y `git diff --check`.
