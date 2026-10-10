@@ -1,4 +1,10 @@
 ## 2026-10-09
+### Armador móvil — ubicar el logo WavePoint en el hero
+- `trip-builder.js` y `trip-builder.html`: el logo flotante pasa a formar parte del contenido del hero, conservando su posición fija anterior en escritorio.
+- `trip-builder.css`: solo en móvil, el logo aparece centrado y ampliado encima de “Plan your trip”; queda en el hero y no acompaña el scroll ni se superpone con el asistente o WhatsApp.
+- `trip-builder.html`: se actualizó la versión de caché de estilos y script.
+- Validación: comprobar ubicación y separación de controles al inicio y al llegar al footer en móvil, mantener posición de escritorio, responsive y `git diff --check`.
+
 ### Mensajes de WhatsApp — voz singular/plural en todos los formularios
 - `services.js`: se reconoce la cantidad de participantes en alojamiento, clases, Roca Bruja, snorkel y ATV; los formularios sin cantidad usan frases neutrales y bilingües sin agregar preguntas.
 - `trip-builder.js`: el saludo de la solicitud cambia a plural cuando alguna experiencia incluye más de una persona.
