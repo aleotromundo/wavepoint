@@ -3484,3 +3484,35 @@ to{filter:brightness(1.18)}
     padding-right: 0 !important;
   }
 }
+
+/* Aumento leve del tamaño del carrusel, conservando la proporción horizontal. */
+.allies-ticker .ally-tile {
+  flex-basis: 236px !important;
+  width: 236px !important;
+  height: 92px !important;
+  min-height: 92px !important;
+  gap: 13px !important;
+  padding: 9px 14px 9px 9px !important;
+}
+.allies-ticker .ally-tile img {
+  flex-basis: 74px !important;
+  width: 74px !important;
+  height: 74px !important;
+  max-width: 74px !important;
+  min-width: 74px !important;
+}
+@media (max-width: 640px) {
+  .allies-ticker .ally-tile {
+    flex-basis: 202px !important;
+    width: 202px !important;
+    height: 80px !important;
+    min-height: 80px !important;
+  }
+  .allies-ticker .ally-tile img {
+    flex-basis: 62px !important;
+    width: 62px !important;
+    height: 62px !important;
+    max-width: 62px !important;
+    min-width: 62px !important;
+  }
+}
