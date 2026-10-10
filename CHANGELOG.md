@@ -1,4 +1,8 @@
 ## 2026-10-10
+### Roca Bruja — retirar el crédito visual de las fotos
+- `services.js`: se elimina el texto pequeño de créditos del detalle de Roca Bruja; se conserva la galería con las dos fotos locales, distintas y representativas del lugar.
+- Validación: las dos imágenes siguen referenciadas desde el servicio, no quedan referencias activas al render de créditos de Roca Bruja, y pasan la sintaxis JavaScript y `git diff --check`.
+
 ### Tarifas de servicios — sincronizar la tabla pública con la corrección recibida
 - `index.html`: se alinea la tabla de la portada con las tarifas aprobadas que ya usa el armador; Fotografía desde la playa queda en USD 70/50/50/45/45/40 y se agrega Yoga a USD 20 para todos los tamaños de grupo.
 - Se agrega la fila de Tours en cuatriciclo (ATV) con guiones, como en la tabla recibida, sin publicar un precio no confirmado.
