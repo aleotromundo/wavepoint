@@ -655,6 +655,9 @@
 
 /* Recomendación de alojamiento: captura los criterios antes de elegir una sola opción. */
 .trip-recommendation-form { margin-top: 14px; padding: 18px; border: 1px solid rgba(164, 240, 233, .3); border-radius: 16px; background: rgba(1, 18, 27, .26); }
+.trip-recommendation-back { min-height: 38px; margin: 0 0 14px; padding: 7px 12px; border: 1px solid rgba(164, 240, 233, .42); border-radius: 999px; background: rgba(255,255,255,.08); color: #e7fffa; font: 700 12px "DM Sans", sans-serif; cursor: pointer; }
+.trip-recommendation-back:hover { background: rgba(164, 240, 233, .17); }
+.trip-recommendation-back:focus-visible { outline: 3px solid rgba(164, 240, 233, .5); outline-offset: 2px; }
 .trip-recommendation-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .trip-recommendation-fields label { display: grid; gap: 6px; color: #e7fffa; font-size: 11px; font-weight: 800; }
 .trip-recommendation-fields input { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid rgba(164, 240, 233, .42); border-radius: 9px; background: rgba(255,255,255,.1); color: #fff; font: 700 13px "DM Sans", sans-serif; }
