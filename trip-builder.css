@@ -132,7 +132,12 @@
 @media (max-width: 600px) {
   .trip-builder-hero { min-height: 440px; padding: 122px 0 50px; }
   .trip-builder-hero-content { width: calc(100% - 42px); margin: 0 auto; }
-  .trip-builder-page .trip-builder-floating-brand { right: 124px; bottom: 78px; width: 112px; min-height: 48px; }
+  .trip-builder-page .trip-builder-floating-brand {
+    position: static;
+    width: 148px;
+    min-height: 62px;
+    margin: 0 auto 8px;
+  }
   .trip-builder-hero-content > p:last-child { font-size: 15px; }
   .trip-builder-main { padding: 52px 0 70px; }
   .trip-builder-heading { margin-bottom: 22px; }

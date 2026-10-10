@@ -258,7 +258,7 @@
         <a class="detail-arrow detail-arrow-prev" href="service-detail.html?service=surfskate" rel="prev" aria-label="${copy.previousService}: ${lang === 'es' ? 'Clases de surfskate' : 'Surfskate Lessons'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="M20 2 3 20l17 18" /></svg></a>
         <a class="detail-arrow detail-arrow-next" href="service-detail.html?service=retiros" rel="next" aria-label="${copy.nextService}: ${lang === 'es' ? 'Retiros' : 'Retreats'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="m4 2 17 18L4 38" /></svg></a>
       </nav>
-      <div class="container trip-builder-hero-content"><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
+      <div class="container trip-builder-hero-content"><a class="collab-floating-brand trip-builder-floating-brand" href="index.html" aria-label="WavePoint — volver al inicio"><img src="assets/wavepoint-hero-mark.png" alt="WavePoint" decoding="async"></a><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
     </section>
     <section class="trip-builder-main"><div class="container">
       <header class="trip-builder-heading"><p class="trip-kicker">WAVEPOINT · TAMARINDO</p><h2>${copy.sectionTitle}</h2><p>${copy.sectionIntro}</p></header>
