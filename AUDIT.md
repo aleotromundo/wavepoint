@@ -6,7 +6,7 @@ Fecha: 2026-10-06
 
 WavePoint es un sitio multipágina estático, servido directamente desde la raíz por Vercel. La experiencia principal está en `index.html`, con lógica en JavaScript vanilla y contenido bilingüe en objetos de traducción. No hay framework, package manager, base de datos ni autenticación existente. El repositorio tiene aproximadamente 441 MB, principalmente por videos y PDFs.
 
-El sitio se mantiene como una experiencia estática. La herramienta temporal de reemplazo de fotos se ejecuta localmente desde `dashboard.html`, sin autenticación ni subida de archivos a un servidor.
+El sitio se mantiene como una experiencia estática. La herramienta temporal de reemplazo de fotos fue retirada de la raíz y archivada bajo `cosas al pedo/dashboard/`; la carpeta completa se excluye del despliegue público.
 
 > **Limitación importante:** `localStorage` es útil para un piloto de un navegador, pero no es persistencia compartida ni control de acceso de producción. Los cambios no se publican para otros visitantes hasta migrar el almacenamiento a un backend/CMS.
 
@@ -23,12 +23,12 @@ El sitio se mantiene como una experiencia estática. La herramienta temporal de 
 ## Hallazgos y riesgos
 
 1. **CMS inexistente:** no había lugar persistente para guardar cambios editoriales.
-2. **Edición editorial:** no existe un CMS persistente. Las sustituciones definitivas de fotos se hacen sobre los assets del repositorio mediante la herramienta local temporal.
-3. **Persistencia editorial:** el dashboard local no sincroniza usuarios ni despliegues; sus cambios quedan en archivos del repositorio seleccionado.
-4. **Seguridad de la herramienta temporal:** el dashboard no debe dejarse publicado después de confirmar las fotos; debe eliminarse junto con sus archivos auxiliares.
-5. **Medios:** las imágenes se convierten en el navegador a WebP y se escriben en rutas locales seleccionadas por el usuario.
+2. **Edición editorial:** no existe un CMS persistente. Los contenidos y assets activos se mantienen como archivos del repositorio.
+3. **Persistencia editorial:** no hay sincronización editorial compartida ni panel activo.
+4. **Herramienta temporal retirada:** sus fuentes están archivadas y `cosas al pedo/` se excluye del despliegue mediante `.vercelignore`.
+5. **Medios:** las imágenes activas se mantienen dentro de `assets/`; los archivos sin referencia activa verificada se conservan en el archivo fuera del despliegue.
 6. **Rutas:** el fallback de Vercel puede devolver `index.html` para URLs no existentes; conviene mantener `manus-routes.json` sincronizado y probar cada página publicada.
-7. **Calidad de código:** hay HTML duplicado (`<!doctype html>` y `<!DOCTYPE html>` en `index.html`) y bastante contenido hardcodeado fuera de `data-i18n`; el dashboard temporal se limita al catálogo de fotos y no modifica textos ni estructura por sí solo.
+7. **Calidad de código:** hay HTML duplicado (`<!doctype html>` y `<!DOCTYPE html>` en `index.html`) y bastante contenido hardcodeado fuera de `data-i18n`.
 8. **Dependencias externas:** clima depende de Open-Meteo, cámaras de Castr, fuentes de Google Fonts y asistente de OpenAI. Deben tener fallbacks y límites, especialmente para disponibilidad y privacidad.
 9. **Secretos:** no se detectaron claves secretas versionadas; `OPENAI_API_KEY` se consume desde entorno serverless.
 10. **Peso del repo:** 441 MB es elevado para un sitio estático; conviene comprimir videos, usar formatos modernos y CDN/storage para medios.
@@ -38,7 +38,7 @@ El sitio se mantiene como una experiencia estática. La herramienta temporal de 
 - Se confirmó que el proyecto sigue siendo estático, sin `package.json` ni build obligatorio, con HTML/CSS/JavaScript vanilla y Vercel como hosting.
 - La sintaxis JavaScript existente fue revisada con `node --check`; no se detectaron errores de sintaxis en los archivos JavaScript del proyecto.
 - Se agregaron `README.md` y `AGENTS.md` como entradas de trabajo, además de `CLAUDE.md` y `.github/copilot-instructions.md` como adaptadores para herramientas específicas. La fuente de verdad de producto continúa siendo `PROJECT_GUIDE.md`.
-- Se mantiene como riesgo abierto la ausencia de persistencia CMS de producción, los límites globales del asistente y la optimización del peso multimedia. El dashboard de fotos es una herramienta local de una sola etapa y no reemplaza un CMS.
+- Se mantiene como riesgo abierto la ausencia de persistencia CMS de producción, los límites globales del asistente y la optimización del peso multimedia. La herramienta temporal de fotos fue archivada el 2026-10-10 y no forma parte del sitio publicado.
 - El cambio visual del logo posterior a las tarjetas de servicios quedó limitado a `index.html`, `piloto.html` y `styles.css`; no se modificó el hero.
 
 ## Auditoría de imágenes — 2026-10-07
@@ -49,18 +49,15 @@ El sitio se mantiene como una experiencia estática. La herramienta temporal de 
 - Se reemplazó únicamente esa referencia por `assets/img/guide/cover.jpg`, una composición específica de la guía con playa, atardecer y vista aérea. El hero conserva su imagen original.
 - No se cambió ningún asset de alojamiento, servicio o colaborador sin una alternativa local confiable. La comparación perceptual automatizada quedó limitada porque Python no está instalado en este entorno; la coincidencia aplicada fue exacta por hash y se verificó visualmente.
 
-## Qué cubre el piloto
+## Herramienta temporal — estado archivado el 2026-10-10
 
-- Dashboard local en `dashboard.html` para localizar fotos, elegir reemplazos desde un dispositivo, convertirlos a WebP y guardarlos en la ruta exacta.
-- Actualización automática de referencias cuando la foto original tenía una extensión distinta de WebP.
-- Descarga alternativa cuando el navegador no permite escritura directa en carpetas.
-- La herramienta no forma parte de la navegación pública y debe eliminarse al finalizar la selección de fotos.
+La versión anterior del piloto permitía localizar fotos, convertir reemplazos a WebP y guardarlos en rutas locales. Sus fuentes y auxiliares se trasladaron a `cosas al pedo/dashboard/`; el historial de su implementación se conserva en `CHANGELOG.md`.
 
 ## Próximo paso recomendado para producción
 
 1. Definir el proveedor de persistencia (Vercel KV/Postgres, Sanity, Contentful o un CMS propio).
 2. Mover textos e imágenes a un esquema versionado por página, idioma y campo.
-3. Confirmar las fotos en el sitio, revisar el diff y eliminar el dashboard temporal junto con sus archivos auxiliares.
+3. Confirmar las fotos en el sitio y revisar el diff.
 4. Mantener validación de MIME, tamaño y dimensiones al incorporar futuros assets.
 5. Subir imágenes a storage/CDN con validación de MIME, tamaño, dimensiones y nombre.
 6. Añadir historial de versiones, borrador/publicado, preview y rollback.
@@ -84,3 +81,10 @@ La corrección asigna a las tres imágenes principales franjas consecutivas de 3
 ## Corrección de dirección — Estadías y hoteles — 2026-10-09
 
 La restauración anterior había retrocedido demasiado: se tomó como referencia el estado previo al rediseño, aunque el estado correcto era la versión moderna del commit `6274861`. Se revirtió únicamente ese retroceso. La página vuelve a usar el selector visual de alojamientos, el formulario moderno actualizado y las galerías seleccionadas por ficha, conservando aparte la corrección de separación de fondos de Servicios.
+
+
+## Limpieza de recursos sin uso activo — 2026-10-10
+
+- El dashboard y los prototipos de clima independientes quedaron archivados bajo `cosas al pedo/`; se quitaron de la raíz y de las referencias activas del sitio.
+- Se trasladaron al archivo las imágenes que no tenían referencias activas verificadas. Se dejaron intactos el hero protegido y los iconos meteorológicos resueltos dinámicamente.
+- `.vercelignore` excluye toda la carpeta de archivo del despliegue público.
