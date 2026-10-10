@@ -988,13 +988,23 @@ const groupQuestion = service.questions.find(question => ['group_size', 'snorkel
 const groupValue = groupQuestion ? Number(form.elements[groupQuestion.id]?.value || 1) : 1;
 const plural = groupValue > 1;
 const subject = clean(service.title);
-const lines = isSpanish
-  ? [`Hola, WavePoint. Quiero consultar por ${subject}.`]
-  : [`Hi WavePoint. I’d like to ask about ${subject}.`];
+const isAccommodation = service.id === 'alojamiento-experiencias';
+const lines = isAccommodation
+  ? [isSpanish
+    ? (plural ? 'Hola, WavePoint. Queríamos consultar por alojamiento.' : 'Hola, WavePoint. Quería consultar por alojamiento.')
+    : (plural ? 'Hi WavePoint. We’d like to ask about accommodation.' : 'Hi WavePoint. I’d like to ask about accommodation.')]
+  : isSpanish
+    ? [`Hola, WavePoint. Quiero consultar por ${subject}.`]
+    : [`Hi WavePoint. I’d like to ask about ${subject}.`];
 if (name) {
-  lines.push(isSpanish
-    ? (plural ? `Soy ${name} y somos ${groupValue} personas.` : `Soy ${name}.`)
-    : (plural ? `I’m ${name} and there are ${groupValue} of us.` : `I’m ${name}.`));
+  lines.push(isAccommodation
+    ? `${isSpanish ? 'Soy' : 'I’m'} ${name}.`
+    : isSpanish
+      ? (plural ? `Soy ${name} y somos ${groupValue} personas.` : `Soy ${name}.`)
+      : (plural ? `I’m ${name} and there are ${groupValue} of us.` : `I’m ${name}.`));
+}
+if (isAccommodation && plural) {
+  lines.push(isSpanish ? `Viajamos ${groupValue} personas.` : `There will be ${groupValue} of us.`);
 }
 const naturalAnswers = {
   surf_level: isSpanish ? (plural ? 'Nuestro nivel de surf es' : 'Mi nivel de surf es') : (plural ? 'Our surfing level is' : 'My surfing level is'),
@@ -1013,35 +1023,79 @@ const naturalAnswers = {
   date_flexibility: isSpanish ? 'Sobre la fecha, ' : 'Regarding the date, ',
   swimming_comfort: isSpanish ? 'Sobre nadar en el mar, ' : 'About swimming in the sea, '
 };
-service.questions.forEach(question => {
-  const values = getValues(question);
-  if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
-  const joined = values.join(isSpanish ? ', ' : ', ');
-  const normalized = clean(joined);
-  if (question.id === 'surf_level' || question.id === 'current_surf_level') {
-    const level = normalized === 'primera vez' ? (isSpanish ? 'la primera vez que hago surf' : 'my first time surfing') : normalized;
-    lines.push(`${naturalAnswers[question.id]} ${level}.`);
-    return;
+if (isAccommodation) {
+  const datesQuestion = service.questions.find(question => question.id === 'stay_dates');
+  const dates = datesQuestion ? getValues(datesQuestion) : [];
+  if (dates.length) {
+    const formatDate = value => new Intl.DateTimeFormat(isSpanish ? 'es' : 'en', { dateStyle: 'long', timeZone: 'UTC' })
+      .format(new Date(`${value}T00:00:00Z`));
+    const [arrival, departure] = dates.map(formatDate);
+    lines.push(isSpanish
+      ? `La estadía sería del ${arrival} al ${departure}.`
+      : `${plural ? 'We’re' : 'I’m'} looking to stay from ${arrival} to ${departure}.`);
   }
-  if (question.id === 'board_need' || question.id === 'own_board' || question.id === 'own_boards') {
-    const boardValue = normalized;
-    const sentence = isSpanish
-      ? (boardValue === 'sí' ? (plural ? 'necesitamos tablas' : 'necesito una tabla') : boardValue.includes('asesoramiento') ? (plural ? 'necesitamos asesoramiento con las tablas' : 'necesito asesoramiento con la tabla') : boardValue.includes('llevamos') ? (plural ? 'llevamos nuestras propias tablas' : 'llevo mi propia tabla') : boardValue)
-      : (boardValue === 'yes' ? (plural ? 'we need boards' : 'I need a board') : boardValue.includes('advice') ? (plural ? 'we need advice about boards' : 'I need advice about a board') : boardValue.includes('bring') ? (plural ? 'we bring our own boards' : 'I bring my own board') : boardValue);
-    lines.push(`${isSpanish ? 'Sobre el equipo,' : 'About equipment,'} ${sentence}.`);
-    return;
+
+  const accommodation = getValues(service.questions.find(question => question.id === 'accommodation_type') || {})[0];
+  if (accommodation) {
+    const wantsRecommendations = clean(accommodation).includes('recomend') || clean(accommodation).includes('recommend');
+    lines.push(wantsRecommendations
+      ? isSpanish
+        ? (plural ? 'Nos gustaría recibir recomendaciones de alojamiento.' : 'Me gustaría recibir recomendaciones de alojamiento.')
+        : (plural ? 'We’d appreciate accommodation recommendations.' : 'I’d appreciate accommodation recommendations.')
+      : isSpanish
+        ? `${plural ? 'Nos interesa' : 'Me interesa'} ${accommodation}.`
+        : `${plural ? 'We’re' : 'I’m'} interested in ${accommodation}.`);
   }
-  const prefix = naturalAnswers[question.id];
-  if (prefix) {
-    const value = question.id === 'origin' ? joined : normalized;
-    const schedule = question.id === 'preferred_schedule' || question.id === 'session_schedule' ? joined.toLowerCase() : value;
-    lines.push(`${prefix} ${schedule}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
-  } else if (isSpanish) {
-    lines.push(`También quería contarte que, sobre ${clean(question.label)}, ${clean(joined)}.`);
-  } else {
-    lines.push(`I’d also like to mention that for ${clean(question.label)}, ${clean(joined)}.`);
+
+  const experiencesQuestion = service.questions.find(question => question.id === 'experiences');
+  const experiences = experiencesQuestion ? getValues(experiencesQuestion) : [];
+  const undecided = experiences.some(value => clean(value).includes('todavía no lo sé') || clean(value).includes('still don’t know'));
+  const selectedExperiences = experiences.filter(value => !clean(value).includes('todavía no lo sé') && !clean(value).includes('still don’t know'));
+  if (selectedExperiences.length) {
+    lines.push(isSpanish
+      ? `${plural ? 'También nos gustaría sumar' : 'También me gustaría sumar'}: ${selectedExperiences.join(', ')}.`
+      : `${plural ? 'We’d also like to add' : 'I’d also like to add'}: ${selectedExperiences.join(', ')}.`);
   }
-});
+  if (undecided) {
+    lines.push(selectedExperiences.length
+      ? isSpanish
+        ? (plural ? 'Todavía no decidimos si queremos sumar alguna otra experiencia.' : 'Todavía no decidí si quiero sumar alguna otra experiencia.')
+        : (plural ? 'We haven’t decided whether to add any other experiences yet.' : 'I haven’t decided whether to add any other experiences yet.')
+      : isSpanish
+        ? (plural ? 'Todavía no decidimos qué experiencias sumar.' : 'Todavía no decidí qué experiencias sumar.')
+        : (plural ? 'We haven’t decided which experiences to add yet.' : 'I haven’t decided which experiences to add yet.'));
+  }
+} else {
+  service.questions.forEach(question => {
+    const values = getValues(question);
+    if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
+    const joined = values.join(isSpanish ? ', ' : ', ');
+    const normalized = clean(joined);
+    if (question.id === 'surf_level' || question.id === 'current_surf_level') {
+      const level = normalized === 'primera vez' ? (isSpanish ? 'la primera vez que hago surf' : 'my first time surfing') : normalized;
+      lines.push(`${naturalAnswers[question.id]} ${level}.`);
+      return;
+    }
+    if (question.id === 'board_need' || question.id === 'own_board' || question.id === 'own_boards') {
+      const boardValue = normalized;
+      const sentence = isSpanish
+        ? (boardValue === 'sí' ? (plural ? 'necesitamos tablas' : 'necesito una tabla') : boardValue.includes('asesoramiento') ? (plural ? 'necesitamos asesoramiento con las tablas' : 'necesito asesoramiento con la tabla') : boardValue.includes('llevamos') ? (plural ? 'llevamos nuestras propias tablas' : 'llevo mi propia tabla') : boardValue)
+        : (boardValue === 'yes' ? (plural ? 'we need boards' : 'I need a board') : boardValue.includes('advice') ? (plural ? 'we need advice about boards' : 'I need advice about a board') : boardValue.includes('bring') ? (plural ? 'we bring our own boards' : 'I bring my own board') : boardValue);
+      lines.push(`${isSpanish ? 'Sobre el equipo,' : 'About equipment,'} ${sentence}.`);
+      return;
+    }
+    const prefix = naturalAnswers[question.id];
+    if (prefix) {
+      const value = question.id === 'origin' ? joined : normalized;
+      const schedule = question.id === 'preferred_schedule' || question.id === 'session_schedule' ? joined.toLowerCase() : value;
+      lines.push(`${prefix} ${schedule}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
+    } else if (isSpanish) {
+      lines.push(`También quería contarte que, sobre ${clean(question.label)}, ${clean(joined)}.`);
+    } else {
+      lines.push(`I’d also like to mention that for ${clean(question.label)}, ${clean(joined)}.`);
+    }
+  });
+}
 if (extra) lines.push(isSpanish ? `Además, ${extra}.` : `Also, ${extra}.`);
 lines.push('', isSpanish ? 'Gracias. Quedo atento/a.' : 'Thank you. Looking forward to your reply.');
 window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
