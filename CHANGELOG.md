@@ -1,4 +1,10 @@
 ## 2026-10-10
+### Armador — modal único para la recomendación de alojamiento
+- `trip-builder.js`: el selector dejó de mostrar una lista de alojamientos y ahora abre directamente un modal que pide grupo y presupuesto; el algoritmo elige una sola opción y conserva la identificación para WhatsApp.
+- `trip-builder.html` y `trip-builder.css`: se agregó un estado inicial de carga visible y semántico para evitar una pantalla vacía o la percepción de que se está mostrando código crudo.
+- Validación prevista: sintaxis JavaScript, render inicial, interacción del modal, revisión responsive y `git diff --check`.
+
+## 2026-10-10
 ### Armador — recomendación algorítmica de alojamiento
 - `trip-builder.js`: la opción del modal ahora se presenta como «Pedir recomendación» en la tarjeta y solicita cantidad de personas y presupuesto máximo por noche. Un algoritmo determinista compara capacidad orientativa y rangos de tarifa existentes para elegir una sola opción.
 - `trip-builder.js`: el mensaje de WhatsApp identifica el alojamiento recomendado por el algoritmo y conserva el presupuesto usado para la decisión.
