@@ -1,4 +1,10 @@
 ## 2026-10-10
+### Armador — conservar selector y abrir recomendación como segundo paso
+- `trip-builder.js`: se restaura el modal original con las opciones de alojamiento. Al tocar «Recomiéndenme», el mismo modal cambia internamente al formulario de grupo y presupuesto; no se cierra ni se pierde el primer paso hasta que la persona elige una opción.
+- `trip-builder.html`: se renueva la versión cacheada del Armador.
+- Validación prevista: sintaxis JavaScript, transición entre ambos estados del modal, render responsive y `git diff --check`.
+
+## 2026-10-10
 ### Armador — modal único para la recomendación de alojamiento
 - `trip-builder.js`: el selector dejó de mostrar una lista de alojamientos y ahora abre directamente un modal que pide grupo y presupuesto; el algoritmo elige una sola opción y conserva la identificación para WhatsApp.
 - `trip-builder.html` y `trip-builder.css`: se agregó un estado inicial de carga visible y semántico para evitar una pantalla vacía o la percepción de que se está mostrando código crudo.
