@@ -1,4 +1,12 @@
 ## 2026-10-10
+### Tarifas de la home — alinear la tabla con la versión actualizada
+- `index.html`: se ajustó la cabecera de la tabla pública para que refleje exactamente la nomenclatura de la versión actualizada (`5+`) manteniendo la estructura y estilo visual vigente.
+- Validación: revisión del bloque de tarifas y `git diff --check` sin errores.
+
+### Armador de viaje — corregir totales por cantidad de personas
+- `trip-builder.js`: se corrigió el cálculo del subtotal para multiplicar la tarifa por persona según el número de participantes, evitando que una clase para cuatro personas muestre USD 55 en lugar de USD 220. El rótulo del total quedó más preciso como "Subtotal de experiencias con precio" / "Subtotal of priced experiences".
+- Validación: revisión del cálculo y `git diff --check` sin errores en el archivo editado; no hubo runtime de Node disponible en este entorno para ejecutar `node --check`.
+
 ### Reglas del repo — sincronización entre dispositivos
 - `README.md` y `AGENTS.md`: se agregó la regla de sincronizar el repo antes de editar cuando se trabaja desde varios dispositivos o sesiones, para evitar sobrescribir cambios locales que quedaron guardados en otra copia.
 - Validación: se revisaron `git status` y `git fetch` en la rama actual y no hay conflictos activos ni cambios pendientes en esta sesión.
