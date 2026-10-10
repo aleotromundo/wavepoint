@@ -1213,7 +1213,7 @@ html{overflow-x:clip}
 .allies-ticker .section-sub{max-width:760px;color:rgba(234,247,242,.7);font-size:13px}
 .allies-ticker .sq{background:#48d7c1}
 .allies-ticker-viewport{width:100%;max-width:1200px;margin-inline:auto;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.allies-ticker-track{display:flex;width:max-content;animation:allies-slide-left 34s linear infinite}
+.allies-ticker-track{display:flex;width:max-content;animation:allies-slide-left 26s linear infinite;will-change:transform}
 .allies-ticker-set{display:flex;gap:12px;padding-right:12px}
 .ally-tile{display:flex;align-items:center;gap:10px;width:194px;height:74px;padding:8px 12px 8px 8px;flex:0 0 auto;border:1px solid rgba(160,231,216,.2);border-radius:12px;background:rgba(255,255,255,.1);color:#f4fbf8;transition:background .2s ease}
 .ally-tile:hover{background:rgba(255,255,255,.18)}
@@ -3304,7 +3304,7 @@ to{filter:brightness(1.18)}
 .allies-ticker .section-sub { max-width: 760px; color: rgba(234, 247, 242, .7); font-size: 13px; }
 .allies-ticker .sq { background: #48d7c1; }
 .allies-ticker-viewport { width: 100%; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-.allies-ticker-track { display: flex; width: max-content; animation: allies-slide-left 34s linear infinite; }
+.allies-ticker-track { display: flex; width: max-content; animation: allies-slide-left 26s linear infinite; will-change: transform; }
 .allies-ticker-set { display: flex; gap: 12px; padding-right: 12px; }
 .ally-tile { display: flex; align-items: center; gap: 10px; width: 194px; height: 74px; padding: 8px 12px 8px 8px; flex: 0 0 auto; border: 1px solid rgba(160, 231, 216, .2); border-radius: 12px; background: rgba(255, 255, 255, .1); color: #f4fbf8; transition: transform .2s ease, background .2s ease; }
 .ally-tile:hover { transform: translateY(-3px); background: rgba(255, 255, 255, .18); }
@@ -3315,7 +3315,7 @@ to{filter:brightness(1.18)}
 .ally-sponsor { border-color: rgba(255, 208, 106, .45); }
 .ally-sponsor small { color: #ffd477; }
 @keyframes allies-slide-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
-.allies-ticker:hover .allies-ticker-track { animation-play-state: paused; }
+.allies-ticker:hover .allies-ticker-track { animation-play-state: running; }
 @media (prefers-reduced-motion: reduce) { .allies-ticker-track { animation: none; } }
 @media (max-width: 640px) {
   .allies-ticker { padding: 20px 0 24px; }

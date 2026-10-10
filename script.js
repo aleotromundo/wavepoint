@@ -1229,10 +1229,10 @@
     let pointerId=null, startX=0, startY=0, startOffset=0, isDragging=false, suppressClick=false;
     const updateTickerSpeed=()=>{
       const reduced=reducedMotionPreference.matches;
-      const baseDuration=reduced?48:20;
+      const baseDuration=reduced?52:18;
       const supportsHover=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
       const hovering=supportsHover && section.matches(':hover');
-      const targetDuration=section.classList.contains('is-interacting')?(reduced?64:32):hovering?(reduced?54:25):baseDuration;
+      const targetDuration=section.classList.contains('is-interacting')?(reduced?66:25):hovering?(reduced?56:21):baseDuration;
       const animation=track.getAnimations().find(item=>item.animationName==='allies-slide-left');
       if(!animation) return;
       const playbackRate=baseDuration/targetDuration;
