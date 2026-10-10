@@ -645,3 +645,19 @@
   .trip-accommodation-recommendation { grid-column: auto; grid-template-columns: 44px minmax(0, 1fr) auto; }
   .trip-accommodation-recommendation-icon { width: 44px; height: 44px; }
 }
+
+
+/* Recomendación de alojamiento: captura los criterios antes de elegir una sola opción. */
+.trip-recommendation-form { margin-top: 14px; padding: 18px; border: 1px solid rgba(164, 240, 233, .3); border-radius: 16px; background: rgba(1, 18, 27, .26); }
+.trip-recommendation-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.trip-recommendation-fields label { display: grid; gap: 6px; color: #e7fffa; font-size: 11px; font-weight: 800; }
+.trip-recommendation-fields input { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid rgba(164, 240, 233, .42); border-radius: 9px; background: rgba(255,255,255,.1); color: #fff; font: 700 13px "DM Sans", sans-serif; }
+.trip-recommendation-fields input:focus-visible { outline: 3px solid rgba(164, 240, 233, .5); outline-offset: 2px; }
+.trip-recommendation-form > p { margin: 12px 0 0; color: rgba(238,255,250,.76); font-size: 11px; line-height: 1.45; }
+.trip-recommendation-result { display: block; margin-top: 12px; color: #ffd78b; font-size: 13px; }
+.trip-recommendation-error { min-height: 16px; color: #ffd1c8 !important; }
+.trip-recommendation-confirm { width: 100%; min-height: 44px; margin-top: 8px; border: 1px solid #a4f0e9; border-radius: 999px; background: #a4f0e9; color: #073342; font: 800 12px "DM Sans", sans-serif; cursor: pointer; }
+.trip-recommendation-confirm:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.trip-accommodation-field.is-recommendation .trip-accommodation-trigger { border-color: #ffd78b; color: #fff2cc; }
+.trip-accommodation-recommendation-note { display: block; margin-top: 7px; color: #ffd78b; font-size: 10px; font-weight: 800; }
+@media (max-width: 640px) { .trip-recommendation-fields { grid-template-columns: 1fr; } .trip-recommendation-form { padding: 14px; } }
