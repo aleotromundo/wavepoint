@@ -1,4 +1,11 @@
 ## 2026-10-10
+### Limpieza — retirar dashboard y archivar material sin uso activo
+- `dashboard.html`, `dashboard.css`, `dashboard.js` y `dashboard-catalog.js`: se retiraron de la raíz y se archivaron en `cosas al pedo/dashboard/`; se quitó su regla de `robots.txt`.
+- Dos prototipos de clima y sus recursos independientes se archivaron en `cosas al pedo/prototipos-clima/`.
+- Se movieron 16 imágenes sin referencias activas verificadas bajo `cosas al pedo/assets/`, manteniendo sus rutas relativas. Se conservaron el hero protegido y los iconos del clima que se resuelven dinámicamente.
+- `.vercelignore`: excluir la carpeta `cosas al pedo/` completa del despliegue público.
+- Validación local: no quedan referencias activas al dashboard/prototipos; los 16 assets archivados no tenían referencias de uso; pasan las comprobaciones de sintaxis JavaScript y `git diff --check`. Se detectó una referencia de imagen ya rota en `guia-playas.html` (`catalina-islands.webp`), confirmada también en `HEAD` previo y ajena a esta limpieza.
+
 ### Fondo de Servicios — optimizar foto de parallax
 - `assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp`: reencodificar en WebP calidad 82, conservando resolución de 2176 × 1632 y la ruta existente; pasa de 1.225.662 a 356.334 bytes (−70,9 %, ahorro de 869.328 bytes).
 - `styles.css` y `styles.optimized.css`: añadir versión de caché al fondo; se renueva la versión de la hoja global en las diez páginas que la cargan para que reciban la foto nueva.
