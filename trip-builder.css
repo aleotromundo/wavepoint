@@ -637,16 +637,16 @@
 @media (max-width: 640px) {
   .trip-accommodation-modal { padding: 12px; }
   .trip-accommodation-dialog { max-height: calc(100dvh - 24px); padding: 24px 14px 16px; border-radius: 20px; }
-  .trip-accommodation-dialog h2 { padding-right: 34px; font-size: 40px; }
+  .trip-accommodation-dialog h2 { padding-right: 34px; font-size: 38px; }
   .trip-accommodation-modal-intro { margin: 9px 0 16px; font-size: 15px; }
   .trip-accommodation-options { grid-template-columns: 1fr; gap: 9px; }
   .trip-accommodation-option { grid-template-columns: 64px minmax(0, 1fr) auto; gap: 9px; padding: 9px; }
   .trip-accommodation-option img { width: 64px; height: 64px; }
   .trip-accommodation-option-copy { gap: 3px; }
-  .trip-accommodation-option-copy small { font-size: 10px; }
+  .trip-accommodation-option-copy small { font-size: 11px; }
   .trip-accommodation-option-copy strong { font-size: 24px; }
-  .trip-accommodation-option-copy > span { font-size: 12px; }
-  .trip-accommodation-option-copy em { font-size: 11px; line-height: 1.35; }
+  .trip-accommodation-option-copy > span { font-size: 13px; }
+  .trip-accommodation-option-copy em { font-size: 12px; line-height: 1.4; }
   .trip-accommodation-option > b { font-size: 11px; }
   .trip-accommodation-recommendation { grid-column: auto; grid-template-columns: 44px minmax(0, 1fr) auto; }
   .trip-accommodation-recommendation-icon { width: 44px; height: 44px; }
