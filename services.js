@@ -748,6 +748,7 @@ function setupQuickRequestPanel(form) {
 }
 function setupSurveyInteractions(form) {
 if (!form) return;
+const error = document.getElementById('detailError');
 const progress = form.querySelector('[data-survey-progress]');
 const value = form.querySelector('[data-survey-progress-value]');
 const bar = form.querySelector('[data-survey-progress-bar]');
@@ -760,6 +761,7 @@ const answered = trackedUnits.filter(unit => hasAnswer(unit)).length;
 const total = trackedUnits.length;
 const percent = total ? Math.round(answered / total * 100) : 0;
 units.forEach(unit => unit.classList.toggle('is-answered', hasAnswer(unit)));
+if (error && form.checkValidity()) error.textContent = '';
 if (value) value.textContent = `${answered} / ${total}`;
 if (bar) bar.style.width = `${percent}%`;
 if (progress) progress.setAttribute('aria-label', lang === 'en' ? `${answered} of ${total} required answers completed` : `${answered} de ${total} respuestas requeridas completas`);
@@ -968,6 +970,7 @@ const form = event.currentTarget;
 const ui = uiFor(service);
 const error = document.getElementById('detailError');
 if (!form.checkValidity()) { form.reportValidity(); error.textContent = ui.error; return; }
+error.textContent = '';
 const isSpanish = lang !== 'en';
 const clean = value => String(value || '').replace(/^¿|[?]$/g, '').trim().toLowerCase();
 const name = form.elements['request-name']?.value.trim();

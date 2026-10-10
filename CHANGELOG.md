@@ -1,4 +1,8 @@
 ## 2026-10-09
+### Formularios de servicios — limpiar aviso al completar campos
+- `services.js`: el mensaje de validación se limpia cuando las respuestas requeridas hacen válido el formulario y antes de procesar un envío válido; los errores vuelven a mostrarse si se intenta enviar incompleto.
+- Validación: verificar el flujo incompleto → completar → mensaje limpio y generación del enlace WhatsApp; `git diff --check`.
+
 ### Armador de viaje — reubicar carrito flotante en móvil
 - `trip-builder.css`: el acceso flotante al carrito queda debajo del menú hamburguesa, en vez de compartir la esquina inferior derecha con WhatsApp y el asistente.
 - `trip-builder.html`: se actualizó la versión de caché de la hoja de estilos del armador.
