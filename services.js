@@ -827,10 +827,7 @@ return galleryMarkup || supporting ? `<section class="service-editorial-story">$
 }
 function renderWitchRockStory(service) {
 const story = renderStandardStory(service, service.coordination);
-const credit = lang === 'en'
-? `Photo credits: <a href="https://commons.wikimedia.org/wiki/File:Roca_Bruja_-_Guanacaste_-_Costa_Rica.jpg" target="_blank" rel="noopener noreferrer">“Roca Bruja — Guanacaste — Costa Rica”</a> and <a href="https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG" target="_blank" rel="noopener noreferrer">“Surfing — Roca Bruja — Guanacaste — Costa Rica”</a> by dog4aday, under <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.`
-: `Créditos de las fotos: <a href="https://commons.wikimedia.org/wiki/File:Roca_Bruja_-_Guanacaste_-_Costa_Rica.jpg" target="_blank" rel="noopener noreferrer">“Roca Bruja — Guanacaste — Costa Rica”</a> y <a href="https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG" target="_blank" rel="noopener noreferrer">“Surfing — Roca Bruja — Guanacaste — Costa Rica”</a>, de dog4aday, bajo <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.`;
-return story.replace('</section>', `<p class="service-photo-credit">${credit}</p></section>`);
+return story;
 }
 
 function renderSurfPhotographyStory(service) {
