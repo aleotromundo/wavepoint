@@ -6,6 +6,12 @@
 - `.vercelignore`: excluir la carpeta `cosas al pedo/` completa del despliegue público.
 - Validación local: no quedan referencias activas al dashboard/prototipos; los 16 assets archivados no tenían referencias de uso; pasan las comprobaciones de sintaxis JavaScript y `git diff --check`. Se detectó una referencia de imagen ya rota en `guia-playas.html` (`catalina-islands.webp`), confirmada también en `HEAD` previo y ajena a esta limpieza.
 
+### Armador de viaje — tarifas de la tabla recibida
+- `trip-builder.js`: se cargaron las tarifas por persona para clases de surf, coaching, yoga, fotografía acuática, fotografía desde la playa y surfskate; ATV permanece a confirmar porque la tabla muestra guiones.
+- La tarjeta de fotografía ahora permite elegir entre modalidad acuática y desde la playa, con su tarifa y foto correspondiente. Los grupos de más de cinco aplican la última columna.
+- Se corrigió el carrito y el mensaje de WhatsApp para multiplicar la tarifa `c/u` por el número de personas; los importes se expresan en USD, como ya configuraba el armador.
+- `trip-builder.css` y `trip-builder.html`: estilo del selector y renovación de caché. Validación local: pasan `node --check`, `git diff --check`, pruebas de matrices/subtotales y verificación de las diez rutas de imágenes. Despliegue pendiente de confirmar tras publicar.
+
 ### Fondo de Servicios — optimizar foto de parallax
 - `assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp`: reencodificar en WebP calidad 82, conservando resolución de 2176 × 1632 y la ruta existente; pasa de 1.225.662 a 356.334 bytes (−70,9 %, ahorro de 869.328 bytes).
 - `styles.css` y `styles.optimized.css`: añadir versión de caché al fondo; se renueva la versión de la hoja global en las diez páginas que la cargan para que reciban la foto nueva.

@@ -54,7 +54,9 @@
   color: #183c47;
   font: 12px "DM Sans", sans-serif;
 }
-.trip-experience-fields input:focus, .trip-contact-field input:focus, .trip-contact-field textarea:focus { border-color: #10a49a; outline: 3px solid rgba(16, 164, 154, .13); }
+.trip-experience-fields input:focus, .trip-experience-fields select:focus, .trip-contact-field input:focus, .trip-contact-field textarea:focus { border-color: #10a49a; outline: 3px solid rgba(16, 164, 154, .13); }
+.trip-experience-fields select { display: block; width: 100%; min-width: 0; min-height: 40px; margin-top: 6px; padding: 8px 9px; border: 1px solid rgba(8, 43, 58, .17); border-radius: 8px; background: #fff; color: #183c47; font: 12px "DM Sans", sans-serif; text-align: center; }
+.trip-photo-mode-field { grid-column: 1 / -1; }
 .trip-input-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
 .trip-experience-price { display: flex; justify-content: space-between; gap: 10px; margin: 13px 0; color: #57737b; font-size: 11px; }
 .trip-experience-price strong { color: #0a7377; text-align: right; }
