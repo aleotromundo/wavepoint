@@ -1,13 +1,5 @@
 (() => {
   const WHATSAPP = '50660399194';
-  const RATE_BY_GUESTS = {
-    'surf-lessons': [70, 65, 60, 55, 50, 50],
-    'surf-coaching': [45, 45, 45, 45, 45, 45],
-    yoga: [20, 20, 20, 20, 20, 20],
-    'surf-photography-water': [120, 100, 80, 75, 70, 65],
-    'surf-photography-beach': [70, 50, 50, 45, 45, 40],
-    surfskate: [50, 50, 50, 50, 50, 50]
-  };
   const experiences = [
     { id: 'stays', image: 'assets/img/stays/casa-maderas/house.webp', imageAlt: { es: 'Casa de Maderas, alojamiento colorido con piscina', en: 'Casa de Maderas, colorful accommodation with a pool' }, dateMode: 'range', title: { es: 'Estadías y hoteles', en: 'Stays and Hotels' }, description: { es: 'Encontrá alojamiento para tu estadía.', en: 'Find a place to stay during your trip.' } },
     { id: 'surf-lessons', image: 'assets/img/services/surf-lessons/surf-lesson-woman.webp', imageAlt: { es: 'Alumna practicando surf en Tamarindo', en: 'Student practicing surfing in Tamarindo' }, title: { es: 'Clases de surf', en: 'Surf lessons' }, description: { es: 'Una clase adaptada al nivel de tu grupo.', en: 'A surf lesson tailored to your group’s level.' } },
@@ -149,10 +141,10 @@
     const rateId = id === 'surf-photography'
       ? `surf-photography-${photoMode === 'beach' ? 'beach' : 'water'}`
       : id;
-    const rates = RATE_BY_GUESTS[rateId];
+    const rates = window.WAVEPOINT_PRICING.rates[rateId];
     if (!rates || !Number.isInteger(guests) || guests < 1) return null;
     const perPersonRate = rates[Math.min(guests, 6) - 1];
-    return perPersonRate * guests;
+    return perPersonRate;
   };
   const titleFor = (experience, state) => experience.id === 'surf-photography'
     ? `${experience.title[lang]} — ${state.photoMode === 'beach' ? COPY[lang].photoBeach : COPY[lang].photoWater}`

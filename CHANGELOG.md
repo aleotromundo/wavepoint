@@ -1,4 +1,10 @@
 ## 2026-10-10
+### Tarifas — compartir una sola fuente entre tabla y armador
+- `pricing-data.js`: se creó la fuente única con las tarifas por persona, el orden de filas y las etiquetas bilingües. La tabla de la home se genera desde esos datos y se actualiza al cambiar el idioma.
+- `index.html` y `trip-builder.html`: cargan la fuente compartida antes de inicializar sus vistas; la tabla conserva su estructura y clases visuales.
+- `trip-builder.js`: ahora consulta las mismas matrices de tarifas para calcular precios por persona y totales de grupo, en lugar de mantener valores duplicados.
+- Validación: se comprobaron ambas vistas en navegador en español e inglés y el ejemplo de 4 clases a USD 55 c/u muestra USD 220 en el resumen; `git diff --check` sin errores. Se conservó la tarifa unitaria separada del subtotal para evitar multiplicar dos veces.
+
 ### Tabla de tarifas — alinear el orden y el contenido con la versión actualizada
 - `index.html`: se reorganizaron las filas según `tabla tarifas.jpeg`, se actualizaron los nombres y encabezados de grupos, y se indicó `c/u` en cada tarifa. Se conserva el diseño existente y la nota de confirmación de disponibilidad y precio final.
 - Validación: comparación visual de servicios, orden y tarifas con la imagen de referencia; `git diff --check` sin errores.
