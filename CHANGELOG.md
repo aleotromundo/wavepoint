@@ -1876,3 +1876,8 @@
 ### Cuatriciclos — restaurar portada y fondo originales
 - `services.js`: se restaura `atv-forest-convoy.webp` como imagen principal de la portada y del fondo; las tres fotos nuevas de Instagram permanecen únicamente en la galería.
 - Validación: portada/fondo originales y galería nueva conservados.
+
+### Armá tu viaje — títulos de experiencias enlazados
+- `trip-builder.js`: los títulos de las tarjetas ahora son enlaces a sus páginas de detalle correspondientes, incluyendo Estadías y hoteles, Clases de surf, Surf coaching, Roca Bruja y el resto de experiencias.
+- `trip-builder.css`: se añade estado hover/focus visible para los títulos enlazados.
+- Validación: se comprobaron los 9 destinos y la selección de tarjetas continúa funcionando.

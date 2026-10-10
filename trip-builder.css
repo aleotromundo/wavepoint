@@ -526,3 +526,21 @@
 /* Restauración: la imagen vuelve a llenar toda la tarjeta, sin bandas laterales. */
 .trip-experience-image img { object-fit: cover; object-position: center; }
 .trip-experience:hover .trip-experience-image img { transform: scale(1.035); }
+
+.trip-experience-title-link {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+.trip-experience-title-link:hover,
+.trip-experience-title-link:focus-visible {
+  color: #8df0d1;
+  text-decoration: underline;
+}
+.trip-experience-title-link:focus-visible {
+  outline: 3px solid rgba(141, 240, 209, .35);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
