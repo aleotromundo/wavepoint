@@ -816,7 +816,7 @@ return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
-const galleryStart = 1;
+const galleryStart = service.id === 'roca-bruja' ? 0 : 1;
 const galleryImages = service.images.slice(galleryStart);
 const gallery = galleryImages.map((image, index) => { const altIndex = index + galleryStart; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
 const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';

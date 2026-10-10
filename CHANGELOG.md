@@ -1,4 +1,9 @@
 ## 2026-10-10
+### Roca Bruja — corregir la galería para mostrar las dos fotos
+- `services.js`: Roca Bruja deja de excluir la primera imagen del conjunto editorial; la galería ahora renderiza explícitamente sus dos fotos distintas.
+- `service-detail.html`: se renueva la caché de `services.js` para evitar que producción conserve la versión que mostraba una sola foto.
+- Validación: el servicio declara dos imágenes, ambas se incluyen en el markup generado y pasan sintaxis JavaScript y `git diff --check`.
+
 ### Roca Bruja — galería compacta con ampliación
 - `styles.css` y `styles.optimized.css`: las dos fotos se muestran en paneles más chicos, lado a lado y sin repetirse; se conserva el cursor de ampliación y el visor existente al hacer clic o usar teclado.
 - `service-detail.html`: se renueva la caché de estilos para aplicar el ajuste en producción.
