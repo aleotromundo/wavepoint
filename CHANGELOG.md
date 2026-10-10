@@ -10,7 +10,7 @@
 - `trip-builder.js`: se cargaron las tarifas por persona para clases de surf, coaching, yoga, fotografía acuática, fotografía desde la playa y surfskate; ATV permanece a confirmar porque la tabla muestra guiones.
 - La tarjeta de fotografía ahora permite elegir entre modalidad acuática y desde la playa, con su tarifa y foto correspondiente. Los grupos de más de cinco aplican la última columna.
 - Se corrigió el carrito y el mensaje de WhatsApp para multiplicar la tarifa `c/u` por el número de personas; los importes se expresan en USD, como ya configuraba el armador.
-- `trip-builder.css` y `trip-builder.html`: estilo del selector y renovación de caché. Validación local: pasan `node --check`, `git diff --check`, pruebas de matrices/subtotales y verificación de las diez rutas de imágenes. Despliegue pendiente de confirmar tras publicar.
+- `trip-builder.css` y `trip-builder.html`: estilo del selector y renovación de caché. Validación local: pasan `node --check`, `git diff --check`, pruebas de matrices/subtotales y verificación de las diez rutas de imágenes. Despliegue público confirmado: `trip-builder.html`, el JS y el CSS versionados responden HTTP 200 con las tarifas nuevas.
 
 ### Fondo de Servicios — optimizar foto de parallax
 - `assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp`: reencodificar en WebP calidad 82, conservando resolución de 2176 × 1632 y la ruta existente; pasa de 1.225.662 a 356.334 bytes (−70,9 %, ahorro de 869.328 bytes).
