@@ -985,7 +985,13 @@ const getValues = question => {
     .filter(Boolean);
 };
 const groupQuestion = service.questions.find(question => ['group_size', 'snorkel_people'].includes(question.id));
-const groupValue = groupQuestion ? Number(form.elements[groupQuestion.id]?.value || 1) : 1;
+const countQuestion = groupQuestion || service.questions.find(question => question.id === 'drivers');
+const groupValue = countQuestion?.type === 'headcount'
+  ? countQuestion.fields.reduce((total, field) => total + Number(form.elements[`${countQuestion.id}-${field.id}`]?.value || 0), 0)
+  : countQuestion
+    ? Number(form.elements[countQuestion.id]?.value || 0) + (service.id === 'atv' ? Number(form.elements.passengers?.value || 0) : 0)
+    : 0;
+const hasGroupCount = groupValue > 0;
 const plural = groupValue > 1;
 const subject = clean(service.title);
 const isAccommodation = service.id === 'alojamiento-experiencias';
@@ -993,9 +999,13 @@ const lines = isAccommodation
   ? [isSpanish
     ? (plural ? 'Hola, WavePoint. Queríamos consultar por alojamiento.' : 'Hola, WavePoint. Quería consultar por alojamiento.')
     : (plural ? 'Hi WavePoint. We’d like to ask about accommodation.' : 'Hi WavePoint. I’d like to ask about accommodation.')]
+  : hasGroupCount
+    ? [isSpanish
+      ? (plural ? `Hola, WavePoint. Queremos consultar por ${subject}.` : `Hola, WavePoint. Quiero consultar por ${subject}.`)
+      : (plural ? `Hi WavePoint. We’d like to ask about ${subject}.` : `Hi WavePoint. I’d like to ask about ${subject}.`)]
   : isSpanish
-    ? [`Hola, WavePoint. Quiero consultar por ${subject}.`]
-    : [`Hi WavePoint. I’d like to ask about ${subject}.`];
+    ? [`Hola, WavePoint. Les escribo por ${subject}.`]
+    : [`Hi WavePoint. I’m getting in touch about ${subject}.`];
 if (name) {
   lines.push(isAccommodation
     ? `${isSpanish ? 'Soy' : 'I’m'} ${name}.`
@@ -1072,6 +1082,10 @@ if (isAccommodation) {
     if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
     const joined = values.join(isSpanish ? ', ' : ', ');
     const normalized = clean(joined);
+    if (!hasGroupCount) {
+      lines.push(isSpanish ? `Como dato adicional: ${joined}.` : `One more detail: ${joined}.`);
+      return;
+    }
     if (question.id === 'surf_level' || question.id === 'current_surf_level') {
       const level = normalized === 'primera vez' ? (isSpanish ? 'la primera vez que hago surf' : 'my first time surfing') : normalized;
       lines.push(`${naturalAnswers[question.id]} ${level}.`);
@@ -1091,15 +1105,15 @@ if (isAccommodation) {
       const schedule = question.id === 'preferred_schedule' || question.id === 'session_schedule' ? joined.toLowerCase() : value;
       lines.push(`${prefix} ${schedule}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
     } else if (isSpanish) {
-      lines.push(`También quería contarte que, sobre ${clean(question.label)}, ${clean(joined)}.`);
+        lines.push(`Como dato adicional: ${joined}.`);
     } else {
-      lines.push(`I’d also like to mention that for ${clean(question.label)}, ${clean(joined)}.`);
+        lines.push(`One more detail: ${joined}.`);
     }
   });
 }
 if (extra) lines.push(isSpanish ? `Además, ${extra}.` : `Also, ${extra}.`);
 lines.push('', isSpanish
-  ? (isAccommodation && plural ? 'Gracias. Quedamos atentos.' : 'Gracias. Quedo atento/a.')
+    ? (!hasGroupCount ? 'Gracias. Quedo pendiente.' : plural ? 'Gracias. Quedamos atentos.' : 'Gracias. Quedo atento/a.')
   : 'Thank you. Looking forward to your reply.');
 window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
 }

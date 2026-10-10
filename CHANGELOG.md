@@ -1,4 +1,10 @@
 ## 2026-10-09
+### Mensajes de WhatsApp — voz singular/plural en todos los formularios
+- `services.js`: se reconoce la cantidad de participantes en alojamiento, clases, Roca Bruja, snorkel y ATV; los formularios sin cantidad usan frases neutrales y bilingües sin agregar preguntas.
+- `trip-builder.js`: el saludo de la solicitud cambia a plural cuando alguna experiencia incluye más de una persona.
+- `service-detail.html` y `trip-builder.html`: se actualizaron las versiones de caché de los scripts.
+- Validación: comprobar mensajes ES/EN con una persona, grupos y cantidad desconocida sin enviar WhatsApp; revisar sintaxis y `git diff --check`.
+
 ### Solicitud de alojamiento — redactar mensaje según el tamaño del grupo
 - `services.js`: el mensaje de WhatsApp para estadías ahora ordena presentación, fechas de llegada y salida, alojamiento de interés y experiencias elegidas, con redacción singular o plural en español e inglés.
 - `service-detail.html`: se actualizó la versión de caché de `services.js`.
