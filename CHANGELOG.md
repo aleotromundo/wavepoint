@@ -12,6 +12,11 @@
 - Validación: sintaxis JavaScript, `git diff --check`, revisión de accesibilidad de botones y verificación responsive del armador.
 >>>>>>> 40e4e5e2f01572195951190f77bbe6bd7a09a1a4
 
+### Armador — unificar fechas y cantidad de personas en todas las tarjetas
+- `trip-builder.js`: todas las experiencias usan ahora el botón de calendario para `Fecha preferida` o `Llegada/Salida`, y el stepper `−/+` para la cantidad de personas. La selección continúa guardándose en el estado de cada tarjeta y actualiza el resumen.
+- `trip-builder.css`: se conserva el diseño alineado de tres controles para Estadías y hoteles y se aplica el mismo lenguaje visual al resto de las tarjetas.
+- Validación: sintaxis JavaScript, interacción de las nueve tarjetas, responsive a 320/375/1280 px y `git diff --check`.
+
 ### Tabla de tarifas — alinear el orden y el contenido con la versión actualizada
 - `index.html`: se reorganizaron las filas según `tabla tarifas.jpeg`, se actualizaron los nombres y encabezados de grupos, y se indicó `c/u` en cada tarifa. Se conserva el diseño existente y la nota de confirmación de disponibilidad y precio final.
 - Validación: comparación visual de servicios, orden y tarifas con la imagen de referencia; `git diff --check` sin errores.
