@@ -1,3 +1,9 @@
+## 2026-10-10
+### Carrusel de aliados — velocidad y hover
+- `styles.css`, `styles.optimized.css` y `script.js`: el carrusel avanza un poco más rápido (`26s`) y al pasar el cursor reduce suavemente la velocidad mediante playback rate (`21s` de referencia) sin pausarse. El arrastre mantiene una velocidad intermedia y se añadió `will-change: transform` para mantener el desplazamiento fluido.
+- `index.html`: se actualizaron las versiones de caché de estilos y script para que el ajuste llegue al sitio público.
+- Validación: reglas fuente y optimizadas sincronizadas; se verificará sintaxis, formato, responsive y despliegue público.
+
 ## 2026-10-09
 ### Aliados y patrocinadores — probar fondo parallax y vidrio en tarjetas
 - `index.html`: se agruparon el encabezado y el carrusel de aliados para limitar el nuevo fondo a esa sección.
