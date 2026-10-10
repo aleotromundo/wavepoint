@@ -149,6 +149,9 @@
   const titleFor = (experience, state) => experience.id === 'surf-photography'
     ? `${experience.title[lang]} — ${state.photoMode === 'beach' ? COPY[lang].photoBeach : COPY[lang].photoWater}`
     : experience.title[lang];
+  const experienceHref = experience => experience.id === 'stays'
+    ? 'service-detail.html?service=alojamiento-experiencias'
+    : `service-detail.html?service=${experience.id === 'surf-lessons' ? 'clases-de-surf' : experience.id === 'surf-photography' ? 'surf-fotografia' : experience.id === 'witch-rock' ? 'roca-bruja' : experience.id}`;
   const money = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'es-CR', {
     style: 'currency',
     currency: 'USD',
@@ -157,8 +160,21 @@
   const formatDate = date => date
     ? new Date(`${date}T12:00:00`).toLocaleDateString(lang === 'en' ? 'en-US' : 'es-CR', { year: 'numeric', month: 'short', day: 'numeric' })
     : '';
+  const formatDateShort = date => {
+    if (!date) return '';
+    const [, month, day] = date.split('-');
+    return `${day}/${month}`;
+  };
+  const calendarIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M7.5 3.5v4m9-4v4M3.5 9.5h17"/></svg>';
+  const stayDateField = (key, label) => {
+    const value = drafts.get('stays')[key];
+    const display = formatDateShort(value);
+    return `<label class="trip-date-field">${label}<button class="trip-date-trigger${display ? ' has-value' : ''}" type="button" data-date-trigger="${key}" aria-label="${esc(`${label}${display ? `: ${display}` : ''}`)}">${calendarIcon}<span data-date-value>${display}</span></button><input class="trip-date-picker" type="date" data-date="${key}" value="${esc(value)}" tabindex="-1" aria-hidden="true" /></label>`;
+  };
   const dateInputs = experience => experience.dateMode === 'range'
-    ? `<div class="trip-input-pair"><label>${COPY[lang].checkIn}<input type="date" data-date="start" value="${esc(drafts.get(experience.id).start)}" /></label><label>${COPY[lang].checkOut}<input type="date" data-date="end" value="${esc(drafts.get(experience.id).end)}" /></label></div>`
+    ? experience.id === 'stays'
+      ? `${stayDateField('start', COPY[lang].checkIn)}${stayDateField('end', COPY[lang].checkOut)}`
+      : `<div class="trip-input-pair"><label>${COPY[lang].checkIn}<input type="date" data-date="start" value="${esc(drafts.get(experience.id).start)}" /></label><label>${COPY[lang].checkOut}<input type="date" data-date="end" value="${esc(drafts.get(experience.id).end)}" /></label></div>`
     : `<label>${COPY[lang].date}<input type="date" data-date="start" value="${esc(drafts.get(experience.id).start)}" /></label>`;
   const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
     : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
@@ -171,12 +187,15 @@
     const beachPhoto = experience.id === 'surf-photography' && draft.photoMode === 'beach';
     const image = beachPhoto ? experience.beachImage : experience.image;
     const imageAlt = beachPhoto ? experience.beachImageAlt?.[lang] : experience.imageAlt?.[lang];
+    const guestsField = experience.id === 'stays'
+      ? `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : 'Add one guest')}">+</button></span></label>`
+      : `<label>${copy.guests}<input type="number" min="1" step="1" inputmode="numeric" data-guests value="${esc(guests)}" /></label>`;
     return `<article class="trip-experience${state ? ' is-added' : ''}" data-experience="${experience.id}">
       <div class="trip-experience-image"><img src="${image}" alt="${esc(imageAlt || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
       <div class="trip-experience-content">
-        <h3>${esc(experience.title[lang])}</h3>
+        <h3><a class="trip-experience-title-link" href="${experienceHref(experience)}">${esc(experience.title[lang])}</a></h3>
         <p>${esc(experience.description[lang])}</p>
-        <div class="trip-experience-fields">${photoModeField(experience, draft, copy)}${dateInputs(experience)}<label>${copy.guests}<input type="number" min="1" step="1" inputmode="numeric" data-guests value="${esc(guests)}" /></label></div>
+        <div class="trip-experience-fields">${photoModeField(experience, draft, copy)}${dateInputs(experience)}${guestsField}</div>
         <p class="trip-experience-price"><span>${copy.estimate}</span><strong>${price === null ? copy.quote : `${money(price)} ${copy.perPersonShort}`}</strong></p>
         <button class="trip-add-button" type="button" data-add aria-pressed="${Boolean(state)}">${state ? copy.added : copy.add}</button>
       </div>
@@ -324,7 +343,10 @@
     const card = event.target.closest('[data-experience]');
     if (!card) return;
     const draft = drafts.get(card.dataset.experience);
-    if (event.target.matches('[data-date]')) draft[event.target.dataset.date] = event.target.value;
+    if (event.target.matches('[data-date]')) {
+      draft[event.target.dataset.date] = event.target.value;
+      if (card.dataset.experience === 'stays') updateExperienceCards();
+    }
     if (event.target.matches('[data-guests]')) draft.guests = event.target.value;
     if (event.target.matches('[data-photo-mode]')) {
       draft.photoMode = event.target.value;
@@ -345,6 +367,26 @@
   });
   root.addEventListener('click', event => {
     const card = event.target.closest('[data-experience]');
+    const dateTrigger = event.target.closest('[data-date-trigger]');
+    if (dateTrigger && card) {
+      const picker = dateTrigger.parentElement.querySelector(`[data-date="${dateTrigger.dataset.dateTrigger}"]`);
+      if (picker) {
+        if (typeof picker.showPicker === 'function') picker.showPicker();
+        else picker.click();
+      }
+      return;
+    }
+    const guestsStep = event.target.closest('[data-guests-step]');
+    if (guestsStep && card && card.dataset.experience === 'stays') {
+      const draft = drafts.get(card.dataset.experience);
+      const nextGuests = Number(draft.guests) + (guestsStep.dataset.guestsStep === 'increase' ? 1 : -1);
+      draft.guests = String(Math.max(1, Math.min(99, nextGuests)));
+      const state = selected.get(card.dataset.experience);
+      if (state) Object.assign(state, draft);
+      updateExperienceCards();
+      updateSummary();
+      return;
+    }
     if (event.target.matches('[data-add]') && card) {
       const id = card.dataset.experience;
       if (selected.has(id)) selected.delete(id);

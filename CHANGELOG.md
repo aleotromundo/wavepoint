@@ -1,9 +1,16 @@
 ## 2026-10-10
+<<<<<<< HEAD
 ### Tarifas — compartir una sola fuente entre tabla y armador
 - `pricing-data.js`: se creó la fuente única con las tarifas por persona, el orden de filas y las etiquetas bilingües. La tabla de la home se genera desde esos datos y se actualiza al cambiar el idioma.
 - `index.html` y `trip-builder.html`: cargan la fuente compartida antes de inicializar sus vistas; la tabla conserva su estructura y clases visuales.
 - `trip-builder.js`: ahora consulta las mismas matrices de tarifas para calcular precios por persona y totales de grupo, en lugar de mantener valores duplicados.
 - Validación: se comprobaron ambas vistas en navegador en español e inglés y el ejemplo de 4 clases a USD 55 c/u muestra USD 220 en el resumen; `git diff --check` sin errores. Se conservó la tarifa unitaria separada del subtotal para evitar multiplicar dos veces.
+=======
+### Armador — controles de fechas y personas para Estadías y hoteles
+- `trip-builder.js`: la tarjeta de estadías reemplaza los campos visibles `dd/mm` por botones con icono de calendario; al hacer clic se abre el selector de fecha y, después de elegir, se muestra la fecha en formato `dd/mm`. Se agregó un stepper alineado con botones `−/+` para la cantidad de personas, limitado a un mínimo de una.
+- `trip-builder.css`: se alinearon los tres controles de la tarjeta y se añadieron estados de foco visibles, estilos responsive y un icono de calendario inline. Las demás tarjetas conservan sus inputs actuales.
+- Validación: sintaxis JavaScript, `git diff --check`, revisión de accesibilidad de botones y verificación responsive del armador.
+>>>>>>> 40e4e5e2f01572195951190f77bbe6bd7a09a1a4
 
 ### Tabla de tarifas — alinear el orden y el contenido con la versión actualizada
 - `index.html`: se reorganizaron las filas según `tabla tarifas.jpeg`, se actualizaron los nombres y encabezados de grupos, y se indicó `c/u` en cada tarifa. Se conserva el diseño existente y la nota de confirmación de disponibilidad y precio final.
@@ -1882,3 +1889,8 @@
 ### Cuatriciclos — restaurar portada y fondo originales
 - `services.js`: se restaura `atv-forest-convoy.webp` como imagen principal de la portada y del fondo; las tres fotos nuevas de Instagram permanecen únicamente en la galería.
 - Validación: portada/fondo originales y galería nueva conservados.
+
+### Armá tu viaje — títulos de experiencias enlazados
+- `trip-builder.js`: los títulos de las tarjetas ahora son enlaces a sus páginas de detalle correspondientes, incluyendo Estadías y hoteles, Clases de surf, Surf coaching, Roca Bruja y el resto de experiencias.
+- `trip-builder.css`: se añade estado hover/focus visible para los títulos enlazados.
+- Validación: se comprobaron los 9 destinos y la selección de tarjetas continúa funcionando.
