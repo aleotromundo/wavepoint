@@ -57,6 +57,7 @@
       requestExtra: '¿Algo más que debamos saber? (opcional)',
       extraPlaceholder: 'Preferencias o información útil para tu viaje',
       waIntro: 'Hola WavePoint, quiero armar mi viaje a Tamarindo:',
+      waIntroPlural: 'Hola WavePoint, queremos armar nuestro viaje a Tamarindo:',
       waDate: 'Fecha preferida',
       waCheckIn: 'Llegada',
       waCheckOut: 'Salida',
@@ -107,6 +108,7 @@
       requestExtra: 'Anything else we should know? (optional)',
       extraPlaceholder: 'Preferences or useful information for your trip',
       waIntro: 'Hi WavePoint, I’d like to plan my Tamarindo trip:',
+      waIntroPlural: 'Hi WavePoint, we’d like to plan our Tamarindo trip:',
       waDate: 'Preferred date',
       waCheckIn: 'Check-in',
       waCheckOut: 'Check-out',
@@ -353,7 +355,8 @@
     });
     if (invalidDates) { error.textContent = COPY[lang].invalidDates; return; }
     if (incomplete) { error.textContent = COPY[lang].detailsError; return; }
-    const lines = [COPY[lang].waIntro, ''];
+    const groupSize = Math.max(...chosen.map(([, state]) => Number(state.guests)));
+    const lines = [groupSize > 1 ? COPY[lang].waIntroPlural : COPY[lang].waIntro, ''];
     chosen.forEach(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
       const price = priceFor(id, Number(state.guests));
