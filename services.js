@@ -1035,7 +1035,8 @@ if (isAccommodation) {
       : `${plural ? 'We’re' : 'I’m'} looking to stay from ${arrival} to ${departure}.`);
   }
 
-  const accommodation = getValues(service.questions.find(question => question.id === 'accommodation_type') || {})[0];
+  const accommodationQuestion = service.questions.find(question => question.id === 'accommodation_type');
+  const accommodation = accommodationQuestion ? getValues(accommodationQuestion)[0] : '';
   if (accommodation) {
     const wantsRecommendations = clean(accommodation).includes('recomend') || clean(accommodation).includes('recommend');
     lines.push(wantsRecommendations
@@ -1097,7 +1098,9 @@ if (isAccommodation) {
   });
 }
 if (extra) lines.push(isSpanish ? `Además, ${extra}.` : `Also, ${extra}.`);
-lines.push('', isSpanish ? 'Gracias. Quedo atento/a.' : 'Thank you. Looking forward to your reply.');
+lines.push('', isSpanish
+  ? (isAccommodation && plural ? 'Gracias. Quedamos atentos.' : 'Gracias. Quedo atento/a.')
+  : 'Thank you. Looking forward to your reply.');
 window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
 }
 render(localizeService(getService()));
