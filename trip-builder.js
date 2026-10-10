@@ -55,7 +55,7 @@
       continue: 'Continuar a la solicitud',
       selectError: 'Agregá al menos una experiencia para continuar.',
       detailsError: 'Completá las fechas y la cantidad de personas de cada experiencia elegida.',
-      accommodationError: 'Elegí un alojamiento o la opción de recomendaciones para Estadías y hoteles.',
+      accommodationError: 'Completá la recomendación de alojamiento para Estadías y hoteles.',
       chooseAccommodation: 'Elegir alojamiento',
       changeAccommodation: 'Cambiar alojamiento',
       recommendAccommodation: 'Recomiéndenme según mi grupo y presupuesto',
@@ -68,8 +68,8 @@
       recommendationRequired: 'Indicá un presupuesto máximo por noche para recomendarte una opción.',
       algorithmRecommendation: 'Recomendación del algoritmo',
       accommodationSelected: 'Alojamiento elegido',
-      accommodationModalTitle: '¿Dónde te gustaría alojarte?',
-      accommodationModalIntro: 'Elegí una opción o dejá que WavePoint te recomiende según tu grupo y presupuesto.',
+      accommodationModalTitle: 'Encontrá la opción para tu grupo',
+      accommodationModalIntro: 'Contanos cuántas personas son y cuánto querés gastar por noche. El algoritmo elegirá una sola opción.',
       closeAccommodation: 'Cerrar selector de alojamiento',
       selectAccommodation: 'Elegir',
       invalidDates: 'La fecha de salida debe ser posterior a la de llegada.',
@@ -128,7 +128,7 @@
       continue: 'Continue to booking request',
       selectError: 'Add at least one experience to continue.',
       detailsError: 'Add dates and guest counts for every selected experience.',
-      accommodationError: 'Choose an accommodation or the recommendation option for Stays and Hotels.',
+      accommodationError: 'Complete the accommodation recommendation for Stays and Hotels.',
       chooseAccommodation: 'Choose accommodation',
       changeAccommodation: 'Change accommodation',
       recommendAccommodation: 'Recommend one based on my group and budget',
@@ -141,8 +141,8 @@
       recommendationRequired: 'Enter a maximum nightly budget so we can recommend one option.',
       algorithmRecommendation: 'Algorithm recommendation',
       accommodationSelected: 'Selected accommodation',
-      accommodationModalTitle: 'Where would you like to stay?',
-      accommodationModalIntro: 'Choose an option or let WavePoint recommend one based on your group and budget.',
+      accommodationModalTitle: 'Find the right option for your group',
+      accommodationModalIntro: 'Tell us how many people are traveling and what you want to spend per night. The algorithm will choose one option.',
       closeAccommodation: 'Close accommodation selector',
       selectAccommodation: 'Choose',
       invalidDates: 'Check-out must be after check-in.',
@@ -236,12 +236,10 @@
   const renderAccommodationModal = () => {
     const copy = COPY[lang];
     const draft = drafts.get('stays');
-    const current = draft.accommodation;
     const recommendation = draft.recommendation || { guests: draft.guests, budget: '', id: '' };
     const recommended = accommodationFor(recommendation.id);
-    const options = accommodationOptions.map(option => `<button class="trip-accommodation-option${current === option.id ? ' is-selected' : ''}" type="button" data-accommodation="${option.id}"><img src="${option.image}" alt="${esc(option.name[lang])}" loading="lazy"><span class="trip-accommodation-option-copy"><small>${esc(option.category[lang])}</small><strong>${esc(option.name[lang])}</strong><span>${esc(option.price[lang])}</span><em>${esc(option.summary[lang])}</em></span><b aria-hidden="true">${current === option.id ? '✓' : copy.selectAccommodation}</b></button>`).join('');
-    const recommendationForm = current === 'recommendation' ? `<div class="trip-recommendation-form"><div class="trip-recommendation-fields"><label>${esc(copy.recommendationGuests)}<input type="number" min="1" max="99" step="1" value="${esc(recommendation.guests || draft.guests)}" data-recommendation-guests></label><label>${esc(copy.recommendationBudget)}<input type="number" min="1" step="10" inputmode="decimal" placeholder="${esc(copy.recommendationBudgetPlaceholder)}" value="${esc(recommendation.budget)}" data-recommendation-budget required></label></div><p>${esc(copy.recommendationHint)}</p>${recommended ? `<strong class="trip-recommendation-result">${esc(copy.algorithmRecommendation)}: ${esc(recommended.name[lang])}</strong>` : ''}<p class="trip-recommendation-error" data-recommendation-error role="alert"></p><button type="button" class="trip-recommendation-confirm" data-confirm-recommendation>${esc(copy.confirmRecommendation)}</button></div>` : '';
-    return `<div class="trip-accommodation-modal" data-accommodation-modal hidden><div class="trip-accommodation-backdrop" data-close-accommodation></div><section class="trip-accommodation-dialog" role="dialog" aria-modal="true" aria-labelledby="tripAccommodationTitle"><button class="trip-accommodation-close" type="button" data-close-accommodation aria-label="${esc(copy.closeAccommodation)}">×</button><p class="trip-kicker">${copy.accommodationSelected}</p><h2 id="tripAccommodationTitle">${copy.accommodationModalTitle}</h2><p class="trip-accommodation-modal-intro">${copy.accommodationModalIntro}</p><div class="trip-accommodation-options">${options}<button class="trip-accommodation-option trip-accommodation-recommendation${current === 'recommendation' ? ' is-selected' : ''}" type="button" data-accommodation="recommendation"><span class="trip-accommodation-recommendation-icon" aria-hidden="true">✦</span><span class="trip-accommodation-option-copy"><small>${copy.accommodationSelected}</small><strong>${copy.recommendAccommodation}</strong><em>${esc(copy.recommendationHint)}</em></span><b aria-hidden="true">${current === 'recommendation' ? '✓' : copy.selectAccommodation}</b></button></div>${recommendationForm}</section></div>`;
+    const recommendationResult = recommended ? `<strong class="trip-recommendation-result">${esc(copy.algorithmRecommendation)}: ${esc(recommended.name[lang])}</strong>` : '';
+    return `<div class="trip-accommodation-modal" data-accommodation-modal hidden><div class="trip-accommodation-backdrop" data-close-accommodation></div><section class="trip-accommodation-dialog trip-recommendation-dialog" role="dialog" aria-modal="true" aria-labelledby="tripAccommodationTitle"><button class="trip-accommodation-close" type="button" data-close-accommodation aria-label="${esc(copy.closeAccommodation)}">×</button><p class="trip-kicker">${copy.recommendAccommodationShort}</p><h2 id="tripAccommodationTitle">${copy.accommodationModalTitle}</h2><p class="trip-accommodation-modal-intro">${copy.accommodationModalIntro}</p><div class="trip-recommendation-form"><div class="trip-recommendation-fields"><label>${esc(copy.recommendationGuests)}<input type="number" min="1" max="99" step="1" value="${esc(recommendation.guests || draft.guests)}" data-recommendation-guests></label><label>${esc(copy.recommendationBudget)}<input type="number" min="1" step="10" inputmode="decimal" placeholder="${esc(copy.recommendationBudgetPlaceholder)}" value="${esc(recommendation.budget)}" data-recommendation-budget required></label></div><p>${esc(copy.recommendationHint)}</p>${recommendationResult}<p class="trip-recommendation-error" data-recommendation-error role="alert"></p><button type="button" class="trip-recommendation-confirm" data-confirm-recommendation>${esc(copy.confirmRecommendation)}</button></div></section></div>`;
   };
   const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
     : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
@@ -458,29 +456,6 @@
     const openAccommodation = event.target.closest('[data-open-accommodation]');
     if (openAccommodation && card?.dataset.experience === 'stays') {
       if (accommodationModal) accommodationModal.hidden = false;
-      return;
-    }
-    const accommodationChoice = event.target.closest('[data-accommodation]');
-    if (accommodationChoice) {
-      const draft = drafts.get('stays');
-      if (accommodationChoice.dataset.accommodation === 'recommendation') {
-        draft.accommodation = 'recommendation';
-        draft.recommendation = { ...(draft.recommendation || {}), guests: draft.guests };
-        const wasHidden = accommodationModal?.hidden ?? true;
-        if (accommodationModal) accommodationModal.outerHTML = renderAccommodationModal();
-        const refreshedModal = root.querySelector('[data-accommodation-modal]');
-        if (refreshedModal) refreshedModal.hidden = wasHidden;
-        updateExperienceCards();
-        updateSummary();
-        return;
-      }
-      draft.accommodation = accommodationChoice.dataset.accommodation;
-      draft.recommendation = { guests: draft.guests, budget: '', id: '' };
-      const state = selected.get('stays');
-      if (state) Object.assign(state, draft);
-      if (accommodationModal) accommodationModal.hidden = true;
-      updateExperienceCards();
-      updateSummary();
       return;
     }
     if (event.target.closest('[data-confirm-recommendation]')) {
