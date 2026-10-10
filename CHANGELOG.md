@@ -1832,3 +1832,8 @@
 - Se deshizo la restauración excesiva de la estructura antigua y se volvió al estado moderno de referencia `6274861`.
 - Se recuperaron el selector visual de alojamientos, el formulario actualizado y la selección moderna de fotos por ficha.
 - Se conserva únicamente el ajuste independiente que separa las imágenes de fondo de Servicios.
+
+### Roca Bruja — renovar la primera foto de la galería
+- `services.js`: la primera imagen de la galería se reemplaza por una foto distinta con un surfista; se actualizan los textos alternativos en español e inglés.
+- `assets/img/services/witchs-rock/roca-bruja-surf.webp`: imagen optimizada desde [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Surfing-Roca_Bruja-Guanacaste-Costa_Rica.JPG), de `dog4aday`, bajo licencia [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
+- `styles.css` y `styles.optimized.css`: la galería pasa de 560 a 700 px de ancho máximo para que las dos fotos se vean un poco más grandes sin perder el comportamiento responsive.
