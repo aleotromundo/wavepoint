@@ -1851,3 +1851,8 @@
 ### Roca Bruja — mantener la foto nueva solo en la galería
 - `services.js`: se restauran `roca-bruja-rock.webp` para portada/fondo y `roca-bruja-coast.webp` como segunda referencia principal; `roca-bruja-wave.webp` queda únicamente en la galería mediante `galleryImages`.
 - Validación: fondo original restaurado, galería con la nueva foto y la foto costera, ambas con 900 px de ancho total junto al formulario.
+
+### Cuatriciclos — renovar portada, fondo y galería con fotos de Instagram
+- `services.js`: se actualiza la imagen principal de ATV y se reemplazan las tres fotos de la galería por imágenes del carrusel público de [Native’s Way Costa Rica](https://www.instagram.com/p/DRUvpl2DVmK/?img_index=1).
+- `assets/img/services/atv/atv-instagram-1.webp`, `atv-instagram-2.webp` y `atv-instagram-3.webp`: fotos optimizadas localmente desde la publicación indicada.
+- Validación: las tres imágenes nuevas son distintas, cargan correctamente y la portada/fondo usan la primera foto del carrusel.
