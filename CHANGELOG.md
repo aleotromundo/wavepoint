@@ -1847,3 +1847,7 @@
 - `services.js`: la primera imagen se reemplaza por una toma panorámica más nítida de la formación rocosa y las olas, sin surfista.
 - `assets/img/services/witchs-rock/roca-bruja-wave.webp`: imagen de alta resolución encontrada en la guía de [Stormrider Surf Guides](https://www.stormridersurf.com/surf-guide/witches-rock-roca-bruja/), optimizada localmente.
 - Se elimina la versión anterior de baja resolución `roca-bruja-landscape.webp`.
+
+### Roca Bruja — mantener la foto nueva solo en la galería
+- `services.js`: se restauran `roca-bruja-rock.webp` para portada/fondo y `roca-bruja-coast.webp` como segunda referencia principal; `roca-bruja-wave.webp` queda únicamente en la galería mediante `galleryImages`.
+- Validación: fondo original restaurado, galería con la nueva foto y la foto costera, ambas con 900 px de ancho total junto al formulario.

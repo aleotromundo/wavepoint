@@ -302,9 +302,12 @@ lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
 description: 'Salí en barco hacia Roca Bruja y compartí un día de surf con guías locales que conocen la zona. Desde el viaje hasta el tiempo en el agua, la experiencia la dan el océano, tu grupo y las personas que te guían.',
 coordination: 'WavePoint ayuda a coordinar los detalles, teniendo en cuenta el nivel de surf de tu grupo y las condiciones.',
 galleryAlt: 'Formaciones rocosas de Roca Bruja',
-images: ['assets/img/services/witchs-rock/roca-bruja-wave.webp', 'assets/img/services/witchs-rock/roca-bruja-coast.webp'],
-imageAlts: ['Roca Bruja y una ola rompiendo frente a la formación rocosa', 'Vista cercana de la formación rocosa de Roca Bruja desde el mar'],
-imageAltsEn: ['Witch’s Rock formation with a breaking wave along the coast', 'Close view of the Witch’s Rock formation from the sea'],
+images: ['assets/img/services/witchs-rock/roca-bruja-rock.webp', 'assets/img/services/witchs-rock/roca-bruja-coast.webp'],
+galleryImages: ['assets/img/services/witchs-rock/roca-bruja-wave.webp', 'assets/img/services/witchs-rock/roca-bruja-coast.webp'],
+imageAlts: ['Formación rocosa de Roca Bruja frente a la costa', 'Vista cercana de la formación rocosa de Roca Bruja desde el mar'],
+imageAltsEn: ['Rock formation at Witch’s Rock along the coast', 'Close view of the Witch’s Rock formation from the sea'],
+galleryImageAlts: ['Roca Bruja y una ola rompiendo frente a la formación rocosa', 'Vista cercana de la formación rocosa de Roca Bruja desde el mar'],
+galleryImageAltsEn: ['Witch’s Rock formation with a breaking wave along the coast', 'Close view of the Witch’s Rock formation from the sea'],
 questions: [
 { id: 'group_size', label: '¿Cuántas personas se suman?', type: 'headcount', fields: [{ id: 'adults', label: 'Adultos' }, { id: 'children', label: 'Niños' }], note: 'Si se suman niños, contanos sus edades para consultar los requisitos del proveedor.', agesLabel: 'Edades de los niños', agesPlaceholder: 'Ej.: 8 y 11' },
 { id: 'group_levels', label: '¿Qué nivel de surf tienen los participantes?', type: 'textarea', placeholder: 'Indica el nivel de cada uno.' },
@@ -817,8 +820,9 @@ return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
 const galleryStart = service.id === 'roca-bruja' ? 0 : 1;
-const galleryImages = service.images.slice(galleryStart);
-const gallery = galleryImages.map((image, index) => { const altIndex = index + galleryStart; return `<img src="${esc(image)}" alt="${esc((isEn ? service.imageAltsEn?.[altIndex] : service.imageAlts?.[altIndex]) || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
+const galleryImages = service.galleryImages || service.images.slice(galleryStart);
+const galleryImageAlts = isEn ? (service.galleryImageAltsEn || service.imageAltsEn) : (service.galleryImageAlts || service.imageAlts);
+const gallery = galleryImages.map((image, index) => { const altIndex = service.galleryImages ? index : index + galleryStart; return `<img src="${esc(image)}" alt="${esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
 const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
 const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
 const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
