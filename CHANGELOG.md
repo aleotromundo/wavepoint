@@ -1,4 +1,9 @@
 ## 2026-10-10
+### Armador — controles de fechas y personas para Estadías y hoteles
+- `trip-builder.js`: la tarjeta de estadías reemplaza los campos visibles `dd/mm` por botones con icono de calendario; al hacer clic se abre el selector de fecha y, después de elegir, se muestra la fecha en formato `dd/mm`. Se agregó un stepper alineado con botones `−/+` para la cantidad de personas, limitado a un mínimo de una.
+- `trip-builder.css`: se alinearon los tres controles de la tarjeta y se añadieron estados de foco visibles, estilos responsive y un icono de calendario inline. Las demás tarjetas conservan sus inputs actuales.
+- Validación: sintaxis JavaScript, `git diff --check`, revisión de accesibilidad de botones y verificación responsive del armador.
+
 ### Tabla de tarifas — alinear el orden y el contenido con la versión actualizada
 - `index.html`: se reorganizaron las filas según `tabla tarifas.jpeg`, se actualizaron los nombres y encabezados de grupos, y se indicó `c/u` en cada tarifa. Se conserva el diseño existente y la nota de confirmación de disponibilidad y precio final.
 - Validación: comparación visual de servicios, orden y tarifas con la imagen de referencia; `git diff --check` sin errores.
