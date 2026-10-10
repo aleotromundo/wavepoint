@@ -17,6 +17,10 @@
 - `trip-builder.css`: se conserva el diseño alineado de tres controles para Estadías y hoteles y se aplica el mismo lenguaje visual al resto de las tarjetas.
 - Validación: sintaxis JavaScript, interacción de las nueve tarjetas, responsive a 320/375/1280 px y `git diff --check`.
 
+### Armador — nivelar controles de fecha y personas
+- `trip-builder.css`: las tarjetas que tienen fecha preferida ahora usan dos columnas de igual ancho y alineación inferior; así el botón de calendario y el stepper quedan nivelados entre sí y mantienen la alineación de Estadías y hoteles.
+- Validación: revisión responsive a 320/375/1280 px y `git diff --check`.
+
 ### Tabla de tarifas — alinear el orden y el contenido con la versión actualizada
 - `index.html`: se reorganizaron las filas según `tabla tarifas.jpeg`, se actualizaron los nombres y encabezados de grupos, y se indicó `c/u` en cada tarifa. Se conserva el diseño existente y la nota de confirmación de disponibilidad y precio final.
 - Validación: comparación visual de servicios, orden y tarifas con la imagen de referencia; `git diff --check` sin errores.

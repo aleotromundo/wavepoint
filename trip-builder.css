@@ -546,6 +546,10 @@
 }
 
 /* Estadías: fechas compactas con calendario y cantidad de personas alineada. */
+.trip-experience:not([data-experience="stays"]) .trip-experience-fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+}
 .trip-experience[data-experience="stays"] .trip-experience-fields {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: end;
@@ -591,6 +595,7 @@
 .trip-guests-stepper button:focus-visible { position: relative; z-index: 1; outline: 3px solid rgba(16, 164, 154, .35); outline-offset: -3px; }
 .trip-guests-stepper output { min-width: 28px; flex: 1 1 auto; text-align: center; font-weight: 700; }
 @media (max-width: 600px) {
+  .trip-experience:not([data-experience="stays"]) .trip-experience-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trip-experience[data-experience="stays"] .trip-experience-fields { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .trip-experience[data-experience="stays"] .trip-date-trigger,
   .trip-experience[data-experience="stays"] .trip-guests-stepper { min-height: 36px; margin-top: 4px; padding: 6px 4px; font-size: 11px; }
