@@ -1,4 +1,9 @@
 ## 2026-10-10
+### Armador — mejorar la lectura del selector de alojamiento
+- `trip-builder.css`: se equilibró la jerarquía del modal: título menos dominante, introducción más legible, ventana más ancha y textos de categoría, tarifa y descripción más grandes y contrastados. En móvil se compactan las imágenes y se mantienen las opciones en una columna.
+- `trip-builder.html`: se actualizó la versión de caché de los estilos del armador.
+- Validación: revisar modal en escritorio y móvil, selector ES/EN, foco/selección por teclado y `git diff --check`.
+
 ### Armador — conservar selector y abrir recomendación como segundo paso
 - `trip-builder.js`: se restaura el modal original con las opciones de alojamiento. Al tocar «Recomiéndenme», el mismo modal cambia internamente al formulario de grupo y presupuesto; no se cierra ni se pierde el primer paso hasta que la persona elige una opción.
 - `trip-builder.html`: se renueva la versión cacheada del Armador.
