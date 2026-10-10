@@ -3,7 +3,9 @@
   const RATE_BY_GUESTS = {
     'surf-lessons': [70, 65, 60, 55, 50, 50],
     'surf-coaching': [45, 45, 45, 45, 45, 45],
-    'surf-photography': [70, 65, 60, 55, 50, 45],
+    yoga: [20, 20, 20, 20, 20, 20],
+    'surf-photography-water': [120, 100, 80, 75, 70, 65],
+    'surf-photography-beach': [70, 50, 50, 45, 45, 40],
     surfskate: [50, 50, 50, 50, 50, 50]
   };
   const experiences = [
@@ -14,7 +16,7 @@
     { id: 'snorkel-catamaran', image: 'assets/img/services/snorkel-catamaran/snorkel-turtle.webp', imageAlt: { es: 'Persona haciendo snorkel junto a una tortuga marina sobre un arrecife', en: 'Snorkeler swimming near a sea turtle above a coral reef' }, title: { es: 'Snorkel y catamarán', en: 'Snorkeling and catamaran' }, description: { es: 'Explorá el mar o navegá la costa.', en: 'Explore underwater or sail along the coast.' } },
     { id: 'yoga', image: 'assets/img/services/yoga/yoga-coastal-pose.webp', imageAlt: { es: 'Mujer practicando una postura de yoga frente al mar', en: 'Woman practicing a yoga pose beside the sea' }, title: { es: 'Yoga', en: 'Yoga' }, description: { es: 'Sumá una pausa a tu viaje.', en: 'Make room for a pause in your trip.' } },
     { id: 'atv', image: 'assets/img/services/atv/atv-forest-convoy.webp', imageAlt: { es: 'Grupo de cuatriciclos recorriendo un sendero de bosque tropical', en: 'Group of ATVs riding along a tropical forest trail' }, title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Descubrí Guanacaste en cuatriciclo.', en: 'Explore Guanacaste by ATV.' } },
-    { id: 'surf-photography', image: 'assets/img/services/surf-photography/surf-photographer-wave.webp', imageAlt: { es: 'Fotógrafo de surf en el agua con una cámara frente a una ola', en: 'Surf photographer in the water with a camera beside a breaking wave' }, title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
+    { id: 'surf-photography', image: 'assets/img/services/surf-photography/photo-service.webp', imageAlt: { es: 'Surfera captada durante una sesión acuática', en: 'Surfer photographed during an in-water session' }, beachImage: 'assets/img/services/surf-photography/surf-photographer-wave.webp', beachImageAlt: { es: 'Fotógrafo capturando una sesión de surf desde la playa', en: 'Photographer capturing a surf session from the beach' }, title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
     { id: 'surfskate', image: 'assets/img/services/surfskate/surfskate.webp', imageAlt: { es: 'Dos instructores practicando surfskate sobre una tabla', en: 'Two instructors practicing surfskate on a board' }, title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } }
   ];
   const COPY = {
@@ -32,7 +34,11 @@
       checkIn: 'Llegada',
       checkOut: 'Salida',
       guests: 'Cantidad de personas',
-      estimate: 'Estimado para esta experiencia',
+      estimate: 'Tarifa por persona',
+      perPersonShort: 'c/u',
+      photoMode: 'Tipo de fotografía',
+      photoWater: 'Fotografía acuática',
+      photoBeach: 'Fotografía desde la playa',
       quote: 'Precio a confirmar',
       trip: 'Tu viaje',
       cartCaption: 'Tu próxima aventura empieza acá.',
@@ -46,7 +52,7 @@
       guestsShortPlural: 'personas',
       estimated: 'Estimado del viaje',
       noEstimate: 'A confirmar',
-      totalNote: 'El total suma solo las experiencias con tarifas de referencia. Las demás se confirman con WavePoint.',
+      totalNote: 'Importes estimados en USD: la tarifa por persona se multiplica por la cantidad de personas de cada experiencia. ATV y otros servicios sin tarifa visible se confirman con WavePoint.',
       priceNote: 'Precios y disponibilidad serán confirmados por el equipo de WavePoint antes de cualquier pago.',
       continue: 'Continuar a la solicitud',
       selectError: 'Agregá al menos una experiencia para continuar.',
@@ -62,7 +68,8 @@
       waCheckIn: 'Llegada',
       waCheckOut: 'Salida',
       waGuests: 'Personas',
-      waEstimate: 'Estimado',
+      waEstimate: 'Total estimado',
+      waRate: 'Tarifa por persona',
       waQuote: 'Precio a confirmar',
       waName: 'Nombre',
       waExtra: 'Información adicional',
@@ -83,7 +90,11 @@
       checkIn: 'Check-in',
       checkOut: 'Check-out',
       guests: 'Number of guests',
-      estimate: 'Estimated price for this experience',
+      estimate: 'Rate per person',
+      perPersonShort: 'per person',
+      photoMode: 'Photography type',
+      photoWater: 'In-water photography',
+      photoBeach: 'Photography from the beach',
       quote: 'Price to be confirmed',
       trip: 'Your trip',
       cartCaption: 'Your next adventure starts here.',
@@ -97,7 +108,7 @@
       guestsShortPlural: 'guests',
       estimated: 'Estimated trip total',
       noEstimate: 'To be confirmed',
-      totalNote: 'The total includes only experiences with reference rates. WavePoint will confirm the others.',
+      totalNote: 'Estimates are in USD: each per-person rate is multiplied by the guest count for that experience. ATV and other unpriced services are confirmed by WavePoint.',
       priceNote: 'Prices and availability will be confirmed by the WavePoint team before payment.',
       continue: 'Continue to booking request',
       selectError: 'Add at least one experience to continue.',
@@ -113,7 +124,8 @@
       waCheckIn: 'Check-in',
       waCheckOut: 'Check-out',
       waGuests: 'Guests',
-      waEstimate: 'Estimate',
+      waEstimate: 'Estimated total',
+      waRate: 'Rate per person',
       waQuote: 'Price to be confirmed',
       waName: 'Name',
       waExtra: 'Additional information',
@@ -126,18 +138,24 @@
     catch (error) { return 'en'; }
   })();
   const selected = new Map();
-  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1' }]));
+  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
   let customerName = '';
   let customerExtra = '';
   const root = document.getElementById('tripBuilderRoot');
   const mobileCart = document.getElementById('tripMobileCart');
   let cartHeaderObserver;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const priceFor = (id, guests) => {
-    const rates = RATE_BY_GUESTS[id];
+  const priceFor = (id, guests, photoMode) => {
+    const rateId = id === 'surf-photography'
+      ? `surf-photography-${photoMode === 'beach' ? 'beach' : 'water'}`
+      : id;
+    const rates = RATE_BY_GUESTS[rateId];
     if (!rates || !Number.isInteger(guests) || guests < 1) return null;
     return rates[Math.min(guests, 6) - 1];
   };
+  const titleFor = (experience, state) => experience.id === 'surf-photography'
+    ? `${experience.title[lang]} — ${state.photoMode === 'beach' ? COPY[lang].photoBeach : COPY[lang].photoWater}`
+    : experience.title[lang];
   const money = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'es-CR', {
     style: 'currency',
     currency: 'USD',
@@ -149,18 +167,24 @@
   const dateInputs = experience => experience.dateMode === 'range'
     ? `<div class="trip-input-pair"><label>${COPY[lang].checkIn}<input type="date" data-date="start" value="${esc(drafts.get(experience.id).start)}" /></label><label>${COPY[lang].checkOut}<input type="date" data-date="end" value="${esc(drafts.get(experience.id).end)}" /></label></div>`
     : `<label>${COPY[lang].date}<input type="date" data-date="start" value="${esc(drafts.get(experience.id).start)}" /></label>`;
+  const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
+    : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
   const renderCards = () => experiences.map(experience => {
     const state = selected.get(experience.id);
-    const guests = drafts.get(experience.id).guests;
-    const price = priceFor(experience.id, Number(guests));
+    const draft = drafts.get(experience.id);
+    const guests = draft.guests;
+    const price = priceFor(experience.id, Number(guests), draft.photoMode);
     const copy = COPY[lang];
+    const beachPhoto = experience.id === 'surf-photography' && draft.photoMode === 'beach';
+    const image = beachPhoto ? experience.beachImage : experience.image;
+    const imageAlt = beachPhoto ? experience.beachImageAlt?.[lang] : experience.imageAlt?.[lang];
     return `<article class="trip-experience${state ? ' is-added' : ''}" data-experience="${experience.id}">
-      <div class="trip-experience-image"><img src="${experience.image}" alt="${esc(experience.imageAlt?.[lang] || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
+      <div class="trip-experience-image"><img src="${image}" alt="${esc(imageAlt || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
       <div class="trip-experience-content">
         <h3>${esc(experience.title[lang])}</h3>
         <p>${esc(experience.description[lang])}</p>
-        <div class="trip-experience-fields">${dateInputs(experience)}<label>${copy.guests}<input type="number" min="1" step="1" inputmode="numeric" data-guests value="${esc(guests)}" /></label></div>
-        <p class="trip-experience-price"><span>${copy.estimate}</span><strong>${price === null ? copy.quote : money(price)}</strong></p>
+        <div class="trip-experience-fields">${photoModeField(experience, draft, copy)}${dateInputs(experience)}<label>${copy.guests}<input type="number" min="1" step="1" inputmode="numeric" data-guests value="${esc(guests)}" /></label></div>
+        <p class="trip-experience-price"><span>${copy.estimate}</span><strong>${price === null ? copy.quote : `${money(price)} ${copy.perPersonShort}`}</strong></p>
         <button class="trip-add-button" type="button" data-add aria-pressed="${Boolean(state)}">${state ? copy.added : copy.add}</button>
       </div>
     </article>`;
@@ -198,15 +222,15 @@
     let total = 0;
     const rows = list.map(([id, state], index) => {
       const experience = experiences.find(item => item.id === id);
-      const price = priceFor(id, Number(state.guests));
-      if (price !== null) total += price;
+      const price = priceFor(id, Number(state.guests), state.photoMode);
+      if (price !== null) total += price * Number(state.guests);
       const dates = experience.dateMode === 'range'
         ? `${copy.checkIn}: ${formatDate(state.start) || '—'} · ${copy.checkOut}: ${formatDate(state.end) || '—'}`
         : `${copy.date}: ${formatDate(state.start) || '—'}`;
       return `<li class="trip-summary-item">
         <span class="trip-summary-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
-        <div class="trip-summary-item-copy"><strong>${esc(experience.title[lang])}</strong><span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
-        <div class="trip-summary-price">${price === null ? `<span>${copy.noEstimate}</span>` : `<strong>${money(price)}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(experience.title[lang])}">${copy.remove}</button></div>
+        <div class="trip-summary-item-copy"><strong>${esc(titleFor(experience, state))}</strong><span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
+        <div class="trip-summary-price">${price === null ? `<span>${copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
       </li>`;
     });
     const invalidDates = list.some(([id, state]) => {
@@ -236,7 +260,7 @@
         <span class="trip-cart-count" aria-live="polite">${list.length} ${list.length === 1 ? copy.itemCount : copy.itemsCount}</span>
       </div>
       ${list.length ? `<ul class="trip-summary-list">${rows.join('')}</ul>` : `<div class="trip-summary-empty"><span aria-hidden="true">✦</span><p>${copy.empty}</p><small>${copy.emptyTip}</small></div>`}
-      <div class="trip-summary-total"><span>${copy.estimated}</span><strong>${list.some(([id, state]) => priceFor(id, Number(state.guests)) !== null) ? money(total) : copy.noEstimate}</strong></div>
+      <div class="trip-summary-total"><span>${copy.estimated}</span><strong>${list.some(([id, state]) => priceFor(id, Number(state.guests), state.photoMode) !== null) ? money(total) : copy.noEstimate}</strong></div>
       <p class="trip-summary-note">${copy.totalNote}</p>
       <p class="trip-confirm-note">${copy.priceNote}</p>
       <label class="trip-contact-field">${copy.name}<input type="text" data-name value="${esc(customerName)}" placeholder="${copy.namePlaceholder}" /></label>
@@ -309,11 +333,21 @@
     const draft = drafts.get(card.dataset.experience);
     if (event.target.matches('[data-date]')) draft[event.target.dataset.date] = event.target.value;
     if (event.target.matches('[data-guests]')) draft.guests = event.target.value;
+    if (event.target.matches('[data-photo-mode]')) {
+      draft.photoMode = event.target.value;
+      const experience = experiences.find(item => item.id === card.dataset.experience);
+      const beachPhoto = draft.photoMode === 'beach';
+      const photo = card.querySelector('.trip-experience-image img');
+      if (photo && experience) {
+        photo.src = beachPhoto ? experience.beachImage : experience.image;
+        photo.alt = beachPhoto ? experience.beachImageAlt[lang] : experience.imageAlt[lang];
+      }
+    }
     const state = selected.get(card.dataset.experience);
     if (state) Object.assign(state, draft);
-    const price = priceFor(card.dataset.experience, Number(draft.guests));
+    const price = priceFor(card.dataset.experience, Number(draft.guests), draft.photoMode);
     const priceText = card.querySelector('.trip-experience-price strong');
-    if (priceText) priceText.textContent = price === null ? COPY[lang].quote : money(price);
+    if (priceText) priceText.textContent = price === null ? COPY[lang].quote : `${money(price)} ${COPY[lang].perPersonShort}`;
     updateSummary();
   });
   root.addEventListener('click', event => {
@@ -359,12 +393,12 @@
     const lines = [groupSize > 1 ? COPY[lang].waIntroPlural : COPY[lang].waIntro, ''];
     chosen.forEach(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
-      const price = priceFor(id, Number(state.guests));
-      lines.push(`• ${experience.title[lang]}`);
+      const price = priceFor(id, Number(state.guests), state.photoMode);
+      lines.push(`• ${titleFor(experience, state)}`);
       if (experience.dateMode === 'range') lines.push(`  ${COPY[lang].waCheckIn}: ${formatDate(state.start)} · ${COPY[lang].waCheckOut}: ${formatDate(state.end)}`);
       else lines.push(`  ${COPY[lang].waDate}: ${formatDate(state.start)}`);
       lines.push(`  ${COPY[lang].waGuests}: ${state.guests}`);
-      lines.push(`  ${price === null ? COPY[lang].waQuote : `${COPY[lang].waEstimate}: ${money(price)}`}`);
+      lines.push(`  ${price === null ? COPY[lang].waQuote : `${COPY[lang].waRate}: ${money(price)} ${COPY[lang].perPersonShort} × ${state.guests} · ${COPY[lang].waEstimate}: ${money(price * Number(state.guests))}`}`);
     });
     const name = customerName.trim();
     const extra = customerExtra.trim();
