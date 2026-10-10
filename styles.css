@@ -1101,7 +1101,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 
 .hero-grid { gap: 48px; padding-top: 0; transform: translateY(14px); }
 .hero h1 {
-  max-width: 700px;
+  max-width: 900px;
   margin: 24px 0 18px;
   font-size: 82px;
   line-height: .91;
@@ -2777,7 +2777,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
   -webkit-backdrop-filter: blur(5px);
 }
 .detail-index { margin: 0 0 12px; color: #b8f0e1; font: 700 12px "DM Sans", sans-serif; letter-spacing: .1em; }
-.detail-hero h1 { max-width: 700px; margin: 0; color: #f5fbf8; font: 700 clamp(56px, 8vw, 104px)/.88 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.02em; }
+.detail-hero h1 { max-width: 900px; margin: 0; color: #f5fbf8; font: 700 clamp(56px, 8vw, 104px)/.88 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.02em; }
 .detail-hero-intro { max-width: 620px; margin: 18px 0 0; color: rgba(241,250,247,.9); font-size: 18px; line-height: 1.5; }
 .detail-content { padding: 80px 0 110px; background: linear-gradient(145deg, #f1f5f3, #dfede9); color: #12313b; }
 .service-detail-page { background-color: #e4efeb; background-image: linear-gradient(145deg, rgba(241,245,243,.68), rgba(223,237,233,.72)), var(--service-detail-image); background-position: center; background-size: cover; background-attachment: fixed; }
@@ -5181,7 +5181,7 @@ footer a {
 }
 .surf-survey-open:hover { transform: translateY(-2px); background: #076e76; box-shadow: 0 12px 24px rgba(8, 127, 135, .25); }
 .surf-survey-modal {
-  width: min(700px, calc(100% - 28px));
+  width: min(900px, calc(100% - 28px));
   max-height: min(860px, calc(100dvh - 28px));
   padding: 0;
   border: 1px solid rgba(186, 231, 220, .28);
@@ -8656,7 +8656,7 @@ footer a {
 .terms-dialog {
   width: min(600px, calc(100% - 32px));
   max-width: none;
-  max-height: min(84vh, 700px);
+  max-height: min(84vh, 900px);
   margin: auto;
   padding: 0;
   overflow: auto;
@@ -8886,8 +8886,8 @@ footer a {
 
 /* Roca Bruja: dos fotos compactas, distintas y ampliables al hacer clic. */
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
-  width: min(100%, 700px) !important;
-  max-width: 700px !important;
+  width: min(100%, 900px) !important;
+  max-width: 900px !important;
   justify-self: center;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 14px !important;
