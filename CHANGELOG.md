@@ -1,16 +1,19 @@
 ## 2026-10-10
-<<<<<<< HEAD
 ### Tarifas — compartir una sola fuente entre tabla y armador
 - `pricing-data.js`: se creó la fuente única con las tarifas por persona, el orden de filas y las etiquetas bilingües. La tabla de la home se genera desde esos datos y se actualiza al cambiar el idioma.
 - `index.html` y `trip-builder.html`: cargan la fuente compartida antes de inicializar sus vistas; la tabla conserva su estructura y clases visuales.
 - `trip-builder.js`: ahora consulta las mismas matrices de tarifas para calcular precios por persona y totales de grupo, en lugar de mantener valores duplicados.
 - Validación: se comprobaron ambas vistas en navegador en español e inglés y el ejemplo de 4 clases a USD 55 c/u muestra USD 220 en el resumen; `git diff --check` sin errores. Se conservó la tarifa unitaria separada del subtotal para evitar multiplicar dos veces.
-=======
+
 ### Armador — controles de fechas y personas para Estadías y hoteles
 - `trip-builder.js`: la tarjeta de estadías reemplaza los campos visibles `dd/mm` por botones con icono de calendario; al hacer clic se abre el selector de fecha y, después de elegir, se muestra la fecha en formato `dd/mm`. Se agregó un stepper alineado con botones `−/+` para la cantidad de personas, limitado a un mínimo de una.
 - `trip-builder.css`: se alinearon los tres controles de la tarjeta y se añadieron estados de foco visibles, estilos responsive y un icono de calendario inline. Las demás tarjetas conservan sus inputs actuales.
 - Validación: sintaxis JavaScript, `git diff --check`, revisión de accesibilidad de botones y verificación responsive del armador.
->>>>>>> 40e4e5e2f01572195951190f77bbe6bd7a09a1a4
+
+### Armador — selector visual de alojamiento para Estadías y hoteles
+- `trip-builder.js`: se agregó un botón `Elegir alojamiento` que abre un modal con Hotel Tamalodge, Casa Aura, Casa Madera, Capitán Suizo y la opción de recomendaciones. La elección aparece en la tarjeta, el resumen y el mensaje de WhatsApp; Estadías no permite continuar sin elegir una opción.
+- `trip-builder.css`: se diseñaron las tarjetas visuales del modal con fotos locales, categorías, precios existentes, estados seleccionados, cierre por fondo/Escape y responsive para móvil.
+- Validación: sintaxis JavaScript, selección y cambio de alojamiento, bloqueo sin selección, resumen actualizado, cinco opciones visibles, responsive a 320/375/1280 px y `git diff --check`.
 
 ### Armador — unificar fechas y cantidad de personas en todas las tarjetas
 - `trip-builder.js`: todas las experiencias usan ahora el botón de calendario para `Fecha preferida` o `Llegada/Salida`, y el stepper `−/+` para la cantidad de personas. La selección continúa guardándose en el estado de cada tarjeta y actualiza el resumen.
