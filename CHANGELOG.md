@@ -1,4 +1,10 @@
 ## 2026-10-09
+### Aliados y patrocinadores — probar fondo parallax y vidrio en tarjetas
+- `index.html`: se agruparon el encabezado y el carrusel de aliados para limitar el nuevo fondo a esa sección.
+- `styles.css` y `styles.optimized.css`: se agregó una foto local de atardecer con tinte rojo y líneas de olas discretas como ventana parallax; las tarjetas muestran una placa de vidrio que entra suavemente al pasar el cursor o recibir foco. En táctil y con movimiento/datos reducidos, el contenido queda visible sin parallax ni transición.
+- `index.html`: se renovó la versión de caché de estilos.
+- Validación: pendiente revisar el efecto en navegador, teclado, móvil, movimiento reducido y `git diff --check`.
+
 ### Armador móvil — ubicar el logo WavePoint en el hero
 - `trip-builder.js` y `trip-builder.html`: el logo flotante pasa a formar parte del contenido del hero, conservando su posición fija anterior en escritorio.
 - `trip-builder.css`: solo en móvil, el logo aparece centrado y ampliado encima de “Plan your trip”; queda en el hero y no acompaña el scroll ni se superpone con el asistente o WhatsApp.
