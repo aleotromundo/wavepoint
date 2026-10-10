@@ -3451,3 +3451,19 @@ to{filter:brightness(1.18)}
     white-space: normal !important;
   }
 }
+
+/* Encabezado y carrusel comparten exactamente el mismo borde izquierdo. */
+.allies-ticker > .allies-ticker-head {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.allies-ticker > .allies-ticker-head > div { width: 100% !important; }
+@media (max-width: 760px) {
+  .allies-ticker > .allies-ticker-head {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
