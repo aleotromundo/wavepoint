@@ -1,4 +1,9 @@
 ## 2026-10-10
+### Tarifas de servicios — sincronizar la tabla pública con la corrección recibida
+- `index.html`: se alinea la tabla de la portada con las tarifas aprobadas que ya usa el armador; Fotografía desde la playa queda en USD 70/50/50/45/45/40 y se agrega Yoga a USD 20 para todos los tamaños de grupo.
+- Se agrega la fila de Tours en cuatriciclo (ATV) con guiones, como en la tabla recibida, sin publicar un precio no confirmado.
+- Validación: las seis matrices de tarifas publicadas coinciden con `RATE_BY_GUESTS` en `trip-builder.js`; ATV permanece sin precio; pasan `node --check` en los scripts del sitio y `git diff --check`.
+
 ### Carrusel de aliados — reincorporar Eterno Verano y Club 33
 - `index.html`: se suman ambos aliados al carrusel visible y a su segundo conjunto duplicado, manteniendo el diseño restaurado y el desplazamiento continuo con siete tarjetas.
 - `assets/img/collaborators/eterno-verano/ally-eterno-verano.webp` y `assets/img/collaborators/club-33/ally-club33.webp`: se restauran en rutas activas porque habían quedado archivados bajo `cosas al pedo/`.
