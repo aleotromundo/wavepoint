@@ -614,34 +614,40 @@
 .trip-accommodation-modal[hidden] { display: none; }
 .trip-accommodation-modal { position: fixed; z-index: 11000; inset: 0; display: grid; place-items: center; padding: 24px; }
 .trip-accommodation-backdrop { position: absolute; inset: 0; background: rgba(2, 20, 29, .76); backdrop-filter: blur(8px); }
-.trip-accommodation-dialog { position: relative; width: min(920px, 100%); max-height: min(760px, calc(100dvh - 48px)); overflow-y: auto; padding: clamp(24px, 4vw, 42px); border: 1px solid rgba(164, 240, 233, .35); border-radius: 26px; background: linear-gradient(145deg, #0b3d4d, #092b3b); color: #f2fffb; box-shadow: 0 28px 90px rgba(0, 0, 0, .38); }
+.trip-accommodation-dialog { position: relative; width: min(1040px, 100%); max-height: min(820px, calc(100dvh - 48px)); overflow-y: auto; padding: clamp(24px, 3vw, 34px); border: 1px solid rgba(164, 240, 233, .35); border-radius: 26px; background: linear-gradient(145deg, #0b3d4d, #092b3b); color: #f2fffb; box-shadow: 0 28px 90px rgba(0, 0, 0, .38); }
 .trip-accommodation-dialog .trip-kicker { color: #a4f0e9; }
-.trip-accommodation-dialog h2 { max-width: 650px; margin: 0; color: #fff; font: 800 clamp(38px, 6vw, 68px)/.92 "Barlow Condensed", Impact, sans-serif; }
-.trip-accommodation-modal-intro { max-width: 620px; margin: 14px 0 24px; color: rgba(238, 255, 250, .78); font-size: 14px; line-height: 1.55; }
+.trip-accommodation-dialog h2 { max-width: 720px; margin: 0; color: #fff; font: 800 clamp(36px, 4.6vw, 54px)/.98 "Barlow Condensed", Impact, sans-serif; }
+.trip-accommodation-modal-intro { max-width: 700px; margin: 10px 0 20px; color: rgba(238, 255, 250, .88); font-size: 16px; line-height: 1.5; }
 .trip-accommodation-close { position: absolute; top: 17px; right: 19px; display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(164, 240, 233, .35); border-radius: 50%; background: rgba(255, 255, 255, .08); color: #fff; font-size: 27px; line-height: 1; cursor: pointer; }
 .trip-accommodation-close:hover { background: rgba(164, 240, 233, .2); }
 .trip-accommodation-close:focus-visible { outline: 3px solid rgba(164, 240, 233, .5); outline-offset: 3px; }
 .trip-accommodation-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.trip-accommodation-option { position: relative; display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; min-width: 0; gap: 13px; align-items: center; padding: 10px; border: 1px solid rgba(164, 240, 233, .22); border-radius: 16px; background: rgba(255, 255, 255, .09); color: #fff; text-align: left; cursor: pointer; transition: border-color .18s ease, background .18s ease, transform .18s ease; }
+.trip-accommodation-option { position: relative; display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; min-width: 0; gap: 13px; align-items: center; padding: 12px; border: 1px solid rgba(164, 240, 233, .22); border-radius: 16px; background: rgba(255, 255, 255, .09); color: #fff; text-align: left; cursor: pointer; transition: border-color .18s ease, background .18s ease, transform .18s ease; }
 .trip-accommodation-option:hover, .trip-accommodation-option.is-selected { transform: translateY(-2px); border-color: #a4f0e9; background: rgba(164, 240, 233, .17); }
 .trip-accommodation-option:focus-visible { outline: 3px solid rgba(164, 240, 233, .48); outline-offset: 3px; }
 .trip-accommodation-option img { width: 92px; height: 92px; border-radius: 11px; object-fit: cover; }
-.trip-accommodation-option-copy { display: grid; min-width: 0; gap: 4px; }
-.trip-accommodation-option-copy small { color: #a4f0e9; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.trip-accommodation-option-copy strong { font: 800 25px/1 "Barlow Condensed", Impact, sans-serif; }
-.trip-accommodation-option-copy > span { color: #ffd78b; font-size: 10px; font-weight: 800; }
-.trip-accommodation-option-copy em { color: rgba(238, 255, 250, .72); font-size: 10px; font-style: normal; line-height: 1.35; }
-.trip-accommodation-option > b { color: #a4f0e9; font-size: 10px; white-space: nowrap; }
+.trip-accommodation-option-copy { display: grid; min-width: 0; gap: 5px; }
+.trip-accommodation-option-copy small { color: #a4f0e9; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.trip-accommodation-option-copy strong { font: 800 28px/1 "Barlow Condensed", Impact, sans-serif; }
+.trip-accommodation-option-copy > span { color: #ffd78b; font-size: 13px; font-weight: 800; line-height: 1.35; }
+.trip-accommodation-option-copy em { color: rgba(238, 255, 250, .88); font-size: 12px; font-style: normal; line-height: 1.45; }
+.trip-accommodation-option > b { color: #a4f0e9; font-size: 12px; white-space: nowrap; }
 .trip-accommodation-recommendation { grid-column: 1 / -1; grid-template-columns: 52px minmax(0, 1fr) auto; }
 .trip-accommodation-recommendation-icon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 50%; background: rgba(255, 215, 139, .16); color: #ffd78b; font-size: 25px; }
 @media (max-width: 640px) {
   .trip-accommodation-modal { padding: 12px; }
-  .trip-accommodation-dialog { max-height: calc(100dvh - 24px); padding: 26px 16px 18px; border-radius: 20px; }
-  .trip-accommodation-dialog h2 { padding-right: 34px; font-size: 48px; }
+  .trip-accommodation-dialog { max-height: calc(100dvh - 24px); padding: 24px 14px 16px; border-radius: 20px; }
+  .trip-accommodation-dialog h2 { padding-right: 34px; font-size: 40px; }
+  .trip-accommodation-modal-intro { margin: 9px 0 16px; font-size: 15px; }
   .trip-accommodation-options { grid-template-columns: 1fr; gap: 9px; }
-  .trip-accommodation-option { grid-template-columns: 70px minmax(0, 1fr) auto; gap: 9px; padding: 8px; }
-  .trip-accommodation-option img { width: 70px; height: 70px; }
-  .trip-accommodation-option-copy strong { font-size: 22px; }
+  .trip-accommodation-option { grid-template-columns: 64px minmax(0, 1fr) auto; gap: 9px; padding: 9px; }
+  .trip-accommodation-option img { width: 64px; height: 64px; }
+  .trip-accommodation-option-copy { gap: 3px; }
+  .trip-accommodation-option-copy small { font-size: 10px; }
+  .trip-accommodation-option-copy strong { font-size: 24px; }
+  .trip-accommodation-option-copy > span { font-size: 12px; }
+  .trip-accommodation-option-copy em { font-size: 11px; line-height: 1.35; }
+  .trip-accommodation-option > b { font-size: 11px; }
   .trip-accommodation-recommendation { grid-column: auto; grid-template-columns: 44px minmax(0, 1fr) auto; }
   .trip-accommodation-recommendation-icon { width: 44px; height: 44px; }
 }
