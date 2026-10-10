@@ -50,7 +50,7 @@
       remove: 'Quitar',
       guestsShort: 'persona',
       guestsShortPlural: 'personas',
-      estimated: 'Estimado del viaje',
+      estimated: 'Subtotal de experiencias con precio',
       noEstimate: 'A confirmar',
       totalNote: 'Importes estimados en USD: la tarifa por persona se multiplica por la cantidad de personas de cada experiencia. ATV y otros servicios sin tarifa visible se confirman con WavePoint.',
       priceNote: 'Precios y disponibilidad serán confirmados por el equipo de WavePoint antes de cualquier pago.',
@@ -106,7 +106,7 @@
       remove: 'Remove',
       guestsShort: 'guest',
       guestsShortPlural: 'guests',
-      estimated: 'Estimated trip total',
+      estimated: 'Subtotal of priced experiences',
       noEstimate: 'To be confirmed',
       totalNote: 'Estimates are in USD: each per-person rate is multiplied by the guest count for that experience. ATV and other unpriced services are confirmed by WavePoint.',
       priceNote: 'Prices and availability will be confirmed by the WavePoint team before payment.',
@@ -151,7 +151,8 @@
       : id;
     const rates = RATE_BY_GUESTS[rateId];
     if (!rates || !Number.isInteger(guests) || guests < 1) return null;
-    return rates[Math.min(guests, 6) - 1];
+    const perPersonRate = rates[Math.min(guests, 6) - 1];
+    return perPersonRate * guests;
   };
   const titleFor = (experience, state) => experience.id === 'surf-photography'
     ? `${experience.title[lang]} — ${state.photoMode === 'beach' ? COPY[lang].photoBeach : COPY[lang].photoWater}`
