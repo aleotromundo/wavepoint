@@ -1,4 +1,8 @@
 ## 2026-10-10
+### Tabla de tarifas — alinear el orden y el contenido con la versión actualizada
+- `index.html`: se reorganizaron las filas según `tabla tarifas.jpeg`, se actualizaron los nombres y encabezados de grupos, y se indicó `c/u` en cada tarifa. Se conserva el diseño existente y la nota de confirmación de disponibilidad y precio final.
+- Validación: comparación visual de servicios, orden y tarifas con la imagen de referencia; `git diff --check` sin errores.
+
 ### Tarifas de la home — alinear la tabla con la versión actualizada
 - `index.html`: se ajustó la cabecera de la tabla pública para que refleje exactamente la nomenclatura de la versión actualizada (`5+`) manteniendo la estructura y estilo visual vigente.
 - Validación: revisión del bloque de tarifas y `git diff --check` sin errores.
