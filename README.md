@@ -9,7 +9,7 @@ Si estás leyendo este repositorio para continuar un trabajo, seguí este orden 
 1. Leer este `README.md`.
 2. Leer `PROJECT_GUIDE.md` completo y respetar sus decisiones protegidas.
 3. Leer la entrada más reciente de `CHANGELOG.md`.
-4. Revisar `git status --short --branch` y no sobrescribir cambios existentes que no pertenezcan a tu tarea.
+4. Revisar `git status --short --branch` y no sobrescribir cambios existentes que no pertenezcan a tu tarea. Si el trabajo se hace desde varios dispositivos, sincronizar primero con `git pull --rebase` o `git fetch` + revisión del estado para evitar perder cambios locales de otra copia.
 5. Auditar el alcance exacto, implementar el cambio mínimo y mantener separados los cambios visuales, funcionales y de contenido.
 6. Validar sintaxis, referencias, responsive, accesibilidad y `git diff --check`.
 7. Registrar el cambio en `CHANGELOG.md` con archivos, motivo, comportamiento esperado y validaciones.

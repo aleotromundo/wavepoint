@@ -1,4 +1,8 @@
 ## 2026-10-10
+### Reglas del repo — sincronización entre dispositivos
+- `README.md` y `AGENTS.md`: se agregó la regla de sincronizar el repo antes de editar cuando se trabaja desde varios dispositivos o sesiones, para evitar sobrescribir cambios locales que quedaron guardados en otra copia.
+- Validación: se revisaron `git status` y `git fetch` en la rama actual y no hay conflictos activos ni cambios pendientes en esta sesión.
+
 ### Roca Bruja — corregir la galería para mostrar las dos fotos
 - `services.js`: Roca Bruja deja de excluir la primera imagen del conjunto editorial; la galería ahora renderiza explícitamente sus dos fotos distintas.
 - `service-detail.html`: se renueva la caché de `services.js` para evitar que producción conserve la versión que mostraba una sola foto.
