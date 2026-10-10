@@ -1,4 +1,9 @@
 ## 2026-10-09
+### Solicitud de alojamiento — redactar mensaje según el tamaño del grupo
+- `services.js`: el mensaje de WhatsApp para estadías ahora ordena presentación, fechas de llegada y salida, alojamiento de interés y experiencias elegidas, con redacción singular o plural en español e inglés.
+- `service-detail.html`: se actualizó la versión de caché de `services.js`.
+- Validación: revisar solicitudes para una y varias personas en ambos idiomas, sin enviar mensajes; comprobar sintaxis y `git diff --check`.
+
 ### Formularios de servicios — limpiar aviso al completar campos
 - `services.js`: el mensaje de validación se limpia cuando las respuestas requeridas hacen válido el formulario y antes de procesar un envío válido; los errores vuelven a mostrarse si se intenta enviar incompleto.
 - Validación: verificar el flujo incompleto → completar → mensaje limpio y generación del enlace WhatsApp; `git diff --check`.
