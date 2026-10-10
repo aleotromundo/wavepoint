@@ -8773,3 +8773,33 @@ footer a {
   .allies-showcase .ally-tile > span::before { transition: none !important; }
   .allies-showcase .allies-ticker-track { animation: none !important; }
 }
+
+/* Restored partners rail: original card hierarchy with current assets and drag interaction. */
+.allies-showcase { position: relative; overflow: hidden; background: linear-gradient(180deg, #062b3a 0%, #0a5260 100%); }
+.allies-showcase::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 12% 15%, rgba(61, 220, 191, .18), transparent 30%), radial-gradient(circle at 88% 85%, rgba(7, 146, 164, .22), transparent 34%); pointer-events: none; }
+.allies-showcase .allies-heading { position: relative; z-index: 1; padding-top: clamp(42px, 6vw, 72px); padding-bottom: 24px; }
+.allies-main-title { margin: 0 0 8px; color: #f4fbf8; font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(34px, 4.5vw, 58px); line-height: .95; letter-spacing: -.02em; }
+.allies-sub-title { max-width: 720px; margin: 0; color: rgba(234,247,242,.78); font-size: 15px; font-weight: 700; line-height: 1.45; }
+.allies-drag-hint { display: inline-flex; margin-top: 16px; color: #9fe8d9; font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.allies-section { position: relative; z-index: 1; padding: 0 0 clamp(44px, 6vw, 72px); background: transparent; }
+.allies-ticker-viewport { max-width: none; overflow: hidden; mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%); }
+.allies-ticker-track { animation: allies-slide-left 42s linear infinite; width: max-content; touch-action: pan-y; cursor: grab; }
+.allies-ticker:hover .allies-ticker-track { animation-play-state: paused; }
+.allies-ticker.is-dragging .allies-ticker-track { cursor: grabbing; animation-play-state: paused; }
+.allies-ticker-resist { display: flex; width: max-content; transition: left .42s cubic-bezier(.2,.75,.25,1); }
+.allies-ticker.is-dragging .allies-ticker-resist { transition: none; }
+.allies-ticker-set { display: flex; align-items: stretch; gap: 18px; padding: 0 max(24px, calc((100vw - 1240px) / 2)); }
+.partner-rail-card { flex: 0 0 270px; min-height: 300px; }
+.partner-rail-card.active-sponsor-card { flex-basis: 370px; min-height: 300px; }
+.partner-rail-card:hover { transform: translateY(-8px) rotate(-.4deg); }
+.partner-rail-card h3 { font-size: 25px; }
+.partner-rail-card p { font-size: 13px; }
+@media (max-width: 640px) {
+  .allies-showcase .allies-heading { padding-inline: 20px; }
+  .allies-ticker-viewport { mask-image: none; }
+  .allies-ticker-set { gap: 12px; padding-inline: 20px; }
+  .partner-rail-card { flex-basis: 238px; min-height: 255px; }
+  .partner-rail-card.active-sponsor-card { flex-basis: 300px; min-height: 255px; }
+  .partner-rail-card h3 { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .allies-ticker-track { animation: none !important; } }
