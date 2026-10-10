@@ -3437,3 +3437,17 @@ to{filter:brightness(1.18)}
   }
   .allies-ticker .ally-tile strong { font-size: 20px !important; }
 }
+
+/* El subtítulo de aliados queda en una sola línea en escritorio. */
+.allies-ticker-head .section-sub {
+  max-width: none !important;
+  width: max-content !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 760px) {
+  .allies-ticker-head .section-sub {
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+}
