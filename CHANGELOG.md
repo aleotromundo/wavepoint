@@ -1,19 +1,22 @@
 ## 2026-10-11
-<<<<<<< HEAD
 ### Servicios — activar parallax en el fondo compuesto
 - `index.html`: se activa el parallax del fondo de varias capas de Servicios con la clase `services-parallax`; se puede desactivar quitando esa clase de `#servicios`.
 - `styles.css` y `styles.optimized.css`: el fondo sigue fijo mientras el contenido de Servicios se desplaza; el ajuste respeta `prefers-reduced-motion` y su modo apagado recupera el fondo unido a la sección.
 - `index.html`: se renueva la referencia de caché de estilos.
 - Validación: posición fija del fondo durante el desplazamiento, apagado por clase, preferencia de movimiento reducido y vista móvil; `git diff --check`.
 
-## 2026-10-11
-=======
+### Surfskate — reemplazar la foto «Skater Bowl»
+- `assets/img/services/surfskate/surfskate-bowl.webp`: se reemplazó la foto del skater en un bowl por una imagen horizontal de 1600 × 1067 px donde un coach explica una clase grupal y los estudiantes están sentados sobre tablas en la playa; se optimizó a WebP de 235 KB.
+- `services.js`: se actualizaron las descripciones alternativa en español e inglés para describir la nueva escena sin mencionar un bowl ni un truco.
+- `service-detail.html`: se renovó la versión de caché del catálogo para que la ficha entregue la descripción actualizada.
+- Fuente visual consultada: resultado de búsqueda de imágenes atribuido a Send It Surf Academy / Samuel Fairbank, con contexto de clases grupales en la página pública de [Send It Surf Academy](https://www.senditsurfacademy.com/).
+- Validación: inspección visual, dimensiones y formato del asset, rutas locales, sintaxis JavaScript y `git diff --check`.
+
 ### Armador — compactar el cartel de colores del carrito
 - `trip-builder.css`: se redujeron nuevamente la altura, el espaciado, el título y la ilustración del cartel de colores en escritorio para aprovechar mejor el espacio; las reglas de móvil permanecen vigentes.
 - `trip-builder.html`: se actualizó la versión de caché de estilos.
 - Validación: revisión de dimensiones, sintaxis JavaScript y `git diff --check`.
 
->>>>>>> 17dd70b143d782758fe84dbb00fbb80ec398a8c0
 ### Navegación — completar el recorrido de secciones y eliminar conflictos visibles
 - `index.html`, `service-detail.html` y `site-nav.js`: los menús en todas las páginas siguen el orden Inicio, Servicios, Nosotros, Guía turística, Cámaras en vivo y Colaboradores; los enlaces de cámara llevan a `#camaras`.
 - `service-detail.html`: se eliminaron los marcadores de conflicto que aparecían en la ficha y se renovó la referencia a CSS y al catálogo de servicios.
