@@ -1,7 +1,7 @@
 ## 2026-10-11
 ### Botones del hero en notebooks de poca altura
 - Se revirtió el desplazamiento de `18px` porque en la composición real acercaba visualmente los botones al borde inferior del video en lugar de separarlos.
-- La variante vuelve al comportamiento anterior, que conservaba una separación visual más segura.
+- La corrección definitiva reduce el desplazamiento del bloque completo del hero de `80px` a `48px`, subiendo también “Armá tu viaje” y “Guía de playas” y creando espacio real con el borde inferior.
 
 ### Logo del hero adaptado a monitores grandes
 - `styles.css` y `styles.optimized.css`: desde `1440px` de ancho, el logo principal del hero aumenta hasta `720px` para aprovechar el espacio superior disponible en pantallas grandes.
