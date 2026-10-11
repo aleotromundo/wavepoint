@@ -1,9 +1,17 @@
 ## 2026-10-10
+### Solicitudes — aclarar el paso de envío por WhatsApp
+- `services.js` y `trip-builder.js`: después de preparar una solicitud, se indica en español e inglés que la persona debe tocar Enviar en WhatsApp para que WavePoint reciba el mensaje; se aclara que aún no hay reserva confirmada ni pago realizado.
+- `styles.css`, `styles.optimized.css` y `trip-builder.css`: se añadió el estado visual accesible y un enlace alternativo para abrir el mensaje si WhatsApp no se abrió.
+- `service-detail.html` y `trip-builder.html`: se renovó la caché de los scripts/estilos modificados.
+- `PROJECT_GUIDE.md`: se documentó que el sitio no puede verificar el envío ni confirmar la recepción real.
+- Validación: fichas de Surfskate y Armador probados en navegador en ES/EN; se comprobaron la región `role=status`, el enlace alternativo y el mensaje preparado para `wa.me/50660399194`, interceptando `window.open` para no abrir ni enviar WhatsApp. El texto aclara que hay que tocar Enviar y que no hay reserva ni pago. Sintaxis de los JS cargada y ejecutada en navegador; `git diff --check` sin errores.
+
+## 2026-10-10
 ### Contacto — formulario bilingüe antes del footer
 - `index.html`: se agregó un formulario de nombre y mensaje antes del footer, con textos y campos disponibles en español e inglés.
 - `script.js`: el envío abre WhatsApp al número de contacto ya utilizado por el sitio y prepara el mensaje para que la persona lo revise y confirme; no se presenta como enviado antes de esa confirmación.
 - `styles.css` y `styles.optimized.css`: se añadió un diseño responsive con foco visible y campos legibles; la portada usa la versión optimizada.
-- Validación: pendiente de comprobar ambos idiomas, validación de campos, apertura simulada de WhatsApp, responsive, accesibilidad y `git diff --check`.
+- Validación: navegador en ES/EN; campos requeridos y nombre compuesto solo por espacios bloquean el flujo, el mensaje y el nombre se preparan correctamente para `wa.me/50660399194` sin abrir WhatsApp real. Sin overflow a 390 px; etiquetas accesibles y foco visible comprobados; `git diff --check` sin errores. Node.js no está disponible en el entorno, por lo que no se ejecutó `node --check`.
 
 ## 2026-10-10
 ### Solicitudes — completar datos de Fotografía de surf y Surfskate

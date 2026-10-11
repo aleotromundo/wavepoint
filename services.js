@@ -703,6 +703,8 @@ nameLabel: '¿Cómo te llamás?', namePlaceholder: 'Tu nombre',
 extraLabel: '¿Hay algo más que quieras contarnos?', extraPlaceholder: 'Fechas, cantidad de personas u otra información útil',
 submit: 'Armar solicitud en WhatsApp ↗',
 note: 'Se abrirá WhatsApp con tus respuestas listas para revisar antes de enviar.',
+confirmation: 'El mensaje está preparado. Revisá WhatsApp y tocá Enviar para que recibamos tu consulta. La reserva aún no está confirmada y no se realizó ningún pago.',
+confirmationLink: 'Si WhatsApp no se abrió, abrilo aquí.',
 error: 'Completá las respuestas necesarias para continuar.',
 waIntro: 'Hola WavePoint, quiero consultar por:', waName: 'Nombre:', waExtra: 'Información adicional:', waThanks: 'Gracias. Quedo atento/a.',
 galleryAlt: 'Clases de surf · imagen',
@@ -721,6 +723,8 @@ nameLabel: 'What’s your name?', namePlaceholder: 'Your name',
 extraLabel: 'Anything else you’d like to tell us?', extraPlaceholder: 'Dates, number of people or any other useful information',
 submit: 'Build request on WhatsApp ↗',
 note: 'WhatsApp will open with your answers ready to review before sending.',
+confirmation: 'Your message is ready. Review WhatsApp and tap Send for us to receive your inquiry. Your booking is not confirmed and no payment has been taken.',
+confirmationLink: 'If WhatsApp did not open, open it here.',
 error: 'Please complete the required answers to continue.',
 waIntro: 'Hi WavePoint, I’d like to ask about:', waName: 'Name:', waExtra: 'Additional information:', waThanks: 'Thank you. Looking forward to your reply.',
 galleryAlt: 'Surf lessons · image',
@@ -1005,6 +1009,7 @@ event.preventDefault();
 const form = event.currentTarget;
 const ui = uiFor(service);
 const error = document.getElementById('detailError');
+document.getElementById('detailConfirmation')?.remove();
 if (!form.checkValidity()) { form.reportValidity(); error.textContent = ui.error; return; }
 error.textContent = '';
 const isSpanish = lang !== 'en';
@@ -1165,7 +1170,21 @@ if (extra) lines.push(isSpanish ? `Además, ${extra}.` : `Also, ${extra}.`);
 lines.push('', isSpanish
     ? (!hasGroupCount ? 'Gracias. Quedo pendiente.' : plural ? 'Gracias. Quedamos atentos.' : 'Gracias. Quedo atento/a.')
   : 'Thank you. Looking forward to your reply.');
-window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
+const whatsappUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`;
+window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+const confirmation = document.createElement('p');
+confirmation.className = 'detail-confirmation';
+confirmation.setAttribute('role', 'status');
+confirmation.setAttribute('aria-live', 'polite');
+const message = document.createElement('span');
+message.textContent = ui.confirmation;
+const confirmationLink = document.createElement('a');
+confirmationLink.href = whatsappUrl;
+confirmationLink.target = '_blank';
+confirmationLink.rel = 'noopener noreferrer';
+confirmationLink.textContent = ui.confirmationLink;
+confirmation.append(message, document.createTextNode(' '), confirmationLink);
+error.insertAdjacentElement('afterend', confirmation);
 }
 render(localizeService(getService()));
 window.addEventListener('wavepoint:languagechange', event => {
