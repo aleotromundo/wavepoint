@@ -1,4 +1,8 @@
 ## 2026-10-11
+### Logo del hero adaptado a monitores grandes
+- `styles.css` y `styles.optimized.css`: desde `1440px` de ancho, el logo principal del hero aumenta hasta `720px` para aprovechar el espacio superior disponible en pantallas grandes.
+- Notebook, escritorio común, tablet y celular mantienen sus dimensiones anteriores.
+
 ### Parallax global y fondo de Contactar a WavePoint
 - `styles.css` y `styles.optimized.css`: las secciones con fondos fotográficos basadas en `has-px` pasan a usar parallax en escritorio, tablet y celular cuando el navegador lo permite.
 - Excepción intencional: `#servicios` conserva su fondo compuesto estático en escritorio y mantiene el parallax en tablet/celular, tal como se definió para evitar el error visual anterior.
