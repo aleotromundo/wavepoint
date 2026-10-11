@@ -116,6 +116,9 @@
 .trip-contact-field { margin-top: 13px; }
 .trip-contact-field textarea { min-height: 62px; resize: vertical; }
 .trip-request-error { min-height: 15px; margin: 9px 0 0; color: #a43737; font-size: 11px; line-height: 1.4; }
+.trip-request-confirmation { margin: 9px 0 0; padding: 12px; border: 1px solid rgba(7, 143, 145, .3); border-radius: 9px; background: #eff8f5; color: #315e60; font-size: 12px; font-weight: 650; line-height: 1.55; }
+.trip-request-confirmation a { display: inline-block; margin-top: 5px; color: #075e66; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.trip-request-confirmation a:focus-visible { outline: 3px solid #f3b64b; outline-offset: 3px; }
 .trip-continue-button { min-height: 48px; margin-top: 5px; font-size: 13px; }
 .trip-continue-button:disabled { background: #8ba5a3; cursor: not-allowed; opacity: .75; }
 .trip-flying-board { position: fixed; z-index: 10000; width: 88px; height: 30px; pointer-events: none; }
@@ -400,6 +403,8 @@
 .trip-confirm-note { border-color: rgba(110, 220, 190, .25); background: rgba(35, 118, 101, .24); color: #d3f1e4; }
 .trip-contact-field { color: #c5e6db; }
 .trip-request-error { color: #ffaaaa; }
+.trip-request-confirmation { border-color: rgba(141, 222, 211, .35); background: rgba(255, 255, 255, .1); color: #e2f4ef; }
+.trip-request-confirmation a { color: #a9f3ec; }
 @media (max-width: 700px) {
   .trip-builder-main { background-attachment: scroll; }
 }

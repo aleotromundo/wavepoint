@@ -2923,6 +2923,11 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .detail-submit:hover { transform: translateY(-2px); filter: saturate(1.12); }
 .detail-form-note { margin: 10px 0 0; color: #789098; font-size: 11px; line-height: 1.45; text-align: center; }
 .detail-error { min-height: 16px; margin: 8px 0 0; color: #b23c3c; font-size: 12px; text-align: center; }
+.detail-confirmation { margin: 10px 0 0; padding: 12px; border: 1px solid rgba(7, 143, 145, .25); border-radius: 9px; background: #eff8f5; color: #315e60; font-size: 12px; line-height: 1.55; text-align: left; }
+.detail-confirmation a { display: inline-block; margin-top: 5px; color: #075e66; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.detail-confirmation a:focus-visible { outline: 3px solid #f3b64b; outline-offset: 3px; }
+.quick-request-panel .detail-confirmation { border-color: rgba(141, 222, 211, .3); background: rgba(255, 255, 255, .1); color: #e2f4ef; }
+.quick-request-panel .detail-confirmation a { color: #a9f3ec; }
 @media (max-width: 980px) {
   .service-offerings-catalog { grid-template-columns: 1fr; }
   .detail-layout { grid-template-columns: 1fr; gap: 44px; }

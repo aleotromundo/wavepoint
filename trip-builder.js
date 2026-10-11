@@ -54,6 +54,8 @@
       noEstimate: 'A confirmar',
       totalNote: 'Importes estimados en USD: las tarifas por persona se multiplican por la cantidad de personas. El alojamiento elegido se estima por noche según la tarifa publicada; el total final depende de las fechas, la unidad y la disponibilidad. Las recomendaciones se confirman con WavePoint.',
       priceNote: 'Precios y disponibilidad serán confirmados por el equipo de WavePoint antes de cualquier pago.',
+      requestConfirmation: 'El mensaje está preparado. Revisá WhatsApp y tocá Enviar para que recibamos tu solicitud. La reserva aún no está confirmada y no se realizó ningún pago.',
+      requestConfirmationLink: 'Si WhatsApp no se abrió, abrilo aquí.',
       continue: 'Continuar a la solicitud',
       selectError: 'Agregá al menos una experiencia para continuar.',
       detailsError: 'Completá las fechas y la cantidad de personas de cada experiencia elegida.',
@@ -132,6 +134,8 @@
       noEstimate: 'To be confirmed',
       totalNote: 'Estimates are in USD: per-person rates are multiplied by each experience’s guest count. Selected accommodation is estimated per night from the published rate; the final total depends on dates, unit and availability. Recommendations are confirmed by WavePoint.',
       priceNote: 'Prices and availability will be confirmed by the WavePoint team before payment.',
+      requestConfirmation: 'Your message is ready. Review WhatsApp and tap Send for us to receive your request. Your booking is not confirmed and no payment has been taken.',
+      requestConfirmationLink: 'If WhatsApp did not open, open it here.',
       continue: 'Continue to booking request',
       selectError: 'Add at least one experience to continue.',
       detailsError: 'Add dates and guest counts for every selected experience.',
@@ -397,6 +401,7 @@
       <label class="trip-contact-field">${copy.name}<input type="text" data-name value="${esc(customerName)}" placeholder="${copy.namePlaceholder}" /></label>
       <label class="trip-contact-field">${copy.requestExtra}<textarea data-extra placeholder="${copy.extraPlaceholder}">${esc(customerExtra)}</textarea></label>
       <p class="trip-request-error" role="alert" aria-live="assertive">${requestError}</p>
+      <p class="trip-request-confirmation" role="status" aria-live="polite" hidden><span>${copy.requestConfirmation}</span> <a data-confirmation-link target="_blank" rel="noopener noreferrer">${copy.requestConfirmationLink}</a></p>
       <button class="trip-continue-button" type="button" data-continue ${!list.length || needsDetails ? 'disabled' : ''}>${copy.continue}</button>`;
   };
   const render = () => {
@@ -629,6 +634,7 @@
     });
     if (invalidDates) { error.textContent = COPY[lang].invalidDates; return; }
     if (incomplete) { error.textContent = COPY[lang].detailsError; return; }
+    error.textContent = '';
     const groupSize = Math.max(...chosen.map(([, state]) => Number(state.guests)));
     const lines = [groupSize > 1 ? COPY[lang].waIntroPlural : COPY[lang].waIntro, ''];
     chosen.forEach(([id, state]) => {
@@ -666,7 +672,11 @@
     if (name) lines.push('', `${COPY[lang].waName}: ${name}`);
     if (extra) lines.push(`${COPY[lang].waExtra}: ${extra}`);
     lines.push('', COPY[lang].priceNote);
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
+    const whatsappUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    const confirmation = root.querySelector('.trip-request-confirmation');
+    confirmation.querySelector('[data-confirmation-link]').href = whatsappUrl;
+    confirmation.hidden = false;
   });
   document.addEventListener('keydown', event => {
     if (event.key !== 'Escape') return;
