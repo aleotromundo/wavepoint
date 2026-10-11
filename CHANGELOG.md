@@ -1,4 +1,10 @@
 ## 2026-10-11
+### Propuesta comercial — cierre del sitio y mantenimiento mensual
+- `PROPUESTA_CLIENTE_AJUSTE_FINAL_Y_MANTENIMIENTO.md`: se preparó una versión client-friendly que reconoce el pago inicial de USD 200, propone USD 300 adicionales para cerrar el sitio actual y ofrece planes mensuales de mantenimiento de USD 75, USD 120 y USD 200.
+- `PROPUESTA_CLIENTE_AJUSTE_FINAL_Y_MANTENIMIENTO.pdf`: versión A4 lista para compartir.
+- El texto diferencia el cierre del alcance construido, el mantenimiento opcional y las funcionalidades futuras que requieren una cotización aparte.
+- Validación: PDF generado correctamente en seis páginas A4 y contenido revisado.
+
 ### Informe comercial — alcance construido y referencia de cotización
 - `COTIZACION_WAVEPOINT_ALCANCE_Y_VALOR.md`: se documentan el inventario actual, la evolución desde una web estática simple, el valor orientativo por módulo, los entregables, los pendientes del DOCX de revisión y el alcance que debería cotizarse aparte.
 - `COTIZACION_WAVEPOINT_ALCANCE_Y_VALOR.pdf`: versión A4 lista para compartir con el cliente.
