@@ -29,8 +29,9 @@
 
 ### Fondo de atardecer para Cómo funciona y Tu solicitud
 - `index.html`: `#como-funciona` ahora usa la estructura `has-px` / `px-bg`.
-- `styles.css` y `styles.optimized.css`: `#como-funciona` y `#contactar-wavepoint` usan el mismo atardecer rojizo con parallax y una capa oscura; las tarjetas y el formulario conservan superficies legibles.
-- No se agregó una foto nueva pesada: se reutiliza un asset WebP ya optimizado de 172 KB.
+- `styles.css` y `styles.optimized.css`: `#como-funciona` y `#contactar-wavepoint` usan una foto exclusiva de surf al atardecer, con parallax y una capa oscura; las tarjetas y el formulario conservan superficies legibles.
+- Se reemplazó el atardecer anterior porque también se utilizaba en otras partes del sitio.
+- Nueva imagen: `assets/img/site/backgrounds/request-sunset-surfer.webp`, WebP de 1800 × 1279 px y aproximadamente 141 KB, basada en [Unsplash — Surfer watches the sunset over the ocean waves](https://unsplash.com/photos/surfer-watches-the-sunset-over-the-ocean-waves-6xf8xSgoCfg).
 - Validación: inspección visual en navegador; en escritorio se verificó `position: fixed` para Guía, Cámaras, FAQ y Contacto, y `position: absolute` exclusivamente para Servicios.
 
 ### FAQ — fondo oscuro con foto de olas y parallax
