@@ -554,7 +554,7 @@ to{transform:translate3d(1.5%,-1%,0) scale(1.06)}
 .request-flow-card p{flex:1;margin:0 0 18px;color:#405d66;font-size:14px;line-height:1.6}
 .request-flow-card a{color:#087f87;font-size:14px;font-weight:750;text-decoration-thickness:1px;text-underline-offset:3px}
 .request-flow-card a:focus-visible,.faq-list summary:focus-visible{outline:3px solid #087f87;outline-offset:4px}
-.faq-section{background:#f5f8f6}
+.faq-section{background:#f5f8f6}.faq-section.has-px{background:transparent}.faq-section.has-px .px-bg{--px-img:url('assets/img/site/backgrounds/faq-waves.webp')}.faq-section.has-px .px-bg:after{background:linear-gradient(180deg,rgba(3,24,34,.72),rgba(3,24,34,.54) 48%,rgba(3,24,34,.76))}.faq-section.has-px .faq-list details{background:rgba(255,255,255,.91);box-shadow:0 12px 30px rgba(2,18,27,.22)}
 .faq-list{display:grid;max-width:900px;gap:12px;margin:0 auto}
 .faq-list details{padding:18px 22px;border:1px solid rgba(8,43,58,.12);border-radius:12px;background:#fff;box-shadow:0 8px 24px rgba(8,43,58,.06)}
 .faq-list summary{color:#082b3a;cursor:pointer;font-size:16px;font-weight:750;line-height:1.4}

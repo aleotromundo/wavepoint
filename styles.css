@@ -1519,6 +1519,10 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   outline-offset: 4px;
 }
 .faq-section { background: #f5f8f6; }
+.faq-section.has-px { background: transparent; }
+.faq-section.has-px .px-bg { --px-img: url('assets/img/site/backgrounds/faq-waves.webp'); }
+.faq-section.has-px .px-bg::after { background: linear-gradient(180deg, rgba(3, 24, 34, .72), rgba(3, 24, 34, .54) 48%, rgba(3, 24, 34, .76)); }
+.faq-section.has-px .faq-list details { background: rgba(255, 255, 255, .91); box-shadow: 0 12px 30px rgba(2, 18, 27, .22); }
 .faq-list {
   display: grid;
   max-width: 900px;

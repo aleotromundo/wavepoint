@@ -1,4 +1,11 @@
 ## 2026-10-11
+### FAQ — fondo oscuro con foto de olas y parallax
+- `assets/img/site/backgrounds/faq-waves.webp`: se incorporó una foto horizontal de olas de 2400 × 1600 px, optimizada a WebP, distinta de los fondos activos del sitio; fuente consultada: [Unsplash](https://unsplash.com/photos/ocean-waves-crashing-on-shore-during-daytime-Kg0x-uH1PjU).
+- `index.html`: la sección `#preguntas-frecuentes` ahora reutiliza la estructura `has-px` / `px-bg` para mostrar el fondo fotográfico con parallax.
+- `styles.css` y `styles.optimized.css`: se agregó la imagen de fondo, una capa oscura para contraste y tarjetas claras translúcidas para mantener legibles las preguntas.
+- `index.html`: se renovó la referencia de caché de estilos.
+- Validación: inspección visual en navegador, fondo cargado, tres preguntas accesibles y contraste de títulos/tarjetas revisado.
+
 ### Propuesta comercial — cierre del sitio y mantenimiento mensual
 - `PROPUESTA_CLIENTE_AJUSTE_FINAL_Y_MANTENIMIENTO.md`: se preparó una versión client-friendly que reconoce el pago inicial de USD 200, propone USD 300 adicionales para cerrar el sitio actual y ofrece planes mensuales de mantenimiento de USD 75, USD 120 y USD 200.
 - `PROPUESTA_CLIENTE_AJUSTE_FINAL_Y_MANTENIMIENTO.pdf`: versión A4 lista para compartir.
