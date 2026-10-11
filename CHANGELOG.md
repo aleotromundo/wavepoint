@@ -1,4 +1,10 @@
 ## 2026-10-10
+### Revisión web — preparar resumen de propuestas en PDF
+- `Revision_web_propuestas.pdf`: se generó un resumen en español de las propuestas de la revisión, organizado por inicio, solicitudes, fichas, alojamientos/retiro, guía/cámaras/colaboradores y segunda etapa/pruebas.
+- El documento advierte que la información comercial y operativa propuesta debe validarse antes de publicarse.
+- Validación: PDF de 4 páginas; texto extraído y secciones comprobadas; caracteres acentuados presentes; `git diff --check`.
+
+## 2026-10-10
 ### Armador — recuperar la lista de alojamientos desde la recomendación
 - `trip-builder.js`: el formulario de recomendación ahora permite volver al selector sin cerrar el modal ni perder los datos ingresados. El formulario solo marca una recomendación como elegida después de validar y confirmar el presupuesto.
 - `trip-builder.js`: al inicio, la tarjeta muestra «Elegir alojamiento». Para un hotel elegido se estima el costo por persona dividiendo la tarifa publicada por el grupo; los rangos se conservan. La recomendación sigue indicando «Precio a confirmar».
