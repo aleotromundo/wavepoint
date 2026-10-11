@@ -25,6 +25,12 @@
 - `index.html`: Contactar a WavePoint ahora es una sección `has-px` independiente con fondo fotográfico.
 - `assets/img/site/backgrounds/contact-tamarindo.webp`: nueva foto horizontal de Tamarindo de 2400 × 1350 px, optimizada a WebP; fuente consultada: [Unsplash — Tamarindo](https://unsplash.com/s/photos/tamarindo-costa-rica).
 - La capa oscura mantiene el contraste del texto y el formulario claro conserva la legibilidad en ambas variantes de idioma.
+- Las secciones de solicitud reutilizan `assets/img/site/backgrounds/atardecer.webp` (WebP horizontal de aproximadamente 172 KB) para mantener una carga liviana.
+
+### Fondo de atardecer para Cómo funciona y Tu solicitud
+- `index.html`: `#como-funciona` ahora usa la estructura `has-px` / `px-bg`.
+- `styles.css` y `styles.optimized.css`: `#como-funciona` y `#contactar-wavepoint` usan el mismo atardecer rojizo con parallax y una capa oscura; las tarjetas y el formulario conservan superficies legibles.
+- No se agregó una foto nueva pesada: se reutiliza un asset WebP ya optimizado de 172 KB.
 - Validación: inspección visual en navegador; en escritorio se verificó `position: fixed` para Guía, Cámaras, FAQ y Contacto, y `position: absolute` exclusivamente para Servicios.
 
 ### FAQ — fondo oscuro con foto de olas y parallax
