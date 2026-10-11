@@ -1,4 +1,8 @@
 ## 2026-10-11
+### Botones del hero en notebooks de poca altura
+- `styles.css` y `styles.optimized.css`: en escritorios de al menos `981px` de ancho y hasta `680px` de alto, los botones principales del hero suben `18px` para conservar una separación visual del borde inferior del video.
+- El ajuste se limita a esa variante de notebook; pantallas grandes, escritorios comunes, tablet y celular mantienen su comportamiento anterior.
+
 ### Logo del hero adaptado a monitores grandes
 - `styles.css` y `styles.optimized.css`: desde `1440px` de ancho, el logo principal del hero aumenta hasta `720px` para aprovechar el espacio superior disponible en pantallas grandes.
 - Notebook, escritorio común, tablet y celular mantienen sus dimensiones anteriores.
