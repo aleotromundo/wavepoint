@@ -1,3 +1,12 @@
+## 2026-10-11
+### Inicio — priorizar experiencias y aclarar el recorrido de solicitud
+- `index.html`: el catálogo pasa inmediatamente después del hero; se trasladaron Nosotros, la guía, cámaras y colaboradores al orden propuesto. Se añadió una guía breve del flujo de consulta y preguntas frecuentes sobre envío por WhatsApp, reservas, precios y disponibilidad; el nombre accesible de colaboradores también sigue el idioma activo.
+- `index.html` y `script.js`: el subtítulo del hero explica que WavePoint conecta visitantes con experiencias y alojamientos en Tamarindo; “Nosotros” ahora cuenta el paso de las cámaras a las experiencias y que las dos personas fundadoras reciben y coordinan las consultas con proveedores, confirmado por la usuaria.
+- `script.js`: se completaron las traducciones ES/EN del nuevo contenido y se alinearon con las imágenes las descripciones alternativas de Surf coaching; también se sincronizó la descripción de ATV con la tarjeta existente.
+- `styles.css`, `styles.optimized.css` e `index.html`: se añadieron estilos responsive y focos visibles para el recorrido y FAQ, y se renovó la caché de portada.
+- Criterio de contenido: no se agregaron reseñas ni tarifas/duraciones a las tarjetas sin datos verificables. El inventario local no contiene una foto identificable del equipo ni una imagen de catamarán; quedan pendientes una foto del equipo y una imagen real de embarcación. La tarjeta de ATV conserva una foto de actividad en cuatriciclo y Surf coaching conserva su fotografía actual, con alt corregido.
+- Validación: portada comprobada en navegador en español e inglés; se verificaron el orden de secciones, las traducciones, los destinos de anclas, 3 preguntas, el nombre accesible de colaboradores y los textos alternativos de coaching/ATV. A 320, 375, 430 y 1280 px no hubo overflow horizontal; el recorrido pasó a una columna en móvil. Con `prefers-reduced-motion` activo, la animación de borde de las tarjetas quedó desactivada. No se detectaron imágenes locales rotas y `git diff --check` pasó.
+
 ## 2026-10-10
 ### Solicitudes — aclarar el paso de envío por WhatsApp
 - `services.js` y `trip-builder.js`: después de preparar una solicitud, se indica en español e inglés que la persona debe tocar Enviar en WhatsApp para que WavePoint reciba el mensaje; se aclara que aún no hay reserva confirmada ni pago realizado.
