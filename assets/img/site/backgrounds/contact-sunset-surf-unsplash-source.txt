@@ -1,0 +1,5 @@
+Foto: “Surfer riding a wave during a vibrant orange sunset”
+Autor: Nikolay Loubet (@k0lyosik)
+Fuente: https://unsplash.com/photos/surfer-riding-a-wave-during-a-vibrant-orange-sunset-qia569RmpWE
+Licencia: Unsplash License (foto descrita por Unsplash como gratuita para uso).
+Uso en este proyecto: fondo exclusivo del formulario “Contactar a WavePoint”.

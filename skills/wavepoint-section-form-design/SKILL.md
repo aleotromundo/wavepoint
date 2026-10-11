@@ -35,6 +35,8 @@ No dejar `overflow: auto`, `overflow: scroll` ni un `max-height` heredado en `.d
 - Hacerlas suficientemente grandes para que se entiendan en celular, tablet y escritorio.
 - Mantener `loading="lazy"` para imágenes que no son portada y `decoding="async"` cuando el patrón existente lo use.
 - Usar `object-fit: cover` solo cuando el recorte sea intencional; no deformar proporciones.
+- Priorizar la mayor resolución práctica para el tamaño de visualización previsto y conservar buena nitidez; no reducir fotos por debajo de lo necesario ni ampliar artificialmente fuentes pequeñas.
+- Entregar las imágenes del sitio en WebP por defecto, comprimiéndolas para que pesen lo menos posible sin degradación visible; equilibrar calidad visual, dimensiones y descarga ligera.
 - Mantener la interacción de ampliación existente (`cursor: zoom-in`, modal o equivalente).
 - En móvil, cambiar a una grilla de una o dos columnas sin overflow horizontal.
 - Verificar que ningún padre recorte la galería por `max-height`, `overflow: auto` o `height` heredado.
