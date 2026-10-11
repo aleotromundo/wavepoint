@@ -1,4 +1,9 @@
 ## 2026-10-11
+### Portada — eliminar marcador de conflicto residual
+- `index.html`: se quitaron los delimitadores de conflicto que rodeaban las referencias del favicon restaurado; se conservó el bloque correcto que coincide con las demás páginas públicas.
+- Validación: búsqueda global de marcadores de conflicto y `git diff --check`.
+
+## 2026-10-11
 ### Favicon — restaurar el icono anterior
 - `favicon.svg`, PNG de 16/32 px, `favicon.ico` e icono Apple: se restauró el favicon anterior de Material Icons “surfing” con fondo WavePoint.
 - Páginas públicas: se quitaron las referencias al PNG de 48 px y se restauró la versión de caché anterior.
