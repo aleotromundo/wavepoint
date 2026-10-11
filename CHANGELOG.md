@@ -1,3 +1,10 @@
+## 2026-10-11
+### Clases de surf — galería responsive sin superposición
+- `services.js`: se quitó de la galería de Clases de surf la foto de la ola (`surf-coaching.webp`), sin borrar el archivo del repositorio porque continúa disponible para otros usos.
+- `styles.css` y `styles.optimized.css`: la galería usa dos columnas con proporción uniforme en escritorio/tablet y una columna en móvil; se restablecen las posiciones de grid y se evita el solapamiento al cambiar el ancho.
+- `service-detail.html`: se renovaron las versiones de caché de CSS y del catálogo de servicios.
+- Validación: sintaxis JavaScript, rutas HTTP locales, referencias de imágenes, `git diff --check` y revisión visual/computada en el detalle de Clases de surf a 1280 px; se confirmaron dos imágenes, columnas de 299 px, altura uniforme de 210 px y separación de 16 px.
+
 ## 2026-10-10
 ### Contacto — formulario bilingüe antes del footer
 - `index.html`: se agregó un formulario de nombre y mensaje antes del footer, con textos y campos disponibles en español e inglés.
