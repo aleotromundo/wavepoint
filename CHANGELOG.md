@@ -1987,3 +1987,8 @@
 - `trip-builder.js`: los títulos de las tarjetas ahora son enlaces a sus páginas de detalle correspondientes, incluyendo Estadías y hoteles, Clases de surf, Surf coaching, Roca Bruja y el resto de experiencias.
 - `trip-builder.css`: se añade estado hover/focus visible para los títulos enlazados.
 - Validación: se comprobaron los 9 destinos y la selección de tarjetas continúa funcionando.
+## 2026-10-11
+### Armador — ajustar el carrito para escritorios bajos
+- `trip-builder.css`: se redujo levemente la altura del encabezado visual del carrito, su ilustración y el espaciado interno en escritorio para que el panel entre en pantallas de escritorio con poca altura; los overrides de móvil se conservan sin cambios.
+- `trip-builder.html`: se renovó la versión de caché de la hoja de estilos del armador.
+- Validación: revisión de dimensiones en viewport de escritorio, sintaxis de los scripts del sitio y `git diff --check`.
