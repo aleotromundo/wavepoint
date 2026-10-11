@@ -3209,7 +3209,7 @@ to{filter:brightness(1.18)}
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-triple{grid-template-columns:repeat(2,minmax(0,1fr))}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-triple img:nth-child(3){grid-column:1/-1!important;grid-row:auto!important}
 
 /* Escritorio unificado: misma composición desde notebook hasta monitor grande. */
-@media (min-width:981px){#inicio .hero-grid{transform:translateY(0)}#inicio .hero-logo-wrap{width:min(95%,589px);margin-bottom:12px}#inicio h1{margin:14px 0 32px;font-size:64px;line-height:.91}#inicio .hero-actions{margin-top:20px}}
+@media (min-width:981px){#inicio .hero-grid{transform:translateY(16px)}#inicio .hero-logo-wrap{width:min(95%,589px);margin-bottom:12px}#inicio h1{margin:14px 0 32px;font-size:64px;line-height:.91}#inicio .hero-actions{margin-top:20px}}
 @media (hover:none) and (pointer:coarse),(max-width:640px){.hero-video-stack{display:block!important}.hero-video:not(.is-active){display:block!important;visibility:hidden!important}.hero{background-attachment:scroll!important}}@media (prefers-reduced-motion:reduce),(prefers-reduced-data:reduce){.hero-video-stack .hero-video{display:none!important;opacity:0!important;visibility:hidden!important}.hero-video-poster{display:block!important}}
 
 
