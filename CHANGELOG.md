@@ -1,4 +1,11 @@
 ## 2026-10-11
+### Favicon — aplicar el icono proporcionado
+- `assets/img/site/favicon-source.png`: se conserva una copia de la imagen original proporcionada por la usuaria (67 × 63 px).
+- `favicon.svg`, PNG de 16/32/48 px, `favicon.ico` multirresolución y `assets/wavepoint-apple-touch-icon.png`: se generaron los formatos del icono conservando su proporción y fondo oscuro.
+- Páginas públicas: se renovó la caché de los recursos y se añadió el respaldo PNG de 48 px.
+- `PROJECT_GUIDE.md`: se actualizó la documentación del favicon activo y se aclaró que la licencia de Material Icons corresponde al icono anterior.
+- Validación: dimensiones y existencia de los recursos, referencias locales y `git diff --check`.
+
 <<<<<<< HEAD
 ### Guía — recuperar foto de Las Catalinas
 - `guia-playas.html`: se corrigió la ruta rota de la imagen por la foto local de las Islas Catalinas con snorkel, ya usada en el catálogo y conservada en WebP optimizado (133 KB).
