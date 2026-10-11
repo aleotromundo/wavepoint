@@ -49,7 +49,7 @@ Las páginas públicas principales son:
 - `/Enlaces/occidental.html`.
 - `/Enlaces/red-door.html`.
 
-El header comparte navegación hacia Inicio, Guía turística, Servicios, Nosotros y Colaboradores. En pantallas pequeñas se utiliza el menú hamburguesa.
+El header comparte navegación hacia Inicio, Servicios, Nosotros, Guía turística, Cámaras en vivo y Colaboradores, en ese orden. En pantallas pequeñas se utiliza el menú hamburguesa.
 
 ### Orden y flujo actual de la página de inicio
 
