@@ -1,4 +1,9 @@
 ## 2026-10-11
+### Armador — compactar el cartel de colores del carrito
+- `trip-builder.css`: se redujeron nuevamente la altura, el espaciado, el título y la ilustración del cartel de colores en escritorio para aprovechar mejor el espacio; las reglas de móvil permanecen vigentes.
+- `trip-builder.html`: se actualizó la versión de caché de estilos.
+- Validación: revisión de dimensiones, sintaxis JavaScript y `git diff --check`.
+
 ### Navegación — completar el recorrido de secciones y eliminar conflictos visibles
 - `index.html`, `service-detail.html` y `site-nav.js`: los menús en todas las páginas siguen el orden Inicio, Servicios, Nosotros, Guía turística, Cámaras en vivo y Colaboradores; los enlaces de cámara llevan a `#camaras`.
 - `service-detail.html`: se eliminaron los marcadores de conflicto que aparecían en la ficha y se renovó la referencia a CSS y al catálogo de servicios.
