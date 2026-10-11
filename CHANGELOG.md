@@ -1,5 +1,8 @@
 ## 2026-10-11
-<<<<<<< HEAD
+### Navegación — alinear menús con el nuevo orden de secciones
+- `index.html`: los enlaces de escritorio y del menú hamburguesa ahora siguen el recorrido Inicio, Servicios, Nosotros, Guía turística y Colaboradores.
+- `service-detail.html`: se aplicó el mismo orden en ambos menús de las fichas de servicios.
+- Validación: orden y etiquetas ES/EN comprobados en navegador a 1280 px y con el menú móvil abierto a 390 px; no hubo overflow horizontal. Los scripts cargaron en navegador. Node.js no está disponible para `node --check`; `git diff --check` pasó.
 ### Inicio — priorizar experiencias y aclarar el recorrido de solicitud
 - `index.html`: el catálogo pasa inmediatamente después del hero; se trasladaron Nosotros, la guía, cámaras y colaboradores al orden propuesto. Se añadió una guía breve del flujo de consulta y preguntas frecuentes sobre envío por WhatsApp, reservas, precios y disponibilidad; el nombre accesible de colaboradores también sigue el idioma activo.
 - `index.html` y `script.js`: el subtítulo del hero explica que WavePoint conecta visitantes con experiencias y alojamientos en Tamarindo; “Nosotros” ahora cuenta el paso de las cámaras a las experiencias y que las dos personas fundadoras reciben y coordinan las consultas con proveedores, confirmado por la usuaria.
@@ -15,13 +18,11 @@
 - `service-detail.html` y `trip-builder.html`: se renovó la caché de los scripts/estilos modificados.
 - `PROJECT_GUIDE.md`: se documentó que el sitio no puede verificar el envío ni confirmar la recepción real.
 - Validación: fichas de Surfskate y Armador probados en navegador en ES/EN; se comprobaron la región `role=status`, el enlace alternativo y el mensaje preparado para `wa.me/50660399194`, interceptando `window.open` para no abrir ni enviar WhatsApp. El texto aclara que hay que tocar Enviar y que no hay reserva ni pago. Sintaxis de los JS cargada y ejecutada en navegador; `git diff --check` sin errores.
-=======
 ### Clases de surf — galería responsive sin superposición
 - `services.js`: se quitó de la galería de Clases de surf la foto de la ola (`surf-coaching.webp`), sin borrar el archivo del repositorio porque continúa disponible para otros usos.
 - `styles.css` y `styles.optimized.css`: la galería usa dos columnas con proporción uniforme en escritorio/tablet y una columna en móvil; se restablecen las posiciones de grid y se evita el solapamiento al cambiar el ancho.
 - `service-detail.html`: se renovaron las versiones de caché de CSS y del catálogo de servicios.
 - Validación: sintaxis JavaScript, rutas HTTP locales, referencias de imágenes, `git diff --check` y revisión visual/computada en el detalle de Clases de surf a 1280 px; se confirmaron dos imágenes, columnas de 299 px, altura uniforme de 210 px y separación de 16 px.
->>>>>>> 90e45df1f7e32644a16fdecfb8a171b485ef39c6
 
 ## 2026-10-10
 ### Contacto — formulario bilingüe antes del footer
