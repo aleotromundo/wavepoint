@@ -1390,6 +1390,11 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   padding: clamp(48px, 7vw, 84px) 0;
   background: linear-gradient(135deg, #dff1ee, #f4f8f4 58%, #d3e9e5);
 }
+.contact-request.has-px { background: transparent; }
+.contact-request.has-px .px-bg { --px-img: url('assets/img/site/backgrounds/contact-tamarindo.webp'); }
+.contact-request.has-px .px-bg::after { background: linear-gradient(105deg, rgba(3, 24, 34, .78), rgba(3, 24, 34, .5) 58%, rgba(3, 24, 34, .7)); }
+.contact-request.has-px .contact-request-copy h2 { color: #fff; text-shadow: 0 3px 22px rgba(0, 0, 0, .55); }
+.contact-request.has-px .contact-request-copy p { color: rgba(255, 255, 255, .9); text-shadow: 0 2px 14px rgba(0, 0, 0, .5); }
 .contact-request-grid {
   display: grid;
   grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
@@ -6658,13 +6663,18 @@ footer a {
 
 @media (min-width: 1025px) {
   .has-px .px-bg {
-    position: absolute;
+    position: fixed;
     inset: 0;
   }
+  #servicios .px-bg { position: absolute; }
   #servicios .px-bg {
     inset: 0;
     background-position: center top;
   }
+}
+
+@media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce) {
+  .has-px .px-bg { position: absolute; }
 }
 
 @media (min-width: 981px) {
