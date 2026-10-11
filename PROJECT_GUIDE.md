@@ -180,17 +180,19 @@ Las secciones fuera del hero pueden usar gradientes oceánicos, capas radiales y
 
 ### Favicon y logo original
 
-El favicon usa el icono `surfing` de Google Material Icons sobre un fondo oceánico WavePoint, con respaldo PNG de 16 y 32 px, un ICO multirresolución y un icono Apple a juego. El SVG incluye la atribución y `assets/MATERIAL-ICONS-LICENSE.txt` contiene la licencia Apache 2.0. Todas las páginas enlazan los recursos localmente con versión de caché.
+El favicon actual reproduce el PNG proporcionado por la usuaria, conservando su proporción y fondo oscuro. `favicon.svg` incorpora la imagen para navegadores con soporte SVG; también hay PNG para los tamaños habituales, un ICO multirresolución y un icono Apple de 180 × 180 px. Las páginas públicas enlazan estos recursos locales con versión de caché.
 
 ```text
-favicon.svg                               Google Material Icon “surfing” con fondo WavePoint
-favicon-16.png / favicon-32.png           Respaldo PNG para navegadores
-favicon.ico                               Respaldo multirresolución (16/32/48/64/128/256)
-assets/wavepoint-apple-touch-icon.png     Icono Apple a juego (180 × 180)
-assets/MATERIAL-ICONS-LICENSE.txt         Licencia Apache 2.0 del icono
+assets/img/site/favicon-source.png        Imagen original proporcionada por la usuaria (67 × 63)
+favicon.svg                               Favicon SVG con la imagen original incorporada
+favicon-16.png / favicon-32.png / favicon-48.png
+                                           Respaldos PNG para navegadores
+favicon.ico                               Respaldo multirresolución (16/32/48/256)
+assets/wavepoint-apple-touch-icon.png     Icono Apple derivado (180 × 180)
+assets/MATERIAL-ICONS-LICENSE.txt         Licencia del favicon anterior de Material Icons
 ```
 
-Conservar la atribución, la licencia y los respaldos locales al actualizar el icono.
+La licencia de Material Icons se conserva como registro del favicon anterior y no describe el icono actual. Al actualizar el favicon, conservar el origen de la imagen, sus proporciones y los respaldos locales.
 
 ## 8. Responsive y accesibilidad
 
@@ -225,9 +227,10 @@ Toda sección con tarjeta, portada, fondo y galería debe reunir al menos cuatro
 
 | Asset | Uso |
 | --- | --- |
-| `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `favicon.ico` | Favicon vectorial de surf y respaldos de navegador. |
-| `assets/wavepoint-apple-touch-icon.png` | Icono Apple a juego. |
-| `assets/MATERIAL-ICONS-LICENSE.txt` | Licencia del icono de surf (Apache 2.0). |
+| `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `favicon-48.png`, `favicon.ico` | Favicon derivado del icono proporcionado y respaldos de navegador. |
+| `assets/img/site/favicon-source.png` | Imagen original del favicon proporcionada por la usuaria. |
+| `assets/wavepoint-apple-touch-icon.png` | Icono Apple derivado (180 × 180). |
+| `assets/MATERIAL-ICONS-LICENSE.txt` | Licencia conservada del favicon anterior de Material Icons (Apache 2.0). |
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
 | `assets/wavepoint-watermark.png` | Marca sobre streams de cámara. |
@@ -352,7 +355,7 @@ Antes de publicar:
 - No modificar el hero sin permiso explícito.
 - No inventar servicios, colaboradores, precios, horarios ni disponibilidad.
 - Fotos de surf y Surfskate están incluidos en el catálogo por pedido explícito del usuario; no reintroducir Fotografía acuática como servicio separado sin confirmación.
-- El favicon activo usa Google Material Icons “surfing” (Apache 2.0); mantener su atribución y licencia al cambiarlo.
+- El favicon activo deriva de la imagen proporcionada por la usuaria; conservar su proporción y los formatos de respaldo. La licencia de Material Icons corresponde solo al favicon anterior.
 - No borrar datos ni assets sin revisar referencias y documentar la decisión.
 - No agregar dependencias o frameworks para cambios que puedan resolverse con HTML, CSS y JavaScript existentes.
 - No subir secretos, claves API ni credenciales al repositorio.
