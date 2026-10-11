@@ -8564,8 +8564,6 @@ footer a {
   #inicio .hero-actions { margin-top: 18px; }
 }
 
-/* Fallback final del hero: el póster desaparece cuando ya cargó un video. */
-.hero-video-stack.is-video-ready .hero-video-poster { display:none !important; }
 @media (hover: none) and (pointer: coarse), (max-width: 640px) {
   .hero-video-stack { display: block !important; }
   .hero-video:not(.is-active) { display: block !important; visibility: hidden !important; }

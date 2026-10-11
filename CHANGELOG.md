@@ -1,26 +1,9 @@
 ## 2026-10-11
-### Favicon — aplicar el icono proporcionado
-- `assets/img/site/favicon-source.png`: se conserva una copia de la imagen original proporcionada por la usuaria (67 × 63 px).
-- `favicon.svg`, PNG de 16/32/48 px, `favicon.ico` multirresolución y `assets/wavepoint-apple-touch-icon.png`: se generaron los formatos del icono conservando su proporción y fondo oscuro.
-- Páginas públicas: se renovó la caché de los recursos y se añadió el respaldo PNG de 48 px.
-- `PROJECT_GUIDE.md`: se actualizó la documentación del favicon activo y se aclaró que la licencia de Material Icons corresponde al icono anterior.
-- Validación: dimensiones y existencia de los recursos, referencias locales y `git diff --check`.
+### Hero principal — conservar la imagen de respaldo si falla el video
+- `styles.css` y `styles.optimized.css`: se eliminó la regla que ocultaba el póster apenas cualquier video emitía `playing`; la imagen `home-hero-fallback.jpg` permanece debajo del video y vuelve a verse si el video queda invisible o falla.
+- `index.html`: se actualizó la versión de caché de estilos.
+- Validación: revisión de reglas responsive, estado de reproducción en navegador y acceso público a los MP4 del hero.
 
-<<<<<<< HEAD
-### Guía — recuperar foto de Las Catalinas
-- `guia-playas.html`: se corrigió la ruta rota de la imagen por la foto local de las Islas Catalinas con snorkel, ya usada en el catálogo y conservada en WebP optimizado (133 KB).
-- Validación: archivo local presente; imagen y texto alternativo bilingüe revisados en navegador; `git diff --check`.
-
-## 2026-10-11
-### Servicios — desactivar parallax en escritorio
-- `styles.css` y `styles.optimized.css`: en escritorio la foto compuesta se desplaza junto con la sección, sin parallax; en móvil se conserva el comportamiento fijo actual.
-- `index.html`: se actualiza la caché de estilos.
-- Validación: comportamiento escritorio/móvil y `prefers-reduced-motion` comprobados; `git diff --check`.
-
-## 2026-10-11
-<<<<<<< HEAD
-=======
->>>>>>> e2cf8e16a684eb3823b337a8e600884c3342c8c8
 ### Servicios — activar parallax en el fondo compuesto
 - `index.html`: se activa el parallax del fondo de varias capas de Servicios con la clase `services-parallax`; se puede desactivar quitando esa clase de `#servicios`.
 - `styles.css` y `styles.optimized.css`: el fondo sigue fijo mientras el contenido de Servicios se desplaza; el ajuste respeta `prefers-reduced-motion` y su modo apagado recupera el fondo unido a la sección.
