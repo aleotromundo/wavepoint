@@ -25,7 +25,7 @@ img{max-width:100%;display:block}
 .menu{display:none;position:absolute;top:100%;left:0;min-width:260px;background:#fff;color:#173041;border-radius:14px;box-shadow:0 24px 70px rgba(8,47,66,.18);padding:8px;margin-top:12px}
 .menu a{display:block;padding:11px 12px;border-radius:10px;font-size:13px;font-weight:800;text-transform:none;color:#173041}
 .menu a:hover{background:#eef7f9}
-.dropdown:hover .menu{display:block}
+.dropdown:hover .menu,.dropdown:focus-within .menu{display:block}
 .hamb{display:none;color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 12px;background:rgba(255,255,255,.08)}
 .hero{min-height:660px;position:relative;display:flex;align-items:center;background:linear-gradient(90deg,rgba(3,18,25,.76),rgba(6,36,48,.54)),url('assets/img/site/home-hero-fallback.jpg') center/cover no-repeat fixed;color:#fff;overflow:hidden}
 .hero-video-stack{position:absolute;inset:0;z-index:0;overflow:hidden;background:#071821}.hero-video-poster{position:absolute;inset:0;z-index:0;background:url('assets/img/site/home-hero-fallback.jpg') center/cover no-repeat}

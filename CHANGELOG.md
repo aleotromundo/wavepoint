@@ -1,8 +1,10 @@
 ## 2026-10-11
-### Navegación — alinear menús con el nuevo orden de secciones
-- `index.html`: los enlaces de escritorio y del menú hamburguesa ahora siguen el recorrido Inicio, Servicios, Nosotros, Guía turística y Colaboradores.
-- `service-detail.html`: se aplicó el mismo orden en ambos menús de las fichas de servicios.
-- Validación: orden y etiquetas ES/EN comprobados en navegador a 1280 px y con el menú móvil abierto a 390 px; no hubo overflow horizontal. Los scripts cargaron en navegador. Node.js no está disponible para `node --check`; `git diff --check` pasó.
+### Navegación — completar el recorrido de secciones y eliminar conflictos visibles
+- `index.html`, `service-detail.html` y `site-nav.js`: los menús en todas las páginas siguen el orden Inicio, Servicios, Nosotros, Guía turística, Cámaras en vivo y Colaboradores; los enlaces de cámara llevan a `#camaras` en la portada.
+- `service-detail.html`: se eliminaron los marcadores de conflicto que aparecían en la ficha y se actualizó la caché de CSS y del catálogo de servicios.
+- `styles.css` y `styles.optimized.css`: el desplegable de colaboradores también se abre al recibir foco de teclado. Se renovaron las cachés del menú compartido y de la portada.
+- `PROJECT_GUIDE.md`: se documentó el orden compartido de navegación.
+- Validación: menú ES/EN probado en navegador a 1280, 1024, 390 y 320 px; enlaces, anclas, desplegable por teclado, Escape y colaboradores comprobados; sin overflow horizontal ni marcadores de conflicto en la ficha. Scripts cargados en navegador. Node.js no está disponible para `node --check`; `git diff --check` pasó.
 ### Inicio — priorizar experiencias y aclarar el recorrido de solicitud
 - `index.html`: el catálogo pasa inmediatamente después del hero; se trasladaron Nosotros, la guía, cámaras y colaboradores al orden propuesto. Se añadió una guía breve del flujo de consulta y preguntas frecuentes sobre envío por WhatsApp, reservas, precios y disponibilidad; el nombre accesible de colaboradores también sigue el idioma activo.
 - `index.html` y `script.js`: el subtítulo del hero explica que WavePoint conecta visitantes con experiencias y alojamientos en Tamarindo; “Nosotros” ahora cuenta el paso de las cámaras a las experiencias y que las dos personas fundadoras reciben y coordinan las consultas con proveedores, confirmado por la usuaria.
