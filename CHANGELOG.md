@@ -1,4 +1,11 @@
 ## 2026-10-10
+### Contacto — formulario bilingüe antes del footer
+- `index.html`: se agregó un formulario de nombre y mensaje antes del footer, con textos y campos disponibles en español e inglés.
+- `script.js`: el envío abre WhatsApp al número de contacto ya utilizado por el sitio y prepara el mensaje para que la persona lo revise y confirme; no se presenta como enviado antes de esa confirmación.
+- `styles.css`: se añadió un diseño responsive con foco visible y campos legibles.
+- Validación: pendiente de comprobar ambos idiomas, validación de campos, apertura simulada de WhatsApp, responsive, accesibilidad y `git diff --check`.
+
+## 2026-10-10
 ### Solicitudes — completar datos de Fotografía de surf y Surfskate
 - `services.js`: las fichas ahora piden fecha, cantidad de participantes y preferencias útiles para preparar la consulta; Fotografía distingue modalidad acuática, desde la playa o consulta por ambas. Los campos operativos desconocidos no se presentan como prestaciones confirmadas.
 - `services.js`: la acción de Fotografía deja de decir «Reservá tu sesión» / “Book your session” y pasa a invitar a consultar, porque abrir WhatsApp no confirma una reserva.

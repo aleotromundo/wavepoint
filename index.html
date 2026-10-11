@@ -402,6 +402,23 @@
 </div>
 </section>
 <section class="newsletter"><div class="container newsletter-grid"><div><h2 data-i18n="newsletterTitle">Entérate primero</h2><p data-i18n="newsletterText">Recibe alertas de olas, novedades y promociones seleccionadas.</p></div><form class="signup"><input data-i18n-placeholder="newsletterEmailPlaceholder" placeholder="Tu correo electrónico" type="email"/><button type="button" data-i18n="newsletterButton">Suscribirme</button></form></div></section>
+<section class="contact-request" aria-labelledby="contactRequestTitle">
+  <div class="container contact-request-grid">
+    <div class="contact-request-copy">
+      <h2 id="contactRequestTitle" data-i18n="contactFormTitle">Contactar a WavePoint</h2>
+      <p data-i18n="contactFormIntro">Dejanos tu nombre y mensaje. WhatsApp se abrirá para que revises y envíes la consulta.</p>
+    </div>
+    <form class="contact-request-form" id="contactRequestForm">
+      <label for="contactRequestName" data-i18n="contactNameLabel">Nombre</label>
+      <input id="contactRequestName" name="name" type="text" autocomplete="name" maxlength="80" data-i18n-placeholder="contactNamePlaceholder" placeholder="Tu nombre" required>
+      <label for="contactRequestMessage" data-i18n="contactMessageLabel">Mensaje</label>
+      <textarea id="contactRequestMessage" name="message" maxlength="1500" data-i18n-placeholder="contactMessagePlaceholder" placeholder="Contanos tu consulta..." required></textarea>
+      <button type="submit" data-i18n="contactContinue">Continuar en WhatsApp</button>
+      <p class="contact-request-note" data-i18n="contactFormNote">El mensaje quedará listo en WhatsApp; se enviará cuando lo confirmes allí.</p>
+      <p class="contact-request-error" id="contactRequestError" role="alert" hidden></p>
+    </form>
+  </div>
+</section>
 </main>
 <footer class="site-footer"><div class="container"><div class="foot-grid"><div><a class="foot-brand footer-logo-link" href="index.html" aria-label="WavePoint"><img class="footer-logo" src="assets/wavepoint-hero-mark.png" alt="WavePoint" decoding="async"></a><p data-i18n="footerIntro">Conectamos surfistas, viajeros y negocios locales con las mejores condiciones y experiencias de Tamarindo.</p></div><div><h3 data-i18n="footerQuickLinks">Enlaces rápidos</h3><a href="index.html">Home</a><a href="Enlaces/guia-playas.html" data-i18n="footerGuide">Guía turística</a><a href="#servicios" data-i18n="footerServices">Servicios</a><a href="#nosotros" data-i18n="footerAbout">Nosotros</a></div><div><h3 data-i18n="footerCameras">Cámaras</h3><a href="Enlaces/capitan-suizo.html">Capitán Suizo</a><a href="Enlaces/casa-maderas.html">Casa de Maderas</a><a href="Enlaces/red-door.html">Red Door</a></div><div><h3 data-i18n="footerGuide">Guía</h3><a href="Enlaces/guia-playas.html" data-i18n="footerBeaches">Playas</a><a href="Enlaces/guia-playas.html" data-i18n="footerRestaurants">Restaurantes</a><a href="Enlaces/guia-playas.html" data-i18n="footerTours">Tours</a><a href="Enlaces/guia-playas.html" data-i18n="footerSnorkeling">Snorkeling</a></div><div><p data-i18n="footerWavePointText">Cámaras, spots, guía local y experiencias para surfistas y visitantes en Tamarindo.</p><a class="btn btn-primary" href="#camaras" data-i18n="footerViewCameras">Ver cámaras</a></div></div><div class="foot-bottom"><span>© 2026 WavePoint Tamarindo.</span><span data-i18n="footerTerms">Términos · Privacidad</span></div></div></footer>
 <a class="whatsapp-float" href="https://wa.me/50660399194" target="_blank" rel="noopener noreferrer" aria-label="Contactar WavePoint por WhatsApp al +506 6039 9194">
@@ -429,6 +446,6 @@
 </div>
 <div aria-hidden="true" class="modal" id="adModal"><div class="modal-box"><div class="modal-head"><div class="modal-title">Chophouse pre-play demo</div><button class="close" id="closeAd">×</button></div><div class="modal-body" style="background:#000"><video controls="" id="adVideo" playsinline="" src="assets/chophouse-preroll-12s.mp4?v=20261008-videoopt1" style="width:100%;height:100%;display:block"></video></div><div class="modal-note">Demo del formato pre-play para Castr.</div></div></div>
 
-<script defer="True" src="script.js?v=20261010-allies-ticker-speed"></script><script defer src="site-nav.js?v=20261009-mobile5"></script><script defer src="lang-switch.js?v=20261007-4"></script><script defer src="pricing-data.js?v=20261010-shared-rates1"></script>
+<script defer="True" src="script.js?v=20261010-contact-form1"></script><script defer src="site-nav.js?v=20261009-mobile5"></script><script defer src="lang-switch.js?v=20261007-4"></script><script defer src="pricing-data.js?v=20261010-shared-rates1"></script>
 </body>
 </html>

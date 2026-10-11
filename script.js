@@ -267,6 +267,15 @@
       newsletterText: 'Recibe alertas de olas, novedades y promociones seleccionadas.',
       newsletterEmailPlaceholder: 'Tu correo electrónico',
       newsletterButton: 'Suscribirme',
+      contactFormTitle: 'Contactar a WavePoint',
+      contactFormIntro: 'Dejanos tu nombre y mensaje. WhatsApp se abrirá para que revises y envíes la consulta.',
+      contactNameLabel: 'Nombre',
+      contactNamePlaceholder: 'Tu nombre',
+      contactMessageLabel: 'Mensaje',
+      contactMessagePlaceholder: 'Contanos tu consulta...',
+      contactContinue: 'Continuar en WhatsApp',
+      contactFormNote: 'El mensaje quedará listo en WhatsApp; se enviará cuando lo confirmes allí.',
+      contactFormValidation: 'Escribí tu nombre y mensaje para continuar.',
       alliesHeadingTitle: 'Las marcas y negocios locales que creen en WavePoint y ayudan a hacerlo posible',
       alliesHeadingDescription: 'Aliados y patrocinadores de WavePoint en Tamarindo.',
       partnersSectionTitle: 'Aliados y patrocinadores',
@@ -526,6 +535,15 @@
       newsletterText: 'Get wave alerts, updates, and selected promotions.',
       newsletterEmailPlaceholder: 'Your email',
       newsletterButton: 'Subscribe',
+      contactFormTitle: 'Contact WavePoint',
+      contactFormIntro: 'Share your name and message. WhatsApp will open so you can review and send your inquiry.',
+      contactNameLabel: 'Name',
+      contactNamePlaceholder: 'Your name',
+      contactMessageLabel: 'Message',
+      contactMessagePlaceholder: 'Tell us what you would like to ask...',
+      contactContinue: 'Continue in WhatsApp',
+      contactFormNote: 'Your message will be ready in WhatsApp; it will be sent when you confirm it there.',
+      contactFormValidation: 'Enter your name and message to continue.',
       alliesHeadingTitle: 'The brands and local businesses that believe in WavePoint and help make it possible',
       alliesHeadingDescription: 'WavePoint allies and sponsors in Tamarindo.',
       partnersSectionTitle: 'Partners & sponsors',
@@ -1461,6 +1479,37 @@
     document.addEventListener('keydown', event=>{ if(event.key === 'Escape' && !modal.hidden) closeModal(); });
   }
 
+  function bindContactRequestForm(){
+    const form=document.getElementById('contactRequestForm');
+    if(!form) return;
+    const nameField=form.elements.namedItem('name');
+    const messageField=form.elements.namedItem('message');
+    const error=document.getElementById('contactRequestError');
+    if(!(nameField instanceof HTMLInputElement) || !(messageField instanceof HTMLTextAreaElement) || !error){
+      console.error('El formulario de contacto no contiene los campos requeridos.');
+      return;
+    }
+
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      const name=nameField.value.trim();
+      const message=messageField.value.trim();
+      if(!name || !message){
+        const lang=document.documentElement.lang==='es'?'es':'en';
+        error.textContent=translations[lang].contactFormValidation;
+        error.hidden=false;
+        (!name ? nameField : messageField).focus();
+        return;
+      }
+
+      error.hidden=true;
+      const lang=document.documentElement.lang==='es'?'es':'en';
+      const greeting=lang==='es'?'Hola WavePoint, soy':'Hi WavePoint, I’m';
+      const text=`${greeting} ${name}.\n\n${message}`;
+      window.open(`https://wa.me/50660399194?text=${encodeURIComponent(text)}`,'_blank','noopener,noreferrer');
+    });
+  }
+
   function bindSiteAssistant(){
     if(!document.getElementById('siteAssistant')){
       document.body.insertAdjacentHTML('beforeend', `
@@ -1600,6 +1649,7 @@
     dialog.addEventListener('click',event=>{if(event.target===dialog) dialog.close();});
   }
 
+  bindContactRequestForm();
   bindSiteAssistant();
   bindTermsDialog();
   applyTranslations();
