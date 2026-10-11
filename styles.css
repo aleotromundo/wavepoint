@@ -1391,7 +1391,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   background: linear-gradient(135deg, #dff1ee, #f4f8f4 58%, #d3e9e5);
 }
 .contact-request.has-px { background: transparent; }
-.contact-request.has-px .px-bg { --px-img: url('assets/img/site/backgrounds/atardecer.webp'); }
+.contact-request.has-px .px-bg { --px-img: url('assets/img/site/backgrounds/request-sunset-surfer.webp'); }
 .contact-request.has-px .px-bg::after { background: linear-gradient(105deg, rgba(83, 15, 24, .78), rgba(44, 19, 28, .5) 58%, rgba(5, 28, 38, .78)); }
 .contact-request.has-px .contact-request-copy h2 { color: #fff; text-shadow: 0 3px 22px rgba(0, 0, 0, .55); }
 .contact-request.has-px .contact-request-copy p { color: rgba(255, 255, 255, .9); text-shadow: 0 2px 14px rgba(0, 0, 0, .5); }
@@ -1479,7 +1479,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   background: linear-gradient(145deg, #e4f2ef, #f5f8f5 58%, #d7eae5);
 }
 .request-flow.has-px { background: transparent; }
-.request-flow.has-px .px-bg { --px-img: url('assets/img/site/backgrounds/atardecer.webp'); }
+.request-flow.has-px .px-bg { --px-img: url('assets/img/site/backgrounds/request-sunset-surfer.webp'); }
 .request-flow.has-px .px-bg::after { background: linear-gradient(180deg, rgba(83, 15, 24, .76), rgba(44, 19, 28, .5) 52%, rgba(5, 28, 38, .8)); }
 .request-flow.has-px .request-flow-card { background: rgba(255, 255, 255, .91); box-shadow: 0 16px 38px rgba(25, 6, 13, .24); }
 .request-flow-grid {
