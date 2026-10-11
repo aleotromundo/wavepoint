@@ -1099,7 +1099,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   display: none;
 }
 
-.hero-grid { gap: 48px; padding-top: 0; transform: translateY(14px); }
+.hero-grid { gap: 48px; padding-top: 0; transform: translateY(67px); }
 .hero h1 {
   max-width: 900px;
   margin: 24px 0 18px;
