@@ -2,7 +2,7 @@
 ### Navegación — completar el recorrido de secciones y eliminar conflictos visibles
 - `index.html`, `service-detail.html` y `site-nav.js`: los menús en todas las páginas siguen el orden Inicio, Servicios, Nosotros, Guía turística, Cámaras en vivo y Colaboradores; los enlaces de cámara llevan a `#camaras`.
 - `service-detail.html`: se eliminaron los marcadores de conflicto que aparecían en la ficha y se renovó la referencia a CSS y al catálogo de servicios.
-- `styles.css` y `styles.optimized.css`: el desplegable de colaboradores también se abre al recibir foco de teclado. En la portada, un único ajuste de desplazamiento baja el contenido del hero para separar el logo de la navegación; no cambia su altura ni su composición y el layout móvil permanece igual.
+- `styles.css` y `styles.optimized.css`: el desplegable de colaboradores también se abre al recibir foco de teclado. En la portada, el contenido del hero baja para separar el logo de la navegación y se ajusta 5 px hacia arriba para dejar margen visible bajo los botones, sin cambiar la altura del hero; el layout móvil permanece igual.
 - `PROJECT_GUIDE.md`: se documentó el orden compartido de navegación. Se actualizaron las referencias de caché CSS en las páginas para entregar los estilos vigentes.
 - `PROJECT_GUIDE.md`: se documentó el orden compartido de navegación.
 - Validación: menú ES/EN probado en navegador a 1280, 1024, 390 y 320 px; enlaces, anclas, desplegable por teclado, Escape y colaboradores comprobados; sin overflow horizontal ni marcadores de conflicto en la ficha. Scripts cargados en navegador. Node.js no está disponible para `node --check`; `git diff --check` pasó.
