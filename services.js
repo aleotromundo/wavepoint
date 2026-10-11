@@ -340,16 +340,28 @@ description: 'Tu primera ola, un giro que venís trabajando o una sesión compar
 images: ['assets/img/services/surf-photography/surf-photographer-wave.webp', 'assets/img/services/surf-photography/photo-service.webp'],
 imageAlts: ['Fotógrafo de surf en el agua con una cámara frente a una ola'],
 imageAltsEn: ['Surf photographer in the water with a camera beside a breaking wave'],
-questions: [],
-submitLabel: 'RESERVÁ TU SESIÓN ↗',
+questions: [
+{ id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha preferida'], minDate: 'today' },
+{ id: 'group_size', label: '¿Cuántas personas participarían?', type: 'number', min: 1 },
+{ id: 'photo_mode', label: '¿Qué modalidad de fotografía les interesa?', type: 'choice', options: ['Fotografía acuática', 'Fotografía desde la playa', 'Quiero consultar ambas modalidades'] },
+{ id: 'preferred_spot', label: '¿En qué playa o zona les gustaría hacer la sesión?', type: 'text', placeholder: 'Si ya tienen una preferencia', optional: true },
+{ id: 'session_format', label: '¿Prefieren una sesión individual o grupal?', type: 'choice', options: ['Individual', 'Grupal', 'Cualquiera de las dos'], optional: true }
+],
+submitLabel: 'CONSULTAR FOTOGRAFÍA ↗',
 en: {
 eyebrow: 'SURF PHOTOGRAPHY',
 title: 'Surf Photography',
 cardText: 'Your time in the water, captured.',
 description: 'Your first wave, a turn you’ve been working on or a session shared with friends—every surfer has moments worth keeping. WavePoint connects you with local surf photographers to capture yours, so you can focus on the waves and take a little of Tamarindo home with you.',
 imageAlts: ['Surf photographer in the water with a camera beside a breaking wave'],
-submitLabel: 'BOOK YOUR SESSION ↗',
-questions: {}
+submitLabel: 'ASK ABOUT PHOTOGRAPHY ↗',
+questions: {
+preferred_date: { label: 'What date would you prefer?', fields: ['Preferred date'] },
+group_size: { label: 'How many people would take part?' },
+photo_mode: { label: 'Which photography format are you interested in?', options: ['In-water photography', 'Photography from the beach', 'I’d like to ask about both formats'] },
+preferred_spot: { label: 'Which beach or area would you prefer for the session?', placeholder: 'If you already have a preference' },
+session_format: { label: 'Would you prefer an individual or group session?', options: ['Individual', 'Group', 'Either one'] }
+}
 }
 },
 {
@@ -360,7 +372,15 @@ includes: ['Tabla de surfskate para la sesión', 'Casco y protecciones'],
 images: ['assets/img/services/surfskate/surfskate-class.webp', 'assets/img/services/surfskate/surfskate-wave.webp', 'assets/img/services/surfskate/surfskate.webp', 'assets/img/services/surfskate/surfskate-bowl.webp'],
 imageAlts: ['Clase grupal de surfskate con varias personas sobre tablas', 'Surfista surfeando una ola en el mar', 'Dos instructores practicando surfskate sobre una tabla', 'Skater haciendo un truco dentro de una bowl de concreto'],
 imageAltsEn: ['Group surfskate class with several people on boards', 'Surfer riding a wave in the ocean', 'Two instructors practicing surfskate on a board', 'Skateboarder performing a trick inside a concrete bowl'],
-questions: [],
+questions: [
+{ id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha preferida'], minDate: 'today' },
+{ id: 'group_size', label: '¿Cuántas personas participarían?', type: 'number', min: 1 },
+{ id: 'group_ages', label: '¿Qué edades tienen las personas del grupo?', type: 'text', placeholder: 'Edades de quienes participarían', optional: true },
+{ id: 'experience_background', label: '¿Qué experiencia tienen con skate, surfskate o surf?', type: 'textarea', optional: true },
+{ id: 'lesson_goal', label: '¿Qué les gustaría practicar o mejorar?', type: 'textarea', optional: true },
+{ id: 'preferred_schedule', label: '¿Qué horario prefieren?', type: 'text', placeholder: 'Horario aproximado', optional: true },
+{ id: 'preferred_format', label: '¿Qué formato prefieren consultar?', type: 'choice', options: ['Privado', 'Grupal', 'Cualquiera de los dos'], optional: true }
+],
 submitLabel: 'CONSULTAR UNA CLASE ↗',
 en: {
 eyebrow: 'SURFSKATE · PROGRESSION',
@@ -369,7 +389,15 @@ cardText: 'Find your flow on land.',
 description: 'Explore your turns, build confidence on the board and get a feel for movements you can bring into the water. Whether you’re trying surfskate for the first time or adding to your surf practice, WavePoint connects you with local instructors for a session that suits your level.',
 includes: ['Surfskate board for the session', 'Helmet and protective pads'],
 submitLabel: 'ASK ABOUT A LESSON ↗',
-questions: {}
+questions: {
+preferred_date: { label: 'What date would you prefer?', fields: ['Preferred date'] },
+group_size: { label: 'How many people would take part?' },
+group_ages: { label: 'What are the ages of the people in your group?', placeholder: 'Ages of the participants' },
+experience_background: { label: 'What experience does your group have with skateboarding, surfskate or surfing?' },
+lesson_goal: { label: 'What would you like to practice or improve?' },
+preferred_schedule: { label: 'What time would you prefer?', placeholder: 'Approximate preferred time' },
+preferred_format: { label: 'Which format would you like to ask about?', options: ['Private', 'Group', 'Either one'] }
+}
 }
 },
 {
@@ -780,11 +808,15 @@ update();
 function renderQuestion(service, question) {
 const id = inputId(service, question);
 const optional = question.optional ? `<span class="detail-optional">${uiFor(service).optional}</span>` : '';
+const today = new Date();
+const todayValue = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+const minDate = question.minDate === 'today' ? `min="${todayValue}"` : '';
+const minNumber = question.min === undefined ? '' : `min="${esc(question.min)}"`;
 if (question.type === 'headcount') return `<fieldset class="detail-question headcount-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map((field, index) => `<label for="${id}-${field.id}">${esc(field.label)}<input id="${id}-${field.id}" name="${question.id}-${field.id}" type="number" min="${index === 0 ? 1 : 0}" step="1" inputmode="numeric" placeholder="${index === 0 ? '1' : '0'}" required /></label>`).join('')}</div><p class="headcount-note">${esc(question.note)}</p><label class="headcount-ages" for="${id}-ages"><span>${esc(question.agesLabel)} <span class="detail-optional">${uiFor(service).optional}</span></span><input id="${id}-ages" name="${question.id}-ages" type="text" placeholder="${esc(question.agesPlaceholder)}" /></label></fieldset>`;
-if (question.type === 'dates') return `<fieldset class="detail-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
+if (question.type === 'dates') return `<fieldset class="detail-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${minDate} ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
 if (question.type === 'choice' || question.type === 'multi') return `<fieldset class="detail-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-options">${question.options.map((option, index) => `<label class="detail-option"><input type="${question.type === 'multi' ? 'checkbox' : 'radio'}" name="${question.id}" value="${esc(option)}" ${question.type === 'choice' && index === 0 && !question.optional ? 'required' : ''} /><span>${esc(option)}</span></label>`).join('')}</div></fieldset>`;
 const type = question.type === 'number' ? 'number' : question.type === 'money' ? 'text' : 'text';
-return `<label class="detail-question detail-field" data-survey-question for="${id}"><span>${esc(question.label)} ${optional}</span><${question.type === 'textarea' ? 'textarea' : 'input'} id="${id}" name="${question.id}" type="${type}" placeholder="${esc(question.placeholder || '')}" ${question.optional ? '' : 'required'}></${question.type === 'textarea' ? 'textarea' : 'input'}></label>`;
+return `<label class="detail-question detail-field" data-survey-question for="${id}"><span>${esc(question.label)} ${optional}</span><${question.type === 'textarea' ? 'textarea' : 'input'} id="${id}" name="${question.id}" type="${type}" ${type === 'number' ? minNumber : ''} placeholder="${esc(question.placeholder || '')}" ${question.optional ? '' : 'required'}></${question.type === 'textarea' ? 'textarea' : 'input'}></label>`;
 }
 function renderAccommodationOption(option, index) {
 const isEn = lang === 'en';
@@ -1020,6 +1052,13 @@ if (name) {
     : (plural ? `There are ${groupValue} of us.` : 'One person will be traveling.'));
 }
 const naturalAnswers = {
+  preferred_date: isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
+  photo_mode: isSpanish ? 'La modalidad de fotografía que nos interesa es' : 'The photography format we’re interested in is',
+  preferred_spot: isSpanish ? 'El lugar que preferimos es' : 'Our preferred location is',
+  session_format: isSpanish ? 'El formato de sesión que preferimos es' : 'Our preferred session format is',
+  group_ages: isSpanish ? 'Las edades de nuestro grupo son' : 'The ages in our group are',
+  experience_background: isSpanish ? 'Nuestra experiencia con skate, surfskate o surf es' : 'Our experience with skateboarding, surfskate or surfing is',
+  preferred_format: isSpanish ? 'El formato que preferimos consultar es' : 'The format we’d like to ask about is',
   surf_level: isSpanish ? (plural ? 'Nuestro nivel de surf es' : 'Mi nivel de surf es') : (plural ? 'Our surfing level is' : 'My surfing level is'),
   current_surf_level: isSpanish ? (plural ? 'Nuestro nivel actual de surf es' : 'Mi nivel actual de surf es') : (plural ? 'Our current surfing level is' : 'My current surfing level is'),
   lesson_goal: isSpanish ? (plural ? 'Nos gustaría' : 'Me gustaría') : (plural ? 'We’d like to' : 'I’d like to'),
@@ -1083,7 +1122,11 @@ if (isAccommodation) {
   service.questions.forEach(question => {
     const values = getValues(question);
     if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
-    const joined = values.join(isSpanish ? ', ' : ', ');
+    const displayValues = question.type === 'dates'
+      ? values.map(value => new Intl.DateTimeFormat(isSpanish ? 'es' : 'en', { dateStyle: 'long', timeZone: 'UTC' })
+        .format(new Date(`${value}T00:00:00Z`)))
+      : values;
+    const joined = displayValues.join(isSpanish ? ', ' : ', ');
     const normalized = clean(joined);
     if (!hasGroupCount) {
       lines.push(isSpanish ? `Como dato adicional: ${joined}.` : `One more detail: ${joined}.`);
