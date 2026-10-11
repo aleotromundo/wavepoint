@@ -8583,6 +8583,12 @@ footer a {
   #inicio .hero-actions { margin-top: 18px; }
 }
 
+/* Escritorio común: no alterar monitores grandes; elevar el bloque para despegar los CTA del borde. */
+@media (min-width: 981px) and (max-width: 1439px) {
+  #inicio .hero-grid { transform: translateY(32px); }
+  #inicio .hero-actions { margin-top: 8px; }
+}
+
 @media (hover: none) and (pointer: coarse), (max-width: 640px) {
   .hero-video-stack { display: block !important; }
   .hero-video:not(.is-active) { display: block !important; visibility: hidden !important; }
