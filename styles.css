@@ -291,7 +291,7 @@
       .hamb { display:block; cursor:pointer; }
       .hero {
         min-height:auto;
-        padding:104px 0 58px;
+        padding:90px 0 58px;
         background-position:center;
       }
       .hero-grid {
