@@ -1,4 +1,15 @@
 ## 2026-10-11
+### Guía — recuperar foto de Las Catalinas
+- `guia-playas.html`: se corrigió la ruta rota de la imagen por la foto local de las Islas Catalinas con snorkel, ya usada en el catálogo y conservada en WebP optimizado (133 KB).
+- Validación: archivo local presente; imagen y texto alternativo bilingüe revisados en navegador; `git diff --check`.
+
+## 2026-10-11
+### Servicios — desactivar parallax en escritorio
+- `styles.css` y `styles.optimized.css`: en escritorio la foto compuesta se desplaza junto con la sección, sin parallax; en móvil se conserva el comportamiento fijo actual.
+- `index.html`: se actualiza la caché de estilos.
+- Validación: comportamiento escritorio/móvil y `prefers-reduced-motion` comprobados; `git diff --check`.
+
+## 2026-10-11
 <<<<<<< HEAD
 ### Servicios — activar parallax en el fondo compuesto
 - `index.html`: se activa el parallax del fondo de varias capas de Servicios con la clase `services-parallax`; se puede desactivar quitando esa clase de `#servicios`.

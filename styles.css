@@ -9107,9 +9107,12 @@ footer a {
   }
 }
 
-/* Interruptor del parallax del fondo compuesto de Servicios: quitar services-parallax en index.html para apagarlo. */
+/* Fondo fijo móvil opcional de Servicios: quitar services-parallax en index.html para apagarlo. */
 #servicios.services-parallax .px-bg { position: fixed; inset: 0; }
 #servicios:not(.services-parallax) .px-bg { position: absolute; inset: 0; }
+@media (min-width: 1025px) {
+  #servicios.services-parallax .px-bg { position: absolute; }
+}
 @media (prefers-reduced-motion: reduce) {
   #servicios.services-parallax .px-bg { position: absolute; }
 }
