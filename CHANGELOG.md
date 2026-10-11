@@ -5,6 +5,11 @@
 - En el escritorio común (`981–1439px`) se aplica además una variante específica: el bloque usa `translateY(32px)` y los CTA reducen su separación superior a `8px`; el breakpoint de monitor grande (`1440px+`) queda intacto.
 - A partir de la referencia de una Acer Chromebook 11, el escritorio común deja el bloque en `translateY(0)` y los CTA con `4px` de separación superior para evitar que el desplazamiento descendente los pegue al borde; el breakpoint de monitor grande sigue intacto.
 
+### Unificación definitiva del hero de escritorio
+- Se eliminaron las diferencias entre notebook, escritorio común y monitor grande.
+- Desde `981px` todos los escritorios comparten la misma composición: bloque sin desplazamiento descendente, logo de `589px` máximo, título compacto y CTA a `4px` del texto.
+- Tablet y celular continúan usando sus reglas responsive específicas.
+
 ### Logo del hero adaptado a monitores grandes
 - `styles.css` y `styles.optimized.css`: desde `1440px` de ancho, el logo principal del hero aumenta hasta `720px` para aprovechar el espacio superior disponible en pantallas grandes.
 - Notebook, escritorio común, tablet y celular mantienen sus dimensiones anteriores.
