@@ -9,6 +9,7 @@
 - Se eliminaron las diferencias entre notebook, escritorio común y monitor grande.
 - Desde `981px` todos los escritorios comparten la misma composición: bloque sin desplazamiento descendente, logo de `589px` máximo, título compacto y CTA a `4px` del texto.
 - Tablet y celular continúan usando sus reglas responsive específicas.
+- La separación uniforme de los CTA se ajustó a `20px`, bajando “Armá tu viaje” y “Guía de playas” un poco respecto del texto.
 
 ### Logo del hero adaptado a monitores grandes
 - `styles.css` y `styles.optimized.css`: desde `1440px` de ancho, el logo principal del hero aumenta hasta `720px` para aprovechar el espacio superior disponible en pantallas grandes.
