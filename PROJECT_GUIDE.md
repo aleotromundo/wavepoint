@@ -51,6 +51,12 @@ Las páginas públicas principales son:
 
 El header comparte navegación hacia Inicio, Guía turística, Servicios, Nosotros y Colaboradores. En pantallas pequeñas se utiliza el menú hamburguesa.
 
+### Orden y flujo actual de la página de inicio
+
+La portada prioriza el hero, el catálogo (incluidos el Armador y Retiros), cómo funciona la solicitud, Nosotros, guía, cámaras, colaboradores, preguntas frecuentes, newsletter y contacto. La solicitud prepara un mensaje para WhatsApp; la persona debe enviarlo y las dos personas fundadoras reciben y coordinan la consulta con el proveedor. Esto no confirma disponibilidad, reserva ni pago.
+
+No publicar reseñas hasta contar con testimonios verificables. El inventario actual no ofrece una foto identificable del equipo ni una imagen de catamarán: no reutilizar fotos genéricas para representar esos elementos.
+
 ## 4. Catálogo real de servicios
 
 El catálogo confirmado tiene diez servicios. No agregar servicios inventados ni volver a mostrar servicios retirados sin confirmación explícita.
