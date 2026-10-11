@@ -165,13 +165,11 @@ images: [
 'assets/img/services/surf-lessons/surf-lesson-woman.webp',
 'assets/img/services/surf-lessons/optimized/surf-lesson-group.webp',
 'assets/img/services/surf-lessons/surf-photography.webp',
-'assets/img/services/surf-coaching/surf-coaching.webp'
 ],
 imageAlts: [
 'Alumna practicando surf en Tamarindo',
 'Dos surfistas practicando juntos en una ola en Tamarindo',
 'Surfera tomando una ola en Tamarindo',
-'Surfista entrenando en una ola en Tamarindo'
 ],
 questions: [
 { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
@@ -191,7 +189,6 @@ imageAlts: [
 'Student practicing surfing in Tamarindo',
 'Two surfers practicing together on a wave in Tamarindo',
 'Surfer riding a wave in Tamarindo',
-'Surfer training on a wave in Tamarindo'
 ],
 questions: {
 surf_level: { label: 'What’s your surfing level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
