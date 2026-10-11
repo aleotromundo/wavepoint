@@ -1,4 +1,10 @@
 ## 2026-10-11
+### Hero móvil — reproducción más fluida y primer render no bloqueante
+- `assets/videohero1-mobile.mp4`: variante móvil vertical de 540 × 960, H.264, 30 fps, sin audio; conserva el encuadre de la fuente y reduce el peso de 6,62 MB a aproximadamente 2,03 MB.
+- `index.html`: solo el hero móvil apunta a la nueva variante; las fuentes y la rotación de escritorio quedan intactas. El video del modal de demo ahora usa `preload="none"` y descarga al reproducirse.
+- `script.js`: en móvil, el preloader deja de esperar el video, el clima y las imágenes de fondo; el MP4 móvil se adjunta y reproduce después del primer render en tiempo ocioso. Con movimiento o datos reducidos se conserva el poster sin descargar video.
+- Validación: fotogramas de origen y prueba 540p inspeccionados; mantener 30 fps reduce píxeles por cuadro para aliviar decodificación móvil.
+
 ### Botones del hero en notebooks de poca altura
 - Se revirtió el desplazamiento de `18px` porque en la composición real acercaba visualmente los botones al borde inferior del video en lugar de separarlos.
 - La corrección definitiva reduce el desplazamiento del bloque completo del hero de `80px` a `48px`, subiendo también “Armá tu viaje” y “Guía de playas” y creando espacio real con el borde inferior.
