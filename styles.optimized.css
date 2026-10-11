@@ -3554,3 +3554,6 @@ to{filter:brightness(1.18)}
 
 /* Roca Bruja: dos fotos compactas, distintas y ampliables al hacer clic. */
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{width:min(100%,900px)!important;max-width:900px!important;justify-self:center;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img{aspect-ratio:4/3!important;object-fit:cover!important}@media(max-width:640px){.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{width:100%!important;max-width:none!important;gap:10px!important}}
+
+/* Clases de surf: mosaico estable para las dos fotos editoriales. */
+.surf-lesson-detail-page .surf-lesson-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;height:auto;gap:clamp(10px,1.8vw,16px);margin:0;align-items:start}.surf-lesson-detail-page .surf-lesson-gallery img{display:block;width:100%;height:auto;min-height:0;aspect-ratio:3/2;grid-column:auto!important;grid-row:auto!important;object-fit:cover}@media(max-width:640px){.surf-lesson-detail-page .surf-lesson-gallery{grid-template-columns:1fr;gap:10px}}
