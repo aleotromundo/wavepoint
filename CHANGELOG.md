@@ -1,4 +1,11 @@
 ## 2026-10-11
+### Servicios — activar parallax en el fondo compuesto
+- `index.html`: se activa el parallax del fondo de varias capas de Servicios con la clase `services-parallax`; se puede desactivar quitando esa clase de `#servicios`.
+- `styles.css` y `styles.optimized.css`: el fondo sigue fijo mientras el contenido de Servicios se desplaza; el ajuste respeta `prefers-reduced-motion` y su modo apagado recupera el fondo unido a la sección.
+- `index.html`: se renueva la referencia de caché de estilos.
+- Validación: posición fija del fondo durante el desplazamiento, apagado por clase, preferencia de movimiento reducido y vista móvil; `git diff --check`.
+
+## 2026-10-11
 ### Navegación — completar el recorrido de secciones y eliminar conflictos visibles
 - `index.html`, `service-detail.html` y `site-nav.js`: los menús en todas las páginas siguen el orden Inicio, Servicios, Nosotros, Guía turística, Cámaras en vivo y Colaboradores; los enlaces de cámara llevan a `#camaras`.
 - `service-detail.html`: se eliminaron los marcadores de conflicto que aparecían en la ficha y se renovó la referencia a CSS y al catálogo de servicios.
