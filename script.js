@@ -1041,6 +1041,7 @@
     const progress=root.querySelector('#wavepointPreloaderProgress');
     const track=root.querySelector('[role="progressbar"]');
     const label=root.querySelector('.wavepoint-preloader-label');
+    const mobile=window.matchMedia('(hover: none) and (pointer: coarse)').matches||window.matchMedia('(max-width: 640px)').matches;
     const tasks={hero:false,weather:false,logo:false,backgrounds:false};
     const weights={hero:45,weather:25,logo:15,backgrounds:15};
     let closed=false;
@@ -1068,36 +1069,45 @@
     if(!logo) complete('logo');
 
     const backgroundSources=['assets/img/site/backgrounds/servicios.webp','assets/img/site/backgrounds/atardecer.webp'];
-    let remainingBackgrounds=backgroundSources.length;
-    backgroundSources.forEach(src=>{
-      const image=new Image();
-      const done=()=>{ remainingBackgrounds-=1; if(remainingBackgrounds<=0) complete('backgrounds'); };
-      image.onload=done; image.onerror=done; image.src=src;
-    });
-    if(!remainingBackgrounds) complete('backgrounds');
+    if(mobile){
+      complete('backgrounds');
+    } else {
+      let remainingBackgrounds=backgroundSources.length;
+      backgroundSources.forEach(src=>{
+        const image=new Image();
+        const done=()=>{ remainingBackgrounds-=1; if(remainingBackgrounds<=0) complete('backgrounds'); };
+        image.onload=done; image.onerror=done; image.src=src;
+      });
+      if(!remainingBackgrounds) complete('backgrounds');
+    }
 
     const videos=[...document.querySelectorAll('.hero-video')];
-    const mobile=window.matchMedia('(hover: none) and (pointer: coarse)').matches||window.matchMedia('(max-width: 640px)').matches;
     const heroVideo=videos[0];
     if(heroVideo){
       const source=heroVideo.querySelector('source[data-src]');
-      if(source){ source.src=mobile?(source.dataset.srcMobile||source.dataset.src):source.dataset.src; delete source.dataset.src; delete source.dataset.srcMobile; }
-      heroVideo.preload='auto'; heroVideo.muted=true; heroVideo.playsInline=true;
+      if(source&&!mobile){ source.src=source.dataset.src; delete source.dataset.src; delete source.dataset.srcMobile; }
+      heroVideo.preload=mobile?'none':'auto'; heroVideo.muted=true; heroVideo.playsInline=true;
       const markVideoPlaying=()=>{ document.querySelector('.hero-video-stack')?.classList.add('is-video-ready'); };
       heroVideo.addEventListener('playing',markVideoPlaying,{once:true});
-      heroVideo.addEventListener('canplay',()=>complete('hero'),{once:true});
+      if(mobile) complete('hero');
+      else heroVideo.addEventListener('canplay',()=>complete('hero'),{once:true});
       heroVideo.addEventListener('error',()=>{ heroVideo.classList.add('video-failed'); heroVideo.classList.remove('is-active'); complete('hero'); },{once:true});
-      if(heroVideo.readyState>=3) complete('hero');
-      heroVideo.load();
+      if(!mobile){
+        if(heroVideo.readyState>=3) complete('hero');
+        heroVideo.load();
+      }
     } else complete('hero');
 
     const weather=document.getElementById('wx3d');
     if(weather){
-      const weatherReady=()=>{ if(weather.dataset.weatherStatus!=='loading') complete('weather'); };
-      const observer=new MutationObserver(weatherReady);
-      observer.observe(weather,{attributes:true,attributeFilter:['data-weather-status']});
-      weatherReady();
-      window.setTimeout(()=>{ observer.disconnect(); complete('weather'); },8000);
+      if(mobile) complete('weather');
+      else {
+        const weatherReady=()=>{ if(weather.dataset.weatherStatus!=='loading') complete('weather'); };
+        const observer=new MutationObserver(weatherReady);
+        observer.observe(weather,{attributes:true,attributeFilter:['data-weather-status']});
+        weatherReady();
+        window.setTimeout(()=>{ observer.disconnect(); complete('weather'); },8000);
+      }
     } else complete('weather');
     window.setTimeout(()=>Object.keys(tasks).forEach(complete),8000);
     update();
@@ -1146,23 +1156,36 @@
     if (touchDevice || window.matchMedia('(max-width: 640px)').matches) {
       // En celulares dejamos solo el video móvil configurado (Giro 1), en loop, sin alternar archivos.
       const mobileVideo=videos[0];
+      const reducedMotionOrData=window.matchMedia('(prefers-reduced-motion: reduce)').matches||window.matchMedia('(prefers-reduced-data: reduce)').matches;
       videos.forEach(video=>{
         const isMobileVideo=video===mobileVideo;
         video.muted=true;
         video.playsInline=true;
         video.loop=true;
-        video.preload=isMobileVideo?'auto':'none';
+        video.preload='none';
         video.classList.toggle('is-active',isMobileVideo);
         if(!isMobileVideo) video.pause();
       });
       const mobileSources=[...mobileVideo.querySelectorAll('source[data-src]')];
-      mobileSources.forEach(source=>{
-        source.src=source.dataset.srcMobile||source.dataset.src;
-        delete source.dataset.src;
-        delete source.dataset.srcMobile;
-      });
-      if(mobileSources.length) mobileVideo.load();
-      mobileVideo.play().catch(error=>console.error('No se pudo reproducir el video móvil de portada.',error));
+      if(reducedMotionOrData){
+        mobileVideo.classList.remove('is-active');
+        return;
+      }
+      const startMobileVideo=()=>{
+        mobileSources.forEach(source=>{
+          source.src=source.dataset.srcMobile||source.dataset.src;
+          delete source.dataset.src;
+          delete source.dataset.srcMobile;
+        });
+        mobileVideo.preload='auto';
+        if(mobileSources.length) mobileVideo.load();
+        mobileVideo.play().catch(error=>console.error('No se pudo reproducir el video móvil de portada.',error));
+      };
+      const scheduleMobileVideo=()=>{
+        if('requestIdleCallback' in window) window.requestIdleCallback(startMobileVideo,{timeout:1200});
+        else window.setTimeout(startMobileVideo,600);
+      };
+      window.requestAnimationFrame(()=>window.requestAnimationFrame(scheduleMobileVideo));
       return;
     }
     let activeIndex = 0;
