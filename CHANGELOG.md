@@ -7,6 +7,7 @@
 
 ### Surfskate — reemplazar la foto «Skater Bowl»
 - `assets/img/services/surfskate/surfskate-bowl.webp`: se reemplazó la foto del skater en un bowl por una imagen horizontal de 1600 × 1067 px donde un coach explica una clase grupal y los estudiantes están sentados sobre tablas en la playa; se optimizó a WebP de 235 KB.
+- Se eliminó la copia JPEG antigua sin referencias activas para evitar conservar dos versiones de la foto reemplazada.
 - `services.js`: se actualizaron las descripciones alternativa en español e inglés para describir la nueva escena sin mencionar un bowl ni un truco.
 - `service-detail.html`: se renovó la versión de caché del catálogo para que la ficha entregue la descripción actualizada.
 - Fuente visual consultada: resultado de búsqueda de imágenes atribuido a Send It Surf Academy / Samuel Fairbank, con contexto de clases grupales en la página pública de [Send It Surf Academy](https://www.senditsurfacademy.com/).
