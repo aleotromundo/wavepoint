@@ -8571,8 +8571,8 @@ footer a {
 @media (min-width: 981px) {
   #inicio .hero-grid { transform: translateY(0); }
   #inicio .hero-logo-wrap { width: min(95%, 589px); margin-bottom: 12px; }
-  #inicio h1 { margin: 14px 0 20px; font-size: 64px; line-height: .91; }
-  #inicio .hero-actions { margin-top: 12px; }
+  #inicio h1 { margin: 14px 0 32px; font-size: 64px; line-height: .91; }
+  #inicio .hero-actions { margin-top: 8px; }
 }
 
 @media (hover: none) and (pointer: coarse), (max-width: 640px) {
