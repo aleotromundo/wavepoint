@@ -3558,3 +3558,8 @@ to{filter:brightness(1.18)}
 
 /* Clases de surf: mosaico estable para las dos fotos editoriales. */
 .surf-lesson-detail-page .surf-lesson-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;height:auto;gap:clamp(10px,1.8vw,16px);margin:0;align-items:start}.surf-lesson-detail-page .surf-lesson-gallery img{display:block;width:100%;height:auto;min-height:0;aspect-ratio:3/2;grid-column:auto!important;grid-row:auto!important;object-fit:cover}@media(max-width:640px){.surf-lesson-detail-page .surf-lesson-gallery{grid-template-columns:1fr;gap:10px}}
+
+/* Interruptor del parallax del fondo compuesto de Servicios: quitar services-parallax en index.html para apagarlo. */
+#servicios.services-parallax .px-bg{position:fixed;inset:0}
+#servicios:not(.services-parallax) .px-bg{position:absolute;inset:0}
+@media(prefers-reduced-motion:reduce){#servicios.services-parallax .px-bg{position:absolute}}
