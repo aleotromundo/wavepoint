@@ -1,4 +1,5 @@
 ## 2026-10-11
+<<<<<<< HEAD
 ### Servicios — activar parallax en el fondo compuesto
 - `index.html`: se activa el parallax del fondo de varias capas de Servicios con la clase `services-parallax`; se puede desactivar quitando esa clase de `#servicios`.
 - `styles.css` y `styles.optimized.css`: el fondo sigue fijo mientras el contenido de Servicios se desplaza; el ajuste respeta `prefers-reduced-motion` y su modo apagado recupera el fondo unido a la sección.
@@ -6,6 +7,13 @@
 - Validación: posición fija del fondo durante el desplazamiento, apagado por clase, preferencia de movimiento reducido y vista móvil; `git diff --check`.
 
 ## 2026-10-11
+=======
+### Armador — compactar el cartel de colores del carrito
+- `trip-builder.css`: se redujeron nuevamente la altura, el espaciado, el título y la ilustración del cartel de colores en escritorio para aprovechar mejor el espacio; las reglas de móvil permanecen vigentes.
+- `trip-builder.html`: se actualizó la versión de caché de estilos.
+- Validación: revisión de dimensiones, sintaxis JavaScript y `git diff --check`.
+
+>>>>>>> 17dd70b143d782758fe84dbb00fbb80ec398a8c0
 ### Navegación — completar el recorrido de secciones y eliminar conflictos visibles
 - `index.html`, `service-detail.html` y `site-nav.js`: los menús en todas las páginas siguen el orden Inicio, Servicios, Nosotros, Guía turística, Cámaras en vivo y Colaboradores; los enlaces de cámara llevan a `#camaras`.
 - `service-detail.html`: se eliminaron los marcadores de conflicto que aparecían en la ficha y se renovó la referencia a CSS y al catálogo de servicios.
@@ -1994,3 +2002,8 @@
 - `trip-builder.js`: los títulos de las tarjetas ahora son enlaces a sus páginas de detalle correspondientes, incluyendo Estadías y hoteles, Clases de surf, Surf coaching, Roca Bruja y el resto de experiencias.
 - `trip-builder.css`: se añade estado hover/focus visible para los títulos enlazados.
 - Validación: se comprobaron los 9 destinos y la selección de tarjetas continúa funcionando.
+## 2026-10-11
+### Armador — ajustar el carrito para escritorios bajos
+- `trip-builder.css`: se redujo levemente la altura del encabezado visual del carrito, su ilustración y el espaciado interno en escritorio para que el panel entre en pantallas de escritorio con poca altura; los overrides de móvil se conservan sin cambios.
+- `trip-builder.html`: se renovó la versión de caché de la hoja de estilos del armador.
+- Validación: revisión de dimensiones en viewport de escritorio, sintaxis de los scripts del sitio y `git diff --check`.
