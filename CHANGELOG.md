@@ -12,6 +12,7 @@
 - La separación uniforme de los CTA se ajustó a `20px`, bajando “Armá tu viaje” y “Guía de playas” un poco respecto del texto.
 - Ajuste final del hero: el título grande pasa a tener `20px` de margen inferior para que la descripción no choque con él; el margen de los CTA baja a `12px`, por lo que los botones solo descienden ligeramente.
 - Separación adicional solicitada: el margen inferior del título pasa a `32px`; el margen de los CTA queda en `8px` para equilibrar el desplazamiento de los botones.
+- A pedido final, el margen superior de los CTA pasa a `20px` para bajar “Armá tu viaje” y “Guía de playas” y separarlos del texto descriptivo.
 
 ### Logo del hero adaptado a monitores grandes
 - `styles.css` y `styles.optimized.css`: desde `1440px` de ancho, el logo principal del hero aumenta hasta `720px` para aprovechar el espacio superior disponible en pantallas grandes.
