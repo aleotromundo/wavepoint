@@ -1,16 +1,9 @@
 ## 2026-10-11
-### Portada — eliminar marcador de conflicto residual
-- `index.html`: se quitaron los delimitadores de conflicto que rodeaban las referencias del favicon restaurado; se conservó el bloque correcto que coincide con las demás páginas públicas.
-- Validación: búsqueda global de marcadores de conflicto y `git diff --check`.
+### Informe comercial — alcance construido y referencia de cotización
+- `COTIZACION_WAVEPOINT_ALCANCE_Y_VALOR.md`: se documentan el inventario actual, la evolución desde una web estática simple, el valor orientativo por módulo, los entregables, los pendientes del DOCX de revisión y el alcance que debería cotizarse aparte.
+- `COTIZACION_WAVEPOINT_ALCANCE_Y_VALOR.pdf`: versión A4 lista para compartir con el cliente.
+- Validación: extracción de estadísticas del repositorio, contraste con `WAVEPOINT_Revision_web_y_fichas.docx`, revisión del despliegue público y verificación de texto extraído del PDF.
 
-## 2026-10-11
-### Favicon — restaurar el icono anterior
-- `favicon.svg`, PNG de 16/32 px, `favicon.ico` e icono Apple: se restauró el favicon anterior de Material Icons “surfing” con fondo WavePoint.
-- Páginas públicas: se quitaron las referencias al PNG de 48 px y se restauró la versión de caché anterior.
-- `PROJECT_GUIDE.md`: se restableció la documentación y atribución del favicon vigente.
-- Validación: tamaños originales del PNG y del icono Apple comprobados; SVG y licencia revisados; 50 referencias locales verificadas en las 10 páginas públicas. `git diff --check` sigue señalando el marcador de conflicto preexistente en `index.html:69`; no se modificó como parte del rollback.
-
-## 2026-10-11
 ### Hero principal — conservar la imagen de respaldo si falla el video
 - `styles.css` y `styles.optimized.css`: se eliminó la regla que ocultaba el póster apenas cualquier video emitía `playing`; la imagen `home-hero-fallback.jpg` permanece debajo del video y vuelve a verse si el video queda invisible o falla.
 - `index.html`: se actualizó la versión de caché de estilos.
