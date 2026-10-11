@@ -1,4 +1,12 @@
 ## 2026-10-11
+### Parallax global y fondo de Contactar a WavePoint
+- `styles.css` y `styles.optimized.css`: las secciones con fondos fotográficos basadas en `has-px` pasan a usar parallax en escritorio, tablet y celular cuando el navegador lo permite.
+- Excepción intencional: `#servicios` conserva su fondo compuesto estático en escritorio y mantiene el parallax en tablet/celular, tal como se definió para evitar el error visual anterior.
+- `index.html`: Contactar a WavePoint ahora es una sección `has-px` independiente con fondo fotográfico.
+- `assets/img/site/backgrounds/contact-tamarindo.webp`: nueva foto horizontal de Tamarindo de 2400 × 1350 px, optimizada a WebP; fuente consultada: [Unsplash — Tamarindo](https://unsplash.com/s/photos/tamarindo-costa-rica).
+- La capa oscura mantiene el contraste del texto y el formulario claro conserva la legibilidad en ambas variantes de idioma.
+- Validación: inspección visual en navegador; en escritorio se verificó `position: fixed` para Guía, Cámaras, FAQ y Contacto, y `position: absolute` exclusivamente para Servicios.
+
 ### FAQ — fondo oscuro con foto de olas y parallax
 - `assets/img/site/backgrounds/faq-waves.webp`: se incorporó una foto horizontal de olas de 2400 × 1600 px, optimizada a WebP, distinta de los fondos activos del sitio; fuente consultada: [Unsplash](https://unsplash.com/photos/ocean-waves-crashing-on-shore-during-daytime-Kg0x-uH1PjU).
 - `index.html`: la sección `#preguntas-frecuentes` ahora reutiliza la estructura `has-px` / `px-bg` para mostrar el fondo fotográfico con parallax.
