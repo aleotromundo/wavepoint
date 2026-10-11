@@ -1,4 +1,12 @@
 ## 2026-10-10
+### Solicitudes — completar datos de Fotografía de surf y Surfskate
+- `services.js`: las fichas ahora piden fecha, cantidad de participantes y preferencias útiles para preparar la consulta; Fotografía distingue modalidad acuática, desde la playa o consulta por ambas. Los campos operativos desconocidos no se presentan como prestaciones confirmadas.
+- `services.js`: la acción de Fotografía deja de decir «Reservá tu sesión» / “Book your session” y pasa a invitar a consultar, porque abrir WhatsApp no confirma una reserva.
+- `services.js`: los formularios muestran fechas no anteriores al día actual, cantidades de participantes con mínimo de 1 y generan mensajes de WhatsApp con fecha legible y las respuestas correspondientes en ambos idiomas.
+- `service-detail.html`: se renueva la caché del catálogo de servicios.
+- Validación: fichas comprobadas en navegador en ES/EN; se verificaron fecha mínima y cantidad mínima de 1. Se simuló el mensaje de Surfskate en inglés con fecha, grupo, edades, experiencia, objetivo, horario y formato, sin abrir ni enviar WhatsApp; Fotografía también se probó sin enviar. `git diff --check` sin errores.
+
+## 2026-10-10
 ### Revisión web — preparar resumen de propuestas en PDF
 - `Revision_web_propuestas.pdf`: se generó un resumen en español de las propuestas de la revisión, organizado por inicio, solicitudes, fichas, alojamientos/retiro, guía/cámaras/colaboradores y segunda etapa/pruebas.
 - El documento advierte que la información comercial y operativa propuesta debe validarse antes de publicarse.
