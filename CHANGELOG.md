@@ -1,4 +1,13 @@
 ## 2026-10-13
+### Header — navegación compacta en notebooks
+- `styles.css` y `styles.optimized.css`: entre 1181 y 1440 px se conserva la navegación de escritorio, pero baja a 12 px con 10 px entre enlaces y se repliega hacia la derecha; la hamburguesa queda para anchos menores a 1181 px.
+- Desde 1441 px se mantiene la navegación amplia con 13 px y 15 px entre enlaces.
+- El hero no se mueve ni cambia de alto; la compactación evita que los textos en español invadan la ola del logo.
+- `index.html`: el logo de navegación ahora usa el asset local WebP existente en lugar de una referencia PNG inexistente.
+- Se actualizó la versión de caché de la hoja optimizada en las páginas principales.
+- Validación: capturas en notebook y escritorio amplio, sintaxis de JavaScript, rutas de hoja optimizada y `git diff --check` sin errores.
+
+## 2026-10-13
 ### Orden de portada — carrusel de aliados debajo del hero
 - `index.html`: el carrusel finito de «Aliados y patrocinadores» vuelve a ubicarse inmediatamente después del hero/giro y antes de Servicios; se conserva su contenido, enlaces, ID y comportamiento de desplazamiento.
 - El menú superior y su ajuste de alineación permanecen sin cambios.
