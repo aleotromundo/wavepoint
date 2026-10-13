@@ -1,4 +1,9 @@
 ## 2026-10-13
+### Newsletter — subir apenas el sello
+- `styles.css` y `styles.optimized.css`: el sello se subió unos píxeles más, manteniendo intacta su posición horizontal y el espacio del hero.
+- Validación: sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — ajuste fino de posición del sello
 - `styles.css` y `styles.optimized.css`: el sello se desplazó unos píxeles hacia la derecha y hacia arriba, conservando el flujo y las posiciones del resto del hero.
 - Validación: sintaxis de JavaScript y `git diff --check`.
