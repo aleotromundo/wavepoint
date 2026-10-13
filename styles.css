@@ -9197,11 +9197,30 @@ footer a {
 @media (min-width: 981px) and (max-width: 1180px) {
   .topbar,
   .service-topbar {
-    min-height: 92px;
+    min-height: 112px;
+  }
+
+  .topbar .container.nav,
+  .service-topbar .container.nav {
+    width: min(100% - 28px, 1100px);
+    max-width: none;
+    min-width: 0;
+  }
+
+  .site-shared-header .shared-brand img,
+  .topbar .site-header-brand img {
+    height: 34px;
+  }
+
+  .topbar .navlinks,
+  .service-topbar .navlinks {
+    min-width: 0;
+    gap: 8px;
+    font-size: 12px;
   }
 
   .hero {
-    padding-top: 92px;
+    padding-top: 112px;
   }
 
   .hero-grid {
