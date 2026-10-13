@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Newsletter — celebración sutil al suscribirse
+- `script.js`, `styles.css` y `styles.optimized.css`: al mostrar la confirmación exitosa se anima una lluvia breve de confites de colores sobre la página, sin bloquear controles ni agregar dependencias.
+- La celebración se desactiva automáticamente cuando está activo `prefers-reduced-motion` y los elementos se eliminan al terminar la animación.
+- Validación: sintaxis de JavaScript, revisión de `z-index`/interacción y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — mensajes de validación junto al formulario
 - `index.html`, `script.js`, `styles.css` y `styles.optimized.css`: se reemplazaron los avisos nativos del navegador por un mensaje accesible debajo del campo y botón de suscripción.
 - Los errores de correo inválido, conexión y registro fallido aparecen cerca del control que la persona está usando; la confirmación exitosa queda visible en el mismo lugar.
