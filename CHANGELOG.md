@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Newsletter — ubicar el sello en el espacio del hero
+- `index.html`, `styles.css` y `styles.optimized.css`: el sello circular se movió al bloque principal, entre el logo y la etiqueta de Tamarindo, Costa Rica.
+- Quedó alineado hacia la izquierda, con un ancho compacto similar al de una acción del hero y un leve desplazamiento hacia arriba, sin superponerse al logo ni al título.
+- Validación: revisión responsive, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — sello circular tipo tinta
 - `index.html`, `styles.css` y `styles.optimized.css`: el sello de suscripción pasó de una pastilla superior a un círculo verde con tick, ubicado a la izquierda del hero.
 - La palabra «SUSCRIPTO» queda debajo del círculo, sin fondo, para conservar el efecto de sello de tinta y no tapar el logo ni el contenido principal.
