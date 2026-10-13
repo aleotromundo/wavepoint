@@ -1382,10 +1382,14 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 
 .newsletter h2 { font-family: "Barlow Condensed", Impact, sans-serif; font-size: 40px; line-height: 1; font-weight: 700; }
 .newsletter p { max-width: 460px; line-height: 1.55; font-weight: 500; }
+.newsletter-signup { min-width: 0; }
 .signup { padding: 6px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 12px; background: rgba(255, 255, 255, .12); backdrop-filter: blur(14px); }
 .signup input { min-height: 48px; border-radius: 8px; background: rgba(255, 255, 255, .94); }
 .signup button { min-height: 48px; border-radius: 8px; background: var(--wp-ocean); color: #fff; }
-
+.newsletter-status { margin: 10px 2px 0; color: rgba(255, 255, 255, .88); font-size: 13px; line-height: 1.45; }
+.newsletter-status.is-error { color: #ffd0ca; }
+.newsletter-status.is-success { color: #d8f7e6; }
+.newsletter-status[hidden] { display: none; }
 .contact-request {
   padding: clamp(48px, 7vw, 84px) 0;
   background: linear-gradient(135deg, #dff1ee, #f4f8f4 58%, #d3e9e5);

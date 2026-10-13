@@ -1589,7 +1589,8 @@
     const form=document.querySelector('.signup');
     const emailField=form?.querySelector('input[type="email"]');
     const submitButton=form?.querySelector('button');
-    if(!form || !emailField || !submitButton) return;
+    const status=document.getElementById('newsletterStatus');
+    if(!form || !emailField || !submitButton || !status) return;
 
     const messages={
       es:{invalid:'Ingresá un correo electrónico válido.', pending:'La suscripción todavía no está conectada.', success:'¡Listo! Ya estás suscripto. Te vamos a avisar cuando tengamos novedades de las olas y de Tamarindo.', error:'No pudimos registrar tu correo. Probá de nuevo en un momento.'},
@@ -1599,13 +1600,19 @@
     const subscribe=async()=>{
       const lang=document.documentElement.lang==='en'?'en':'es';
       const email=emailField.value.trim();
+      const showStatus=(message, type='error')=>{
+        status.textContent=message;
+        status.classList.toggle('is-error', type==='error');
+        status.classList.toggle('is-success', type==='success');
+        status.hidden=false;
+      };
       if(!emailField.checkValidity() || !email){
-        window.alert(messages[lang].invalid);
+        showStatus(messages[lang].invalid);
         emailField.focus();
         return;
       }
       if(!NEWSLETTER_ENDPOINT){
-        window.alert(messages[lang].pending);
+        showStatus(messages[lang].pending);
         return;
       }
 
@@ -1615,15 +1622,19 @@
         const body=new URLSearchParams({email,source:window.location.href});
         await fetch(NEWSLETTER_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body});
         form.reset();
-        window.alert(messages[lang].success);
+        showStatus(messages[lang].success,'success');
       }catch(error){
         console.error('No se pudo registrar la suscripción.',error);
-        window.alert(messages[lang].error);
+        showStatus(messages[lang].error);
       }finally{
         submitButton.disabled=false;
         emailField.disabled=false;
       }
     };
+    emailField.addEventListener('input',()=>{
+      status.hidden=true;
+      status.textContent='';
+    });
 
     submitButton.addEventListener('click',subscribe);
     form.addEventListener('submit',event=>{ event.preventDefault(); subscribe(); });
