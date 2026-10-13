@@ -3617,3 +3617,33 @@ to{filter:brightness(1.18)}
     margin-right: 0 !important;
   }
 }
+
+/* Hero camera CTA: give the weather gadget a clear, full-width next action. */
+.hero-side-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-self: end;
+  width: 100%;
+  min-width: 0;
+  gap: 14px;
+}
+.hero-side-stack .weather-card {
+  width: 100%;
+}
+.hero-camera-cta {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 18px;
+  white-space: nowrap;
+}
+@media (max-width: 980px) {
+  .hero-side-stack {
+    justify-self: center;
+    width: min(100%, 430px);
+  }
+}
+@media (max-width: 640px) {
+  .hero-side-stack { width: 100%; gap: 10px; }
+  .hero-camera-cta { min-height: 48px; padding: 0 10px; font-size: 13px; }
+}

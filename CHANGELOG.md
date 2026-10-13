@@ -1,4 +1,11 @@
 ## 2026-10-13
+### Hero — CTA visible para cámaras en vivo
+- `index.html`: se agregó debajo del gadget del clima un botón ancho «Ver las cámaras en vivo» que enlaza directamente con `#camaras`.
+- `styles.css` y `styles.optimized.css`: el botón comparte el estilo llamativo de los CTA del hero, ocupa el ancho del bloque climático y se adapta en notebook y móvil.
+- `script.js`: se agregaron los textos bilingües del nuevo CTA.
+- Validación: captura responsive, sintaxis de JavaScript, navegación interna y `git diff --check`.
+
+## 2026-10-13
 ### Header — recuperar tamaño de letra en notebooks
 - `styles.css` y `styles.optimized.css`: entre 1181 y 1440 px la navegación conserva el tamaño anterior de 14 px, mantiene 10 px entre enlaces y aprovecha el alineamiento al borde derecho sin volver a invadir el logo.
 - Las páginas principales actualizan la versión de caché de la hoja optimizada.
