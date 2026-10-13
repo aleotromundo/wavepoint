@@ -1,4 +1,9 @@
 ## 2026-10-13
+### Newsletter — ajuste fino de posición del sello
+- `styles.css` y `styles.optimized.css`: el sello se desplazó unos píxeles hacia la derecha y hacia arriba, conservando el flujo y las posiciones del resto del hero.
+- Validación: sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — sello flotante sin alterar el espacio del hero
 - `index.html`, `styles.css` y `styles.optimized.css`: el sello se ancló al área del logo y se posiciona de forma absoluta en el espacio existente entre el logo y la ubicación.
 - Se eliminó el espacio que había agregado el flujo normal del documento; Tamarindo, Costa Rica, el título y los botones conservan sus posiciones originales.
