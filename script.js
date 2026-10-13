@@ -1324,78 +1324,99 @@
     const section=document.querySelector('.allies-ticker');
     const viewport=section?.querySelector('.allies-ticker-viewport');
     const track=section?.querySelector('.allies-ticker-track');
-    const resistLayer=section?.querySelector('.allies-ticker-resist');
-    if(!section || !viewport || !track || !resistLayer) return;
+    const firstSet=section?.querySelector('.allies-ticker-set:not([aria-hidden="true"])');
+    if(!section || !viewport || !track || !firstSet) return;
 
-    let pointerId=null, startX=0, startY=0, startOffset=0, isDragging=false, suppressClick=false;
-    const updateTickerSpeed=()=>{
-      const reduced=reducedMotionPreference.matches;
-      const baseDuration=reduced?52:18;
-      const supportsHover=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      const hovering=supportsHover && section.matches(':hover');
-      const targetDuration=section.classList.contains('is-interacting')?(reduced?66:25):hovering?(reduced?56:21):baseDuration;
-      const animation=track.getAnimations().find(item=>item.animationName==='allies-slide-left');
-      if(!animation) return;
-      const playbackRate=baseDuration/targetDuration;
-      if(animation.updatePlaybackRate) animation.updatePlaybackRate(playbackRate);
-      else animation.playbackRate=playbackRate;
+    const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+    let loopWidth=0;
+    let offset=0;
+    let velocity=0;
+    let pointerId=null;
+    let drag=null;
+    let suppressClick=false;
+    let lastFrame=performance.now();
+
+    const getAutoSpeed=()=>reducedMotion.matches?-14:-38;
+    const wrap=(value)=>{
+      if(!loopWidth) return value;
+      while(value<=-loopWidth) value+=loopWidth;
+      while(value>0) value-=loopWidth;
+      return value;
+    };
+    const measure=()=>{
+      loopWidth=firstSet.getBoundingClientRect().width;
+      offset=wrap(offset);
+      track.style.transform=`translate3d(${offset}px,0,0)`;
+    };
+    const render=()=>{
+      offset=wrap(offset);
+      track.style.transform=`translate3d(${offset}px,0,0)`;
+    };
+    const animate=(now)=>{
+      const dt=Math.min((now-lastFrame)/1000,.05);
+      lastFrame=now;
+      if(!drag){
+        const target=getAutoSpeed();
+        velocity += (target-velocity)*Math.min(1,dt*4.5);
+        offset += velocity*dt;
+        render();
+      }
+      requestAnimationFrame(animate);
     };
     const finishInteraction=(event)=>{
       if(pointerId===null || (event?.pointerId!==undefined && event.pointerId!==pointerId)) return;
-      const wasDragged=isDragging;
+      const wasDragged=Boolean(drag?.moved);
+      if(viewport.hasPointerCapture?.(pointerId)) viewport.releasePointerCapture(pointerId);
       pointerId=null;
-      isDragging=false;
+      drag=null;
       section.classList.remove('is-interacting','is-dragging');
-      resistLayer.style.left='0px';
-      updateTickerSpeed();
       if(wasDragged){
         suppressClick=true;
-        window.setTimeout(()=>{ suppressClick=false; },400);
+        window.setTimeout(()=>{ suppressClick=false; },450);
       }
     };
 
     viewport.addEventListener('pointerdown',event=>{
-      if((event.button!==undefined && event.button!==0) || pointerId!==null) return;
+      if((event.pointerType==='mouse' && event.button!==0) || pointerId!==null) return;
       pointerId=event.pointerId;
-      startX=event.clientX;
-      startY=event.clientY;
-      startOffset=Number.parseFloat(getComputedStyle(resistLayer).left)||0;
-      resistLayer.style.transition='none';
-      isDragging=false;
+      drag={startX:event.clientX,startY:event.clientY,startOffset:offset,lastX:event.clientX,lastTime:performance.now(),moved:false};
+      velocity=0;
       section.classList.add('is-interacting');
-      updateTickerSpeed();
+      viewport.setPointerCapture?.(event.pointerId);
     });
-    window.addEventListener('pointermove',event=>{
-      if(event.pointerId!==pointerId) return;
-      const deltaX=event.clientX-startX;
-      const deltaY=event.clientY-startY;
-      if(Math.abs(deltaX)<5 || Math.abs(deltaX)<Math.abs(deltaY)) return;
-      isDragging=true;
-      section.classList.add('is-dragging');
-      const loopWidth=section.querySelector('.allies-ticker-set:not([aria-hidden="true"])')?.getBoundingClientRect().width||0;
-      const draggedOffset=startOffset+deltaX*.9;
-      const wrappedOffset=loopWidth?((draggedOffset+loopWidth/2)%loopWidth+loopWidth)%loopWidth-loopWidth/2:draggedOffset;
-      resistLayer.style.left=`${wrappedOffset}px`;
+    viewport.addEventListener('pointermove',event=>{
+      if(event.pointerId!==pointerId || !drag) return;
+      const deltaX=event.clientX-drag.startX;
+      const deltaY=event.clientY-drag.startY;
+      if(!drag.moved){
+        if(Math.abs(deltaX)<6 || Math.abs(deltaX)<Math.abs(deltaY)) return;
+        drag.moved=true;
+        section.classList.add('is-dragging');
+      }
+      const now=performance.now();
+      const elapsed=Math.max(8,now-drag.lastTime);
+      velocity=(event.clientX-drag.lastX)/(elapsed/1000);
+      drag.lastX=event.clientX;
+      drag.lastTime=now;
+      offset=drag.startOffset+deltaX;
+      render();
       event.preventDefault();
     });
-    window.addEventListener('pointerup',finishInteraction);
-    window.addEventListener('pointercancel',finishInteraction);
+    viewport.addEventListener('pointerup',finishInteraction);
+    viewport.addEventListener('pointercancel',finishInteraction);
     window.addEventListener('blur',()=>finishInteraction());
-    section.addEventListener('pointerenter',updateTickerSpeed);
-    section.addEventListener('pointerleave',updateTickerSpeed);
     document.addEventListener('click',event=>{
       if(!suppressClick || !event.target.closest('.allies-ticker')) return;
       event.preventDefault();
       event.stopPropagation();
       suppressClick=false;
     },true);
-    reducedMotionPreference.addEventListener?.('change',event=>{
-      if(event.matches) finishInteraction();
-      updateTickerSpeed();
-    });
-    updateTickerSpeed();
+    reducedMotion.addEventListener?.('change',()=>{ velocity=getAutoSpeed(); });
+    window.addEventListener('resize',measure,{passive:true});
+    measure();
+    velocity=getAutoSpeed();
+    requestAnimationFrame(animate);
   }
-
   function bindHeroLogoEntrance(){
     const logos=[...document.querySelectorAll('.hero-logo-wrap, .services-logo-wrap')];
     if(!logos.length) return;
