@@ -946,7 +946,29 @@ return `<div class="retreat-editorial">
 function render(service) {
 const ui = uiFor(service);
 document.documentElement.lang = lang;
+const serviceDescription = service.description || (lang === 'en' ? 'Explore this WavePoint experience in Tamarindo, Costa Rica.' : 'Explorá esta experiencia de WavePoint en Tamarindo, Costa Rica.');
 document.title = `${service.title} · WavePoint`;
+const serviceUrl = new URL(location.href);
+serviceUrl.hash = '';
+serviceUrl.search = `?service=${encodeURIComponent(service.id)}`;
+const serviceCanonical = document.querySelector('link[rel=canonical]');
+if (serviceCanonical) serviceCanonical.href = serviceUrl.href;
+const serviceDescriptionMeta = document.querySelector('meta[name=description]');
+if (serviceDescriptionMeta) serviceDescriptionMeta.content = serviceDescription;
+const setServiceMeta = (property, content) => {
+  let meta = document.querySelector(`meta[property=\"${property}\"]`);
+  if (!meta) { meta = document.createElement('meta'); meta.setAttribute('property', property); document.head.appendChild(meta); }
+  meta.setAttribute('content', content);
+};
+setServiceMeta('og:title', document.title);
+setServiceMeta('og:description', serviceDescription);
+setServiceMeta('og:url', serviceUrl.href);
+setServiceMeta('og:type', 'website');
+setServiceMeta('og:image', new URL('assets/img/site/share/surf-experiences-tamarindo.webp', location.origin + location.pathname.replace(/[^/]*$/, '')).href);
+setServiceMeta('og:image:type', 'image/webp');
+setServiceMeta('og:image:width', '1200');
+setServiceMeta('og:image:height', '630');
+setServiceMeta('og:locale', lang === 'en' ? 'en_US' : 'es_CR');
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
 document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
