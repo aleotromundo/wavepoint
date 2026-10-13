@@ -9227,3 +9227,24 @@ footer a {
     transform: none;
   }
 }
+
+/* Shared desktop utility edge: header Instagram and chatbot use the same right axis. */
+@media (min-width: 981px) {
+  .topbar .container.nav,
+  .service-topbar .container.nav {
+    position: relative;
+    width: calc(100% - 36px) !important;
+    max-width: none;
+    margin-right: 18px !important;
+    margin-left: 18px !important;
+  }
+
+  .topbar .navlinks,
+  .service-topbar .navlinks {
+    margin-right: 0 !important;
+  }
+
+  .assistant-launcher {
+    right: 18px;
+  }
+}
