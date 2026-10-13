@@ -1596,6 +1596,27 @@
       es:{invalid:'Ingresá un correo electrónico válido.', pending:'La suscripción todavía no está conectada.', success:'¡Listo! Ya estás suscripto. Te vamos a avisar cuando tengamos novedades de las olas y de Tamarindo.', error:'No pudimos registrar tu correo. Probá de nuevo en un momento.'},
       en:{invalid:'Enter a valid email address.', pending:'The subscription is not connected yet.', success:'You’re all set! We’ll let you know when we have news about the waves and Tamarindo.', error:'We could not save your email. Please try again in a moment.'}
     };
+    const celebrateSubscription=()=>{
+      if(reducedMotionPreference.matches) return;
+      const layer=document.createElement('div');
+      layer.className='newsletter-confetti';
+      layer.setAttribute('aria-hidden','true');
+      const colors=['#f3b64b','#0fc7d7','#ff6b6b','#83e377','#a78bfa','#fff'];
+      for(let index=0;index<48;index+=1){
+        const piece=document.createElement('span');
+        piece.className='newsletter-confetti-piece';
+        piece.style.setProperty('--left',`${Math.random()*100}%`);
+        piece.style.setProperty('--delay',`${Math.random()*140}ms`);
+        piece.style.setProperty('--duration',`${1100+Math.random()*700}ms`);
+        piece.style.setProperty('--drift',`${(Math.random()-.5)*260}px`);
+        piece.style.setProperty('--rotation',`${360+Math.random()*720}deg`);
+        piece.style.setProperty('--color',colors[index%colors.length]);
+        piece.style.setProperty('--size',`${6+Math.random()*5}px`);
+        layer.appendChild(piece);
+      }
+      document.body.appendChild(layer);
+      window.setTimeout(()=>layer.remove(),2200);
+    };
 
     const subscribe=async()=>{
       const lang=document.documentElement.lang==='en'?'en':'es';
@@ -1623,6 +1644,7 @@
         await fetch(NEWSLETTER_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body});
         form.reset();
         showStatus(messages[lang].success,'success');
+        celebrateSubscription();
       }catch(error){
         console.error('No se pudo registrar la suscripción.',error);
         showStatus(messages[lang].error);

@@ -1390,6 +1390,9 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 .newsletter-status.is-error { color: #ffd0ca; }
 .newsletter-status.is-success { color: #d8f7e6; }
 .newsletter-status[hidden] { display: none; }
+.newsletter-confetti { position: fixed; inset: 0; z-index: 100; overflow: hidden; pointer-events: none; }
+.newsletter-confetti-piece { position: absolute; left: var(--left); top: -18px; width: var(--size); height: calc(var(--size) * 1.8); border-radius: 2px; background: var(--color); opacity: 0; animation: newsletter-confetti-fall var(--duration) cubic-bezier(.18,.76,.24,1) var(--delay) forwards; }
+@keyframes newsletter-confetti-fall { 0% { opacity: 0; transform: translate3d(0, -20px, 0) rotate(0deg); } 12% { opacity: 1; } 100% { opacity: 0; transform: translate3d(var(--drift), 110vh, 0) rotate(var(--rotation)); } }
 .contact-request {
   padding: clamp(48px, 7vw, 84px) 0;
   background: linear-gradient(135deg, #dff1ee, #f4f8f4 58%, #d3e9e5);
