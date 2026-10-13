@@ -1,4 +1,11 @@
 ## 2026-10-13
+### Newsletter — mensajes de validación junto al formulario
+- `index.html`, `script.js`, `styles.css` y `styles.optimized.css`: se reemplazaron los avisos nativos del navegador por un mensaje accesible debajo del campo y botón de suscripción.
+- Los errores de correo inválido, conexión y registro fallido aparecen cerca del control que la persona está usando; la confirmación exitosa queda visible en el mismo lugar.
+- El mensaje se limpia al volver a editar el correo y conserva estilos diferenciados para error y éxito.
+- Validación: sintaxis de JavaScript, revisión de estructura y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — conexión configurable con Google Sheets
 - `script.js`: se agregó el comportamiento del botón existente; valida el correo, envía un `POST` al endpoint `/exec` configurado y muestra confirmación o error sin cambiar la interfaz visible.
 - `integrations/google-sheets-newsletter/Code.gs`: endpoint de Apps Script que agrega correo y fecha a la pestaña `Suscriptores`, sin enviar notificaciones.
