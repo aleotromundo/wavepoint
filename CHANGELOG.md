@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Newsletter — sello blanco para mejorar el contraste
+- `styles.css` y `styles.optimized.css`: el círculo, el tick y el texto del sello pasaron a blanco para que se distingan sobre el fondo oscuro de la sección.
+- Se conserva la visibilidad privada: el sello sigue oculto por defecto y solo se muestra cuando el navegador local tiene la marca de suscripción exitosa.
+- Validación: contraste revisado, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — mover el sello fuera de la portada
 - `index.html`, `styles.css` y `styles.optimized.css`: el sello se retiró completamente del hero y ahora aparece en la sección «Entérate primero», entre el texto descriptivo y el formulario de correo.
 - En escritorio ocupa el espacio central entre ambas columnas; en móvil se apila entre el texto y el formulario, sin quedar fijo ni mostrarse a quienes no están suscriptos.
