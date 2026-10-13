@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Orden de portada — carrusel de aliados debajo del hero
+- `index.html`: el carrusel finito de «Aliados y patrocinadores» vuelve a ubicarse inmediatamente después del hero/giro y antes de Servicios; se conserva su contenido, enlaces, ID y comportamiento de desplazamiento.
+- El menú superior y su ajuste de alineación permanecen sin cambios.
+- Validación prevista: orden del DOM, capturas en escritorio/tablet/móvil, español/inglés, rutas, sintaxis y `git diff --check`.
+
+## 2026-10-13
 ### Header — separar la navegación de la ola del logo en escritorio intermedio
 - `styles.css` y `styles.optimized.css`: entre 981 y 1180 px, la navegación conserva una separación tipográfica compacta, pero su extremo derecho queda alineado con los accesos flotantes en lugar de pegarse al borde; el bloque del hero se corre unos píxeles hacia la izquierda para que «Inicio» termine antes de la ola del logo.
 - `index.html`, `trip-builder.html`, `service-detail.html` y `guia-playas.html`: se actualizó la versión de caché de la hoja optimizada.
