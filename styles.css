@@ -9273,3 +9273,19 @@ footer a {
     letter-spacing: -.01em;
   }
 }
+
+/* Shared right edge: desktop navigation and chat use the same viewport axis. */
+@media (min-width: 1181px) {
+  .topbar .container.nav,
+  .service-topbar .container.nav {
+    position: relative;
+    width: calc(100% - 36px) !important;
+    max-width: none;
+    margin-right: 18px !important;
+    margin-left: 18px !important;
+  }
+  .topbar .navlinks,
+  .service-topbar .navlinks {
+    margin-right: 0 !important;
+  }
+}
