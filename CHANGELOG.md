@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Header — alinear navegación y chat al mismo borde derecho
+- `styles.css` y `styles.optimized.css`: el contenedor desktop del header ahora usa el mismo eje de 18 px desde el borde derecho que el botón del chat; se elimina la diferencia causada por el contenedor central de 1180 px.
+- Las páginas principales actualizan la versión de caché de la hoja optimizada.
+- Validación: comparación de reglas entre hojas, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Header — navegación compacta en notebooks
 - `styles.css` y `styles.optimized.css`: entre 1181 y 1440 px se conserva la navegación de escritorio, pero baja a 12 px con 10 px entre enlaces y se repliega hacia la derecha; la hamburguesa queda para anchos menores a 1181 px.
 - Desde 1441 px se mantiene la navegación amplia con 13 px y 15 px entre enlaces.
