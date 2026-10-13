@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Header — mismo tamaño en todos los escritorios
+- `styles.css` y `styles.optimized.css`: la navegación queda en 14 px tanto en notebooks de 1181–1440 px como en monitores desde 1441 px; solo se conserva la diferencia de separación entre enlaces.
+- Las páginas principales actualizan la versión de caché a `responsive8` para evitar que otros equipos sigan usando el tamaño anterior.
+- Validación: capturas a 1366 y 1536 px, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Hero — CTA visible para cámaras en vivo
 - `index.html`: se agregó debajo del gadget del clima un botón ancho «Ver las cámaras en vivo» que enlaza directamente con `#camaras`.
 - `styles.css` y `styles.optimized.css`: el botón comparte el estilo llamativo de los CTA del hero, ocupa el ancho del bloque climático y se adapta en notebook y móvil.

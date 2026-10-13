@@ -3597,7 +3597,7 @@ to{filter:brightness(1.18)}
   .topbar .navlinks,
   .service-topbar .navlinks {
     gap: 15px;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: -.01em;
   }
 }
