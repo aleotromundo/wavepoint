@@ -2,6 +2,8 @@
   const reducedMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
   const MOBILE_HOME_INITIAL_SCROLL_PX=12;
+  // Se completa con la URL /exec del Apps Script del propietario de la planilla.
+  const NEWSLETTER_ENDPOINT='';
   const mobileHome=document.getElementById('inicio');
   const isMobileHomeViewport=()=>window.matchMedia('(max-width: 640px)').matches;
   const scrollToMobileHomeStart=()=>{
@@ -1583,6 +1585,50 @@
     document.addEventListener('keydown', event=>{ if(event.key === 'Escape' && !modal.hidden) closeModal(); });
   }
 
+  function bindNewsletterForm(){
+    const form=document.querySelector('.signup');
+    const emailField=form?.querySelector('input[type="email"]');
+    const submitButton=form?.querySelector('button');
+    if(!form || !emailField || !submitButton) return;
+
+    const messages={
+      es:{invalid:'Ingresá un correo electrónico válido.', pending:'La suscripción todavía no está conectada.', success:'¡Listo! Ya estás suscripto. Te vamos a avisar cuando tengamos novedades de las olas y de Tamarindo.', error:'No pudimos registrar tu correo. Probá de nuevo en un momento.'},
+      en:{invalid:'Enter a valid email address.', pending:'The subscription is not connected yet.', success:'You’re all set! We’ll let you know when we have news about the waves and Tamarindo.', error:'We could not save your email. Please try again in a moment.'}
+    };
+
+    const subscribe=async()=>{
+      const lang=document.documentElement.lang==='en'?'en':'es';
+      const email=emailField.value.trim();
+      if(!emailField.checkValidity() || !email){
+        window.alert(messages[lang].invalid);
+        emailField.focus();
+        return;
+      }
+      if(!NEWSLETTER_ENDPOINT){
+        window.alert(messages[lang].pending);
+        return;
+      }
+
+      submitButton.disabled=true;
+      emailField.disabled=true;
+      try{
+        const body=new URLSearchParams({email,source:window.location.href});
+        await fetch(NEWSLETTER_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body});
+        form.reset();
+        window.alert(messages[lang].success);
+      }catch(error){
+        console.error('No se pudo registrar la suscripción.',error);
+        window.alert(messages[lang].error);
+      }finally{
+        submitButton.disabled=false;
+        emailField.disabled=false;
+      }
+    };
+
+    submitButton.addEventListener('click',subscribe);
+    form.addEventListener('submit',event=>{ event.preventDefault(); subscribe(); });
+  }
+
   function bindContactRequestForm(){
     const form=document.getElementById('contactRequestForm');
     if(!form) return;
@@ -1753,6 +1799,7 @@
     dialog.addEventListener('click',event=>{if(event.target===dialog) dialog.close();});
   }
 
+  bindNewsletterForm();
   bindContactRequestForm();
   bindSiteAssistant();
   bindTermsDialog();

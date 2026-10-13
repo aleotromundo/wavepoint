@@ -1,3 +1,11 @@
+## 2026-10-13
+### Newsletter — conexión configurable con Google Sheets
+- `script.js`: se agregó el comportamiento del botón existente; valida el correo, envía un `POST` al endpoint `/exec` configurado y muestra confirmación o error sin cambiar la interfaz visible.
+- `integrations/google-sheets-newsletter/Code.gs`: endpoint de Apps Script que agrega correo y fecha a la pestaña `Suscriptores`, sin enviar notificaciones.
+- `integrations/google-sheets-newsletter/README.md`: instrucciones para que el propietario cree y publique el Apps Script desde su propia cuenta, sin compartir contraseñas.
+- Configuración pendiente: completar `NEWSLETTER_ENDPOINT` con la URL `/exec` que entregue el propietario de la planilla.
+- Validación: sintaxis JavaScript y revisión de diff pendientes después de completar la URL real.
+
 ## 2026-10-11
 ### Hero móvil — reproducción más fluida y primer render no bloqueante
 - `assets/videohero1-mobile.mp4`: variante móvil vertical de 540 × 960, H.264, 30 fps, sin audio; conserva el encuadre de la fuente y reduce el peso de 6,62 MB a aproximadamente 2,03 MB.
