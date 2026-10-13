@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Newsletter — sello circular tipo tinta
+- `index.html`, `styles.css` y `styles.optimized.css`: el sello de suscripción pasó de una pastilla superior a un círculo verde con tick, ubicado a la izquierda del hero.
+- La palabra «SUSCRIPTO» queda debajo del círculo, sin fondo, para conservar el efecto de sello de tinta y no tapar el logo ni el contenido principal.
+- Validación: revisión responsive, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — sello local de suscripción en la portada
 - `index.html`, `script.js`, `styles.css` y `styles.optimized.css`: se agregó un sello verde «SUSCRIPTO» al hero de la portada, visible únicamente después de una suscripción exitosa.
 - El estado se guarda como una marca booleana en `localStorage`; no se almacena el correo ni se muestra el sello a otras personas o navegadores.
