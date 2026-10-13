@@ -3576,3 +3576,28 @@ to{filter:brightness(1.18)}
 
 /* Header alignment: keep the medium desktop nav clear of the hero wave. */
 @media (min-width:981px) and (max-width:1180px){.nav{margin-right:max(14px,calc((100vw - 1180px)/2));transform:none}.navlinks{gap:12px;font-size:14px}.hero-grid{gap:28px;transform:translate(-20px,62px)}}
+/* Responsive header guard: compact desktop navigation before falling back to hamburger. */
+@media (min-width: 1181px) and (max-width: 1440px) {
+  .topbar .navlinks,
+  .service-topbar .navlinks {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    font-size: 12px;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+  }
+  .topbar .hamb,
+  .service-topbar .hamb {
+    display: none;
+  }
+}
+
+@media (min-width: 1441px) {
+  .topbar .navlinks,
+  .service-topbar .navlinks {
+    gap: 15px;
+    font-size: 13px;
+    letter-spacing: -.01em;
+  }
+}
