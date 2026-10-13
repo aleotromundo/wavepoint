@@ -408,6 +408,27 @@
     const copy = COPY[lang];
     document.documentElement.lang = lang;
     document.title = `${copy.title} · WavePoint`;
+    const tripDescription = lang === 'en'
+      ? 'Choose surf, travel and accommodation experiences for your Tamarindo trip with WavePoint.'
+      : 'Elegí experiencias de surf, viaje y alojamiento para armar tu viaje por Tamarindo con WavePoint.';
+    const tripCanonical = document.querySelector('link[rel=canonical]');
+    if (tripCanonical) tripCanonical.href = `${location.origin}/trip-builder`;
+    const tripDescriptionMeta = document.querySelector('meta[name=description]');
+    if (tripDescriptionMeta) tripDescriptionMeta.content = tripDescription;
+    const setTripMeta = (property, content) => {
+      let meta = document.querySelector(`meta[property=\"${property}\"]`);
+      if (!meta) { meta = document.createElement('meta'); meta.setAttribute('property', property); document.head.appendChild(meta); }
+      meta.setAttribute('content', content);
+    };
+    setTripMeta('og:title', document.title);
+    setTripMeta('og:description', tripDescription);
+    setTripMeta('og:url', `${location.origin}/trip-builder`);
+    setTripMeta('og:type', 'website');
+    setTripMeta('og:image', `${location.origin}/assets/img/site/share/surf-experiences-tamarindo.webp`);
+    setTripMeta('og:image:type', 'image/webp');
+    setTripMeta('og:image:width', '1200');
+    setTripMeta('og:image:height', '630');
+    setTripMeta('og:locale', lang === 'en' ? 'en_US' : 'es_CR');
     root.innerHTML = `<section class="trip-builder-hero">
       <div class="trip-builder-hero-image" aria-hidden="true">
         <video class="trip-builder-hero-video" autoplay loop muted playsinline poster="assets/img/services/retreats/retreat-tamarindo.webp" tabindex="-1">
