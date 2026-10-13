@@ -9142,3 +9142,19 @@ footer a {
 @media (prefers-reduced-motion: reduce) {
   #servicios.services-parallax .px-bg { position: absolute; }
 }
+
+/* Header alignment: keep the medium desktop nav clear of the hero wave. */
+@media (min-width: 981px) and (max-width: 1180px) {
+  .nav {
+    margin-right: max(14px, calc((100vw - 1180px) / 2));
+    transform: none;
+  }
+  .navlinks {
+    gap: 12px;
+    font-size: 14px;
+  }
+  .hero-grid {
+    gap: 28px;
+    transform: translate(-20px, 62px);
+  }
+}
