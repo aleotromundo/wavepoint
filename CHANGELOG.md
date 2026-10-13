@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Header — recuperar tamaño de letra en notebooks
+- `styles.css` y `styles.optimized.css`: entre 1181 y 1440 px la navegación conserva el tamaño anterior de 14 px, mantiene 10 px entre enlaces y aprovecha el alineamiento al borde derecho sin volver a invadir el logo.
+- Las páginas principales actualizan la versión de caché de la hoja optimizada.
+- Validación: captura en 1366 px, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Header — alinear navegación y chat al mismo borde derecho
 - `styles.css` y `styles.optimized.css`: el contenedor desktop del header ahora usa el mismo eje de 18 px desde el borde derecho que el botón del chat; se elimina la diferencia causada por el contenedor central de 1180 px.
 - Las páginas principales actualizan la versión de caché de la hoja optimizada.
