@@ -1056,6 +1056,9 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 
 .navlinks { gap: 15px; font-family: "Barlow Condensed", "DM Sans", sans-serif; font-size: 15px; font-weight: 700; }
 .navlinks>a, .dropbtn { position: relative; padding: 9px 2px; color: rgba(255,255,255,.9); font: inherit; transition: color .2s ease, opacity .2s ease; }
+.navlinks > a,
+.navlinks > .dropdown,
+.navlinks > .dropdown > .dropbtn { display: inline-flex; align-items: center; line-height: 1; }
 .navlinks>a::after, .dropbtn::after { content: ""; position: absolute; left: 2px; right: 2px; bottom: 3px; height: 2px; background: linear-gradient(90deg, #88e4d2, #f4c46a); transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
 .navlinks>a:hover, .dropbtn:hover { color: #fff; transform: none; }
 .navlinks>a:hover::after, .dropbtn:hover::after, .dropdown:focus-within .dropbtn::after { transform: scaleX(1); }
@@ -9216,7 +9219,7 @@ footer a {
   .service-topbar .navlinks {
     min-width: 0;
     gap: 8px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .hero {
@@ -9308,6 +9311,20 @@ footer a {
   min-height: 52px;
   padding: 0 18px;
   white-space: nowrap;
+  animation: hero-camera-float 3.2s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes hero-camera-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.hero-camera-cta:hover,
+.hero-camera-cta:focus-visible { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-camera-cta {
+    animation: none;
+    will-change: auto;
+  }
 }
 @media (max-width: 980px) {
   .hero-side-stack {

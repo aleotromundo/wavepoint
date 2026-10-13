@@ -1,4 +1,22 @@
 ## 2026-10-13
+### Header — alinear Partners con el resto del menú
+- `styles.css` y `styles.optimized.css`: el ítem desplegable «Partners»/«Colaboradores» ahora usa el mismo eje vertical y altura de línea que los demás enlaces del header.
+- Se conserva el dropdown, el orden de navegación, el texto bilingüe y el indicador visual inferior.
+- Validación: sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
+### CTA de cámaras — animación flotante
+- `styles.css` y `styles.optimized.css`: el botón «Ver las cámaras en vivo» ahora se mueve suavemente en vertical para llamar la atención sin cambiar su enlace ni su tamaño.
+- La animación se pausa al interactuar con el botón y se desactiva con `prefers-reduced-motion`.
+- Validación: sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
+### Header — mejorar legibilidad en escritorios compactos
+- `styles.css`: entre 981 y 1180 px la navegación conserva el espaciado compacto, pero vuelve a 14 px para que los textos del menú no se vean reducidos en notebooks y pantallas de escritorio pequeñas; `styles.optimized.css` ya tenía ese tamaño en el mismo breakpoint.
+- Se mantiene la hamburguesa para anchos menores a 981 px y no se modifica el copy ni la composición del hero.
+- Validación: revisión de breakpoints, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Header — mismo tamaño en todos los escritorios
 - `styles.css` y `styles.optimized.css`: la navegación queda en 14 px tanto en notebooks de 1181–1440 px como en monitores desde 1441 px; solo se conserva la diferencia de separación entre enlaces.
 - Las páginas principales actualizan la versión de caché a `responsive8` para evitar que otros equipos sigan usando el tamaño anterior.
