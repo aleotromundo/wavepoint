@@ -3573,3 +3573,6 @@ to{filter:brightness(1.18)}
 .allies-ticker-track{animation:none!important;transform:translate3d(0,0,0);will-change:transform}
 .allies-ticker-resist{left:0!important;transition:none!important}
 .allies-ticker-viewport{touch-action:pan-y}
+
+/* Header alignment: keep the medium desktop nav clear of the hero wave. */
+@media (min-width:981px) and (max-width:1180px){.nav{margin-right:max(14px,calc((100vw - 1180px)/2));transform:none}.navlinks{gap:12px;font-size:14px}.hero-grid{gap:28px;transform:translate(-20px,62px)}}

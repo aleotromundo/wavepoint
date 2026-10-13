@@ -1,4 +1,11 @@
 ## 2026-10-13
+### Header — separar la navegación de la ola del logo en escritorio intermedio
+- `styles.css` y `styles.optimized.css`: entre 981 y 1180 px, la navegación conserva una separación tipográfica compacta, pero su extremo derecho queda alineado con los accesos flotantes en lugar de pegarse al borde; el bloque del hero se corre unos píxeles hacia la izquierda para que «Inicio» termine antes de la ola del logo.
+- `index.html`, `trip-builder.html`, `service-detail.html` y `guia-playas.html`: se actualizó la versión de caché de la hoja optimizada.
+- El breakpoint móvil y el escritorio amplio conservan sus posiciones actuales.
+- Validación: capturas en 1024, 1100 y 1280 px, pruebas móviles, español/inglés, sintaxis, rutas, accesibilidad, movimiento reducido y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — sello blanco para mejorar el contraste
 - `styles.css` y `styles.optimized.css`: el círculo, el tick y el texto del sello pasaron a blanco para que se distingan sobre el fondo oscuro de la sección.
 - Se conserva la visibilidad privada: el sello sigue oculto por defecto y solo se muestra cuando el navegador local tiene la marca de suscripción exitosa.
