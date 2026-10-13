@@ -3564,3 +3564,9 @@ to{filter:brightness(1.18)}
 #servicios:not(.services-parallax) .px-bg{position:absolute;inset:0}
 @media (min-width:1025px){#servicios.services-parallax .px-bg{position:absolute}}
 @media(prefers-reduced-motion:reduce){#servicios.services-parallax .px-bg{position:absolute}}
+
+
+/* Stable draggable allies ticker */
+.allies-ticker-track{animation:none!important;transform:translate3d(0,0,0);will-change:transform}
+.allies-ticker-resist{left:0!important;transition:none!important}
+.allies-ticker-viewport{touch-action:pan-y}
