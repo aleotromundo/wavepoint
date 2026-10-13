@@ -699,10 +699,30 @@
 
   const languageState = { current: localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en' };
 
+  function applyLocalizedMetadata(lang) {
+    const metadata = lang === 'es' ? {
+      title: 'Experiencias de surf en Tamarindo, Costa Rica | WavePoint',
+      description: 'Explorá experiencias de surf en Tamarindo, Costa Rica: clases, coaching, viajes a Roca Bruja y fotografía. Planeá tu viaje por Guanacaste con WavePoint.',
+      locale: 'es_CR'
+    } : {
+      title: 'Surf Experiences in Tamarindo, Costa Rica | WavePoint',
+      description: 'Explore surf experiences in Tamarindo, Costa Rica: surf lessons, coaching, Witch’s Rock surf trips and photography. Plan your Guanacaste trip with WavePoint.',
+      locale: 'en_US'
+    };
+    document.title = metadata.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', metadata.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', metadata.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', metadata.description);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', metadata.locale);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', metadata.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', metadata.description);
+  }
+
   function applyTranslations(lang = languageState.current) {
     const dict = translations[lang] || translations.en;
     languageState.current = lang;
     document.documentElement.lang = lang;
+    applyLocalizedMetadata(lang);
     document.querySelectorAll('[data-i18n]').forEach(node => {
       const value = dict[node.dataset.i18n];
       if (value) node.textContent = value;
