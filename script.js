@@ -4,6 +4,7 @@
   const MOBILE_HOME_INITIAL_SCROLL_PX=12;
   // Se completa con la URL /exec del Apps Script del propietario de la planilla.
   const NEWSLETTER_ENDPOINT='https://script.google.com/macros/s/AKfycbzn9SWc7NU9doPPGHFOuBzZqoPKvg4VCm1XsCMdHFwyU3djN5HvwQZahrIZFLSIQZay/exec';
+  const NEWSLETTER_SUBSCRIPTION_KEY='wavepoint-newsletter-subscribed';
   const mobileHome=document.getElementById('inicio');
   const isMobileHomeViewport=()=>window.matchMedia('(max-width: 640px)').matches;
   const scrollToMobileHomeStart=()=>{
@@ -289,6 +290,7 @@
       newsletterText: 'Recibe alertas de olas, novedades y promociones seleccionadas.',
       newsletterEmailPlaceholder: 'Tu correo electrónico',
       newsletterButton: 'Suscribirme',
+      newsletterSubscribedBadge: 'SUSCRIPTO',
       contactFormTitle: 'Contactar a WavePoint',
       contactFormIntro: 'Dejanos tu nombre y mensaje. WhatsApp se abrirá para que revises y envíes la consulta.',
       contactNameLabel: 'Nombre',
@@ -577,6 +579,7 @@
       newsletterText: 'Get wave alerts, updates, and selected promotions.',
       newsletterEmailPlaceholder: 'Your email',
       newsletterButton: 'Subscribe',
+      newsletterSubscribedBadge: 'SUBSCRIBED',
       contactFormTitle: 'Contact WavePoint',
       contactFormIntro: 'Share your name and message. WhatsApp will open so you can review and send your inquiry.',
       contactNameLabel: 'Name',
@@ -1693,6 +1696,8 @@
         const body=new URLSearchParams({email,source:window.location.href});
         await fetch(NEWSLETTER_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body});
         form.reset();
+        try{ localStorage.setItem(NEWSLETTER_SUBSCRIPTION_KEY,'1'); }catch(storageError){ console.warn('No se pudo guardar el estado local de suscripción.',storageError); }
+        updateSubscriptionSeal();
         showStatus(messages[lang].success,'success');
         celebrateSubscription();
         playConfettiSound(confettiSound);
@@ -1712,6 +1717,14 @@
 
     submitButton.addEventListener('click',subscribe);
     form.addEventListener('submit',event=>{ event.preventDefault(); subscribe(); });
+  }
+
+  function updateSubscriptionSeal(){
+    const seal=document.getElementById('subscriptionSeal');
+    if(!seal) return;
+    let subscribed=false;
+    try{ subscribed=localStorage.getItem(NEWSLETTER_SUBSCRIPTION_KEY)==='1'; }catch(error){ subscribed=false; }
+    seal.hidden=!subscribed;
   }
 
   function bindContactRequestForm(){
@@ -1889,6 +1902,7 @@
   bindSiteAssistant();
   bindTermsDialog();
   applyTranslations();
+  updateSubscriptionSeal();
   bindWavepointPreloader();
   bindMobileMenu();
   bindHeroVideoSwap();

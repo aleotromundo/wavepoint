@@ -1,4 +1,11 @@
 ## 2026-10-13
+### Newsletter — sello local de suscripción en la portada
+- `index.html`, `script.js`, `styles.css` y `styles.optimized.css`: se agregó un sello verde «SUSCRIPTO» al hero de la portada, visible únicamente después de una suscripción exitosa.
+- El estado se guarda como una marca booleana en `localStorage`; no se almacena el correo ni se muestra el sello a otras personas o navegadores.
+- El sello queda oculto para quienes todavía no se suscribieron y se adapta al idioma activo.
+- Validación: sintaxis de JavaScript, persistencia local, estructura responsive y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — sonido breve de papelitos
 - `script.js`: se agregó un efecto sonoro corto generado con Web Audio API junto con la celebración visual, sin cargar archivos de audio externos.
 - El sonido se prepara a partir de la interacción de la persona y solo se reproduce después de una suscripción exitosa, evitando autoplay y respetando las restricciones del navegador.
