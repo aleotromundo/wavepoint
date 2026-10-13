@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Newsletter — sonido breve de papelitos
+- `script.js`: se agregó un efecto sonoro corto generado con Web Audio API junto con la celebración visual, sin cargar archivos de audio externos.
+- El sonido se prepara a partir de la interacción de la persona y solo se reproduce después de una suscripción exitosa, evitando autoplay y respetando las restricciones del navegador.
+- Validación: sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — celebración sutil al suscribirse
 - `script.js`, `styles.css` y `styles.optimized.css`: al mostrar la confirmación exitosa se anima una lluvia breve de confites de colores sobre la página, sin bloquear controles ni agregar dependencias.
 - La celebración se desactiva automáticamente cuando está activo `prefers-reduced-motion` y los elementos se eliminan al terminar la animación.

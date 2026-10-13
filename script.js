@@ -1617,6 +1617,55 @@
       document.body.appendChild(layer);
       window.setTimeout(()=>layer.remove(),2200);
     };
+    const prepareConfettiSound=()=>{
+      const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+      if(!AudioContextClass) return null;
+      try{
+        const context=new AudioContextClass();
+        context.resume?.();
+        return context;
+      }catch(error){
+        return null;
+      }
+    };
+    const playConfettiSound=(context)=>{
+      if(!context) return;
+      const play=()=>{
+        const now=context.currentTime;
+        const buffer=context.createBuffer(1,context.sampleRate*.32,context.sampleRate);
+        const noise=buffer.getChannelData(0);
+        for(let index=0;index<noise.length;index+=1) noise[index]=(Math.random()*2-1)*(1-index/noise.length);
+        const rustle=context.createBufferSource();
+        const filter=context.createBiquadFilter();
+        const rustleGain=context.createGain();
+        filter.type='bandpass';
+        filter.frequency.value=1850;
+        filter.Q.value=.7;
+        rustleGain.gain.setValueAtTime(.0001,now);
+        rustleGain.gain.exponentialRampToValueAtTime(.055,now+.035);
+        rustleGain.gain.exponentialRampToValueAtTime(.0001,now+.32);
+        rustle.buffer=buffer;
+        rustle.connect(filter).connect(rustleGain).connect(context.destination);
+        rustle.start(now);
+        rustle.stop(now+.34);
+        for(let index=0;index<5;index+=1){
+          const oscillator=context.createOscillator();
+          const gain=context.createGain();
+          const start=now+index*.055;
+          oscillator.type='triangle';
+          oscillator.frequency.value=650+Math.random()*500;
+          gain.gain.setValueAtTime(.0001,start);
+          gain.gain.exponentialRampToValueAtTime(.018,start+.008);
+          gain.gain.exponentialRampToValueAtTime(.0001,start+.16);
+          oscillator.connect(gain).connect(context.destination);
+          oscillator.start(start);
+          oscillator.stop(start+.18);
+        }
+        window.setTimeout(()=>context.close().catch(()=>{}),700);
+      };
+      if(context.state==='suspended') context.resume().then(play).catch(()=>{});
+      else play();
+    };
 
     const subscribe=async()=>{
       const lang=document.documentElement.lang==='en'?'en':'es';
@@ -1637,6 +1686,7 @@
         return;
       }
 
+      const confettiSound=prepareConfettiSound();
       submitButton.disabled=true;
       emailField.disabled=true;
       try{
@@ -1645,8 +1695,10 @@
         form.reset();
         showStatus(messages[lang].success,'success');
         celebrateSubscription();
+        playConfettiSound(confettiSound);
       }catch(error){
         console.error('No se pudo registrar la suscripción.',error);
+        confettiSound?.close?.().catch?.(()=>{});
         showStatus(messages[lang].error);
       }finally{
         submitButton.disabled=false;
