@@ -1,4 +1,10 @@
 ## 2026-10-13
+### Newsletter — mover el sello fuera de la portada
+- `index.html`, `styles.css` y `styles.optimized.css`: el sello se retiró completamente del hero y ahora aparece en la sección «Entérate primero», entre el texto descriptivo y el formulario de correo.
+- En escritorio ocupa el espacio central entre ambas columnas; en móvil se apila entre el texto y el formulario, sin quedar fijo ni mostrarse a quienes no están suscriptos.
+- Validación: orden del markup, responsive, sintaxis de JavaScript y `git diff --check`.
+
+## 2026-10-13
 ### Newsletter — subir apenas el sello
 - `styles.css` y `styles.optimized.css`: el sello se subió unos píxeles más, manteniendo intacta su posición horizontal y el espacio del hero.
 - Validación: sintaxis de JavaScript y `git diff --check`.
