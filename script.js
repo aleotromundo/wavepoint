@@ -3,7 +3,7 @@
   const CAM_START={hour:4,minute:45}, CAM_END={hour:18,minute:30};
   const MOBILE_HOME_INITIAL_SCROLL_PX=12;
   // Se completa con la URL /exec del Apps Script del propietario de la planilla.
-  const NEWSLETTER_ENDPOINT='';
+  const NEWSLETTER_ENDPOINT='https://script.google.com/macros/s/AKfycbzn9SWc7NU9doPPGHFOuBzZqoPKvg4VCm1XsCMdHFwyU3djN5HvwQZahrIZFLSIQZay/exec';
   const mobileHome=document.getElementById('inicio');
   const isMobileHomeViewport=()=>window.matchMedia('(max-width: 640px)').matches;
   const scrollToMobileHomeStart=()=>{
