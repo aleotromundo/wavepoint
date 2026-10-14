@@ -2219,3 +2219,8 @@
 - `styles.css` y `styles.optimized.css`: se redujo únicamente el espacio vertical exterior y el margen inferior del subtítulo para que la sección quede más apretada contra sus contenidos.
 - No se modificaron el tamaño de las tarjetas, logos, textos, tipografías ni proporciones del carrusel; en móvil también se conserva todo el contenido.
 - Validación: revisión responsive, sintaxis de JavaScript y `git diff --check`.
+## 2026-10-14
+### Aliados — compactación vertical visible
+- `styles.css` y `styles.optimized.css`: se corrigieron overrides antiguos que mantenían padding vertical amplio; ahora el título, subtítulo y carrusel quedan claramente más juntos sin reducir sus tamaños.
+- Se mantienen intactos los logos, tarjetas, textos y proporciones del contenido.
+- Validación: medición responsive, sintaxis de JavaScript y `git diff --check`.

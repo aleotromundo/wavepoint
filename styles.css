@@ -9338,8 +9338,9 @@ footer a {
 }
 
 /* Aliados: reducir solo el aire vertical, sin tocar el tamaño del contenido. */
-.allies-ticker { padding: 12px 0 16px !important; }
-.allies-ticker-head .section-sub { margin-bottom: 4px !important; }
+.allies-ticker { padding: 4px 0 6px !important; }
+.allies-ticker .section-title { margin-bottom: 0 !important; }
+.allies-ticker-head .section-sub { margin: 2px 0 !important; }
 @media (max-width: 640px) {
-  .allies-ticker { padding: 10px 0 12px !important; }
+  .allies-ticker { padding: 4px 0 6px !important; }
 }
