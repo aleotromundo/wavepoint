@@ -160,7 +160,8 @@ experiences: { label: 'Which experiences would you like to add?', options: ['Sur
 {
 id: 'clases-de-surf', number: '02', eyebrow: 'CLASES DE SURF · TAMARINDO', title: 'Clases de surf',
 cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.',
-description: 'Las clases están pensadas para que cada persona entre al agua con una guía simple, segura y cercana. Adaptamos la sesión al nivel del grupo, al estado del mar y a lo que querés conseguir: desde probar el surf por primera vez hasta ordenar tus bases y ganar confianza. También te orientamos con la tabla adecuada si todavía no tenés equipo.',
+description: 'Una clase con instructor local, explicación en la playa y práctica guiada en el agua, adaptada al nivel del grupo. La disponibilidad de tabla y la colación de fruta, si se ofrecen, se confirman con el proveedor.',
+lead: 'Incluye instructor local, introducción al equipo y la seguridad, y práctica adaptada al nivel. La tabla durante la sesión y la colación de fruta al terminar quedan sujetas a confirmación operativa.',
 images: [
 'assets/img/services/surf-lessons/surf-lesson-woman.webp',
 'assets/img/services/surf-lessons/optimized/surf-lesson-group.webp',
@@ -172,63 +173,92 @@ imageAlts: [
 'Surfera tomando una ola en Tamarindo',
 ],
 questions: [
+{ id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
 { id: 'surf_level', label: '¿Cuál es tu nivel de surf?', type: 'choice', options: ['Primera vez', 'Principiante', 'Intermedio', 'Avanzado'] },
 { id: 'lesson_goal', label: '¿Qué te gustaría aprender?', type: 'choice', options: ['Probar el surf', 'Mejorar las bases', 'Trabajar una habilidad específica'] },
-{ id: 'group_size', label: '¿Cuántos son?', type: 'number' },
-{ id: 'origin', label: '¿De dónde nos visitan?', type: 'text', placeholder: 'Ciudad y país' },
-{ id: 'preferred_fruit', label: '¿Qué fruta prefieren comer después de la clase?', type: 'multi', options: ['Piña', 'Bananas', 'Mangos', 'Cocos'] },
-{ id: 'preferred_schedule', label: '¿Qué horarios prefieren?', type: 'choice', options: ['AM', 'Medio día', 'Tarde'] },
+{ id: 'group_size', label: '¿Cuántos adultos y niños participan?', type: 'headcount', fields: [{ id: 'adults', label: 'Adultos' }, { id: 'children', label: 'Niños' }], note: 'Si participan niños, indicá sus edades para consultar los requisitos del proveedor.', agesLabel: 'Edades de los niños', agesPlaceholder: 'Ej.: 8 y 11' },
+{ id: 'lesson_format', label: '¿Prefieren una clase privada o grupal?', type: 'choice', options: ['Privada', 'Grupal', 'Queremos consultar ambas'] },
+{ id: 'instruction_language', label: '¿En qué idioma prefieren la instrucción?', type: 'choice', options: ['Español', 'Inglés', 'Nos adaptamos'] },
+{ id: 'swimming_comfort', label: '¿Cómo se sienten en el agua?', type: 'choice', options: ['Cómodos nadando', 'Con poca experiencia', 'Preferimos comentarlo con el instructor'] },
+{ id: 'transport_need', label: '¿Necesitan consultar por traslado?', type: 'choice', options: ['Sí', 'No'] },
+{ id: 'origin', label: '¿De dónde nos visitan?', type: 'text', placeholder: 'Ciudad y país', optional: true },
+{ id: 'preferred_fruit', label: 'Si se ofrece colación, ¿qué fruta prefieren?', type: 'multi', optional: true, options: ['Piña', 'Bananas', 'Mangos', 'Cocos', 'Sin preferencia'] },
+{ id: 'food_allergies', label: '¿Hay alergias o restricciones alimentarias?', type: 'text', placeholder: 'Opcional', optional: true },
+{ id: 'preferred_schedule', label: '¿Qué horario prefieren?', type: 'choice', options: ['Mañana', 'Mediodía', 'Tarde'] },
 { id: 'board_need', label: '¿Necesitarán una tabla?', type: 'choice', options: ['Sí', 'No, llevamos la nuestra', 'Necesitamos asesoramiento'] }
 ],
 en: {
 eyebrow: 'SURF LESSONS · TAMARINDO',
 title: 'Surf lessons',
 cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
-description: 'Lessons are designed so everyone gets in the water with simple, safe and friendly guidance. We adapt the session to your group’s level, the sea conditions and what you want to achieve: from trying surfing for the first time to building your basics and gaining confidence. We’ll also help you choose the right board if you don’t have equipment yet.',
+description: 'A lesson with a local surf instructor, a beach briefing and guided practice in the water, adapted to your group’s level. Board availability and a fruit snack, if offered, are confirmed with the provider.',
+lead: 'Includes a local instructor, an introduction to equipment and safety, and practice adapted to your level. A board during the session and a fruit snack afterwards are subject to operational confirmation.',
 imageAlts: [
 'Student practicing surfing in Tamarindo',
 'Two surfers practicing together on a wave in Tamarindo',
 'Surfer riding a wave in Tamarindo',
 ],
 questions: {
+preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
 surf_level: { label: 'What’s your surfing level?', options: ['First time', 'Beginner', 'Intermediate', 'Advanced'] },
 lesson_goal: { label: 'What would you like to learn?', options: ['Try surfing', 'Improve the basics', 'Work on a specific skill'] },
-group_size: { label: 'How many of you are there?' },
+group_size: { label: 'How many adults and children are joining?', fields: [{ id: 'adults', label: 'Adults' }, { id: 'children', label: 'Children' }], note: 'If children are joining, please share their ages so we can check the provider’s requirements.', agesLabel: 'Children’s ages', agesPlaceholder: 'e.g. 8 and 11' },
+lesson_format: { label: 'Would you prefer a private or group lesson?', options: ['Private', 'Group', 'We’d like to ask about both'] },
+instruction_language: { label: 'Which language would you prefer for instruction?', options: ['Spanish', 'English', 'We can adapt'] },
+swimming_comfort: { label: 'How comfortable are you in the water?', options: ['Comfortable swimming', 'Limited experience', 'We’d like to discuss it with the instructor'] },
+transport_need: { label: 'Would you like to ask about transportation?', options: ['Yes', 'No'] },
 origin: { label: 'Where are you visiting from?', placeholder: 'City and country' },
-preferred_fruit: { label: 'Which fruit would you like to eat after the lesson?', options: ['Pineapple', 'Bananas', 'Mangoes', 'Coconuts'] },
-preferred_schedule: { label: 'What times do you prefer?', options: ['AM', 'Midday', 'Afternoon'] },
+preferred_fruit: { label: 'If a snack is offered, which fruit would you prefer?', options: ['Pineapple', 'Bananas', 'Mangoes', 'Coconuts', 'No preference'] },
+food_allergies: { label: 'Do you have any allergies or dietary restrictions?', placeholder: 'Optional' },
+preferred_schedule: { label: 'What time do you prefer?', options: ['Morning', 'Midday', 'Afternoon'] },
 board_need: { label: 'Will you need a board?', options: ['Yes', 'No, we bring our own', 'We need advice'] }
 }
 }
 },
 {
 id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Entrenamiento de surf',
-cardText: 'Entrenamiento personalizado con video-análisis y estrategias para llevar tu surf al siguiente nivel.',
-description: 'Llevá tu surf al siguiente nivel con un entrenamiento personalizado. Análisis de técnica, video-coaching y estrategias para mejorar tu rendimiento en el agua con la ayuda de entrenadores expertos.',
-includes: ['Sesión de video de tu sesión', 'Análisis con un instructor personalizado en tu idioma', 'Video de recuerdo'],
+cardText: 'Entrenamiento personalizado con devolución técnica y una modalidad con o sin grabación, según disponibilidad.',
+description: 'Llevá tu surf al siguiente nivel con un coaching personalizado enfocado en tus objetivos, devolución técnica y consejos prácticos para trabajar durante la sesión.',
+lead: 'La duración, el spot, el formato de devolución, la cantidad de material y la modalidad con o sin video se confirman con el entrenador. Las fotos editadas, el transporte y la tabla pueden consultarse por separado.',
 images: ['assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/surf-coaching-session.webp', 'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp'],
 imageAlts: ['Tres surfistas saltando con sus tablas en la playa', 'Surfista surcando una ola sobre una tabla roja', 'Grupo de surfistas reuniéndose con sus tablas en la playa de Tamarindo'],
 imageAltsEn: ['Three surfers jumping with their boards on the beach', 'Surfer riding a wave on a red board', 'Group of surfers gathering with their boards on Tamarindo Beach'],
 questions: [
+{ id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
-{ id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Cuéntanos brevemente.' },
-{ id: 'session_schedule', label: '¿Qué horario vas a tener tu sesión?', type: 'choice', options: ['Mañana', 'Medio día', 'Tarde'] },
-{ id: 'analysis_time', label: '¿A qué hora te gustaría tener tu análisis?', type: 'choice', options: ['Inmediatamente después', 'Más tarde el mismo día', 'Al día siguiente'] },
-{ id: 'own_board', label: '¿Traerás tu propia tabla?', type: 'choice', options: ['Sí', 'No'] }
+{ id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Contanos brevemente.' },
+{ id: 'group_size', label: '¿Cuántas personas participan?', type: 'number', min: 1 },
+{ id: 'participant_levels', label: '¿Qué nivel tiene cada participante?', type: 'textarea', placeholder: 'Opcional', optional: true },
+{ id: 'coaching_mode', label: '¿Qué modalidad quieren consultar?', type: 'choice', options: ['Coaching técnico y devolución durante la sesión', 'Coaching con grabación y videoanálisis · consultar disponibilidad y precio'] },
+{ id: 'session_schedule', label: '¿Qué horario prefieren?', type: 'choice', options: ['Mañana', 'Mediodía', 'Tarde'] },
+{ id: 'date_flexibility', label: '¿Tienen flexibilidad de fecha?', type: 'choice', optional: true, options: ['Sí, somos flexibles', 'No, necesitamos esa fecha'] },
+{ id: 'preferred_spot', label: '¿Hay algún spot que quieran consultar?', type: 'text', placeholder: 'Opcional', optional: true },
+{ id: 'feedback_format', label: '¿Qué tipo de devolución quieren consultar?', type: 'choice', options: ['Devolución técnica durante la sesión', 'Videoanálisis posterior si la modalidad lo incluye'] },
+{ id: 'transport_need', label: '¿Necesitan consultar por traslado?', type: 'choice', options: ['Sí', 'No'] },
+{ id: 'own_board', label: '¿Traerán su propia tabla?', type: 'choice', options: ['Sí', 'No'] },
+{ id: 'edited_photos', label: '¿Quieren consultar por fotos editadas aparte?', type: 'choice', optional: true, options: ['Sí', 'No por ahora'] }
 ],
 en: {
 eyebrow: 'COACHING · PROGRESSION',
 title: 'Surf coaching',
-cardText: 'Personalized coaching with video analysis and strategies to take your surfing to the next level.',
-description: 'Take your surfing to the next level with personalized coaching. Technique analysis, video coaching and strategies to improve your performance in the water with expert coaches.',
+cardText: 'Personalized coaching with technical feedback and a format with or without filming, depending on availability.',
+description: 'Personalized surf coaching focused on your goals, with technical feedback and practical tips to work on during your session.',
+lead: 'Duration, spot, feedback format, amount of material and the format with or without video are confirmed with the coach. Edited photos, transportation and a board can be discussed separately.',
 imageAlts: ['Surfer riding a wave on a red board', 'Three surfers sharing a beach session with their boards', 'Group of surfers gathering with their boards on Tamarindo Beach'],
-includes: ['Video review of your session', 'Personalized analysis with an instructor in your language', 'Memory video'],
 questions: {
+preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
 current_surf_level: { label: 'What is your current surfing level?', options: ['Beginner', 'Intermediate', 'Advanced'] },
 improvement_goal: { label: 'What would you like to improve?', placeholder: 'Tell us briefly.' },
-session_schedule: { label: 'What time will your session be?', options: ['Morning', 'Midday', 'Afternoon'] },
-analysis_time: { label: 'When would you like to receive your analysis?', options: ['Right after', 'Later the same day', 'The next day'] },
-own_board: { label: 'Will you bring your own board?', options: ['Yes', 'No'] }
+group_size: { label: 'How many people are joining?', min: 1 },
+participant_levels: { label: 'What level is each participant?', placeholder: 'Optional' },
+coaching_mode: { label: 'Which format would you like to ask about?', options: ['Technical coaching and feedback during the session', 'Coaching with filming and video review · ask about availability and price'] },
+session_schedule: { label: 'What time do you prefer?', options: ['Morning', 'Midday', 'Afternoon'] },
+date_flexibility: { label: 'Are you flexible with the date?', options: ['Yes, we are flexible', 'No, we need that date'] },
+preferred_spot: { label: 'Is there a spot you would like to ask about?', placeholder: 'Optional' },
+feedback_format: { label: 'What type of feedback would you like to ask about?', options: ['Technical feedback during the session', 'Video review afterwards if the format includes it'] },
+transport_need: { label: 'Would you like to ask about transportation?', options: ['Yes', 'No'] },
+own_board: { label: 'Will you bring your own board?', options: ['Yes', 'No'] },
+edited_photos: { label: 'Would you like to ask about edited photos separately?', options: ['Yes', 'Not for now'] }
 }
 }
 },
@@ -705,7 +735,7 @@ confirmationLink: 'Si WhatsApp no se abrió, abrilo aquí.',
 error: 'Completá las respuestas necesarias para continuar.',
 waIntro: 'Hola WavePoint, quiero consultar por:', waName: 'Nombre:', waExtra: 'Información adicional:', waThanks: 'Gracias. Quedo atento/a.',
 galleryAlt: 'Clases de surf · imagen',
-surveyHeading: 'Llena nuestra pequeña encuesta',
+surveyHeading: 'Completá nuestra breve encuesta',
 surveyText: 'Con estas respuestas podemos preparar una consulta más clara para el instructor y hacer que la clase se sienta hecha para ustedes.',
 surveyOpen: 'Completar encuesta',
 modalTitle: 'Tu clase empieza acá.',
@@ -725,7 +755,7 @@ confirmationLink: 'If WhatsApp did not open, open it here.',
 error: 'Please complete the required answers to continue.',
 waIntro: 'Hi WavePoint, I’d like to ask about:', waName: 'Name:', waExtra: 'Additional information:', waThanks: 'Thank you. Looking forward to your reply.',
 galleryAlt: 'Surf lessons · image',
-surveyHeading: 'Fill out our quick survey',
+surveyHeading: 'Complete our quick survey',
 surveyText: 'With these answers we can prepare a clearer request for the instructor and make the lesson feel made for you.',
 surveyOpen: 'Complete the survey',
 modalTitle: 'Your lesson starts here.',
@@ -1077,6 +1107,17 @@ if (name) {
 }
 const naturalAnswers = {
   preferred_date: isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
+  lesson_date: isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
+  lesson_format: isSpanish ? 'Preferimos una clase' : 'We prefer a',
+  instruction_language: isSpanish ? 'Preferimos la instrucción en' : 'We prefer instruction in',
+  swimming_comfort: isSpanish ? 'Sobre nuestra comodidad en el agua,' : 'Regarding our comfort in the water,',
+  transport_need: isSpanish ? 'Sobre el traslado,' : 'Regarding transportation,',
+  food_allergies: isSpanish ? 'Sobre alergias o restricciones alimentarias,' : 'Regarding allergies or dietary restrictions,',
+  coaching_mode: isSpanish ? 'La modalidad de coaching que queremos consultar es' : 'The coaching format we’d like to ask about is',
+  participant_levels: isSpanish ? 'Los niveles de los participantes son' : 'The participants’ levels are',
+  date_flexibility: isSpanish ? 'Sobre la flexibilidad de fecha,' : 'Regarding date flexibility,',
+  feedback_format: isSpanish ? 'La devolución que queremos consultar es' : 'The feedback format we’d like to ask about is',
+  edited_photos: isSpanish ? 'Sobre las fotos editadas aparte,' : 'Regarding edited photos separately,',
   photo_mode: isSpanish ? 'La modalidad de fotografía que nos interesa es' : 'The photography format we’re interested in is',
   preferred_spot: isSpanish ? 'El lugar que preferimos es' : 'Our preferred location is',
   session_format: isSpanish ? 'El formato de sesión que preferimos es' : 'Our preferred session format is',
@@ -1145,6 +1186,18 @@ if (isAccommodation) {
 } else {
   service.questions.forEach(question => {
     const values = getValues(question);
+    if (question.type === 'headcount') {
+      const adults = form.elements[`${question.id}-adults`]?.value.trim();
+      const children = form.elements[`${question.id}-children`]?.value.trim();
+      const ages = form.elements[`${question.id}-ages`]?.value.trim();
+      if (adults || children) {
+        lines.push(isSpanish
+          ? `Participamos ${adults || '0'} adultos y ${children || '0'} niños.`
+          : `${adults || '0'} adults and ${children || '0'} children are joining.`);
+      }
+      if (ages) lines.push(isSpanish ? `Las edades de los niños son ${ages}.` : `The children’s ages are ${ages}.`);
+      return;
+    }
     if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
     const displayValues = question.type === 'dates'
       ? values.map(value => new Intl.DateTimeFormat(isSpanish ? 'es' : 'en', { dateStyle: 'long', timeZone: 'UTC' })

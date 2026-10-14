@@ -1,3 +1,12 @@
+## 2026-10-14
+### Formularios — clases de surf y surf coaching
+- `services.js`: se agregaron fecha, adultos y niños con edades, formato privado/grupal, idioma, comodidad en el agua, traslado, nivel por participante, flexibilidad, spot y modalidad con o sin video según corresponda.
+- Se hicieron opcionales procedencia, preferencia de fruta, alergias, niveles por participante, spot, flexibilidad y fotos editadas; se agregó «Sin preferencia» y se unificó «Mediodía».
+- Se retiraron los incluidos no confirmados del surf coaching y se reemplazaron por aclaraciones explícitas: duración, spot, devolución, material, video, tabla, transporte y fotos se confirman con el proveedor o entrenador.
+- `service-detail.html`: se renovó la caché de `services.js` para servir el formulario actualizado.
+- `services.js`: la solicitud de WhatsApp ahora redacta correctamente grupos con adultos, niños y edades, sin convertir tabla, fruta o video en promesas.
+- Validación: sintaxis de JavaScript, `git diff --check` y revisión de etiquetas operativas no confirmadas.
+
 ## 2026-10-13
 ### Navegación — renombrar Servicios a Explore experiences
 - `index.html`, `site-nav.js`, `service-detail.html`, `trip-builder.html`, `guia-playas.html` y `Enlaces/*.html`: la navegación, los enlaces de retorno y los CTAs visibles ahora presentan «Explore experiences» en inglés y «Explorá experiencias» en español, incluyendo desktop, menú móvil, footer y guía.
