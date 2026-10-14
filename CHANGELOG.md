@@ -2214,3 +2214,8 @@
 - `trip-builder.css`: se redujo levemente la altura del encabezado visual del carrito, su ilustración y el espaciado interno en escritorio para que el panel entre en pantallas de escritorio con poca altura; los overrides de móvil se conservan sin cambios.
 - `trip-builder.html`: se renovó la versión de caché de la hoja de estilos del armador.
 - Validación: revisión de dimensiones en viewport de escritorio, sintaxis de los scripts del sitio y `git diff --check`.
+## 2026-10-14
+### Aliados — sección más compacta en altura
+- `styles.css` y `styles.optimized.css`: se redujo únicamente el espacio vertical exterior y el margen inferior del subtítulo para que la sección quede más apretada contra sus contenidos.
+- No se modificaron el tamaño de las tarjetas, logos, textos, tipografías ni proporciones del carrusel; en móvil también se conserva todo el contenido.
+- Validación: revisión responsive, sintaxis de JavaScript y `git diff --check`.
