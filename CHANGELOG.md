@@ -1,4 +1,11 @@
 ## 2026-10-13
+### Navegación — renombrar Servicios a Explore experiences
+- `index.html`, `site-nav.js`, `service-detail.html`, `trip-builder.html`, `guia-playas.html` y `Enlaces/*.html`: la navegación, los enlaces de retorno y los CTAs visibles ahora presentan «Explore experiences» en inglés y «Explorá experiencias» en español, incluyendo desktop, menú móvil, footer y guía.
+- `script.js`, `lang-switch.js`, `services.js` y `trip-builder.js`: se sincronizaron traducciones, accesibilidad y textos de navegación entre experiencias sin cambiar IDs, rutas, parámetros ni nombres internos de datos.
+- Se renovaron las versiones cacheadas de los scripts afectados.
+- Validación: sintaxis de JavaScript, búsqueda de etiquetas visibles antiguas, rutas internas y `git diff --check`.
+
+## 2026-10-13
 ### Header — alinear Partners con el resto del menú
 - `styles.css` y `styles.optimized.css`: el ítem desplegable «Partners»/«Colaboradores» ahora usa el mismo eje vertical y altura de línea que los demás enlaces del header.
 - Se conserva el dropdown, el orden de navegación, el texto bilingüe y el indicador visual inferior.
