@@ -3663,3 +3663,10 @@ to{filter:brightness(1.18)}
   .hero-side-stack { width: 100%; gap: 10px; }
   .hero-camera-cta { min-height: 48px; padding: 0 10px; font-size: 13px; }
 }
+
+/* Aliados: reducir solo el aire vertical, sin tocar el tamaño del contenido. */
+.allies-ticker { padding: 12px 0 16px !important; }
+.allies-ticker-head .section-sub { margin-bottom: 4px !important; }
+@media (max-width: 640px) {
+  .allies-ticker { padding: 10px 0 12px !important; }
+}

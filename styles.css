@@ -9080,13 +9080,13 @@ footer a {
 /* Exact allies rail styling restored from commit 7c0d86e, with current asset paths. */
 /* Compact sponsor rail directly below the hero. */
 .allies-ticker {
-  padding: 24px 0 28px;
+  padding: 12px 0 16px;
   overflow: hidden;
   background: #082b3a;
   color: #f4fbf8;
 }
 .allies-ticker-head { position: relative; z-index: 1; }
-.allies-ticker .section-head, .allies-ticker-head .section-sub { margin-bottom: 10px; }
+.allies-ticker .section-head, .allies-ticker-head .section-sub { margin-bottom: 4px; }
 .allies-ticker .section-title { margin-bottom: 3px; color: #f4fbf8; font-size: clamp(24px, 3vw, 34px); }
 .allies-ticker .section-sub { max-width: 760px; color: rgba(234, 247, 242, .7); font-size: 13px; }
 .allies-ticker .sq { background: #48d7c1; }
@@ -9105,7 +9105,7 @@ footer a {
 .allies-ticker:hover .allies-ticker-track { animation-play-state: running; }
 @media (prefers-reduced-motion: reduce) { .allies-ticker-track { animation: none; } }
 @media (max-width: 640px) {
-  .allies-ticker { padding: 20px 0 24px; }
+  .allies-ticker { padding: 10px 0 12px; }
   .ally-tile { width: 170px; height: 66px; }
   .ally-tile img { width: 50px; height: 50px; flex-basis: 50px; }
   .ally-tile strong { font-size: 18px; }
@@ -9335,4 +9335,11 @@ footer a {
 @media (max-width: 640px) {
   .hero-side-stack { width: 100%; gap: 10px; }
   .hero-camera-cta { min-height: 48px; padding: 0 10px; font-size: 13px; }
+}
+
+/* Aliados: reducir solo el aire vertical, sin tocar el tamaño del contenido. */
+.allies-ticker { padding: 12px 0 16px !important; }
+.allies-ticker-head .section-sub { margin-bottom: 4px !important; }
+@media (max-width: 640px) {
+  .allies-ticker { padding: 10px 0 12px !important; }
 }
