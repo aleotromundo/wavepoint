@@ -124,7 +124,7 @@
   const translations = {
     es: {
       navInicio: 'Inicio',
-      navServicios: 'Servicios',
+      navServicios: 'Explorá experiencias',
       navGuia: 'Guía turística',
       navNosotros: 'Nosotros',
       navCameras: 'Cámaras en vivo',
@@ -414,7 +414,7 @@
     },
     en: {
       navInicio: 'Home',
-      navServicios: 'Services',
+      navServicios: 'Explore experiences',
       navGuia: 'Tourist guide',
       navNosotros: 'About us',
       navCameras: 'Live cameras',
