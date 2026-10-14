@@ -20,13 +20,13 @@
   const TEXTS = [
     { selector: '.navlinks > a[href$="#inicio"], .mobile-menu > a[href$="#inicio"]', es: 'Inicio', en: 'Home' },
     { selector: '.navlinks > a[href$="guia-playas.html"], .mobile-menu > a[href$="guia-playas.html"]', es: 'Guía turística', en: 'Tourist guide' },
-    { selector: '.navlinks > a[href$="#servicios"], .mobile-menu > a[href$="#servicios"]', es: 'Servicios', en: 'Services' },
+    { selector: '.navlinks > a[href$="#servicios"], .mobile-menu > a[href$="#servicios"]', es: 'Explorá experiencias', en: 'Explore experiences' },
     { selector: '.navlinks > a[href$="#nosotros"], .mobile-menu > a[href$="#nosotros"]', es: 'Nosotros', en: 'About us' },
     { selector: '.about-opening-copy > h2', es: '¿Quiénes somos?', en: 'Who are we?' },
     { selector: '.navlinks .dropbtn', es: 'Colaboradores ▾', en: 'Partners ▾' },
     { selector: '.mobile-dropdown-link', es: 'Colaboradores', en: 'Partners' },
     { selector: '.service-page-footer a[href$="index.html"]:not(.footer-logo-link):not(.logo-return)', es: '← Volver a WavePoint', en: '← Back to WavePoint' },
-    { selector: '.service-page-footer a[href$="index.html#servicios"]', es: '← Volver a Servicios', en: '← Back to Services' }
+    { selector: '.service-page-footer a[href$="index.html#servicios"]', es: '← Volver a explorar experiencias', en: '← Back to Explore experiences' }
   ];
   // Accessible names. They are only updated where the attribute already exists.
   const LABELS = [
