@@ -2224,3 +2224,7 @@
 - `styles.css` y `styles.optimized.css`: se corrigieron overrides antiguos que mantenían padding vertical amplio; ahora el título, subtítulo y carrusel quedan claramente más juntos sin reducir sus tamaños.
 - Se mantienen intactos los logos, tarjetas, textos y proporciones del contenido.
 - Validación: medición responsive, sintaxis de JavaScript y `git diff --check`.
+## 2026-10-14
+### Navegación — priorizar explorar experiencias
+- `script.js`: el enlace `Services/Servicios` del menú principal y mobile ahora se presenta como `Explore experiences/Explorá experiencias`, conservando el enlace a `#servicios`.
+- La guía, las cámaras y el resto de la navegación mantienen su posición y accesibilidad.
