@@ -1,6 +1,10 @@
 ## 2026-10-15
 ### Aliados — incorporar Adventours at Sea al carrusel
 ### Aliados — ampliar el logo de Adventours dentro de la tarjeta
+### Aliados — ampliar visualmente el logo de Adventours
+- `styles.css` y `styles.optimized.css`: se escala el logo un 20% dentro de su tarjeta blanca para mejorar su lectura en móvil y escritorio, conservando el nombre completo sin cambiar la tarjeta.
+- Validación: `git diff --check` y sintaxis JavaScript.
+
 - `styles.css` y `styles.optimized.css`: se elimina el padding vertical interno de la tarjeta de Adventours para que el logo panorámico aproveche toda la altura disponible, sin cambiar el ancho ni la altura de la tarjeta.
 - Validación: sintaxis JavaScript y `git diff --check`.
 
