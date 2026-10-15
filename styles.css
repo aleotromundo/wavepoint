@@ -1393,7 +1393,8 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 .newsletter-grid { grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr); }
 .newsletter-signup { min-width: 0; }
 .signup { padding: 6px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 12px; background: rgba(255, 255, 255, .12); backdrop-filter: blur(14px); }
-.signup input { min-height: 48px; border-radius: 8px; background: rgba(255, 255, 255, .94); }
+.signup input { min-height: 48px; border-radius: 8px; background: rgba(255, 255, 255, .94); color: #000; }
+.signup input::placeholder { color: #000; opacity: 1; }
 .signup button { min-height: 48px; border-radius: 8px; background: var(--wp-ocean); color: #fff; }
 .newsletter-status { margin: 10px 2px 0; color: rgba(255, 255, 255, .88); font-size: 13px; line-height: 1.45; }
 .newsletter-status.is-error { color: #ffd0ca; }
