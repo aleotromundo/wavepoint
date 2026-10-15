@@ -1,4 +1,12 @@
 ## 2026-10-14
+### Clases de surf y surfcoaching — condiciones y precios aclarados
+- `services.js`: las clases de surf ahora indican 2 horas, tabla incluida, acompañamiento desde el primer acercamiento al mar hasta el nivel intermedio, corrección de errores básicos y que el punto de encuentro se informa después de confirmar la reserva y el pago. Surfcoaching ahora describe sus dos momentos (sesión grabada y videoanálisis posterior), recomienda el servicio para surfistas intermedios o avanzados e indica USD 45 por persona con video y devolución incluidos.
+- `pricing-data.js`: se mantienen los precios existentes de clases de surf (USD 70, 65, 60, 55 y 50 por persona) y la tabla ahora presenta una única categoría de “5 o más”, con importes expresados en USD en lugar de “c/u”.
+- `index.html`, `script.js` y `api/assistant.js`: se actualizaron los resúmenes visibles, el texto bilingüe y el contexto del asistente para reflejar las condiciones confirmadas.
+- `styles.css` y `styles.optimized.css`: se agregó el bloque visual de información confirmada para la ficha de clases de surf.
+- Validación: sintaxis JavaScript, referencias y `git diff --check`.
+
+## 2026-10-14
 ### Formularios — clases de surf y surf coaching
 - `services.js`: se agregaron fecha, adultos y niños con edades, formato privado/grupal, idioma, comodidad en el agua, traslado, nivel por participante, flexibilidad, spot y modalidad con o sin video según corresponda.
 - Se hicieron opcionales procedencia, preferencia de fruta, alergias, niveles por participante, spot, flexibilidad y fotos editadas; se agregó «Sin preferencia» y se unificó «Mediodía».

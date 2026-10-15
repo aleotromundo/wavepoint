@@ -12,8 +12,7 @@
     { guests: 2, label: { es: 'Grupo de 2', en: 'Group of 2' }, mobileLabel: { es: '2 personas', en: '2 guests' } },
     { guests: 3, label: { es: 'Grupo de 3', en: 'Group of 3' }, mobileLabel: { es: '3 personas', en: '3 guests' } },
     { guests: 4, label: { es: 'Grupo de 4', en: 'Group of 4' }, mobileLabel: { es: '4 personas', en: '4 guests' } },
-    { guests: 5, label: { es: 'Grupo de 5', en: 'Group of 5' }, mobileLabel: { es: '5 personas', en: '5 guests' } },
-    { guests: 6, label: { es: 'Grupo de más de 5', en: 'Group of more than 5' }, mobileLabel: { es: 'Más de 5', en: 'Over 5' } }
+    { guests: 5, label: { es: '5 o más', en: '5 or more' }, mobileLabel: { es: '5 o más', en: '5 or more' } }
   ];
   const rows = [
     { rateId: 'surf-lessons', label: { es: 'Clases de surf', en: 'Surf lessons' } },
@@ -27,14 +26,14 @@
   const copy = {
     es: {
       heading: 'Tarifas de servicios',
-      description: 'Tarifas de referencia por persona en USD, según el tamaño del grupo.',
+      description: 'Tarifas de referencia por persona en USD, según el tamaño del grupo. En clases de surf, el precio baja hasta USD 50 por persona para grupos de 5 o más.',
       caption: 'Tarifas de servicios de WavePoint según cantidad de personas',
       service: 'Servicio',
       note: 'La disponibilidad y el precio final se confirman al consultar con el proveedor.'
     },
     en: {
       heading: 'Service rates',
-      description: 'Reference rates per person in USD, based on group size.',
+      description: 'Reference rates per person in USD, based on group size. Surf lessons drop to USD 50 per person for groups of 5 or more.',
       caption: 'WavePoint service rates by group size',
       service: 'Service',
       note: 'Availability and the final price are confirmed with the provider.'
@@ -82,7 +81,7 @@
         const cell = document.createElement('td');
         cell.dataset.label = group.mobileLabel[language];
         const rate = row.rateId ? rates[row.rateId][Math.min(group.guests, 6) - 1] : null;
-        cell.textContent = rate === null ? '—' : `${rate} c/u`;
+        cell.textContent = rate === null ? '—' : `${rate} USD`;
         tableRow.append(cell);
       });
       body.append(tableRow);
