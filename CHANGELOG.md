@@ -1,3 +1,13 @@
+## 2026-10-15
+### Aliados — incorporar Adventours at Sea al carrusel
+- `index.html`: se agrega Adventours at Sea en las dos copias del carrusel para conservar la animación continua, como aliado visual sin enlace ni destino.
+- `assets/img/collaborators/adventours/ally-adventours.webp`: logo suministrado por el usuario, recortado de la transparencia residual, optimizado para web y compuesto sobre fondo blanco.
+- `styles.css` y `styles.optimized.css`: la tarjeta de Adventours usa un ancho mayor que las demás, mantiene el logo panorámico completo con `object-fit: contain` y evita estados hover que sugieran interacción.
+### Validación
+- Se comprobó que la tarjeta Adventours no contiene ningún enlace.
+- Se comprobó que las dos copias del carrusel usan el nuevo asset y que la segunda permanece oculta para lectores de pantalla.
+- `node --check script.js`, `node --check services.js`, `node --check lang-switch.js` y `git diff --check` pasan correctamente.
+
 ## 2026-10-14
 ### Clases de surf y surfcoaching — condiciones y precios aclarados
 - `services.js`: las clases de surf ahora indican 2 horas, tabla incluida, acompañamiento desde el primer acercamiento al mar hasta el nivel intermedio, corrección de errores básicos y que el punto de encuentro se informa después de confirmar la reserva y el pago. Surfcoaching ahora describe sus dos momentos (sesión grabada y videoanálisis posterior), recomienda el servicio para surfistas intermedios o avanzados e indica USD 45 por persona con video y devolución incluidos.
