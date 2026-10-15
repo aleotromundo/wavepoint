@@ -29,14 +29,14 @@
       description: 'Tarifas de referencia por persona en USD, según el tamaño del grupo. En clases de surf, el precio baja hasta USD 50 por persona para grupos de 5 o más.',
       caption: 'Tarifas de servicios de WavePoint según cantidad de personas',
       service: 'Servicio',
-      note: 'La disponibilidad y el precio final se confirman al consultar con el proveedor.'
+      note: 'Las tarifas son de referencia y están expresadas en dólares estadounidenses (USD), por persona y según el tamaño del grupo. “c/u” significa “cada uno”. En el caso de los ATV, consultanos: el precio se calcula por vehículo, según la duración y si viaja una o dos personas.<br><br>Para organizar tu experiencia, contanos qué actividad te interesa, la fecha y cuántas personas participan. WAVEPOINT revisa la disponibilidad y coordina los detalles con vos por WhatsApp.<br><br>Antes de realizar cualquier pago, te confirmamos el precio total, qué incluye la actividad, el horario y el punto de encuentro. También te informamos los requisitos para participar, cualquier costo adicional y las condiciones de pago, cambios y cancelación.<br><br>Consultar no requiere un pago ni confirma una reserva. Una vez acordados los detalles, te indicamos cómo completar el pago y confirmar tu experiencia.'
     },
     en: {
       heading: 'Service rates',
       description: 'Reference rates per person in USD, based on group size. Surf lessons drop to USD 50 per person for groups of 5 or more.',
       caption: 'WavePoint service rates by group size',
       service: 'Service',
-      note: 'Availability and the final price are confirmed with the provider.'
+      note: 'Rates are reference prices expressed in United States dollars (USD), per person and according to group size. “c/u” means “each person”. For ATVs, please ask us: the price is calculated per vehicle, based on the duration and whether one or two people are riding.<br><br>To organize your experience, tell us which activity interests you, the date and how many people are participating. WAVEPOINT checks availability and coordinates the details with you through WhatsApp.<br><br>Before making any payment, we confirm the total price, what the activity includes, the schedule and the meeting point. We also explain the participation requirements, any additional costs, and the payment, change and cancellation conditions.<br><br>Asking for information does not require payment or confirm a booking. Once the details are agreed, we explain how to complete the payment and confirm your experience.'
     }
   };
 
@@ -59,7 +59,7 @@
     heading.textContent = text.heading;
     description.textContent = text.description;
     caption.textContent = text.caption;
-    note.textContent = text.note;
+    note.innerHTML = text.note;
 
     header.replaceChildren();
     [text.service, ...groups.map(group => group.label[language])].forEach(label => {
