@@ -566,7 +566,8 @@ to{transform:translate3d(1.5%,-1%,0) scale(1.06)}
 .faq-list details p{margin:12px 0 0;color:#405d66;font-size:14px;line-height:1.65}
 @media(max-width:820px){.request-flow-grid{grid-template-columns:1fr}.request-flow-card{min-height:0}}
 .signup{padding:6px;border:1px solid rgba(255,255,255,.24);border-radius:12px;background:rgba(255,255,255,.12);backdrop-filter:blur(14px)}
-.signup input{min-height:48px;border-radius:8px;background:rgba(255,255,255,.94)}
+.signup input{min-height:48px;border-radius:8px;background:rgba(255,255,255,.94);color:#000}
+.signup input::placeholder{color:#000;opacity:1}
 .signup button{min-height:48px;border-radius:8px;background:var(--wp-ocean);color:#fff}
 footer{padding:62px 0 28px;background:#082b3a}
 .foot-brand{font-size:32px;font-weight:700}
