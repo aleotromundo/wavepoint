@@ -9358,7 +9358,7 @@ footer a {
 /* Adventours: aliado sin enlace, con logo panorámico completo sobre blanco. */
 .ally-tile.ally-adventours {
   width: 306px !important;
-  padding: 7px !important;
+  padding: 0 7px !important;
   justify-content: center !important;
   gap: 0 !important;
   background: #fff !important;
@@ -9378,5 +9378,5 @@ footer a {
   object-position: center !important;
 }
 @media (max-width: 640px) {
-  .ally-tile.ally-adventours { width: 272px !important; height: 76px !important; padding: 6px !important; }
+  .ally-tile.ally-adventours { width: 272px !important; height: 76px !important; padding: 0 6px !important; }
 }

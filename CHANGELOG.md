@@ -1,5 +1,9 @@
 ## 2026-10-15
 ### Aliados — incorporar Adventours at Sea al carrusel
+### Aliados — ampliar el logo de Adventours dentro de la tarjeta
+- `styles.css` y `styles.optimized.css`: se elimina el padding vertical interno de la tarjeta de Adventours para que el logo panorámico aproveche toda la altura disponible, sin cambiar el ancho ni la altura de la tarjeta.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
 - `index.html`: se agrega Adventours at Sea en las dos copias del carrusel para conservar la animación continua, como aliado visual sin enlace ni destino.
 - `assets/img/collaborators/adventours/ally-adventours.webp`: logo suministrado por el usuario, recortado de la transparencia residual, optimizado para web y compuesto sobre fondo blanco.
 - `styles.css` y `styles.optimized.css`: la tarjeta de Adventours usa un ancho mayor que las demás, mantiene el logo panorámico completo con `object-fit: contain` y evita estados hover que sugieran interacción.
