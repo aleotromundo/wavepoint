@@ -9376,7 +9376,7 @@ footer a {
   border-radius: 7px !important;
   object-fit: contain !important;
   object-position: center !important;
-  transform: scale(1.2) !important;
+  transform: scale(1.35) !important;
 }
 @media (max-width: 640px) {
   .ally-tile.ally-adventours { width: 272px !important; height: 76px !important; padding: 0 6px !important; }
