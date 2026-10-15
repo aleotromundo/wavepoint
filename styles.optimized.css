@@ -2368,7 +2368,7 @@ html:not(.service-card-scroll-enabled) #servicios .service-grid-catalog>.service
 .about-scroll-note{padding:10px 7px;border:1px solid rgba(231,249,247,.28);border-radius:999px;background:rgba(4,26,39,.82);color:#fff}
 .about-scroll-note span{line-height:1}
 .after-card-cta,.service-pack-tag,.service-rates-badge,.service-rates-kicker{font-size:13px;line-height:1.4}
-.service-rates-note{color:#e8f5f0;font-size:13px;line-height:1.6}
+.service-rates-note{color:#e8f5f0;font-size:13px;line-height:1.6}.service-rates-note p{margin:0}.service-rates-note p+p{margin-top:12px;padding-top:12px;border-top:1px solid rgba(231,245,239,.14)}.service-rates-note strong{color:#ffd98a;font-weight:800}
 .service-rates tbody td,.service-rates tbody td::before{font-size:12px}
 .service-rates tbody td::before{color:#d8f2e9}
 .service-rates-heading p{color:#e8f5f0}
