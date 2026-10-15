@@ -3,6 +3,11 @@
 ### Aliados — ampliar el logo de Adventours dentro de la tarjeta
 ### Aliados — ampliar visualmente el logo de Adventours
 ### Aliados — ampliar nuevamente el logo de Adventours y renovar caché
+### Aliados — duplicar el tamaño visual del logo de Adventours
+- `styles.css` y `styles.optimized.css`: el logo se escala a 2x dentro de la tarjeta blanca, manteniendo el rectángulo y un margen visible alrededor.
+- `index.html`: se renueva la versión de caché para forzar la actualización en producción.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
 - `styles.css` y `styles.optimized.css`: el logo pasa de escala 1.2 a 1.35 dentro de la tarjeta blanca, conservando margen visual y sin modificar el rectángulo.
 - `index.html`: se renueva la versión de caché de `styles.optimized.css` para que el ajuste sea visible inmediatamente.
 - Validación: sintaxis JavaScript y `git diff --check`.
