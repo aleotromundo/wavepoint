@@ -33,7 +33,6 @@ Si estás leyendo este repositorio para continuar un trabajo, seguí este orden 
 - `script.js`: comportamiento global, traducciones, clima, cámaras, navegación y modales.
 - `lang-switch.js`: selector ES/EN compartido.
 - `styles.css`: diseño, responsive, animaciones y accesibilidad visual.
-- `api/assistant.js`: endpoint serverless del asistente.
 - `vercel.json`, `robots.txt`, `sitemap.xml`: despliegue y SEO técnico.
 
 No hay framework ni build obligatorio: el sitio se sirve como archivos estáticos desde la raíz.
