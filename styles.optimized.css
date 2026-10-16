@@ -3674,29 +3674,3 @@ to{filter:brightness(1.18)}
 }
 /* Clases de surf · información confirmada del servicio */
 .surf-lesson-details{max-width:900px;margin:28px auto 0;padding:22px 24px;border:1px solid rgba(8,127,128,.18);border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(224,244,238,.62));box-shadow:0 12px 28px rgba(8,43,58,.09)}.surf-lesson-details .service-supporting-lead{margin:0;color:#294b57;font-size:16px;line-height:1.65}.surf-lesson-details ul{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}.surf-lesson-details li{padding:7px 11px;border:1px solid rgba(8,127,128,.18);border-radius:999px;background:rgba(255,255,255,.58);color:#244f59;font-size:13px}@media (max-width:640px){.surf-lesson-details{margin-top:20px;padding:17px}.surf-lesson-details .service-supporting-lead{font-size:15px;line-height:1.55}.surf-lesson-details ul{display:grid;gap:7px}.surf-lesson-details li{border-radius:12px}}
-/* Adventours: aliado sin enlace, con logo panorámico completo sobre blanco. */
-.ally-tile.ally-adventours {
-  width: 306px !important;
-  padding: 0 7px !important;
-  justify-content: center !important;
-  gap: 0 !important;
-  background: #fff !important;
-  border-color: rgba(160, 231, 216, .34) !important;
-  cursor: default;
-}
-.ally-tile.ally-adventours:hover {
-  transform: none !important;
-  background: #fff !important;
-}
-.ally-tile.ally-adventours img {
-  width: 100% !important;
-  height: 100% !important;
-  flex: 1 1 auto !important;
-  border-radius: 7px !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  transform: scale(2) !important;
-}
-@media (max-width: 640px) {
-  .ally-tile.ally-adventours { width: 272px !important; height: 76px !important; padding: 0 6px !important; }
-}
