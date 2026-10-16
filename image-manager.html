@@ -13,41 +13,520 @@
 <meta name="robots" content="noindex,nofollow">
 <title>WavePoint · Gestor de fotos</title>
 <style>
-:root{--ink:#15242c;--muted:#68757b;--paper:#f6f8f7;--surface:#fff;--line:#dce5e2;--sea:#006e78;--sea-soft:#e4f2f0;--sand:#c47f45;--shadow:0 18px 50px #16333a12;--radius:20px}
-*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1480px;margin:auto;padding:34px clamp(18px,4vw,64px) 64px}.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:30px}.eyebrow{margin:0 0 8px;color:var(--sea);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.topbar h1{margin:0;font:clamp(34px,5vw,62px)/.98 Georgia,serif;letter-spacing:-.045em}.intro{max-width:650px;margin:16px 0 0;color:var(--muted);font-size:16px}.top-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.btn{border:1px solid var(--line);border-radius:999px;padding:10px 15px;background:var(--surface);color:var(--ink);font-weight:700;transition:.2s ease}.btn:hover{border-color:var(--sea);color:var(--sea);transform:translateY(-1px)}.btn.primary{background:var(--sea);border-color:var(--sea);color:#fff}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px}.stat{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 28px #16333a08}.stat strong{display:block;font-size:28px;letter-spacing:-.05em}.stat span{color:var(--muted);font-size:12px}.controls{position:sticky;top:12px;z-index:3;display:grid;grid-template-columns:minmax(240px,1fr) 180px 170px auto;gap:10px;padding:12px;margin-bottom:26px;background:#f6f8f7e8;border:1px solid #dce5e2cc;border-radius:16px;backdrop-filter:blur(16px)}.field{min-width:0}.field input,.field select{width:100%;height:44px;border:1px solid var(--line);border-radius:12px;padding:0 13px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:var(--sea);box-shadow:0 0 0 4px var(--sea-soft)}.filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.filter{height:40px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-weight:700}.filter.active{background:var(--ink);border-color:var(--ink);color:#fff}.view-note{margin:0 0 16px;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:16px}.card{overflow:hidden;position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);transition:.2s ease}.card:hover{transform:translateY(-3px);box-shadow:0 24px 60px #16333a18}.card.selected{outline:3px solid var(--sand);outline-offset:2px}.thumb{position:relative;aspect-ratio:1.25;overflow:hidden;background:#dce8e6}.thumb img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease}.card:hover .thumb img{transform:scale(1.04)}.badge{position:absolute;top:11px;left:11px;padding:5px 9px;border-radius:999px;background:#ffffffdf;color:var(--ink);font-size:11px;font-weight:800;backdrop-filter:blur(8px)}.badge.available{background:#fff3e5;color:#91531d}.card-body{padding:15px}.card-title{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.card h3{margin:0;font-size:14px;line-height:1.25;word-break:break-word}.section{margin:5px 0 0;color:var(--sea);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.path{margin:9px 0 0;color:var(--muted);font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}.usage{margin:10px 0 0;color:var(--muted);font-size:12px}.card-actions{display:flex;gap:7px;margin-top:14px}.small{flex:1;padding:8px 9px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:12px;font-weight:800}.small:hover{border-color:var(--sea);color:var(--sea)}.small.replace{background:var(--sea-soft);border-color:#b8dcd7;color:#005c64}.empty{padding:60px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px;background:#fff}.modal-backdrop{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:20px;background:#12252bcc;opacity:0;pointer-events:none;transition:.2s}.modal-backdrop.open{opacity:1;pointer-events:auto}.modal{width:min(780px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#fff;border-radius:24px;box-shadow:0 30px 90px #00161d66}.modal-head{display:flex;justify-content:space-between;gap:20px;padding:22px 24px 16px;border-bottom:1px solid var(--line)}.modal-head h2{margin:0;font:32px/1 Georgia,serif;letter-spacing:-.04em}.close{width:38px;height:38px;border:0;border-radius:50%;background:var(--paper);font-size:22px;color:var(--ink)}.modal-content{padding:24px}.preview{width:100%;max-height:340px;object-fit:cover;border-radius:16px;background:#e9f0ee}.detail-meta{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.pill{padding:6px 9px;border-radius:999px;background:var(--sea-soft);color:#075962;font-size:12px;font-weight:800}.meta-block{padding:15px 0;border-top:1px solid var(--line)}.meta-block h3{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.1em}.usage-list{display:flex;gap:7px;flex-wrap:wrap}.usage-list code{padding:5px 7px;border-radius:7px;background:var(--paper);color:var(--muted);font-size:11px}.search-links{display:flex;flex-wrap:wrap;gap:8px}.search-links a{display:inline-flex;padding:9px 12px;border:1px solid var(--line);border-radius:10px;color:var(--sea);font-weight:800;text-decoration:none}.search-links a:hover{border-color:var(--sea);background:var(--sea-soft)}.upload-box{padding:16px;border:1px dashed #a9c9c5;border-radius:14px;background:#f3faf8}.upload-box input{max-width:100%}.selected-target{margin-bottom:16px;padding:14px;border-radius:12px;background:#fff5e9;color:#704315;font-size:13px}.toast{position:fixed;right:22px;bottom:22px;z-index:30;padding:13px 16px;border-radius:12px;background:var(--ink);color:#fff;box-shadow:0 15px 40px #00161d44;transform:translateY(20px);opacity:0;pointer-events:none;transition:.2s}.toast.show{transform:none;opacity:1}.footer-note{margin-top:28px;color:var(--muted);font-size:12px}.footer-note code{color:var(--ink)}
-@media(max-width:900px){.topbar{display:block}.top-actions{justify-content:flex-start;margin-top:20px}.stats{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr 1fr}.controls .field:first-child{grid-column:1/-1}}@media(max-width:560px){.shell{padding:24px 14px 48px}.stats{gap:8px}.stat{padding:14px}.stat strong{font-size:23px}.controls{position:static;grid-template-columns:1fr}.controls .field:first-child{grid-column:auto}.grid{grid-template-columns:1fr 1fr;gap:10px}.card-body{padding:11px}.card-actions{display:block}.small{width:100%;margin-top:6px}.modal-head{padding:18px}.modal-content{padding:18px}.modal-head h2{font-size:26px}}
+:root{--ink:#15242c;--muted:#5d6a70;--paper:#f6f8f7;--surface:#fff;--line:#dce5e2;--sea:#006e78;--sea-dark:#005961;--sea-soft:#e4f2f0;--sand:#c47f45;--sand-soft:#fff3e5;--sand-ink:#7a4513;--danger:#a63a2b;--radius:16px}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--paper);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+button:disabled{cursor:not-allowed;opacity:.45}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.muted{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-@media(max-width:560px){body{padding-bottom:env(safe-area-inset-bottom)}.shell{padding:20px 12px 40px}.topbar h1{font-size:42px}.intro{font-size:15px}.top-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.top-actions .btn{min-height:46px;padding:9px 10px}.stats{grid-template-columns:repeat(2,1fr);margin-bottom:16px}.stat strong{font-size:24px}.stat span{font-size:11px}.controls{margin:0 -1px 20px;padding:10px;gap:8px}.filters{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.filter{height:42px;padding:0 5px;font-size:12px}.grid{grid-template-columns:1fr;gap:12px}.card{border-radius:16px}.thumb{aspect-ratio:1.5}.card-body{padding:14px}.card-actions{display:grid;grid-template-columns:1fr 1.2fr;gap:8px}.small{width:auto!important;min-height:44px;margin:0!important}.modal-backdrop{align-items:end;padding:0}.modal{width:100%;max-height:92vh;border-radius:24px 24px 0 0;padding-bottom:env(safe-area-inset-bottom)}.modal-head{position:sticky;top:0;background:#fff;z-index:1}.modal-content{padding:16px}.preview{max-height:250px}.search-links a{min-height:44px;align-items:center}.btn{min-height:44px}}
+/* Página */
+.shell{max-width:1360px;margin:auto;padding:32px clamp(16px,4vw,56px) 64px}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px}
+h1{margin:0;font:400 clamp(30px,4.5vw,48px)/1.05 Georgia,serif;letter-spacing:-.03em}
+.intro{max-width:620px;margin:12px 0 0;color:var(--muted);font-size:16px}
+.top-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-weight:700;transition:border-color .15s,background .15s}
+.btn:hover:not(:disabled){border-color:var(--sea);color:var(--sea-dark)}
+.btn.primary{background:var(--sea);border-color:var(--sea);color:#fff}
+.btn.primary:hover:not(:disabled){background:var(--sea-dark);border-color:var(--sea-dark);color:#fff}
+.btn.ghost{border-color:transparent;background:none}
+.btn.danger{color:var(--danger)}
+.btn.danger:hover:not(:disabled){border-color:var(--danger);color:var(--danger)}
+.count{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 7px;border-radius:999px;background:var(--sea-soft);color:var(--sea-dark);font-size:13px}
+.btn.primary .count{background:#ffffff30;color:#fff}
+.link{border:0;background:none;padding:0;color:var(--sea-dark);font-weight:700;text-decoration:underline}
+
+/* Filtros */
+.controls{position:sticky;top:10px;z-index:3;display:grid;grid-template-columns:minmax(220px,1fr) 210px auto;gap:10px;padding:10px;margin-bottom:12px;background:#f6f8f7ee;border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(14px)}
+.controls input,.controls select{width:100%;height:44px;border:1px solid var(--line);border-radius:12px;padding:0 13px;background:#fff}
+.seg{display:flex;gap:2px;padding:3px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.seg button{height:36px;padding:0 14px;border:0;border-radius:9px;background:none;color:var(--muted);font-weight:700;white-space:nowrap}
+.seg button.on{background:var(--ink);color:#fff}
+.seg small{margin-left:5px;font-weight:600;opacity:.7}
+.view-note{margin:0 0 14px;color:var(--muted);font-size:13px;min-height:20px}
+
+/* Galería */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;padding:0;overflow:hidden;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--radius);transition:border-color .15s,box-shadow .15s}
+.card:hover{border-color:var(--sea);box-shadow:0 10px 30px #16333a18}
+.card.planned{border-color:var(--sand);box-shadow:0 0 0 2px var(--sand)}
+.thumb,.pthumb{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#dce8e6}
+.thumb img,.pthumb img,.mini img,.pimg img,.cthumb img{display:block;width:100%;height:100%;object-fit:cover}
+.broken{display:grid;place-items:center;background:repeating-linear-gradient(135deg,#e4ecea 0 10px,#dce5e2 10px 20px)}
+.broken::after{content:"Sin vista previa";color:var(--muted);font-size:12px;text-align:center;padding:4px}
+.cthumb.broken::after,.mini.broken::after{content:""}
+.badges{position:absolute;top:10px;left:10px;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.badge{padding:4px 9px;border-radius:999px;background:#ffffffe8;font-size:11px;font-weight:800}
+.badge.free{background:var(--sand-soft);color:var(--sand-ink)}
+.badge.plan{background:var(--sand);color:#fff}
+.mini{position:absolute;right:10px;bottom:10px;display:block;width:64px;height:48px;overflow:hidden;border:3px solid #fff;border-radius:10px;background:#dce8e6;box-shadow:0 4px 14px #0003}
+.card-body{display:block;padding:12px 14px 14px}
+.cname{display:block;font-size:14px;font-weight:700;line-height:1.3;word-break:break-word}
+.cmeta{display:block;margin-top:2px;color:var(--muted);font-size:12px}
+.empty{padding:40px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px;background:#fff}
+.empty.wide{grid-column:1/-1}
+.empty .btn{margin-top:14px}
+
+/* Ventanas (detalle y plan) */
+.backdrop{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:20px;background:#12252bb3;opacity:0;visibility:hidden;transition:opacity .18s,visibility .18s}
+.backdrop.open{opacity:1;visibility:visible}
+.backdrop.side{place-items:stretch end;padding:0}
+.sheet{display:flex;flex-direction:column;width:min(940px,100%);max-height:calc(100dvh - 40px);overflow:hidden;background:#fff;border-radius:22px;box-shadow:0 30px 90px #00161d66;transform:translateY(12px);transition:transform .2s}
+.backdrop.open .sheet{transform:none}
+.sheet.drawer{width:min(520px,100%);height:100dvh;max-height:none;border-radius:22px 0 0 22px;transform:translateX(24px)}
+.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.sheet-head h2{margin:0;font:400 26px/1.1 Georgia,serif;letter-spacing:-.02em}
+.sheet-head p{margin:4px 0 0;color:var(--muted);font-size:13px;word-break:break-all}
+.close{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:var(--paper);font-size:24px;line-height:1}
+.close:hover{background:var(--sea-soft)}
+.sheet-body{flex:1;overflow:auto;padding:20px 22px}
+.sheet-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:14px 22px;border-top:1px solid var(--line);background:#fff}
+.foot-r{display:flex;gap:8px;margin-left:auto}
+
+/* Antes / después */
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pane{margin:0;min-width:0}
+.pane figcaption{font-size:13px;font-weight:800}
+.pimg{height:clamp(150px,26vh,260px);margin-top:6px;overflow:hidden;border-radius:14px;background:#e9f0ee}
+.pimg.empty-slot{display:grid;place-items:center;padding:14px;text-align:center;color:var(--muted);font-size:13px;background:#f3faf8;border:2px dashed #b8cfcb}
+.pane-name{margin:6px 0 0;font-size:13px;font-weight:700;word-break:break-all}
+.info{display:grid;gap:10px;margin-top:14px;font-size:13px}
+.pills,.usage-list{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.pill{padding:4px 10px;border-radius:999px;background:var(--sea-soft);color:#075962;font-size:12px;font-weight:800}
+.pill.sand{background:var(--sand-soft);color:var(--sand-ink)}
+.usage-list code,.path{padding:4px 8px;border-radius:7px;background:var(--paper);color:var(--muted);font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+.path-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.small{min-height:36px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:13px;font-weight:700}
+.small:hover{border-color:var(--sea);color:var(--sea-dark)}
+
+/* Opciones para elegir la foto nueva */
+.tabs{display:flex;gap:4px;margin:20px 0 16px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{flex:none;margin-bottom:-1px;padding:10px 14px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);font-weight:700}
+.tab.on{color:var(--sea-dark);border-color:var(--sea)}
+.hint{margin:0 0 12px;color:var(--muted);font-size:13px}
+.pick-tools{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.pick-tools input{flex:1;height:42px;border:1px solid var(--line);border-radius:12px;padding:0 13px}
+.pick-tools span{color:var(--muted);font-size:13px;white-space:nowrap}
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.pick{display:flex;flex-direction:column;padding:0;overflow:hidden;text-align:left;background:#fff;border:2px solid transparent;border-radius:12px;box-shadow:0 0 0 1px var(--line)}
+.pick:hover{box-shadow:0 0 0 1px var(--sea)}
+.pick.on{border-color:var(--sand);box-shadow:0 0 0 1px var(--sand)}
+.pthumb .badge{position:absolute;top:6px;left:6px}
+.check{position:absolute;top:6px;right:6px;display:none;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--sand);color:#fff;font-weight:800}
+.pick.on .check{display:grid}
+.pk-name{display:block;padding:6px 8px 0;font-size:12px;font-weight:700;line-height:1.25;word-break:break-all}
+.pk-sec{display:block;padding:0 8px 8px;color:var(--muted);font-size:11px}
+.drop{display:grid;justify-items:center;gap:6px;padding:34px 16px;text-align:center;cursor:pointer;border:2px dashed #a9c9c5;border-radius:16px;background:#f3faf8}
+.drop.over{background:var(--sea-soft);border-color:var(--sea)}
+.drop:focus-within{outline:3px solid var(--sea);outline-offset:2px}
+.drop strong{font-size:16px}
+.drop span{color:var(--muted)}
+.drop .btn{margin-top:8px;color:#fff;pointer-events:none}
+.online-q{width:100%;height:44px;margin-bottom:12px;border:1px solid var(--line);border-radius:12px;padding:0 13px}
+.search-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.search-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:12px;color:var(--sea-dark);font-weight:800;text-decoration:none}
+.search-links a:hover{border-color:var(--sea);background:var(--sea-soft)}
+
+/* Pie de la ventana de detalle */
+.chosen{display:flex;align-items:center;gap:10px;min-width:0;flex:1;font-size:13px}
+.chosen-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}
+.cthumb{display:block;flex:none;width:64px;height:48px;overflow:hidden;border-radius:8px;background:#dce8e6}
+.cthumb.sm{width:44px;height:33px}
+
+/* Plan de cambios */
+.change{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.pair{display:flex;align-items:center;gap:6px}
+.arrow{color:var(--muted)}
+.ctext p{margin:0;font-size:13px;word-break:break-all}
+.ctext .warn{margin-top:4px;color:var(--sand-ink)}
+.cact{grid-column:1/-1;display:flex;gap:8px}
+
+.toast{position:fixed;left:50%;bottom:22px;z-index:40;max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;background:var(--ink);color:#fff;font-size:14px;box-shadow:0 15px 40px #00161d44;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.2s}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+@media(max-width:760px){
+  .controls{position:static;grid-template-columns:1fr}
+  .seg{overflow-x:auto}
+  .seg button{flex:1}
+}
+@media(max-width:640px){
+  .shell{padding:22px 14px 48px}
+  .topbar{flex-direction:column}
+  .top-actions{justify-content:flex-start}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .card-body{padding:10px 12px 12px}
+  .mini{width:48px;height:36px}
+  .backdrop{place-items:end;padding:0}
+  .sheet,.sheet.drawer{width:100%;height:auto;max-height:94dvh;border-radius:22px 22px 0 0;transform:translateY(24px)}
+  .backdrop.side{place-items:end}
+  .sheet-head,.sheet-body{padding-left:16px;padding-right:16px}
+  .sheet-foot{padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+  .panes{gap:10px}
+  .pimg{height:130px}
+  .pick-grid{grid-template-columns:1fr 1fr}
+  .foot-r{width:100%}
+  .foot-r .btn{flex:1}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <main class="shell">
-<header class="topbar"><div><p class="eyebrow">WavePoint · herramienta interna</p><h1>Elegir mejores fotos.</h1><p class="intro">Inventario de fotos activas del sitio. Seleccioná una imagen publicada, comparala con otra, cargá una nueva o buscá una alternativa en fuentes gratuitas antes de preparar un reemplazo.</p></div><div class="top-actions"><button class="btn" id="installBtn" hidden>Instalar app</button><button class="btn" id="exportBtn">Exportar plan</button><button class="btn primary" id="uploadBtn">Subir foto</button><input id="globalUpload" type="file" accept="image/*" hidden></div></header>
-<section class="stats" aria-label="Resumen del inventario"><div class="stat"><strong id="totalStat">0</strong><span>fotos activas</span></div><div class="stat"><strong id="usedStat">0</strong><span>usadas en la web</span></div><div class="stat"><strong id="freeStat">0</strong><span>activas disponibles</span></div><div class="stat"><strong id="changeStat">0</strong><span>cambios preparados</span></div></section>
-<section class="controls" aria-label="Filtros del inventario"><div class="field"><input id="search" type="search" placeholder="Buscar por nombre, sección o ruta…"></div><div class="field"><select id="section"><option value="all">Todas las secciones</option></select></div><div class="field"><select id="status"><option value="all">Todas las fotos</option><option value="used">En uso</option><option value="available">Disponibles</option></select></div><div class="filters"><button class="filter active" data-filter="all">Todas</button><button class="filter" data-filter="used">En uso</button><button class="filter" data-filter="available">Disponibles</button></div></section>
-<p class="view-note" id="viewNote"></p><section class="grid" id="grid" aria-live="polite"></section><p class="footer-note">Las selecciones se guardan en este navegador. <code>Exportar plan</code> descarga un JSON para aplicar los cambios con control, sin tocar el sitio automáticamente.</p>
+  <header class="topbar">
+    <div>
+      <h1>Fotos de WavePoint</h1>
+      <p class="intro">Tocá una foto para cambiarla por otra. Los cambios quedan en un plan que descargás al final; el sitio no se modifica solo.</p>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="installBtn" hidden>Instalar app</button>
+      <button class="btn" id="planBtn">Plan de cambios <span class="count" id="planCount">0</span></button>
+    </div>
+  </header>
+
+  <section class="controls" aria-label="Buscar y filtrar">
+    <input id="search" type="search" placeholder="Buscar por nombre, sección o ruta" aria-label="Buscar fotos">
+    <select id="section" aria-label="Sección"></select>
+    <div class="seg" id="seg" role="group" aria-label="Estado de la foto"></div>
+  </section>
+  <p class="view-note" id="viewNote" aria-live="polite"></p>
+  <section class="grid" id="grid"></section>
 </main>
-<div class="modal-backdrop" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><header class="modal-head"><h2 id="modalTitle">Detalle</h2><button class="close" id="closeModal" aria-label="Cerrar">×</button></header><div class="modal-content" id="modalContent"></div></section></div><div class="toast" id="toast" role="status"></div>
+
+<div class="backdrop" id="modalBackdrop">
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="sheet-head">
+      <div><h2 id="modalTitle">Cambiar foto</h2><p id="modalSub"></p></div>
+      <button class="close" id="closeModal" aria-label="Cerrar">×</button>
+    </header>
+    <div class="sheet-body" id="modalContent"></div>
+    <footer class="sheet-foot" id="modalFoot"></footer>
+  </section>
+</div>
+
+<div class="backdrop side" id="planBackdrop">
+  <section class="sheet drawer" role="dialog" aria-modal="true" aria-labelledby="planTitle">
+    <header class="sheet-head">
+      <div><h2 id="planTitle">Plan de cambios</h2><p>Se guarda en este navegador.</p></div>
+      <button class="close" id="closePlan" aria-label="Cerrar">×</button>
+    </header>
+    <div class="sheet-body" id="planList"></div>
+    <footer class="sheet-foot" id="planFoot"></footer>
+  </section>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
 <script>
-const CATALOG = [{"path":"assets/ally-capitan.jpg","name":"ally-capitan.jpg","section":"Colaboradores","used":true,"usage":["index.html"],"bytes":194583},{"path":"assets/ally-casa.jpg","name":"ally-casa.jpg","section":"Colaboradores","used":true,"usage":["index.html"],"bytes":378634},{"path":"assets/ally-red-door.jpg","name":"ally-red-door.jpg","section":"Colaboradores","used":true,"usage":["index.html"],"bytes":265863},{"path":"assets/img/collaborators/chop-house/after-hours.webp","name":"after-hours.webp","section":"Collaborators","used":true,"usage":["index.html"],"bytes":27094},{"path":"assets/img/collaborators/club-33/ally-club33.webp","name":"ally-club33.webp","section":"Collaborators","used":true,"usage":["index.html"],"bytes":70394},{"path":"assets/img/collaborators/eterno-verano/ally-eterno-verano.webp","name":"ally-eterno-verano.webp","section":"Collaborators","used":true,"usage":["index.html"],"bytes":10162},{"path":"assets/img/guide/beaches/playa-avellanas.webp","name":"playa-avellanas.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":296218},{"path":"assets/img/guide/beaches/playa-conchal.webp","name":"playa-conchal.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":233986},{"path":"assets/img/guide/beaches/playa-flamingo.webp","name":"playa-flamingo.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":240826},{"path":"assets/img/guide/beaches/playa-ocotal.webp","name":"playa-ocotal.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":275006},{"path":"assets/img/guide/beaches/playa-ventanas.webp","name":"playa-ventanas.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":329256},{"path":"assets/img/guide/cover.webp","name":"cover.webp","section":"Guide","used":true,"usage":["index.html","styles.css","styles.optimized.css"],"bytes":179742},{"path":"assets/img/guide/locations/la-danta.webp","name":"la-danta.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":245116},{"path":"assets/img/guide/parks/las-baulas.webp","name":"las-baulas.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":246216},{"path":"assets/img/guide/parks/palo-verde.webp","name":"palo-verde.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":359826},{"path":"assets/img/guide/parks/rincon-de-la-vieja.webp","name":"rincon-de-la-vieja.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":335846},{"path":"assets/img/guide/waterfalls/llanos-de-cortez.webp","name":"llanos-de-cortez.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":440568},{"path":"assets/img/guide/witchs-rock/bruja.webp","name":"bruja.webp","section":"Guide","used":true,"usage":["guia-playas.html"],"bytes":168678},{"path":"assets/img/photography/ambarry1975/optimized/ambarry1975-costa-rica-2646482.webp","name":"ambarry1975-costa-rica-2646482.webp","section":"Photography","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":421354},{"path":"assets/img/services/atv/atv-arenal-volcano-ride.webp","name":"atv-arenal-volcano-ride.webp","section":"Services","used":true,"usage":["services.js"],"bytes":81486},{"path":"assets/img/services/atv/atv-coastal-overlook.webp","name":"atv-coastal-overlook.webp","section":"Services","used":true,"usage":["services.js"],"bytes":49672},{"path":"assets/img/services/atv/atv-forest-convoy.webp","name":"atv-forest-convoy.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":207674},{"path":"assets/img/services/atv/atv-forest-trail.webp","name":"atv-forest-trail.webp","section":"Services","used":true,"usage":["services.js"],"bytes":354888},{"path":"assets/img/services/atv/atv-instagram-1.webp","name":"atv-instagram-1.webp","section":"Services","used":true,"usage":["services.js"],"bytes":501422},{"path":"assets/img/services/atv/atv-instagram-2.webp","name":"atv-instagram-2.webp","section":"Services","used":true,"usage":["services.js"],"bytes":217430},{"path":"assets/img/services/atv/atv-instagram-3.webp","name":"atv-instagram-3.webp","section":"Services","used":true,"usage":["services.js"],"bytes":525594},{"path":"assets/img/services/retreats/retreat-canva-coaching-team.webp","name":"retreat-canva-coaching-team.webp","section":"Services","used":true,"usage":["services.js"],"bytes":94070},{"path":"assets/img/services/retreats/retreat-canva-cover.webp","name":"retreat-canva-cover.webp","section":"Services","used":true,"usage":["index.html","services.js"],"bytes":214106},{"path":"assets/img/services/retreats/retreat-canva-destination-coast.webp","name":"retreat-canva-destination-coast.webp","section":"Services","used":true,"usage":["services.js"],"bytes":59306},{"path":"assets/img/services/retreats/retreat-canva-destination-town.webp","name":"retreat-canva-destination-town.webp","section":"Services","used":true,"usage":["services.js"],"bytes":44690},{"path":"assets/img/services/retreats/retreat-canva-stay-aerial.webp","name":"retreat-canva-stay-aerial.webp","section":"Services","used":true,"usage":["services.js"],"bytes":90628},{"path":"assets/img/services/retreats/retreat-canva-stay-coast.webp","name":"retreat-canva-stay-coast.webp","section":"Services","used":true,"usage":["services.js"],"bytes":79074},{"path":"assets/img/services/retreats/retreat-canva-stay-lounge.webp","name":"retreat-canva-stay-lounge.webp","section":"Services","used":true,"usage":["services.js"],"bytes":52476},{"path":"assets/img/services/retreats/retreat-canva-stay-pool.webp","name":"retreat-canva-stay-pool.webp","section":"Services","used":true,"usage":["services.js"],"bytes":74554},{"path":"assets/img/services/retreats/retreat-canva-surf-avellanas.webp","name":"retreat-canva-surf-avellanas.webp","section":"Services","used":true,"usage":["services.js"],"bytes":48150},{"path":"assets/img/services/retreats/retreat-canva-surf-grande.webp","name":"retreat-canva-surf-grande.webp","section":"Services","used":true,"usage":["services.js"],"bytes":51890},{"path":"assets/img/services/retreats/retreat-canva-surf-nosara.webp","name":"retreat-canva-surf-nosara.webp","section":"Services","used":true,"usage":["services.js"],"bytes":57982},{"path":"assets/img/services/retreats/retreat-canva-surf-photo-1.webp","name":"retreat-canva-surf-photo-1.webp","section":"Services","used":true,"usage":["services.js"],"bytes":41756},{"path":"assets/img/services/retreats/retreat-canva-surf-photo-2.webp","name":"retreat-canva-surf-photo-2.webp","section":"Services","used":true,"usage":["services.js"],"bytes":56790},{"path":"assets/img/services/retreats/retreat-canva-surf-tamarindo.webp","name":"retreat-canva-surf-tamarindo.webp","section":"Services","used":true,"usage":["services.js"],"bytes":33650},{"path":"assets/img/services/retreats/retreat-canva-wave-background.webp","name":"retreat-canva-wave-background.webp","section":"Services","used":true,"usage":["services.js","styles.css","styles.optimized.css"],"bytes":411524},{"path":"assets/img/services/retreats/retreat-canva-witch-rock-1.webp","name":"retreat-canva-witch-rock-1.webp","section":"Services","used":true,"usage":["services.js"],"bytes":49906},{"path":"assets/img/services/retreats/retreat-canva-witch-rock-2.webp","name":"retreat-canva-witch-rock-2.webp","section":"Services","used":true,"usage":["services.js"],"bytes":88102},{"path":"assets/img/services/retreats/retreat-canva-yoga-beach.webp","name":"retreat-canva-yoga-beach.webp","section":"Services","used":true,"usage":["services.js"],"bytes":39190},{"path":"assets/img/services/retreats/retreat-canva-yoga-studio.webp","name":"retreat-canva-yoga-studio.webp","section":"Services","used":true,"usage":["services.js"],"bytes":37414},{"path":"assets/img/services/retreats/retreat-sunset.webp","name":"retreat-sunset.webp","section":"Services","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":194250},{"path":"assets/img/services/retreats/retreat-tamarindo.webp","name":"retreat-tamarindo.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.css","trip-builder.js"],"bytes":343832},{"path":"assets/img/services/snorkel-catamaran/snorkel-catalina-group.webp","name":"snorkel-catalina-group.webp","section":"Services","used":true,"usage":["services.js"],"bytes":81704},{"path":"assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp","name":"snorkel-catalina-shore.webp","section":"Services","used":true,"usage":["guia-playas.html","services.js"],"bytes":133310},{"path":"assets/img/services/snorkel-catamaran/snorkel-fish.webp","name":"snorkel-fish.webp","section":"Services","used":true,"usage":["services.js"],"bytes":171980},{"path":"assets/img/services/snorkel-catamaran/snorkel-turtle.webp","name":"snorkel-turtle.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":65414},{"path":"assets/img/services/surf-coaching/surf-coaching-group-beach.webp","name":"surf-coaching-group-beach.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":99234},{"path":"assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp","name":"surf-coaching-tamarindo-surf-camp.webp","section":"Services","used":true,"usage":["services.js"],"bytes":66644},{"path":"assets/img/services/surf-coaching/surf-coaching.webp","name":"surf-coaching.webp","section":"Services","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":95832},{"path":"assets/img/services/surf-coaching/surfing-drone-pexels-5232570.webp","name":"surfing-drone-pexels-5232570.webp","section":"Services","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":317716},{"path":"assets/img/services/surf-lessons/optimized/surf-lesson-group.webp","name":"surf-lesson-group.webp","section":"Services","used":true,"usage":["services.js"],"bytes":58820},{"path":"assets/img/services/surf-lessons/surf-lesson-woman.webp","name":"surf-lesson-woman.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":77774},{"path":"assets/img/services/surf-lessons/surf-photography.webp","name":"surf-photography.webp","section":"Services","used":true,"usage":["services.js"],"bytes":193650},{"path":"assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp","name":"surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp","section":"Services","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":356334},{"path":"assets/img/services/surf-photography/photo-service.webp","name":"photo-service.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":102668},{"path":"assets/img/services/surf-photography/surf-coaching-session.webp","name":"surf-coaching-session.webp","section":"Services","used":true,"usage":["services.js"],"bytes":124492},{"path":"assets/img/services/surf-photography/surf-photographer-wave.webp","name":"surf-photographer-wave.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":183768},{"path":"assets/img/services/surfskate/surfskate-bowl.webp","name":"surfskate-bowl.webp","section":"Services","used":true,"usage":["services.js"],"bytes":234798},{"path":"assets/img/services/surfskate/surfskate-class.webp","name":"surfskate-class.webp","section":"Services","used":true,"usage":["services.js"],"bytes":75132},{"path":"assets/img/services/surfskate/surfskate-wave.webp","name":"surfskate-wave.webp","section":"Services","used":true,"usage":["services.js"],"bytes":277678},{"path":"assets/img/services/surfskate/surfskate.webp","name":"surfskate.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":157524},{"path":"assets/img/services/witchs-rock/hermosa.webp","name":"hermosa.webp","section":"Services","used":true,"usage":["guia-playas.html"],"bytes":331582},{"path":"assets/img/services/witchs-rock/roca-bruja-coast.webp","name":"roca-bruja-coast.webp","section":"Services","used":true,"usage":["services.js"],"bytes":89352},{"path":"assets/img/services/witchs-rock/roca-bruja-rock.webp","name":"roca-bruja-rock.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":256478},{"path":"assets/img/services/witchs-rock/roca-bruja-wave.webp","name":"roca-bruja-wave.webp","section":"Services","used":true,"usage":["services.js"],"bytes":238820},{"path":"assets/img/services/yoga/yoga-coastal-pose.webp","name":"yoga-coastal-pose.webp","section":"Services","used":true,"usage":["index.html","services.js","trip-builder.js"],"bytes":213782},{"path":"assets/img/services/yoga/yoga-group-meditation.webp","name":"yoga-group-meditation.webp","section":"Services","used":true,"usage":["services.js"],"bytes":108406},{"path":"assets/img/services/yoga/yoga-retreat-group-class.webp","name":"yoga-retreat-group-class.webp","section":"Services","used":true,"usage":["services.js"],"bytes":102790},{"path":"assets/img/site/about/about-hero.webp","name":"about-hero.webp","section":"Site","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":75808},{"path":"assets/img/site/about/optimized/tamarindo-stay.webp","name":"tamarindo-stay.webp","section":"Site","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":379386},{"path":"assets/img/site/backgrounds/atardecer.webp","name":"atardecer.webp","section":"Site","used":true,"usage":["script.js","styles.css","styles.optimized.css","trip-builder.css"],"bytes":173472},{"path":"assets/img/site/backgrounds/camaras.webp","name":"camaras.webp","section":"Site","used":true,"usage":["index.html","styles.css","styles.optimized.css"],"bytes":54702},{"path":"assets/img/site/backgrounds/contact-sunset-surf-unsplash.webp","name":"contact-sunset-surf-unsplash.webp","section":"Site","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":361562},{"path":"assets/img/site/backgrounds/contact-tamarindo.webp","name":"contact-tamarindo.webp","section":"Site","used":false,"usage":[],"bytes":453694},{"path":"assets/img/site/backgrounds/faq-waves.webp","name":"faq-waves.webp","section":"Site","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":162098},{"path":"assets/img/site/backgrounds/footer-surf.webp","name":"footer-surf.webp","section":"Site","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":52122},{"path":"assets/img/site/backgrounds/request-sunset-surfer.webp","name":"request-sunset-surfer.webp","section":"Site","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":144310},{"path":"assets/img/site/backgrounds/servicios.webp","name":"servicios.webp","section":"Site","used":true,"usage":["script.js"],"bytes":338744},{"path":"assets/img/site/home-hero-fallback.jpg","name":"home-hero-fallback.jpg","section":"Site","used":true,"usage":["index.html","styles.css","styles.optimized.css"],"bytes":421875},{"path":"assets/img/site/home-hero.webp","name":"home-hero.webp","section":"Site","used":false,"usage":[],"bytes":321746},{"path":"assets/img/site/share/surf-experiences-tamarindo.webp","name":"surf-experiences-tamarindo.webp","section":"Site","used":true,"usage":["services.js"],"bytes":110490},{"path":"assets/img/stays/capitan-suizo/beachfront-bungalow.webp","name":"beachfront-bungalow.webp","section":"Stays","used":true,"usage":["services.js"],"bytes":788920},{"path":"assets/img/stays/capitan-suizo/capitan.webp","name":"capitan.webp","section":"Stays","used":true,"usage":["Enlaces/capitan-suizo.html","index.html","services.js","styles.css","styles.optimized.css"],"bytes":401164},{"path":"assets/img/stays/capitan-suizo/cover.webp","name":"cover.webp","section":"Stays","used":true,"usage":["index.html","services.js","styles.css","styles.optimized.css","trip-builder.js"],"bytes":344508},{"path":"assets/img/stays/casa-aura/casa-aura-common-area.webp","name":"casa-aura-common-area.webp","section":"Stays","used":true,"usage":["Enlaces/casa-aura.html","services.js"],"bytes":31476},{"path":"assets/img/stays/casa-aura/casa-aura-exterior.webp","name":"casa-aura-exterior.webp","section":"Stays","used":true,"usage":["services.js","trip-builder.js"],"bytes":82308},{"path":"assets/img/stays/casa-aura/casitas.webp","name":"casitas.webp","section":"Stays","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":230164},{"path":"assets/img/stays/casa-aura/stayandhotels4_resultado.webp","name":"stayandhotels4_resultado.webp","section":"Stays","used":true,"usage":["Enlaces/casa-aura.html","services.js"],"bytes":82308},{"path":"assets/img/stays/casa-aura/stayandhotels4_resultados.webp","name":"stayandhotels4_resultados.webp","section":"Stays","used":true,"usage":["Enlaces/casa-aura.html","services.js"],"bytes":38506},{"path":"assets/img/stays/casa-maderas/aerial.webp","name":"aerial.webp","section":"Stays","used":true,"usage":["Enlaces/casa-maderas.html","services.js"],"bytes":216004},{"path":"assets/img/stays/casa-maderas/cover.webp","name":"cover.webp","section":"Stays","used":true,"usage":["index.html","services.js","styles.css","styles.optimized.css","trip-builder.js"],"bytes":203410},{"path":"assets/img/stays/casa-maderas/house.webp","name":"house.webp","section":"Stays","used":true,"usage":["Enlaces/casa-maderas.html","services.js","trip-builder.js"],"bytes":230748},{"path":"assets/img/stays/occidental/cover.webp","name":"cover.webp","section":"Stays","used":true,"usage":["index.html","styles.css","styles.optimized.css"],"bytes":370212},{"path":"assets/img/stays/occidental/optimized/occidental-beach.webp","name":"occidental-beach.webp","section":"Stays","used":true,"usage":["styles.css","styles.optimized.css"],"bytes":119052},{"path":"assets/img/stays/occidental/restaurant.webp","name":"restaurant.webp","section":"Stays","used":true,"usage":["Enlaces/occidental.html"],"bytes":316466},{"path":"assets/img/stays/occidental/wellness.webp","name":"wellness.webp","section":"Stays","used":true,"usage":["Enlaces/occidental.html"],"bytes":329838},{"path":"assets/img/stays/red-door/cover.webp","name":"cover.webp","section":"Stays","used":true,"usage":["index.html","styles.css","styles.optimized.css"],"bytes":182196},{"path":"assets/img/stays/red-door/garden-seating.webp","name":"garden-seating.webp","section":"Stays","used":true,"usage":["Enlaces/red-door.html"],"bytes":402092},{"path":"assets/img/stays/red-door/hammock-garden.webp","name":"hammock-garden.webp","section":"Stays","used":true,"usage":["Enlaces/red-door.html"],"bytes":309218},{"path":"assets/img/stays/red-door/hotel-facade.webp","name":"hotel-facade.webp","section":"Stays","used":true,"usage":["Enlaces/red-door.html"],"bytes":364036},{"path":"assets/img/stays/tamalodge/cover.webp","name":"cover.webp","section":"Stays","used":true,"usage":["services.js","trip-builder.js"],"bytes":131802},{"path":"assets/img/stays/tamalodge/room-with-kitchen.jpg","name":"room-with-kitchen.jpg","section":"Stays","used":true,"usage":["services.js"],"bytes":159137},{"path":"assets/img/stays/tamalodge/simple-room.jpg","name":"simple-room.jpg","section":"Stays","used":true,"usage":["services.js"],"bytes":129827},{"path":"assets/img/stays/unverified/hotels/stayandhotels2_resultado.webp","name":"stayandhotels2_resultado.webp","section":"Stays","used":true,"usage":["services.js"],"bytes":61006},{"path":"assets/img/stays/unverified/hotels/stayandhotels3_resultado.webp","name":"stayandhotels3_resultado.webp","section":"Stays","used":true,"usage":["services.js"],"bytes":125426},{"path":"assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp","name":"stayandhotels5_resultado.webp","section":"Stays","used":true,"usage":["index.html","services.js"],"bytes":104284},{"path":"assets/img/stays/unverified/hotels/stayandhotels6_resultado.webp","name":"stayandhotels6_resultado.webp","section":"Stays","used":true,"usage":["services.js"],"bytes":263694},{"path":"assets/img/stays/unverified/hotels/stayandhotels_resultado.webp","name":"stayandhotels_resultado.webp","section":"Stays","used":true,"usage":["services.js"],"bytes":225784}];
-const state={query:'',section:'all',status:'all',mode:'all',target:null,changes:JSON.parse(localStorage.getItem('wavepoint-photo-plan')||'[]'),uploads:[]};
-const $=s=>document.querySelector(s), grid=$('#grid'), modal=$('#modalBackdrop'), content=$('#modalContent'), toast=$('#toast');
-const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const bytes=n=>n>1048576?`${(n/1048576).toFixed(1)} MB`:`${Math.round(n/1024)} KB`;
-const fileUrl=p=>encodeURI(p);
-function flash(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(()=>toast.classList.remove('show'),2400)}
-function save(){localStorage.setItem('wavepoint-photo-plan',JSON.stringify(state.changes));$('#changeStat').textContent=state.changes.length}
-function searchQuery(item){return encodeURIComponent(`${item.section} Tamarindo Costa Rica surf`)}
-function filtered(){const current=state.mode!=='all'?state.mode:state.status;return CATALOG.filter(x=>(current==='all'||(current==='used'?x.used:!x.used))&&(state.section==='all'||x.section===state.section)&&(!state.query||`${x.name} ${x.path} ${x.section} ${x.usage.join(' ')}`.toLowerCase().includes(state.query.toLowerCase())))}
-function syncFilterButtons(){document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter===state.mode))}
-function render(){const items=filtered();$('#viewNote').textContent=`Mostrando ${items.length} de ${CATALOG.length} fotos activas.`;grid.innerHTML=items.length?items.map(card).join(''):'<div class="empty">No encontramos fotos con esos filtros.</div>';syncFilterButtons();$('#changeStat').textContent=state.changes.length;grid.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openDetail(b.dataset.open));grid.querySelectorAll('[data-replace]').forEach(b=>b.onclick=()=>chooseReplacement(b.dataset.replace));grid.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>{navigator.clipboard?.writeText(b.dataset.copy);flash('Ruta copiada')})}
-function card(item){const planned=state.changes.some(c=>c.target===item.path);return `<article class="card${planned?' selected':''}"><div class="thumb"><img src="${fileUrl(item.path)}" alt="${esc(item.name)}" loading="lazy"><span class="badge ${item.used?'':'available'}">${item.used?'En uso':'Disponible'}</span></div><div class="card-body"><div class="card-title"><div><h3>${esc(item.name)}</h3><p class="section">${esc(item.section)}</p></div></div><p class="path">${esc(item.path)}</p><p class="usage">${item.used?`Usada en ${item.usage.length} archivo${item.usage.length===1?'':'s'}`:'Lista para elegir como alternativa'}</p><div class="card-actions"><button class="small" data-open="${esc(item.path)}">Ver detalle</button><button class="small replace" data-replace="${esc(item.path)}">Usar como reemplazo</button></div></div></article>`}
-function openDetail(path){const item=[...CATALOG,...state.uploads].find(x=>x.path===path);if(!item)return;const links=[['Unsplash','https://unsplash.com/s/photos/'+searchQuery(item)],['Pexels','https://www.pexels.com/search/'+searchQuery(item)],['Wikimedia Commons','https://commons.wikimedia.org/w/index.php?search='+searchQuery(item)+'&title=Special:MediaSearch&go=Go&type=image'],['Openverse','https://openverse.org/search/?q='+searchQuery(item)]];content.innerHTML=`<img class="preview" src="${item.preview||fileUrl(item.path)}" alt="${esc(item.name)}"><div class="detail-meta"><span class="pill">${esc(item.section)}</span><span class="pill">${item.used?'En uso':'Disponible'}</span><span class="pill">${item.bytes?bytes(item.bytes):'Nueva carga'}</span></div><div class="meta-block"><h3>Ruta</h3><p class="path">${esc(item.path)}</p><button class="btn" data-copy-detail="${esc(item.path)}">Copiar ruta</button></div>${item.used?`<div class="meta-block"><h3>Se usa en</h3><div class="usage-list">${item.usage.map(u=>`<code>${esc(u)}</code>`).join('')}</div></div>`:''}<div class="meta-block"><h3>Buscar alternativa gratis</h3><div class="search-links">${links.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n} ↗</a>`).join('')}</div></div><div class="meta-block"><h3>Acción</h3><button class="btn primary" data-replace-detail="${esc(item.path)}">Elegir para un reemplazo</button></div>`;modal.classList.add('open');content.querySelector('[data-copy-detail]').onclick=()=>{navigator.clipboard?.writeText(item.path);flash('Ruta copiada')};content.querySelector('[data-replace-detail]').onclick=()=>chooseReplacement(item.path)}
-function chooseReplacement(path){const item=[...CATALOG,...state.uploads].find(x=>x.path===path);if(!item)return;if(!state.target){state.target=path;flash('Elegí ahora la foto que querés usar');render();return}if(state.target===path){state.target=null;flash('Selección cancelada');return}const existing=state.changes.find(c=>c.target===state.target);const change={target:state.target,replacement:path,replacementPreview:item.preview||null,source:item.upload?'subida desde dispositivo':'inventario activo',createdAt:new Date().toISOString()};if(existing)Object.assign(existing,change);else state.changes.push(change);state.target=null;save();render();flash('Cambio preparado para exportar')}
-function addUpload(file){const preview=URL.createObjectURL(file);const item={path:`[subida] ${file.name}`,name:file.name,section:'Subidas',used:false,usage:[],bytes:file.size,preview,upload:true};state.uploads.unshift(item);openDetail(item.path);flash('Foto cargada para comparar; exportá el plan al terminar')}
-function exportPlan(){const payload={createdAt:new Date().toISOString(),note:'Plan visual de reemplazo. Revisar rutas y copiar las fotos subidas al inventario antes de publicar.',changes:state.changes};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='wavepoint-photo-change-plan.json';a.click();URL.revokeObjectURL(a.href);flash('Plan exportado')}
-let deferredInstallPrompt=null;const installButton=$('#installBtn');window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;installButton.hidden=false});installButton.onclick=async()=>{if(deferredInstallPrompt){deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;installButton.hidden=true}else{flash('En iPhone: Compartir → Agregar a pantalla de inicio. En Android: menú del navegador → Instalar app.')}};window.addEventListener('appinstalled',()=>{installButton.hidden=true;flash('La app quedó instalada')});
-CATALOG.forEach(x=>{const o=document.createElement('option');o.value=x.section;o.textContent=x.section;$('#section').append(o)});$('#totalStat').textContent=CATALOG.length;$('#usedStat').textContent=CATALOG.filter(x=>x.used).length;$('#freeStat').textContent=CATALOG.filter(x=>!x.used).length;$('#search').oninput=e=>{state.query=e.target.value;render()};$('#section').onchange=e=>{state.section=e.target.value;render()};$('#status').onchange=e=>{state.status=e.target.value;state.mode=e.target.value;render()};document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{state.mode=b.dataset.filter;state.status=b.dataset.filter;$('#status').value=b.dataset.filter;render()});$('#closeModal').onclick=()=>modal.classList.remove('open');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});$('#exportBtn').onclick=exportPlan;$('#uploadBtn').onclick=()=>$('#globalUpload').click();$('#globalUpload').onchange=e=>{if(e.target.files[0])addUpload(e.target.files[0]);e.target.value=''};render();
+const CATALOG = [{"path": "assets/ally-capitan.jpg", "name": "ally-capitan.jpg", "section": "Colaboradores", "used": true, "usage": ["index.html"], "bytes": 194583}, {"path": "assets/ally-casa.jpg", "name": "ally-casa.jpg", "section": "Colaboradores", "used": true, "usage": ["index.html"], "bytes": 378634}, {"path": "assets/ally-red-door.jpg", "name": "ally-red-door.jpg", "section": "Colaboradores", "used": true, "usage": ["index.html"], "bytes": 265863}, {"path": "assets/img/collaborators/chop-house/after-hours.webp", "name": "after-hours.webp", "section": "Collaborators", "used": true, "usage": ["index.html"], "bytes": 27094}, {"path": "assets/img/collaborators/club-33/ally-club33.webp", "name": "ally-club33.webp", "section": "Collaborators", "used": true, "usage": ["index.html"], "bytes": 70394}, {"path": "assets/img/collaborators/eterno-verano/ally-eterno-verano.webp", "name": "ally-eterno-verano.webp", "section": "Collaborators", "used": true, "usage": ["index.html"], "bytes": 10162}, {"path": "assets/img/guide/beaches/playa-avellanas.webp", "name": "playa-avellanas.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 296218}, {"path": "assets/img/guide/beaches/playa-conchal.webp", "name": "playa-conchal.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 233986}, {"path": "assets/img/guide/beaches/playa-flamingo.webp", "name": "playa-flamingo.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 240826}, {"path": "assets/img/guide/beaches/playa-ocotal.webp", "name": "playa-ocotal.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 275006}, {"path": "assets/img/guide/beaches/playa-ventanas.webp", "name": "playa-ventanas.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 329256}, {"path": "assets/img/guide/cover.webp", "name": "cover.webp", "section": "Guide", "used": true, "usage": ["index.html", "styles.css", "styles.optimized.css"], "bytes": 179742}, {"path": "assets/img/guide/locations/la-danta.webp", "name": "la-danta.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 245116}, {"path": "assets/img/guide/parks/las-baulas.webp", "name": "las-baulas.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 246216}, {"path": "assets/img/guide/parks/palo-verde.webp", "name": "palo-verde.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 359826}, {"path": "assets/img/guide/parks/rincon-de-la-vieja.webp", "name": "rincon-de-la-vieja.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 335846}, {"path": "assets/img/guide/waterfalls/llanos-de-cortez.webp", "name": "llanos-de-cortez.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 440568}, {"path": "assets/img/guide/witchs-rock/bruja.webp", "name": "bruja.webp", "section": "Guide", "used": true, "usage": ["guia-playas.html"], "bytes": 168678}, {"path": "assets/img/photography/ambarry1975/optimized/ambarry1975-costa-rica-2646482.webp", "name": "ambarry1975-costa-rica-2646482.webp", "section": "Photography", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 421354}, {"path": "assets/img/services/atv/atv-arenal-volcano-ride.webp", "name": "atv-arenal-volcano-ride.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 81486}, {"path": "assets/img/services/atv/atv-coastal-overlook.webp", "name": "atv-coastal-overlook.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 49672}, {"path": "assets/img/services/atv/atv-forest-convoy.webp", "name": "atv-forest-convoy.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 207674}, {"path": "assets/img/services/atv/atv-forest-trail.webp", "name": "atv-forest-trail.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 354888}, {"path": "assets/img/services/atv/atv-instagram-1.webp", "name": "atv-instagram-1.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 501422}, {"path": "assets/img/services/atv/atv-instagram-2.webp", "name": "atv-instagram-2.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 217430}, {"path": "assets/img/services/atv/atv-instagram-3.webp", "name": "atv-instagram-3.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 525594}, {"path": "assets/img/services/retreats/retreat-canva-coaching-team.webp", "name": "retreat-canva-coaching-team.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 94070}, {"path": "assets/img/services/retreats/retreat-canva-cover.webp", "name": "retreat-canva-cover.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js"], "bytes": 214106}, {"path": "assets/img/services/retreats/retreat-canva-destination-coast.webp", "name": "retreat-canva-destination-coast.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 59306}, {"path": "assets/img/services/retreats/retreat-canva-destination-town.webp", "name": "retreat-canva-destination-town.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 44690}, {"path": "assets/img/services/retreats/retreat-canva-stay-aerial.webp", "name": "retreat-canva-stay-aerial.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 90628}, {"path": "assets/img/services/retreats/retreat-canva-stay-coast.webp", "name": "retreat-canva-stay-coast.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 79074}, {"path": "assets/img/services/retreats/retreat-canva-stay-lounge.webp", "name": "retreat-canva-stay-lounge.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 52476}, {"path": "assets/img/services/retreats/retreat-canva-stay-pool.webp", "name": "retreat-canva-stay-pool.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 74554}, {"path": "assets/img/services/retreats/retreat-canva-surf-avellanas.webp", "name": "retreat-canva-surf-avellanas.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 48150}, {"path": "assets/img/services/retreats/retreat-canva-surf-grande.webp", "name": "retreat-canva-surf-grande.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 51890}, {"path": "assets/img/services/retreats/retreat-canva-surf-nosara.webp", "name": "retreat-canva-surf-nosara.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 57982}, {"path": "assets/img/services/retreats/retreat-canva-surf-photo-1.webp", "name": "retreat-canva-surf-photo-1.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 41756}, {"path": "assets/img/services/retreats/retreat-canva-surf-photo-2.webp", "name": "retreat-canva-surf-photo-2.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 56790}, {"path": "assets/img/services/retreats/retreat-canva-surf-tamarindo.webp", "name": "retreat-canva-surf-tamarindo.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 33650}, {"path": "assets/img/services/retreats/retreat-canva-wave-background.webp", "name": "retreat-canva-wave-background.webp", "section": "Services", "used": true, "usage": ["services.js", "styles.css", "styles.optimized.css"], "bytes": 411524}, {"path": "assets/img/services/retreats/retreat-canva-witch-rock-1.webp", "name": "retreat-canva-witch-rock-1.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 49906}, {"path": "assets/img/services/retreats/retreat-canva-witch-rock-2.webp", "name": "retreat-canva-witch-rock-2.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 88102}, {"path": "assets/img/services/retreats/retreat-canva-yoga-beach.webp", "name": "retreat-canva-yoga-beach.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 39190}, {"path": "assets/img/services/retreats/retreat-canva-yoga-studio.webp", "name": "retreat-canva-yoga-studio.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 37414}, {"path": "assets/img/services/retreats/retreat-sunset.webp", "name": "retreat-sunset.webp", "section": "Services", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 194250}, {"path": "assets/img/services/retreats/retreat-tamarindo.webp", "name": "retreat-tamarindo.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.css", "trip-builder.js"], "bytes": 343832}, {"path": "assets/img/services/snorkel-catamaran/snorkel-catalina-group.webp", "name": "snorkel-catalina-group.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 81704}, {"path": "assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp", "name": "snorkel-catalina-shore.webp", "section": "Services", "used": true, "usage": ["guia-playas.html", "services.js"], "bytes": 133310}, {"path": "assets/img/services/snorkel-catamaran/snorkel-fish.webp", "name": "snorkel-fish.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 171980}, {"path": "assets/img/services/snorkel-catamaran/snorkel-turtle.webp", "name": "snorkel-turtle.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 65414}, {"path": "assets/img/services/surf-coaching/surf-coaching-group-beach.webp", "name": "surf-coaching-group-beach.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 99234}, {"path": "assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp", "name": "surf-coaching-tamarindo-surf-camp.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 66644}, {"path": "assets/img/services/surf-coaching/surf-coaching.webp", "name": "surf-coaching.webp", "section": "Services", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 95832}, {"path": "assets/img/services/surf-coaching/surfing-drone-pexels-5232570.webp", "name": "surfing-drone-pexels-5232570.webp", "section": "Services", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 317716}, {"path": "assets/img/services/surf-lessons/optimized/surf-lesson-group.webp", "name": "surf-lesson-group.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 58820}, {"path": "assets/img/services/surf-lessons/surf-lesson-woman.webp", "name": "surf-lesson-woman.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 77774}, {"path": "assets/img/services/surf-lessons/surf-photography.webp", "name": "surf-photography.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 193650}, {"path": "assets/img/services/surf-photography/optimized/surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp", "name": "surfer-riding-wave-tamarindo-costa-rica-05-no-surfer.webp", "section": "Services", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 356334}, {"path": "assets/img/services/surf-photography/photo-service.webp", "name": "photo-service.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 102668}, {"path": "assets/img/services/surf-photography/surf-coaching-session.webp", "name": "surf-coaching-session.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 124492}, {"path": "assets/img/services/surf-photography/surf-photographer-wave.webp", "name": "surf-photographer-wave.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 183768}, {"path": "assets/img/services/surfskate/surfskate-bowl.webp", "name": "surfskate-bowl.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 234798}, {"path": "assets/img/services/surfskate/surfskate-class.webp", "name": "surfskate-class.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 75132}, {"path": "assets/img/services/surfskate/surfskate-wave.webp", "name": "surfskate-wave.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 277678}, {"path": "assets/img/services/surfskate/surfskate.webp", "name": "surfskate.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 157524}, {"path": "assets/img/services/witchs-rock/hermosa.webp", "name": "hermosa.webp", "section": "Services", "used": true, "usage": ["guia-playas.html"], "bytes": 331582}, {"path": "assets/img/services/witchs-rock/roca-bruja-coast.webp", "name": "roca-bruja-coast.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 89352}, {"path": "assets/img/services/witchs-rock/roca-bruja-rock.webp", "name": "roca-bruja-rock.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 256478}, {"path": "assets/img/services/witchs-rock/roca-bruja-wave.webp", "name": "roca-bruja-wave.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 238820}, {"path": "assets/img/services/yoga/yoga-coastal-pose.webp", "name": "yoga-coastal-pose.webp", "section": "Services", "used": true, "usage": ["index.html", "services.js", "trip-builder.js"], "bytes": 213782}, {"path": "assets/img/services/yoga/yoga-group-meditation.webp", "name": "yoga-group-meditation.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 108406}, {"path": "assets/img/services/yoga/yoga-retreat-group-class.webp", "name": "yoga-retreat-group-class.webp", "section": "Services", "used": true, "usage": ["services.js"], "bytes": 102790}, {"path": "assets/img/site/about/about-hero.webp", "name": "about-hero.webp", "section": "Site", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 75808}, {"path": "assets/img/site/about/optimized/tamarindo-stay.webp", "name": "tamarindo-stay.webp", "section": "Site", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 379386}, {"path": "assets/img/site/backgrounds/atardecer.webp", "name": "atardecer.webp", "section": "Site", "used": true, "usage": ["script.js", "styles.css", "styles.optimized.css", "trip-builder.css"], "bytes": 173472}, {"path": "assets/img/site/backgrounds/camaras.webp", "name": "camaras.webp", "section": "Site", "used": true, "usage": ["index.html", "styles.css", "styles.optimized.css"], "bytes": 54702}, {"path": "assets/img/site/backgrounds/contact-sunset-surf-unsplash.webp", "name": "contact-sunset-surf-unsplash.webp", "section": "Site", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 361562}, {"path": "assets/img/site/backgrounds/contact-tamarindo.webp", "name": "contact-tamarindo.webp", "section": "Site", "used": false, "usage": [], "bytes": 453694}, {"path": "assets/img/site/backgrounds/faq-waves.webp", "name": "faq-waves.webp", "section": "Site", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 162098}, {"path": "assets/img/site/backgrounds/footer-surf.webp", "name": "footer-surf.webp", "section": "Site", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 52122}, {"path": "assets/img/site/backgrounds/request-sunset-surfer.webp", "name": "request-sunset-surfer.webp", "section": "Site", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 144310}, {"path": "assets/img/site/backgrounds/servicios.webp", "name": "servicios.webp", "section": "Site", "used": true, "usage": ["script.js"], "bytes": 338744}, {"path": "assets/img/site/home-hero-fallback.jpg", "name": "home-hero-fallback.jpg", "section": "Site", "used": true, "usage": ["index.html", "styles.css", "styles.optimized.css"], "bytes": 421875}, {"path": "assets/img/site/home-hero.webp", "name": "home-hero.webp", "section": "Site", "used": false, "usage": [], "bytes": 321746}, {"path": "assets/img/site/share/surf-experiences-tamarindo.webp", "name": "surf-experiences-tamarindo.webp", "section": "Site", "used": true, "usage": ["services.js"], "bytes": 110490}, {"path": "assets/img/stays/capitan-suizo/beachfront-bungalow.webp", "name": "beachfront-bungalow.webp", "section": "Stays", "used": true, "usage": ["services.js"], "bytes": 788920}, {"path": "assets/img/stays/capitan-suizo/capitan.webp", "name": "capitan.webp", "section": "Stays", "used": true, "usage": ["Enlaces/capitan-suizo.html", "index.html", "services.js", "styles.css", "styles.optimized.css"], "bytes": 401164}, {"path": "assets/img/stays/capitan-suizo/cover.webp", "name": "cover.webp", "section": "Stays", "used": true, "usage": ["index.html", "services.js", "styles.css", "styles.optimized.css", "trip-builder.js"], "bytes": 344508}, {"path": "assets/img/stays/casa-aura/casa-aura-common-area.webp", "name": "casa-aura-common-area.webp", "section": "Stays", "used": true, "usage": ["Enlaces/casa-aura.html", "services.js"], "bytes": 31476}, {"path": "assets/img/stays/casa-aura/casa-aura-exterior.webp", "name": "casa-aura-exterior.webp", "section": "Stays", "used": true, "usage": ["services.js", "trip-builder.js"], "bytes": 82308}, {"path": "assets/img/stays/casa-aura/casitas.webp", "name": "casitas.webp", "section": "Stays", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 230164}, {"path": "assets/img/stays/casa-aura/stayandhotels4_resultado.webp", "name": "stayandhotels4_resultado.webp", "section": "Stays", "used": true, "usage": ["Enlaces/casa-aura.html", "services.js"], "bytes": 82308}, {"path": "assets/img/stays/casa-aura/stayandhotels4_resultados.webp", "name": "stayandhotels4_resultados.webp", "section": "Stays", "used": true, "usage": ["Enlaces/casa-aura.html", "services.js"], "bytes": 38506}, {"path": "assets/img/stays/casa-maderas/aerial.webp", "name": "aerial.webp", "section": "Stays", "used": true, "usage": ["Enlaces/casa-maderas.html", "services.js"], "bytes": 216004}, {"path": "assets/img/stays/casa-maderas/cover.webp", "name": "cover.webp", "section": "Stays", "used": true, "usage": ["index.html", "services.js", "styles.css", "styles.optimized.css", "trip-builder.js"], "bytes": 203410}, {"path": "assets/img/stays/casa-maderas/house.webp", "name": "house.webp", "section": "Stays", "used": true, "usage": ["Enlaces/casa-maderas.html", "services.js", "trip-builder.js"], "bytes": 230748}, {"path": "assets/img/stays/occidental/cover.webp", "name": "cover.webp", "section": "Stays", "used": true, "usage": ["index.html", "styles.css", "styles.optimized.css"], "bytes": 370212}, {"path": "assets/img/stays/occidental/optimized/occidental-beach.webp", "name": "occidental-beach.webp", "section": "Stays", "used": true, "usage": ["styles.css", "styles.optimized.css"], "bytes": 119052}, {"path": "assets/img/stays/occidental/restaurant.webp", "name": "restaurant.webp", "section": "Stays", "used": true, "usage": ["Enlaces/occidental.html"], "bytes": 316466}, {"path": "assets/img/stays/occidental/wellness.webp", "name": "wellness.webp", "section": "Stays", "used": true, "usage": ["Enlaces/occidental.html"], "bytes": 329838}, {"path": "assets/img/stays/red-door/cover.webp", "name": "cover.webp", "section": "Stays", "used": true, "usage": ["index.html", "styles.css", "styles.optimized.css"], "bytes": 182196}, {"path": "assets/img/stays/red-door/garden-seating.webp", "name": "garden-seating.webp", "section": "Stays", "used": true, "usage": ["Enlaces/red-door.html"], "bytes": 402092}, {"path": "assets/img/stays/red-door/hammock-garden.webp", "name": "hammock-garden.webp", "section": "Stays", "used": true, "usage": ["Enlaces/red-door.html"], "bytes": 309218}, {"path": "assets/img/stays/red-door/hotel-facade.webp", "name": "hotel-facade.webp", "section": "Stays", "used": true, "usage": ["Enlaces/red-door.html"], "bytes": 364036}, {"path": "assets/img/stays/tamalodge/cover.webp", "name": "cover.webp", "section": "Stays", "used": true, "usage": ["services.js", "trip-builder.js"], "bytes": 131802}, {"path": "assets/img/stays/tamalodge/room-with-kitchen.jpg", "name": "room-with-kitchen.jpg", "section": "Stays", "used": true, "usage": ["services.js"], "bytes": 159137}, {"path": "assets/img/stays/tamalodge/simple-room.jpg", "name": "simple-room.jpg", "section": "Stays", "used": true, "usage": ["services.js"], "bytes": 129827}, {"path": "assets/img/stays/unverified/hotels/stayandhotels2_resultado.webp", "name": "stayandhotels2_resultado.webp", "section": "Stays", "used": true, "usage": ["services.js"], "bytes": 61006}, {"path": "assets/img/stays/unverified/hotels/stayandhotels3_resultado.webp", "name": "stayandhotels3_resultado.webp", "section": "Stays", "used": true, "usage": ["services.js"], "bytes": 125426}, {"path": "assets/img/stays/unverified/hotels/stayandhotels5_resultado.webp", "name": "stayandhotels5_resultado.webp", "section": "Stays", "used": true, "usage": ["index.html", "services.js"], "bytes": 104284}, {"path": "assets/img/stays/unverified/hotels/stayandhotels6_resultado.webp", "name": "stayandhotels6_resultado.webp", "section": "Stays", "used": true, "usage": ["services.js"], "bytes": 263694}, {"path": "assets/img/stays/unverified/hotels/stayandhotels_resultado.webp", "name": "stayandhotels_resultado.webp", "section": "Stays", "used": true, "usage": ["services.js"], "bytes": 225784}];
+
+const KEY = 'wavepoint-photo-plan';
+const loadPlan = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]') } catch { return [] } };
+const state = {
+  query: '', section: 'all', mode: 'all',
+  changes: loadPlan(), uploads: [],
+  detail: null, pick: null, tab: 'gallery', pickQuery: '', onlineQ: ''
+};
+
+const $ = s => document.querySelector(s);
+const grid = $('#grid'), modal = $('#modalBackdrop'), planBd = $('#planBackdrop'),
+      modalContent = $('#modalContent'), toast = $('#toast');
+let lastFocus = null;
+
+/* ---------- utilidades ---------- */
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const bytes = n => n > 1048576 ? `${(n/1048576).toFixed(1)} MB` : `${Math.round(n/1024)} KB`;
+const fileUrl = p => encodeURI(p);
+const src = it => it.preview || fileUrl(it.path);
+const img = (s, alt) => `<img src="${esc(s)}" alt="${esc(alt)}" loading="lazy" onerror="this.parentNode.classList.add('broken');this.remove()">`;
+const findAny = p => [...state.uploads, ...CATALOG].find(x => x.path === p);
+const changeFor = p => state.changes.find(c => c.target === p);
+const missingItem = p => ({ name: p.replace('[subida] ', ''), path: p, missing: true });
+const usageText = x => !x.used ? 'Sin usar en el sitio' : x.usage.length === 1 ? `Usada en ${x.usage[0]}` : `Usada en ${x.usage.length} páginas`;
+const SECTIONS = [...new Set(CATALOG.map(x => x.section))];
+
+function flash(msg) {
+  toast.textContent = msg; toast.classList.add('show');
+  clearTimeout(flash.t); flash.t = setTimeout(() => toast.classList.remove('show'), 2600);
+}
+function persist() { try { localStorage.setItem(KEY, JSON.stringify(state.changes)) } catch {} }
+function copy(text) { navigator.clipboard?.writeText(text); flash('Ruta copiada'); }
+
+/* ---------- galería ---------- */
+function filtered() {
+  const q = state.query.trim().toLowerCase();
+  return CATALOG.filter(x =>
+    (state.mode === 'all' || (state.mode === 'used') === x.used) &&
+    (state.section === 'all' || x.section === state.section) &&
+    (!q || `${x.name} ${x.path} ${x.section} ${x.usage.join(' ')}`.toLowerCase().includes(q)));
+}
+const filtersActive = () => state.query || state.section !== 'all' || state.mode !== 'all';
+
+function card(x) {
+  const ch = changeFor(x.path), rep = ch && findAny(ch.replacement);
+  const badges = (!x.used ? '<span class="badge free">Disponible</span>' : '') + (ch ? '<span class="badge plan">Cambio listo</span>' : '');
+  return `<button class="card${ch ? ' planned' : ''}" data-open="${esc(x.path)}">
+    <span class="thumb">${img(src(x), x.name)}${badges ? `<span class="badges">${badges}</span>` : ''}${ch && rep ? `<span class="mini">${img(src(rep), 'Foto nueva')}</span>` : ''}</span>
+    <span class="card-body"><span class="cname">${esc(x.name)}</span><span class="cmeta">${esc(x.section)}</span><span class="cmeta">${esc(usageText(x))}</span></span>
+  </button>`;
+}
+
+function render() {
+  const items = filtered();
+  $('#viewNote').innerHTML = `Mostrando ${items.length} de ${CATALOG.length} fotos` + (filtersActive() ? ' · <button class="link" data-clear>Quitar filtros</button>' : '');
+  grid.innerHTML = items.length ? items.map(card).join('')
+    : '<div class="empty wide">No hay fotos con esos filtros.<br><button class="btn" data-clear>Quitar filtros</button></div>';
+  document.querySelectorAll('#seg button').forEach(b => b.classList.toggle('on', b.dataset.mode === state.mode));
+  $('#planCount').textContent = state.changes.length;
+  $('#planBtn').classList.toggle('primary', state.changes.length > 0);
+}
+
+function buildControls() {
+  const count = s => CATALOG.filter(x => s === 'all' || x.section === s).length;
+  $('#section').innerHTML = `<option value="all">Todas las secciones</option>` +
+    SECTIONS.map(s => `<option value="${esc(s)}">${esc(s)} (${count(s)})</option>`).join('');
+  const used = CATALOG.filter(x => x.used).length;
+  $('#seg').innerHTML = [['all', 'Todas', CATALOG.length], ['used', 'En uso', used], ['available', 'Disponibles', CATALOG.length - used]]
+    .map(([m, l, n]) => `<button data-mode="${m}">${l}<small>${n}</small></button>`).join('');
+}
+
+/* ---------- capas (ventanas) ---------- */
+const lock = () => { document.body.style.overflow = (modal.classList.contains('open') || planBd.classList.contains('open')) ? 'hidden' : ''; };
+function openLayer(el) { lastFocus = document.activeElement; el.classList.add('open'); lock(); }
+function closeLayer(el) { el.classList.remove('open'); lock(); lastFocus?.focus?.(); }
+const closeModal = () => closeLayer(modal);
+const closePlan = () => closeLayer(planBd);
+
+/* ---------- cambiar una foto ---------- */
+function openDetail(path) {
+  const it = findAny(path); if (!it) return;
+  const ch = changeFor(path);
+  state.detail = path; state.pick = ch ? ch.replacement : null;
+  state.tab = 'gallery'; state.pickQuery = ''; state.onlineQ = `${it.section} Tamarindo Costa Rica surf`;
+  $('#modalSub').textContent = it.name;
+  modalContent.innerHTML = `
+    <div class="panes">
+      <figure class="pane"><figcaption>Foto actual</figcaption><div class="pimg">${img(src(it), it.name)}</div><p class="pane-name">${esc(it.name)}</p></figure>
+      <figure class="pane" id="newPane"></figure>
+    </div>
+    <div class="info">
+      <div class="pills"><span class="pill">${esc(it.section)}</span><span class="pill${it.used ? '' : ' sand'}">${it.used ? 'En uso' : 'Disponible'}</span>${it.bytes ? `<span class="pill">${bytes(it.bytes)}</span>` : ''}</div>
+      ${it.used ? `<div class="usage-list"><span>Se usa en</span>${it.usage.map(u => `<code>${esc(u)}</code>`).join('')}</div>` : ''}
+      <div class="path-row"><code class="path">${esc(it.path)}</code><button class="small" data-copy="${esc(it.path)}">Copiar ruta</button></div>
+    </div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div id="tabPanel"></div>`;
+  renderNewPane(); renderTabs(); renderFoot();
+  openLayer(modal); modalContent.scrollTop = 0; $('#closeModal').focus();
+}
+
+const pickItem = () => state.pick && (findAny(state.pick) || missingItem(state.pick));
+
+function renderNewPane() {
+  const it = pickItem();
+  $('#newPane').innerHTML = '<figcaption>Foto nueva</figcaption>' + (it
+    ? `<div class="pimg${it.missing ? ' broken' : ''}">${it.missing ? '' : img(src(it), it.name)}</div><p class="pane-name">${esc(it.name)}</p>`
+    : '<div class="pimg empty-slot"><span>Elegí la foto nueva en las opciones de abajo</span></div><p class="pane-name muted">Sin elegir</p>');
+}
+
+function renderTabs() {
+  $('#tabs').innerHTML = [['gallery', 'Elegir del inventario'], ['upload', 'Subir mi foto'], ['online', 'Buscar online']]
+    .map(([k, l]) => `<button class="tab${state.tab === k ? ' on' : ''}" role="tab" aria-selected="${state.tab === k}" data-tab="${k}">${l}</button>`).join('');
+  renderPanel();
+}
+
+function renderPanel() {
+  const panel = $('#tabPanel'), cur = findAny(state.detail);
+  if (state.tab === 'gallery') {
+    panel.innerHTML = `<p class="hint">Primero van las fotos subidas y las disponibles, después las de la misma sección.</p>
+      <div class="pick-tools"><input id="pickSearch" type="search" placeholder="Buscar por nombre o sección" aria-label="Buscar en el inventario" value="${esc(state.pickQuery)}"><span id="pickCount"></span></div>
+      <div class="pick-grid" id="pickGrid"></div>`;
+    fillPickGrid();
+  } else if (state.tab === 'upload') {
+    panel.innerHTML = `<label class="drop" id="drop"><input class="sr" type="file" id="fileIn" accept="image/*">
+        <strong>Elegí una foto de tu dispositivo</strong><span>o arrastrala hasta acá</span><span class="btn primary">Elegir foto</span></label>
+      <p class="hint" style="margin-top:12px">La foto queda solo en este navegador para comparar. Copiala a la carpeta de imágenes del sitio antes de publicar.</p>`;
+    wireDrop();
+  } else {
+    panel.innerHTML = `<p class="hint">Buscá en bancos de fotos gratuitos. Cuando bajes una, subila en la pestaña “Subir mi foto”.</p>
+      <input class="online-q" id="onlineQ" aria-label="Qué buscar" value="${esc(state.onlineQ)}">
+      <div class="search-links" id="links"></div>
+      <button class="btn" data-tab="upload">Ya la bajé, subirla</button>`;
+    fillLinks();
+  }
+}
+
+function fillPickGrid() {
+  const cur = findAny(state.detail), q = state.pickQuery.trim().toLowerCase();
+  const rank = x => x.upload ? 0 : !x.used ? 1 : x.section === cur.section ? 2 : 3;
+  const list = [...state.uploads, ...CATALOG]
+    .filter(x => x.path !== cur.path && (!q || `${x.name} ${x.section} ${x.path}`.toLowerCase().includes(q)))
+    .sort((a, b) => rank(a) - rank(b));
+  $('#pickCount').textContent = `${list.length} fotos`;
+  $('#pickGrid').innerHTML = list.length ? list.map(x => {
+    const on = x.path === state.pick;
+    const tag = x.upload ? '<span class="badge">Subida</span>' : !x.used ? '<span class="badge free">Disponible</span>' : '';
+    return `<button class="pick${on ? ' on' : ''}" data-pick="${esc(x.path)}" aria-pressed="${on}">
+      <span class="pthumb">${img(src(x), x.name)}<span class="check" aria-hidden="true">✓</span>${tag}</span>
+      <span class="pk-name">${esc(x.name)}</span><span class="pk-sec">${esc(x.section)}</span></button>`;
+  }).join('') : '<div class="empty" style="grid-column:1/-1">No hay fotos con ese nombre.</div>';
+}
+
+function paintPick() {
+  document.querySelectorAll('.pick').forEach(b => {
+    const on = b.dataset.pick === state.pick;
+    b.classList.toggle('on', on); b.setAttribute('aria-pressed', on);
+  });
+}
+
+function fillLinks() {
+  const q = encodeURIComponent(state.onlineQ.trim() || 'Tamarindo Costa Rica surf');
+  const links = [
+    ['Unsplash', 'https://unsplash.com/s/photos/' + q],
+    ['Pexels', 'https://www.pexels.com/search/' + q],
+    ['Wikimedia Commons', 'https://commons.wikimedia.org/w/index.php?search=' + q + '&title=Special:MediaSearch&go=Go&type=image'],
+    ['Openverse', 'https://openverse.org/search/?q=' + q]
+  ];
+  $('#links').innerHTML = links.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener">${n} ↗</a>`).join('');
+}
+
+function wireDrop() {
+  const d = $('#drop'); if (!d) return;
+  ['dragenter', 'dragover'].forEach(n => d.addEventListener(n, e => { e.preventDefault(); d.classList.add('over'); }));
+  ['dragleave', 'drop'].forEach(n => d.addEventListener(n, e => { e.preventDefault(); d.classList.remove('over'); }));
+  d.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) addUpload(f); });
+}
+
+function addUpload(file) {
+  if (!file.type.startsWith('image/')) { flash('Ese archivo no es una imagen'); return; }
+  let path = `[subida] ${file.name}`, n = 2;
+  while (findAny(path)) path = `[subida] ${file.name} (${n++})`;
+  const item = { path, name: file.name, section: 'Subidas', used: false, usage: [], bytes: file.size, preview: URL.createObjectURL(file), upload: true };
+  state.uploads.unshift(item);
+  state.pick = path; state.tab = 'gallery'; state.pickQuery = '';
+  renderTabs(); renderNewPane(); renderFoot();
+  modalContent.scrollTo({ top: 0, behavior: 'smooth' });
+  flash('Foto cargada y elegida como reemplazo');
+}
+
+function renderFoot() {
+  const ch = changeFor(state.detail), same = ch && ch.replacement === state.pick, it = pickItem();
+  $('#modalFoot').innerHTML = `
+    <div class="chosen">${it
+      ? `<span class="cthumb sm${it.missing ? ' broken' : ''}">${it.missing ? '' : img(src(it), it.name)}</span><span class="chosen-name">${esc(it.name)}</span>`
+      : '<span class="muted">Todavía no elegiste la foto nueva</span>'}</div>
+    <div class="foot-r">
+      ${ch ? '<button class="btn ghost danger" data-act="remove">Quitar cambio</button>' : ''}
+      <button class="btn primary" data-act="save" ${(!state.pick || same) ? 'disabled' : ''}>${same ? 'Cambio guardado' : 'Guardar cambio'}</button>
+    </div>`;
+}
+
+function saveChange() {
+  if (!state.pick) return;
+  const it = pickItem();
+  const change = { target: state.detail, replacement: state.pick, replacementPreview: null,
+    source: it.upload ? 'subida desde dispositivo' : 'inventario activo', createdAt: new Date().toISOString() };
+  const i = state.changes.findIndex(c => c.target === state.detail);
+  if (i >= 0) state.changes[i] = change; else state.changes.push(change);
+  persist(); closeModal(); render(); flash('Cambio guardado en el plan');
+}
+function removeChange(target) {
+  state.changes = state.changes.filter(c => c.target !== target);
+  persist(); render();
+}
+
+/* ---------- plan de cambios ---------- */
+function renderPlan() {
+  const n = state.changes.length;
+  $('#planList').innerHTML = n ? state.changes.map((c, i) => {
+    const t = findAny(c.target) || missingItem(c.target), r = findAny(c.replacement), rname = r ? r.name : c.replacement.replace('[subida] ', '');
+    return `<article class="change">
+      <div class="pair"><span class="cthumb">${img(src(t), t.name)}</span><span class="arrow" aria-hidden="true">→</span><span class="cthumb${r ? '' : ' broken'}">${r ? img(src(r), r.name) : ''}</span></div>
+      <div class="ctext"><p><b>${esc(t.name)}</b></p><p class="muted">se cambia por ${esc(rname)}</p>${r ? '' : '<p class="warn">Esa foto subida ya no está cargada. Volvé a subirla antes de aplicar el plan.</p>'}</div>
+      <div class="cact"><button class="small" data-edit="${i}">Editar</button><button class="small" data-del="${i}">Quitar</button></div>
+    </article>`;
+  }).join('') : '<div class="empty">Todavía no preparaste cambios.<br>Tocá una foto del inventario para empezar.</div>';
+  $('#planFoot').innerHTML = `<button class="btn ghost danger" data-plan="clear" ${n ? '' : 'disabled'}>Vaciar plan</button>
+    <div class="foot-r"><button class="btn primary" data-plan="export" ${n ? '' : 'disabled'}>Descargar plan</button></div>`;
+}
+
+function exportPlan() {
+  const payload = { createdAt: new Date().toISOString(),
+    note: 'Plan visual de reemplazo. Revisar rutas y copiar las fotos subidas al inventario antes de publicar.',
+    changes: state.changes };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'wavepoint-photo-change-plan.json'; a.click();
+  URL.revokeObjectURL(a.href); flash('Plan descargado');
+}
+
+/* ---------- eventos ---------- */
+grid.addEventListener('click', e => { const b = e.target.closest('[data-open]'); if (b) openDetail(b.dataset.open); });
+document.addEventListener('click', e => {
+  if (!e.target.closest('[data-clear]')) return;
+  state.query = ''; state.section = 'all'; state.mode = 'all';
+  $('#search').value = ''; $('#section').value = 'all'; render();
+});
+$('#search').oninput = e => { state.query = e.target.value; render(); };
+$('#section').onchange = e => { state.section = e.target.value; render(); };
+$('#seg').onclick = e => { const b = e.target.closest('[data-mode]'); if (b) { state.mode = b.dataset.mode; render(); } };
+
+modalContent.addEventListener('click', e => {
+  const t = e.target.closest('[data-tab],[data-copy],[data-pick]'); if (!t) return;
+  if (t.dataset.tab) { state.tab = t.dataset.tab; renderTabs(); }
+  else if (t.dataset.copy) copy(t.dataset.copy);
+  else if (t.dataset.pick) { state.pick = t.dataset.pick; paintPick(); renderNewPane(); renderFoot(); }
+});
+modalContent.addEventListener('input', e => {
+  if (e.target.id === 'pickSearch') { state.pickQuery = e.target.value; fillPickGrid(); }
+  if (e.target.id === 'onlineQ') { state.onlineQ = e.target.value; fillLinks(); }
+});
+modalContent.addEventListener('change', e => {
+  if (e.target.id !== 'fileIn') return;
+  const f = e.target.files[0]; e.target.value = ''; if (f) addUpload(f);
+});
+$('#modalFoot').addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  if (b.dataset.act === 'save') saveChange();
+  if (b.dataset.act === 'remove') { removeChange(state.detail); closeModal(); flash('Cambio quitado del plan'); }
+});
+$('#closeModal').onclick = closeModal;
+modal.onclick = e => { if (e.target === modal) closeModal(); };
+
+$('#planBtn').onclick = () => { renderPlan(); openLayer(planBd); $('#closePlan').focus(); };
+$('#closePlan').onclick = closePlan;
+planBd.onclick = e => { if (e.target === planBd) closePlan(); };
+$('#planList').addEventListener('click', e => {
+  const b = e.target.closest('[data-edit],[data-del]'); if (!b) return;
+  if (b.dataset.del !== undefined) { state.changes.splice(+b.dataset.del, 1); persist(); render(); renderPlan(); }
+  else { const target = state.changes[+b.dataset.edit].target; closePlan(); openDetail(target); }
+});
+$('#planFoot').addEventListener('click', e => {
+  const b = e.target.closest('[data-plan]'); if (!b) return;
+  if (b.dataset.plan === 'export') exportPlan();
+  if (b.dataset.plan === 'clear' && confirm('¿Quitar todos los cambios del plan?')) { state.changes = []; persist(); render(); renderPlan(); }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (planBd.classList.contains('open')) closePlan(); else if (modal.classList.contains('open')) closeModal();
+});
+
+/* ---------- instalar como app ---------- */
+let deferredInstallPrompt = null; const installButton = $('#installBtn');
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredInstallPrompt = e; installButton.hidden = false; });
+installButton.onclick = async () => {
+  if (deferredInstallPrompt) { deferredInstallPrompt.prompt(); await deferredInstallPrompt.userChoice; deferredInstallPrompt = null; installButton.hidden = true; }
+  else flash('En iPhone: Compartir → Agregar a pantalla de inicio. En Android: menú del navegador → Instalar app.');
+};
+window.addEventListener('appinstalled', () => { installButton.hidden = true; flash('La app quedó instalada'); });
+
+buildControls(); render();
 </script>
 </body>
 </html>
