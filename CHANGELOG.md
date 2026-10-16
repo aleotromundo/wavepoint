@@ -1,4 +1,11 @@
 ## 2026-10-15
+### Aliados — convertir la nueva imagen PNG de Club 33 a WebP
+- `assets/img/collaborators/club-33/ally-club33.png`: se toma como la nueva imagen cuadrada recibida en el repositorio.
+- `assets/img/collaborators/club-33/ally-club33.webp`: se genera a partir de esa PNG, manteniendo el lienzo cuadrado y la transparencia para que encaje en la miniatura del carrusel.
+- `index.html`: se renueva la caché de las dos referencias del carrusel y se conserva la ruta `ally-club33.webp` que espera la portada.
+- Validación: WebP real de 157 × 157, referencias locales, sintaxis JavaScript y `git diff --check`.
+
+## 2026-10-15
 ### Aliados — adaptar logo de Club 33 al cuadrado del carrusel
 - `assets/img/collaborators/club-33/ally-club33.webp`: se confirma que el archivo es WebP válido y se reencuadra en un lienzo cuadrado, conservando el logo completo sin recortes laterales.
 - `index.html`: se agrega una versión de caché nueva a las dos referencias del asset para que el cambio visual llegue al carrusel.
