@@ -1,3 +1,23 @@
+# 2026-10-16
+### Suscripción — eliminar el sello persistente
+- `index.html`, `script.js`, `styles.css` y `styles.optimized.css`: se quita el sello “SUSCRIPTO” y la marca local que lo mostraba automáticamente en visitas posteriores. El formulario vuelve a usar dos columnas en escritorio y se conserva el mensaje de estado posterior al envío.
+- Comportamiento esperado: cualquier persona puede completar su suscripción en el mismo dispositivo sin indicación persistente, y el campo de correo mantiene el ancho previsto.
+- Validación: en navegador, el sello ya no aparece y se conservan el campo de email, botón y mensaje de estado; no hay overflow horizontal a 320, 390, 820 ni 1280 px. `git diff --check` pasó. No se pudo ejecutar `node --check` porque Node.js no está disponible.
+
+# 2026-10-15
+### Carrusel de aliados — restaurar composición anterior de Eterno Verano
+- `index.html`: ambas copias del carrusel vuelven a usar la ruta cuadrada habitual de Eterno Verano y la referencia previa de caché del CSS.
+- `styles.css` y `styles.optimized.css`: se quitan las dimensiones y la cápsula horizontal de prueba; se restaura el tratamiento anterior de la miniatura, sin alterar el tamaño ni la estructura de la ficha.
+- Comportamiento esperado: Eterno Verano vuelve a la composición anterior del carrusel. Por indicación del usuario, se conserva el asset actual de la remera sin modificarlo.
+- Validación: `git diff --check` pasó y ambas copias apuntan al asset local existente.
+
+# 2026-10-15
+### Carrusel de aliados — presentar mejor el logo horizontal de Eterno Verano
+- `index.html`: las dos copias de Eterno Verano usan la variante horizontal ya disponible `assets/img/collaborators/eterno-verano/as.webp`; se renuevan las cachés del logo y de `styles.optimized.css`.
+- `styles.css` y `styles.optimized.css`: el logo ocupa una cápsula blanca horizontal dimensionada para mostrar completo el óvalo, con medidas adaptadas a móvil y sin agrandar ni cambiar la ficha.
+- Comportamiento esperado: el logo gana presencia sin recortes ni superponerse con el nombre.
+- Validación: el servidor local devolvió HTTP 200 para la portada, el CSS y el logo; las dos copias usan la nueva ruta y `git diff --check` pasó. No fue posible ejecutar `node --check` porque Node.js no está disponible en el entorno; no se modificó JavaScript.
+
 ## 2026-10-15
 ### Carrusel de aliados — arrastre más confiable y logo completo de Eterno Verano
 - `script.js`: se agrega el cierre ante `lostpointercapture` y se desactiva el arrastre nativo de imágenes para que el drag horizontal funcione de forma consistente desde cualquier tarjeta, manteniendo la animación automática.
