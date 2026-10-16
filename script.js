@@ -1411,6 +1411,8 @@
     });
     viewport.addEventListener('pointerup',finishInteraction);
     viewport.addEventListener('pointercancel',finishInteraction);
+    viewport.addEventListener('lostpointercapture',finishInteraction);
+    viewport.querySelectorAll('img').forEach(image => { image.draggable = false; });
     window.addEventListener('blur',()=>finishInteraction());
     document.addEventListener('click',event=>{
       if(!suppressClick || !event.target.closest('.allies-ticker')) return;

@@ -1,4 +1,11 @@
 ## 2026-10-15
+### Carrusel de aliados — arrastre más confiable y logo completo de Eterno Verano
+- `script.js`: se agrega el cierre ante `lostpointercapture` y se desactiva el arrastre nativo de imágenes para que el drag horizontal funcione de forma consistente desde cualquier tarjeta, manteniendo la animación automática.
+- `styles.css` y `styles.optimized.css`: se agrega cursor/selección propios para el arrastre y Eterno Verano pasa a `object-fit: contain` sobre fondo blanco para mostrar el óvalo completo dentro del cuadrado.
+- `index.html`: se marcan las dos imágenes de Eterno Verano y se renuevan las cachés de JS/CSS.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
+## 2026-10-15
 ### Aliados — convertir la nueva imagen PNG de Club 33 a WebP
 - `assets/img/collaborators/club-33/ally-club33.png`: se toma como la nueva imagen cuadrada recibida en el repositorio.
 - `assets/img/collaborators/club-33/ally-club33.webp`: se genera a partir de esa PNG, manteniendo el lienzo cuadrado y la transparencia para que encaje en la miniatura del carrusel.
