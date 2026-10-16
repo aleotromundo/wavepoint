@@ -1,4 +1,10 @@
 ## 2026-10-15
+### Aliados — adaptar logo de Club 33 al cuadrado del carrusel
+- `assets/img/collaborators/club-33/ally-club33.webp`: se confirma que el archivo es WebP válido y se reencuadra en un lienzo cuadrado, conservando el logo completo sin recortes laterales.
+- `index.html`: se agrega una versión de caché nueva a las dos referencias del asset para que el cambio visual llegue al carrusel.
+- Validación: formato WebP real, dimensiones 1248 × 1248, referencias locales y `git diff --check`.
+
+## 2026-10-15
 ### Carrusel de aliados — corregir traducción de la copia animada
 - `index.html`: la segunda copia de la tarjeta de Chop House ahora usa `data-i18n="sponsorActive"`, igual que la primera, para que “Patrocinador activo” cambie a “Active sponsor” en inglés y vuelva correctamente al español.
 - Auditoría del carrusel: los nombres propios, ubicaciones y “At Sea” son nombres de marca o lugares y no requieren traducción; no se encontraron otras etiquetas traducibles desparejadas.
