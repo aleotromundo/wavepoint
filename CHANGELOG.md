@@ -2334,12 +2334,3 @@
 ### Navegación — priorizar explorar experiencias
 - `script.js`: el enlace `Services/Servicios` del menú principal y mobile ahora se presenta como `Explore experiences/Explorá experiencias`, conservando el enlace a `#servicios`.
 - La guía, las cámaras y el resto de la navegación mantienen su posición y accesibilidad.
-
-## 2026-10-16
-### Retiro del chatbot y del botón flotante
-- `index.html`: se eliminó el panel, el saludo y el botón flotante del chatbot.
-- `script.js`: se retiró la lógica de apertura, consultas, respuestas de respaldo y traducciones específicas del chatbot.
-- `styles.css` y `styles.optimized.css`: se eliminaron los estilos, animaciones y ajustes responsive exclusivos del chatbot.
-- `api/assistant.js`: se eliminó el endpoint serverless que ya no tiene consumidor.
-- `README.md`, `AUDIT.md` y `PROJECT_GUIDE.md`: se actualizó la documentación para reflejar que el sitio no incluye chatbot.
-- Validación: sintaxis JavaScript, referencias residuales, entrega HTTP local y `git diff --check`.

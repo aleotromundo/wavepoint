@@ -349,6 +349,24 @@
       termsDialogPoint3: 'La disponibilidad y el precio final deben confirmarse con el proveedor antes de cualquier pago.',
       termsDialogClose: 'Cerrar',
       whatsappLabel: 'Escribinos por WhatsApp',
+      assistantGreeting: 'Hola, hello. Tu guía local en Tamarindo. ¿Qué te gustaría saber?',
+      assistantEyebrow: 'WAVEPOINT · TAMARINDO',
+      assistantTitle: 'Tu guía local',
+      assistantWelcome: 'Preguntame por las cámaras, el clima, los spots o qué hacer en Tamarindo.',
+      assistantSuggestionCameras: 'Cámaras',
+      assistantSuggestionBeginner: 'Empezar a surfear',
+      assistantSuggestionActivities: 'Qué hacer',
+      assistantInputLabel: 'Tu pregunta',
+      assistantPlaceholder: 'Escribí tu pregunta...',
+      assistantDisclaimer: 'Las respuestas automáticas pueden equivocarse. Confirmá las condiciones del mar con gente local.',
+      assistantLauncherLabel: 'Abrir guía WavePoint',
+      assistantTyping: 'Estoy buscando una buena respuesta…',
+      assistantFallbackCameras: 'WavePoint tiene cámaras en Capitán Suizo y Casa de Maderas. Red Door está en preparación. Las cámaras transmiten aproximadamente de 4:45 a. m. a 6:30 p. m., hora de Costa Rica.',
+      assistantFallbackConditions: 'En la tarjeta de clima de esta página podés ver temperatura, viento, oleaje estimado y hora local. Es una referencia; verificá el estado del mar al llegar y consultá a surfistas locales.',
+      assistantFallbackSurf: 'Tamarindo tiene olas para distintos niveles. WavePoint ofrece clases de surf y surf coaching; revisá las cámaras y las condiciones antes de entrar, y pedí orientación a un instructor local si estás empezando.',
+      assistantFallbackActivities: 'La guía de WavePoint incluye playas como Ventanas, Danta, Avellanas, Naranjo y Conchal; también cascadas, senderismo y snorkeling. Escribinos por WhatsApp para ayudarte a elegir según el tiempo y tu plan.',
+      assistantFallbackContact: 'Podés escribirle directamente a WavePoint por WhatsApp usando el botón verde de esta página. También encontrás Instagram como @wavepointcr.',
+      assistantFallbackGeneral: 'Puedo orientarte sobre cámaras, clima, spots, experiencias de surf y actividades en Guanacaste. ¿Qué plan tenés en mente?',
       servicePageBack: '← Volver a WavePoint',
       servicePageEyebrow: 'SURF · FOTO · EXPERIENCIAS',
       servicePageTitle: 'La próxima sesión empieza acá.',
@@ -620,6 +638,24 @@
       termsDialogPoint3: 'Availability and the final price must be confirmed with the provider before any payment.',
       termsDialogClose: 'Close',
       whatsappLabel: 'Chat on WhatsApp',
+      assistantGreeting: 'Hi! Hola. Your local Tamarindo guide is here. What would you like to know?',
+      assistantEyebrow: 'WAVEPOINT · TAMARINDO',
+      assistantTitle: 'Your local guide',
+      assistantWelcome: 'Ask me about the cameras, weather, surf spots, or things to do in Tamarindo.',
+      assistantSuggestionCameras: 'Cameras',
+      assistantSuggestionBeginner: 'Learn to surf',
+      assistantSuggestionActivities: 'Things to do',
+      assistantInputLabel: 'Your question',
+      assistantPlaceholder: 'Ask a question...',
+      assistantDisclaimer: 'Automated answers can be wrong. Confirm ocean conditions with local surfers.',
+      assistantLauncherLabel: 'Open WavePoint guide',
+      assistantTyping: 'Let me find a helpful answer…',
+      assistantFallbackCameras: 'WavePoint has cameras at Capitán Suizo and Casa de Maderas. Red Door is coming soon. Cameras usually stream from about 4:45 a.m. to 6:30 p.m. Costa Rica time.',
+      assistantFallbackConditions: 'The weather panel shows temperature, wind, estimated swell, and local time. Treat it as a reference, check the ocean when you arrive, and ask local surfers for current advice.',
+      assistantFallbackSurf: 'Tamarindo has waves for different skill levels. WavePoint features surf lessons and surf coaching; check the cameras and conditions before paddling out, and ask a local instructor if you are new.',
+      assistantFallbackActivities: 'The WavePoint guide features beaches such as Ventanas, Danta, Avellanas, Naranjo, and Conchal, plus waterfalls, hiking, and snorkeling. Message us on WhatsApp and we can help you choose based on your plans.',
+      assistantFallbackContact: 'Message WavePoint directly on WhatsApp using the green button on this page. You can also find us on Instagram at @wavepointcr.',
+      assistantFallbackGeneral: 'I can help with cameras, weather, surf spots, lessons, and things to do around Guanacaste. What are you planning?',
       servicePageBack: '← Back to WavePoint',
       servicePageEyebrow: 'SURF · PHOTO · EXPERIENCES',
       servicePageTitle: 'Your next session starts here.',
@@ -711,6 +747,7 @@
       langToggle.setAttribute('aria-label', isSpanish ? 'Cambiar a inglés' : 'Switch to Spanish');
       langToggle.setAttribute('aria-pressed', String(!isSpanish));
     }
+    document.getElementById('assistantLauncher')?.setAttribute('aria-label', dict.assistantLauncherLabel);
 
     if (document.getElementById('weatherState')) {
       const [icon,label] = weatherText(document.getElementById('weatherIcon')?.dataset?.conditionCode ?? 0, Number(document.getElementById('weatherIcon')?.dataset?.isDay ?? 1));
@@ -1712,6 +1749,105 @@
     });
   }
 
+  function bindSiteAssistant(){
+    if(!document.getElementById('siteAssistant')){
+      document.body.insertAdjacentHTML('beforeend', `
+        <div class="assistant-greeting" id="assistantGreeting"><span data-i18n="assistantGreeting"></span><button type="button" id="dismissGreeting" aria-label="Close">×</button></div>
+        <button class="assistant-launcher" id="assistantLauncher" type="button" aria-label="Open WavePoint guide" aria-expanded="false" aria-controls="siteAssistant"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-5 4v-4.5a2.5 2.5 0 0 1-2-2.5Z"/><path d="M8 8h8M8 11.5h5"/></svg></button>
+        <section class="assistant-panel" id="siteAssistant" role="dialog" aria-modal="false" aria-labelledby="assistantTitle" hidden>
+          <header class="assistant-header"><div><small data-i18n="assistantEyebrow"></small><h2 id="assistantTitle" data-i18n="assistantTitle"></h2></div><button class="assistant-close" id="assistantClose" type="button" aria-label="Close assistant">×</button></header>
+          <div class="assistant-messages" id="assistantMessages" aria-live="polite"><p class="assistant-message assistant-message-bot" data-i18n="assistantWelcome"></p></div>
+          <div class="assistant-suggestions"><button type="button" data-assistant-question="cameras" data-i18n="assistantSuggestionCameras"></button><button type="button" data-assistant-question="beginner" data-i18n="assistantSuggestionBeginner"></button><button type="button" data-assistant-question="activities" data-i18n="assistantSuggestionActivities"></button></div>
+          <form class="assistant-form" id="assistantForm"><label class="sr-only" for="assistantInput" data-i18n="assistantInputLabel"></label><input id="assistantInput" name="message" maxlength="1200" autocomplete="off" data-i18n-placeholder="assistantPlaceholder" required/><button type="submit" aria-label="Send question"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 4 16 8-16 8 3-8Z"/><path d="M7 12h13"/></svg></button></form>
+          <p class="assistant-disclaimer" data-i18n="assistantDisclaimer"></p>
+        </section>`);
+    }
+    const panel=document.getElementById('siteAssistant');
+    const launcher=document.getElementById('assistantLauncher');
+    const close=document.getElementById('assistantClose');
+    const form=document.getElementById('assistantForm');
+    const input=document.getElementById('assistantInput');
+    const messages=document.getElementById('assistantMessages');
+    const greeting=document.getElementById('assistantGreeting');
+    if(!panel || !launcher || !form || !input || !messages) return;
+
+    const dict=()=>translations[languageState.current] || translations.es;
+    const addMessage=(text,kind)=>{
+      const message=document.createElement('p');
+      message.className=`assistant-message assistant-message-${kind}`;
+      message.textContent=text;
+      messages.append(message);
+      messages.scrollTop=messages.scrollHeight;
+      return message;
+    };
+    const fallbackAnswer=(question)=>{
+      const text=question.toLocaleLowerCase();
+      const current=dict();
+      if(/camera|cámara|camara|live|transmi/.test(text)) return current.assistantFallbackCameras;
+      if(/weather|clima|oleaje|ola|wave|wind|viento|condici/.test(text)) return current.assistantFallbackConditions;
+      if(/surf|princip|beginner|lesson|clase|instructor/.test(text)) return current.assistantFallbackSurf;
+      if(/do |visit|activity|activities|hacer|visitar|playa|beach|waterfall|cascada|snorkel|hike|sender/.test(text)) return current.assistantFallbackActivities;
+      if(/contact|whatsapp|instagram|contacto|escrib/.test(text)) return current.assistantFallbackContact;
+      return current.assistantFallbackGeneral;
+    };
+    const open=()=>{
+      panel.hidden=false;
+      launcher.setAttribute('aria-expanded','true');
+      greeting?.classList.add('is-dismissed');
+      input.focus();
+    };
+    const hide=()=>{
+      panel.hidden=true;
+      launcher.setAttribute('aria-expanded','false');
+      launcher.focus();
+    };
+    const ask=async(question)=>{
+      const cleanQuestion=question.trim().slice(0,1200);
+      if(!cleanQuestion) return;
+      addMessage(cleanQuestion,'user');
+      const pending=addMessage(dict().assistantTyping,'bot assistant-pending');
+      input.disabled=true;
+      form.querySelector('button[type="submit"]').disabled=true;
+      try{
+        const context={
+          weather:document.getElementById('weatherState')?.textContent.trim() || '',
+          temperature:document.getElementById('temp')?.textContent.trim() || '',
+          wind:document.getElementById('wind')?.textContent.trim() || '',
+          swell:document.getElementById('waveHeight')?.textContent.trim() || '',
+          localTime:document.getElementById('localTime')?.textContent.trim() || '',
+          cameras:document.body.classList.contains('night')?'night standby':'daytime schedule'
+        };
+        const response=await fetch('/api/assistant',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:cleanQuestion,language:languageState.current,context})});
+        const data=response.ok?await response.json():null;
+        pending.textContent=data?.answer || fallbackAnswer(cleanQuestion);
+      }catch(error){
+        pending.textContent=fallbackAnswer(cleanQuestion);
+      }finally{
+        pending.classList.remove('assistant-pending');
+        input.disabled=false;
+        form.querySelector('button[type="submit"]').disabled=false;
+        input.focus();
+        messages.scrollTop=messages.scrollHeight;
+      }
+    };
+
+    launcher.addEventListener('click',()=>panel.hidden?open():hide());
+    close?.addEventListener('click',hide);
+    greeting?.querySelector('button')?.addEventListener('click',()=>greeting.classList.add('is-dismissed'));
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      const question=input.value;
+      input.value='';
+      ask(question);
+    });
+    panel.querySelectorAll('[data-assistant-question]').forEach(button=>button.addEventListener('click',()=>{
+      const current=dict();
+      const question=button.dataset.assistantQuestion==='cameras'?current.assistantSuggestionCameras:button.dataset.assistantQuestion==='beginner'?current.assistantSuggestionBeginner:current.assistantSuggestionActivities;
+      ask(question);
+    }));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape' && !panel.hidden) hide();});
+  }
+
   function bindTermsDialog(){
     const labels=[...document.querySelectorAll('[data-i18n="footerTerms"]')];
     if(!labels.length) return;
@@ -1754,6 +1890,7 @@
 
   bindNewsletterForm();
   bindContactRequestForm();
+  bindSiteAssistant();
   bindTermsDialog();
   applyTranslations();
   bindWavepointPreloader();
