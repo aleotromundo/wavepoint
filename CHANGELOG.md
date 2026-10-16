@@ -1,4 +1,10 @@
 ## 2026-10-15
+### Carrusel de aliados — corregir traducción de la copia animada
+- `index.html`: la segunda copia de la tarjeta de Chop House ahora usa `data-i18n="sponsorActive"`, igual que la primera, para que “Patrocinador activo” cambie a “Active sponsor” en inglés y vuelva correctamente al español.
+- Auditoría del carrusel: los nombres propios, ubicaciones y “At Sea” son nombres de marca o lugares y no requieren traducción; no se encontraron otras etiquetas traducibles desparejadas.
+- Se renueva la caché de estilos de la portada.
+- Validación: claves `data-i18n` presentes en `script.js`, sintaxis JavaScript y `git diff --check`.
+
 ### Aliados — incorporar Adventours at Sea al carrusel
 ### Aliados — ampliar el logo de Adventours dentro de la tarjeta
 ### Aliados — ampliar visualmente el logo de Adventours
