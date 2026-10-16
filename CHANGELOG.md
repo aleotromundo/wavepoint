@@ -4,6 +4,14 @@
 ### Aliados — ampliar visualmente el logo de Adventours
 ### Aliados — ampliar nuevamente el logo de Adventours y renovar caché
 ### Aliados — duplicar el tamaño visual del logo de Adventours
+### Aliados — igualar Adventours al formato del carrusel
+- `index.html`: Adventours vuelve a usar las mismas dimensiones, composición y tipografía de las demás tarjetas; se mantiene sin enlace, con `Adventours` y `At Sea` como nombre completo.
+- `assets/img/collaborators/adventours/ally-adventours-mark.webp`: nuevo asset cuadrado con solo el isotipo del barco para la miniatura de la tarjeta.
+- Se corrigió el recorte del isotipo para eliminar cualquier resto del wordmark y dejar solo el barco en la miniatura.
+- `styles.css` y `styles.optimized.css`: se retira el tratamiento especial de tarjeta ancha y logo sobredimensionado.
+- `index.html`: se renueva la caché de estilos.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
 - `styles.css` y `styles.optimized.css`: el logo se escala a 2x dentro de la tarjeta blanca, manteniendo el rectángulo y un margen visible alrededor.
 - `index.html`: se renueva la versión de caché para forzar la actualización en producción.
 - Validación: sintaxis JavaScript y `git diff --check`.
