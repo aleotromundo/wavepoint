@@ -17,7 +17,7 @@ El sitio se mantiene como una experiencia estática. La herramienta temporal de 
 - **Frontend:** HTML, CSS y JavaScript vanilla.
 - **Contenido:** textos bilingües principalmente en `script.js`, `trip-builder.js`, `guide-i18n.js` y atributos `data-i18n` del HTML.
 - **Imágenes:** rutas locales dentro de `assets/`, con algunos videos y reproductores externos de Castr.
-- **Backend:** `api/assistant.js`, endpoint POST con rate limit en memoria y OpenAI vía variable de entorno.
+- **Backend:** no hay backend propio; los formularios preparan consultas para WhatsApp.
 - **Estado cliente:** idioma y preferencias visuales en `localStorage`; no hay CMS ni persistencia editorial compartida.
 
 ## Hallazgos y riesgos
