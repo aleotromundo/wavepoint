@@ -1393,7 +1393,8 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 .newsletter-grid { grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr); }
 .newsletter-signup { min-width: 0; }
 .signup { padding: 6px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 12px; background: rgba(255, 255, 255, .12); backdrop-filter: blur(14px); }
-.signup input { min-height: 48px; border-radius: 8px; background: rgba(255, 255, 255, .94); }
+.signup input { min-height: 48px; border-radius: 8px; background: rgba(255, 255, 255, .94); color: #000; }
+.signup input::placeholder { color: #000; opacity: 1; }
 .signup button { min-height: 48px; border-radius: 8px; background: var(--wp-ocean); color: #fff; }
 .newsletter-status { margin: 10px 2px 0; color: rgba(255, 255, 255, .88); font-size: 13px; line-height: 1.45; }
 .newsletter-status.is-error { color: #ffd0ca; }
@@ -6614,6 +6615,9 @@ footer a {
   font-size: 13px;
   line-height: 1.6;
 }
+.service-rates-note p { margin: 0; }
+.service-rates-note p + p { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(231, 245, 239, .14); }
+.service-rates-note strong { color: #ffd98a; font-weight: 800; }
 .service-rates tbody td,
 .service-rates tbody td::before {
   font-size: 12px;
@@ -9344,3 +9348,10 @@ footer a {
 @media (max-width: 640px) {
   .allies-ticker { padding: 4px 0 6px !important; }
 }
+
+/* Clases de surf · información confirmada del servicio */
+.surf-lesson-details{max-width:900px;margin:28px auto 0;padding:22px 24px;border:1px solid rgba(8,127,128,.18);border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(224,244,238,.62));box-shadow:0 12px 28px rgba(8,43,58,.09)}
+.surf-lesson-details .service-supporting-lead{margin:0;color:#294b57;font-size:16px;line-height:1.65}
+.surf-lesson-details ul{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.surf-lesson-details li{padding:7px 11px;border:1px solid rgba(8,127,128,.18);border-radius:999px;background:rgba(255,255,255,.58);color:#244f59;font-size:13px}
+@media (max-width:640px){.surf-lesson-details{margin-top:20px;padding:17px}.surf-lesson-details .service-supporting-lead{font-size:15px;line-height:1.55}.surf-lesson-details ul{display:grid;gap:7px}.surf-lesson-details li{border-radius:12px}}

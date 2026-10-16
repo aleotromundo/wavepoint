@@ -160,8 +160,9 @@ experiences: { label: 'Which experiences would you like to add?', options: ['Sur
 {
 id: 'clases-de-surf', number: '02', eyebrow: 'CLASES DE SURF · TAMARINDO', title: 'Clases de surf',
 cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.',
-description: 'Una clase con instructor local, explicación en la playa y práctica guiada en el agua, adaptada al nivel del grupo. La disponibilidad de tabla y la colación de fruta, si se ofrecen, se confirman con el proveedor.',
-lead: 'Incluye instructor local, introducción al equipo y la seguridad, y práctica adaptada al nivel. La tabla durante la sesión y la colación de fruta al terminar quedan sujetas a confirmación operativa.',
+description: 'Una clase de surf de 2 horas con instructor local, explicación en la playa y práctica guiada en el agua, adaptada al nivel del grupo. Puede ser un primer acercamiento al mar o una sesión intermedia para corregir errores básicos.',
+lead: 'Incluye instructor local, introducción al equipo y la seguridad, tabla incluida y práctica adaptada al nivel. El punto de encuentro se informa después de confirmar la reserva y el pago.',
+includes: ['Duración: 2 horas', 'Tabla incluida', 'Primer acercamiento al mar o acompañamiento intermedio', 'Corrección de errores básicos', 'Punto de encuentro informado después de confirmar la reserva y el pago'],
 images: [
 'assets/img/services/surf-lessons/surf-lesson-woman.webp',
 'assets/img/services/surf-lessons/optimized/surf-lesson-group.webp',
@@ -191,8 +192,9 @@ en: {
 eyebrow: 'SURF LESSONS · TAMARINDO',
 title: 'Surf lessons',
 cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
-description: 'A lesson with a local surf instructor, a beach briefing and guided practice in the water, adapted to your group’s level. Board availability and a fruit snack, if offered, are confirmed with the provider.',
-lead: 'Includes a local instructor, an introduction to equipment and safety, and practice adapted to your level. A board during the session and a fruit snack afterwards are subject to operational confirmation.',
+description: 'A 2-hour lesson with a local surf instructor, a beach briefing and guided practice in the water, adapted to your group’s level. It can be a first approach to the ocean or an intermediate session focused on correcting basic mistakes.',
+lead: 'Includes a local instructor, an introduction to equipment and safety, a board, and practice adapted to your level. The meeting point is shared after the booking and payment are confirmed.',
+includes: ['Duration: 2 hours', 'Board included', 'First approach to the ocean or intermediate guidance', 'Correction of basic mistakes', 'Meeting point shared after the booking and payment are confirmed'],
 imageAlts: [
 'Student practicing surfing in Tamarindo',
 'Two surfers practicing together on a wave in Tamarindo',
@@ -216,10 +218,11 @@ board_need: { label: 'Will you need a board?', options: ['Yes', 'No, we bring ou
 }
 },
 {
-id: 'surf-coaching', number: '03', eyebrow: 'ENTRENAMIENTO · PROGRESO', title: 'Entrenamiento de surf',
-cardText: 'Entrenamiento personalizado con devolución técnica y una modalidad con o sin grabación, según disponibilidad.',
-description: 'Llevá tu surf al siguiente nivel con un coaching personalizado enfocado en tus objetivos, devolución técnica y consejos prácticos para trabajar durante la sesión.',
-lead: 'La duración, el spot, el formato de devolución, la cantidad de material y la modalidad con o sin video se confirman con el entrenador. Las fotos editadas, el transporte y la tabla pueden consultarse por separado.',
+id: 'surf-coaching', number: '03', eyebrow: 'SURFCOACHING · PROGRESO', title: 'Surfcoaching',
+cardText: 'Sesión de surf grabada y videoanálisis técnico para mejorar tu postura, tus tiempos y tus movimientos.',
+description: 'Un servicio de videoanálisis de una sesión de surf, recomendado para surfistas intermedios o avanzados. Primero se graba la sesión y después el instructor analiza las olas para hacer una devolución técnica.',
+lead: 'El servicio tiene dos momentos: una sesión de surf grabada, con una cámara que busca captar la mayor cantidad posible de olas, y un análisis posterior desde una pantalla para corregir posturas, tiempos y movimientos. Incluye el video de tus olas y la devolución técnica. Precio: USD 45 por persona.',
+includes: ['Sesión de surf grabada', 'Video de tus olas', 'Videoanálisis y devolución técnica posterior', 'Recomendado para surfistas intermedios o avanzados', 'USD 45 por persona'],
 images: ['assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/surf-coaching-session.webp', 'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp'],
 imageAlts: ['Tres surfistas saltando con sus tablas en la playa', 'Surfista surcando una ola sobre una tabla roja', 'Grupo de surfistas reuniéndose con sus tablas en la playa de Tamarindo'],
 imageAltsEn: ['Three surfers jumping with their boards on the beach', 'Surfer riding a wave on a red board', 'Group of surfers gathering with their boards on Tamarindo Beach'],
@@ -229,11 +232,11 @@ questions: [
 { id: 'improvement_goal', label: '¿Qué te gustaría mejorar?', type: 'textarea', placeholder: 'Contanos brevemente.' },
 { id: 'group_size', label: '¿Cuántas personas participan?', type: 'number', min: 1 },
 { id: 'participant_levels', label: '¿Qué nivel tiene cada participante?', type: 'textarea', placeholder: 'Opcional', optional: true },
-{ id: 'coaching_mode', label: '¿Qué modalidad quieren consultar?', type: 'choice', options: ['Coaching técnico y devolución durante la sesión', 'Coaching con grabación y videoanálisis · consultar disponibilidad y precio'] },
+{ id: 'coaching_mode', label: '¿Qué modalidad quieren consultar?', type: 'choice', options: ['Sesión grabada + videoanálisis posterior'] },
 { id: 'session_schedule', label: '¿Qué horario prefieren?', type: 'choice', options: ['Mañana', 'Mediodía', 'Tarde'] },
 { id: 'date_flexibility', label: '¿Tienen flexibilidad de fecha?', type: 'choice', optional: true, options: ['Sí, somos flexibles', 'No, necesitamos esa fecha'] },
 { id: 'preferred_spot', label: '¿Hay algún spot que quieran consultar?', type: 'text', placeholder: 'Opcional', optional: true },
-{ id: 'feedback_format', label: '¿Qué tipo de devolución quieren consultar?', type: 'choice', options: ['Devolución técnica durante la sesión', 'Videoanálisis posterior si la modalidad lo incluye'] },
+{ id: 'feedback_format', label: '¿Qué tipo de devolución quieren consultar?', type: 'choice', options: ['Videoanálisis posterior y devolución técnica'] },
 { id: 'transport_need', label: '¿Necesitan consultar por traslado?', type: 'choice', options: ['Sí', 'No'] },
 { id: 'own_board', label: '¿Traerán su propia tabla?', type: 'choice', options: ['Sí', 'No'] },
 { id: 'edited_photos', label: '¿Quieren consultar por fotos editadas aparte?', type: 'choice', optional: true, options: ['Sí', 'No por ahora'] }
@@ -241,9 +244,10 @@ questions: [
 en: {
 eyebrow: 'COACHING · PROGRESSION',
 title: 'Surf coaching',
-cardText: 'Personalized coaching with technical feedback and a format with or without filming, depending on availability.',
-description: 'Personalized surf coaching focused on your goals, with technical feedback and practical tips to work on during your session.',
-lead: 'Duration, spot, feedback format, amount of material and the format with or without video are confirmed with the coach. Edited photos, transportation and a board can be discussed separately.',
+cardText: 'A filmed surf session and technical video analysis to improve your posture, timing and movements.',
+description: 'A video analysis service for a surf session, recommended for intermediate or advanced surfers. The session is filmed first, and the coach then reviews the waves to provide technical feedback.',
+lead: 'The service has two moments: a filmed surf session, with a camera aiming to capture as many waves as possible, followed by a screen-based analysis to correct posture, timing and movements. It includes the video of your waves and technical feedback. Price: USD 45 per person.',
+includes: ['Filmed surf session', 'Video of your waves', 'Video analysis and technical feedback afterwards', 'Recommended for intermediate or advanced surfers', 'USD 45 per person'],
 imageAlts: ['Surfer riding a wave on a red board', 'Three surfers sharing a beach session with their boards', 'Group of surfers gathering with their boards on Tamarindo Beach'],
 questions: {
 preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
@@ -251,11 +255,11 @@ current_surf_level: { label: 'What is your current surfing level?', options: ['B
 improvement_goal: { label: 'What would you like to improve?', placeholder: 'Tell us briefly.' },
 group_size: { label: 'How many people are joining?', min: 1 },
 participant_levels: { label: 'What level is each participant?', placeholder: 'Optional' },
-coaching_mode: { label: 'Which format would you like to ask about?', options: ['Technical coaching and feedback during the session', 'Coaching with filming and video review · ask about availability and price'] },
+coaching_mode: { label: 'Which format would you like to ask about?', options: ['Filmed session + video analysis afterwards'] },
 session_schedule: { label: 'What time do you prefer?', options: ['Morning', 'Midday', 'Afternoon'] },
 date_flexibility: { label: 'Are you flexible with the date?', options: ['Yes, we are flexible', 'No, we need that date'] },
 preferred_spot: { label: 'Is there a spot you would like to ask about?', placeholder: 'Optional' },
-feedback_format: { label: 'What type of feedback would you like to ask about?', options: ['Technical feedback during the session', 'Video review afterwards if the format includes it'] },
+feedback_format: { label: 'What type of feedback would you like to ask about?', options: ['Video analysis afterwards and technical feedback'] },
 transport_need: { label: 'Would you like to ask about transportation?', options: ['Yes', 'No'] },
 own_board: { label: 'Will you bring your own board?', options: ['Yes', 'No'] },
 edited_photos: { label: 'Would you like to ask about edited photos separately?', options: ['Yes', 'Not for now'] }
@@ -881,7 +885,8 @@ function renderSurfLessonStory(service) {
 const ui = uiFor(service);
 const isEn = lang === 'en';
 const gallery = service.images.slice(1).map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index + 1] || `${ui.galleryAlt} ${index + 2}`)}" loading="lazy" />`).join('');
-return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : 'Fotos de las clases de surf'}">${gallery}</div></section><section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
+const details = `<div class="surf-lesson-details"><p class="service-supporting-lead">${esc(service.lead || '')}</p>${service.includes?.length ? `<ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul>` : ''}</div>`;
+return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : 'Fotos de las clases de surf'}">${gallery}</div></section>${details}<section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
