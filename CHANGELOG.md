@@ -1,3 +1,53 @@
+## 2026-10-15
+### Carrusel de aliados — corregir traducción de la copia animada
+- `index.html`: la segunda copia de la tarjeta de Chop House ahora usa `data-i18n="sponsorActive"`, igual que la primera, para que “Patrocinador activo” cambie a “Active sponsor” en inglés y vuelva correctamente al español.
+- Auditoría del carrusel: los nombres propios, ubicaciones y “At Sea” son nombres de marca o lugares y no requieren traducción; no se encontraron otras etiquetas traducibles desparejadas.
+- Se renueva la caché de estilos de la portada.
+- Validación: claves `data-i18n` presentes en `script.js`, sintaxis JavaScript y `git diff --check`.
+
+### Aliados — incorporar Adventours at Sea al carrusel
+### Aliados — ampliar el logo de Adventours dentro de la tarjeta
+### Aliados — ampliar visualmente el logo de Adventours
+### Aliados — ampliar nuevamente el logo de Adventours y renovar caché
+### Aliados — duplicar el tamaño visual del logo de Adventours
+### Aliados — igualar Adventours al formato del carrusel
+- `index.html`: Adventours vuelve a usar las mismas dimensiones, composición y tipografía de las demás tarjetas; se mantiene sin enlace, con `Adventours` y `At Sea` como nombre completo.
+- `assets/img/collaborators/adventours/ally-adventours-mark.webp`: nuevo asset cuadrado con solo el isotipo del barco para la miniatura de la tarjeta.
+- Se corrigió el recorte del isotipo para eliminar cualquier resto del wordmark y dejar solo el barco en la miniatura.
+- `styles.css` y `styles.optimized.css`: se retira el tratamiento especial de tarjeta ancha y logo sobredimensionado.
+- `index.html`: se renueva la caché de estilos.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
+- `styles.css` y `styles.optimized.css`: el logo se escala a 2x dentro de la tarjeta blanca, manteniendo el rectángulo y un margen visible alrededor.
+- `index.html`: se renueva la versión de caché para forzar la actualización en producción.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
+- `styles.css` y `styles.optimized.css`: el logo pasa de escala 1.2 a 1.35 dentro de la tarjeta blanca, conservando margen visual y sin modificar el rectángulo.
+- `index.html`: se renueva la versión de caché de `styles.optimized.css` para que el ajuste sea visible inmediatamente.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
+- `styles.css` y `styles.optimized.css`: se escala el logo un 20% dentro de su tarjeta blanca para mejorar su lectura en móvil y escritorio, conservando el nombre completo sin cambiar la tarjeta.
+- Validación: `git diff --check` y sintaxis JavaScript.
+
+- `styles.css` y `styles.optimized.css`: se elimina el padding vertical interno de la tarjeta de Adventours para que el logo panorámico aproveche toda la altura disponible, sin cambiar el ancho ni la altura de la tarjeta.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
+- `index.html`: se agrega Adventours at Sea en las dos copias del carrusel para conservar la animación continua, como aliado visual sin enlace ni destino.
+- `assets/img/collaborators/adventours/ally-adventours.webp`: logo suministrado por el usuario, recortado de la transparencia residual, optimizado para web y compuesto sobre fondo blanco.
+- `styles.css` y `styles.optimized.css`: la tarjeta de Adventours usa un ancho mayor que las demás, mantiene el logo panorámico completo con `object-fit: contain` y evita estados hover que sugieran interacción.
+### Validación
+- Se comprobó que la tarjeta Adventours no contiene ningún enlace.
+- Se comprobó que las dos copias del carrusel usan el nuevo asset y que la segunda permanece oculta para lectores de pantalla.
+- `node --check script.js`, `node --check services.js`, `node --check lang-switch.js` y `git diff --check` pasan correctamente.
+
+## 2026-10-14
+### Clases de surf y surfcoaching — condiciones y precios aclarados
+- `services.js`: las clases de surf ahora indican 2 horas, tabla incluida, acompañamiento desde el primer acercamiento al mar hasta el nivel intermedio, corrección de errores básicos y que el punto de encuentro se informa después de confirmar la reserva y el pago. Surfcoaching ahora describe sus dos momentos (sesión grabada y videoanálisis posterior), recomienda el servicio para surfistas intermedios o avanzados e indica USD 45 por persona con video y devolución incluidos.
+- `pricing-data.js`: se mantienen los precios existentes de clases de surf (USD 70, 65, 60, 55 y 50 por persona) y la tabla ahora presenta una única categoría de “5 o más”, con importes expresados en USD en lugar de “c/u”.
+- `index.html`, `script.js` y `api/assistant.js`: se actualizaron los resúmenes visibles, el texto bilingüe y el contexto del asistente para reflejar las condiciones confirmadas.
+- `styles.css` y `styles.optimized.css`: se agregó el bloque visual de información confirmada para la ficha de clases de surf.
+- Validación: sintaxis JavaScript, referencias y `git diff --check`.
+
 ## 2026-10-14
 ### Formularios — clases de surf y surf coaching
 - `services.js`: se agregaron fecha, adultos y niños con edades, formato privado/grupal, idioma, comodidad en el agua, traslado, nivel por participante, flexibilidad, spot y modalidad con o sin video según corresponda.
