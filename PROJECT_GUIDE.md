@@ -27,10 +27,11 @@ El repositorio no utiliza un framework frontend ni un sistema de build obligator
 | Detalle de servicio | `service-detail.html` + `services.js` | Página dinámica según `?service=...`, preguntas y solicitud por WhatsApp. |
 | Guía turística | `guia-playas.html` | Playas, spots y experiencias de Guanacaste. |
 | Páginas de colaboradores | `Enlaces/*.html` | Fichas individuales de aliados locales. |
-| Comportamiento global | `script.js` | Traducciones, clima, cámaras, idioma, navegación, animaciones y modales. |
+| Comportamiento global | `script.js` | Traducciones, clima, cámaras, idioma, navegación, animaciones, asistente y modales. |
 | Selector de idioma | `lang-switch.js` | Selector ES/EN presente en todas las páginas, idioma guardado en `localStorage` y traducción de navegación y pie compartidos. |
 | Estilos globales | `styles.css` | Diseño, responsive, animaciones, tarjetas, fondos y accesibilidad visual. |
 | Datos de servicios | `services.js` | Catálogo, descripciones, imágenes, preguntas y formularios de cada servicio. |
+| Asistente | `api/assistant.js` | Contexto y endpoint serverless del asistente local. |
 | Rutas Vercel | `vercel.json` | Servir archivos estáticos y fallback de rutas. |
 | Historial | `CHANGELOG.md` | Registro detallado de cambios, decisiones y validaciones. |
 
@@ -89,7 +90,7 @@ retiros
 ## Pendientes confirmados por el usuario
 
 - **Completado — guía bilingüe en `guia-playas.html`.** `guide-i18n.js` traduce todo el contenido editorial, las categorías, los datos de cada lugar, las recomendaciones prácticas, los enlaces accesibles y los textos alternativos. El selector compartido ES/EN restaura el contenido y el formato españoles originales; no se reescribieron los títulos ni los datos fuente.
-- **Carrito móvil de Armá tu viaje:** el resumen completo permanece después de las experiencias. En `trip-builder.html`, un botón flotante muestra el carrito vacío o la cantidad elegida en XP mientras el resumen está fuera de pantalla; al tocarlo, desplaza al resumen existente. No agregar este control a otras páginas. El botón se ubica por encima del acceso fijo de WhatsApp.
+- **Carrito móvil de Armá tu viaje:** el resumen completo permanece después de las experiencias. En `trip-builder.html`, un botón flotante muestra el carrito vacío o la cantidad elegida en XP mientras el resumen está fuera de pantalla; al tocarlo, desplaza al resumen existente. No agregar este control a otras páginas. El botón se ubica por encima de los accesos fijos de WhatsApp y del asistente, ambos bilingües y disponibles en esta página.
 - Instagram se mantiene en la navegación superior en escritorio y dentro del menú hamburguesa en móvil; no añadirlo de nuevo en los footers. La guía y el armador usan el footer bilingüe del index, con enlaces internos corregidos para esas páginas.
 - **Formulario antes del footer:** la idea descrita en `GUIA 2.0.pdf` como “Why book with WavePoint?” debe resolverse como un formulario de contacto antes del footer, no como una sección editorial de beneficios. Definir con el usuario campos y envío antes de implementar.
 - **Confirmaciones de solicitudes por WhatsApp:** las fichas de servicios y el Armador muestran que el mensaje está preparado y que la persona debe tocar Enviar en WhatsApp para que WavePoint reciba la consulta. La confirmación aclara que la reserva aún no está confirmada y que no se realizó un pago; no afirmar que el mensaje se envió o recibió porque el sitio estático no puede verificarlo. Si WhatsApp no se abrió, ofrecer un enlace directo al mensaje preparado.
@@ -103,6 +104,7 @@ Cuando cambie el catálogo, actualizar de forma coordinada:
 - Las tarjetas de servicios en `index.html`.
 - El array `services` en `services.js`.
 - Las traducciones de títulos y descripciones en `script.js`.
+- El contexto del asistente en `api/assistant.js` si afecta sus recomendaciones.
 - El `CHANGELOG.md` con archivos, decisión y validación.
 
 ## 5. Armá tu viaje por Tamarindo
