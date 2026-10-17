@@ -9,8 +9,8 @@ Use this skill when changing WavePoint search metadata, social previews, structu
 
 ## Verified site context
 
-- The current public/canonical domain, confirmed by the user, is `https://wavepoint-five.vercel.app/`.
-- `https://wavepointcr.com/` is a planned future domain only. Do not publish it as an active canonical, social URL, schema URL, sitemap host, or robots sitemap until the user confirms the migration.
+- The current public/canonical domain, confirmed by the user, is `https://wavepointcr.com/`.
+- `https://wavepointcr.com/` is the active public domain confirmed by the user. Use it as the canonical, social, schema, sitemap, and robots host.
 - WavePoint is a static site deployed with Vercel. The main landing page is `index.html`.
 - The homepage's primary focus is Surf Experiences in Tamarindo, Costa Rica. Live surf cameras remain available as a secondary feature unless the user asks to remove them.
 - The confirmed Instagram profile is `https://www.instagram.com/wavepointcr/`.

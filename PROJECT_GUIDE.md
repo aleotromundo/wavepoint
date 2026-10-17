@@ -8,8 +8,8 @@ La guía existe para que otra persona o agente pueda continuar el proyecto sin d
 
 ### Dominio público y posicionamiento
 
-- Dominio público/canónico confirmado por el usuario: `https://wavepoint-five.vercel.app/`.
-- `https://wavepointcr.com/` es un dominio futuro previsto, no activo ni verificado. No usarlo en canonical, Open Graph, JSON-LD, `robots.txt` ni `sitemap.xml` hasta confirmar la migración.
+- Dominio público/canónico confirmado por el usuario: `https://wavepointcr.com/`.
+- `https://wavepointcr.com/` es el dominio público activo confirmado por el usuario. Usarlo como host canónico en canonical, Open Graph, JSON-LD, `robots.txt` y `sitemap.xml`.
 - La portada debe posicionar WavePoint como **Surf Experiences** en Tamarindo, Costa Rica. Las cámaras siguen disponibles como una sección secundaria; no eliminarlas sin pedido explícito.
 - Mantener el contenido visible y el copy SEO en español e inglés. Evitar keyword stuffing, afirmaciones operativas no verificadas y promesas de ranking.
 - El inglés es el idioma inicial; el selector permite cambiar a español y guarda la preferencia. Los títulos y textos visibles aprobados por el usuario son literales: no reescribirlos por SEO ni modificarlos sin permiso explícito. El SEO puede optimizarse en metadatos sin cambiar el copy visible.
