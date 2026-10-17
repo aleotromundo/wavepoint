@@ -705,12 +705,12 @@
 
   function applyLocalizedMetadata(lang) {
     const metadata = lang === 'es' ? {
-      title: 'Experiencias de surf en Tamarindo, Costa Rica | WavePoint',
-      description: 'Explorá experiencias de surf en Tamarindo, Costa Rica: clases, coaching, viajes a Roca Bruja y fotografía. Planeá tu viaje por Guanacaste con WavePoint.',
+      title: 'WavePoint Tamarindo | Surf, playas y experiencias en Costa Rica',
+      description: 'Descubrí surf, playas, cámaras en vivo, alojamientos y experiencias locales en Tamarindo, Costa Rica.',
       locale: 'es_CR'
     } : {
-      title: 'Surf Experiences in Tamarindo, Costa Rica | WavePoint',
-      description: 'Explore surf experiences in Tamarindo, Costa Rica: surf lessons, coaching, Witch’s Rock surf trips and photography. Plan your Guanacaste trip with WavePoint.',
+      title: 'WavePoint Tamarindo | Surf, beaches and experiences in Costa Rica',
+      description: 'Discover surf, beaches, live cameras, stays and local experiences in Tamarindo, Costa Rica.',
       locale: 'en_US'
     };
     document.title = metadata.title;
