@@ -180,17 +180,13 @@ Las secciones fuera del hero pueden usar gradientes oceánicos, capas radiales y
 
 ### Favicon y logo original
 
-El favicon usa el icono `surfing` de Google Material Icons sobre un fondo oceánico WavePoint, con respaldo PNG de 16 y 32 px, un ICO multirresolución y un icono Apple a juego. El SVG incluye la atribución y `assets/MATERIAL-ICONS-LICENSE.txt` contiene la licencia Apache 2.0. Todas las páginas enlazan los recursos localmente con versión de caché.
+El favicon activo es la imagen `favicon.jpg`, proporcionada por el usuario. Todas las páginas enlazan únicamente ese archivo desde la raíz del sitio como `image/jpeg`; no se mantienen variantes PNG, ICO, SVG ni iconos táctiles alternativos.
 
 ```text
-favicon.svg                               Google Material Icon “surfing” con fondo WavePoint
-favicon-16.png / favicon-32.png           Respaldo PNG para navegadores
-favicon.ico                               Respaldo multirresolución (16/32/48/64/128/256)
-assets/wavepoint-apple-touch-icon.png     Icono Apple a juego (180 × 180)
-assets/MATERIAL-ICONS-LICENSE.txt         Licencia Apache 2.0 del icono
+favicon.jpg                               Favicon único del sitio (imagen proporcionada por el usuario)
 ```
 
-Conservar la atribución, la licencia y los respaldos locales al actualizar el icono.
+Conservar este archivo como fuente única al actualizar el icono.
 
 ## 8. Responsive y accesibilidad
 
