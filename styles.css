@@ -1,4 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap");
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/barlow-condensed-500.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/barlow-condensed-600.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/barlow-condensed-700.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:800;font-display:swap;src:url("assets/fonts/barlow-condensed-800.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/dm-sans-400.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/dm-sans-500.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/dm-sans-600.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/dm-sans-700.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:800;font-display:swap;src:url("assets/fonts/dm-sans-800.woff2") format("woff2")}
+@font-face{font-family:"Fredoka";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/fredoka-400.woff2") format("woff2")}
+@font-face{font-family:"Fredoka";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/fredoka-500.woff2") format("woff2")}
+@font-face{font-family:"Fredoka";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/fredoka-600.woff2") format("woff2")}
+@font-face{font-family:"Orbitron";font-style:normal;font-weight:900;font-display:swap;src:url("assets/fonts/orbitron-900.woff2") format("woff2")}
+@font-face{font-family:"Permanent Marker";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/permanent-marker-400.woff2") format("woff2")}
+@font-face{font-family:"Rock Salt";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/rock-salt-400.woff2") format("woff2")}
+@font-face{font-family:"Shadows Into Light";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/shadows-into-light-400.woff2") format("woff2")}
     :root {
       --wp-midnight:#062638;
       --wp-deep-water:#0a3547;
