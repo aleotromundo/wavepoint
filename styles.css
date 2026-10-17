@@ -1,15 +1,4 @@
-@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/barlow-condensed-500.woff2") format("woff2")}
-@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/barlow-condensed-600.woff2") format("woff2")}
-@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/barlow-condensed-700.woff2") format("woff2")}
-@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:800;font-display:swap;src:url("assets/fonts/barlow-condensed-800.woff2") format("woff2")}
-@font-face{font-family:"DM Sans";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/dm-sans-400.woff2") format("woff2")}
-@font-face{font-family:"DM Sans";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/dm-sans-500.woff2") format("woff2")}
-@font-face{font-family:"DM Sans";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/dm-sans-600.woff2") format("woff2")}
-@font-face{font-family:"DM Sans";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/dm-sans-700.woff2") format("woff2")}
-@font-face{font-family:"DM Sans";font-style:normal;font-weight:800;font-display:swap;src:url("assets/fonts/dm-sans-800.woff2") format("woff2")}
-@font-face{font-family:Fredoka;font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/fredoka-400.woff2") format("woff2")}
-@font-face{font-family:Fredoka;font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/fredoka-500.woff2") format("woff2")}
-@font-face{font-family:Fredoka;font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/fredoka-600.woff2") format("woff2")}
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap");
     :root {
       --wp-midnight:#062638;
       --wp-deep-water:#0a3547;
@@ -1029,7 +1018,7 @@ body {
 }
 
 h1, h2, h3, h4, .section-title, .foot-brand {
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-family: "Barlow Condensed", Impact, sans-serif;
   letter-spacing: 0;
 }
 
@@ -1220,7 +1209,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 
 .weather-head { letter-spacing: .06em; }
 .weather-head small { letter-spacing: 0; }
-.temp { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 0; }
+.temp { font-family: "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; }
 .w-ico { border-radius: 9px; background: rgba(141, 229, 223, .15); color: #a9f3ec; }
 
 .section { padding: 84px 0; }
@@ -1343,7 +1332,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 .partner-card { min-height: 210px; }
 .partner-badge { border-radius: 7px; background: rgba(8, 43, 58, .58); }
 .partner-badge.sponsor { background: rgba(7, 140, 145, .88); }
-.partner-overlay h3, .partner-card h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 30px; font-weight: 700; letter-spacing: 0; }
+.partner-overlay h3, .partner-card h3 { font-family: "Barlow Condensed", Impact, sans-serif; font-size: 30px; font-weight: 700; letter-spacing: 0; }
 .partner-card h3 { font-size: 25px; }
 .sponsor-site-link { display: inline-flex; padding-bottom: 3px; border-bottom: 1px solid rgba(255, 255, 255, .64); }
 
@@ -1360,7 +1349,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   -webkit-backdrop-filter: blur(14px);
 }
 
-.after-content h3, .promo-content h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; letter-spacing: 0; }
+.after-content h3, .promo-content h3 { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 700; letter-spacing: 0; }
 .after-content h3 { font-size: 30px; }
 
 .services { background: linear-gradient(145deg, rgba(222, 239, 234, .76), rgba(250, 251, 247, .84) 58%, rgba(233, 243, 239, .72)); }
@@ -1384,17 +1373,17 @@ h1, h2, h3, h4, .section-title, .foot-brand {
   font-size: 21px;
   box-shadow: none;
 }
-.benefit h3 { color: var(--deep); font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 22px; font-weight: 700; }
+.benefit h3 { color: var(--deep); font-family: "Barlow Condensed", Impact, sans-serif; font-size: 22px; font-weight: 700; }
 .benefit p { color: var(--muted); font-size: 14px; font-weight: 500; }
 .guide-card { border-radius: 16px; box-shadow: 0 20px 50px rgba(8, 43, 58, .18); }
-.guide-content h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; letter-spacing: 0; }
+.guide-content h3 { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 700; letter-spacing: 0; }
 
 .newsletter {
   padding: 62px 0;
   background: linear-gradient(105deg, rgba(7, 112, 121, .94), rgba(8, 43, 58, .94)), url('assets/img/site/home-hero-fallback.jpg') center/cover no-repeat;
 }
 
-.newsletter h2 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 40px; line-height: 1; font-weight: 700; }
+.newsletter h2 { font-family: "Barlow Condensed", Impact, sans-serif; font-size: 40px; line-height: 1; font-weight: 700; }
 .newsletter p { max-width: 460px; line-height: 1.55; font-weight: 500; }
 .newsletter-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .newsletter-signup { min-width: 0; }
@@ -1427,7 +1416,7 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 .contact-request-copy h2 {
   margin: 0 0 14px;
   color: #082b3a;
-  font: 700 clamp(34px, 4vw, 48px)/1.02 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(34px, 4vw, 48px)/1.02 "Barlow Condensed", Impact, sans-serif;
 }
 .contact-request-copy p {
   max-width: 440px;
@@ -1523,13 +1512,13 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 }
 .request-flow-number {
   color: #087f87;
-  font: 700 16px/1 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 16px/1 "Barlow Condensed", Impact, sans-serif;
   letter-spacing: .12em;
 }
 .request-flow-card h3 {
   margin: 18px 0 8px;
   color: #082b3a;
-  font: 700 25px/1.05 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 25px/1.05 "Barlow Condensed", Impact, sans-serif;
 }
 .request-flow-card p {
   flex: 1;
@@ -1588,21 +1577,21 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 
 footer { padding: 62px 0 28px; background: #082b3a; }
 .foot-brand { font-size: 32px; font-weight: 700; }
-footer h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 20px; font-weight: 700; }
+footer h3 { font-family: "Barlow Condensed", Impact, sans-serif; font-size: 20px; font-weight: 700; }
 footer p, footer a { font-size: 13px; font-weight: 500; }
 footer a:hover { color: #a9f3ec; }
 .foot-bottom { border-color: rgba(255, 255, 255, .15); }
 
 .modal { background: rgba(4, 22, 30, .78); backdrop-filter: blur(10px); }
 .modal-box { border: 1px solid rgba(255, 255, 255, .16); border-radius: 18px; background: rgba(7, 34, 47, .96); }
-.modal-title, .offline-panel h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; letter-spacing: 0; }
+.modal-title, .offline-panel h3 { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 700; letter-spacing: 0; }
 .spot-modal-body { background: #f0f6f3; }
 .spot-card, .spot-info-block { border-color: rgba(19, 63, 76, .1); border-radius: 12px; box-shadow: 0 8px 22px rgba(8, 43, 58, .06); }
-.spot-card strong, .spot-info-block h4 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; letter-spacing: 0; }
+.spot-card strong, .spot-info-block h4 { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 700; letter-spacing: 0; }
 .ad-grid { border-color: rgba(7, 140, 145, .12); border-radius: 18px; background: linear-gradient(135deg, rgba(228, 241, 238, .9), rgba(255, 255, 255, .9)); box-shadow: 0 16px 42px rgba(8, 43, 58, .08); }
-.ad-grid h2 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 44px; line-height: .98; font-weight: 700; letter-spacing: 0; }
+.ad-grid h2 { font-family: "Barlow Condensed", Impact, sans-serif; font-size: 44px; line-height: .98; font-weight: 700; letter-spacing: 0; }
 .ad-format { border-color: rgba(19, 63, 76, .1); border-radius: 12px; box-shadow: 0 8px 22px rgba(8, 43, 58, .06); }
-.ad-format strong { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 20px; font-weight: 700; }
+.ad-format strong { font-family: "Barlow Condensed", Impact, sans-serif; font-size: 20px; font-weight: 700; }
 
 @media (max-width: 1180px) {
   .hero h1 { font-size: 72px; }
@@ -1982,7 +1971,7 @@ html { scroll-padding-top: 0; }
 .camera-card { min-height: 400px; }
 .cam-media { height: 244px; background: #07384a; }
 .cam-body { min-height: 156px; align-items: start; }
-.cam-body h3, .service-body h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; }
+.cam-body h3, .service-body h3 { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 700; }
 .cam-meta { padding-top: 2px; }
 .cam-actions { align-self: end; }
 .badge { top: 14px; left: 14px; border-radius: 6px; }
@@ -2309,7 +2298,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .assistant-panel[hidden] { display: none; }
 .assistant-header { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 17px 18px; background: linear-gradient(115deg, #0a3443, #087b82); color: #fff; }
 .assistant-header small { display: block; color: rgba(231, 255, 249, .72); font-size: 9px; font-weight: 700; letter-spacing: .08em; }
-.assistant-header h2 { margin: 3px 0 0; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 26px; line-height: 1; font-weight: 700; }
+.assistant-header h2 { margin: 3px 0 0; font-family: "Barlow Condensed", Impact, sans-serif; font-size: 26px; line-height: 1; font-weight: 700; }
 .assistant-close { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: rgba(255,255,255,.1); color: #fff; font-size: 22px; cursor: pointer; }
 .assistant-messages { display: flex; flex-direction: column; gap: 10px; overflow-y: auto; padding: 17px 14px; }
 .assistant-message { max-width: 88%; margin: 0; padding: 10px 12px; border-radius: 13px; font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -2424,20 +2413,20 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .service-page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(4, 24, 33, .3), transparent 65%); }
 .service-page-hero-content { width: min(100% - 42px, 850px); max-width: 850px; margin-left: max(21px, calc((100vw - 1180px) / 2)); }
 .service-page-kicker { margin: 0 0 15px; color: #99e5d8; font: 700 12px "DM Sans", sans-serif; letter-spacing: .1em; }
-.service-page-hero h1 { max-width: 800px; margin: 0; color: #f5fbf8; font: 700 clamp(54px, 7vw, 82px)/.98 "Barlow Condensed", "Arial Narrow", sans-serif; overflow-wrap: anywhere; }
+.service-page-hero h1 { max-width: 800px; margin: 0; color: #f5fbf8; font: 700 clamp(54px, 7vw, 82px)/.98 "Barlow Condensed", Impact, sans-serif; overflow-wrap: anywhere; }
 .service-page-intro { max-width: 630px; margin: 18px 0 25px; color: rgba(241, 250, 247, .82); font-size: 17px; line-height: 1.55; }
 .service-page-cta { display: inline-flex; min-height: 48px; align-items: center; padding: 0 18px; border: 1px solid rgba(179, 244, 225, .32); border-radius: 7px; background: #0b7f80; color: #fff; font-size: 14px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
 .service-page-cta:hover { transform: translateY(-2px); background: #0d9991; }
 .service-page-list, .guide-page-list { padding: 66px 0 86px; background: linear-gradient(145deg, #092c3b, #123e45 55%, #0a2c3c); }
 .service-page-heading { max-width: 690px; margin-bottom: 28px; }
-.service-page-heading h2 { margin: 0; color: #f1faf6; font: 700 44px/1.08 "Barlow Condensed", "Arial Narrow", sans-serif; overflow-wrap: anywhere; }
+.service-page-heading h2 { margin: 0; color: #f1faf6; font: 700 44px/1.08 "Barlow Condensed", Impact, sans-serif; overflow-wrap: anywhere; }
 .service-offerings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .service-offering { display: grid; grid-template-columns: .86fr 1.14fr; min-height: 220px; overflow: hidden; border: 1px solid rgba(186, 231, 220, .18); border-radius: 10px; background: linear-gradient(145deg, rgba(221, 240, 233, .12), rgba(10, 43, 55, .8)); color: #eef8f4; text-decoration: none; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
 .service-offering:hover, .guide-offering:hover { transform: translateY(-3px); border-color: rgba(151, 230, 211, .52); background-color: rgba(17, 74, 78, .45); }
 .service-offering img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
 .service-offering div { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; padding: 21px 20px; }
 .service-offering span, .guide-offering span { color: #9ce8d7; font: 700 10px "DM Sans", sans-serif; letter-spacing: .08em; }
-.service-offering h3, .guide-offering h3 { margin: 9px 0 7px; color: #f6fbf8; font: 700 27px/1.08 "Barlow Condensed", "Arial Narrow", sans-serif; overflow-wrap: anywhere; }
+.service-offering h3, .guide-offering h3 { margin: 9px 0 7px; color: #f6fbf8; font: 700 27px/1.08 "Barlow Condensed", Impact, sans-serif; overflow-wrap: anywhere; }
 .service-offering p, .guide-offering p { margin: 0 0 16px; color: rgba(231, 245, 239, .73); font-size: 13px; line-height: 1.5; }
 .service-offering strong, .guide-offering strong { margin-top: auto; color: #b8f0e1; font-size: 12px; }
 .guide-page-hero { background-image: linear-gradient(90deg, rgba(3, 22, 31, .82), rgba(4, 36, 45, .47) 58%, rgba(6, 40, 48, .26)), url('assets/img/stays/capitan-suizo/cover.webp'); }
@@ -2448,22 +2437,22 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .guide-offering div { display: flex; min-width: 0; flex: 1; flex-direction: column; align-items: flex-start; padding: 19px; }
 .guide-original-content { margin-top: 0; padding: 74px max(28px, calc((100% - 1180px) / 2)) 86px; background: linear-gradient(145deg, #092c3b, #123e45 55%, #0a2c3c); }
 .guide-detail-heading { max-width: 820px; margin-bottom: 28px; }
-.guide-detail-heading h2 { margin: 0 0 12px; color: #f1faf6; font: 700 48px/1.08 "Barlow Condensed", "Arial Narrow", sans-serif; overflow-wrap: anywhere; }
+.guide-detail-heading h2 { margin: 0 0 12px; color: #f1faf6; font: 700 48px/1.08 "Barlow Condensed", Impact, sans-serif; overflow-wrap: anywhere; }
 .guide-detail-heading > p:last-child { margin: 0; color: rgba(231, 245, 239, .78); font-size: 16px; line-height: 1.7; }
 .guide-glossary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 54px; }
 .guide-glossary a { display: flex; flex-direction: column; gap: 7px; min-height: 118px; padding: 16px; border: 1px solid rgba(186, 231, 220, .18); border-radius: 12px; background: rgba(221, 240, 233, .07); color: #eef8f4; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
 .guide-glossary a:hover { transform: translateY(-3px); border-color: rgba(151, 230, 211, .52); background: rgba(17, 74, 78, .45); }
-.guide-glossary strong { color: #f6fbf8; font: 700 22px/1 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.guide-glossary strong { color: #f6fbf8; font: 700 22px/1 "Barlow Condensed", Impact, sans-serif; }
 .guide-glossary span { color: rgba(231, 245, 239, .68); font-size: 12px; line-height: 1.45; }
 .guide-detail-category { scroll-margin-top: 28px; max-width: 850px; margin: 0 0 18px; }
-.guide-detail-category h3 { margin: 0 0 8px; color: #f1faf6; font: 700 38px/1.08 "Barlow Condensed", "Arial Narrow", sans-serif; overflow-wrap: anywhere; }
+.guide-detail-category h3 { margin: 0 0 8px; color: #f1faf6; font: 700 38px/1.08 "Barlow Condensed", Impact, sans-serif; overflow-wrap: anywhere; }
 .guide-detail-category > p:last-child { margin: 0; color: rgba(231, 245, 239, .72); font-size: 14px; line-height: 1.6; }
 .guide-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 54px; }
 .guide-detail-card { display: grid; grid-template-columns: 170px minmax(0, 1fr); overflow: hidden; border: 1px solid rgba(186, 231, 220, .18); border-radius: 14px; background: linear-gradient(145deg, rgba(221, 240, 233, .1), rgba(10, 43, 55, .78)); color: #eef8f4; box-shadow: 0 12px 24px rgba(0, 0, 0, .12); }
 .guide-detail-card-text-only { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr); }
 .guide-detail-card img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; }
 .guide-detail-card > div { min-width: 0; padding: 19px; }
-.guide-detail-card h4 { margin: 0 0 8px; color: #f6fbf8; font: 700 27px/1.08 "Barlow Condensed", "Arial Narrow", sans-serif; overflow-wrap: anywhere; }
+.guide-detail-card h4 { margin: 0 0 8px; color: #f6fbf8; font: 700 27px/1.08 "Barlow Condensed", Impact, sans-serif; overflow-wrap: anywhere; }
 .guide-detail-card p { margin: 0 0 14px; color: rgba(231, 245, 239, .76); font-size: 12px; line-height: 1.55; }
 .guide-detail-card ul { display: grid; gap: 7px; margin: 0 0 14px; padding-left: 17px; color: rgba(231, 245, 239, .72); font-size: 11px; line-height: 1.45; }
 .guide-detail-card li strong { color: #c3f2e5; }
@@ -2725,7 +2714,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .collab-hero::after { content: ""; position: absolute; inset: auto 0 0; height: 150px; background: linear-gradient(0deg, rgba(4, 31, 42, .88), transparent); pointer-events: none; }
 .collab-hero-inner { position: relative; z-index: 1; width: min(100% - 42px, 780px); max-width: 780px; margin-left: max(21px, calc((100vw - 1180px) / 2)); margin-right: auto; }
 .collab-kicker, .collab-label { color: #9ce8d7; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
-.collab-hero h1 { max-width: 740px; margin: 14px 0 18px; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: clamp(48px, 6.8vw, 82px); line-height: .98; font-weight: 700; letter-spacing: 0; text-wrap: balance; }
+.collab-hero h1 { max-width: 740px; margin: 14px 0 18px; font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(48px, 6.8vw, 82px); line-height: .98; font-weight: 700; letter-spacing: 0; text-wrap: balance; }
 .collab-intro { max-width: 610px; margin: 0 0 28px; color: rgba(245, 252, 249, .84); font-size: 18px; line-height: 1.5; }
 .collab-content { padding: 48px 0 82px; background: transparent; }
 .collab-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: 30px; align-items: start; }
@@ -2897,7 +2886,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .ally-tile:hover { background: rgba(255, 255, 255, .18); }
 .ally-tile img { width: 58px; height: 58px; flex: 0 0 58px; border-radius: 9px; object-fit: cover; }
 .ally-tile span { display: grid; min-width: 0; gap: 3px; }
-.ally-tile strong { display: block; overflow: visible; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 20px; line-height: .95; white-space: normal; overflow-wrap: normal; }
+.ally-tile strong { display: block; overflow: visible; font-family: "Barlow Condensed", Impact, sans-serif; font-size: 20px; line-height: .95; white-space: normal; overflow-wrap: normal; }
 .ally-tile small { color: #a0e7d8; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .ally-sponsor { border-color: rgba(255, 208, 106, .45); }
 .ally-sponsor small { color: #ffd477; }
@@ -2931,7 +2920,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .allies-ticker-set { align-items: center; gap: 14px; padding-right: 14px; }
 .ally-heading-tile { display: grid; flex: 0 0 300px; align-content: center; min-height: 104px; padding: 8px 12px; }
 .ally-heading-marker { width: 34px; height: 3px; margin-bottom: 10px; border-radius: 2px; background: #55ddc4; }
-.ally-heading-tile h2 { margin: 0; color: #f4fbf8; font: 700 34px/1 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.ally-heading-tile h2 { margin: 0; color: #f4fbf8; font: 700 34px/1 "Barlow Condensed", Impact, sans-serif; }
 .ally-heading-tile p { max-width: 290px; margin: 8px 0 0; color: rgba(234, 247, 242, .72); font-size: 12px; line-height: 1.4; }
 .ally-tile { width: 244px; height: 104px; gap: 13px; padding: 9px; border: 0; border-radius: 13px; background: linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.07)); box-shadow: inset 0 1px rgba(255,255,255,.16), 0 10px 24px rgba(0,0,0,.12); }
 .ally-tile:hover { background: linear-gradient(135deg, rgba(255,255,255,.21), rgba(255,255,255,.1)); }
@@ -2977,7 +2966,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
   -webkit-backdrop-filter: blur(5px);
 }
 .detail-index { margin: 0 0 12px; color: #b8f0e1; font: 700 12px "DM Sans", sans-serif; letter-spacing: .1em; }
-.detail-hero h1 { max-width: 900px; margin: 0; color: #f5fbf8; font: 700 clamp(56px, 8vw, 104px)/.88 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: -.02em; }
+.detail-hero h1 { max-width: 900px; margin: 0; color: #f5fbf8; font: 700 clamp(56px, 8vw, 104px)/.88 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.02em; }
 .detail-hero-intro { max-width: 620px; margin: 18px 0 0; color: rgba(241,250,247,.9); font-size: 18px; line-height: 1.5; }
 .detail-content { padding: 80px 0 110px; background: linear-gradient(145deg, #f1f5f3, #dfede9); color: #12313b; }
 .service-detail-page { background-color: #e4efeb; background-image: linear-gradient(145deg, rgba(241,245,243,.68), rgba(223,237,233,.72)), var(--service-detail-image); background-position: center; background-size: cover; background-attachment: fixed; }
@@ -2989,7 +2978,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .detail-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .82fr); gap: 66px; align-items: start; }
 .detail-story { max-width: 690px; }
 .detail-story .service-page-kicker { color: #087f87; }
-.detail-story h2, .detail-request h2 { margin: 0 0 18px; font: 700 clamp(38px, 5vw, 62px)/.94 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: -.015em; }
+.detail-story h2, .detail-request h2 { margin: 0 0 18px; font: 700 clamp(38px, 5vw, 62px)/.94 "Barlow Condensed", Impact, sans-serif; letter-spacing: -.015em; }
 .detail-story > p:not(.service-page-kicker) { margin: 0 0 34px; color: #45606a; font-size: 18px; line-height: 1.75; }
 .detail-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .detail-gallery img {
@@ -3150,7 +3139,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .about-kicker, .about-label { margin: 0 0 14px; color: #168f8b; font-size: 11px; font-weight: 800; letter-spacing: .13em; }
 .about-kicker { color: #a9eadc; }
 .about-index { margin: 0 0 14px; color: #c4f1e6; font-size: 12px; font-weight: 700; letter-spacing: .12em; }
-.about-hero h1, .about-hero h2 { max-width: 820px; margin: 0; font: 500 clamp(62px, 9vw, 118px)/.98 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 0; overflow-wrap: anywhere; }
+.about-hero h1, .about-hero h2 { max-width: 820px; margin: 0; font: 500 clamp(62px, 9vw, 118px)/.98 "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; overflow-wrap: anywhere; }
 .about-intro { max-width: 600px; margin: 22px 0 28px; color: rgba(242,251,247,.86); font-size: 19px; line-height: 1.5; }
 .about-scroll-note { position: absolute; right: max(21px, calc((100vw - 1180px) / 2)); bottom: 86px; color: rgba(240,251,247,.7); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; writing-mode: vertical-rl; }
 .about-scroll-note span { display: inline-block; margin-top: 9px; font-size: 18px; }
@@ -3213,15 +3202,15 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .about-opening-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: start; }
 .about-quote-wrap { padding-top: 10px; }
 .about-quote-mark { display: block; height: 58px; color: #0e9a91; font: 800 100px/.7 Georgia, serif; }
-.about-quote { max-width: 420px; margin: 12px 0 0; color: #0d3744; font: 500 clamp(34px, 4.2vw, 57px)/.98 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 0; }
+.about-quote { max-width: 420px; margin: 12px 0 0; color: #0d3744; font: 500 clamp(34px, 4.2vw, 57px)/.98 "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; }
 .about-opening-copy { max-width: 650px; padding-top: 16px; }
-.about-opening-copy > h2 { margin: 0 0 18px; color: #103a46; font: 500 clamp(38px, 4.5vw, 56px)/.98 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.about-opening-copy > h2 { margin: 0 0 18px; color: #103a46; font: 500 clamp(38px, 4.5vw, 56px)/.98 "Barlow Condensed", Impact, sans-serif; }
 .about-opening-copy > p:last-child, .about-story-copy > p:not(.about-label), .about-closing-grid > div:last-child > p { margin: 0; color: #4a646c; font-size: 17px; line-height: 1.75; }
 .about-story { padding: 100px 0; background: linear-gradient(135deg, #092c3b, #12434a 62%, #0a2e3e); color: #effaf6; }
 .about-story-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: center; }
 .about-story-copy { max-width: 670px; }
 .about-story-copy .about-label, .about-closing .about-label { color: #99e5d8; }
-.about-story-copy h2, .about-gallery-heading h2, .about-closing h2 { margin: 0 0 20px; font: 500 clamp(44px, 6vw, 74px)/.94 "Barlow Condensed", "Arial Narrow", sans-serif; letter-spacing: 0; }
+.about-story-copy h2, .about-gallery-heading h2, .about-closing h2 { margin: 0 0 20px; font: 500 clamp(44px, 6vw, 74px)/.94 "Barlow Condensed", Impact, sans-serif; letter-spacing: 0; }
 .about-story-copy > p:not(.about-label) { color: rgba(235,248,242,.76); }
 .about-text-link { display: inline-flex; gap: 10px; margin-top: 28px; color: #b4efdf; font-size: 14px; font-weight: 800; }
 .about-stat-stack { display: grid; gap: 11px; }
@@ -3247,7 +3236,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .guide-section-content .section-head { margin-bottom: 0; }
 .guide-destinations { min-width: 0; }
 .guide-destinations-intro { margin: 0 0 20px; color: #fff; }
-.guide-destinations-intro h3 { margin: 0 0 8px; font: 700 34px/1 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.guide-destinations-intro h3 { margin: 0 0 8px; font: 700 34px/1 "Barlow Condensed", Impact, sans-serif; }
 .guide-destinations-intro p { margin: 0; color: rgba(255,255,255,.86); font-size: 15px; line-height: 1.55; }
 .guide-destination-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .guide-destination {
@@ -3273,7 +3262,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .guide-destination:hover img, .guide-destination:focus-visible img { transform: scale(1.045); }
 .guide-destination:focus-visible { outline: 3px solid #9ce8d7; outline-offset: 3px; }
 .guide-destination-heading { display: flex; width: 100%; min-width: 0; align-items: center; gap: 12px; }
-.guide-destination-label { min-width: 0; font: 700 clamp(27px, 3vw, 38px)/1.05 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.guide-destination-label { min-width: 0; font: 700 clamp(27px, 3vw, 38px)/1.05 "Barlow Condensed", Impact, sans-serif; }
 .guide-destination-arrow { display: grid; width: 40px; height: 40px; flex: 0 0 40px; place-items: center; margin-left: auto; border: 1px solid rgba(255,255,255,.56); border-radius: 50%; background: rgba(4,29,41,.4); font-size: 19px; transition: background .2s ease, transform .2s ease; }
 .guide-destination:hover .guide-destination-arrow { transform: translate(2px, -2px); background: #087f87; }
 .guide-destination-features { display: grid; width: 100%; gap: 11px; margin-top: auto; }
@@ -3749,7 +3738,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .ally-heading-tile h2 {
   margin: 0 !important;
   color: #ffffff !important;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
   font-size: 26px !important;
   font-weight: 800 !important;
   line-height: 1.1 !important;
@@ -3817,7 +3806,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .ally-tile strong {
   display: block !important;
   color: #ffffff !important;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
   font-size: 24px !important;
   font-weight: 700 !important;
   line-height: 1.05 !important;
@@ -3858,7 +3847,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .ally-heading-tile h2 {
   margin: 0 !important;
   color: #ffffff !important;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
   font-size: 26px !important;
   font-weight: 800 !important;
   line-height: 1.1 !important;
@@ -3961,7 +3950,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .ally-tile strong {
   display: block !important;
   color: #ffffff !important;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
   font-size: 24px !important;
   font-weight: 700 !important;
   line-height: 1.05 !important;
@@ -4908,7 +4897,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .service-rates-heading h3 {
   margin: 0;
   color: #f5fbf8;
-  font: 700 clamp(28px, 3.1vw, 39px)/1 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(28px, 3.1vw, 39px)/1 "Barlow Condensed", Impact, sans-serif;
   text-transform: uppercase;
 }
 .service-rates-heading p {
@@ -5205,7 +5194,7 @@ footer a {
 .accommodation-card h3 {
   margin: 0;
   color: #143d4a;
-  font: 700 clamp(28px, 3vw, 38px)/1 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(28px, 3vw, 38px)/1 "Barlow Condensed", Impact, sans-serif;
 }
 .accommodation-price { flex: 0 0 auto; text-align: right; }
 .accommodation-price strong {
@@ -5237,7 +5226,7 @@ footer a {
 .accommodation-columns h4 {
   margin: 0 0 8px;
   color: #244d58;
-  font: 700 18px/1.1 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 18px/1.1 "Barlow Condensed", Impact, sans-serif;
 }
 .accommodation-columns ul {
   display: grid;
@@ -5323,7 +5312,7 @@ footer a {
 .surf-lesson-survey-intro h3 {
   margin: 0 0 7px;
   color: #173f4b;
-  font: 700 29px/1 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 29px/1 "Barlow Condensed", Impact, sans-serif;
   text-transform: uppercase;
 }
 .surf-lesson-survey-intro p:last-child {
@@ -5433,7 +5422,7 @@ footer a {
 .surf-survey-modal-shell { max-height: min(860px, calc(100dvh - 28px)); overflow: auto; padding: 25px clamp(18px, 4vw, 34px) 30px; }
 .surf-survey-modal-head { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 13px; }
 .surf-survey-modal-head .service-page-kicker { margin-bottom: 7px; color: #087f87; }
-.surf-survey-modal-head h2 { margin: 0 0 7px; color: #173f4b; font: 700 35px/1 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.surf-survey-modal-head h2 { margin: 0 0 7px; color: #173f4b; font: 700 35px/1 "Barlow Condensed", Impact, sans-serif; }
 .surf-survey-modal-head p:last-child { max-width: 560px; margin: 0; color: #5b7379; font-size: 14px; line-height: 1.5; }
 .surf-survey-close { display: grid; width: 36px; height: 36px; flex: 0 0 36px; place-items: center; border: 1px solid rgba(8, 43, 58, .16); border-radius: 50%; background: #fff; color: #315863; font-size: 25px; line-height: 1; cursor: pointer; }
 .surf-survey-close:hover { border-color: #087f87; color: #087f87; }
@@ -5492,7 +5481,7 @@ footer a {
 
 .allies-main-title {
   margin: 0 !important;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
   font-size: clamp(28px, 3.4vw, 40px) !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
@@ -5560,7 +5549,7 @@ footer a {
 .allies-heading h2,
 .allies-main-title {
   margin: 0 0 12px 0 !important;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
   font-size: clamp(34px, 4.2vw, 50px) !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
@@ -5794,7 +5783,7 @@ footer a {
 .allies-heading h2,
 .allies-main-title {
   margin: 0 0 6px 0 !important;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif !important;
+  font-family: "Barlow Condensed", Impact, sans-serif !important;
   font-size: clamp(26px, 3vw, 36px) !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
@@ -5896,12 +5885,12 @@ footer a {
 .retreat-content-section h3, .retreat-summary h3, .retreat-itinerary-section > h3 {
   margin: 0 0 12px;
   color: #123f4b;
-  font: 700 30px/1.05 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 30px/1.05 "Barlow Condensed", Impact, sans-serif;
 }
 .retreat-content-section h4 {
   margin: 20px 0 8px;
   color: #123f4b;
-  font: 700 23px/1.05 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 23px/1.05 "Barlow Condensed", Impact, sans-serif;
 }
 .retreat-content-section p { margin: 0 0 12px; color: #45606a; font-size: 16px; line-height: 1.7; }
 .retreat-intro { font-weight: 700; }
@@ -5928,7 +5917,7 @@ footer a {
 .retreat-list h4, .retreat-conditions h4 {
   margin: 0 0 10px;
   color: #123f4b;
-  font: 700 22px/1.05 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 22px/1.05 "Barlow Condensed", Impact, sans-serif;
 }
 .retreat-list ul, .retreat-conditions ul, .retreat-day ul { margin: 0; padding: 0; list-style: none; }
 .retreat-list li, .retreat-conditions li {
@@ -5951,7 +5940,7 @@ footer a {
 .retreat-itinerary-section { margin-top: 42px; }
 .retreat-itinerary { display: grid; gap: 12px; }
 .retreat-day { padding: 17px 18px; border: 1px solid rgba(8,43,58,.1); border-left: 4px solid #14a99d; border-radius: 10px; background: rgba(255,255,255,.66); }
-.retreat-day h4 { margin: 0 0 9px; color: #123f4b; font: 700 21px/1.1 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.retreat-day h4 { margin: 0 0 9px; color: #123f4b; font: 700 21px/1.1 "Barlow Condensed", Impact, sans-serif; }
 .retreat-day li { position: relative; margin: 6px 0; padding-left: 15px; color: #45606a; font-size: 13px; line-height: 1.5; }
 .retreat-day li::before { position: absolute; left: 0; color: #078f87; content: '•'; font-weight: 900; }
 .retreat-gallery { margin-top: 30px; }
@@ -5989,7 +5978,7 @@ footer a {
 .retreat-cover h2 {
   margin: 0 0 14px;
   color: #f6fbf6;
-  font: 800 clamp(38px, 4.6vw, 58px)/.94 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 800 clamp(38px, 4.6vw, 58px)/.94 "Barlow Condensed", Impact, sans-serif;
   letter-spacing: -.02em;
 }
 .retreat-cover .retreat-intro, .retreat-cover-about {
@@ -6042,7 +6031,7 @@ footer a {
 .retreat-experience-card h3, .retreat-experience-card h4 {
   margin: 0 0 9px;
   color: #f4fcf8;
-  font: 700 27px/1 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 27px/1 "Barlow Condensed", Impact, sans-serif;
 }
 .retreat-experience-card h4 { margin-top: 20px; font-size: 22px; }
 .retreat-experience-card p:not(.retreat-card-kicker) { margin: 0 0 11px; color: rgba(236,248,244,.8); font-size: 13px; line-height: 1.62; }
@@ -6060,7 +6049,7 @@ footer a {
 .retreat-summary h3, .retreat-itinerary-section > h3 {
   margin: 0 0 18px;
   color: #f4fbf8;
-  font: 700 clamp(30px, 3.5vw, 40px)/1 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(30px, 3.5vw, 40px)/1 "Barlow Condensed", Impact, sans-serif;
 }
 .retreat-summary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .retreat-fact { border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.085); }
@@ -7424,7 +7413,7 @@ footer a {
   max-width: 760px;
   margin: 0;
   color: #123d49;
-  font: 700 clamp(48px, 6vw, 72px)/.96 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(48px, 6vw, 72px)/.96 "Barlow Condensed", Impact, sans-serif;
   letter-spacing: -.02em;
 }
 .accommodation-intro-copy > p:not(.service-page-kicker) {
@@ -7550,7 +7539,7 @@ footer a {
 .accommodation-card h3 {
   margin: 0;
   color: #143d4a;
-  font: 700 clamp(34px, 3.7vw, 50px)/.98 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(34px, 3.7vw, 50px)/.98 "Barlow Condensed", Impact, sans-serif;
   letter-spacing: -.015em;
 }
 .accommodation-price { flex: 0 0 auto; text-align: right; }
@@ -7565,7 +7554,7 @@ footer a {
   border-top: 1px solid #e5ece8;
 }
 .accommodation-columns section { min-width: 0; }
-.accommodation-columns h4 { margin: 0 0 12px; color: #244d58; font: 700 20px/1.1 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.accommodation-columns h4 { margin: 0 0 12px; color: #244d58; font: 700 20px/1.1 "Barlow Condensed", Impact, sans-serif; }
 .accommodation-columns ul { display: grid; gap: 9px; margin: 0; padding-left: 18px; color: #5d747a; font-size: 14px; line-height: 1.6; }
 .accommodation-columns li::marker { color: #0aa1a0; }
 .accommodation-detail-page .quick-request-launcher { display: none !important; }
@@ -7762,7 +7751,7 @@ footer a {
   border-radius: 18px;
   background: rgba(255, 255, 255, .58);
 }
-.service-detail-page:not(.accommodation-detail-page) .service-includes h3 { margin: 0 0 12px; color: #123d49; font: 700 28px/.98 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.service-detail-page:not(.accommodation-detail-page) .service-includes h3 { margin: 0 0 12px; color: #123d49; font: 700 28px/.98 "Barlow Condensed", Impact, sans-serif; }
 .service-detail-page:not(.accommodation-detail-page) .service-includes li { color: #45636b; line-height: 1.55; }
 .service-detail-page:not(.accommodation-detail-page) .surf-lesson-survey-intro {
   margin-top: 30px;
@@ -8018,7 +8007,7 @@ footer a {
   max-width: 620px;
   margin: 0 0 20px;
   color: #123d49;
-  font: 700 clamp(52px, 6vw, 84px)/.92 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(52px, 6vw, 84px)/.92 "Barlow Condensed", Impact, sans-serif;
 }
 .surf-lesson-detail-page .surf-lesson-lead {
   max-width: 620px;
@@ -8309,7 +8298,7 @@ footer a {
   max-width: 650px;
   margin: 0 0 20px;
   color: #123d49;
-  font: 700 clamp(48px, 5.8vw, 82px)/.94 "Barlow Condensed", "Arial Narrow", sans-serif;
+  font: 700 clamp(48px, 5.8vw, 82px)/.94 "Barlow Condensed", Impact, sans-serif;
 }
 .service-editorial-lead,
 .service-editorial-extra {
@@ -8699,7 +8688,7 @@ footer a {
   border-radius: 999px;
   background: rgba(12, 70, 76, .34);
   color: rgba(235, 249, 244, .9);
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-family: "Barlow Condensed", Impact, sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: .08em;
@@ -8919,7 +8908,7 @@ footer a {
 .terms-dialog-panel { padding: clamp(23px, 5vw, 38px); }
 .terms-dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
 .terms-dialog-kicker { margin: 0 0 8px; color: #9ce8d7; font-size: 11px; font-weight: 800; letter-spacing: .14em; }
-.terms-dialog-header h2 { margin: 0; color: #fff; font: 700 clamp(32px, 6vw, 44px)/1 "Barlow Condensed", "Arial Narrow", sans-serif; }
+.terms-dialog-header h2 { margin: 0; color: #fff; font: 700 clamp(32px, 6vw, 44px)/1 "Barlow Condensed", Impact, sans-serif; }
 .terms-dialog-close { display: grid; width: 40px; height: 40px; flex: 0 0 40px; place-items: center; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: rgba(255,255,255,.08); color: #fff; font: 400 28px/1 "DM Sans", sans-serif; cursor: pointer; }
 .terms-dialog-intro { margin: 24px 0 12px; color: rgba(241,251,247,.9); font-size: 15px; line-height: 1.55; }
 .terms-dialog-list { display: grid; gap: 12px; margin: 0; padding-left: 21px; color: rgba(241,251,247,.84); font-size: 14px; line-height: 1.65; }
@@ -9107,7 +9096,7 @@ footer a {
 .ally-tile:hover { transform: translateY(-3px); background: rgba(255, 255, 255, .18); }
 .ally-tile img { width: 58px; height: 58px; flex: 0 0 58px; border-radius: 9px; object-fit: cover; }
 .ally-tile span { display: grid; min-width: 0; gap: 3px; }
-.ally-tile strong { display: block; overflow: visible; font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-size: 20px; line-height: .95; white-space: normal; overflow-wrap: normal; }
+.ally-tile strong { display: block; overflow: visible; font-family: "Barlow Condensed", Impact, sans-serif; font-size: 20px; line-height: .95; white-space: normal; overflow-wrap: normal; }
 .ally-tile small { color: #a0e7d8; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .ally-sponsor { border-color: rgba(255, 208, 106, .45); }
 .ally-sponsor small { color: #ffd477; }
