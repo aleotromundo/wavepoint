@@ -164,7 +164,7 @@
   const select = selector => Array.from(document.querySelectorAll(selector));
   const groups = {
     paragraphs: select('.guide-original-content p'),
-    h2: select('.guide-original-content h2'),
+    h2: select('.guide-original-content h1, .guide-original-content h2'),
     h3: select('.guide-original-content h3'),
     h4: select('.guide-original-content h4'),
     listItems: select('.guide-original-content li'),
