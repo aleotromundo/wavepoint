@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600&display=swap);
 :root{--wp-midnight:#062638;--wp-deep-water:#0a3547;--wp-ocean:#087f97;--wp-turquoise:#00a7bd;--wp-aqua:#0fc7d7;--wp-sun:#f3b64b;--wp-sand:#f7f3ea;--wp-foam:#f8fbfb;--wp-ink:#102638;--wp-muted:#667786;--wp-soft:#e8f2f4;--deep:var(--wp-midnight);--deep-2:var(--wp-deep-water);--ink:var(--wp-ink);--teal:var(--wp-turquoise);--teal-2:var(--wp-aqua);--gold:var(--wp-sun);--sand:var(--wp-sand);--paper:#ffffff;--muted:var(--wp-muted);--soft:var(--wp-soft);--shadow:0 22px 70px rgba(5, 36, 53, .18);--radius:26px}
 *{box-sizing:border-box}
 html{overflow-x:clip}
