@@ -221,8 +221,8 @@ Toda sección con tarjeta, portada, fondo y galería debe reunir al menos cuatro
 
 | Asset | Uso |
 | --- | --- |
-| `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `favicon.ico` | Favicon vectorial de surf y respaldos de navegador. |
-| `assets/wavepoint-apple-touch-icon.png` | Icono Apple a juego. |
+| `favicon.jpg`, `favicon.svg`, `favicon-16.png`, `favicon-32.png`, `favicon-48.png`, `favicon-192.png`, `favicon-256.png`, `favicon.ico` | Variantes del favicon generadas desde la imagen JPG nueva. |
+| `assets/wavepoint-apple-touch-icon.png` | Icono Apple Touch de 180 × 180 generado desde la imagen JPG nueva. |
 | `assets/MATERIAL-ICONS-LICENSE.txt` | Licencia del icono de surf (Apache 2.0). |
 | `assets/wavepoint-logo.png` | Logo de navegación y panel móvil. |
 | `assets/wavepoint-hero-mark.png` | Marca grande del hero. |
