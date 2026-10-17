@@ -2,12 +2,12 @@
   const nested = location.pathname.split('/').includes('Enlaces');
   const base = nested ? '../' : './';
   const collaborators = [
-    { href: 'https://chophouse.cr/', label: 'Chop House, Tamarindo', external: true },
-    { href: 'Enlaces/capitan-suizo.html', label: 'Capitán Suizo, Tamarindo' },
-    { href: 'Enlaces/casa-maderas.html', label: 'Casa de Maderas, Palm Beach “Casitas”' },
-    { href: 'Enlaces/red-door.html', label: 'Red Door, Tamarindo' },
-    { href: 'Enlaces/occidental.html', label: 'Hotel Occidental Tamarindo, Langosta' },
-    { href: 'https://eternoveranoco.com/', label: 'Eterno Verano, Tamarindo', external: true },
+    { href: 'https://chophouse.cr/', label: 'Chop House', external: true },
+    { href: 'Enlaces/capitan-suizo.html', label: 'Capitán Suizo' },
+    { href: 'Enlaces/casa-maderas.html', label: 'Casa de Maderas' },
+    { href: 'Enlaces/red-door.html', label: 'Red Door' },
+    { href: 'Enlaces/occidental.html', label: 'Hotel Occidental' },
+    { href: 'https://eternoveranoco.com/', label: 'Eterno Verano', external: true },
     { href: 'https://www.club33cr.com/', label: 'Club 33 Surf Shop', external: true }
   ];
   const collaboratorLinks = collaborators.map(({ href, label, external }) =>
