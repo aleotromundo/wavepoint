@@ -1596,6 +1596,19 @@
     const status=document.getElementById('newsletterStatus');
     if(!form || !emailField || !submitButton || !status) return;
 
+    if(!document.getElementById('newsletterButtonStyles')){
+      const style=document.createElement('style');
+      style.id='newsletterButtonStyles';
+      style.textContent=`
+        .newsletter-signup .signup button{cursor:pointer!important}
+        .newsletter-signup .signup button:disabled{cursor:progress!important}
+        .newsletter-signup .signup button.is-loading{display:inline-flex;align-items:center;justify-content:center;gap:.6em;opacity:.85}
+        .newsletter-signup .signup button.is-loading::before{content:'';width:1em;height:1em;flex:none;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:newsletterSpin .7s linear infinite}
+        @keyframes newsletterSpin{to{transform:rotate(360deg)}}
+        @media (prefers-reduced-motion:reduce){.newsletter-signup .signup button.is-loading::before{animation-duration:1.6s}}
+      `;
+      document.head.appendChild(style);
+    }
     const messages={
       es:{invalid:'Ingresá un correo electrónico válido.', pending:'La suscripción todavía no está conectada.', success:'¡Listo! Ya estás suscripto. Te vamos a avisar cuando tengamos novedades de las olas y de Tamarindo.', error:'No pudimos registrar tu correo. Probá de nuevo en un momento.'},
       en:{invalid:'Enter a valid email address.', pending:'The subscription is not connected yet.', success:'You’re all set! We’ll let you know when we have news about the waves and Tamarindo.', error:'We could not save your email. Please try again in a moment.'}
@@ -1693,6 +1706,8 @@
       const confettiSound=prepareConfettiSound();
       submitButton.disabled=true;
       emailField.disabled=true;
+      submitButton.classList.add('is-loading');
+      submitButton.setAttribute('aria-busy','true');
       try{
         const body=new URLSearchParams({email,source:window.location.href});
         await fetch(NEWSLETTER_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body});
@@ -1707,6 +1722,8 @@
       }finally{
         submitButton.disabled=false;
         emailField.disabled=false;
+        submitButton.classList.remove('is-loading');
+        submitButton.removeAttribute('aria-busy');
       }
     };
     emailField.addEventListener('input',()=>{
