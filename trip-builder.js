@@ -429,8 +429,8 @@
     setTripMeta('og:description', tripDescription);
     setTripMeta('og:url', `${location.origin}/trip-builder`);
     setTripMeta('og:type', 'website');
-    setTripMeta('og:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg`);
-    setTripMeta('og:image:secure_url', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg`);
+    setTripMeta('og:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg?v=20261022-2`);
+    setTripMeta('og:image:secure_url', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg?v=20261022-2`);
     setTripMeta('og:image:type', 'image/jpeg');
     setTripMeta('og:image:width', '1200');
     setTripMeta('og:image:height', '630');
@@ -438,7 +438,7 @@
     setTripMeta('og:locale', lang === 'en' ? 'en_US' : 'es_CR');
     setTripTwitterMeta('twitter:title', document.title);
     setTripTwitterMeta('twitter:description', tripDescription);
-    setTripTwitterMeta('twitter:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg`);
+    setTripTwitterMeta('twitter:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg?v=20261022-2`);
     setTripTwitterMeta('twitter:image:alt', 'WavePoint logo on a solid white background');
     root.innerHTML = `<section class="trip-builder-hero">
       <div class="trip-builder-hero-image" aria-hidden="true">
