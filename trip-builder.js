@@ -420,15 +420,26 @@
       if (!meta) { meta = document.createElement('meta'); meta.setAttribute('property', property); document.head.appendChild(meta); }
       meta.setAttribute('content', content);
     };
+    const setTripTwitterMeta = (name, content) => {
+      let meta = document.querySelector(`meta[name=\"${name}\"]`);
+      if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', name); document.head.appendChild(meta); }
+      meta.setAttribute('content', content);
+    };
     setTripMeta('og:title', document.title);
     setTripMeta('og:description', tripDescription);
     setTripMeta('og:url', `${location.origin}/trip-builder`);
     setTripMeta('og:type', 'website');
-    setTripMeta('og:image', `${location.origin}/assets/img/site/share/surf-experiences-tamarindo.webp`);
-    setTripMeta('og:image:type', 'image/webp');
+    setTripMeta('og:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg`);
+    setTripMeta('og:image:secure_url', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg`);
+    setTripMeta('og:image:type', 'image/jpeg');
     setTripMeta('og:image:width', '1200');
     setTripMeta('og:image:height', '630');
+    setTripMeta('og:image:alt', 'WavePoint logo on a solid white background');
     setTripMeta('og:locale', lang === 'en' ? 'en_US' : 'es_CR');
+    setTripTwitterMeta('twitter:title', document.title);
+    setTripTwitterMeta('twitter:description', tripDescription);
+    setTripTwitterMeta('twitter:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg`);
+    setTripTwitterMeta('twitter:image:alt', 'WavePoint logo on a solid white background');
     root.innerHTML = `<section class="trip-builder-hero">
       <div class="trip-builder-hero-image" aria-hidden="true">
         <video class="trip-builder-hero-video" autoplay loop muted playsinline poster="assets/img/services/retreats/retreat-tamarindo.webp" tabindex="-1">
