@@ -995,15 +995,27 @@ const setServiceMeta = (property, content) => {
   if (!meta) { meta = document.createElement('meta'); meta.setAttribute('property', property); document.head.appendChild(meta); }
   meta.setAttribute('content', content);
 };
+const setServiceTwitterMeta = (name, content) => {
+  let meta = document.querySelector(`meta[name=\"${name}\"]`);
+  if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', name); document.head.appendChild(meta); }
+  meta.setAttribute('content', content);
+};
 setServiceMeta('og:title', document.title);
 setServiceMeta('og:description', serviceDescription);
 setServiceMeta('og:url', serviceUrl.href);
 setServiceMeta('og:type', 'website');
-setServiceMeta('og:image', new URL('assets/img/site/share/surf-experiences-tamarindo.webp', location.origin + location.pathname.replace(/[^/]*$/, '')).href);
-setServiceMeta('og:image:type', 'image/webp');
+const serviceShareImage = new URL('assets/img/site/share/wavepoint-logo-white.jpg', location.origin + location.pathname.replace(/[^/]*$/, '')).href;
+setServiceMeta('og:image', serviceShareImage);
+setServiceMeta('og:image:secure_url', serviceShareImage);
+setServiceMeta('og:image:type', 'image/jpeg');
 setServiceMeta('og:image:width', '1200');
 setServiceMeta('og:image:height', '630');
+setServiceMeta('og:image:alt', 'WavePoint logo on a solid white background');
 setServiceMeta('og:locale', lang === 'en' ? 'en_US' : 'es_CR');
+setServiceTwitterMeta('twitter:title', document.title);
+setServiceTwitterMeta('twitter:description', serviceDescription);
+setServiceTwitterMeta('twitter:image', serviceShareImage);
+setServiceTwitterMeta('twitter:image:alt', 'WavePoint logo on a solid white background');
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
 document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
