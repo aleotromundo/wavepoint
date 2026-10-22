@@ -1004,7 +1004,7 @@ setServiceMeta('og:title', document.title);
 setServiceMeta('og:description', serviceDescription);
 setServiceMeta('og:url', serviceUrl.href);
 setServiceMeta('og:type', 'website');
-const serviceShareImage = new URL('assets/img/site/share/wavepoint-logo-white.jpg', location.origin + location.pathname.replace(/[^/]*$/, '')).href;
+const serviceShareImage = new URL('assets/img/site/share/wavepoint-logo-white.jpg?v=20261022-2', location.origin + location.pathname.replace(/[^/]*$/, '')).href;
 setServiceMeta('og:image', serviceShareImage);
 setServiceMeta('og:image:secure_url', serviceShareImage);
 setServiceMeta('og:image:type', 'image/jpeg');
