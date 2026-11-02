@@ -1536,6 +1536,7 @@
   }
 
   function bindGuideImageModal(){
+    if (document.querySelector('.guide-image-modal')) return;
     const images = [...new Set([...document.querySelectorAll('.guide-detail-card img, .collab-gallery img, .surf-lesson-gallery img, .detail-gallery img, .surf-program-day-photo img, .retreat-editorial img, .accommodation-gallery img, .service-card img, .service-offering img, .service-pack-image, .about-page img')])].filter(image => !image.closest('a[href]'));
     if (!images.length) return;
 
@@ -1588,6 +1589,8 @@
     modal.addEventListener('click', event=>{ if(event.target === modal) closeModal(); });
     document.addEventListener('keydown', event=>{ if(event.key === 'Escape' && !modal.hidden) closeModal(); });
   }
+
+  window.addEventListener('wavepoint:service-rendered', bindGuideImageModal);
 
   function bindNewsletterForm(){
     const form=document.querySelector('.signup');
