@@ -9438,6 +9438,8 @@ footer a {
 .surf-program-day-photo-1 img, .surf-program-day-photo-2 img, .surf-program-day-photo-3 img { object-fit:cover; object-position:center center; transform:scale(1.15); }
 .surf-program-day-photo-3 { aspect-ratio:.9 / 1; }
 .surf-program-day-photo-3 img { object-position:center bottom; transform:none; }
+.surf-program-day-photo-1, .surf-program-day-photo-2 { aspect-ratio:.9 / 1; }
+.surf-program-day-photo-1 img, .surf-program-day-photo-2 img { object-position:center 55%; transform:none; }
 .surf-program-day--reverse .surf-program-day-photo { order:2; }
 .surf-program-day-copy { align-self:center; padding:22px; }
 .surf-program-day-copy .service-page-kicker { margin:0 0 6px; color:#087f80; font-size:10px; font-weight:900; letter-spacing:.1em; }
