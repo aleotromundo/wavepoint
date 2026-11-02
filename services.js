@@ -508,7 +508,7 @@ preferred_format: { label: 'Which format would you like to ask about?', options:
 }
 },
 {
-id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'Tours en cuatriciclo — ATV',
+id: 'atv', number: '07', eyebrow: 'TIERRA · AVENTURA', title: 'ATV en Tamarindo — Elegí tu aventura',
 cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
 images: ['assets/img/services/atv/atv-forest-convoy.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
