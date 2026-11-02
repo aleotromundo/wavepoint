@@ -1536,7 +1536,7 @@
   }
 
   function bindGuideImageModal(){
-    const images = [...new Set([...document.querySelectorAll('.guide-detail-card img, .collab-gallery img, .surf-lesson-gallery img, .detail-gallery img, .retreat-editorial img, .accommodation-gallery img, .service-card img, .service-offering img, .service-pack-image, .about-page img')])].filter(image => !image.closest('a[href]'));
+    const images = [...new Set([...document.querySelectorAll('.guide-detail-card img, .collab-gallery img, .surf-lesson-gallery img, .detail-gallery img, .surf-program-day-photo img, .retreat-editorial img, .accommodation-gallery img, .service-card img, .service-offering img, .service-pack-image, .about-page img')])].filter(image => !image.closest('a[href]'));
     if (!images.length) return;
 
     const modal = document.createElement('div');
