@@ -9597,3 +9597,12 @@ footer a {
 .lang-toggle:not([data-selected="true"]) { margin-inline: -12px; }
 .lang-toggle[data-selected="true"] { margin-inline: 0; box-shadow: 0 10px 26px rgba(0,0,0,.48), 0 0 0 2px rgba(255,255,255,.16); }
 @media (max-width: 560px) { .lang-switcher { min-width: 0; } }
+
+/* Selector de idiomas compacto */
+.lang-toggle { width: 26px; height: 26px; flex-basis: 26px; }
+.lang-toggle[data-selected="true"] { width: 38px; height: 38px; flex-basis: 38px; box-shadow: 0 6px 16px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.16); }
+.lang-toggle:not([data-selected="true"]) { margin-inline: -9px; }
+@media (max-width: 560px) {
+  .lang-toggle { width: 24px; height: 24px; flex-basis: 24px; }
+  .lang-toggle[data-selected="true"] { width: 36px; height: 36px; flex-basis: 36px; }
+}
