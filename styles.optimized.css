@@ -3835,3 +3835,7 @@ to{filter:brightness(1.18)}
 .surf-program-day:nth-child(odd) .surf-program-day-kicker-dot { color: #9ce8d7; }
 .surf-program-day-copy h3 { max-width: 12ch; }
 @media (max-width: 520px) { .surf-program-day-copy h3 { max-width: none; } }
+
+
+/* Programa de iniciación al surf · días destacados */
+.surf-program-day-kicker-day { font-size: clamp(17px, 2vw, 24px); font-weight: 950; letter-spacing: .07em; line-height: .95; }
