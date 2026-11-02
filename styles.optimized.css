@@ -3770,3 +3770,49 @@ to{filter:brightness(1.18)}
   .surf-program-day-copy { padding:17px; }
   .surf-program-section-head h2 { font-size:31px; }
 }
+
+
+/* Programa de iniciación al surf · lectura reforzada y bloques alternados */
+.surf-program-story { gap: 28px; }
+.surf-program-overview, .surf-program-why, .surf-program-includes, .surf-program-pricing, .surf-program-reservation { padding: clamp(28px, 4vw, 46px); border-radius: 26px; }
+.surf-program-intro { color: #294b57; font-size: clamp(18px, 2vw, 22px); line-height: 1.72; }
+.surf-program-facts { gap: 14px; margin-top: 26px; }
+.surf-program-facts > div { padding: 17px 18px; border-radius: 16px; }
+.surf-program-facts dt { margin-bottom: 7px; font-size: 12px; letter-spacing: .12em; }
+.surf-program-facts dd { color: #234954; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5; }
+.surf-program-why { background: linear-gradient(135deg, #082b3a, #0b5360); border-color: rgba(156,232,215,.28); box-shadow: 0 20px 48px rgba(4,31,43,.22); }
+.surf-program-why .service-page-kicker, .surf-program-includes .service-page-kicker, .surf-program-section-head .service-page-kicker { font-size: 12px; letter-spacing: .14em; }
+.surf-program-why .service-page-kicker { color: #9ce8d7; }
+.surf-program-why h2, .surf-program-includes h2, .surf-program-section-head h2 { margin-bottom: 16px; font-size: clamp(38px, 5vw, 62px); line-height: .95; }
+.surf-program-why > p:last-child { color: #e4f4f1; font-size: clamp(17px, 1.8vw, 21px); line-height: 1.72; }
+.surf-program-includes { background: #fff; }
+.surf-program-includes ul { gap: 14px; margin-top: 22px; }
+.surf-program-includes li { padding-left: 32px; color: #294b57; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.55; }
+.surf-program-includes li::before { font-size: 20px; }
+.surf-program-day { border-radius: 26px; box-shadow: 0 18px 42px rgba(8,43,58,.15); }
+.surf-program-day:nth-child(odd) { background: linear-gradient(135deg, #082b3a, #0b5360); border-color: rgba(156,232,215,.3); }
+.surf-program-day:nth-child(odd) .surf-program-day-copy .service-page-kicker { color: #9ce8d7; }
+.surf-program-day:nth-child(odd) .surf-program-day-copy h3 { color: #fff; }
+.surf-program-day:nth-child(odd) .surf-program-day-copy > p:last-child { color: #e4f4f1; }
+.surf-program-day-copy { padding: clamp(28px, 4vw, 48px); }
+.surf-program-day-copy .service-page-kicker { margin-bottom: 10px; font-size: 12px; letter-spacing: .14em; }
+.surf-program-day-copy h3 { margin-bottom: 15px; font-size: clamp(34px, 4vw, 54px); line-height: .95; }
+.surf-program-day-copy > p:last-child { color: #294b57; font-size: clamp(17px, 1.7vw, 20px); line-height: 1.7; }
+.surf-program-progress-note { padding: 21px 24px; border-left-width: 5px; border-radius: 0 16px 16px 0; background: #dff4ee; color: #244b56; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.65; }
+.surf-program-pricing { background: #f4fbf8; }
+.surf-program-price-lead { color: #294b57; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.65; }
+.surf-program-price-list { gap: 14px; }
+.surf-program-price-card { padding: 18px; border-radius: 16px; background: #fff; }
+.surf-program-price-card h4 { font-size: 18px; }
+.surf-program-price-card dt { font-size: 13px; }
+.surf-program-price-card dd { font-size: 16px; }
+.surf-program-price-note { color: #294b57; font-size: 15px; line-height: 1.65; }
+.surf-program-reservation { background: linear-gradient(135deg, #082b3a, #0b5360); border-color: rgba(156,232,215,.28); }
+.surf-program-reservation h3 { color: #fff; font-size: clamp(28px, 3vw, 40px); }
+.surf-program-reservation p { color: #e4f4f1; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.65; }
+.surf-program-reservation .surf-program-reservation-note { color: #bfe4dc; font-size: 14px; }
+@media (max-width: 520px) {
+  .surf-program-overview, .surf-program-why, .surf-program-includes, .surf-program-pricing, .surf-program-reservation { padding: 25px 20px; border-radius: 20px; }
+  .surf-program-day-copy { padding: 26px 21px; }
+  .surf-program-day-copy h3 { font-size: 38px; }
+}
