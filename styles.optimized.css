@@ -3855,3 +3855,9 @@ to{filter:brightness(1.18)}
 .lang-flag { display: grid; place-items: center; width: 100%; height: 100%; font-size: 22px; line-height: 1; transform: scale(.92); }
 .lang-toggle[data-selected="true"] .lang-flag { font-size: 31px; transform: scale(1); }
 @media (max-width: 560px) { .lang-switcher { min-width: 120px; } .lang-toggle[data-selected="true"] { width: 44px; height: 44px; flex-basis: 44px; } .lang-toggle[data-selected="true"] .lang-flag { font-size: 28px; } }
+
+
+/* Selector de idiomas · movimiento físico hacia el centro */
+.lang-toggle { transition: transform .35s cubic-bezier(.2,.8,.2,1), width .35s ease, height .35s ease, flex-basis .35s ease, box-shadow .35s ease; }
+.lang-toggle:hover:not([data-selected="true"]), .lang-toggle:focus-visible:not([data-selected="true"]) { transform: scale(1.12) translateY(-1px); opacity: 1; }
+.lang-toggle[data-selected="true"] { transition: transform .42s cubic-bezier(.2,.8,.2,1), width .35s ease, height .35s ease, flex-basis .35s ease, box-shadow .35s ease; }

@@ -53,8 +53,19 @@
     const selectedIndex = order.indexOf(selected);
     const arranged = [order[(selectedIndex + 2) % 3], selected, order[(selectedIndex + 1) % 3]];
     document.querySelectorAll('.lang-switcher').forEach(switcher => {
-      const options = new Map([...switcher.querySelectorAll('[data-lang-option]')].map(button => [button.dataset.langOption, button]));
+      const buttons = [...switcher.querySelectorAll('[data-lang-option]')];
+      const before = new Map(buttons.map(button => [button.dataset.langOption, button.getBoundingClientRect()]));
+      const options = new Map(buttons.map(button => [button.dataset.langOption, button]));
       arranged.forEach(option => { const button = options.get(option); if (button) switcher.appendChild(button); });
+      options.forEach((button, option) => {
+        const oldRect = before.get(option);
+        const newRect = button.getBoundingClientRect();
+        if (!oldRect || (oldRect.left === newRect.left && oldRect.top === newRect.top)) return;
+        button.animate([
+          { transform: `translate(${oldRect.left - newRect.left}px, ${oldRect.top - newRect.top}px)` },
+          { transform: '' }
+        ], { duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      });
     });
   };
 
