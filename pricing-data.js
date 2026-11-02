@@ -19,16 +19,22 @@
     { rateId: 'surf-coaching', label: { es: 'Surf coaching', en: 'Surf coaching' } },
     { rateId: 'yoga', label: { es: 'Yoga', en: 'Yoga' } },
     {
+      id: 'atv',
       rateId: null,
       label: { es: 'ATV / Cuatriciclos', en: 'ATV tours' },
+      moreGuests: {
+        from: 3,
+        label: { es: '3 o más personas', en: '3 or more guests' },
+        text: { es: 'Consultar', en: 'Ask us' }
+      },
       tableRates: {
         1: {
-          es: ['Explorer · 2 h: USD 90 por persona', 'Adventure · 4 h: USD 150 por persona', 'Ultimate · 6 h: USD 220 por persona', 'Alquiler · 24 h: USD 120 total · tarifa fija'],
-          en: ['Explorer · 2 h: USD 90 per person', 'Adventure · 4 h: USD 150 per person', 'Ultimate · 6 h: USD 220 per person', 'Rental · 24 h: USD 120 total · flat rate']
+          es: ['Explorer · 2 h: USD 90 por persona', 'Adventure · 4 h: USD 150 por persona', 'Ultimate · 6 h: USD 220 por persona', 'Alquiler · 24 h: USD 120 total (tarifa fija)'],
+          en: ['Explorer · 2 h: USD 90 per person', 'Adventure · 4 h: USD 150 per person', 'Ultimate · 6 h: USD 220 per person', 'Rental · 24 h: USD 120 total (flat rate)']
         },
         2: {
-          es: ['Explorer · 2 h: USD 55 por persona', 'Adventure · 4 h: USD 90 por persona', 'Ultimate · 6 h: USD 135 por persona', 'Alquiler · 24 h: USD 120 total · tarifa fija'],
-          en: ['Explorer · 2 h: USD 55 per person', 'Adventure · 4 h: USD 90 per person', 'Ultimate · 6 h: USD 135 per person', 'Rental · 24 h: USD 120 total · flat rate']
+          es: ['Explorer · 2 h: USD 55 por persona', 'Adventure · 4 h: USD 90 por persona', 'Ultimate · 6 h: USD 135 por persona', 'Alquiler · 24 h: USD 120 total (tarifa fija)'],
+          en: ['Explorer · 2 h: USD 55 per person', 'Adventure · 4 h: USD 90 per person', 'Ultimate · 6 h: USD 135 per person', 'Rental · 24 h: USD 120 total (flat rate)']
         }
       }
     },
@@ -85,21 +91,30 @@
     body.replaceChildren();
     rows.forEach(row => {
       const tableRow = document.createElement('tr');
+      if (row.id) tableRow.dataset.pricingRow = row.id;
       const title = document.createElement('th');
       title.scope = 'row';
       title.textContent = row.label[language];
       tableRow.append(title);
 
       groups.forEach(group => {
+        if (row.moreGuests && group.guests > row.moreGuests.from) return;
         const cell = document.createElement('td');
-        cell.dataset.label = group.mobileLabel[language];
+        const isMoreGuestsCell = row.moreGuests?.from === group.guests;
+        cell.dataset.label = isMoreGuestsCell ? row.moreGuests.label[language] : group.mobileLabel[language];
+        if (isMoreGuestsCell) {
+          cell.colSpan = groups.filter(candidate => candidate.guests >= row.moreGuests.from).length;
+          cell.classList.add('pricing-more-guests');
+          cell.textContent = row.moreGuests.text[language];
+          tableRow.append(cell);
+          return;
+        }
+
         const tableRates = row.tableRates?.[group.guests]?.[language];
         const rate = row.rateId ? rates[row.rateId][Math.min(group.guests, 6) - 1] : null;
         if (tableRates) {
-          tableRates.forEach((line, index) => {
-            if (index) cell.append(document.createElement('br'));
-            cell.append(document.createTextNode(line));
-          });
+          cell.classList.add('pricing-atv-rates');
+          cell.textContent = tableRates.join('\n');
         } else {
           cell.textContent = rate === null ? '—' : `${rate} USD`;
         }

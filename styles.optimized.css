@@ -1951,6 +1951,7 @@ to{transform:rotate(360deg)}
 .service-rates thead th:last-child{border-top-right-radius:12px}
 .service-rates tbody th{width:28%;background:rgba(255,255,255,.045);color:#f7fcfa;font-weight:700}
 .service-rates tbody td{background:rgba(255,255,255,.018);color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
+.service-rates tbody td.pricing-atv-rates{white-space:pre-line;line-height:1.45}
 .service-rates tbody tr:nth-child(2n) td,.service-rates tbody tr:nth-child(2n) th{background:rgba(255,255,255,.07)}
 .service-rates tbody tr:hover td,.service-rates tbody tr:hover th{background:rgba(15,199,215,.13)}
 .service-rates tbody tr:last-child th{border-bottom-left-radius:12px}
@@ -1971,6 +1972,7 @@ to{transform:rotate(360deg)}
 .service-rates tbody tr>th:first-child{grid-column:1/-1;width:auto;padding:11px 12px;border:0;border-bottom:1px solid rgba(186,231,220,.14);border-radius:0;background:rgba(0,167,189,.12);font-size:13px}
 .service-rates tbody td{display:grid;min-width:0;justify-items:center;gap:5px;padding:9px 3px;border:0;border-right:1px solid rgba(186,231,220,.1);border-bottom:1px solid rgba(186,231,220,.1);white-space:nowrap;font-size:11px}
 .service-rates tbody td:last-of-type{border-right:0}
+.service-rates tbody td.pricing-more-guests{grid-column:1/-1}
 .service-rates tbody td::before{color:#a9ded3;content:attr(data-label);font-size:9px;font-weight:800;letter-spacing:.03em}
 .service-rates tbody tr:nth-child(2n) td,.service-rates tbody tr:nth-child(2n) th{background:0 0}
 .service-rates tbody tr:nth-child(2n)>th:first-child{background:rgba(0,167,189,.12)}
