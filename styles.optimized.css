@@ -3816,3 +3816,7 @@ to{filter:brightness(1.18)}
   .surf-program-day-copy { padding: 26px 21px; }
   .surf-program-day-copy h3 { font-size: 38px; }
 }
+
+
+/* Contraste del título sobre el bloque oscuro */
+.service-detail-page:not(.accommodation-detail-page) .surf-program-why h2 { color: #fff; }
