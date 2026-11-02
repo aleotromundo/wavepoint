@@ -77,6 +77,7 @@
     document.querySelectorAll('[data-lang-toggle]').forEach(button => {
       const option = button.dataset.langOption;
       const isSelected = option === activeLang;
+      button.removeAttribute('data-language');
       button.dataset.selected = String(isSelected);
       if (option === 'pt') {
         button.setAttribute('aria-label', 'Português (próximamente)');
