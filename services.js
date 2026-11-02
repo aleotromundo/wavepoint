@@ -218,6 +218,82 @@ board_need: { label: 'Will you need a board?', options: ['Yes', 'No, we bring ou
 }
 },
 {
+id: 'surf-programa-3-dias', number: '02A', eyebrow: 'PROGRAMA DE SURF · INICIACIÓN', title: 'Programa de iniciación al surf',
+cardText: 'Tres clases privadas de dos horas para descubrir el mar y disfrutar tus primeras olas.',
+description: 'Tres días para descubrir el mar y disfrutar tus primeras olas.',
+images: [
+'assets/img/services/surf-program-3-days/day-1.webp',
+'assets/img/services/surf-program-3-days/day-2.webp',
+'assets/img/services/surf-program-3-days/day-3.webp'
+],
+heroImage: 'assets/img/services/surf-program-3-days/day-3.webp',
+imageAlts: [
+'Surfista manteniendo el equilibrio sobre una ola pequeña.',
+'Una persona surfea mientras otra practica la remada en el agua.',
+'Surfista practicando su postura sobre una ola.'
+],
+questions: [
+{ id: 'program_dates', label: '¿Qué fechas proponés para las tres clases? Elegí tres días distintos en el orden de las clases.', type: 'dates', fields: ['Día 1', 'Día 2', 'Día 3'], minDate: 'today' },
+{ id: 'group_size', label: '¿Cuántas personas participan?', type: 'number', min: 1 }
+],
+programCopy: {
+es: {
+intro: 'Tu primera experiencia de surf merece tiempo para explorar, preguntar y volver a intentarlo. En WAVEPOINT creemos que tres clases, distribuidas en tres días distintos, son una buena forma de empezar: te permiten familiarizarte con el mar, practicar las bases y retomar lo aprendido en cada encuentro. Un programa privado para acercarte al surf con acompañamiento, a tu ritmo y disfrutando del proceso.',
+facts: [['Duración', 'Tres días distintos, con una clase de dos horas cada día.'], ['Modalidad', 'Clases privadas para vos o tu grupo.'], ['Nivel', 'Principiantes. No necesitás experiencia previa en surf.'], ['Equipo', 'Tabla y lycra incluidas durante las clases.']],
+whyHeading: '¿Por qué tres días de surf?',
+whyText: 'En el primer encuentro todo es nuevo: la tabla, el movimiento del agua y las sensaciones de estar entre las olas. Volver otro día permite retomar esa experiencia, trabajar lo que te costó y seguir construyendo confianza. Cada clase parte de la anterior, con tiempo para practicar, recibir correcciones y disfrutar de tus avances.',
+includesHeading: 'Qué incluye',
+includes: ['Tres clases privadas de dos horas, repartidas en tres días distintos.', 'Acompañamiento y correcciones del instructor.', 'Explicación en la playa y práctica guiada en el agua.', 'Tabla de surf y lycra para cada sesión.', 'Seguimiento de lo trabajado durante el programa.'],
+days: [
+{ title: 'Día 1 · Conocer el mar y la tabla', text: 'Empezamos por familiarizarnos con el entorno, el equipo y las pautas básicas de seguridad. Practicamos la posición sobre la tabla, la remada y el movimiento para ponerse de pie, antes de llevar esos primeros ejercicios al agua con el instructor.' },
+{ title: 'Día 2 · Practicar y ganar confianza', text: 'Retomamos lo aprendido y trabajamos sobre tus primeras sensaciones. Dedicamos más tiempo a la remada, el equilibrio y la puesta de pie, con correcciones que te ayuden a entender qué ajustar en cada intento.' },
+{ title: 'Día 3 · Conectar lo aprendido', text: 'Reunimos lo trabajado y seguimos practicando con acompañamiento. Profundizamos en la observación de las olas, el momento de empezar a remar y la postura. Cerramos con una devolución sobre tus avances y los próximos aspectos que podés seguir trabajando.' }
+],
+progressNote: 'Los contenidos se adaptan a tu ritmo y a las condiciones del mar. El objetivo es que te lleves una primera experiencia disfrutable y una base para seguir aprendiendo.',
+pricesHeading: 'Precios del programa',
+priceLead: 'Precios en USD. Cada importe indica cuánto paga cada persona, según la cantidad de participantes de tu grupo.',
+priceHeaders: ['Participantes', 'Por persona · Una clase de 2 horas', 'Por persona · Programa de 3 días'],
+prices: [['1 persona', 'USD 70', 'USD 210'], ['2 personas', 'USD 65', 'USD 195'], ['3 personas', 'USD 60', 'USD 180'], ['4 personas', 'USD 55', 'USD 165'], ['5 personas', 'USD 50', 'USD 150'], ['Más de 5 personas', 'USD 50', 'USD 150']],
+priceNote: 'La tarifa del programa incluye una clase de dos horas por día durante tres días distintos, con tabla y lycra. Por ejemplo, si participan dos personas, cada una paga USD 195 por el programa completo: USD 390 en total para ambas.',
+reservationHeading: 'Solicitar reserva',
+reservationText: 'Compartí tus fechas y cuántas personas participan. WAVEPOINT te confirmará disponibilidad, horarios y precio total antes de enviarte el enlace de pago.',
+reservationNote: 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.'
+},
+en: {
+intro: 'Your first surfing experience deserves time to explore, ask questions and try again. At WAVEPOINT, we believe three lessons spread across three different days are a good way to start: they give you time to get familiar with the ocean, practice the basics and build on what you learned at each meeting. A private program to approach surfing with guidance, at your own pace and while enjoying the process.',
+facts: [['Duration', 'Three different days, with one 2-hour lesson each day.'], ['Format', 'Private lessons for you or your group.'], ['Level', 'Beginners. No prior surfing experience is needed.'], ['Equipment', 'A surfboard and rash guard are included for each lesson.']],
+whyHeading: 'Why three days of surfing?',
+whyText: 'At the first meeting, everything is new: the board, the movement of the water and the feeling of being among the waves. Coming back another day lets you revisit the experience, work on what felt difficult and keep building confidence. Each lesson builds on the last, with time to practice, receive corrections and enjoy your progress.',
+includesHeading: 'What’s included',
+includes: ['Three private 2-hour lessons, spread across three different days.', 'Guidance and corrections from the instructor.', 'A beach briefing and guided practice in the water.', 'A surfboard and rash guard for each session.', 'Follow-up on what you work on during the program.'],
+days: [
+{ title: 'Day 1 · Get to know the ocean and board', text: 'We start by getting familiar with the surroundings, the equipment and basic safety guidelines. We practice positioning on the board, paddling and the movement to stand up before taking those first exercises into the water with the instructor.' },
+{ title: 'Day 2 · Practice and build confidence', text: 'We revisit what you learned and work with your first impressions. We spend more time on paddling, balance and standing up, with corrections to help you understand what to adjust on each attempt.' },
+{ title: 'Day 3 · Bring it all together', text: 'We connect what you have worked on and continue practicing with guidance. We take a closer look at reading the waves, when to start paddling and posture. We finish with feedback on your progress and the next skills you can keep working on.' }
+],
+progressNote: 'The content adapts to your pace and ocean conditions. The goal is for you to enjoy a first surfing experience and leave with a foundation for continuing to learn.',
+pricesHeading: 'Program prices',
+priceLead: 'Prices in USD. Each amount is per person and depends on the number of people in your group.',
+priceHeaders: ['Participants', 'Per person · One 2-hour lesson', 'Per person · 3-day program'],
+prices: [['1 person', 'USD 70', 'USD 210'], ['2 people', 'USD 65', 'USD 195'], ['3 people', 'USD 60', 'USD 180'], ['4 people', 'USD 55', 'USD 165'], ['5 people', 'USD 50', 'USD 150'], ['More than 5 people', 'USD 50', 'USD 150']],
+priceNote: 'The program rate includes one 2-hour lesson per day across three different days, with a board and rash guard. For example, if two people join, each pays USD 195 for the full program: USD 390 total for both.',
+reservationHeading: 'Request a booking',
+reservationText: 'Share your dates and how many people will take part. WAVEPOINT will confirm availability, times and the total price before sending you a payment link.',
+reservationNote: 'This is a request; your booking is not confirmed yet. You do not need to pay now.'
+}
+},
+en: {
+eyebrow: 'SURF PROGRAM · BEGINNERS', title: 'Beginner Surf Program',
+cardText: 'Three private 2-hour lessons to discover the ocean and enjoy your first waves.',
+description: 'Three days to discover the ocean and enjoy your first waves.',
+imageAlts: ['Surfer balancing on a small wave.', 'One person surfing while another practices paddling in the water.', 'Surfer practicing their stance on a wave.'],
+questions: {
+program_dates: { label: 'Which dates would you like for the three lessons? Choose three different days in lesson order.', fields: ['Day 1', 'Day 2', 'Day 3'] },
+group_size: { label: 'How many people will take part?' }
+}
+}
+},
+{
 id: 'surf-coaching', number: '03', eyebrow: 'SURFCOACHING · PROGRESO', title: 'Surfcoaching',
 cardText: 'Sesión de surf grabada y videoanálisis técnico para mejorar tu postura, tus tiempos y tus movimientos.',
 description: 'Un servicio de videoanálisis de una sesión de surf, recomendado para surfistas intermedios o avanzados. Primero se graba la sesión y después el instructor analiza las olas para hacer una devolución técnica.',
@@ -713,7 +789,7 @@ description: 'Tell us your dates, group size and interests. We’ll put together
 imageAlts: ['Sunset over the coast framed by a tropical tree']
 }
 });
-const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
+const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-programa-3-dias', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
 serviceOrder.splice(9, 0, 'trip-builder');
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
@@ -886,7 +962,17 @@ const ui = uiFor(service);
 const isEn = lang === 'en';
 const gallery = service.images.slice(1).map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index + 1] || `${ui.galleryAlt} ${index + 2}`)}" loading="lazy" />`).join('');
 const details = `<div class="surf-lesson-details"><p class="service-supporting-lead">${esc(service.lead || '')}</p>${service.includes?.length ? `<ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul>` : ''}</div>`;
-return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : 'Fotos de las clases de surf'}">${gallery}</div></section>${details}<section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
+const programPromo = `<section class="surf-program-promo" aria-labelledby="surf-program-promo-title"><div><p class="service-page-kicker">${isEn ? 'BEGINNER PROGRAM · 3 DAYS' : 'PROGRAMA DE INICIACIÓN · 3 DÍAS'}</p><h3 id="surf-program-promo-title">${isEn ? 'Learn to surf across three sessions' : 'Aprendé surf en tres encuentros'}</h3><p>${isEn ? 'Three private 2-hour lessons, spread across three different days, with follow-up on what you learn.' : 'Tres clases privadas de dos horas, distribuidas en tres días distintos, con seguimiento de lo aprendido.'}</p></div><a href="service-detail.html?service=surf-programa-3-dias">${isEn ? 'Explore the program' : 'Conocé el programa'} <span aria-hidden="true">↗</span></a></section>`;
+return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : 'Fotos de las clases de surf'}">${gallery}</div></section>${details}${programPromo}<section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
+}
+function renderSurfProgramStory(service) {
+const isEn = lang === 'en';
+const copy = service.programCopy[isEn ? 'en' : 'es'];
+const facts = copy.facts.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('');
+const includes = copy.includes.map(item => `<li>${esc(item)}</li>`).join('');
+const days = copy.days.map((day, index) => `<article class="surf-program-day${index % 2 ? ' surf-program-day--reverse' : ''}"><figure class="surf-program-day-photo surf-program-day-photo-${index + 1}"><img src="${esc(service.images[index])}" alt="${esc(service.imageAlts?.[index] || day.title)}" loading="lazy" /></figure><div class="surf-program-day-copy"><p class="service-page-kicker">${isEn ? `LESSON ${index + 1}` : `CLASE ${index + 1}`}</p><h3>${esc(day.title)}</h3><p>${esc(day.text)}</p></div></article>`).join('');
+const prices = copy.prices.map(([participants, lesson, program]) => `<article class="surf-program-price-card"><h4>${esc(participants)}</h4><dl><div><dt>${esc(copy.priceHeaders[1])}</dt><dd>${esc(lesson)}</dd></div><div><dt>${esc(copy.priceHeaders[2])}</dt><dd>${esc(program)}</dd></div></dl></article>`).join('');
+return `<div class="surf-program-story"><section class="surf-program-overview" aria-label="${isEn ? 'Program overview' : 'Resumen del programa'}"><p class="surf-program-intro">${esc(copy.intro)}</p><dl class="surf-program-facts">${facts}</dl></section><section class="surf-program-why" aria-labelledby="surf-program-why-heading"><p class="service-page-kicker">${isEn ? 'THE APPROACH' : 'LA PROPUESTA'}</p><h2 id="surf-program-why-heading">${esc(copy.whyHeading)}</h2><p>${esc(copy.whyText)}</p></section><section class="surf-program-includes" aria-labelledby="surf-program-includes-heading"><p class="service-page-kicker">${isEn ? 'YOUR PROGRAM' : 'TU PROGRAMA'}</p><h2 id="surf-program-includes-heading">${esc(copy.includesHeading)}</h2><ul>${includes}</ul></section><section class="surf-program-days" aria-label="${isEn ? 'Three surf lessons' : 'Tres clases de surf'}">${days}</section><p class="surf-program-progress-note">${esc(copy.progressNote)}</p><section class="surf-program-pricing" aria-labelledby="surf-program-prices-heading"><div class="surf-program-section-head"><div><p class="service-page-kicker">${isEn ? 'REFERENCE RATES' : 'TARIFAS DE REFERENCIA'}</p><h2 id="surf-program-prices-heading">${esc(copy.pricesHeading)}</h2></div><span class="surf-program-currency">USD</span></div><p class="surf-program-price-lead">${esc(copy.priceLead)}</p><div class="surf-program-price-list">${prices}</div><p class="surf-program-price-note">${esc(copy.priceNote)}</p></section><section class="surf-program-reservation" aria-labelledby="surf-program-reservation-heading"><h3 id="surf-program-reservation-heading">${esc(copy.reservationHeading)}</h3><p>${esc(copy.reservationText)}</p><p class="surf-program-reservation-note">${esc(copy.reservationNote)}</p></section></div>`;
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
@@ -1047,8 +1133,9 @@ setServiceTwitterMeta('twitter:image', serviceShareImage);
 setServiceTwitterMeta('twitter:image:alt', 'WavePoint logo on a solid white background');
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
+document.body.classList.toggle('surf-program-detail-page', service.id === 'surf-programa-3-dias');
 document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
-document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.images[0])})`);
+document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.heroImage || service.images[0])})`);
 const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
 const nextService = services[(position + 1) % services.length];
@@ -1065,6 +1152,8 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderAccommodationStory(service)
 : service.id === 'clases-de-surf'
 ? renderSurfLessonStory(service)
+: service.id === 'surf-programa-3-dias'
+? renderSurfProgramStory(service)
 : service.id === 'roca-bruja'
 ? renderWitchRockStory(service)
 : service.id === 'surf-fotografia'
@@ -1108,6 +1197,13 @@ const ui = uiFor(service);
 const error = document.getElementById('detailError');
 document.getElementById('detailConfirmation')?.remove();
 if (!form.checkValidity()) { form.reportValidity(); error.textContent = ui.error; return; }
+if (service.id === 'surf-programa-3-dias') {
+  const programDates = [...form.querySelectorAll('[name^="program_dates-"]')].map(input => input.value);
+  if (new Set(programDates).size !== programDates.length || programDates.some((date, index) => index > 0 && date <= programDates[index - 1])) {
+    error.textContent = lang === 'en' ? 'Choose three different dates in the order of the lessons.' : 'Elegí tres fechas distintas y en el orden de las clases.';
+    return;
+  }
+}
 error.textContent = '';
 const isSpanish = lang !== 'en';
 const clean = value => String(value || '').replace(/^¿|[?]$/g, '').trim().toLowerCase();
@@ -1156,6 +1252,7 @@ if (name) {
 const naturalAnswers = {
   preferred_date: isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
   lesson_date: isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
+  program_dates: isSpanish ? 'Las fechas propuestas para las tres clases son' : 'The proposed dates for the three lessons are',
   lesson_format: isSpanish ? 'Preferimos una clase' : 'We prefer a',
   instruction_language: isSpanish ? 'Preferimos la instrucción en' : 'We prefer instruction in',
   swimming_comfort: isSpanish ? 'Sobre nuestra comodidad en el agua,' : 'Regarding our comfort in the water,',
