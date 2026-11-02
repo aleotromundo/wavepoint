@@ -1,3 +1,16 @@
+# 2026-11-02
+### Programa de surf — sumar profundidad visual y mejorar las fotos
+- `styles.css` y `styles.optimized.css`: el bloque de las tres clases gana fondo de vidrio esmerilado con luces ambientales lentas, tarjetas elevables al pasar el cursor, zoom suave en las fotos y respeto por `prefers-reduced-motion`.
+- Las fichas conservan el formato horizontal; las fotos verticales usan un marco 4:5 para mostrar mejor la práctica y a las personas.
+- `service-detail.html`: se renueva la referencia de caché de estilos.
+- Validación: vista del navegador a 1280 px confirmó fichas horizontales con imágenes 4:5; a 390 px las tarjetas apilan sin overflow y las tres fotos cargan. Hover eleva la tarjeta 7 px y `prefers-reduced-motion` desactiva animación y transiciones. `git diff --check` pasó.
+
+### Programa de surf — unificar fechas y mejorar el encuadre de las fotos
+- `services.js`: el texto del programa, la promoción y el formulario indican de forma consistente que las tres clases se realizan en días consecutivos, en español e inglés.
+- `styles.css` y `styles.optimized.css`: las tres fotos muestran más contenido con encuadre casi cuadrado y foco ajustado individualmente, manteniendo las fichas horizontales.
+- `service-detail.html`: se renuevan las referencias de caché de estilos y datos del servicio.
+- Validación: en navegador, las tres fichas permanecen horizontales a 1280 px y usan el encuadre actualizado; a 390 px se apilan sin overflow. Se comprobó que las imágenes cargan y que la versión española usa “días consecutivos”. `git diff --check` pasó. No se pudo ejecutar `node --check` porque Node.js no está disponible.
+
 # 2026-10-16
 ### Suscripción — eliminar el sello persistente
 - `index.html`, `script.js`, `styles.css` y `styles.optimized.css`: se quita el sello “SUSCRIPTO” y la marca local que lo mostraba automáticamente en visitas posteriores. El formulario vuelve a usar dos columnas en escritorio y se conserva el mensaje de estado posterior al envío.
