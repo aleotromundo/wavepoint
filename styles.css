@@ -5010,7 +5010,6 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
   .service-rates tbody td { display: grid; min-width: 0; justify-items: center; gap: 5px; padding: 9px 3px; border: 0; border-right: 1px solid rgba(186, 231, 220, .1); border-bottom: 1px solid rgba(186, 231, 220, .1); white-space: nowrap; font-size: 11px; }
   .service-rates tbody td:last-of-type { border-right: 0; }
   .service-rates tbody td::before { color: #a9ded3; content: attr(data-label); font-size: 9px; font-weight: 800; letter-spacing: .03em; }
-  .service-rates tbody td.pricing-more-guests { grid-column: 1 / -1; }
   .service-rates tbody tr:nth-child(even) th,
   .service-rates tbody tr:nth-child(even) td { background: transparent; }
   .service-rates tbody tr:nth-child(even) > th:first-child { background: rgba(0, 167, 189, .12); }
