@@ -55,6 +55,12 @@ El punto 1 se dividió en dos partes de trabajo: la actualización del contenido
 - Se mantuvo la lógica de cantidad de personas para completar la solicitud, pero sin usarla para multiplicar el precio de ATV.
 - No se cargaron automáticamente las tarifas detalladas en el total del viaje porque el constructor todavía no solicita duración, conductores y acompañantes. Calcularlas únicamente a partir de la cantidad de personas produciría un total incorrecto.
 
+#### 1C. Tabla general de tarifas del index
+
+- Se corrigió la fila **ATV / Cuatriciclos** de la tabla de tarifas ubicada al final de la sección de servicios en el index principal.
+- La fila ya no muestra guiones vacíos: ahora indica **“Por vehículo”** en español y **“Per vehicle”** en inglés.
+- Se mantuvo la aclaración de que el precio depende del recorrido, la duración y la cantidad de personas que comparten el ATV, evitando presentar una tarifa por persona incorrecta.
+
 ### Archivos modificados
 
 - `services.js`
@@ -63,6 +69,8 @@ El punto 1 se dividió en dos partes de trabajo: la actualización del contenido
   - Estilos para modalidades, cuadro de tarifas y bloques informativos de ATV.
 - `trip-builder.js`
   - Texto, etiqueta de tarifa y comportamiento de ATV dentro de “Armá tu viaje”.
+- `pricing-data.js`
+  - Presentación de la fila ATV en la tabla general de tarifas del index.
 
 ### Validaciones realizadas
 
@@ -77,7 +85,7 @@ El punto 1 se dividió en dos partes de trabajo: la actualización del contenido
 
 - Inicio aproximado: 2026-11-01 22:16:38 (hora de la sesión).
 - Registro realizado: 2026-11-01 22:22:32.
-- Tiempo aproximado de trabajo: **6 minutos** para las dos partes combinadas.
+- Tiempo aproximado de trabajo: **6 minutos** para las dos partes iniciales, más la corrección posterior de la tabla general del index.
 
 > El tiempo es aproximado y corresponde al análisis, implementación y validación del punto 1 en esta sesión.
 
