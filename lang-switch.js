@@ -56,12 +56,14 @@
       const buttons = [...switcher.querySelectorAll('[data-lang-option]')];
       const before = new Map(buttons.map(button => [button.dataset.langOption, button.getBoundingClientRect()]));
       const options = new Map(buttons.map(button => [button.dataset.langOption, button]));
-      arranged.forEach(option => { const button = options.get(option); if (button) switcher.appendChild(button); });
+      const arrangedButtons = arranged.map(option => options.get(option)).filter(Boolean);
+      switcher.replaceChildren(...arrangedButtons);
       options.forEach((button, option) => {
         const oldRect = before.get(option);
         const newRect = button.getBoundingClientRect();
         if (!oldRect || (oldRect.left === newRect.left && oldRect.top === newRect.top)) return;
-        button.animate([
+        button._langMoveAnimation?.cancel();
+        button._langMoveAnimation = button.animate([
           { transform: `translate(${oldRect.left - newRect.left}px, ${oldRect.top - newRect.top}px)` },
           { transform: '' }
         ], { duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)' });
@@ -72,7 +74,6 @@
   const apply = lang => {
     const activeLang = lang === 'es' ? 'es' : 'en';
     document.documentElement.lang = lang;
-    reorderOptions(activeLang);
     document.querySelectorAll('[data-lang-toggle]').forEach(button => {
       const option = button.dataset.langOption;
       const isSelected = option === activeLang;
@@ -85,6 +86,7 @@
         button.setAttribute('aria-pressed', String(isSelected));
       }
     });
+    reorderOptions(activeLang);
     TEXTS.forEach(item => document.querySelectorAll(item.selector).forEach(node => {
       if (!node.hasAttribute('data-i18n') && !node.hasAttribute('data-copy-en')) node.textContent = item[activeLang];
     }));
