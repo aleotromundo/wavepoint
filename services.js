@@ -900,6 +900,35 @@ const includes = service.includes?.length ? `<div class="service-supporting-incl
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
 }
+function renderAtvStory(service) {
+const isEn = lang === 'en';
+const options = isEn ? [
+  ['Explorer · 2 hours', 'A first experience to discover coastal roads, beaches and local corners. Ideal if you have never driven an ATV or want a shorter outing during your vacation.'],
+  ['Adventure · 4 hours', 'More time to explore quiet beaches, trails through the vegetation, local roads and viewpoints. A great way to see more of Guanacaste’s landscapes.'],
+  ['Ultimate · 6 hours', 'The most complete experience: a route combining beaches, tropical forest, mountain trails and panoramic views. Ideal if you want to spend a good part of the day exploring.']
+] : [
+  ['Explorer · 2 horas', 'Una primera experiencia para descubrir caminos costeros, playas y rincones locales. Ideal si nunca manejaste un ATV o querés sumar una salida corta a tus vacaciones.'],
+  ['Adventure · 4 horas', 'Más tiempo para explorar playas apartadas, senderos entre la vegetación, caminos locales y miradores. Una opción para conocer más de los paisajes de Guanacaste.'],
+  ['Ultimate · 6 horas', 'La experiencia más extensa: un recorrido que combina playas, bosque tropical, senderos de montaña y vistas panorámicas. Ideal para dedicar buena parte del día a explorar.']
+];
+const prices = isEn ? [
+  ['Explorer · 1 person', 'USD 90'], ['Explorer · 2 people', 'USD 110'],
+  ['Adventure · 1 person', 'USD 150'], ['Adventure · 2 people', 'USD 180'],
+  ['Ultimate · 1 person', 'USD 220'], ['Ultimate · 2 people', 'USD 270'],
+  ['Rental · 24 hours', 'USD 120']
+] : [
+  ['Explorer · 1 persona', 'USD 90'], ['Explorer · 2 personas', 'USD 110'],
+  ['Adventure · 1 persona', 'USD 150'], ['Adventure · 2 personas', 'USD 180'],
+  ['Ultimate · 1 persona', 'USD 220'], ['Ultimate · 2 personas', 'USD 270'],
+  ['Alquiler · 24 horas', 'USD 120']
+];
+const intro = isEn ? 'Head out from Tamarindo with a local guide and a private tour for your group. Choose from three routes according to how much time you want to dedicate to the adventure.' : 'Explorá los alrededores de Tamarindo en cuatriciclo con un guía local y un tour privado para tu grupo. Elegí entre tres recorridos según cuánto tiempo quieras dedicarle a la aventura.';
+const priceNote = isEn ? 'Prices are per ATV. The two-person rate is the total for two people sharing one ATV: one driver and one passenger.' : 'Los precios son por cuatriciclo. La tarifa doble es el total para dos personas compartiendo un ATV: conductor y acompañante.';
+const included = isEn ? 'Includes the ATV, local guide, helmet and safety instructions. A valid driver’s license is required to drive.' : 'Incluye cuatriciclo, guía local, casco e indicaciones de seguridad. Para conducir necesitás una licencia vigente.';
+const request = isEn ? 'Tell us the date, number of participants and preferred route. Before you pay, we confirm availability, meeting point, service details and final price. Rates are for reference and sending a request does not confirm a booking.' : 'Contanos la fecha, cuántas personas participan y qué recorrido prefieren. Antes de pagar, confirmaremos disponibilidad, punto de encuentro, detalles del servicio y precio final. Las tarifas son de referencia y enviar una solicitud no confirma la reserva.';
+const galleryStory = renderStandardStory(service);
+return `${galleryStory}<section class="atv-story" aria-labelledby="atv-options-heading"><div class="atv-copy"><p class="service-page-kicker">${isEn ? 'ATV IN TAMARINDO' : 'ATV EN TAMARINDO'}</p><h2 id="atv-options-heading">${isEn ? 'Choose your adventure' : 'Elegí tu aventura'}</h2><p>${intro}</p></div><div class="atv-options">${options.map(([title, text]) => `<article class="atv-option"><h3>${title}</h3><p>${text}</p></article>`).join('')}</div><div class="atv-pricing"><div class="atv-pricing-head"><div><p class="service-page-kicker">${isEn ? 'REFERENCE RATES' : 'TARIFAS DE REFERENCIA'}</p><h3>${isEn ? 'Choose the option that fits your group' : 'Elegí la opción que mejor se adapta a tu grupo'}</h3></div><span class="atv-pricing-currency">USD</span></div><div class="atv-price-grid">${prices.map(([label, price]) => `<div class="atv-price-row"><span>${label}</span><strong>${price}</strong></div>`).join('')}</div><p class="atv-price-note">${priceNote}</p></div><div class="atv-included"><h3>${isEn ? 'What is included' : 'Incluye'}</h3><p>${included}</p></div><div class="atv-request"><h3>${isEn ? 'Check availability with WavePoint' : 'Consultá disponibilidad con WavePoint'}</h3><p>${request}</p></div></section>`;
+}
 function renderWitchRockStory(service) {
 const story = renderStandardStory(service, service.coordination);
 return story;
@@ -1044,6 +1073,8 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderSurfskateStory(service)
 : service.id === 'retiros'
 ? renderRetreatStory(service)
+: service.id === 'atv'
+? renderAtvStory(service)
 : renderStandardStory(service);
 const surfSurveyModal = '' /* El formulario de clases queda visible debajo del contenido. */;
 const surfFormBar = '';

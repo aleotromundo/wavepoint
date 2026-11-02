@@ -9381,3 +9381,31 @@ footer a {
   object-position: center !important;
   background: #fff !important;
 }
+/* ATV · modalidades, tarifas de referencia y condiciones del servicio. */
+.atv-story { display:grid; gap:28px; margin-top:34px; }
+.atv-copy { max-width:820px; }
+.atv-copy h2 { margin:8px 0 12px; color:#123746; font-size:clamp(32px,4vw,52px); line-height:.98; }
+.atv-copy p:not(.service-page-kicker), .atv-option p, .atv-price-note, .atv-included p, .atv-request p { color:#47636c; font-size:15px; line-height:1.65; }
+.atv-options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.atv-option { padding:22px; border:1px solid rgba(8,127,128,.16); border-radius:18px; background:linear-gradient(145deg,#fff,rgba(231,247,243,.72)); box-shadow:0 14px 32px rgba(8,43,58,.08); }
+.atv-option h3, .atv-included h3, .atv-request h3 { margin:0 0 8px; color:#123f4d; font-size:22px; }
+.atv-option p, .atv-included p, .atv-request p { margin:0; }
+.atv-pricing { padding:26px; border:1px solid rgba(8,43,58,.13); border-radius:22px; background:#fff; box-shadow:0 18px 42px rgba(8,43,58,.10); }
+.atv-pricing-head { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; margin-bottom:18px; }
+.atv-pricing-head h3 { margin:7px 0 0; color:#123746; font-size:clamp(22px,3vw,32px); line-height:1.05; }
+.atv-pricing-currency { display:grid; place-items:center; min-width:52px; min-height:52px; border-radius:50%; background:#087f80; color:#fff; font:800 13px "DM Sans",sans-serif; letter-spacing:.08em; }
+.atv-price-grid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid rgba(8,43,58,.12); }
+.atv-price-row { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px 4px; border-bottom:1px solid rgba(8,43,58,.10); color:#31525c; font-size:14px; }
+.atv-price-row:nth-child(odd) { padding-right:18px; border-right:1px solid rgba(8,43,58,.10); }
+.atv-price-row:nth-child(even) { padding-left:18px; }
+.atv-price-row strong { color:#087f80; white-space:nowrap; }
+.atv-price-note { margin:17px 0 0; font-size:13px !important; }
+.atv-included, .atv-request { padding:22px 24px; border-radius:18px; background:rgba(231,247,243,.68); }
+.atv-request { background:rgba(243,182,75,.14); }
+@media (max-width:760px) {
+  .atv-options { grid-template-columns:1fr; }
+  .atv-pricing { padding:20px 17px; }
+  .atv-price-grid { grid-template-columns:1fr; }
+  .atv-price-row:nth-child(odd), .atv-price-row:nth-child(even) { padding:12px 3px; border-right:0; }
+  .atv-pricing-head h3 { font-size:25px; }
+}
