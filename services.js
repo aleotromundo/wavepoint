@@ -226,7 +226,7 @@ images: [
 'assets/img/services/surf-program-3-days/day-2.webp',
 'assets/img/services/surf-program-3-days/day-3.webp'
 ],
-heroImage: 'assets/img/services/surf-program-3-days/day-3.webp',
+heroImage: 'assets/img/services/surf-program-3-days/ocean-waves-no-people.webp',
 imageAlts: [
 'Surfista manteniendo el equilibrio sobre una ola pequeña.',
 'Una persona surfea mientras otra practica la remada en el agua.',
