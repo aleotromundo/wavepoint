@@ -3825,3 +3825,13 @@ to{filter:brightness(1.18)}
 /* Programa de iniciación al surf · tarjetas de precios invertidas */
 .surf-program-price-card { background: linear-gradient(135deg, #061f2d, #0b3d4c); border-color: rgba(156,232,215,.3); box-shadow: 0 12px 26px rgba(4,31,43,.2); }
 .surf-program-price-card h4, .surf-program-price-card dt, .surf-program-price-card dd { color: #fff; }
+
+
+/* Programa de iniciación al surf · jerarquía de títulos por clase */
+.surf-program-day-kicker { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.surf-program-day-kicker-main { font-size: 1.05em; font-weight: 950; letter-spacing: .16em; }
+.surf-program-day-kicker-dot { color: #28b8ac; font-size: 1.25em; line-height: .7; }
+.surf-program-day-kicker-day { font-size: .9em; font-weight: 800; letter-spacing: .12em; }
+.surf-program-day:nth-child(odd) .surf-program-day-kicker-dot { color: #9ce8d7; }
+.surf-program-day-copy h3 { max-width: 12ch; }
+@media (max-width: 520px) { .surf-program-day-copy h3 { max-width: none; } }
