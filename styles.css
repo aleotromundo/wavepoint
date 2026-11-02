@@ -9583,3 +9583,7 @@ footer a {
 .lang-toggle:not([data-selected="true"]) { margin-inline: -8px; }
 .lang-toggle[data-selected="true"] { margin-inline: 0; }
 @media (max-width: 560px) { .lang-switcher { min-width: 94px; } }
+
+/* Selector de idiomas · eliminar dibujo legado de banderas */
+.lang-toggle::before, .lang-toggle::after { content: none !important; display: none !important; }
+.lang-toggle .lang-flag svg { display: block !important; }
