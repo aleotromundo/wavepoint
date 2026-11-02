@@ -222,15 +222,15 @@ id: 'surf-programa-3-dias', number: '02A', eyebrow: 'PROGRAMA DE SURF · INICIAC
 cardText: 'Tres clases privadas de dos horas para descubrir el mar y disfrutar tus primeras olas.',
 description: 'Tres días para descubrir el mar y disfrutar tus primeras olas.',
 images: [
-'assets/img/services/surf-program-3-days/day-1.webp',
-'assets/img/services/surf-program-3-days/day-2.webp',
-'assets/img/services/surf-program-3-days/day-3.webp'
+'assets/img/services/surf-program-3-days/day-1-original.jpg',
+'assets/img/services/surf-program-3-days/day-2-original.jpg',
+'assets/img/services/surf-program-3-days/day-3-original.jpg'
 ],
 heroImage: 'assets/img/services/surf-program-3-days/ocean-waves-no-people.webp',
 imageAlts: [
-'Surfista manteniendo el equilibrio sobre una ola pequeña.',
-'Una persona surfea mientras otra practica la remada en el agua.',
-'Surfista practicando su postura sobre una ola.'
+'Práctica en tierra de la posición sobre la tabla antes de entrar al agua.',
+'Instructor demostrando la remada y la puesta de pie sobre la tabla.',
+'Grupo de surfistas con sus tablas junto al mar al finalizar una sesión.'
 ],
 questions: [
 { id: 'program_dates', label: '¿Qué fechas proponés para las tres clases? Elegí tres días distintos en el orden de las clases.', type: 'dates', fields: ['Día 1', 'Día 2', 'Día 3'], minDate: 'today' },
