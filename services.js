@@ -233,17 +233,17 @@ imageAlts: [
 'Grupo de surfistas con sus tablas junto al mar al finalizar una sesión.'
 ],
 questions: [
-{ id: 'program_dates', label: '¿Qué fechas proponés para las tres clases? Elegí tres días distintos en el orden de las clases.', type: 'dates', fields: ['Día 1', 'Día 2', 'Día 3'], minDate: 'today' },
+{ id: 'program_dates', label: '¿Qué fechas proponés para las tres clases? Elegí tres días consecutivos en el orden de las clases.', type: 'dates', fields: ['Día 1', 'Día 2', 'Día 3'], minDate: 'today' },
 { id: 'group_size', label: '¿Cuántas personas participan?', type: 'number', min: 1 }
 ],
 programCopy: {
 es: {
 intro: 'Tu primera experiencia de surf merece tiempo para explorar, preguntar y volver a intentarlo. En WAVEPOINT creemos que tres clases, distribuidas en tres días distintos, son una buena forma de empezar: te permiten familiarizarte con el mar, practicar las bases y retomar lo aprendido en cada encuentro. Un programa privado para acercarte al surf con acompañamiento, a tu ritmo y disfrutando del proceso.',
-facts: [['Duración', 'Tres días distintos, con una clase de dos horas cada día.'], ['Modalidad', 'Clases privadas para vos o tu grupo.'], ['Nivel', 'Principiantes. No necesitás experiencia previa en surf.'], ['Equipo', 'Tabla y lycra incluidas durante las clases.']],
+facts: [['Duración', 'Tres días consecutivos, con una clase de dos horas cada día.'], ['Modalidad', 'Clases privadas para vos o tu grupo.'], ['Nivel', 'Principiantes. No necesitás experiencia previa en surf.'], ['Equipo', 'Tabla y lycra incluidas durante las clases.']],
 whyHeading: '¿Por qué tres días de surf?',
 whyText: 'En el primer encuentro todo es nuevo: la tabla, el movimiento del agua y las sensaciones de estar entre las olas. Volver otro día permite retomar esa experiencia, trabajar lo que te costó y seguir construyendo confianza. Cada clase parte de la anterior, con tiempo para practicar, recibir correcciones y disfrutar de tus avances.',
 includesHeading: 'Qué incluye',
-includes: ['Tres clases privadas de dos horas, repartidas en tres días distintos.', 'Acompañamiento y correcciones del instructor.', 'Explicación en la playa y práctica guiada en el agua.', 'Tabla de surf y lycra para cada sesión.', 'Seguimiento de lo trabajado durante el programa.'],
+includes: ['Tres clases privadas de dos horas, repartidas en tres días consecutivos.', 'Acompañamiento y correcciones del instructor.', 'Explicación en la playa y práctica guiada en el agua.', 'Tabla de surf y lycra para cada sesión.', 'Seguimiento de lo trabajado durante el programa.'],
 days: [
 { title: 'Día 1 · Conocer el mar y la tabla', text: 'Empezamos por familiarizarnos con el entorno, el equipo y las pautas básicas de seguridad. Practicamos la posición sobre la tabla, la remada y el movimiento para ponerse de pie, antes de llevar esos primeros ejercicios al agua con el instructor.' },
 { title: 'Día 2 · Practicar y ganar confianza', text: 'Retomamos lo aprendido y trabajamos sobre tus primeras sensaciones. Dedicamos más tiempo a la remada, el equilibrio y la puesta de pie, con correcciones que te ayuden a entender qué ajustar en cada intento.' },
@@ -254,18 +254,18 @@ pricesHeading: 'Precios del programa',
 priceLead: 'Precios en USD. Cada importe indica cuánto paga cada persona, según la cantidad de participantes de tu grupo.',
 priceHeaders: ['Participantes', 'Por persona · Una clase de 2 horas', 'Por persona · Programa de 3 días'],
 prices: [['1 persona', 'USD 70', 'USD 210'], ['2 personas', 'USD 65', 'USD 195'], ['3 personas', 'USD 60', 'USD 180'], ['4 personas', 'USD 55', 'USD 165'], ['5 personas', 'USD 50', 'USD 150'], ['Más de 5 personas', 'USD 50', 'USD 150']],
-priceNote: 'La tarifa del programa incluye una clase de dos horas por día durante tres días distintos, con tabla y lycra. Por ejemplo, si participan dos personas, cada una paga USD 195 por el programa completo: USD 390 en total para ambas.',
+priceNote: 'La tarifa del programa incluye una clase de dos horas por día durante tres días consecutivos, con tabla y lycra. Por ejemplo, si participan dos personas, cada una paga USD 195 por el programa completo: USD 390 en total para ambas.',
 reservationHeading: 'Solicitar reserva',
 reservationText: 'Compartí tus fechas y cuántas personas participan. WAVEPOINT te confirmará disponibilidad, horarios y precio total antes de enviarte el enlace de pago.',
 reservationNote: 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.'
 },
 en: {
-intro: 'Your first surfing experience deserves time to explore, ask questions and try again. At WAVEPOINT, we believe three lessons spread across three different days are a good way to start: they give you time to get familiar with the ocean, practice the basics and build on what you learned at each meeting. A private program to approach surfing with guidance, at your own pace and while enjoying the process.',
-facts: [['Duration', 'Three different days, with one 2-hour lesson each day.'], ['Format', 'Private lessons for you or your group.'], ['Level', 'Beginners. No prior surfing experience is needed.'], ['Equipment', 'A surfboard and rash guard are included for each lesson.']],
+intro: 'Your first surfing experience deserves time to explore, ask questions and try again. At WAVEPOINT, we believe three lessons spread across three consecutive days are a good way to start: they give you time to get familiar with the ocean, practice the basics and build on what you learned at each meeting. A private program to approach surfing with guidance, at your own pace and while enjoying the process.',
+facts: [['Duration', 'Three consecutive days, with one 2-hour lesson each day.'], ['Format', 'Private lessons for you or your group.'], ['Level', 'Beginners. No prior surfing experience is needed.'], ['Equipment', 'A surfboard and rash guard are included for each lesson.']],
 whyHeading: 'Why three days of surfing?',
 whyText: 'At the first meeting, everything is new: the board, the movement of the water and the feeling of being among the waves. Coming back another day lets you revisit the experience, work on what felt difficult and keep building confidence. Each lesson builds on the last, with time to practice, receive corrections and enjoy your progress.',
 includesHeading: 'What’s included',
-includes: ['Three private 2-hour lessons, spread across three different days.', 'Guidance and corrections from the instructor.', 'A beach briefing and guided practice in the water.', 'A surfboard and rash guard for each session.', 'Follow-up on what you work on during the program.'],
+includes: ['Three private 2-hour lessons, spread across three consecutive days.', 'Guidance and corrections from the instructor.', 'A beach briefing and guided practice in the water.', 'A surfboard and rash guard for each session.', 'Follow-up on what you work on during the program.'],
 days: [
 { title: 'Day 1 · Get to know the ocean and board', text: 'We start by getting familiar with the surroundings, the equipment and basic safety guidelines. We practice positioning on the board, paddling and the movement to stand up before taking those first exercises into the water with the instructor.' },
 { title: 'Day 2 · Practice and build confidence', text: 'We revisit what you learned and work with your first impressions. We spend more time on paddling, balance and standing up, with corrections to help you understand what to adjust on each attempt.' },
@@ -276,7 +276,7 @@ pricesHeading: 'Program prices',
 priceLead: 'Prices in USD. Each amount is per person and depends on the number of people in your group.',
 priceHeaders: ['Participants', 'Per person · One 2-hour lesson', 'Per person · 3-day program'],
 prices: [['1 person', 'USD 70', 'USD 210'], ['2 people', 'USD 65', 'USD 195'], ['3 people', 'USD 60', 'USD 180'], ['4 people', 'USD 55', 'USD 165'], ['5 people', 'USD 50', 'USD 150'], ['More than 5 people', 'USD 50', 'USD 150']],
-priceNote: 'The program rate includes one 2-hour lesson per day across three different days, with a board and rash guard. For example, if two people join, each pays USD 195 for the full program: USD 390 total for both.',
+priceNote: 'The program rate includes one 2-hour lesson per day across three consecutive days, with a board and rash guard. For example, if two people join, each pays USD 195 for the full program: USD 390 total for both.',
 reservationHeading: 'Request a booking',
 reservationText: 'Share your dates and how many people will take part. WAVEPOINT will confirm availability, times and the total price before sending you a payment link.',
 reservationNote: 'This is a request; your booking is not confirmed yet. You do not need to pay now.'
@@ -1200,8 +1200,10 @@ document.getElementById('detailConfirmation')?.remove();
 if (!form.checkValidity()) { form.reportValidity(); error.textContent = ui.error; return; }
 if (service.id === 'surf-programa-3-dias') {
   const programDates = [...form.querySelectorAll('[name^="program_dates-"]')].map(input => input.value);
-  if (new Set(programDates).size !== programDates.length || programDates.some((date, index) => index > 0 && date <= programDates[index - 1])) {
-    error.textContent = lang === 'en' ? 'Choose three different dates in the order of the lessons.' : 'Elegí tres fechas distintas y en el orden de las clases.';
+  const toDayNumber = value => { const [year, month, day] = value.split('-').map(Number); return Date.UTC(year, month - 1, day) / 86400000; };
+  const consecutive = programDates.every((date, index) => index === 0 || toDayNumber(date) - toDayNumber(programDates[index - 1]) === 1);
+  if (new Set(programDates).size !== programDates.length || !consecutive) {
+    error.textContent = lang === 'en' ? 'Choose three consecutive dates in the order of the lessons.' : 'Elegí tres fechas consecutivas y en el orden de las clases.';
     return;
   }
 }
