@@ -10,7 +10,7 @@
 
   // Same markup as the selector on index.html, with Portuguese reserved visually for now.
   const SWITCHER = '<div aria-label="Selector de idioma" class="lang-switcher">'
-    + '<button aria-label="Português (próximamente)" class="lang-toggle" data-lang-toggle data-lang-option="pt" type="button" aria-disabled="true"><span class="lang-flag lang-flag-pt" aria-hidden="true">🇧🇷</span></button>'
+    + '<button aria-label="Português (próximamente)" class="lang-toggle" data-lang-toggle data-lang-option="pt" type="button" aria-disabled="true"><span class="lang-flag lang-flag-pt" aria-hidden="true"><svg viewBox="0 0 36 36" role="img"><defs><clipPath id="flag-br-clip"><circle cx="18" cy="18" r="18"/></clipPath></defs><g clip-path="url(#flag-br-clip)"><path fill="#009c3b" d="M0 0h36v36H0z"/><path fill="#ffdf00" d="M18 3 34 18 18 33 2 18Z"/><circle cx="18" cy="18" r="7" fill="#002776"/><path d="M12 16.5c3.7-2.1 8.3-2.1 12 0" fill="none" stroke="#fff" stroke-width="1.2"/></g></svg></span></button>'
     + '<button aria-label="Switch to English" class="lang-toggle" data-lang-toggle data-lang-option="en" type="button" aria-pressed="true"><span class="lang-flag lang-flag-en" aria-hidden="true">🇬🇧</span></button>'
     + '<button aria-label="Cambiar a español" class="lang-toggle" data-lang-toggle data-lang-option="es" type="button" aria-pressed="false"><span class="lang-flag lang-flag-es" aria-hidden="true">🇪🇸</span></button>'
     + '</div>';

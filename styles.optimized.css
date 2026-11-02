@@ -3861,3 +3861,7 @@ to{filter:brightness(1.18)}
 .lang-toggle { transition: transform .35s cubic-bezier(.2,.8,.2,1), width .35s ease, height .35s ease, flex-basis .35s ease, box-shadow .35s ease; }
 .lang-toggle:hover:not([data-selected="true"]), .lang-toggle:focus-visible:not([data-selected="true"]) { transform: scale(1.12) translateY(-1px); opacity: 1; }
 .lang-toggle[data-selected="true"] { transition: transform .42s cubic-bezier(.2,.8,.2,1), width .35s ease, height .35s ease, flex-basis .35s ease, box-shadow .35s ease; }
+
+
+/* Selector de idiomas · bandera brasileña vectorial */
+.lang-flag svg { display: block; width: 100%; height: 100%; }
