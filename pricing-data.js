@@ -20,17 +20,7 @@
     { rateId: 'yoga', label: { es: 'Yoga', en: 'Yoga' } },
     {
       rateId: null,
-      label: { es: 'ATV / Cuatriciclos', en: 'ATV tours' },
-      tableRates: {
-        1: {
-          es: ['Explorer · 2 h: USD 90', 'Adventure · 4 h: USD 150', 'Ultimate · 6 h: USD 220', 'Alquiler · 24 h: USD 120 total'],
-          en: ['Explorer · 2 h: USD 90', 'Adventure · 4 h: USD 150', 'Ultimate · 6 h: USD 220', 'Rental · 24 h: USD 120 total']
-        },
-        2: {
-          es: ['Explorer · 2 h: USD 55 c/u', 'Adventure · 4 h: USD 90 c/u', 'Ultimate · 6 h: USD 135 c/u', 'Alquiler · 24 h: USD 120 total'],
-          en: ['Explorer · 2 h: USD 55 each', 'Adventure · 4 h: USD 90 each', 'Ultimate · 6 h: USD 135 each', 'Rental · 24 h: USD 120 total']
-        }
-      }
+      label: { es: 'ATV / Cuatriciclos', en: 'ATV tours' }
     },
     { rateId: 'surf-photography-water', label: { es: 'Fotografía acuática', en: 'In-water photography' } },
     { rateId: 'surf-photography-beach', label: { es: 'Fotografía desde la playa', en: 'Photography from the beach' } },
