@@ -3894,3 +3894,37 @@ to{filter:brightness(1.18)}
 .lang-toggle[data-selected=true]{width:38px;height:38px;flex-basis:38px;box-shadow:0 6px 16px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.16)}
 .lang-toggle:not([data-selected=true]){margin-inline:-9px}
 @media(max-width:560px){.lang-toggle{width:24px;height:24px;flex-basis:24px}.lang-toggle[data-selected=true]{width:36px;height:36px;flex-basis:36px}}
+
+/* ATV · editorial story, routes and reference rates */
+.atv-story{display:grid;gap:clamp(20px,3vw,30px);margin-top:clamp(30px,5vw,54px)}
+.atv-copy{max-width:900px;padding:clamp(24px,4vw,42px);border:1px solid rgba(8,127,128,.16);border-radius:26px;background:rgba(255,255,255,.94);box-shadow:0 18px 42px rgba(8,43,58,.1)}
+.atv-copy .service-page-kicker{margin:0 0 8px;color:#087f80;font-size:12px;font-weight:900;letter-spacing:.14em}
+.atv-copy h2{margin:0 0 12px;color:#123746;font:700 clamp(42px,5.5vw,68px)/.94 "Barlow Condensed",Impact,sans-serif}
+.atv-copy p:not(.service-page-kicker),.atv-option p,.atv-price-note,.atv-included p,.atv-request p{color:#47636c;font-size:clamp(15px,1.5vw,18px);line-height:1.7}
+.atv-copy p:not(.service-page-kicker){max-width:720px;margin:0}
+.atv-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.atv-option{position:relative;min-width:0;overflow:hidden;padding:clamp(22px,3vw,30px);border:1px solid rgba(8,127,128,.17);border-radius:22px;background:linear-gradient(145deg,#fff,rgba(231,247,243,.9));box-shadow:0 14px 32px rgba(8,43,58,.1);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.atv-option::before{position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#087f80,#9ce8d7);content:""}
+.atv-option:hover{transform:translateY(-3px);border-color:rgba(8,127,128,.32);box-shadow:0 20px 38px rgba(8,43,58,.14)}
+.atv-option h3{margin:0 0 12px;color:#123746;font:700 clamp(27px,3vw,36px)/1 "Barlow Condensed",Impact,sans-serif}
+.atv-option p,.atv-included p,.atv-request p{margin:0}
+.atv-pricing{padding:clamp(24px,4vw,42px);border:1px solid rgba(156,232,215,.26);border-radius:26px;background:linear-gradient(135deg,#082b3a,#0b5360);box-shadow:0 22px 48px rgba(4,31,43,.2)}
+.atv-pricing-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px}
+.atv-pricing-head .service-page-kicker{margin:0 0 7px;color:#9ce8d7;font-size:11px;font-weight:900;letter-spacing:.14em}
+.atv-pricing-head h3{max-width:660px;margin:0;color:#fff;font:700 clamp(30px,4vw,46px)/.98 "Barlow Condensed",Impact,sans-serif}
+.atv-pricing-currency{display:grid;width:54px;height:54px;flex:0 0 54px;place-items:center;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.1);color:#baf5e3;font:900 13px "DM Sans",sans-serif;letter-spacing:.08em}
+.atv-price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.atv-price-row{display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:0;padding:15px 17px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(255,255,255,.09);color:#f1fbf7;font-size:14px;line-height:1.4}
+.atv-price-row:last-child:nth-child(odd){grid-column:1/-1}
+.atv-price-row strong{color:#9ce8d7;font-size:15px;white-space:nowrap}
+.atv-price-note{margin:18px 0 0;color:rgba(241,251,247,.82)!important;font-size:13px!important}
+.atv-included,.atv-request{padding:clamp(22px,3vw,32px);border:1px solid rgba(8,127,128,.16);border-radius:22px;background:rgba(255,255,255,.94);box-shadow:0 14px 32px rgba(8,43,58,.09)}
+.atv-included h3,.atv-request h3{margin:0 0 10px;color:#123746;font:700 clamp(26px,3vw,34px)/1 "Barlow Condensed",Impact,sans-serif}
+.atv-included{background:linear-gradient(135deg,#fff,#e7f7f3)}
+.atv-included h3::before{display:inline-grid;width:27px;height:27px;margin-right:10px;place-items:center;border-radius:50%;background:#087f80;color:#fff;content:"✓";font:800 15px "DM Sans",sans-serif;vertical-align:3px}
+.atv-request{border-color:rgba(156,232,215,.26);background:linear-gradient(135deg,#082b3a,#0b5360);box-shadow:0 20px 44px rgba(4,31,43,.18)}
+.atv-request h3{color:#fff}
+.atv-request p{color:rgba(241,251,247,.9)}
+@media(max-width:760px){.atv-options{grid-template-columns:1fr}.atv-price-grid{grid-template-columns:1fr}.atv-price-row:last-child:nth-child(odd){grid-column:auto}}
+@media(max-width:520px){.atv-copy,.atv-pricing{padding:24px 20px;border-radius:20px}.atv-included,.atv-request{padding:22px 20px;border-radius:18px}.atv-pricing-head{gap:12px}.atv-pricing-currency{width:46px;height:46px;flex-basis:46px}.atv-price-row{padding:14px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.atv-option{transition:none}.atv-option:hover{transform:none}}
