@@ -9543,3 +9543,8 @@ footer a {
 
 /* Programa de iniciación al surf · días destacados */
 .surf-program-day-kicker-day { font-size: clamp(17px, 2vw, 24px); font-weight: 950; letter-spacing: .07em; line-height: .95; }
+
+
+/* Programa de iniciación al surf · fichas iniciales invertidas */
+.surf-program-facts > div { background: linear-gradient(135deg, #061f2d, #0b3d4c); border-color: rgba(156,232,215,.3); box-shadow: 0 10px 22px rgba(4,31,43,.16); }
+.surf-program-facts dt, .surf-program-facts dd { color: #fff; }
