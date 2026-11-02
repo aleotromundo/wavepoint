@@ -3877,3 +3877,10 @@ to{filter:brightness(1.18)}
 /* Selector de idiomas · eliminar dibujo legado de banderas */
 .lang-toggle::before, .lang-toggle::after { content: none !important; display: none !important; }
 .lang-toggle .lang-flag svg { display: block !important; }
+
+
+/* Selector de idiomas · banderas flotantes sin recuadro */
+.lang-switcher { gap: 0; min-width: 0; padding: 0; background: transparent; border: 0; box-shadow: none; }
+.lang-toggle:not([data-selected="true"]) { margin-inline: -12px; }
+.lang-toggle[data-selected="true"] { margin-inline: 0; box-shadow: 0 10px 26px rgba(0,0,0,.48), 0 0 0 2px rgba(255,255,255,.16); }
+@media (max-width: 560px) { .lang-switcher { min-width: 0; } }
