@@ -1951,7 +1951,6 @@ to{transform:rotate(360deg)}
 .service-rates thead th:last-child{border-top-right-radius:12px}
 .service-rates tbody th{width:28%;background:rgba(255,255,255,.045);color:#f7fcfa;font-weight:700}
 .service-rates tbody td{background:rgba(255,255,255,.018);color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
-.service-rates tbody td.pricing-atv-rates{white-space:pre-line;line-height:1.45}
 .service-rates tbody tr:nth-child(2n) td,.service-rates tbody tr:nth-child(2n) th{background:rgba(255,255,255,.07)}
 .service-rates tbody tr:hover td,.service-rates tbody tr:hover th{background:rgba(15,199,215,.13)}
 .service-rates tbody tr:last-child th{border-bottom-left-radius:12px}
