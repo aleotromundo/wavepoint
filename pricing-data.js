@@ -23,12 +23,12 @@
       label: { es: 'ATV / Cuatriciclos', en: 'ATV tours' },
       tableRates: {
         1: {
-          es: ['Explorer · 2 h: USD 90', 'Adventure · 4 h: USD 150', 'Ultimate · 6 h: USD 220', 'Alquiler · 24 h: USD 120'],
-          en: ['Explorer · 2 h: USD 90', 'Adventure · 4 h: USD 150', 'Ultimate · 6 h: USD 220', 'Rental · 24 h: USD 120']
+          es: ['Explorer · 2 h: USD 90 por persona', 'Adventure · 4 h: USD 150 por persona', 'Ultimate · 6 h: USD 220 por persona', 'Alquiler · 24 h: USD 120 total · tarifa fija'],
+          en: ['Explorer · 2 h: USD 90 per person', 'Adventure · 4 h: USD 150 per person', 'Ultimate · 6 h: USD 220 per person', 'Rental · 24 h: USD 120 total · flat rate']
         },
         2: {
-          es: ['Explorer · 2 h: USD 55 c/u', 'Adventure · 4 h: USD 90 c/u', 'Ultimate · 6 h: USD 135 c/u', 'Alquiler · 24 h: USD 120 total'],
-          en: ['Explorer · 2 h: USD 55 each', 'Adventure · 4 h: USD 90 each', 'Ultimate · 6 h: USD 135 each', 'Rental · 24 h: USD 120 total']
+          es: ['Explorer · 2 h: USD 55 por persona', 'Adventure · 4 h: USD 90 por persona', 'Ultimate · 6 h: USD 135 por persona', 'Alquiler · 24 h: USD 120 total · tarifa fija'],
+          en: ['Explorer · 2 h: USD 55 per person', 'Adventure · 4 h: USD 90 per person', 'Ultimate · 6 h: USD 135 per person', 'Rental · 24 h: USD 120 total · flat rate']
         }
       }
     },
@@ -42,14 +42,14 @@
       description: 'Tarifas de referencia por persona en USD, según el tamaño del grupo. En clases de surf, el precio baja hasta USD 50 por persona para grupos de 5 o más.',
       caption: 'Tarifas de servicios de WavePoint según cantidad de personas',
       service: 'Servicio',
-      note: '<p><strong>Tarifas.</strong> Las tarifas son de referencia y están expresadas en dólares estadounidenses (USD), por persona y según el tamaño del grupo. “c/u” significa “cada uno”. <strong>ATV:</strong> consultanos; el precio se calcula por vehículo, según la duración y si viaja una o dos personas.</p><p><strong>Cómo organizar tu experiencia.</strong> Contanos qué actividad te interesa, la fecha y cuántas personas participan. WAVEPOINT revisa la disponibilidad y coordina los detalles con vos por WhatsApp.</p><p><strong>Antes de pagar.</strong> Te confirmamos el precio total, qué incluye la actividad, el horario, el punto de encuentro, los requisitos, cualquier costo adicional y las condiciones de pago, cambios y cancelación.</p><p><strong>Importante.</strong> Consultar no requiere un pago ni confirma una reserva. Una vez acordados los detalles, te indicamos cómo completar el pago y confirmar tu experiencia.</p>'
+      note: '<p><strong>Tarifas.</strong> Las tarifas son de referencia y están expresadas en dólares estadounidenses (USD), por persona y según el tamaño del grupo. “c/u” significa “cada uno”. <strong>ATV:</strong> Explorer, Adventure y Ultimate indican el precio por persona para grupos de 1 o 2 personas; para 3 o más, consultanos. El alquiler de 24 horas tiene una tarifa fija de USD 120 en total, no por persona.</p><p><strong>Cómo organizar tu experiencia.</strong> Contanos qué actividad te interesa, la fecha y cuántas personas participan. WAVEPOINT revisa la disponibilidad y coordina los detalles con vos por WhatsApp.</p><p><strong>Antes de pagar.</strong> Te confirmamos el precio total, qué incluye la actividad, el horario, el punto de encuentro, los requisitos, cualquier costo adicional y las condiciones de pago, cambios y cancelación.</p><p><strong>Importante.</strong> Consultar no requiere un pago ni confirma una reserva. Una vez acordados los detalles, te indicamos cómo completar el pago y confirmar tu experiencia.</p>'
     },
     en: {
       heading: 'Service rates',
       description: 'Reference rates per person in USD, based on group size. Surf lessons drop to USD 50 per person for groups of 5 or more.',
       caption: 'WavePoint service rates by group size',
       service: 'Service',
-      note: '<p><strong>Rates.</strong> Rates are reference prices expressed in United States dollars (USD), per person and according to group size. “c/u” means “each person”. <strong>ATVs:</strong> please ask us; the price is calculated per vehicle, based on the duration and whether one or two people are riding.</p><p><strong>How to organize your experience.</strong> Tell us which activity interests you, the date and how many people are participating. WAVEPOINT checks availability and coordinates the details with you through WhatsApp.</p><p><strong>Before paying.</strong> We confirm the total price, what the activity includes, the schedule, the meeting point, the requirements, any additional costs, and the payment, change and cancellation conditions.</p><p><strong>Important.</strong> Asking for information does not require payment or confirm a booking. Once the details are agreed, we explain how to complete the payment and confirm your experience.</p>'
+      note: '<p><strong>Rates.</strong> Rates are reference prices expressed in United States dollars (USD), per person and according to group size. “c/u” means “each person”. <strong>ATVs:</strong> Explorer, Adventure and Ultimate show the per-person price for groups of 1 or 2; ask us about groups of 3 or more. The 24-hour rental has a flat rate of USD 120 total, not per person.</p><p><strong>How to organize your experience.</strong> Tell us which activity interests you, the date and how many people are participating. WAVEPOINT checks availability and coordinates the details with you through WhatsApp.</p><p><strong>Before paying.</strong> We confirm the total price, what the activity includes, the schedule, the meeting point, the requirements, any additional costs, and the payment, change and cancellation conditions.</p><p><strong>Important.</strong> Asking for information does not require payment or confirm a booking. Once the details are agreed, we explain how to complete the payment and confirm your experience.</p>'
     }
   };
 
