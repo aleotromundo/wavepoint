@@ -4988,6 +4988,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 .service-rates tbody tr:last-child th { border-bottom-left-radius: 12px; }
 .service-rates tbody tr:last-child td:last-child { border-bottom-right-radius: 12px; }
 .service-rates td span { color: #ffd98a; }
+.service-rates tbody td.pricing-atv-rates { white-space: pre-line; line-height: 1.45; }
 .service-rates-note {
   margin: 15px 28px 23px;
   color: rgba(231, 245, 239, .62);
@@ -5009,6 +5010,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
   .service-rates tbody td { display: grid; min-width: 0; justify-items: center; gap: 5px; padding: 9px 3px; border: 0; border-right: 1px solid rgba(186, 231, 220, .1); border-bottom: 1px solid rgba(186, 231, 220, .1); white-space: nowrap; font-size: 11px; }
   .service-rates tbody td:last-of-type { border-right: 0; }
   .service-rates tbody td::before { color: #a9ded3; content: attr(data-label); font-size: 9px; font-weight: 800; letter-spacing: .03em; }
+  .service-rates tbody td.pricing-more-guests { grid-column: 1 / -1; }
   .service-rates tbody tr:nth-child(even) th,
   .service-rates tbody tr:nth-child(even) td { background: transparent; }
   .service-rates tbody tr:nth-child(even) > th:first-child { background: rgba(0, 167, 189, .12); }
