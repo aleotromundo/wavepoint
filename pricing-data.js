@@ -18,7 +18,20 @@
     { rateId: 'surf-lessons', label: { es: 'Clases de surf', en: 'Surf lessons' } },
     { rateId: 'surf-coaching', label: { es: 'Surf coaching', en: 'Surf coaching' } },
     { rateId: 'yoga', label: { es: 'Yoga', en: 'Yoga' } },
-    { rateId: null, unitLabel: { es: 'Por vehículo', en: 'Per vehicle' }, label: { es: 'ATV / Cuatriciclos', en: 'ATV tours' } },
+    {
+      rateId: null,
+      label: { es: 'ATV / Cuatriciclos', en: 'ATV tours' },
+      tableRates: {
+        1: {
+          es: ['Explorer · 2 h: USD 90', 'Adventure · 4 h: USD 150', 'Ultimate · 6 h: USD 220', 'Alquiler · 24 h: USD 120'],
+          en: ['Explorer · 2 h: USD 90', 'Adventure · 4 h: USD 150', 'Ultimate · 6 h: USD 220', 'Rental · 24 h: USD 120']
+        },
+        2: {
+          es: ['Explorer · 2 h: USD 55 c/u', 'Adventure · 4 h: USD 90 c/u', 'Ultimate · 6 h: USD 135 c/u', 'Alquiler · 24 h: USD 120 total'],
+          en: ['Explorer · 2 h: USD 55 each', 'Adventure · 4 h: USD 90 each', 'Ultimate · 6 h: USD 135 each', 'Rental · 24 h: USD 120 total']
+        }
+      }
+    },
     { rateId: 'surf-photography-water', label: { es: 'Fotografía acuática', en: 'In-water photography' } },
     { rateId: 'surf-photography-beach', label: { es: 'Fotografía desde la playa', en: 'Photography from the beach' } },
     { rateId: 'surfskate', label: { es: 'Clases de surfskate', en: 'Surfskate lessons' } }
@@ -80,8 +93,16 @@
       groups.forEach(group => {
         const cell = document.createElement('td');
         cell.dataset.label = group.mobileLabel[language];
+        const tableRates = row.tableRates?.[group.guests]?.[language];
         const rate = row.rateId ? rates[row.rateId][Math.min(group.guests, 6) - 1] : null;
-        cell.textContent = row.unitLabel ? row.unitLabel[language] : rate === null ? '—' : `${rate} USD`;
+        if (tableRates) {
+          tableRates.forEach((line, index) => {
+            if (index) cell.append(document.createElement('br'));
+            cell.append(document.createTextNode(line));
+          });
+        } else {
+          cell.textContent = rate === null ? '—' : `${rate} USD`;
+        }
         tableRow.append(cell);
       });
       body.append(tableRow);
