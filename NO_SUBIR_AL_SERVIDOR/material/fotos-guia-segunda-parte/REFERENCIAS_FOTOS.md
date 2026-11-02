@@ -1,0 +1,30 @@
+# Referencias de fotos — Guía segunda parte
+
+Este mapa conserva la correspondencia entre cada imagen y su posición en el archivo original. El orden sigue exactamente las 22 apariciones de imágenes en la guía. La copia local `guia-segunda-parte-con-fotos-locales.html` reemplaza los enlaces externos de Google Docs por los archivos respaldados en esta misma carpeta.
+
+| Orden en la guía | Archivo respaldado | Contexto cercano |
+|---:|---|---|
+| 1 | `foto-01.jpg` | (sin texto cercano) |
+| 2 | `foto-02.jpg` | (sin texto cercano) |
+| 3 | `foto-03.jpg` | (sin texto cercano) |
+| 4 | `foto-04.jpg` | (sin texto cercano) |
+| 5 | `foto-05.jpg` | (sin texto cercano) |
+| 6 | `foto-06.jpg` | (sin texto cercano) |
+| 7 | `foto-07.jpg` | (sin texto cercano) |
+| 8 | `foto-08.jpg` | (sin texto cercano) |
+| 9 | `foto-09.jpg` | (sin texto cercano) |
+| 10 | `foto-10.jpg` | (sin texto cercano) |
+| 11 | `foto-11.jpg` | (sin texto cercano) |
+| 12 | `foto-12.jpg` | (sin texto cercano) |
+| 13 | `foto-13.jpg` | (sin texto cercano) |
+| 14 | `foto-14.jpg` | (sin texto cercano) |
+| 15 | `foto-15.png` | (sin texto cercano) |
+| 16 | `foto-16.jpg` | (sin texto cercano) |
+| 17 | `foto-17.png` | (sin texto cercano) |
+| 18 | `foto-18.jpg` | fotos : |
+| 19 | `foto-19.jpg` | (sin texto cercano) |
+| 20 | `foto-20.jpg` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
+| 21 | `foto-21.jpg` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
+| 22 | `foto-22.png` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
+
+El archivo original `NO_SUBIR_AL_SERVIDOR/Guiasegundaparte_` se conserva sin modificar. La copia local es adicional y sirve para visualizar la guía aunque las URLs originales estén rotas o caduquen.
