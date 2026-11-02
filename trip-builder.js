@@ -7,7 +7,7 @@
     { id: 'witch-rock', image: 'assets/img/services/witchs-rock/roca-bruja-rock.webp', imageAlt: { es: 'Formación rocosa de Roca Bruja frente a la costa', en: 'Rock formation at Witch’s Rock along the coast' }, title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, description: { es: 'Una salida de surf por barco.', en: 'A surf trip by boat.' } },
     { id: 'snorkel-catamaran', image: 'assets/img/services/snorkel-catamaran/snorkel-turtle.webp', imageAlt: { es: 'Persona haciendo snorkel junto a una tortuga marina sobre un arrecife', en: 'Snorkeler swimming near a sea turtle above a coral reef' }, title: { es: 'Snorkel y catamarán', en: 'Snorkeling and catamaran' }, description: { es: 'Explorá el mar o navegá la costa.', en: 'Explore underwater or sail along the coast.' } },
     { id: 'yoga', image: 'assets/img/services/yoga/yoga-coastal-pose.webp', imageAlt: { es: 'Mujer practicando una postura de yoga frente al mar', en: 'Woman practicing a yoga pose beside the sea' }, title: { es: 'Yoga', en: 'Yoga' }, description: { es: 'Sumá una pausa a tu viaje.', en: 'Make room for a pause in your trip.' } },
-    { id: 'atv', image: 'assets/img/services/atv/atv-forest-convoy.webp', imageAlt: { es: 'Grupo de cuatriciclos recorriendo un sendero de bosque tropical', en: 'Group of ATVs riding along a tropical forest trail' }, title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Descubrí Guanacaste en cuatriciclo.', en: 'Explore Guanacaste by ATV.' } },
+    { id: 'atv', image: 'assets/img/services/atv/atv-forest-convoy.webp', imageAlt: { es: 'Grupo de cuatriciclos recorriendo un sendero de bosque tropical', en: 'Group of ATVs riding along a tropical forest trail' }, title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Elegí un recorrido y consultá la tarifa por vehículo.', en: 'Choose a route and ask about the vehicle rate.' } },
     { id: 'surf-photography', image: 'assets/img/services/surf-photography/photo-service.webp', imageAlt: { es: 'Surfera captada durante una sesión acuática', en: 'Surfer photographed during an in-water session' }, beachImage: 'assets/img/services/surf-photography/surf-photographer-wave.webp', beachImageAlt: { es: 'Fotógrafo capturando una sesión de surf desde la playa', en: 'Photographer capturing a surf session from the beach' }, title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
     { id: 'surfskate', image: 'assets/img/services/surfskate/surfskate.webp', imageAlt: { es: 'Dos instructores practicando surfskate sobre una tabla', en: 'Two instructors practicing surfskate on a board' }, title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } }
   ];
@@ -33,6 +33,8 @@
       checkOut: 'Salida',
       guests: 'Cantidad de personas',
       estimate: 'Tarifa por persona',
+      atvEstimate: 'Tarifa por vehículo',
+      atvEstimateNote: 'Consultar según recorrido',
       accommodationEstimate: 'Tarifa aprox. por persona / noche',
       accommodationPerNight: 'aprox. por noche',
       perPersonShort: 'c/u',
@@ -113,6 +115,8 @@
       checkOut: 'Check-out',
       guests: 'Number of guests',
       estimate: 'Rate per person',
+      atvEstimate: 'Rate per vehicle',
+      atvEstimateNote: 'Ask us based on the route',
       accommodationEstimate: 'Approx. rate per person / night',
       accommodationPerNight: 'approx. per night',
       perPersonShort: 'per person',
@@ -291,9 +295,10 @@
     const image = beachPhoto ? experience.beachImage : experience.image;
     const imageAlt = beachPhoto ? experience.beachImageAlt?.[lang] : experience.imageAlt?.[lang];
     const guestsField = `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : 'Add one guest')}">+</button></span></label>`;
-    const estimateLabel = experience.id === 'stays' ? copy.accommodationEstimate : copy.estimate;
+    const estimateLabel = experience.id === 'stays' ? copy.accommodationEstimate : experience.id === 'atv' ? copy.atvEstimate : copy.estimate;
     const estimateValue = accommodationRate
       ? formatMoneyRange(accommodationRate.min, accommodationRate.max, moneyApprox)
+      : experience.id === 'atv' ? copy.atvEstimateNote
       : price === null ? copy.quote : `${money(price)} ${copy.perPersonShort}`;
     return `<article class="trip-experience${state ? ' is-added' : ''}" data-experience="${experience.id}">
       <div class="trip-experience-image"><img src="${image}" alt="${esc(imageAlt || `${copy.imageAlt} ${experience.title[lang]}`)}" loading="lazy" /></div>
@@ -365,7 +370,7 @@
       return `<li class="trip-summary-item">
         <span class="trip-summary-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
         <div class="trip-summary-item-copy"><strong>${esc(titleFor(experience, state))}</strong>${id === 'stays' ? `<span>${esc(copy.accommodationSelected)}: ${esc(accommodationLabel)}</span>` : ''}<span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
-        <div class="trip-summary-price">${accommodationTotal ? `<strong>${formatMoneyRange(accommodationTotal.min, accommodationTotal.max)}</strong><span>${copy.accommodationPerNight}</span>` : price === null ? `<span>${id === 'stays' ? copy.quote : copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
+        <div class="trip-summary-price">${accommodationTotal ? `<strong>${formatMoneyRange(accommodationTotal.min, accommodationTotal.max)}</strong><span>${copy.accommodationPerNight}</span>` : price === null ? `<span>${id === 'stays' ? copy.quote : id === 'atv' ? copy.atvEstimateNote : copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
       </li>`;
     });
     const invalidDates = list.some(([id, state]) => {
@@ -694,7 +699,7 @@
         lines.push(`  ${COPY[lang].waRate}: ${formatMoneyRange(accommodationRate.min, accommodationRate.max, moneyApprox)} ${COPY[lang].perPersonShort} · ${COPY[lang].accommodationPerNight}`);
         lines.push(`  ${COPY[lang].waEstimate}: ${formatMoneyRange(nightlyTotal.min, nightlyTotal.max)} · ${COPY[lang].accommodationPerNight}`);
       } else if (price === null) {
-        lines.push(`  ${COPY[lang].waQuote}`);
+        lines.push(`  ${id === 'atv' ? `${COPY[lang].atvEstimate}: ${COPY[lang].atvEstimateNote}` : COPY[lang].waQuote}`);
       } else {
         lines.push(`  ${COPY[lang].waRate}: ${money(price)} ${COPY[lang].perPersonShort} × ${state.guests} · ${COPY[lang].waEstimate}: ${money(price * Number(state.guests))}`);
       }
