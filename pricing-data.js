@@ -18,10 +18,6 @@
     { rateId: 'surf-lessons', label: { es: 'Clases de surf', en: 'Surf lessons' } },
     { rateId: 'surf-coaching', label: { es: 'Surf coaching', en: 'Surf coaching' } },
     { rateId: 'yoga', label: { es: 'Yoga', en: 'Yoga' } },
-    {
-      rateId: null,
-      label: { es: 'ATV / Cuatriciclos', en: 'ATV tours' }
-    },
     { rateId: 'surf-photography-water', label: { es: 'Fotografía acuática', en: 'In-water photography' } },
     { rateId: 'surf-photography-beach', label: { es: 'Fotografía desde la playa', en: 'Photography from the beach' } },
     { rateId: 'surfskate', label: { es: 'Clases de surfskate', en: 'Surfskate lessons' } }
