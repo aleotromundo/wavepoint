@@ -58,8 +58,8 @@ El punto 1 se dividió en dos partes de trabajo: la actualización del contenido
 #### 1C. Tabla general de tarifas del index
 
 - Se corrigió la fila **ATV / Cuatriciclos** de la tabla de tarifas ubicada al final de la sección de servicios en el index principal.
-- La fila ya no muestra guiones vacíos: ahora indica **“Por vehículo”** en español y **“Per vehicle”** en inglés.
-- Se mantuvo la aclaración de que el precio depende del recorrido, la duración y la cantidad de personas que comparten el ATV, evitando presentar una tarifa por persona incorrecta.
+- La fila muestra guiones en sus cinco columnas, tanto en español como en inglés, según la decisión del usuario de dejar esas tarifas pendientes por ahora.
+- No se presentan precios inventados ni una tarifa por vehículo como sustituto de las tarifas por persona.
 
 ### Archivos modificados
 
@@ -93,7 +93,7 @@ El punto 1 se dividió en dos partes de trabajo: la actualización del contenido
 
 ## Punto 2 — Programa de surf de tres días
 
-**Estado:** Pendiente
+**Estado:** Completado
 
 ---
 
@@ -139,3 +139,11 @@ El punto 1 se dividió en dos partes de trabajo: la actualización del contenido
 - Fotos nuevas para las clases de surfskate.
 - Fotos nuevas de surf.
 - Fotos y ficha de buceo.
+
+
+## Criterio visual permanente — fotos ampliables
+
+- Mantener todas las fotos de surf y, cuando sea posible, la mayoría de las imágenes editoriales del sitio ampliables en un visor a tamaño de pantalla, sin navegar fuera de la ficha.
+- Reutilizar el visor accesible existente de `script.js` (`bindGuideImageModal`): admite clic, teclado y cierre con Escape, y conserva el texto alternativo como descripción.
+- Si una nueva galería usa un contenedor que no está en el selector del visor, agregar allí sus imágenes y actualizar el identificador de caché del script en la página correspondiente. No crear un segundo visor paralelo.
+- Las fotos nuevas del programa de iniciación al surf deben abrirse en ese mismo visor, igual que las imágenes de las demás galerías de surf.
