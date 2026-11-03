@@ -3906,6 +3906,14 @@ to{filter:brightness(1.18)}
 .lang-toggle[data-selected=true]{width:38px;height:38px;flex-basis:38px;box-shadow:0 6px 16px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.16)}
 .lang-toggle:not([data-selected=true]){margin-inline:-9px}
 @media(max-width:560px){.lang-toggle{width:24px;height:24px;flex-basis:24px}.lang-toggle[data-selected=true]{width:36px;height:36px;flex-basis:36px}}
+.lang-switcher{transition:left .32s cubic-bezier(.2,.8,.2,1),top .32s cubic-bezier(.2,.8,.2,1),width .32s cubic-bezier(.2,.8,.2,1),height .32s cubic-bezier(.2,.8,.2,1),padding .32s ease,background-color .32s ease,border-color .32s ease,box-shadow .32s ease}
+.lang-switcher.is-scrolled{left:8px;top:8px;display:flex;width:38px;min-width:38px;height:38px;padding:0;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(6,38,56,.78);box-shadow:0 6px 18px rgba(0,0,0,.24);backdrop-filter:blur(12px)}
+.lang-switcher.is-scrolled .lang-toggle[data-selected=true]{width:34px;height:34px;flex-basis:34px;margin:0}
+.lang-switcher.is-scrolled.is-expanded{width:80px;min-width:80px;height:46px;padding:4px 8px;gap:0;border-radius:999px}
+.lang-switcher.is-scrolled.is-expanded .lang-toggle[data-selected=true]{width:36px;height:36px;flex-basis:36px}
+.lang-switcher.is-scrolled:not(.is-expanded) .lang-toggle:not([data-selected=true]){width:0;height:0;flex-basis:0;margin-inline:0;padding:0;border-width:0;opacity:0;transform:scale(.25);visibility:hidden;pointer-events:none;transition:opacity .22s ease,transform .32s cubic-bezier(.2,.8,.2,1),width .32s ease,height .32s ease,flex-basis .32s ease,margin .32s ease,padding .32s ease,border-width .32s ease,visibility 0s linear .32s}
+.lang-switcher.is-scrolled.is-expanded .lang-toggle:not([data-selected=true]){width:26px;height:26px;flex-basis:26px;margin-inline:-7px;opacity:.9;transform:scale(.92);visibility:visible;transition:opacity .22s ease,transform .32s cubic-bezier(.2,.8,.2,1),width .32s ease,height .32s ease,flex-basis .32s ease,margin .32s ease,visibility 0s}
+@media(max-width:560px){.lang-switcher.is-scrolled{left:8px;top:8px;width:34px;min-width:34px;height:34px}.lang-switcher.is-scrolled .lang-toggle[data-selected=true]{width:30px;height:30px;flex-basis:30px}.lang-switcher.is-scrolled.is-expanded{width:72px;min-width:72px;height:42px}.lang-switcher.is-scrolled.is-expanded .lang-toggle[data-selected=true]{width:32px;height:32px;flex-basis:32px}}
 
 /* ATV · editorial story, routes and reference rates */
 .atv-story{display:grid;gap:clamp(20px,3vw,30px);margin-top:clamp(30px,5vw,54px)}
