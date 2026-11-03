@@ -61,12 +61,38 @@
       options.forEach((button, option) => {
         const oldRect = before.get(option);
         const newRect = button.getBoundingClientRect();
-        if (!oldRect || (oldRect.left === newRect.left && oldRect.top === newRect.top)) return;
+        if (window.scrollY > 24 || !oldRect || (oldRect.left === newRect.left && oldRect.top === newRect.top)) return;
         button._langMoveAnimation?.cancel();
         button._langMoveAnimation = button.animate([
           { transform: `translate(${oldRect.left - newRect.left}px, ${oldRect.top - newRect.top}px)` },
           { transform: '' }
         ], { duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      });
+    });
+  };
+
+  const syncScrollState = () => {
+    const isScrolled = window.scrollY > 24;
+    document.querySelectorAll('.lang-switcher').forEach(switcher => {
+      switcher.classList.toggle('is-scrolled', isScrolled);
+      if (!isScrolled) switcher.classList.remove('is-expanded');
+      const isExpanded = isScrolled && switcher.classList.contains('is-expanded');
+      switcher.querySelectorAll('[data-lang-option]').forEach(button => {
+        const isCollapsedOption = isScrolled && !isExpanded && button.dataset.selected !== 'true';
+        button.setAttribute('aria-hidden', String(isCollapsedOption));
+        if (isCollapsedOption) button.setAttribute('tabindex', '-1');
+        else button.removeAttribute('tabindex');
+        if (button.dataset.selected === 'true') {
+          if (isScrolled) {
+            button.setAttribute('aria-expanded', String(isExpanded));
+            button.setAttribute('aria-label', isExpanded
+              ? (button.dataset.langOption === 'es' ? 'Español seleccionado. Ocultar idiomas' : 'English selected. Hide languages')
+              : (button.dataset.langOption === 'es' ? 'Español seleccionado. Mostrar idiomas' : 'English selected. Show languages'));
+          } else {
+            button.removeAttribute('aria-expanded');
+            button.setAttribute('aria-label', button.dataset.langOption === 'es' ? 'Español seleccionado' : 'English selected');
+          }
+        }
       });
     });
   };
@@ -88,6 +114,7 @@
       }
     });
     reorderOptions(activeLang);
+    syncScrollState();
     TEXTS.forEach(item => document.querySelectorAll(item.selector).forEach(node => {
       if (!node.hasAttribute('data-i18n') && !node.hasAttribute('data-copy-en')) node.textContent = item[activeLang];
     }));
@@ -119,12 +146,25 @@
   const toggle = event => {
     const next = event.currentTarget.dataset.langOption;
     if (next === 'pt') return;
+    const switcher = event.currentTarget.closest('.lang-switcher');
+    const activeLang = event.currentTarget.dataset.selected === 'true';
+    if (window.scrollY > 24 && activeLang) {
+      switcher.classList.toggle('is-expanded');
+      syncScrollState();
+      return;
+    }
+    const keepExpanded = window.scrollY > 24 && switcher?.classList.contains('is-expanded');
     saveLang(next);
     apply(next);
+    if (keepExpanded) {
+      switcher?.classList.add('is-expanded');
+      syncScrollState();
+    }
     window.dispatchEvent(new CustomEvent('wavepoint:languagechange', { detail: { lang: next } }));
   };
 
   ensureSwitcher();
   document.querySelectorAll('[data-lang-toggle]').forEach(button => button.addEventListener('click', toggle));
+  window.addEventListener('scroll', syncScrollState, { passive: true });
   apply(readLang());
 })();

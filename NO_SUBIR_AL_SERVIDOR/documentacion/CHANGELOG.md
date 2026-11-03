@@ -1,4 +1,16 @@
 # 2026-11-02
+### Selector de idioma — contraer a la esquina y desplegar al tocar
+- `lang-switch.js`: al desplazarse, el selector colapsa a la bandera activa en la esquina superior izquierda; al tocarla muestra las tres opciones y permanece expandido durante el scroll. Elegir otro idioma conserva las tres opciones; tocar la bandera activa las contrae. Al regresar arriba recupera el selector completo.
+- `styles.css` y `styles.optimized.css`: se agrega el cambio animado de posición/tamaño y el tratamiento compacto translúcido, también adaptado a móvil.
+- Validación: en navegador, al desplazar queda la activa en una cápsula compacta; al tocarla se despliegan las tres y permanecen visibles aunque se siga desplazando o se elija otro idioma. Volver a tocar la activa las contrae. `git diff --check` pasó.
+
+### Selector de idioma — mostrar solo la bandera activa al desplazarse
+- `lang-switch.js`: al pasar 24 px desde el inicio, oculta las opciones de idioma no seleccionadas en todos los selectores y las vuelve a mostrar al regresar arriba. La opción activa permanece visible; el cambio de idioma sigue disponible en la parte superior.
+- `styles.css` y `styles.optimized.css`: el selector se compacta al tamaño de una sola bandera mientras la página está desplazada.
+- Páginas HTML con el selector: se renueva la referencia de caché del script compartido.
+- Validación: en navegador a 390 px, en la parte superior se ven las tres banderas; tras desplazarse 200 px queda solo la bandera activa, tanto en inglés como en español, y al volver arriba reaparecen todas. `git diff --check` pasó.
+
+# 2026-11-02
 ### Programa de surf — sumar profundidad visual y mejorar las fotos
 - `styles.css` y `styles.optimized.css`: el bloque de las tres clases gana fondo de vidrio esmerilado con luces ambientales lentas, tarjetas elevables al pasar el cursor, zoom suave en las fotos y respeto por `prefers-reduced-motion`.
 - Las fichas conservan el formato horizontal; las fotos verticales usan un marco 4:5 para mostrar mejor la práctica y a las personas.
