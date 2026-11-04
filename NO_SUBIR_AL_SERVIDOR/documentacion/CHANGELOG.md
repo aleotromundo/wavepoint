@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — ajustar la portada a un encuadre intermedio
+- `styles.css` y `styles.optimized.css`: la portada de la ficha pasa de 32% a 44% para mostrar al grupo con menos cielo, conservando las cabezas dentro del encuadre y sin agregar Parallax.
+- `service-detail.html`: se renueva la caché de estilos.
+- Validación: sintaxis JavaScript, `git diff --check` y comprobación de la regla específica de Embarcaciones.
+
 ### Embarcaciones — bajar el encuadre de la portada de la ficha
 - `services.js`: se agrega una clase específica para la ficha de Embarcaciones.
 - `styles.css` y `styles.optimized.css`: la portada de esa ficha usa una posición vertical de 32% para mostrar la cabeza completa, sin alterar el recorte alto de la tarjeta.
