@@ -1714,7 +1714,7 @@ footer a.footer-logo-link{display:inline-flex;align-items:center;width:fit-conte
 #servicios .service-grid-catalog .service-img{position:absolute;inset:0;height:100%}
 #servicios .service-grid-catalog .service-card .service-body{position:relative;z-index:2;flex:0 0 auto;margin-top:auto;border-top:1px solid rgba(255,255,255,.18);background:rgba(6,24,34,.48);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2)}
 #servicios .service-grid-catalog .service-img img{opacity:.88;filter:saturate(1.05)}
-#servicios .service-card-snorkel .service-img img{object-position:center 70%}
+#servicios .service-card-snorkel .service-img img{object-position:center 95%}
 #servicios .service-grid-catalog .service-card:hover .service-img img,#servicios .service-grid-catalog .service-image-link:focus-visible .service-img img{opacity:1;filter:saturate(1.15)}
 #servicios .service-body h3,#servicios .service-body h3 a{font-size:26px!important;color:#fff!important}
 .allies-ticker{position:relative!important;overflow:hidden!important;background:0 0!important;padding:22px 0!important;box-shadow:none!important}
@@ -3288,7 +3288,7 @@ to{filter:brightness(1.18)}
   object-position: center !important;
 }
 #servicios .service-grid-catalog .service-card-snorkel .service-img img {
-  object-position: center 70% !important;
+  object-position: center 95% !important;
 }
 .service-card:hover .service-img img,
 .service-card:hover .service-pack-image > img {
