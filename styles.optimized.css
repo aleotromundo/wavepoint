@@ -3909,7 +3909,7 @@ to{filter:brightness(1.18)}
 .lang-toggle{width:26px;height:26px;flex-basis:26px}
 .lang-toggle[data-selected=true]{width:38px;height:38px;flex-basis:38px;box-shadow:0 6px 16px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.16)}
 .lang-toggle:not([data-selected=true]){margin-inline:-9px}
-@media(max-width:560px){.lang-toggle{width:24px;height:24px;flex-basis:24px}.lang-toggle[data-selected=true]{width:36px;height:36px;flex-basis:36px}}
+@media(max-width:560px){.lang-toggle{width:22px;height:22px;flex-basis:22px}.lang-toggle[data-selected=true]{width:30px;height:30px;flex-basis:30px}}
 .lang-switcher{transition:left .32s cubic-bezier(.2,.8,.2,1),top .32s cubic-bezier(.2,.8,.2,1),width .32s cubic-bezier(.2,.8,.2,1),height .32s cubic-bezier(.2,.8,.2,1),padding .32s ease,background-color .32s ease,border-color .32s ease,box-shadow .32s ease}
 .lang-switcher.is-scrolled{left:8px;top:8px;display:flex;width:38px;min-width:38px;height:38px;padding:0;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(6,38,56,.78);box-shadow:0 6px 18px rgba(0,0,0,.24);backdrop-filter:blur(12px)}
 .lang-switcher.is-scrolled .lang-toggle[data-selected=true]{width:34px;height:34px;flex-basis:34px;margin:0}
