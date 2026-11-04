@@ -380,9 +380,9 @@ description: 'Un poco de tiempo en el mar, una vista diferente de Tamarindo. Ya 
 images: ['assets/img/services/snorkel-catamaran/boat-guide-foto-04.jpg', 'assets/img/services/snorkel-catamaran/snorkel-catalina-group.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp', 'assets/img/services/snorkel-catamaran/snorkel-fish.webp'],
 imageAlts: ['Grupo de personas a bordo de una embarcación frente a la costa', 'Grupo haciendo snorkel frente a una isla de la costa de Costa Rica', 'Grupo haciendo snorkel cerca de una costa tropical', 'Personas haciendo snorkel junto a peces de colores bajo el agua'],
 imageAltsEn: ['Group of people aboard a boat off the coast', 'Group snorkeling beside an island off the coast of Costa Rica', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater'],
-galleryImages: ['assets/img/services/snorkel-catamaran/boat-guide-foto-04.jpg', 'assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp', 'assets/img/services/snorkel-catamaran/snorkel-fish.webp'],
-galleryImageAlts: ['Grupo de personas a bordo de una embarcación frente a la costa', 'Grupo haciendo snorkel cerca de una costa tropical', 'Personas haciendo snorkel junto a peces de colores bajo el agua'],
-galleryImageAltsEn: ['Group of people aboard a boat off the coast', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater'],
+galleryImages: ['assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp', 'assets/img/services/snorkel-catamaran/snorkel-fish.webp'],
+galleryImageAlts: ['Grupo haciendo snorkel cerca de una costa tropical', 'Personas haciendo snorkel junto a peces de colores bajo el agua'],
+galleryImageAltsEn: ['Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
 { id: 'sea_experience', label: '¿Qué salida les interesa?', type: 'choice', options: ['Día completo en la península de Papagayo', 'Snorkel por la costa de Guanacaste', 'Pesca en mar abierto', 'Pesca desde Bahía Potrero', 'Snorkel desde Bahía Potrero', 'Atardecer desde Bahía Potrero', 'Todavía no lo sé'] },
