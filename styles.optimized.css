@@ -3972,3 +3972,12 @@ to{filter:brightness(1.18)}
 .boat-request p + p { margin-top:10px; }
 @media (max-width:760px) { .boat-options, .boat-details { grid-template-columns:1fr; } }
 @media (prefers-reduced-motion:reduce) { .boat-option { transition:none; } }
+
+/* Formulario de embarcaciones: contraste reforzado sobre el panel azul. */
+.quick-request-panel .detail-question > span,
+.quick-request-panel .detail-question > legend { color:#f4fffc; }
+.quick-request-panel .detail-question .detail-optional { color:rgba(222,250,244,.72); }
+.quick-request-panel .survey-progress-copy { color:rgba(237,255,251,.86); }
+.quick-request-panel .survey-progress-copy strong { color:#a6fff3; }
+.quick-request-panel .detail-date-grid label { color:rgba(237,255,251,.86); }
+.quick-request-panel .detail-error { color:#ffb4aa; }

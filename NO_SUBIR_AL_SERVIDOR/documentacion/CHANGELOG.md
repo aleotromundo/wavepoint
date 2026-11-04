@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — mejorar contraste del formulario
+- `styles.css` y `styles.optimized.css`: se aclaran las etiquetas, opciones, contador de avance, fechas, campos opcionales y mensajes de error del formulario para que sean legibles sobre el panel azul.
+- `service-detail.html`: se renueva la caché de estilos.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
 ### Embarcaciones — destacar la información de Antes de ir
 - `styles.css` y `styles.optimized.css`: el bloque «Antes de ir» ahora centra su contenido y usa una tipografía más grande, clara y con mayor peso para aprovechar el espacio disponible.
 - `index.html` y `service-detail.html`: se renueva la caché de estilos.
