@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — incorporar la foto literal del punto 3 de la guía
+- `assets/img/services/snorkel-catamaran/boat-guide-foto-04.jpg`: se incorpora la única imagen ubicada entre el encabezado «PUNTO 3 MEJORAR FICHA DE NAVEGACION + FOTO NUEVA» y el siguiente punto de la guía original.
+- `services.js`: la foto se suma a la galería de Embarcaciones con textos alternativos en español e inglés; las imágenes posteriores de la guía se mantienen fuera de esta ficha.
+- Validación: formato JPEG, ruta local, sintaxis JavaScript y `git diff --check`.
+
 ### Auditoría del punto 3 — ficha de Embarcaciones
 - `services.js`: se alinea el título visible con «Embarcaciones» / «Navigation» y el texto editorial con la redacción aprobada para Snorkel y catamarán.
 - `services.js`: se corrige la capacidad máxima a 5 personas y se incorporan explícitamente reserva con 24 horas, edad preferente desde 5 años, cancelación con 72 horas, plataforma flotante, seña del 30%, salida y transporte desde Bahía Potrero, permisos/póliza, documentación del capitán en trámite y atención en español e inglés.

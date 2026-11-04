@@ -377,8 +377,8 @@ imageAlts: ['Woman meditating on the beach by the ocean', 'Group meditating in a
 id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Embarcaciones',
 cardText: 'Descubrí la costa de Guanacaste desde el mar.',
 description: 'Un poco de tiempo en el mar, una vista diferente de Tamarindo. Ya sea que quieras hacer snorkel, relajarte a bordo o ver cómo cae el sol sobre el océano, WAVEPOINT te ayuda a encontrar una salida que se adapte a tu grupo y a conocer todos los detalles antes de reservar.',
-images: ['assets/img/services/snorkel-catamaran/snorkel-turtle.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-group.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp', 'assets/img/services/snorkel-catamaran/snorkel-fish.webp'],
-imageAlts: ['Personas haciendo snorkel junto a una tortuga marina sobre un arrecife', 'Grupo haciendo snorkel frente a una isla de la costa de Costa Rica', 'Grupo haciendo snorkel cerca de una costa tropical', 'Personas haciendo snorkel junto a peces de colores bajo el agua'],
+images: ['assets/img/services/snorkel-catamaran/snorkel-turtle.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-group.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp', 'assets/img/services/snorkel-catamaran/snorkel-fish.webp', 'assets/img/services/snorkel-catamaran/boat-guide-foto-04.jpg'],
+imageAlts: ['Personas haciendo snorkel junto a una tortuga marina sobre un arrecife', 'Grupo haciendo snorkel frente a una isla de la costa de Costa Rica', 'Grupo haciendo snorkel cerca de una costa tropical', 'Personas haciendo snorkel junto a peces de colores bajo el agua', 'Grupo de personas a bordo de una embarcación frente a la costa'],
 imageAltsEn: ['People snorkeling near a sea turtle above a reef', 'Group snorkeling beside an island off the coast of Costa Rica', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
@@ -403,7 +403,7 @@ swimming_comfort: { label: 'Is everyone comfortable swimming in the sea?', optio
 lodging: { label: 'Where are you staying?', placeholder: 'Accommodation or area' },
 dietary_needs: { label: 'Are there any food allergies or dietary needs we should share?', placeholder: 'Optional' }
 },
-imageAlts: ['People snorkeling near a sea turtle above a coral reef', 'Group snorkeling beside an island off the coast of Costa Rica', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater']
+imageAlts: ['People snorkeling near a sea turtle above a coral reef', 'Group snorkeling beside an island off the coast of Costa Rica', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater', 'Group of people aboard a boat off the coast']
 }
 },
 {
