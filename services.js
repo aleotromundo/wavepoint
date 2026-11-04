@@ -393,10 +393,10 @@ questions: [
 { id: 'dietary_needs', label: '¿Hay alergias alimentarias o necesidades dietéticas que debamos comunicar?', type: 'textarea', placeholder: 'Opcional', optional: true }
 ],
 en: {
-eyebrow: 'SEA · BOAT EXPERIENCES',
+eyebrow: 'SEA · NAVIGATION',
 title: 'Navigation',
 cardText: 'Discover Guanacaste’s coast from the sea.',
-description: 'A little time at sea, a different view of Tamarindo. Whether you would love to snorkel, relax on deck or watch the sun go down over the ocean, WAVEPOINT helps you find a boat experience that feels right for your group and confirm the details before you book.',
+description: 'A little time at sea, a different view of Tamarindo. Whether you would love to snorkel, relax on deck or watch the sun go down over the ocean, WAVEPOINT helps you find an outing that feels right for your group and confirm the details before you book.',
 questions: {
 preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
 sea_experience: { label: 'Which outing interests you?', options: ['Full day in the Papagayo Peninsula', 'Snorkeling along the Guanacaste coast', 'Deep-sea fishing', 'Fishing from Bahía Potrero', 'Snorkeling from Bahía Potrero', 'Sunset from Bahía Potrero', 'I’m not sure yet'] },
@@ -801,14 +801,26 @@ serviceOrder.splice(9, 0, 'trip-builder');
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
 const getService = () => { const id = new URLSearchParams(location.search).get('service'); if (id === 'pack-ajustable' || id === 'trip-builder') { location.replace('trip-builder.html'); return services[0]; } return services.find(item => item.id === id) || services[0]; };
-let lang = (() => { try { return localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en'; } catch (error) { return 'en'; } })();
+let lang = (() => { try { const saved = localStorage.getItem('wavepoint-lang'); return saved === 'es' || saved === 'pt-BR' ? saved : 'en'; } catch (error) { return 'en'; } })();
 const hasEn = service => lang === 'en' && Boolean(service.en);
 const localizeService = service => {
+if (lang === 'pt-BR') {
+const { questions: englishQuestions = {}, ...englishContent } = service.en || {};
+const portuguese = window.WAVEPOINT_PT_BR?.services?.[service.id] || {};
+const portugueseQuestions = portuguese.questions || {};
+return {
+...service,
+...englishContent,
+...portuguese,
+questions: service.questions.map(question => ({ ...question, ...(englishQuestions[question.id] || {}), ...(portugueseQuestions[question.id] || {}) }))
+};
+}
 if (!hasEn(service)) return service;
 const { questions: questionsEn = {}, ...rest } = service.en;
 return { ...service, ...rest, questions: service.questions.map(question => ({ ...question, ...(questionsEn[question.id] || {}) })) };
 };
 const FORM_UI = {
+['pt-BR']: window.WAVEPOINT_PT_BR?.form || {},
 es: {
 optional: 'Opcional',
 requestTitle: 'Contanos qué estás buscando.',
@@ -850,7 +862,7 @@ modalText: 'Complete the survey and we’ll prepare a request tailored to your g
 modalClose: 'Close survey'
 }
 };
-const uiFor = service => hasEn(service) ? FORM_UI.en : FORM_UI.es;
+const uiFor = service => lang === 'pt-BR' ? FORM_UI['pt-BR'] : hasEn(service) ? FORM_UI.en : FORM_UI.es;
 const inputId = (service, question) => `${service.id}-${question.id}`;
 function setupQuickRequestPanel(form) {
   if (!form) return;
@@ -868,7 +880,7 @@ function setupQuickRequestPanel(form) {
     next.disabled = complete;
     const submit = form.querySelector('.detail-submit');
     if (submit) submit.disabled = !complete;
-    if (!complete) next.innerHTML = `${lang === 'en' ? 'Continue' : 'Continuar'} <span aria-hidden="true">→</span>`;
+    if (!complete) next.innerHTML = `${lang === 'en' ? 'Continue' : lang === 'pt-BR' ? 'Continuar' : 'Continuar'} <span aria-hidden="true">→</span>`;
   };
   const open = () => {
     panel.classList.add('is-open');
@@ -916,7 +928,7 @@ units.forEach(unit => unit.classList.toggle('is-answered', hasAnswer(unit)));
 if (error && form.checkValidity()) error.textContent = '';
 if (value) value.textContent = `${answered} / ${total}`;
 if (bar) bar.style.width = `${percent}%`;
-if (progress) progress.setAttribute('aria-label', lang === 'en' ? `${answered} of ${total} required answers completed` : `${answered} de ${total} respuestas requeridas completas`);
+if (progress) progress.setAttribute('aria-label', lang === 'en' ? `${answered} of ${total} required answers completed` : lang === 'pt-BR' ? `${answered} de ${total} respostas obrigatórias preenchidas` : `${answered} de ${total} respuestas requeridas completas`);
 form.classList.toggle('is-survey-complete', total > 0 && answered === total);
 };
 form.addEventListener('input', update);
@@ -924,62 +936,83 @@ form.addEventListener('change', update);
 update();
 }
 function renderQuestion(service, question) {
+const questionText = value => lang === 'pt-BR' ? window.WAVEPOINT_PT_BR?.questionText?.[value] || value : value;
 const id = inputId(service, question);
 const optional = question.optional ? `<span class="detail-optional">${uiFor(service).optional}</span>` : '';
 const today = new Date();
 const todayValue = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 const minDate = question.minDate === 'today' ? `min="${todayValue}"` : '';
 const minNumber = question.min === undefined ? '' : `min="${esc(question.min)}"`;
-if (question.type === 'headcount') return `<fieldset class="detail-question headcount-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map((field, index) => `<label for="${id}-${field.id}">${esc(field.label)}<input id="${id}-${field.id}" name="${question.id}-${field.id}" type="number" min="${index === 0 ? 1 : 0}" step="1" inputmode="numeric" placeholder="${index === 0 ? '1' : '0'}" required /></label>`).join('')}</div><p class="headcount-note">${esc(question.note)}</p><label class="headcount-ages" for="${id}-ages"><span>${esc(question.agesLabel)} <span class="detail-optional">${uiFor(service).optional}</span></span><input id="${id}-ages" name="${question.id}-ages" type="text" placeholder="${esc(question.agesPlaceholder)}" /></label></fieldset>`;
-if (question.type === 'dates') return `<fieldset class="detail-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(field)}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${minDate} ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
-if (question.type === 'choice' || question.type === 'multi') return `<fieldset class="detail-question" data-survey-question><legend>${esc(question.label)} ${optional}</legend><div class="detail-options">${question.options.map((option, index) => `<label class="detail-option"><input type="${question.type === 'multi' ? 'checkbox' : 'radio'}" name="${question.id}" value="${esc(option)}" ${question.type === 'choice' && index === 0 && !question.optional ? 'required' : ''} /><span>${esc(option)}</span></label>`).join('')}</div></fieldset>`;
+if (question.type === 'headcount') return `<fieldset class="detail-question headcount-question" data-survey-question><legend>${esc(questionText(question.label))} ${optional}</legend><div class="detail-date-grid">${question.fields.map((field, index) => `<label for="${id}-${field.id}">${esc(questionText(field.label))}<input id="${id}-${field.id}" name="${question.id}-${field.id}" type="number" min="${index === 0 ? 1 : 0}" step="1" inputmode="numeric" placeholder="${index === 0 ? '1' : '0'}" required /></label>`).join('')}</div><p class="headcount-note">${esc(questionText(question.note))}</p><label class="headcount-ages" for="${id}-ages"><span>${esc(questionText(question.agesLabel))} <span class="detail-optional">${uiFor(service).optional}</span></span><input id="${id}-ages" name="${question.id}-ages" type="text" placeholder="${esc(questionText(question.agesPlaceholder))}" /></label></fieldset>`;
+if (question.type === 'dates') return `<fieldset class="detail-question" data-survey-question><legend>${esc(questionText(question.label))} ${optional}</legend><div class="detail-date-grid">${question.fields.map(field => `<label for="${id}-${field}">${esc(questionText(field))}<input id="${id}-${field}" name="${question.id}-${field}" type="date" ${minDate} ${question.optional ? '' : 'required'} /></label>`).join('')}</div></fieldset>`;
+if (question.type === 'choice' || question.type === 'multi') return `<fieldset class="detail-question" data-survey-question><legend>${esc(questionText(question.label))} ${optional}</legend><div class="detail-options">${question.options.map((option, index) => `<label class="detail-option"><input type="${question.type === 'multi' ? 'checkbox' : 'radio'}" name="${question.id}" value="${esc(questionText(option))}" ${question.type === 'choice' && index === 0 && !question.optional ? 'required' : ''} /><span>${esc(questionText(option))}</span></label>`).join('')}</div></fieldset>`;
 const type = question.type === 'number' ? 'number' : question.type === 'money' ? 'text' : 'text';
-return `<label class="detail-question detail-field" data-survey-question for="${id}"><span>${esc(question.label)} ${optional}</span><${question.type === 'textarea' ? 'textarea' : 'input'} id="${id}" name="${question.id}" type="${type}" ${type === 'number' ? minNumber : ''} placeholder="${esc(question.placeholder || '')}" ${question.optional ? '' : 'required'}></${question.type === 'textarea' ? 'textarea' : 'input'}></label>`;
+return `<label class="detail-question detail-field" data-survey-question for="${id}"><span>${esc(questionText(question.label))} ${optional}</span><${question.type === 'textarea' ? 'textarea' : 'input'} id="${id}" name="${question.id}" type="${type}" ${type === 'number' ? minNumber : ''} placeholder="${esc(questionText(question.placeholder || ''))}" ${question.optional ? '' : 'required'}></${question.type === 'textarea' ? 'textarea' : 'input'}></label>`;
 }
 function renderAccommodationOption(option, index) {
 const isEn = lang === 'en';
-const localized = isEn ? option.en || option : option;
+const portuguese = lang === 'pt-BR' ? window.WAVEPOINT_PT_BR?.services?.['alojamiento-experiencias']?.accommodationTranslations?.[option.id] : null;
+const localized = portuguese ? { ...option, ...portuguese } : isEn ? option.en || option : option;
 const gallery = option.images.map((image, index) => {
-const localizedAlt = lang === 'en' ? option.imageAltsEn?.[index] : option.imageAlts?.[index];
-return `<img src="${esc(image)}" alt="${esc(localizedAlt || `${option.imageAlt} · ${lang === 'en' ? 'view' : 'vista'} ${index + 1}`)}" loading="lazy" />`;
+const localizedAlt = lang === 'en' ? option.imageAltsEn?.[index] : portuguese?.imageAlts?.[index] || option.imageAlts?.[index];
+return `<img src="${esc(image)}" alt="${esc(localizedAlt || `${option.imageAlt} · ${lang === 'en' ? 'view' : lang === 'pt-BR' ? 'visualização' : 'vista'} ${index + 1}`)}" loading="lazy" />`;
 }).join('');
 const details = localized.details.map(detail => `<li>${esc(detail)}</li>`).join('');
 const amenities = localized.amenities.map(item => `<li>${esc(item)}</li>`).join('');
-const detailsHeading = isEn ? 'Options & rates' : 'Opciones y tarifas';
-const amenitiesHeading = isEn ? 'Services & conditions' : 'Servicios y condiciones';
+const detailsHeading = isEn ? 'Options & rates' : lang === 'pt-BR' ? 'Opções e tarifas' : 'Opciones y tarifas';
+const amenitiesHeading = isEn ? 'Services & conditions' : lang === 'pt-BR' ? 'Serviços e condições' : 'Servicios y condiciones';
 const titleId = `accommodation-title-${option.id}`;
-const galleryLabel = isEn ? `Photos of ${option.name}` : `Fotos de ${option.name}`;
+const galleryLabel = isEn ? `Photos of ${option.name}` : lang === 'pt-BR' ? `Fotos de ${option.name}` : `Fotos de ${option.name}`;
 const galleryMarkup = gallery ? `<div class="accommodation-gallery" role="group" aria-label="${esc(galleryLabel)}">${gallery}</div>` : '';
 return `<article class="accommodation-card accommodation-card-${index + 1}" id="accommodation-${esc(option.id)}" aria-labelledby="${esc(titleId)}">${galleryMarkup}<div class="accommodation-card-body"><p class="accommodation-category">${esc(localized.category)}</p><div class="accommodation-card-title"><h3 id="${esc(titleId)}">${esc(option.name)}</h3><div class="accommodation-price"><strong>${esc(option.price)}</strong><span>${esc(localized.priceNote)}</span></div></div><p class="accommodation-summary">${esc(localized.summary)}</p><div class="accommodation-columns"><section><h4>${detailsHeading}</h4><ul>${details}</ul></section><section><h4>${amenitiesHeading}</h4><ul>${amenities}</ul></section></div></div></article>`;
 }
 function renderAccommodationStory(service) {
 const isEn = lang === 'en';
+const portuguese = lang === 'pt-BR';
 const destinations = service.accommodationOptions.map(option => {
 const image = option.images?.[0];
 if (!image) return '';
-const localizedAlt = isEn ? option.imageAltsEn?.[0] : option.imageAlts?.[0];
-const ariaLabel = isEn ? `View ${option.name} details` : `Ver detalles de ${option.name}`;
+const localized = window.WAVEPOINT_PT_BR?.services?.['alojamiento-experiencias']?.accommodationTranslations?.[option.id];
+const localizedAlt = isEn ? option.imageAltsEn?.[0] : localized?.imageAlts?.[0] || option.imageAlts?.[0];
+const ariaLabel = isEn ? `View ${option.name} details` : portuguese ? `Ver detalhes de ${option.name}` : `Ver detalles de ${option.name}`;
 return `<a class="accommodation-destination" href="#accommodation-${esc(option.id)}" aria-label="${esc(ariaLabel)}"><img src="${esc(image)}" alt="${esc(localizedAlt || option.imageAlt || option.name)}" loading="lazy" /></a>`;
 }).join('');
 const checkLabel = isEn ? 'Check availability' : 'Consultar disponibilidad';
-return `<section class="accommodation-intro" aria-labelledby="accommodation-options-heading"><div class="accommodation-intro-copy"><p class="service-page-kicker">${isEn ? 'ACCOMMODATIONS IN TAMARINDO' : 'ALOJAMIENTOS EN TAMARINDO'}</p><h2 id="accommodation-options-heading">${isEn ? 'Accommodation options in Tamarindo' : 'Opciones de alojamiento en Tamarindo'}</h2><a class="accommodation-check-link" href="#detailRequestPanel">${checkLabel}<span aria-hidden="true">↗</span></a></div><div class="accommodation-overview-meta"><nav class="accommodation-destinations" aria-label="${isEn ? 'Jump to an accommodation' : 'Ir a un alojamiento'}">${destinations}</nav><div class="accommodation-rate-note"><strong>${isEn ? 'Rates in USD' : 'Tarifas en USD'}</strong><span>${isEn ? 'All rates are shown in US dollars (USD) per night.' : 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.'}</span></div></div></section><section class="accommodation-grid" aria-label="${isEn ? 'Accommodation options' : 'Opciones de alojamiento'}">${service.accommodationOptions.map(renderAccommodationOption).join('')}</section>`;
+const copy = portuguese
+  ? { kicker: 'HOSPEDAGENS EM TAMARINDO', heading: 'Opções de hospedagem em Tamarindo', jump: 'Ir para uma hospedagem', rate: 'Valores em USD', rateNote: 'Todos os valores estão em dólares americanos (USD), por noite.', options: 'Opções de hospedagem' }
+  : isEn
+    ? { kicker: 'ACCOMMODATIONS IN TAMARINDO', heading: 'Accommodation options in Tamarindo', jump: 'Jump to an accommodation', rate: 'Rates in USD', rateNote: 'All rates are shown in US dollars (USD) per night.', options: 'Accommodation options' }
+    : { kicker: 'ALOJAMIENTOS EN TAMARINDO', heading: 'Opciones de alojamiento en Tamarindo', jump: 'Ir a un alojamiento', rate: 'Tarifas en USD', rateNote: 'Todas las tarifas están expresadas en dólares estadounidenses (USD), por noche.', options: 'Opciones de alojamiento' };
+const localizedCheckLabel = portuguese ? 'Consultar disponibilidade' : checkLabel;
+return `<section class="accommodation-intro" aria-labelledby="accommodation-options-heading"><div class="accommodation-intro-copy"><p class="service-page-kicker">${copy.kicker}</p><h2 id="accommodation-options-heading">${copy.heading}</h2><a class="accommodation-check-link" href="#detailRequestPanel">${localizedCheckLabel}<span aria-hidden="true">↗</span></a></div><div class="accommodation-overview-meta"><nav class="accommodation-destinations" aria-label="${copy.jump}">${destinations}</nav><div class="accommodation-rate-note"><strong>${copy.rate}</strong><span>${copy.rateNote}</span></div></div></section><section class="accommodation-grid" aria-label="${copy.options}">${service.accommodationOptions.map(renderAccommodationOption).join('')}</section>`;
 }
 function renderSurfLessonStory(service) {
 const ui = uiFor(service);
 const isEn = lang === 'en';
 const gallery = service.images.slice(1).map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index + 1] || `${ui.galleryAlt} ${index + 2}`)}" loading="lazy" />`).join('');
 const details = `<div class="surf-lesson-details"><p class="service-supporting-lead">${esc(service.lead || '')}</p>${service.includes?.length ? `<ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul>` : ''}</div>`;
-const programPromo = `<section class="surf-program-promo" aria-labelledby="surf-program-promo-title"><div><p class="service-page-kicker">${isEn ? 'BEGINNER PROGRAM · 3 DAYS' : 'PROGRAMA DE INICIACIÓN · 3 DÍAS'}</p><h3 id="surf-program-promo-title">${isEn ? 'Learn to surf across three sessions' : 'Aprendé surf en tres encuentros'}</h3><p>${isEn ? 'Three private 2-hour lessons, spread across three consecutive days, with follow-up on what you learn.' : 'Tres clases privadas de dos horas, distribuidas en tres días consecutivos, con seguimiento de lo aprendido.'}</p></div><a href="service-detail.html?service=surf-programa-3-dias">${isEn ? 'Explore the program' : 'Conocé el programa'} <span aria-hidden="true">↗</span></a></section>`;
-return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.'}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : 'Fotos de las clases de surf'}">${gallery}</div></section>${details}${programPromo}<section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
+const portuguese = lang === 'pt-BR';
+const promoKicker = portuguese ? 'PROGRAMA PARA INICIANTES · 3 DIAS' : isEn ? 'BEGINNER PROGRAM · 3 DAYS' : 'PROGRAMA DE INICIACIÓN · 3 DÍAS';
+const promoTitle = portuguese ? 'Aprenda a surfar em três aulas' : isEn ? 'Learn to surf across three sessions' : 'Aprendé surf en tres encuentros';
+const promoText = portuguese ? 'Três aulas particulares de duas horas, em três dias consecutivos, com acompanhamento do que você aprender em cada encontro.' : isEn ? 'Three private 2-hour lessons, spread across three consecutive days, with follow-up on what you learn.' : 'Tres clases privadas de dos horas, distribuidas en tres días consecutivos, con seguimiento de lo aprendido.';
+const promoLink = portuguese ? 'Conheça o programa' : isEn ? 'Explore the program' : 'Conocé el programa';
+const intro = portuguese ? service.cardText : isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.';
+const programPromo = `<section class="surf-program-promo" aria-labelledby="surf-program-promo-title"><div><p class="service-page-kicker">${promoKicker}</p><h3 id="surf-program-promo-title">${promoTitle}</h3><p>${promoText}</p></div><a href="service-detail.html?service=surf-programa-3-dias">${promoLink} <span aria-hidden="true">↗</span></a></section>`;
+return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : portuguese ? 'AULAS DE SURFE · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${portuguese ? 'Pronto para surfar?' : isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${intro}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : portuguese ? 'Fotos das aulas de surfe' : 'Fotos de las clases de surf'}">${gallery}</div></section>${details}${programPromo}<section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : portuguese ? 'AULAS DE SURFE' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
 }
 function renderSurfProgramStory(service) {
 const isEn = lang === 'en';
-const copy = service.programCopy[isEn ? 'en' : 'es'];
+const copy = lang === 'pt-BR' ? service.programCopy : service.programCopy[lang] || service.programCopy[isEn ? 'en' : 'es'];
+const labels = lang === 'pt-BR'
+  ? { overview: 'Visão geral do programa', approach: 'A proposta', program: 'O programa', lessons: 'Três aulas de surfe', rates: 'VALORES DE REFERÊNCIA' }
+  : isEn
+    ? { overview: 'Program overview', approach: 'THE APPROACH', program: 'YOUR PROGRAM', lessons: 'Three surf lessons', rates: 'REFERENCE RATES' }
+    : { overview: 'Resumen del programa', approach: 'LA PROPUESTA', program: 'TU PROGRAMA', lessons: 'Tres clases de surf', rates: 'TARIFAS DE REFERENCIA' };
 const facts = copy.facts.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('');
 const includes = copy.includes.map(item => `<li>${esc(item)}</li>`).join('');
-const days = copy.days.map((day, index) => { const dayTitle = day.title.split(' · ').slice(1).join(' · ') || day.title; const dayNumber = index + 1; const dayLabel = isEn ? `LESSON ${dayNumber}` : `CLASE ${dayNumber}`; const lessonLabel = isEn ? `DAY ${dayNumber}` : `DÍA ${dayNumber}`; return `<article class="surf-program-day${index % 2 ? ' surf-program-day--reverse' : ''}"><figure class="surf-program-day-photo surf-program-day-photo-${index + 1}"><img src="${esc(service.images[index])}" alt="${esc(service.imageAlts?.[index] || day.title)}" loading="lazy" /></figure><div class="surf-program-day-copy"><p class="service-page-kicker surf-program-day-kicker"><span class="surf-program-day-kicker-main">${dayLabel}</span><span class="surf-program-day-kicker-dot" aria-hidden="true">·</span><span class="surf-program-day-kicker-day">${lessonLabel}</span></p><h3>${esc(dayTitle)}</h3><p>${esc(day.text)}</p></div></article>`; }).join('');
+const days = copy.days.map((day, index) => { const dayTitle = day.title.split(' · ').slice(1).join(' · ') || day.title; const dayNumber = index + 1; const dayLabel = lang === 'pt-BR' ? `AULA ${dayNumber}` : isEn ? `LESSON ${dayNumber}` : `CLASE ${dayNumber}`; const lessonLabel = lang === 'pt-BR' ? `DIA ${dayNumber}` : isEn ? `DAY ${dayNumber}` : `DÍA ${dayNumber}`; return `<article class="surf-program-day${index % 2 ? ' surf-program-day--reverse' : ''}"><figure class="surf-program-day-photo surf-program-day-photo-${index + 1}"><img src="${esc(service.images[index])}" alt="${esc(service.imageAlts?.[index] || day.title)}" loading="lazy" /></figure><div class="surf-program-day-copy"><p class="service-page-kicker surf-program-day-kicker"><span class="surf-program-day-kicker-main">${dayLabel}</span><span class="surf-program-day-kicker-dot" aria-hidden="true">·</span><span class="surf-program-day-kicker-day">${lessonLabel}</span></p><h3>${esc(dayTitle)}</h3><p>${esc(day.text)}</p></div></article>`; }).join('');
 const prices = copy.prices.map(([participants, lesson, program]) => `<article class="surf-program-price-card"><h4>${esc(participants)}</h4><dl><div><dt>${esc(copy.priceHeaders[1])}</dt><dd>${esc(lesson)}</dd></div><div><dt>${esc(copy.priceHeaders[2])}</dt><dd>${esc(program)}</dd></div></dl></article>`).join('');
-return `<div class="surf-program-story"><section class="surf-program-overview" aria-label="${isEn ? 'Program overview' : 'Resumen del programa'}"><p class="surf-program-intro">${esc(copy.intro)}</p><dl class="surf-program-facts">${facts}</dl></section><section class="surf-program-why" aria-labelledby="surf-program-why-heading"><p class="service-page-kicker">${isEn ? 'THE APPROACH' : 'LA PROPUESTA'}</p><h2 id="surf-program-why-heading">${esc(copy.whyHeading)}</h2><p>${esc(copy.whyText)}</p></section><section class="surf-program-includes" aria-labelledby="surf-program-includes-heading"><p class="service-page-kicker">${isEn ? 'YOUR PROGRAM' : 'TU PROGRAMA'}</p><h2 id="surf-program-includes-heading">${esc(copy.includesHeading)}</h2><ul>${includes}</ul></section><section class="surf-program-days" aria-label="${isEn ? 'Three surf lessons' : 'Tres clases de surf'}">${days}</section><p class="surf-program-progress-note">${esc(copy.progressNote)}</p><section class="surf-program-pricing" aria-labelledby="surf-program-prices-heading"><div class="surf-program-section-head"><div><p class="service-page-kicker">${isEn ? 'REFERENCE RATES' : 'TARIFAS DE REFERENCIA'}</p><h2 id="surf-program-prices-heading">${esc(copy.pricesHeading)}</h2></div><span class="surf-program-currency">USD</span></div><p class="surf-program-price-lead">${esc(copy.priceLead)}</p><div class="surf-program-price-list">${prices}</div><p class="surf-program-price-note">${esc(copy.priceNote)}</p></section><section class="surf-program-reservation" aria-labelledby="surf-program-reservation-heading"><h3 id="surf-program-reservation-heading">${esc(copy.reservationHeading)}</h3><p>${esc(copy.reservationText)}</p><p class="surf-program-reservation-note">${esc(copy.reservationNote)}</p></section></div>`;
+return `<div class="surf-program-story"><section class="surf-program-overview" aria-label="${labels.overview}"><p class="surf-program-intro">${esc(copy.intro)}</p><dl class="surf-program-facts">${facts}</dl></section><section class="surf-program-why" aria-labelledby="surf-program-why-heading"><p class="service-page-kicker">${labels.approach}</p><h2 id="surf-program-why-heading">${esc(copy.whyHeading)}</h2><p>${esc(copy.whyText)}</p></section><section class="surf-program-includes" aria-labelledby="surf-program-includes-heading"><p class="service-page-kicker">${labels.program}</p><h2 id="surf-program-includes-heading">${esc(copy.includesHeading)}</h2><ul>${includes}</ul></section><section class="surf-program-days" aria-label="${labels.lessons}">${days}</section><p class="surf-program-progress-note">${esc(copy.progressNote)}</p><section class="surf-program-pricing" aria-labelledby="surf-program-prices-heading"><div class="surf-program-section-head"><div><p class="service-page-kicker">${labels.rates}</p><h2 id="surf-program-prices-heading">${esc(copy.pricesHeading)}</h2></div><span class="surf-program-currency">USD</span></div><p class="surf-program-price-lead">${esc(copy.priceLead)}</p><div class="surf-program-price-list">${prices}</div><p class="surf-program-price-note">${esc(copy.priceNote)}</p></section><section class="surf-program-reservation" aria-labelledby="surf-program-reservation-heading"><h3 id="surf-program-reservation-heading">${esc(copy.reservationHeading)}</h3><p>${esc(copy.reservationText)}</p><p class="surf-program-reservation-note">${esc(copy.reservationNote)}</p></section></div>`;
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
@@ -989,12 +1022,13 @@ const galleryImageAlts = isEn ? (service.galleryImageAltsEn || service.imageAlts
 const gallery = galleryImages.map((image, index) => { const altIndex = service.galleryImages ? index : index + galleryStart; return `<img src="${esc(image)}" alt="${esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
 const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
 const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
-const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
+const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : lang === 'pt-BR' ? 'INCLUÍDO' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
 }
 function renderAtvStory(service) {
 const isEn = lang === 'en';
+const portuguese = lang === 'pt-BR' ? window.WAVEPOINT_PT_BR?.services?.atv?.atvCopy : null;
 const options = isEn ? [
   ['Explorer · 2 hours', 'A first experience to discover coastal roads, beaches and local corners. Ideal if you have never driven an ATV or want a shorter outing during your vacation.'],
   ['Adventure · 4 hours', 'More time to explore quiet beaches, trails through the vegetation, local roads and viewpoints. A great way to see more of Guanacaste’s landscapes.'],
@@ -1020,10 +1054,13 @@ const priceNote = isEn ? 'Prices are per ATV. The two-person rate is the total f
 const included = isEn ? 'Includes the ATV, local guide, helmet and safety instructions. A valid driver’s license is required to drive.' : 'Incluye cuatriciclo, guía local, casco e indicaciones de seguridad. Para conducir necesitás una licencia vigente.';
 const request = isEn ? 'Tell us the date, number of participants and preferred route. Before you pay, we confirm availability, meeting point, service details and final price. Rates are for reference and sending a request does not confirm a booking.' : 'Contanos la fecha, cuántas personas participan y qué recorrido prefieren. Antes de pagar, confirmaremos disponibilidad, punto de encuentro, detalles del servicio y precio final. Las tarifas son de referencia y enviar una solicitud no confirma la reserva.';
 const galleryStory = renderStandardStory(service);
-return `${galleryStory}<section class="atv-story" aria-labelledby="atv-options-heading"><div class="atv-copy"><p class="service-page-kicker">${isEn ? 'ATV IN TAMARINDO' : 'ATV EN TAMARINDO'}</p><h2 id="atv-options-heading">${isEn ? 'Choose your adventure' : 'Elegí tu aventura'}</h2><p>${intro}</p></div><div class="atv-options">${options.map(([title, text]) => `<article class="atv-option"><h3>${title}</h3><p>${text}</p></article>`).join('')}</div><div class="atv-pricing"><div class="atv-pricing-head"><div><p class="service-page-kicker">${isEn ? 'REFERENCE RATES' : 'TARIFAS DE REFERENCIA'}</p><h3>${isEn ? 'Choose the option that fits your group' : 'Elegí la opción que mejor se adapta a tu grupo'}</h3></div><span class="atv-pricing-currency">USD</span></div><div class="atv-price-grid">${prices.map(([label, price]) => `<div class="atv-price-row"><span>${label}</span><strong>${price}</strong></div>`).join('')}</div><p class="atv-price-note">${priceNote}</p></div><div class="atv-included"><h3>${isEn ? 'What is included' : 'Incluye'}</h3><p>${included}</p></div><div class="atv-request"><h3>${isEn ? 'Check availability with WavePoint' : 'Consultá disponibilidad con WavePoint'}</h3><p>${request}</p></div></section>`;
+const localizedOptions = portuguese?.options || options;
+const localizedPrices = portuguese?.prices || prices;
+return `${galleryStory}<section class="atv-story" aria-labelledby="atv-options-heading"><div class="atv-copy"><p class="service-page-kicker">${portuguese?.eyebrow || (isEn ? 'ATV IN TAMARINDO' : 'ATV EN TAMARINDO')}</p><h2 id="atv-options-heading">${portuguese?.heading || (isEn ? 'Choose your adventure' : 'Elegí tu aventura')}</h2><p>${portuguese?.intro || intro}</p></div><div class="atv-options">${localizedOptions.map(([title, text]) => `<article class="atv-option"><h3>${title}</h3><p>${text}</p></article>`).join('')}</div><div class="atv-pricing"><div class="atv-pricing-head"><div><p class="service-page-kicker">${portuguese?.ratesKicker || (isEn ? 'REFERENCE RATES' : 'TARIFAS DE REFERENCIA')}</p><h3>${portuguese?.ratesHeading || (isEn ? 'Choose the option that fits your group' : 'Elegí la opción que mejor se adapta a tu grupo')}</h3></div><span class="atv-pricing-currency">USD</span></div><div class="atv-price-grid">${localizedPrices.map(([label, price]) => `<div class="atv-price-row"><span>${label}</span><strong>${price}</strong></div>`).join('')}</div><p class="atv-price-note">${portuguese?.priceNote || priceNote}</p></div><div class="atv-included"><h3>${portuguese?.includedHeading || (isEn ? 'What is included' : 'Incluye')}</h3><p>${portuguese?.included || included}</p></div><div class="atv-request"><h3>${portuguese?.requestHeading || (isEn ? 'Check availability with WavePoint' : 'Consultá disponibilidad con WavePoint')}</h3><p>${portuguese?.request || request}</p></div></section>`;
 }
 function renderBoatStory(service) {
 const isEn = lang === 'en';
+const portuguese = lang === 'pt-BR' ? window.WAVEPOINT_PT_BR?.services?.['snorkel-catamaran']?.boatCopy : null;
 const options = isEn ? [
   ['Full day in the Papagayo Peninsula', '8 hours · Up to 5 people · USD 850', 'Explore hidden beaches and combine sailing, snorkeling and fishing. Includes breakfast, grilled lunch or wraps/sandwiches, water, soft drinks, beer, snorkeling and fishing activities, and certified captain and deckhand.'],
   ['Snorkeling along the Guanacaste coast', '4 hours · Up to 5 people · USD 500 / 6 hours · Up to 5 people · USD 650', 'Explore natural corners of the coast with snorkeling equipment, inflatable platform, breakfast, lunch with wraps or sandwiches, snacks, drinks, and certified captain and deckhand.'],
@@ -1042,7 +1079,10 @@ const options = isEn ? [
 const conditions = isEn ? ['Maximum capacity: 5 people.', 'Fruit, hummus, dips, beer, soft drinks, water and ice.', 'Snorkeling equipment and floating platform available.', 'Request at least 24 hours in advance.', 'Preferably for ages five and up; ask us about younger children.', 'Cancellation policy: 72 hours.', 'A 30% deposit confirms the outing after availability is verified.', 'Departure point: Bahía Potrero.', 'Transport to the bay is paid separately.', 'Navigation permits and insurance policy.', 'Captain documents are in process.', 'Service available in Spanish and English.'] : ['Capacidad máxima: 5 personas.', 'Frutas variadas, hummus, dips, cerveza, refrescos, agua y hielo.', 'Se presta equipo de snorkel y plataforma flotante.', 'Solicitá la reserva con al menos 24 horas de anticipación.', 'Preferentemente para mayores de cinco años; consultá si viajan niños menores.', 'Política de cancelación: 72 horas.', 'Una seña del 30% confirma la salida una vez verificada la disponibilidad.', 'Punto de salida: Bahía Potrero.', 'El transporte hasta la bahía se paga aparte.', 'Permisos de navegación y póliza de seguro.', 'Documentos del capitán en trámite.', 'Atención en español e inglés.'];
 const practical = isEn ? 'Bring a swimsuit, towel and sun protection. Tell us the participants’ ages and any allergy or dietary need. If you want to snorkel, let us know how comfortable everyone is swimming in the sea.' : 'Traé traje de baño, toalla y protección solar. Contanos las edades de los participantes y cualquier alergia o necesidad alimentaria. Si quieren hacer snorkel, indicá también cómo se sienten nadando en el mar.';
 const galleryStory = renderStandardStory(service);
-return `${galleryStory}<section class="boat-story" aria-labelledby="boat-options-heading"><div class="boat-story-intro"><p class="service-page-kicker">${isEn ? 'BOAT EXPERIENCES · GUANACASTE' : 'EMBARCACIONES · GUANACASTE'}</p><h2 id="boat-options-heading">${isEn ? 'Navigation — Discover Guanacaste from the sea' : 'Navegación — Descubrí Guanacaste desde el mar'}</h2><p>${isEn ? 'A little time at sea, a different view of Tamarindo. Whether you would love to snorkel, relax on deck or watch the sun go down over the ocean, WAVEPOINT helps you find a boat experience that feels right for your group. Enjoy the sea breeze, discover the coastline and confirm the details before you book.' : 'Un poco de tiempo en el mar, una vista diferente de Tamarindo. Ya sea que quieras hacer snorkel, relajarte a bordo o ver cómo cae el sol sobre el océano, WAVEPOINT te ayuda a encontrar una salida que se adapte a tu grupo. Disfrutá la brisa marina, descubrí la costa y conocé todos los detalles antes de reservar.'}</p></div><div class="boat-options">${options.map(([title, facts, text]) => `<article class="boat-option"><h3>${title}</h3><p class="boat-option-facts">${facts}</p><p>${text}</p></article>`).join('')}</div><div class="boat-details"><section><h3>${isEn ? 'Before you go' : 'Antes de ir'}</h3><p>${practical}</p></section><section><h3>${isEn ? 'Included and conditions' : 'Incluidos y condiciones'}</h3><ul>${conditions.map(item => `<li>${item}</li>`).join('')}</ul></section></div><div class="boat-request"><h3>${isEn ? 'Request this experience' : 'Solicitar reserva'}</h3><p>${isEn ? 'Tell us which outing interests you, your preferred dates and how many people are participating. WAVEPOINT will confirm availability, meeting point or pickup, inclusions, conditions and the total price before sending a payment link.' : 'Contanos qué salida te interesa, tus fechas y cuántas personas participan. WAVEPOINT confirmará disponibilidad, punto de encuentro o recogida, incluidos, condiciones y precio total antes de enviarte el enlace de pago.'}</p><p>${isEn ? 'This is an inquiry; the booking is not confirmed yet. You do not need to pay now.' : 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.'}</p></div></section>`;
+const localizedOptions = portuguese?.options || options;
+const localizedConditions = portuguese?.conditions || conditions;
+const localizedPractical = portuguese?.practical || practical;
+return `${galleryStory}<section class="boat-story" aria-labelledby="boat-options-heading"><div class="boat-story-intro"><p class="service-page-kicker">${portuguese?.eyebrow || (isEn ? 'NAVIGATION · GUANACASTE' : 'EMBARCACIONES · GUANACASTE')}</p><h2 id="boat-options-heading">${portuguese?.heading || (isEn ? 'Navigation — Discover Guanacaste from the sea' : 'Navegación — Descubrí Guanacaste desde el mar')}</h2><p>${portuguese?.intro || (isEn ? 'A little time at sea, a different view of Tamarindo. Whether you would love to snorkel, relax on deck or watch the sun go down over the ocean, WAVEPOINT helps you find an outing that feels right for your group. Enjoy the sea breeze, discover the coastline and confirm the details before you book.' : 'Un poco de tiempo en el mar, una vista diferente de Tamarindo. Ya sea que quieras hacer snorkel, relajarte a bordo o ver cómo cae el sol sobre el océano, WAVEPOINT te ayuda a encontrar una salida que se adapte a tu grupo. Disfrutá la brisa marina, descubrí la costa y conocé todos los detalles antes de reservar.')}</p></div><div class="boat-options">${localizedOptions.map(([title, facts, text]) => `<article class="boat-option"><h3>${title}</h3><p class="boat-option-facts">${facts}</p><p>${text}</p></article>`).join('')}</div><div class="boat-details"><section><h3>${portuguese?.beforeHeading || (isEn ? 'Before you go' : 'Antes de ir')}</h3><p>${localizedPractical}</p></section><section><h3>${portuguese?.conditionsHeading || (isEn ? 'Included and conditions' : 'Incluidos y condiciones')}</h3><ul>${localizedConditions.map(item => `<li>${item}</li>`).join('')}</ul></section></div><div class="boat-request"><h3>${portuguese?.requestHeading || (isEn ? 'Request this experience' : 'Solicitar reserva')}</h3><p>${portuguese?.request || (isEn ? 'Tell us which outing interests you, your preferred dates and how many people are participating. WAVEPOINT will confirm availability, meeting point or pickup, inclusions, conditions and the total price before sending a payment link.' : 'Contanos qué salida te interesa, tus fechas y cuántas personas participan. WAVEPOINT confirmará disponibilidad, punto de encuentro o recogida, incluidos, condiciones y precio total antes de enviarte el enlace de pago.')}</p><p>${portuguese?.reservationNote || (isEn ? 'This is an inquiry; the booking is not confirmed yet. You do not need to pay now.' : 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.')}</p></div></section>`;
 }
 function renderWitchRockStory(service) {
 const story = renderStandardStory(service, service.coordination);
@@ -1060,6 +1100,12 @@ return renderStandardStory(service);
 function renderRetreatStory(service) {
 const details = service.retreatDetails;
 const isEn = lang === 'en';
+const portuguese = lang === 'pt-BR';
+const labels = portuguese
+  ? { kicker: 'RETIROS WAVEPOINT · TAMARINDO', destination: 'O DESTINO', stay: 'UM LUGAR PARA DESCANSAR', yoga: 'MOVIMENTO E PAUSA', surfTrips: 'SURF TRIPS GUIADOS', boat: 'PASSEIO DE BARCO · AVENTURA', coaching: 'COACHING · FOTOS · ANÁLISE EM VÍDEO', details: 'DETALHES', journey: 'ROTEIRO' }
+  : isEn
+    ? { kicker: 'WAVEPOINT RETREATS · TAMARINDO', destination: 'THE DESTINATION', stay: 'A PLACE TO UNWIND', yoga: 'MOVE & RESET', surfTrips: 'GUIDED SURF TRIPS', boat: 'BOAT TRIP · ADVENTURE', coaching: 'COACHING · PHOTOS · VIDEO ANALYSIS', details: 'THE DETAILS', journey: 'THE JOURNEY' }
+    : { kicker: 'WAVEPOINT RETIROS · TAMARINDO', destination: 'EL DESTINO', stay: 'UN LUGAR PARA DESCANSAR', yoga: 'MOVIMIENTO Y PAUSA', surfTrips: 'SURF TRIPS GUIADOS', boat: 'TOUR EN BARCO · AVENTURA', coaching: 'COACHING · FOTOS · VIDEOANÁLISIS', details: 'LOS DETALLES', journey: 'EL RECORRIDO' };
 const facts = details.facts.map(fact => `<div class="retreat-fact"><dt>${esc(fact.label)}</dt><dd>${esc(fact.value)}</dd></div>`).join('');
 const included = details.included.map(item => `<li>${esc(item)}</li>`).join('');
 const notIncluded = details.notIncluded.map(item => `<li>${esc(item)}</li>`).join('');
@@ -1068,12 +1114,12 @@ const itinerary = details.itinerary.map((day, index) => `<article class="retreat
 const photo = index => `<img src="${esc(service.images[index])}" alt="${esc((isEn ? service.imageAltsEn?.[index] : service.imageAlts?.[index]) || `${service.title} · ${lang === 'en' ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`;
 const photoGrid = (indexes, className) => `<div class="retreat-photo-grid ${className}">${indexes.map(photo).join('')}</div>`;
 const introAlt = esc((isEn ? service.imageAltsEn?.[0] : service.imageAlts?.[0]) || (isEn ? 'Sunset on the coast of Costa Rica' : 'Atardecer en la costa de Costa Rica'));
-const priceFact = details.facts.find(fact => fact.label === (isEn ? 'Price' : 'Precio')) || details.facts[details.facts.length - 1];
-const durationFact = details.facts.find(fact => fact.label === (isEn ? 'Duration' : 'Duración'));
+const priceFact = details.facts.find(fact => fact.label === (isEn ? 'Price' : portuguese ? 'Preço' : 'Precio')) || details.facts[details.facts.length - 1];
+const durationFact = details.facts.find(fact => fact.label === (isEn ? 'Duration' : portuguese ? 'Duração' : 'Duración'));
 return `<div class="retreat-editorial">
   <section class="retreat-cover">
     <div class="retreat-cover-copy">
-      <p class="retreat-cover-kicker">${isEn ? 'WAVEPOINT RETREATS · TAMARINDO' : 'WAVEPOINT RETIROS · TAMARINDO'}</p>
+      <p class="retreat-cover-kicker">${labels.kicker}</p>
       <h2>${esc(details.aboutHeading)}</h2>
       <p class="retreat-cover-about">${esc(details.about)}</p>
       <div class="retreat-cover-facts">${durationFact ? `<span>${esc(durationFact.value)}</span>` : ''}<span>${esc(priceFact.value)}</span></div>
@@ -1082,31 +1128,31 @@ return `<div class="retreat-editorial">
   <div class="retreat-experience-grid">
     <section class="retreat-experience-card retreat-destination-card">
       ${photoGrid([1, 2], 'retreat-destination-photos')}
-      <div><p class="retreat-card-kicker">${isEn ? 'THE DESTINATION' : 'EL DESTINO'}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
+      <div><p class="retreat-card-kicker">${labels.destination}</p><h3>${esc(details.destinationHeading)}</h3><p>${esc(details.destination)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-stay-card">
       ${photoGrid([3, 4, 5, 6], 'retreat-stay-photos')}
-      <div><p class="retreat-card-kicker">${isEn ? 'A PLACE TO UNWIND' : 'UN LUGAR PARA DESCANSAR'}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
+      <div><p class="retreat-card-kicker">${labels.stay}</p><h3>${esc(details.stayHeading)}</h3><p>${esc(details.stay)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-yoga-card">
       ${photoGrid([7, 8], 'retreat-yoga-photos')}
-      <div><p class="retreat-card-kicker">${isEn ? 'MOVE & RESET' : 'MOVIMIENTO Y PAUSA'}</p><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div>
+      <div><p class="retreat-card-kicker">${labels.yoga}</p><h3>${esc(details.yogaHeading)}</h3>${details.yoga.map(paragraph => `<p>${esc(paragraph)}</p>`).join('')}</div>
     </section>
     <section class="retreat-experience-card retreat-surf-trips-card">
       ${photoGrid([9, 10, 11, 12], 'retreat-surf-trip-photos')}
-      <div><p class="retreat-card-kicker">${isEn ? 'GUIDED SURF TRIPS' : 'SURF TRIPS GUIADOS'}</p><h3>${esc(details.surfTripsHeading)}</h3><p>${esc(details.surfTrips)}</p></div>
+      <div><p class="retreat-card-kicker">${labels.surfTrips}</p><h3>${esc(details.surfTripsHeading)}</h3><p>${esc(details.surfTrips)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-boat-card">
       ${photoGrid([13, 14], 'retreat-boat-photos')}
-      <div><p class="retreat-card-kicker">${isEn ? 'BOAT TRIP · ADVENTURE' : 'TOUR EN BARCO · AVENTURA'}</p><h3>${esc(details.boatHeading)}</h3><p>${esc(details.boat)}</p></div>
+      <div><p class="retreat-card-kicker">${labels.boat}</p><h3>${esc(details.boatHeading)}</h3><p>${esc(details.boat)}</p></div>
     </section>
     <section class="retreat-experience-card retreat-surf-card">
       ${photoGrid([15, 16, 17], 'retreat-coaching-photos')}
-      <div><p class="retreat-card-kicker">${isEn ? 'COACHING · PHOTOS · VIDEO ANALYSIS' : 'COACHING · FOTOS · VIDEOANÁLISIS'}</p><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p></div>
+      <div><p class="retreat-card-kicker">${labels.coaching}</p><h3>${esc(details.surfHeading)}</h3><p>${esc(details.surf)}</p></div>
     </section>
   </div>
   <section class="retreat-summary">
-    <p class="retreat-card-kicker">${isEn ? 'THE DETAILS' : 'LOS DETALLES'}</p>
+    <p class="retreat-card-kicker">${labels.details}</p>
     <h3>${esc(details.summaryHeading)}</h3>
     <dl class="retreat-summary-grid">${facts}</dl>
     <div class="retreat-lists">
@@ -1116,7 +1162,7 @@ return `<div class="retreat-editorial">
     <section class="retreat-conditions"><h4>${esc(details.conditionsHeading)}</h4><ul>${conditions}</ul></section>
   </section>
   <section class="retreat-itinerary-section">
-    <p class="retreat-card-kicker">${isEn ? 'THE JOURNEY' : 'EL RECORRIDO'}</p>
+    <p class="retreat-card-kicker">${labels.journey}</p>
     <h3>${esc(details.itineraryHeading)}</h3>
     <div class="retreat-itinerary">${itinerary}</div>
   </section>
@@ -1125,7 +1171,7 @@ return `<div class="retreat-editorial">
 function render(service) {
 const ui = uiFor(service);
 document.documentElement.lang = lang;
-const serviceDescription = service.description || (lang === 'en' ? 'Explore this WavePoint experience in Tamarindo, Costa Rica.' : 'Explorá esta experiencia de WavePoint en Tamarindo, Costa Rica.');
+const serviceDescription = service.description || (lang === 'en' ? 'Explore this WavePoint experience in Tamarindo, Costa Rica.' : lang === 'pt-BR' ? 'Conheça esta experiência da WavePoint em Tamarindo, Costa Rica.' : 'Explorá esta experiencia de WavePoint en Tamarindo, Costa Rica.');
 document.title = `${service.title} · WavePoint`;
 const serviceUrl = new URL(location.href);
 serviceUrl.hash = '';
@@ -1155,7 +1201,7 @@ setServiceMeta('og:image:type', 'image/jpeg');
 setServiceMeta('og:image:width', '1200');
 setServiceMeta('og:image:height', '630');
 setServiceMeta('og:image:alt', 'WavePoint logo on a solid white background');
-setServiceMeta('og:locale', lang === 'en' ? 'en_US' : 'es_CR');
+setServiceMeta('og:locale', lang === 'en' ? 'en_US' : lang === 'pt-BR' ? 'pt_BR' : 'es_CR');
 setServiceTwitterMeta('twitter:title', document.title);
 setServiceTwitterMeta('twitter:description', serviceDescription);
 setServiceTwitterMeta('twitter:image', serviceShareImage);
@@ -1167,11 +1213,11 @@ document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
 document.body.classList.toggle('boat-detail-page', service.id === 'snorkel-catamaran');
 document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.heroImage || service.images[0])})`);
 const position = services.findIndex(item => item.id === service.id);
-const prevService = services[(position - 1 + services.length) % services.length];
-const nextService = services[(position + 1) % services.length];
-const arrowLabel = { es: ['Experiencia anterior', 'Siguiente experiencia'], en: ['Previous experience', 'Next experience'] }[lang];
+const prevService = localizeService(services[(position - 1 + services.length) % services.length]);
+const nextService = localizeService(services[(position + 1) % services.length]);
+const arrowLabel = lang === 'pt-BR' ? ['Experiência anterior', 'Próxima experiência'] : lang === 'es' ? ['Experiencia anterior', 'Siguiente experiencia'] : ['Previous experience', 'Next experience'];
 const serviceHref = item => item.id === 'trip-builder' ? 'trip-builder.html' : `service-detail.html?service=${item.id}`;
-const heroArrows = `<nav class="detail-hero-arrows" aria-label="${lang === 'en' ? 'Browse experiences' : 'Recorrer experiencias'}"><a class="detail-arrow detail-arrow-prev" href="${serviceHref(prevService)}" rel="prev" aria-label="${arrowLabel[0]}: ${esc(prevService.title)}" title="${esc(prevService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M19 3 4 20l15 17"/></svg></a><a class="detail-arrow detail-arrow-next" href="${serviceHref(nextService)}" rel="next" aria-label="${arrowLabel[1]}: ${esc(nextService.title)}" title="${esc(nextService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M5 3l15 17L5 37"/></svg></a></nav>`;
+const heroArrows = `<nav class="detail-hero-arrows" aria-label="${lang === 'en' ? 'Browse experiences' : lang === 'pt-BR' ? 'Explorar experiências' : 'Recorrer experiencias'}"><a class="detail-arrow detail-arrow-prev" href="${serviceHref(prevService)}" rel="prev" aria-label="${arrowLabel[0]}: ${esc(prevService.title)}" title="${esc(prevService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M19 3 4 20l15 17"/></svg></a><a class="detail-arrow detail-arrow-next" href="${serviceHref(nextService)}" rel="next" aria-label="${arrowLabel[1]}: ${esc(nextService.title)}" title="${esc(nextService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M5 3l15 17L5 37"/></svg></a></nav>`;
 const nameField = service.id === 'clases-de-surf'
 ? `<label class="detail-question detail-field" data-survey-question for="request-name"><span>${ui.nameLabel}</span><input id="request-name" name="request-name" type="text" placeholder="${ui.namePlaceholder}" required /></label>`
 : `<label class="detail-question detail-field" data-survey-question for="request-name"><span>${ui.nameLabel} <span class="detail-optional">${ui.optional}</span></span><input id="request-name" name="request-name" type="text" placeholder="${ui.namePlaceholder}" /></label>`;
@@ -1200,7 +1246,7 @@ const story = service.id === 'alojamiento-experiencias'
 const surfSurveyModal = '' /* El formulario de clases queda visible debajo del contenido. */;
 const surfFormBar = '';
 /* const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : ''; */
- document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.description)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="serviceRequestTitle">${surfFormBar}<div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : 'SOLICITUD'}</p><h2 id="serviceRequestTitle">${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+ document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${services.length}</p><h1>${esc(service.title)}</h1><p class="detail-hero-intro">${esc(service.description)}</p></div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : lang === 'pt-BR' ? 'Consultar disponibilidade' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="serviceRequestTitle">${surfFormBar}<div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : lang === 'pt-BR' ? 'SOLICITAÇÃO' : 'SOLICITUD'}</p><h2 id="serviceRequestTitle">${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : lang === 'pt-BR' ? 'Seu progresso' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(lang === 'pt-BR' ? ui.submit : service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
 	const requestForm = document.getElementById('serviceRequestForm');
 	window.dispatchEvent(new Event('wavepoint:service-rendered'));
 	setupSurveyInteractions(requestForm);
@@ -1235,7 +1281,7 @@ if (service.id === 'surf-programa-3-dias') {
   const toDayNumber = value => { const [year, month, day] = value.split('-').map(Number); return Date.UTC(year, month - 1, day) / 86400000; };
   const consecutive = programDates.every((date, index) => index === 0 || toDayNumber(date) - toDayNumber(programDates[index - 1]) === 1);
   if (new Set(programDates).size !== programDates.length || !consecutive) {
-    error.textContent = lang === 'en' ? 'Choose three consecutive dates in the order of the lessons.' : 'Elegí tres fechas consecutivas y en el orden de las clases.';
+    error.textContent = lang === 'en' ? 'Choose three consecutive dates in the order of the lessons.' : lang === 'pt-BR' ? 'Escolha três datas consecutivas na ordem das aulas.' : 'Elegí tres fechas consecutivas y en el orden de las clases.';
     return;
   }
 }
@@ -1440,7 +1486,7 @@ error.insertAdjacentElement('afterend', confirmation);
 }
 render(localizeService(getService()));
 window.addEventListener('wavepoint:languagechange', event => {
-lang = event.detail.lang === 'en' ? 'en' : 'es';
+lang = event.detail.lang === 'en' || event.detail.lang === 'pt-BR' ? event.detail.lang : 'es';
 render(localizeService(getService()));
 });
 })();

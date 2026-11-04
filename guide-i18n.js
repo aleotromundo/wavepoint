@@ -1,4 +1,5 @@
 (() => {
+  const portuguese = window.WAVEPOINT_PT_BR?.guide;
   const translations = {
     paragraphs: [
       'COMPLETE LOCAL GUIDE',
@@ -230,7 +231,8 @@
   };
 
   const setImageAlts = lang => groups.images.forEach((image, index) => {
-    image.setAttribute('alt', lang === 'en' ? translations.imageAlts[index] : image.dataset.originalAlt);
+    const alt = lang === 'en' ? translations.imageAlts[index] : lang === 'pt-BR' ? portuguese.imageAlts[index] : image.dataset.originalAlt;
+    image.setAttribute('alt', alt);
   });
   groups.images.forEach(image => { image.dataset.originalAlt = image.getAttribute('alt') || ''; });
 
@@ -251,6 +253,20 @@
       return;
     }
 
+    if (lang === 'pt-BR') {
+      if (!portuguese) throw new Error('Brazilian Portuguese guide translations are unavailable.');
+      groups.paragraphs.forEach((node, index) => translateParagraph(node, portuguese.paragraphs[index]));
+      ['h2', 'h3', 'h4', 'glossaryTitles', 'glossaryDescriptions', 'locationLinks', 'calloutLinks']
+        .forEach(name => groups[name].forEach((node, index) => { node.textContent = portuguese[name][index]; }));
+      groups.listItems.forEach((node, index) => translateListItem(node, portuguese.listItems[index]));
+      setImageAlts('pt-BR');
+      document.title = 'Guia local de Guanacaste · WavePoint';
+      if (description) description.content = 'Praias, cachoeiras, trilhas e lugares para fazer snorkel em Guanacaste com a WavePoint.';
+      if (glossary) glossary.setAttribute('aria-label', 'Categorias do guia');
+      if (whatsapp) whatsapp.setAttribute('aria-label', 'Fale com a WavePoint pelo WhatsApp');
+      return;
+    }
+
     groups.paragraphs.forEach((node, index) => translateParagraph(node, translations.paragraphs[index]));
     ['h2', 'h3', 'h4', 'glossaryTitles', 'glossaryDescriptions', 'locationLinks', 'calloutLinks']
       .forEach(name => groups[name].forEach((node, index) => { node.textContent = translations[name][index]; }));
@@ -262,8 +278,10 @@
     if (whatsapp) whatsapp.setAttribute('aria-label', 'Contact WavePoint on WhatsApp');
   };
 
-  apply(document.documentElement.lang === 'es' ? 'es' : 'en');
+  const initialLang = document.documentElement.lang;
+  apply(initialLang === 'es' ? 'es' : initialLang === 'pt-BR' ? 'pt-BR' : 'en');
   window.addEventListener('wavepoint:languagechange', event => {
-    apply(event.detail && event.detail.lang === 'es' ? 'es' : 'en');
+    const lang = event.detail && event.detail.lang;
+    apply(lang === 'es' ? 'es' : lang === 'pt-BR' ? 'pt-BR' : 'en');
   });
 })();

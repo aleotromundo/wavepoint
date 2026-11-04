@@ -184,9 +184,29 @@
     }
   };
   let lang = (() => {
-    try { return localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en'; }
+    try { const saved = localStorage.getItem('wavepoint-lang'); return saved === 'es' || saved === 'pt-BR' ? saved : 'en'; }
     catch (error) { return 'en'; }
   })();
+  const portugueseTrip = window.WAVEPOINT_PT_BR?.trip;
+  if (portugueseTrip) {
+    COPY['pt-BR'] = portugueseTrip;
+    experiences.forEach(experience => {
+      const localized = portugueseTrip.experiences?.[experience.id];
+      if (!localized) return;
+      experience.title['pt-BR'] = localized.title;
+      experience.description['pt-BR'] = localized.description;
+      experience.imageAlt['pt-BR'] = localized.imageAlt;
+      if (experience.beachImageAlt) experience.beachImageAlt['pt-BR'] = 'Fotógrafo registrando uma sessão de surfe da praia';
+    });
+    accommodationOptions.forEach(option => {
+      const localized = portugueseTrip.accommodations?.[option.id];
+      if (!localized) return;
+      Object.assign(option.name, { 'pt-BR': localized.name });
+      Object.assign(option.category, { 'pt-BR': localized.category });
+      Object.assign(option.summary, { 'pt-BR': localized.summary });
+      Object.assign(option.priceUnit, { 'pt-BR': localized.priceUnit });
+    });
+  }
   const selected = new Map();
   const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'stays' ? { accommodation: '', recommendation: { guests: '1', budget: '', id: '' } } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
   let accommodationModalMode = 'options';
@@ -211,12 +231,12 @@
   const experienceHref = experience => experience.id === 'stays'
     ? 'service-detail.html?service=alojamiento-experiencias'
     : `service-detail.html?service=${experience.id === 'surf-lessons' ? 'clases-de-surf' : experience.id === 'surf-photography' ? 'surf-fotografia' : experience.id === 'witch-rock' ? 'roca-bruja' : experience.id}`;
-  const money = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'es-CR', {
+  const money = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang === 'pt-BR' ? 'pt-BR' : 'es-CR', {
     style: 'currency',
     currency: 'USD',
     maximumFractionDigits: 0
   }).format(amount);
-  const moneyApprox = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : 'es-CR', {
+  const moneyApprox = amount => new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang === 'pt-BR' ? 'pt-BR' : 'es-CR', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,
@@ -228,7 +248,7 @@
     return minText === maxText ? minText : `${minText}–${maxText}`;
   };
   const formatDate = date => date
-    ? new Date(`${date}T12:00:00`).toLocaleDateString(lang === 'en' ? 'en-US' : 'es-CR', { year: 'numeric', month: 'short', day: 'numeric' })
+    ? new Date(`${date}T12:00:00`).toLocaleDateString(lang === 'en' ? 'en-US' : lang === 'pt-BR' ? 'pt-BR' : 'es-CR', { year: 'numeric', month: 'short', day: 'numeric' })
     : '';
   const formatDateShort = date => {
     if (!date) return '';
@@ -294,7 +314,7 @@
     const beachPhoto = experience.id === 'surf-photography' && draft.photoMode === 'beach';
     const image = beachPhoto ? experience.beachImage : experience.image;
     const imageAlt = beachPhoto ? experience.beachImageAlt?.[lang] : experience.imageAlt?.[lang];
-    const guestsField = `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : 'Add one guest')}">+</button></span></label>`;
+    const guestsField = `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : lang === 'pt-BR' ? 'Remover uma pessoa' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : lang === 'pt-BR' ? 'Adicionar uma pessoa' : 'Add one guest')}">+</button></span></label>`;
     const estimateLabel = experience.id === 'stays' ? copy.accommodationEstimate : experience.id === 'atv' ? copy.atvEstimate : copy.estimate;
     const estimateValue = accommodationRate
       ? formatMoneyRange(accommodationRate.min, accommodationRate.max, moneyApprox)
@@ -415,7 +435,9 @@
     document.title = `${copy.title} · WavePoint`;
     const tripDescription = lang === 'en'
       ? 'Choose surf, travel and accommodation experiences for your Tamarindo trip with WavePoint.'
-      : 'Elegí experiencias de surf, viaje y alojamiento para armar tu viaje por Tamarindo con WavePoint.';
+      : lang === 'pt-BR'
+        ? 'Escolha experiências de surfe, passeios e hospedagem para planejar sua viagem a Tamarindo com a WavePoint.'
+        : 'Elegí experiencias de surf, viaje y alojamiento para armar tu viaje por Tamarindo con WavePoint.';
     const tripCanonical = document.querySelector('link[rel=canonical]');
     if (tripCanonical) tripCanonical.href = `${location.origin}/trip-builder`;
     const tripDescriptionMeta = document.querySelector('meta[name=description]');
@@ -440,7 +462,7 @@
     setTripMeta('og:image:width', '1200');
     setTripMeta('og:image:height', '630');
     setTripMeta('og:image:alt', 'WavePoint logo on a solid white background');
-    setTripMeta('og:locale', lang === 'en' ? 'en_US' : 'es_CR');
+    setTripMeta('og:locale', lang === 'en' ? 'en_US' : lang === 'pt-BR' ? 'pt_BR' : 'es_CR');
     setTripTwitterMeta('twitter:title', document.title);
     setTripTwitterMeta('twitter:description', tripDescription);
     setTripTwitterMeta('twitter:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg?v=20261022-2`);
@@ -451,9 +473,9 @@
           <source src="assets/videohero0.mp4?v=20261009-giro0" type="video/mp4" />
         </video>
       </div>
-      <nav class="detail-hero-arrows trip-builder-hero-arrows" aria-label="${lang === 'es' ? 'Navegar entre experiencias' : 'Browse experiences'}">
-        <a class="detail-arrow detail-arrow-prev" href="service-detail.html?service=surfskate" rel="prev" aria-label="${copy.previousService}: ${lang === 'es' ? 'Clases de surfskate' : 'Surfskate Lessons'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="M20 2 3 20l17 18" /></svg></a>
-        <a class="detail-arrow detail-arrow-next" href="service-detail.html?service=retiros" rel="next" aria-label="${copy.nextService}: ${lang === 'es' ? 'Retiros' : 'Retreats'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="m4 2 17 18L4 38" /></svg></a>
+      <nav class="detail-hero-arrows trip-builder-hero-arrows" aria-label="${lang === 'es' ? 'Navegar entre experiencias' : lang === 'pt-BR' ? 'Explorar experiências' : 'Browse experiences'}">
+        <a class="detail-arrow detail-arrow-prev" href="service-detail.html?service=surfskate" rel="prev" aria-label="${copy.previousService}: ${lang === 'es' ? 'Clases de surfskate' : lang === 'pt-BR' ? 'Aulas de surfskate' : 'Surfskate Lessons'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="M20 2 3 20l17 18" /></svg></a>
+        <a class="detail-arrow detail-arrow-next" href="service-detail.html?service=retiros" rel="next" aria-label="${copy.nextService}: ${lang === 'es' ? 'Retiros' : lang === 'pt-BR' ? 'Retiros' : 'Retreats'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="m4 2 17 18L4 38" /></svg></a>
       </nav>
       <div class="container trip-builder-hero-content"><a class="collab-floating-brand trip-builder-floating-brand" href="index.html" aria-label="WavePoint — volver al inicio"><img src="assets/wavepoint-hero-mark.png" alt="WavePoint" decoding="async"></a><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
     </section>
@@ -747,7 +769,7 @@
   syncHeroVideoMotion();
   heroMotion.addEventListener('change', syncHeroVideoMotion);
   window.addEventListener('wavepoint:languagechange', event => {
-    lang = event.detail.lang === 'en' ? 'en' : 'es';
+    lang = event.detail.lang === 'en' || event.detail.lang === 'pt-BR' ? event.detail.lang : 'es';
     render();
     syncHeroVideoMotion();
   });

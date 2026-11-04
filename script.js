@@ -18,8 +18,12 @@
   }
   function getCRDate(){ return new Date(new Date().toLocaleString('en-US',{timeZone:CR_TZ})); }
   function isCameraLiveNow(){ const d=getCRDate(); const m=d.getHours()*60+d.getMinutes(); return m>=CAM_START.hour*60+CAM_START.minute && m<=CAM_END.hour*60+CAM_END.minute; }
-  function formatTimeCR(date=new Date()){ const locale = languageState.current === 'en' ? 'en-US' : 'es-CR'; return new Intl.DateTimeFormat(locale,{hour:'2-digit',minute:'2-digit',timeZone:CR_TZ}).format(date); }
-  function weatherText(code,isDay){ const day=Number(isDay)===1; const spanishMap={0:day?['☀️','Soleado']:['🌙','Noche despejada'],1:day?['🌤️','Mayormente despejado']:['🌙','Noche mayormente despejada'],2:day?['⛅','Parcialmente nublado']:['☁️','Nublado de noche'],3:['☁️','Nublado'],45:['🌫️','Neblina'],48:['🌫️','Neblina'],51:day?['🌦️','Llovizna ligera']:['🌧️','Llovizna nocturna'],53:day?['🌦️','Llovizna']:['🌧️','Llovizna nocturna'],55:day?['🌧️','Llovizna fuerte']:['🌧️','Llovizna fuerte nocturna'],61:day?['🌦️','Lluvia ligera']:['🌧️','Lluvia nocturna'],63:day?['🌧️','Lluvia']:['🌧️','Lluvia nocturna'],65:day?['🌧️','Lluvia fuerte']:['🌧️','Lluvia fuerte nocturna'],80:day?['🌦️','Chubascos']:['🌧️','Chubascos nocturnos'],81:day?['🌧️','Chubascos']:['🌧️','Chubascos nocturnos'],82:['⛈️','Chubascos fuertes'],95:['⛈️','Tormenta'],96:['⛈️','Tormenta con granizo'],99:['⛈️','Tormenta fuerte']}; const englishMap={0:day?['☀️','Sunny']:['🌙','Clear night'],1:day?['🌤️','Mostly sunny']:['🌙','Mostly clear night'],2:day?['⛅','Partly cloudy']:['☁️','Cloudy night'],3:['☁️','Cloudy'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:day?['🌦️','Light drizzle']:['🌧️','Night drizzle'],53:day?['🌦️','Drizzle']:['🌧️','Night drizzle'],55:day?['🌧️','Heavy drizzle']:['🌧️','Heavy night drizzle'],61:day?['🌦️','Light rain']:['🌧️','Night rain'],63:day?['🌧️','Rain']:['🌧️','Night rain'],65:day?['🌧️','Heavy rain']:['🌧️','Heavy night rain'],80:day?['🌦️','Showers']:['🌧️','Night showers'],81:day?['🌧️','Showers']:['🌧️','Night showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Severe storm']}; const map = languageState.current === 'en' ? englishMap : spanishMap; return map[code] || (day?['🌤️','Variable conditions']:['🌙','Night conditions']); }
+  function formatTimeCR(date=new Date()){ const locale = languageState.current === 'en' ? 'en-US' : languageState.current === 'pt-BR' ? 'pt-BR' : 'es-CR'; return new Intl.DateTimeFormat(locale,{hour:'2-digit',minute:'2-digit',timeZone:CR_TZ}).format(date); }
+  function weatherText(code,isDay){ const day=Number(isDay)===1; const spanishMap={0:day?['☀️','Soleado']:['🌙','Noche despejada'],1:day?['🌤️','Mayormente despejado']:['🌙','Noche mayormente despejada'],2:day?['⛅','Parcialmente nublado']:['☁️','Nublado de noche'],3:['☁️','Nublado'],45:['🌫️','Neblina'],48:['🌫️','Neblina'],51:day?['🌦️','Llovizna ligera']:['🌧️','Llovizna nocturna'],53:day?['🌦️','Llovizna']:['🌧️','Llovizna nocturna'],55:day?['🌧️','Llovizna fuerte']:['🌧️','Llovizna fuerte nocturna'],61:day?['🌦️','Lluvia ligera']:['🌧️','Lluvia nocturna'],63:day?['🌧️','Lluvia']:['🌧️','Lluvia nocturna'],65:day?['🌧️','Lluvia fuerte']:['🌧️','Lluvia fuerte nocturna'],80:day?['🌦️','Chubascos']:['🌧️','Chubascos nocturnos'],81:day?['🌧️','Chubascos']:['🌧️','Chubascos nocturnos'],82:['⛈️','Chubascos fuertes'],95:['⛈️','Tormenta'],96:['⛈️','Tormenta con granizo'],99:['⛈️','Tormenta fuerte']}; const englishMap={0:day?['☀️','Sunny']:['🌙','Clear night'],1:day?['🌤️','Mostly sunny']:['🌙','Mostly clear night'],2:day?['⛅','Partly cloudy']:['☁️','Cloudy night'],3:['☁️','Cloudy'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:day?['🌦️','Light drizzle']:['🌧️','Night drizzle'],53:day?['🌦️','Drizzle']:['🌧️','Night drizzle'],55:day?['🌧️','Heavy drizzle']:['🌧️','Heavy night drizzle'],61:day?['🌦️','Light rain']:['🌧️','Night rain'],63:day?['🌧️','Rain']:['🌧️','Night rain'],65:day?['🌧️','Heavy rain']:['🌧️','Heavy night rain'],80:day?['🌦️','Showers']:['🌧️','Night showers'],81:day?['🌧️','Showers']:['🌧️','Night showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm with hail'],99:['⛈️','Severe storm']};   if (languageState.current === 'pt-BR') {
+    const condition = window.WAVEPOINT_PT_BR?.weather?.[code];
+    return condition ? ['🌤️', condition[day ? 0 : 1]] : (day ? ['🌤️', 'Condições variáveis'] : ['🌙', 'Condições noturnas']);
+  }
+  const map = languageState.current === 'en' ? englishMap : spanishMap; return map[code] || (day?['🌤️','Variable conditions']:['🌙','Night conditions']); }
   function weatherMotion(code,isDay){ const value=Number(code); if(Number(isDay)!==1) return 'night'; if([95,96,99].includes(value)) return 'storm'; if([51,53,55,61,63,65,80,81,82].includes(value)) return 'rain'; if([45,48].includes(value)) return 'mist'; if([1,2,3].includes(value)) return 'clouds'; return 'sun'; }
   function weatherIconName(code,isDay){
     const value=Number(code), day=Number(isDay)===1, time=day?'day':'night';
@@ -205,7 +209,7 @@
       serviceListWitchRockEyebrow: '04 / VIAJE DE SURF · AVENTURA',
       serviceListCta: 'Ver experiencia y armar solicitud ↗',
       serviceCardSnorkelTitle: 'Embarcaciones',
-      serviceCardSnorkelAlt: 'Persona haciendo snorkel junto a una tortuga marina sobre un arrecife',
+      serviceCardSnorkelAlt: 'Grupo de personas a bordo de una embarcación frente a la costa',
       serviceCardSnorkelText: 'Descubrí la costa de Guanacaste desde el mar.',
       serviceCardYogaTitle: 'Yoga',
       serviceCardYogaAlt: 'Mujer practicando una postura de yoga frente al mar',
@@ -496,8 +500,8 @@
       serviceCardWitchRockText: 'A day of surf by boat with local guides who know the area.',
       serviceListWitchRockEyebrow: '04 / SURF TRIP · ADVENTURE',
       serviceListCta: 'View experience and build request ↗',
-      serviceCardSnorkelTitle: 'Boat experiences',
-      serviceCardSnorkelAlt: 'Snorkeler swimming near a sea turtle above a coral reef',
+      serviceCardSnorkelTitle: 'Navigation',
+      serviceCardSnorkelAlt: 'Group of people aboard a boat off the coast',
       serviceCardSnorkelText: 'Discover Guanacaste’s coast from the sea.',
       serviceCardYogaTitle: 'Yoga',
       serviceCardYogaAlt: 'Woman practicing a yoga pose beside the sea',
@@ -707,13 +711,21 @@
     }
   };
 
-  const languageState = { current: localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en' };
+  const languageState = { current: ['es', 'pt-BR'].includes(localStorage.getItem('wavepoint-lang')) ? localStorage.getItem('wavepoint-lang') : 'en' };
+  translations['pt-BR'] = window.WAVEPOINT_PT_BR?.home || translations.en;
 
   function applyLocalizedMetadata(lang) {
+    const canonicalHref = document.querySelector('link[rel="canonical"]')?.href;
+    if (!canonicalHref || new URL(canonicalHref).pathname !== '/') return;
+
     const metadata = lang === 'es' ? {
       title: 'WavePoint Tamarindo | Surf, playas y experiencias en Costa Rica',
       description: 'Descubrí surf, playas, cámaras en vivo, alojamientos y experiencias locales en Tamarindo, Costa Rica.',
       locale: 'es_CR'
+    } : lang === 'pt-BR' ? {
+      title: 'WavePoint Tamarindo | Surfe, praias e experiências na Costa Rica',
+      description: 'Descubra surfe, praias, câmeras ao vivo, hospedagens e experiências locais em Tamarindo, Costa Rica.',
+      locale: 'pt_BR'
     } : {
       title: 'WavePoint Tamarindo | Surf, beaches and experiences in Costa Rica',
       description: 'Discover surf, beaches, live cameras, stays and local experiences in Tamarindo, Costa Rica.',
@@ -729,30 +741,23 @@
   }
 
   function applyTranslations(lang = languageState.current) {
-    const dict = translations[lang] || translations.en;
+    const dict = lang === 'pt-BR' ? (window.WAVEPOINT_PT_BR?.home || translations.en) : translations[lang] || translations.en;
     languageState.current = lang;
     document.documentElement.lang = lang;
     applyLocalizedMetadata(lang);
     document.querySelectorAll('[data-i18n]').forEach(node => {
-      const value = dict[node.dataset.i18n];
+      const value = dict[node.dataset.i18n] || translations.en[node.dataset.i18n];
       if (value) node.textContent = value;
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(node => {
-      const value = dict[node.dataset.i18nPlaceholder];
+      const value = dict[node.dataset.i18nPlaceholder] || translations.en[node.dataset.i18nPlaceholder];
       if (value) node.setAttribute('placeholder', value);
     });
     document.querySelectorAll('[data-i18n-alt]').forEach(node => {
-      const value = dict[node.dataset.i18nAlt];
+      const value = dict[node.dataset.i18nAlt] || translations.en[node.dataset.i18nAlt];
       if (value) node.setAttribute('alt', value);
     });
 
-    const langToggle = document.querySelector('[data-lang-toggle]');
-    if (langToggle) {
-      const isSpanish = lang === 'es';
-      langToggle.dataset.language = lang;
-      langToggle.setAttribute('aria-label', isSpanish ? 'Cambiar a inglés' : 'Switch to Spanish');
-      langToggle.setAttribute('aria-pressed', String(!isSpanish));
-    }
     document.getElementById('assistantLauncher')?.setAttribute('aria-label', dict.assistantLauncherLabel);
 
     if (document.getElementById('weatherState')) {
@@ -813,10 +818,10 @@
     const temp = document.getElementById('temp')?.textContent || '--';
     const wind = document.getElementById('wind')?.textContent || '--';
     const wave = document.getElementById('waveHeight')?.textContent || '--';
-    const weather = document.getElementById('weatherState')?.textContent || (languageState.current === 'en' ? 'Current conditions' : 'Condiciones actuales');
+    const weather = document.getElementById('weatherState')?.textContent || (languageState.current === 'en' ? 'Current conditions' : languageState.current === 'pt-BR' ? 'Condições atuais' : 'Condiciones actuales');
     const time = document.getElementById('localTime')?.textContent || '--:--';
     const isEnglish = languageState.current === 'en';
-    const labels = isEnglish ? {
+    const labels = isEnglish && languageState.current !== 'pt-BR' ? {
       prelim: 'Preliminary surf sheet',
       climate: 'Weather',
       wind: 'Wind',
@@ -829,6 +834,20 @@
       bottom: 'Bottom',
       risk: 'Risks',
       localNotes: 'Local notes',
+      country: 'Costa Rica'
+    } : languageState.current === 'pt-BR' ? {
+      prelim: 'Resumo preliminar do surfe',
+      climate: 'Clima',
+      wind: 'Vento',
+      swell: 'Ondulação',
+      current: 'atual',
+      localTime: 'Horário local',
+      quickRead: 'Resumo rápido',
+      level: 'Nível recomendado',
+      tide: 'Melhor maré',
+      bottom: 'Fundo',
+      risk: 'Riscos',
+      localNotes: 'Observações locais',
       country: 'Costa Rica'
     } : {
       prelim: 'Ficha surf preliminar',
@@ -890,7 +909,7 @@
         const card=btn.closest('.camera-card');
         const key=btn.dataset.camera || card?.dataset?.camera || 'capitan';
         const spot=SPOTS[key] || SPOTS.capitan;
-        title.textContent = (languageState.current === 'en' ? 'Spot info · ' : 'Info del spot · ') + spot.title;
+        title.textContent = (languageState.current === 'en' ? 'Spot info · ' : languageState.current === 'pt-BR' ? 'Informações do pico · ' : 'Info del spot · ') + spot.title;
         body.innerHTML=buildSpotHtml(key);
         modal.classList.add('show');
         document.body.style.overflow='hidden';
@@ -921,14 +940,14 @@
         frame.style.display='block';
         frame.src=card.dataset.src;
         if (modalWatermark) modalWatermark.style.display='block';
-        note.textContent = (languageState.current === 'en' ? 'You are watching: ' : 'Estás viendo: ') + cameraName + (languageState.current === 'en' ? ' · Click outside the frame to close.' : ' · Haz clic fuera del recuadro para cerrar.');
+        note.textContent = (languageState.current === 'en' ? 'You are watching: ' : languageState.current === 'pt-BR' ? 'Você está assistindo: ' : 'Estás viendo: ') + cameraName + (languageState.current === 'en' ? ' · Click outside the frame to close.' : languageState.current === 'pt-BR' ? ' · Clique fora da imagem para fechar.' : ' · Haz clic fuera del recuadro para cerrar.');
       } else {
         frame.src='';
         frame.style.display='none';
         if (modalWatermark) modalWatermark.style.display='none';
-        offlineTitle.textContent = cameraName + (languageState.current === 'en' ? ' on standby' : ' en descanso');
+        offlineTitle.textContent = cameraName + (languageState.current === 'en' ? ' on standby' : languageState.current === 'pt-BR' ? ' em pausa' : ' en descanso');
         offline.classList.add('show');
-        note.textContent = languageState.current === 'en' ? 'Camera outside broadcast hours · Transmission approx. 4:45 a.m. to 6:30 p.m.' : 'Cámara fuera de horario · Transmisión aprox. de 4:45 a.m. a 6:30 p.m.';
+        note.textContent = languageState.current === 'en' ? 'Camera outside broadcast hours · Transmission approx. 4:45 a.m. to 6:30 p.m.' : languageState.current === 'pt-BR' ? 'Câmera fora do horário de transmissão · Transmissão aprox. das 4h45 às 18h30.' : 'Cámara fuera de horario · Transmisión aprox. de 4:45 a.m. a 6:30 p.m.';
       }
       modal.classList.add('show');
       document.body.style.overflow='hidden';
@@ -1571,8 +1590,8 @@
       image.src = source.currentSrc || source.src;
       image.alt = source.alt || '';
       caption.textContent = source.alt || '';
-      close.setAttribute('aria-label', languageState.current === 'en' ? 'Close image' : 'Cerrar imagen');
-      modal.setAttribute('aria-label', languageState.current === 'en' ? 'Enlarged image' : 'Imagen ampliada');
+      close.setAttribute('aria-label', languageState.current === 'en' ? 'Close image' : languageState.current === 'pt-BR' ? 'Fechar imagem' : 'Cerrar imagen');
+      modal.setAttribute('aria-label', languageState.current === 'en' ? 'Enlarged image' : languageState.current === 'pt-BR' ? 'Imagem ampliada' : 'Imagen ampliada');
       modal.hidden = false;
       document.body.style.overflow = 'hidden';
       close.focus();
@@ -1582,7 +1601,7 @@
       source.tabIndex = 0;
       source.classList.add('image-zoomable');
       source.setAttribute('role', 'button');
-      source.setAttribute('aria-label', `${languageState.current === 'en' ? 'View enlarged image: ' : 'Ver imagen ampliada: '}${source.alt || ''}`);
+      source.setAttribute('aria-label', `${languageState.current === 'en' ? 'View enlarged image: ' : languageState.current === 'pt-BR' ? 'Ver imagem ampliada: ' : 'Ver imagen ampliada: '}${source.alt || ''}`);
       source.addEventListener('click', ()=>openModal(source));
       source.addEventListener('keydown', event=>{
         if(event.key === 'Enter' || event.key === ' '){
