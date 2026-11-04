@@ -1,4 +1,8 @@
 # 2026-11-04
+### Embarcaciones — ajustar el encuadre de la tarjeta
+- `styles.css` y `styles.optimized.css`: la foto del grupo usa un `object-position` vertical más bajo únicamente en la tarjeta de Embarcaciones, reduciendo cielo y mostrando más la parte inferior del grupo sin cambiar el tamaño del marco.
+- Validación: `git diff --check` y revisión de que el selector quede limitado a `.service-card-snorkel`.
+
 ### Embarcaciones — dejar la foto del grupo solo en tarjeta y portada
 - `index.html`: la tarjeta de Embarcaciones en Servicios ahora usa la foto del grupo en lugar de la tortuga.
 - `services.js`: la foto del grupo queda como imagen de portada de la ficha; la galería interna conserva únicamente las fotos de snorkel y no repite la foto principal.

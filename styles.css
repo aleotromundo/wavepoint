@@ -3659,8 +3659,11 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
 }
 #servicios .service-grid-catalog .service-img img {
-  opacity: .88;
-  filter: saturate(1.05);
+	opacity: .88;
+	filter: saturate(1.05);
+}
+#servicios .service-card-snorkel .service-img img {
+	object-position: center 68%;
 }
 #servicios .service-grid-catalog .service-card:hover .service-img img,
 #servicios .service-grid-catalog .service-image-link:focus-visible .service-img img {
