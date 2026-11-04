@@ -3290,6 +3290,11 @@ to{filter:brightness(1.18)}
 #servicios .service-grid-catalog .service-card-snorkel .service-img img {
   object-position: center 95% !important;
 }
+@media (max-width: 760px) {
+  #servicios .service-grid-catalog .service-card-snorkel .service-img img {
+    object-position: center 75% !important;
+  }
+}
 .service-card:hover .service-img img,
 .service-card:hover .service-pack-image > img {
   transform: scale(1.08) !important;
@@ -3919,6 +3924,7 @@ to{filter:brightness(1.18)}
 .lang-switcher.is-scrolled:not(.is-expanded) .lang-toggle:not([data-selected=true]){width:0;height:0;flex-basis:0;margin-inline:0;padding:0;border-width:0;opacity:0;transform:scale(.25);visibility:hidden;pointer-events:none;transition:opacity .22s ease,transform .32s cubic-bezier(.2,.8,.2,1),width .32s ease,height .32s ease,flex-basis .32s ease,margin .32s ease,padding .32s ease,border-width .32s ease,visibility 0s linear .32s}
 .lang-switcher.is-scrolled.is-expanded .lang-toggle:not([data-selected=true]){width:26px;height:26px;flex-basis:26px;margin-inline:-7px;opacity:.9;transform:scale(.92);visibility:visible;transition:opacity .22s ease,transform .32s cubic-bezier(.2,.8,.2,1),width .32s ease,height .32s ease,flex-basis .32s ease,margin .32s ease,visibility 0s}
 @media(max-width:560px){.lang-switcher.is-scrolled{left:8px;top:8px;width:34px;min-width:34px;height:34px}.lang-switcher.is-scrolled .lang-toggle[data-selected=true]{width:30px;height:30px;flex-basis:30px}.lang-switcher.is-scrolled.is-expanded{width:72px;min-width:72px;height:42px}.lang-switcher.is-scrolled.is-expanded .lang-toggle[data-selected=true]{width:32px;height:32px;flex-basis:32px}}
+@media(max-width:560px){.lang-toggle{width:22px;height:22px;flex-basis:22px}.lang-toggle[data-selected=true]{width:30px;height:30px;flex-basis:30px}}
 
 /* ATV · editorial story, routes and reference rates */
 .atv-story{display:grid;gap:clamp(20px,3vw,30px);margin-top:clamp(30px,5vw,54px)}
