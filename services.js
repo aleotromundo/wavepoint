@@ -375,31 +375,35 @@ imageAlts: ['Woman meditating on the beach by the ocean', 'Group meditating in a
 },
 {
 id: 'snorkel-catamaran', number: '05', eyebrow: 'MAR · NAVEGACIÓN', title: 'Snorkel y catamarán',
-cardText: 'Elegí entre explorar bajo el agua, navegar la costa o combinar las dos experiencias.',
-description: 'Una salida al mar puede ser tranquila, exploradora o un poco de ambas. Te ayudamos a comparar tour de snorkel, paseo en catamarán y opciones combinadas según disponibilidad. Para cuidar la experiencia de todo el grupo, consultamos cantidad de personas, comodidad nadando y cualquier necesidad alimentaria antes de acercarte una opción compartida o privada.',
+cardText: 'Descubrí la costa de Guanacaste desde el mar.',
+description: 'Playas escondidas, snorkel, pesca y atardeceres sobre el Pacífico. Elegí cómo querés disfrutar la costa y encontrá una salida que se adapte a tu grupo. Desde una escapada de cuatro horas hasta un día completo de exploración, WAVEPOINT te ayuda a coordinar la experiencia y conocer todos los detalles antes de reservar.',
 images: ['assets/img/services/snorkel-catamaran/snorkel-turtle.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-group.webp', 'assets/img/services/snorkel-catamaran/snorkel-catalina-shore.webp', 'assets/img/services/snorkel-catamaran/snorkel-fish.webp'],
 imageAlts: ['Personas haciendo snorkel junto a una tortuga marina sobre un arrecife', 'Grupo haciendo snorkel frente a una isla de la costa de Costa Rica', 'Grupo haciendo snorkel cerca de una costa tropical', 'Personas haciendo snorkel junto a peces de colores bajo el agua'],
 imageAltsEn: ['People snorkeling near a sea turtle above a reef', 'Group snorkeling beside an island off the coast of Costa Rica', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater'],
 questions: [
-{ id: 'sea_experience', label: '¿Qué experiencia te interesa?', type: 'choice', options: ['Tour de snorkel', 'Paseo en catamarán', 'Catamarán con snorkel, si está disponible'] },
-{ id: 'departure_type', label: '¿Prefieres una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
-{ id: 'snorkel_people', label: '¿Cuántas personas quieren hacer snorkel?', type: 'number', optional: true },
-{ id: 'swimming_comfort', label: '¿Todas se sienten cómodas nadando en el mar?', type: 'choice', options: ['Sí', 'No', 'Quisiera consultar antes'], optional: true },
+{ id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
+{ id: 'sea_experience', label: '¿Qué salida les interesa?', type: 'choice', options: ['Día completo en la península de Papagayo', 'Snorkel por la costa de Guanacaste', 'Pesca en mar abierto', 'Pesca desde Bahía Potrero', 'Snorkel desde Bahía Potrero', 'Atardecer desde Bahía Potrero', 'Todavía no lo sé'] },
+{ id: 'group_size', label: '¿Cuántas personas participan?', type: 'headcount', fields: [{ id: 'adults', label: 'Adultos' }, { id: 'children', label: 'Niños' }], note: 'Si viajan niños, indicá sus edades para consultar los requisitos.', agesLabel: 'Edades de los niños', agesPlaceholder: 'Ej.: 6 y 10' },
+{ id: 'departure_type', label: '¿Prefieren una salida compartida o privada?', type: 'choice', options: ['Compartida', 'Privada', 'Quiero comparar ambas'] },
+{ id: 'swimming_comfort', label: '¿Todas las personas se sienten cómodas nadando en el mar?', type: 'choice', options: ['Sí', 'No', 'Quisiera consultar antes'], optional: true },
+{ id: 'lodging', label: '¿Dónde se hospedan?', type: 'text', placeholder: 'Alojamiento o zona', optional: true },
 { id: 'dietary_needs', label: '¿Hay alergias alimentarias o necesidades dietéticas que debamos comunicar?', type: 'textarea', placeholder: 'Opcional', optional: true }
 ],
 en: {
-eyebrow: 'SEA · SAILING',
-title: 'Snorkeling & catamaran',
-cardText: 'Choose between exploring underwater, sailing along the coast or combining both experiences.',
-description: 'A day on the water can be calm, adventurous or a bit of both. We help you compare snorkel tours, catamaran rides and combined options based on availability. To protect the experience for the whole group, we check group size, swimming comfort and any dietary needs before sending a private or shared option.',
+eyebrow: 'SEA · BOAT EXPERIENCES',
+title: 'Navigation — Discover Guanacaste from the sea',
+cardText: 'Discover Guanacaste’s coast from the sea.',
+description: 'Hidden beaches, snorkeling, fishing and sunsets over the Pacific. Choose how you want to enjoy the coast and find an outing that suits your group. From a four-hour escape to a full day of exploring, WAVEPOINT helps coordinate the experience and confirm the details before you book.',
 questions: {
-sea_experience: { label: 'What experience are you interested in?', options: ['Snorkel tour', 'Catamaran cruise', 'Catamaran with snorkel, if available'] },
+preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
+sea_experience: { label: 'Which outing interests you?', options: ['Full day in the Papagayo Peninsula', 'Snorkeling along the Guanacaste coast', 'Deep-sea fishing', 'Fishing from Bahía Potrero', 'Snorkeling from Bahía Potrero', 'Sunset from Bahía Potrero', 'I’m not sure yet'] },
+group_size: { label: 'How many people are participating?', fields: [{ id: 'adults', label: 'Adults' }, { id: 'children', label: 'Children' }], note: 'If children are joining, share their ages so we can check requirements.', agesLabel: 'Children’s ages', agesPlaceholder: 'E.g. 6 and 10' },
 departure_type: { label: 'Would you prefer a shared or private outing?', options: ['Shared', 'Private', 'I want to compare both'] },
-snorkel_people: { label: 'How many people want to snorkel?' },
-swimming_comfort: { label: 'Are everyone comfortable swimming in the sea?', options: ['Yes', 'No', 'I’d like to check first'] },
+swimming_comfort: { label: 'Is everyone comfortable swimming in the sea?', options: ['Yes', 'No', 'I’d like to check first'] },
+lodging: { label: 'Where are you staying?', placeholder: 'Accommodation or area' },
 dietary_needs: { label: 'Are there any food allergies or dietary needs we should share?', placeholder: 'Optional' }
 },
-imageAlts: ['Snorkeler swimming near a sea turtle above a coral reef', 'Clear water and reef around the Catalina Islands']
+imageAlts: ['People snorkeling near a sea turtle above a coral reef', 'Group snorkeling beside an island off the coast of Costa Rica', 'Group snorkeling near a tropical shoreline', 'People snorkeling with colorful fish underwater']
 }
 },
 {
@@ -1015,6 +1019,28 @@ const request = isEn ? 'Tell us the date, number of participants and preferred r
 const galleryStory = renderStandardStory(service);
 return `${galleryStory}<section class="atv-story" aria-labelledby="atv-options-heading"><div class="atv-copy"><p class="service-page-kicker">${isEn ? 'ATV IN TAMARINDO' : 'ATV EN TAMARINDO'}</p><h2 id="atv-options-heading">${isEn ? 'Choose your adventure' : 'Elegí tu aventura'}</h2><p>${intro}</p></div><div class="atv-options">${options.map(([title, text]) => `<article class="atv-option"><h3>${title}</h3><p>${text}</p></article>`).join('')}</div><div class="atv-pricing"><div class="atv-pricing-head"><div><p class="service-page-kicker">${isEn ? 'REFERENCE RATES' : 'TARIFAS DE REFERENCIA'}</p><h3>${isEn ? 'Choose the option that fits your group' : 'Elegí la opción que mejor se adapta a tu grupo'}</h3></div><span class="atv-pricing-currency">USD</span></div><div class="atv-price-grid">${prices.map(([label, price]) => `<div class="atv-price-row"><span>${label}</span><strong>${price}</strong></div>`).join('')}</div><p class="atv-price-note">${priceNote}</p></div><div class="atv-included"><h3>${isEn ? 'What is included' : 'Incluye'}</h3><p>${included}</p></div><div class="atv-request"><h3>${isEn ? 'Check availability with WavePoint' : 'Consultá disponibilidad con WavePoint'}</h3><p>${request}</p></div></section>`;
 }
+function renderBoatStory(service) {
+const isEn = lang === 'en';
+const options = isEn ? [
+  ['Full day in the Papagayo Peninsula', '8 hours · Up to 7 people · USD 850', 'Explore hidden beaches and combine sailing, snorkeling and fishing. Includes breakfast, grilled lunch or wraps/sandwiches, water, soft drinks, beer, snorkeling and fishing activities, and certified captain and deckhand.'],
+  ['Snorkeling along the Guanacaste coast', '4 hours · Up to 7 people · USD 500 / 6 hours · Up to 7 people · USD 650', 'Explore natural corners of the coast with snorkeling equipment, inflatable platform, breakfast, lunch with wraps or sandwiches, snacks, drinks, and certified captain and deckhand.'],
+  ['Deep-sea fishing', 'Duration and price to be confirmed · Up to 4 people', 'Enjoy a fishing-focused outing with fishing equipment and a live-bait well. Breakfast, lunch, snacks, drinks and an onboard grill are included; the details are confirmed when you inquire.'],
+  ['Fishing from Bahía Potrero', '4 hours · USD 500 / 6 hours · USD 700 / 8 hours · USD 900', 'Choose the duration that fits your group. Fishing and snorkeling equipment are included. The six-hour option includes wraps for lunch; food details for eight hours are confirmed when you inquire.'],
+  ['Snorkeling from Bahía Potrero', '4 hours · Up to 5 people · USD 500', 'A relaxed outing to explore the sea, snorkel and spend time on the water. Includes snorkeling equipment and a floating platform.'],
+  ['Sunset from Bahía Potrero', '4 hours · Up to 5 people · USD 500', 'Enjoy the last hours of the day along the coast with drinks, something to share, snorkeling equipment and a floating platform.']
+] : [
+  ['Día completo en la península de Papagayo', '8 horas · Hasta 7 personas · USD 850', 'Una jornada para explorar playas escondidas y combinar navegación, snorkel y pesca. Incluye desayuno, almuerzo de parrillada o wraps/sándwiches, agua, refrescos, cerveza, actividades de snorkel y pesca, y capitán y marinero certificados.'],
+  ['Snorkel por la costa de Guanacaste', '4 horas · Hasta 7 personas · USD 500 / 6 horas · Hasta 7 personas · USD 650', 'Explorá rincones naturales de la costa con equipo de snorkel, plataforma inflable, desayuno, almuerzo con wraps o sándwiches, snacks, bebidas, y capitán y marinero certificados.'],
+  ['Pesca en mar abierto', 'Duración y precio a confirmar · Hasta 4 personas', 'Una salida enfocada en la pesca, con equipo y vivero para carnada viva. Incluye desayuno, almuerzo, snacks, bebidas y parrilla a bordo; los detalles se confirman al consultar.'],
+  ['Pesca desde Bahía Potrero', '4 horas · USD 500 / 6 horas · USD 700 / 8 horas · USD 900', 'Elegí la duración que mejor se adapte a tu grupo. Incluye equipo de pesca y snorkel. La opción de seis horas incorpora wraps para el almuerzo; los detalles de alimentación de ocho horas se confirman al consultar.'],
+  ['Snorkel desde Bahía Potrero', '4 horas · Hasta 5 personas · USD 500', 'Una salida de cuatro horas para explorar el mar, disfrutar del snorkel y descansar sobre el agua. Incluye equipo de snorkel y plataforma flotante.'],
+  ['Atardecer desde Bahía Potrero', '4 horas · Hasta 5 personas · USD 500', 'Disfrutá las últimas horas del día navegando por la costa, con bebidas, algo rico para compartir, equipo de snorkel y plataforma flotante.']
+];
+const conditions = isEn ? ['Bahía Potrero departures include fruit, hummus, dips, beer, soft drinks, water and ice.', 'Spanish and English available.', 'Preferably from age five; ask us about younger children.', 'Request at least 24 hours in advance.', 'A 30% deposit confirms the outing after availability is verified.', 'Transport to Bahía Potrero is paid separately.', 'Cancellation and rescheduling conditions are shared before payment.', 'Wildlife sightings and fishing catches depend on natural conditions and are not guaranteed.'] : ['Las salidas desde Bahía Potrero incluyen frutas variadas, hummus, dips, cerveza, refrescos, agua y hielo.', 'Atención en español e inglés.', 'Preferentemente desde los cinco años; consultá si viajan niños menores.', 'Solicitá la reserva con al menos 24 horas de anticipación.', 'Una seña del 30% confirma la salida una vez verificada la disponibilidad.', 'El traslado hasta Bahía Potrero se paga aparte.', 'Las condiciones de cancelación y reprogramación se informan antes del pago.', 'Los avistamientos de fauna y las capturas dependen de las condiciones naturales y no están garantizados.'];
+const practical = isEn ? 'Bring a swimsuit, towel and sun protection. Tell us the participants’ ages and any allergy or dietary need. If you want to snorkel, let us know how comfortable everyone is swimming in the sea.' : 'Traé traje de baño, toalla y protección solar. Contanos las edades de los participantes y cualquier alergia o necesidad alimentaria. Si quieren hacer snorkel, indicá también cómo se sienten nadando en el mar.';
+const galleryStory = renderStandardStory(service);
+return `${galleryStory}<section class="boat-story" aria-labelledby="boat-options-heading"><div class="boat-story-intro"><p class="service-page-kicker">${isEn ? 'BOAT EXPERIENCES · GUANACASTE' : 'EMBARCACIONES · GUANACASTE'}</p><h2 id="boat-options-heading">${isEn ? 'Navigation — Discover Guanacaste from the sea' : 'Navegación — Descubrí Guanacaste desde el mar'}</h2><p>${isEn ? 'Hidden beaches, snorkeling, fishing and sunsets over the Pacific. Choose how you want to enjoy the coast and find an outing that suits your group. From a four-hour escape to a full day of exploring, WAVEPOINT helps coordinate the experience and confirm the details before you book.' : 'Playas escondidas, snorkel, pesca y atardeceres sobre el Pacífico. Elegí cómo querés disfrutar la costa y encontrá una salida que se adapte a tu grupo. Desde una escapada de cuatro horas hasta un día completo de exploración, WAVEPOINT te ayuda a coordinar la experiencia y conocer todos los detalles antes de reservar.'}</p></div><div class="boat-options">${options.map(([title, facts, text]) => `<article class="boat-option"><h3>${title}</h3><p class="boat-option-facts">${facts}</p><p>${text}</p></article>`).join('')}</div><div class="boat-details"><section><h3>${isEn ? 'Before you go' : 'Antes de ir'}</h3><p>${practical}</p></section><section><h3>${isEn ? 'Included and conditions' : 'Incluidos y condiciones'}</h3><ul>${conditions.map(item => `<li>${item}</li>`).join('')}</ul></section></div><div class="boat-request"><h3>${isEn ? 'Request this experience' : 'Solicitar reserva'}</h3><p>${isEn ? 'Tell us which outing interests you, your preferred dates and how many people are participating. WAVEPOINT will confirm availability, meeting point or pickup, inclusions, conditions and the total price before sending a payment link.' : 'Contanos qué salida te interesa, tus fechas y cuántas personas participan. WAVEPOINT confirmará disponibilidad, punto de encuentro o recogida, incluidos, condiciones y precio total antes de enviarte el enlace de pago.'}</p><p>${isEn ? 'This is an inquiry; the booking is not confirmed yet. You do not need to pay now.' : 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.'}</p></div></section>`;
+}
 function renderWitchRockStory(service) {
 const story = renderStandardStory(service, service.coordination);
 return story;
@@ -1164,6 +1190,8 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderRetreatStory(service)
 : service.id === 'atv'
 ? renderAtvStory(service)
+: service.id === 'snorkel-catamaran'
+? renderBoatStory(service)
 : renderStandardStory(service);
 const surfSurveyModal = '' /* El formulario de clases queda visible debajo del contenido. */;
 const surfFormBar = '';
