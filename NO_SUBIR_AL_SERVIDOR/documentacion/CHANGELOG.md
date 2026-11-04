@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — usar la foto del grupo como portada de la ficha
+- `services.js`: la foto real de la embarcación pasa al primer lugar del servicio `snorkel-catamaran`, por lo que se usa en la tarjeta de servicios y como imagen principal de la ficha; se elimina la repetición al final de la galería.
+- Alcance: el cambio queda limitado a la ficha de Embarcaciones y no altera otras secciones del sitio.
+- Validación: sintaxis JavaScript, referencias locales y `git diff --check`.
+
 ### Embarcaciones — incorporar la foto literal del punto 3 de la guía
 - `assets/img/services/snorkel-catamaran/boat-guide-foto-04.jpg`: se incorpora la única imagen ubicada entre el encabezado «PUNTO 3 MEJORAR FICHA DE NAVEGACION + FOTO NUEVA» y el siguiente punto de la guía original.
 - `services.js`: la foto se suma a la galería de Embarcaciones con textos alternativos en español e inglés; las imágenes posteriores de la guía se mantienen fuera de esta ficha.
