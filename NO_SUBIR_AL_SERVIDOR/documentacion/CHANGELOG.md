@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — corregir la primera foto interna de la ficha
+- `services.js`: la galería editorial de la ficha deja de omitir la foto del grupo por el corte automático de `images.slice(1)`; ahora la muestra como primera imagen interna, seguida por las dos fotos de snorkel restantes.
+- Alcance: solo cambia la galería de la ficha de Embarcaciones; la portada y las demás fichas permanecen sin cambios.
+- Validación: sintaxis JavaScript, referencias locales y `git diff --check`.
+
 ### Embarcaciones — usar la foto del grupo como portada de la ficha
 - `services.js`: la foto real de la embarcación pasa al primer lugar del servicio `snorkel-catamaran`, por lo que se usa en la tarjeta de servicios y como imagen principal de la ficha; se elimina la repetición al final de la galería.
 - Alcance: el cambio queda limitado a la ficha de Embarcaciones y no altera otras secciones del sitio.
