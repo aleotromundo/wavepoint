@@ -184,17 +184,49 @@
       syncScrollState();
       return;
     }
+    selectLanguage(next, switcher);
+  };
+
+  const selectLanguage = (lang, switcher) => {
     const keepExpanded = window.scrollY > 24 && switcher?.classList.contains('is-expanded');
-    saveLang(next);
-    apply(next);
+    saveLang(lang);
+    apply(lang);
     if (keepExpanded) {
       switcher?.classList.add('is-expanded');
       syncScrollState();
     }
-    window.dispatchEvent(new CustomEvent('wavepoint:languagechange', { detail: { lang: next } }));
+    window.dispatchEvent(new CustomEvent('wavepoint:languagechange', { detail: { lang } }));
   };
 
   ensureSwitcher();
+  const gestures = new WeakMap();
+  const languageOrder = ['en', 'es', 'pt-BR'];
+  document.querySelectorAll('.lang-switcher').forEach(switcher => {
+    let suppressClickUntil = 0;
+    switcher.addEventListener('pointerdown', event => {
+      if (!event.isPrimary || (event.pointerType !== 'touch' && event.pointerType !== 'pen')) return;
+      gestures.set(switcher, { x: event.clientX, y: event.clientY });
+    });
+    switcher.addEventListener('pointerup', event => {
+      const start = gestures.get(switcher);
+      gestures.delete(switcher);
+      if (!start) return;
+      const deltaX = event.clientX - start.x;
+      const deltaY = event.clientY - start.y;
+      if (Math.abs(deltaX) < 30 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+      suppressClickUntil = Date.now() + 500;
+      const currentIndex = languageOrder.indexOf(readLang());
+      const direction = deltaX < 0 ? 1 : -1;
+      const nextIndex = (currentIndex + direction + languageOrder.length) % languageOrder.length;
+      selectLanguage(languageOrder[nextIndex], switcher);
+    });
+    switcher.addEventListener('pointercancel', () => gestures.delete(switcher));
+    switcher.addEventListener('click', event => {
+      if (Date.now() >= suppressClickUntil) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }, true);
+  });
   document.querySelectorAll('[data-lang-toggle]').forEach(button => button.addEventListener('click', toggle));
   window.addEventListener('scroll', syncScrollState, { passive: true });
   const initialLang = readLang();
