@@ -3981,3 +3981,9 @@ to{filter:brightness(1.18)}
 .quick-request-panel .survey-progress-copy strong { color:#a6fff3; }
 .quick-request-panel .detail-date-grid label { color:rgba(237,255,251,.86); }
 .quick-request-panel .detail-error { color:#ffb4aa; }
+
+/* Formulario de embarcaciones: edades y nota legibles sobre el panel azul. */
+.quick-request-panel .headcount-ages,
+.quick-request-panel .headcount-ages > span { color:#f4fffc; }
+.quick-request-panel .headcount-ages .detail-optional { color:rgba(222,250,244,.72); }
+.quick-request-panel .headcount-note { color:rgba(237,255,251,.82); }

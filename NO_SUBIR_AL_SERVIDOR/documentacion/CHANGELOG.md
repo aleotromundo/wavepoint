@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — corregir contraste de Edades de los niños
+- `styles.css` y `styles.optimized.css`: la etiqueta «Edades de los niños», su indicador opcional y la nota de edades ahora usan tonos claros sobre el panel azul.
+- `service-detail.html`: se renueva la caché de estilos.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
 ### Embarcaciones — mejorar contraste del formulario
 - `styles.css` y `styles.optimized.css`: se aclaran las etiquetas, opciones, contador de avance, fechas, campos opcionales y mensajes de error del formulario para que sean legibles sobre el panel azul.
 - `service-detail.html`: se renueva la caché de estilos.
