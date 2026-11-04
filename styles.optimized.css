@@ -3906,6 +3906,7 @@ to{filter:brightness(1.18)}
 @media (max-width: 560px) { .lang-switcher { min-width: 0; } }
 
 /* Compact language selector */
+.lang-switcher{touch-action:pan-y}
 .lang-toggle{width:26px;height:26px;flex-basis:26px}
 .lang-toggle[data-selected=true]{width:38px;height:38px;flex-basis:38px;box-shadow:0 6px 16px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.16)}
 .lang-toggle:not([data-selected=true]){margin-inline:-9px}
