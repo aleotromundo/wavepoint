@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — destacar la información de Antes de ir
+- `styles.css` y `styles.optimized.css`: el bloque «Antes de ir» ahora centra su contenido y usa una tipografía más grande, clara y con mayor peso para aprovechar el espacio disponible.
+- `index.html` y `service-detail.html`: se renueva la caché de estilos.
+- Validación: sintaxis JavaScript, `git diff --check` y referencias de caché.
+
 ### Embarcaciones — desarrollar la ficha de navegación del punto 3
 - `index.html` y `script.js`: la tarjeta del catálogo ahora se presenta como «Embarcaciones» / «Boat experiences», conservando el enlace interno `snorkel-catamaran`.
 - `services.js`: la ficha incorpora el título editorial «Navegación — Descubrí Guanacaste desde el mar», seis opciones de salida, duración, capacidad, tarifas de referencia, incluidos, condiciones y solicitud de reserva bilingüe.
