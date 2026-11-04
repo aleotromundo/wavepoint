@@ -38,6 +38,7 @@
       note: '<p><strong>Rates.</strong> Rates are reference prices expressed in United States dollars (USD), per person and according to group size. “c/u” means “each person”. <strong>ATVs:</strong> Explorer, Adventure and Ultimate show the total rate per ATV for 1 or 2 people sharing the vehicle; ask us about groups of 3 or more. The 24-hour rental has a flat rate of USD 120 total, not per person.</p><p><strong>How to organize your experience.</strong> Tell us which activity interests you, the date and how many people are participating. WAVEPOINT checks availability and coordinates the details with you through WhatsApp.</p><p><strong>Before paying.</strong> We confirm the total price, what the activity includes, the schedule, the meeting point, the requirements, any additional costs, and the payment, change and cancellation conditions.</p><p><strong>Important.</strong> Asking for information does not require payment or confirm a booking. Once the details are agreed, we explain how to complete the payment and confirm your experience.</p>'
     }
   };
+  const portuguese = window.WAVEPOINT_PT_BR?.pricing;
 
   const pricing = { rates, groups, rows };
   window.WAVEPOINT_PRICING = pricing;
@@ -46,8 +47,8 @@
     const table = document.querySelector('[data-pricing-table]');
     if (!table) return;
 
-    const language = lang === 'es' ? 'es' : 'en';
-    const text = copy[language];
+    const language = lang === 'es' ? 'es' : lang === 'pt-BR' ? 'pt-BR' : 'en';
+    const text = language === 'pt-BR' ? portuguese : copy[language];
     const heading = document.getElementById('serviceRatesTitle');
     const description = table.closest('.service-rates').querySelector('[data-pricing-description]');
     const caption = table.querySelector('caption');
@@ -61,7 +62,9 @@
     note.innerHTML = text.note;
 
     header.replaceChildren();
-    [text.service, ...groups.map(group => group.label[language])].forEach(label => {
+    [text.service, ...groups.map(group => language === 'pt-BR'
+      ? group.guests === 1 ? '1 pessoa' : `Grupo de ${group.guests}`
+      : group.label[language])].forEach(label => {
       const cell = document.createElement('th');
       cell.scope = 'col';
       cell.textContent = label;
@@ -73,12 +76,14 @@
       const tableRow = document.createElement('tr');
       const title = document.createElement('th');
       title.scope = 'row';
-      title.textContent = row.label[language];
+      title.textContent = language === 'pt-BR' ? portuguese.rowLabels[row.rateId] : row.label[language];
       tableRow.append(title);
 
       groups.forEach(group => {
         const cell = document.createElement('td');
-        cell.dataset.label = group.mobileLabel[language];
+        cell.dataset.label = language === 'pt-BR'
+          ? group.guests === 1 ? '1 pessoa' : `${group.guests} pessoas`
+          : group.mobileLabel[language];
         const tableRates = row.tableRates?.[group.guests]?.[language];
         const rate = row.rateId ? rates[row.rateId][Math.min(group.guests, 6) - 1] : null;
         if (tableRates) {
@@ -93,6 +98,6 @@
     });
   };
 
-  renderTable(localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : 'en');
+  renderTable(localStorage.getItem('wavepoint-lang') === 'es' ? 'es' : localStorage.getItem('wavepoint-lang') === 'pt-BR' ? 'pt-BR' : 'en');
   window.addEventListener('wavepoint:languagechange', event => renderTable(event.detail.lang));
 })();

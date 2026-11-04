@@ -27,7 +27,7 @@ module.exports = async (request, response) => {
     return response.status(400).json({ error: 'Question must be between 1 and 1200 characters' });
   }
 
-  const outputLanguage = language === 'en' ? 'English' : 'Spanish';
+  const outputLanguage = language === 'en' ? 'English' : language === 'pt-BR' ? 'Brazilian Portuguese' : 'Spanish';
   const safeContext = Object.fromEntries(
     ['weather', 'temperature', 'wind', 'swell', 'localTime', 'cameras']
       .map(key => [key, typeof context[key] === 'string' ? context[key].slice(0, 100) : ''])
