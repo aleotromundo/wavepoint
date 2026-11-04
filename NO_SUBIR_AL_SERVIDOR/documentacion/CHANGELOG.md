@@ -1,4 +1,9 @@
 # 2026-11-04
+### Embarcaciones — subir más el recorte de la tarjeta
+- `styles.css` y `styles.optimized.css`: el encuadre exclusivo de la tarjeta pasa de 68% a 80% para quitar más cielo y mostrar mejor la parte inferior del grupo.
+- `index.html`: se renueva la versión de caché de `styles.optimized.css` para que el navegador reciba el ajuste sin conservar el recorte anterior.
+- Validación: sintaxis JavaScript, `git diff --check` y comprobación de la nueva referencia CSS.
+
 ### Embarcaciones — ajustar el encuadre de la tarjeta
 - `styles.css` y `styles.optimized.css`: la foto del grupo usa un `object-position` vertical más bajo únicamente en la tarjeta de Embarcaciones, reduciendo cielo y mostrando más la parte inferior del grupo sin cambiar el tamaño del marco.
 - Validación: `git diff --check` y revisión de que el selector quede limitado a `.service-card-snorkel`.

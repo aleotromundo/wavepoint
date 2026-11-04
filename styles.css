@@ -3663,7 +3663,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 	filter: saturate(1.05);
 }
 #servicios .service-card-snorkel .service-img img {
-	object-position: center 68%;
+	object-position: center 80%;
 }
 #servicios .service-grid-catalog .service-card:hover .service-img img,
 #servicios .service-grid-catalog .service-image-link:focus-visible .service-img img {
