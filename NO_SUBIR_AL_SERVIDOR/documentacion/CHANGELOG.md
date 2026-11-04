@@ -1,4 +1,10 @@
 # 2026-11-04
+### Embarcaciones — dejar la foto del grupo solo en tarjeta y portada
+- `index.html`: la tarjeta de Embarcaciones en Servicios ahora usa la foto del grupo en lugar de la tortuga.
+- `services.js`: la foto del grupo queda como imagen de portada de la ficha; la galería interna conserva únicamente las fotos de snorkel y no repite la foto principal.
+- Alcance final: dos usos, tarjeta de Servicios y portada dentro de la ficha de Embarcaciones.
+- Validación: sintaxis JavaScript, referencias locales y `git diff --check`.
+
 ### Embarcaciones — corregir la primera foto interna de la ficha
 - `services.js`: la galería editorial de la ficha deja de omitir la foto del grupo por el corte automático de `images.slice(1)`; ahora la muestra como primera imagen interna, seguida por las dos fotos de snorkel restantes.
 - Alcance: solo cambia la galería de la ficha de Embarcaciones; la portada y las demás fichas permanecen sin cambios.
