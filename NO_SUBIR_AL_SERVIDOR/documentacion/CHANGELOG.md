@@ -1,4 +1,10 @@
 # 2026-11-04
+### Auditoría del punto 3 — ficha de Embarcaciones
+- `services.js`: se alinea el título visible con «Embarcaciones» / «Navigation» y el texto editorial con la redacción aprobada para Snorkel y catamarán.
+- `services.js`: se corrige la capacidad máxima a 5 personas y se incorporan explícitamente reserva con 24 horas, edad preferente desde 5 años, cancelación con 72 horas, plataforma flotante, seña del 30%, salida y transporte desde Bahía Potrero, permisos/póliza, documentación del capitán en trámite y atención en español e inglés.
+- Auditoría de fotos: el inventario local contiene cuatro imágenes distintas de snorkel/costa para portada y galería; no existe una foto nueva aprobada de catamarán/embarcación en el repositorio, por lo que no se inventó ni se presentó una imagen genérica como catamarán.
+- Validación: sintaxis JavaScript, ausencia de cupos antiguos, `git diff --check` y comprobación de rutas locales.
+
 ### Embarcaciones — corregir contraste de Edades de los niños
 - `styles.css` y `styles.optimized.css`: la etiqueta «Edades de los niños», su indicador opcional y la nota de edades ahora usan tonos claros sobre el panel azul.
 - `service-detail.html`: se renueva la caché de estilos.
