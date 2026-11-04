@@ -1,4 +1,10 @@
 # 2026-11-04
+### Embarcaciones — bajar el encuadre de la portada de la ficha
+- `services.js`: se agrega una clase específica para la ficha de Embarcaciones.
+- `styles.css` y `styles.optimized.css`: la portada de esa ficha usa una posición vertical de 32% para mostrar la cabeza completa, sin alterar el recorte alto de la tarjeta.
+- `service-detail.html`: se renueva la caché de estilos de la ficha.
+- Validación: sintaxis JavaScript, `git diff --check` y comprobación de la clase/estilo específicos.
+
 ### Embarcaciones — subir más el recorte de la tarjeta
 - `styles.css` y `styles.optimized.css`: el encuadre exclusivo de la tarjeta pasa de 68% a 80% para quitar más cielo y mostrar mejor la parte inferior del grupo.
 - `index.html`: se renueva la versión de caché de `styles.optimized.css` para que el navegador reciba el ajuste sin conservar el recorte anterior.

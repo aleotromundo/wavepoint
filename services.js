@@ -1164,6 +1164,7 @@ document.body.classList.toggle('accommodation-detail-page', service.id === 'aloj
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
 document.body.classList.toggle('surf-program-detail-page', service.id === 'surf-programa-3-dias');
 document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
+document.body.classList.toggle('boat-detail-page', service.id === 'snorkel-catamaran');
 document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.heroImage || service.images[0])})`);
 const position = services.findIndex(item => item.id === service.id);
 const prevService = services[(position - 1 + services.length) % services.length];
