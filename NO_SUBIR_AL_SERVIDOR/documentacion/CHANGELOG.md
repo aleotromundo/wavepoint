@@ -1,3 +1,9 @@
+# 2026-11-04
+### Servicios — añadir tarjeta del programa de iniciación al surf
+- `index.html`: se agrega una ficha del programa para principiantes al catálogo de Servicios. Imagen, título y enlaces llevan a la misma página de detalle enlazada desde el botón dentro de Clases de surf.
+- `script.js`: se añaden textos de tarjeta y texto alternativo de imagen en español e inglés.
+- Validación: vista previa de escritorio confirmó la tarjeta, el texto y su destino; la imagen carga; pasan `node --check` para los scripts y `git diff --check`.
+
 # 2026-11-02
 ### Selector de idioma — contraer a la esquina y desplegar al tocar
 - `lang-switch.js`: al desplazarse, el selector colapsa a la bandera activa en la esquina superior izquierda; al tocarla muestra las tres opciones y permanece expandido durante el scroll. Elegir otro idioma conserva las tres opciones; tocar la bandera activa las contrae. Al regresar arriba recupera el selector completo.
