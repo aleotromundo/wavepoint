@@ -223,7 +223,7 @@
     serviceCardPackImageAlt: 'Pôr do sol na costa sob os galhos de uma árvore tropical',
     serviceCardRetreatsAlt: 'Vista aérea de uma praia e da costa de Tamarindo',
     serviceCardSurfPhotosAlt: 'Fotógrafo de surfe na água com uma câmera diante de uma onda',
-    serviceCardSurfskateAlt: 'Pessoa praticando surfskate em um longboard',
+    serviceCardSurfskateAlt: 'Instrutor auxiliando uma pessoa durante uma aula de surfskate',
     serviceCardSurfskateText: 'Encontre seu flow em terra.',
     serviceCardYogaAlt: 'Mulher praticando uma postura de yoga à beira-mar',
     servicePackDivider: 'PLANEJE SUA VIAGEM DO SEU JEITO',
@@ -393,7 +393,7 @@
       yoga: { title: 'Yoga', description: 'Inclua uma pausa na sua viagem.', imageAlt: 'Mulher praticando yoga à beira-mar' },
       atv: { title: 'Passeios de quadriciclo — ATV', description: 'Escolha um percurso e consulte o valor por veículo.', imageAlt: 'Grupo de quadriciclos em uma trilha de floresta tropical' },
       'surf-photography': { title: 'Fotografia de surfe', description: 'Guarde os momentos da sua sessão.', imageAlt: 'Surfista fotografada durante uma sessão na água' },
-      surfskate: { title: 'Aulas de surfskate', description: 'Encontre seu flow em terra.', imageAlt: 'Dois instrutores praticando surfskate' }
+      surfskate: { title: 'Aulas de surfskate', description: 'Encontre seu flow em terra.', imageAlt: 'Instrutor auxiliando uma pessoa durante uma aula de surfskate' }
     },
     accommodations: {
       tamalodge: { name: 'Hotel Tamalodge', category: 'Opção econômica', summary: 'Quarto privativo com banheiro para uma estadia simples e funcional.', priceUnit: 'por quarto / noite' },
@@ -993,7 +993,8 @@
       eyebrow: 'FOTOGRAFIA DE SURFE',
       title: 'Fotografia de surfe',
       cardText: 'Seu tempo na água, registrado.',
-      description: 'Sua primeira onda, uma manobra que vem treinando ou uma sessão com amigos: há momentos que merecem ser lembrados. A WavePoint conecta você a fotógrafos locais de surfe para registrar sua sessão enquanto você se concentra nas ondas.'
+      description: 'Sua primeira onda, uma manobra que vem treinando ou uma sessão com amigos: há momentos que merecem ser lembrados. A WavePoint conecta você a fotógrafos locais de surfe para registrar sua sessão enquanto você se concentra nas ondas.',
+      imageAlts: ['Dois surfistas saem da água com suas pranchas na praia', 'Dois surfistas caminham pela areia carregando suas pranchas']
     },
     surfskate: {
       eyebrow: 'AULAS DE SURFSKATE',
@@ -1001,8 +1002,8 @@
       cardText: 'Encontre seu flow em terra.',
       description: 'Treine suas curvas, ganhe confiança na prancha e experimente movimentos que depois pode levar para a água. Seja sua primeira vez no surfskate ou uma forma de complementar sua prática de surfe, a WavePoint conecta você a instrutores locais para encontrar uma sessão adequada ao seu nível.',
       includes: ['Prancha de surfskate para a aula', 'Capacete e equipamentos de proteção'],
-      imageAlts: ['Aula de surfskate em grupo com várias pessoas sobre as pranchas', 'Surfista pegando uma onda no mar', 'Dois instrutores praticando surfskate', 'Instrutor explicando a aula a estudantes sentados nas pranchas na praia'],
-      galleryImageAlts: ['Aula de surfskate em grupo com várias pessoas sobre as pranchas', 'Surfista pegando uma onda no mar', 'Dois instrutores praticando surfskate', 'Instrutor explicando a aula a estudantes sentados nas pranchas na praia']
+      imageAlts: ['Aula de surfskate em grupo ao ar livre', 'Aula de surfskate em grupo com várias pessoas sobre as pranchas', 'Surfista pegando uma onda no mar', 'Dois instrutores praticando surfskate', 'Instrutor explicando a aula a estudantes sentados nas pranchas na praia', 'Pessoa praticando surfskate em uma pista'],
+      galleryImageAlts: ['Aula de surfskate em grupo ao ar livre', 'Aula de surfskate em grupo com várias pessoas sobre as pranchas', 'Surfista pegando uma onda no mar', 'Dois instrutores praticando surfskate', 'Instrutor explicando a aula a estudantes sentados nas pranchas na praia', 'Pessoa praticando surfskate em uma pista']
     },
     retiros: {
       eyebrow: 'RETIROS · TAMARINDO',

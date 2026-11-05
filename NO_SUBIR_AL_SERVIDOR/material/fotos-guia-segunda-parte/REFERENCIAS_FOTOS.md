@@ -27,4 +27,11 @@ Este mapa conserva la correspondencia entre cada imagen y su posición en el arc
 | 21 | `foto-21.jpg` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
 | 22 | `foto-22.png` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
 
+## Fotos para Fotos de surf
+
+La sección «FOTOS DE FICHA FOTOS DE SURF» de la copia de la guía `NO_SUBIR_AL_SERVIDOR/documentacion/Guiasegundaparte_` contiene dos fotos adicionales. Se optimizaron en WebP y se usan en la ficha:
+
+- `assets/img/services/surf-photography/guide-surf-cover.webp`: portada de la ficha.
+- `assets/img/services/surf-photography/guide-surf-gallery.webp`: galería de la ficha.
+
 El archivo original `NO_SUBIR_AL_SERVIDOR/Guiasegundaparte_` se conserva sin modificar. La copia local es adicional y sirve para visualizar la guía aunque las URLs originales estén rotas o caduquen.

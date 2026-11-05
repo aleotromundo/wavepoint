@@ -1,4 +1,10 @@
 # 2026-11-04
+### Fotos de la guía en la ficha Fotos de surf
+- `assets/img/services/surf-photography/guide-surf-cover.webp` y `guide-surf-gallery.webp`: se incorporan las dos fotos de la sección «FOTOS DE FICHA FOTOS DE SURF» de la Guía Segunda Parte, optimizadas a WebP de 1600 × 1066.
+- `services.js`: una foto reemplaza la portada de la ficha y la otra queda en su galería; los textos alternativos se traducen en español, inglés y portugués brasileño. La tarjeta del catálogo no cambia.
+- `NO_SUBIR_AL_SERVIDOR/material/fotos-guia-segunda-parte/REFERENCIAS_FOTOS.md`: se registra el uso de estas fotos.
+- Validación: revisar las imágenes y su resolución, probar portada/galería en la ficha y ejecutar `git diff --check`.
+
 ### Embarcaciones — ajustar la portada a un encuadre intermedio
 - `styles.css` y `styles.optimized.css`: la portada de la ficha pasa de 32% a 44% para mostrar al grupo con menos cielo, conservando las cabezas dentro del encuadre y sin agregar Parallax.
 - `service-detail.html`: se renueva la caché de estilos.
