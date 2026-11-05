@@ -1,3 +1,21 @@
+# 2026-11-05
+### Roca Bruja — nueva foto en tarjeta y galería
+- `foto-14.jpg` de la guía se optimiza como `assets/img/services/witchs-rock/guide-roca-bruja-boat.webp` y se usa en la tarjeta de Servicios, el armador del viaje y como tercera imagen de la galería.
+- `services.js`, `pt-br.js`, `script.js` y `trip-builder.js`: textos alternativos alineados en español, inglés y portugués brasileño.
+- `styles.css` y `styles.optimized.css`: la galería de Roca Bruja muestra sus tres imágenes en una fila en escritorio y conserva el diseño adaptable en móvil.
+- Validación: confirmar imagen, tarjeta, galería en tres idiomas y `git diff --check`.
+
+### Surfskate — depurar imágenes de la galería
+- `services.js` y `pt-br.js`: se quitan de la ficha la foto del coach con las alumnas y la del surfista en una ola; se conservan las demás imágenes aprobadas.
+- Validación: confirmar las tres fotos restantes de la galería y revisar los textos alternativos.
+
+### Fotos de la guía para Surfskate
+- `assets/img/services/surfskate/guide-surfskate-card.webp`, `guide-surfskate-cover.webp` y `guide-surfskate-gallery.webp`: se incorporan las fotos 11, 12 y 13 de la guía, optimizadas a WebP.
+- `index.html` y `trip-builder.js`: la foto 11 reemplaza la imagen de tarjeta; `services.js` usa la foto 12 como portada y suma la foto 13 a la galería.
+- Se conservan las cuatro imágenes anteriores de la ficha; la portada anterior pasa a la galería. Textos alternativos actualizados en español, inglés y portugués brasileño.
+- `NO_SUBIR_AL_SERVIDOR/material/fotos-guia-segunda-parte/REFERENCIAS_FOTOS.md`: se registra la asignación.
+- Validación: las siete imágenes existentes/nuevas responden correctamente; portada y galería se revisaron en español, inglés y portugués brasileño; `git diff --check` pasó.
+
 # 2026-11-04
 ### Fotos de la guía en la ficha Fotos de surf
 - `assets/img/services/surf-photography/guide-surf-cover.webp` y `guide-surf-gallery.webp`: se incorporan las dos fotos de la sección «FOTOS DE FICHA FOTOS DE SURF» de la Guía Segunda Parte, optimizadas a WebP de 1600 × 1066.

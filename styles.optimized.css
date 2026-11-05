@@ -1715,6 +1715,7 @@ footer a.footer-logo-link{display:inline-flex;align-items:center;width:fit-conte
 #servicios .service-grid-catalog .service-card .service-body{position:relative;z-index:2;flex:0 0 auto;margin-top:auto;border-top:1px solid rgba(255,255,255,.18);background:rgba(6,24,34,.48);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2)}
 #servicios .service-grid-catalog .service-img img{opacity:.88;filter:saturate(1.05)}
 #servicios .service-card-snorkel .service-img img{object-position:center 95%}
+#servicios .service-card-surfskate .service-img img{object-position:center 85%}
 #servicios .service-grid-catalog .service-card:hover .service-img img,#servicios .service-grid-catalog .service-image-link:focus-visible .service-img img{opacity:1;filter:saturate(1.15)}
 #servicios .service-body h3,#servicios .service-body h3 a{font-size:26px!important;color:#fff!important}
 .allies-ticker{position:relative!important;overflow:hidden!important;background:0 0!important;padding:22px 0!important;box-shadow:none!important}
@@ -3314,7 +3315,7 @@ to{filter:brightness(1.18)}
 /* Override final: la regla del mosaico triple no debe volver a reordenar Surfskate. */
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;height:clamp(420px,38vw,580px)!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(1){grid-column:2!important;grid-row:1!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(2){grid-column:1!important;grid-row:1/span 2!important;object-fit:contain!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(3){grid-column:2!important;grid-row:2!important}@media (max-width:640px){.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate{height:390px!important}}
 
-/* Roca Bruja: las fotos de la galería se muestran completas y en dos paneles equilibrados. */
+/* Roca Bruja: regla base de presentación de la galería. */
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{height:clamp(300px,32vw,430px)!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:minmax(0,1fr)!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img{grid-column:auto!important;grid-row:auto!important;object-fit:contain!important;background:rgba(8,43,58,.08)}@media (max-width:640px){.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{height:auto!important;grid-template-columns:1fr!important;grid-template-rows:none!important;grid-auto-rows:220px!important}}
 
 /* Ajuste final de armonía: cada imagen de Roca Bruja define su propio rectángulo visible. */
@@ -3583,8 +3584,8 @@ to{filter:brightness(1.18)}
   }
 }
 
-/* Roca Bruja: dos fotos compactas, distintas y ampliables al hacer clic. */
-.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{width:min(100%,900px)!important;max-width:900px!important;justify-self:center;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img{aspect-ratio:4/3!important;object-fit:cover!important}@media(max-width:640px){.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{width:100%!important;max-width:none!important;gap:10px!important}}
+/* Roca Bruja: tres fotos compactas, distintas y ampliables al hacer clic. */
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{width:min(100%,900px)!important;max-width:900px!important;justify-self:center;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img:nth-child(3){grid-column:auto!important;grid-row:auto!important}.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img{aspect-ratio:4/3!important;object-fit:cover!important}@media(max-width:640px){.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock{width:100%!important;max-width:none!important;gap:10px!important}}
 
 /* Clases de surf: mosaico estable para las dos fotos editoriales. */
 .surf-lesson-detail-page .surf-lesson-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;height:auto;gap:clamp(10px,1.8vw,16px);margin:0;align-items:start}.surf-lesson-detail-page .surf-lesson-gallery img{display:block;width:100%;height:auto;min-height:0;aspect-ratio:3/2;grid-column:auto!important;grid-row:auto!important;object-fit:cover}@media(max-width:640px){.surf-lesson-detail-page .surf-lesson-gallery{grid-template-columns:1fr;gap:10px}}

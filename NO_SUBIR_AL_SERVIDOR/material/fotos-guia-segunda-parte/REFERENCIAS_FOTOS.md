@@ -35,3 +35,18 @@ La sección «FOTOS DE FICHA FOTOS DE SURF» de la copia de la guía `NO_SUBIR_A
 - `assets/img/services/surf-photography/guide-surf-gallery.webp`: galería de la ficha.
 
 El archivo original `NO_SUBIR_AL_SERVIDOR/Guiasegundaparte_` se conserva sin modificar. La copia local es adicional y sirve para visualizar la guía aunque las URLs originales estén rotas o caduquen.
+
+## Fotos para Surfskate
+
+Las fotos 11, 12 y 13 se optimizaron en WebP y se distribuyen sin retirar las imágenes que ya tenía el servicio:
+
+- `foto-11.jpg` → `assets/img/services/surfskate/guide-surfskate-card.webp`: tarjeta de Servicios y tarjeta del armador del viaje.
+- `foto-12.jpg` → `assets/img/services/surfskate/guide-surfskate-cover.webp`: portada de la ficha.
+- `foto-13.jpg` → `assets/img/services/surfskate/guide-surfskate-gallery.webp`: nueva imagen de la galería.
+
+La galería conserva `surfskate-bowl.webp` y la portada anterior `surfskate.webp`, además de la nueva foto 13. Se quitaron `surfskate-class.webp` (el coach con las alumnas) y `surfskate-wave.webp` (el surfista en una ola), según lo pedido. El archivo original de la guía no se modifica.
+
+## Foto para Roca Bruja
+
+- `foto-14.jpg` → `assets/img/services/witchs-rock/guide-roca-bruja-boat.webp`: tarjeta de Servicios, tarjeta del armador del viaje y tercera imagen de la galería de Roca Bruja.
+- Se conserva la foto original de la guía sin modificar.

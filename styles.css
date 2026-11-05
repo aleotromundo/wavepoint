@@ -3666,6 +3666,9 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 #servicios .service-card-snorkel .service-img img {
 	object-position: center 95%;
 }
+#servicios .service-card-surfskate .service-img img {
+	object-position: center 85%;
+}
 #servicios .service-grid-catalog .service-card:hover .service-img img,
 #servicios .service-grid-catalog .service-image-link:focus-visible .service-img img {
   opacity: 1;
@@ -8786,7 +8789,7 @@ footer a {
   .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate { height: 390px !important; }
 }
 
-/* Roca Bruja: las fotos de la galería se muestran completas y en dos paneles equilibrados. */
+/* Roca Bruja: regla base de presentación de la galería. */
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
   height: clamp(300px, 32vw, 430px) !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -9143,13 +9146,17 @@ footer a {
   .ally-tile strong { font-size: 20px; }
 }
 
-/* Roca Bruja: dos fotos compactas, distintas y ampliables al hacer clic. */
+/* Roca Bruja: tres fotos compactas, distintas y ampliables al hacer clic. */
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock {
   width: min(100%, 900px) !important;
   max-width: 900px !important;
   justify-self: center;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 14px !important;
+}
+.service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img:nth-child(3) {
+  grid-column: auto !important;
+  grid-row: auto !important;
 }
 .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-witch-rock img {
   aspect-ratio: 4 / 3 !important;
