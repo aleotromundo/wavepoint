@@ -97,7 +97,7 @@
     serviceCardCoachingTitle: 'Coaching de surfe',
     serviceCardCoachingText: 'Sessão filmada e análise técnica em vídeo das suas ondas.',
     serviceCardWitchRockTitle: 'Roca Bruja',
-    serviceCardWitchRockImageAlt: 'Formação rochosa de Roca Bruja diante da costa',
+    serviceCardWitchRockImageAlt: 'Grupo a bordo de um barco diante da formação rochosa de Roca Bruja',
     serviceCardWitchRockText: 'Um dia de surfe de barco com guias locais que conhecem a região.',
     serviceListCta: 'Ver experiência e preparar consulta ↗',
     serviceCardSnorkelTitle: 'Passeios de barco',
@@ -388,7 +388,7 @@
       stays: { title: 'Hospedagens e hotéis', description: 'Encontre hospedagem para sua estadia.', imageAlt: 'Casa de Maderas, hospedagem colorida com piscina' },
       'surf-lessons': { title: 'Aulas de surfe', description: 'Uma aula de surfe adaptada ao nível do seu grupo.', imageAlt: 'Aluna praticando surfe em Tamarindo' },
       'surf-coaching': { title: 'Coaching de surfe', description: 'Treinamento e análise para evoluir no surfe.', imageAlt: 'Três surfistas pulando com suas pranchas na praia' },
-      'witch-rock': { title: 'Roca Bruja', description: 'Um passeio de surfe de barco.', imageAlt: 'Formação rochosa de Roca Bruja diante da costa' },
+      'witch-rock': { title: 'Roca Bruja', description: 'Um passeio de surfe de barco.', imageAlt: 'Grupo a bordo de um barco diante da formação rochosa de Roca Bruja' },
       'snorkel-catamaran': { title: 'Passeios de barco', description: 'Explore o mar ou navegue pela costa.', imageAlt: 'Passeio de barco pela costa de Guanacaste' },
       yoga: { title: 'Yoga', description: 'Inclua uma pausa na sua viagem.', imageAlt: 'Mulher praticando yoga à beira-mar' },
       atv: { title: 'Passeios de quadriciclo — ATV', description: 'Escolha um percurso e consulte o valor por veículo.', imageAlt: 'Grupo de quadriciclos em uma trilha de floresta tropical' },
@@ -898,7 +898,7 @@
       lead: 'Alguns surf trips ficam com você muito depois da última onda.',
       coordination: 'A WavePoint ajuda a coordenar os detalhes considerando o nível de surfe do grupo e as condições do mar.',
       imageAlts: ['Formação rochosa de Roca Bruja diante da costa', 'Vista próxima da formação rochosa de Roca Bruja a partir do mar'],
-      galleryImageAlts: ['Roca Bruja e uma onda quebrando diante da formação rochosa', 'Vista próxima da formação rochosa de Roca Bruja a partir do mar']
+      galleryImageAlts: ['Roca Bruja e uma onda quebrando diante da formação rochosa', 'Vista próxima da formação rochosa de Roca Bruja a partir do mar', 'Grupo a bordo de um barco diante da formação rochosa de Roca Bruja']
     },
     'snorkel-catamaran': {
       eyebrow: 'PASSEIOS DE BARCO · GUANACASTE',
@@ -1002,8 +1002,8 @@
       cardText: 'Encontre seu flow em terra.',
       description: 'Treine suas curvas, ganhe confiança na prancha e experimente movimentos que depois pode levar para a água. Seja sua primeira vez no surfskate ou uma forma de complementar sua prática de surfe, a WavePoint conecta você a instrutores locais para encontrar uma sessão adequada ao seu nível.',
       includes: ['Prancha de surfskate para a aula', 'Capacete e equipamentos de proteção'],
-      imageAlts: ['Aula de surfskate em grupo ao ar livre', 'Aula de surfskate em grupo com várias pessoas sobre as pranchas', 'Surfista pegando uma onda no mar', 'Dois instrutores praticando surfskate', 'Instrutor explicando a aula a estudantes sentados nas pranchas na praia', 'Pessoa praticando surfskate em uma pista'],
-      galleryImageAlts: ['Aula de surfskate em grupo ao ar livre', 'Aula de surfskate em grupo com várias pessoas sobre as pranchas', 'Surfista pegando uma onda no mar', 'Dois instrutores praticando surfskate', 'Instrutor explicando a aula a estudantes sentados nas pranchas na praia', 'Pessoa praticando surfskate em uma pista']
+      imageAlts: ['Aula de surfskate em grupo ao ar livre', 'Grupo praticando surfskate em uma pista coberta', 'Dois instrutores praticando surfskate', 'Pessoa praticando surfskate em uma pista'],
+      galleryImageAlts: ['Aula de surfskate em grupo ao ar livre', 'Grupo praticando surfskate em uma pista coberta', 'Dois instrutores praticando surfskate', 'Pessoa praticando surfskate em uma pista']
     },
     retiros: {
       eyebrow: 'RETIROS · TAMARINDO',
