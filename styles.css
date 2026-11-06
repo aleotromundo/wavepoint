@@ -9481,6 +9481,17 @@ footer a {
   object-position: center !important;
   background: #fff !important;
 }
+.allies-ticker .ally-tile.ally-nativa-diving {
+  background: #f7f0e5 !important;
+}
+.allies-ticker .ally-tile.ally-nativa-diving img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #f7f0e5 !important;
+}
+.allies-ticker .ally-tile.ally-nativa-diving::after {
+  display: none !important;
+}
 /* ATV · modalidades, tarifas de referencia y condiciones del servicio. */
 .atv-story { display:grid; gap:clamp(20px,3vw,30px); margin-top:clamp(30px,5vw,54px); }
 .atv-copy { max-width:900px; padding:clamp(24px,4vw,42px); border:1px solid rgba(8,127,128,.16); border-radius:26px; background:rgba(255,255,255,.94); box-shadow:0 18px 42px rgba(8,43,58,.1); }
