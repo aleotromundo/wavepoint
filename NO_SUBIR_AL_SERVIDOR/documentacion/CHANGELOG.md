@@ -1,3 +1,10 @@
+# 2026-11-06
+### Embarcaciones — bajar ligeramente el encuadre de la tarjeta
+- `styles.optimized.css`: solo en móvil, el encuadre de la foto se baja 6 puntos para dar más espacio sobre las cabezas; en escritorio se conserva el encuadre anterior.
+- `styles.css`: se conserva el encuadre anterior de escritorio.
+- `index.html`: se renueva la caché de `styles.optimized.css`.
+- Validación: confirmar los valores exclusivos de la tarjeta y ejecutar `git diff --check`.
+
 # 2026-11-05
 ### Editor temporal de encuadres para las tarjetas
 - `index.html`, `card-crop-editor.js`, `styles.css` y `styles.optimized.css`: se agrega un editor accesible solo con `?editor-encuadres=1`, con arrastre, zoom, posición horizontal/vertical y confirmación individual.
