@@ -3733,7 +3733,8 @@ to{filter:brightness(1.18)}
   min-width: 0 !important;
   padding: 0 !important;
   border: 0 !important;
-  border-radius: 9px !important;
+  border-radius: 20px !important;
+  clip-path: inset(0 round 20px) !important;
   object-fit: contain !important;
   object-position: center !important;
   background: transparent !important;
