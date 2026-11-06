@@ -9482,12 +9482,30 @@ footer a {
   background: #fff !important;
 }
 .allies-ticker .ally-tile.ally-nativa-diving {
-  background: #f7f0e5 !important;
+  background: rgba(255, 255, 255, .1) !important;
 }
 .allies-ticker .ally-tile.ally-nativa-diving img {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  flex: 0 0 104px !important;
+  width: 104px !important;
+  height: 58px !important;
+  max-width: 104px !important;
+  min-width: 104px !important;
+  padding: 4px !important;
+  border: 1px solid rgba(18, 55, 71, .12) !important;
+  border-radius: 8px !important;
   object-fit: contain !important;
   object-position: center !important;
   background: #f7f0e5 !important;
+  z-index: auto !important;
+}
+.allies-ticker .ally-tile.ally-nativa-diving strong {
+  color: #f4fbf8 !important;
+}
+.allies-ticker .ally-tile.ally-nativa-diving small {
+  color: #a0e7d8 !important;
 }
 .allies-ticker .ally-tile.ally-nativa-diving::after {
   display: none !important;
