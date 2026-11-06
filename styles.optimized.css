@@ -3294,7 +3294,7 @@ to{filter:brightness(1.18)}
 }
 @media (max-width: 760px) {
   #servicios .service-grid-catalog .service-card-snorkel .service-img img {
-    object-position: center 65% !important;
+    object-position: center 59% !important;
   }
 }
 .service-card:hover .service-img img,
