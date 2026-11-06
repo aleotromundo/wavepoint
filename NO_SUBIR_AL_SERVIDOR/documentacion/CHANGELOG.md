@@ -1,4 +1,9 @@
 # 2026-11-05
+### Editor temporal de encuadres para las tarjetas
+- `index.html`, `card-crop-editor.js`, `styles.css` y `styles.optimized.css`: se agrega un editor accesible solo con `?editor-encuadres=1`, con arrastre, zoom, posición horizontal/vertical y confirmación individual.
+- Los encuadres confirmados quedan en el almacenamiento local del navegador para revisarlos y exportarlos; después se incorporan al CSS del sitio al aprobarse.
+- Validación: editor inactivo en la página normal; edición, confirmación/exportación y `git diff --check`.
+
 ### Roca Bruja — nueva foto en tarjeta y galería
 - `foto-14.jpg` de la guía se optimiza como `assets/img/services/witchs-rock/guide-roca-bruja-boat.webp` y se usa en la tarjeta de Servicios, el armador del viaje y como tercera imagen de la galería.
 - `services.js`, `pt-br.js`, `script.js` y `trip-builder.js`: textos alternativos alineados en español, inglés y portugués brasileño.
