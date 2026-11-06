@@ -21,11 +21,11 @@ Este mapa conserva la correspondencia entre cada imagen y su posición en el arc
 | 15 | `foto-15.png` | (sin texto cercano) |
 | 16 | `foto-16.jpg` | (sin texto cercano) |
 | 17 | `foto-17.png` | (sin texto cercano) |
-| 18 | `foto-18.jpg` | fotos : |
-| 19 | `foto-19.jpg` | (sin texto cercano) |
-| 20 | `foto-20.jpg` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
-| 21 | `foto-21.jpg` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
-| 22 | `foto-22.png` | logo para agregar en patrocinadores y colaboradores el roll de abajo del titulo |
+| 18 | `foto-18.jpg` | Ficha de Buceo |
+| 19 | `foto-19.jpg` | Ficha de Buceo |
+| 20 | `foto-20.jpg` | Ficha de Buceo |
+| 21 | `foto-21.jpg` | Ficha de Buceo |
+| 22 | `foto-22.png` | Logo de Nativa Diving para Aliados y patrocinadores |
 
 ## Fotos para Fotos de surf
 
@@ -50,3 +50,8 @@ La galería conserva `surfskate-bowl.webp` y la portada anterior `surfskate.webp
 
 - `foto-14.jpg` → `assets/img/services/witchs-rock/guide-roca-bruja-boat.webp`: tarjeta de Servicios, tarjeta del armador del viaje y tercera imagen de la galería de Roca Bruja.
 - Se conserva la foto original de la guía sin modificar.
+
+## Logo de Nativa Diving
+
+- `foto-22.png` → `assets/img/collaborators/nativa-diving/nativa-diving-logo.webp`: logo incorporado únicamente al carrusel de Aliados y patrocinadores.
+- Las fotos 17 a 21 corresponden a la ficha de Buceo; no se usan como logos.

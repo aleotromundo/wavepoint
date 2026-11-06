@@ -1,4 +1,12 @@
 # 2026-11-06
+### Aliados — agregar Nativa Diving al carrusel
+- `assets/img/collaborators/nativa-diving/nativa-diving-logo.webp`: se prepara el recorte optimizado del logo de la guía.
+- `index.html`: Nativa Diving se agrega al carrusel principal de Aliados y a su copia visual duplicada, sin aparecer en otras secciones.
+- `styles.css` y `styles.optimized.css`: el logo conserva su proporción y fondo claro dentro de la tarjeta.
+- `NO_SUBIR_AL_SERVIDOR/material/fotos-guia-segunda-parte/REFERENCIAS_FOTOS.md`: se aclara que la foto 22 es el logo de Nativa Diving y que las fotos 17 a 21 son de Buceo.
+- `NO_SUBIR_AL_SERVIDOR/documentacion/Estado_fotos_Guia_Segunda_Parte.pdf`: se actualiza el estado del logo a resuelto.
+- Validación: comprobar presencia una vez por cada tira sincronizada, ruta del logo y `git diff --check`.
+
 ### Embarcaciones — bajar ligeramente el encuadre de la tarjeta
 - `styles.optimized.css`: solo en móvil, el encuadre de la foto se baja 6 puntos para dar más espacio sobre las cabezas; en escritorio se conserva el encuadre anterior.
 - `styles.css`: se conserva el encuadre anterior de escritorio.
