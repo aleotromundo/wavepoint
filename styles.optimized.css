@@ -3733,7 +3733,7 @@ to{filter:brightness(1.18)}
   min-width: 0 !important;
   padding: 0 !important;
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 9px !important;
   object-fit: contain !important;
   object-position: center !important;
   background: transparent !important;
