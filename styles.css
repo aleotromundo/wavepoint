@@ -4029,7 +4029,7 @@ body.card-crop-editor-active #servicios .service-grid-catalog .service-card.card
   height: 100% !important;
   max-width: none !important;
   object-fit: cover !important;
-  border-radius: 0 !important;
+  border-radius: 9px !important;
   z-index: 1 !important;
   transition: none !important;
   pointer-events: none !important;
