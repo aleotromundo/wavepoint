@@ -3722,19 +3722,28 @@ to{filter:brightness(1.18)}
   border: 1px solid rgba(160, 231, 216, .2) !important;
   background: rgba(255, 255, 255, .1) !important;
 }
-.allies-ticker .ally-tile.ally-nativa-diving img {
-  position: static !important;
-  inset: auto !important;
+.allies-ticker .ally-tile.ally-nativa-diving > .ally-nativa-logo-frame {
   display: block !important;
   flex: 0 0 90% !important;
   width: 90% !important;
   height: 90% !important;
   max-width: 90% !important;
   min-width: 0 !important;
+  overflow: hidden !important;
+  border-radius: 9px !important;
+  background: #f7f0e5 !important;
+}
+.allies-ticker .ally-tile.ally-nativa-diving .ally-nativa-logo-frame img {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: none !important;
   padding: 0 !important;
   border: 0 !important;
-  border-radius: 20px !important;
-  clip-path: inset(0 round 20px) !important;
   object-fit: contain !important;
   object-position: center !important;
   background: transparent !important;
