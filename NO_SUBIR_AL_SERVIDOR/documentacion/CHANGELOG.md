@@ -1,7 +1,7 @@
 # 2026-11-06
 ### Aliados — integrar visualmente la tarjeta de Nativa Diving
-- `index.html`: la tarjeta de Nativa mantiene el logo completo y suma el nombre y la categoría, como las demás tarjetas.
-- `styles.css` y `styles.optimized.css`: el logo horizontal se muestra entero en un panel claro dentro de la tarjeta estándar, con dimensiones legibles también en móvil.
+- `index.html`: la tarjeta de Nativa muestra únicamente el logo completo, sin texto adicional.
+- `styles.css` y `styles.optimized.css`: el logo ocupa el 90% de la tarjeta, centrado y completo, dejando visible el borde translúcido del carrusel.
 - Validación: revisar las dos copias sincronizadas del carrusel, las reglas responsive y `git diff --check`.
 
 ### Aliados — agregar Nativa Diving al carrusel
