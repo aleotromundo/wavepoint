@@ -4029,7 +4029,8 @@ body.card-crop-editor-active #servicios .service-grid-catalog .service-card.card
   height: 100% !important;
   max-width: none !important;
   object-fit: cover !important;
-  border-radius: 9px !important;
+  border-radius: 14px !important;
+  clip-path: inset(0 round 14px) !important;
   z-index: 1 !important;
   transition: none !important;
   pointer-events: none !important;
@@ -9498,7 +9499,7 @@ footer a {
   min-width: 0 !important;
   padding: 0 !important;
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 9px !important;
   object-fit: contain !important;
   object-position: center !important;
   background: transparent !important;
