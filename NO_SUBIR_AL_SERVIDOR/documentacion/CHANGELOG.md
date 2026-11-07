@@ -1,8 +1,8 @@
 # 2026-11-07
 ### Surfskate — subir el encuadre de la tarjeta para mostrar los pies
-- `styles.css` y `styles.optimized.css`: se desplaza la foto 100 px hacia arriba solo en escritorio para que los pies queden visibles sobre el panel de texto; móvil no cambia. El ajuste anterior de `object-position` no producía un cambio perceptible.
+- `styles.css` y `styles.optimized.css`: la tarjeta gana altura progresivamente en escritorio y el encuadre de la foto se ajusta según el ancho, para mostrar más a las personas sin cortarles la cabeza y aprovechar el espacio para revelar sus pies. Móvil no cambia.
 - `index.html`: se renueva la versión de caché del CSS.
-- Validación: comprobar el desplazamiento exclusivo de escritorio y ejecutar `git diff --check`.
+- Validación: comprobar la tarjeta en varios anchos de escritorio y en móvil, y ejecutar `git diff --check`.
 
 ### Carrusel de aliados — evitar que se recorte el efecto hover
 - `styles.css` y `styles.optimized.css`: se agregan 5 px de espacio vertical dentro del viewport para conservar el desplazamiento ascendente de las tarjetas sin que se corte.
