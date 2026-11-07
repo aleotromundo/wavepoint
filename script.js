@@ -2076,11 +2076,14 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
   });
 })();
 
-// Ajustador reutilizable conectado al logo que ahora pertenece a la tarjeta Surfskate.
+// Ajustador conectado al logo flotante del fondo de Servicios.
 (() => {
   const initLogoPlacementEditor = () => {
-    const art = document.querySelector('[data-logo-placement-target="surfskate-card"]');
-    if (!art || document.querySelector('.logo-placement-tool')) return;
+    const art = document.querySelector('[data-logo-placement-target="services-background"]');
+    const section = document.querySelector('#servicios');
+    const layer = section?.querySelector('.services-logo-placement-layer');
+    const surfskateCard = section?.querySelector('.service-card-surfskate');
+    if (!art || !section || !layer || !surfskateCard || document.querySelector('.logo-placement-tool')) return;
 
     const targetName = art.dataset.logoPlacementTarget;
     const storageKey = `wavepoint-logo-placement-${targetName}`;
@@ -2095,12 +2098,31 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
     let drag = null;
     let moved = false;
 
+    const placeBesideSurfskate = () => {
+      const sectionRect = section.getBoundingClientRect();
+      const cardRect = surfskateCard.getBoundingClientRect();
+      const layerWidth = layer.clientWidth;
+      const logoWidth = art.offsetWidth;
+      const logoHeight = art.offsetHeight;
+      const gap = 24;
+      let left = cardRect.right - sectionRect.left + gap;
+      let top = cardRect.top - sectionRect.top + Math.max(0, (cardRect.height - logoHeight) / 2);
+      if (left + logoWidth > layerWidth - 16) {
+        left = cardRect.left - sectionRect.left;
+        top = cardRect.bottom - sectionRect.top + gap;
+      }
+      left = Math.max(16, Math.min(left, Math.max(16, layerWidth - logoWidth - 16)));
+      top = Math.max(16, top);
+      art.style.left = `${Math.round(left)}px`;
+      art.style.top = `${Math.round(top)}px`;
+    };
+
     const panel = document.createElement('aside');
     panel.className = 'logo-placement-tool';
-    panel.setAttribute('aria-label', 'Ajuste temporal del logo de Surfskate');
+    panel.setAttribute('aria-label', 'Ajuste temporal del logo en el fondo de Servicios');
     panel.innerHTML = `
-      <strong>Ajustar logo de Surfskate</strong>
-      <p>Arrastrá el logo de la tarjeta para elegir su posición y cambiá el tamaño con el control.</p>
+      <strong>Ajustar logo de WavePoint</strong>
+      <p>Arrastrá el logo libremente sobre el fondo de Servicios y cambiá su tamaño con el control.</p>
       <label>Tamaño <input class="logo-placement-scale" type="range" min="0.65" max="1.35" step="0.01" value="1" aria-label="Tamaño del logo"></label>
       <div class="logo-placement-readout" aria-live="polite"></div>
       <button class="logo-placement-confirm" type="button">Confirmar ubicación</button>
@@ -2168,7 +2190,9 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
       confirm.textContent = 'Ajuste confirmado';
     });
 
+    placeBesideSurfskate();
     render();
+    window.addEventListener('resize', placeBesideSurfskate, { passive: true });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initLogoPlacementEditor, { once: true });
   else initLogoPlacementEditor();
