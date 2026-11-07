@@ -4102,3 +4102,8 @@ to{filter:brightness(1.18)}
 .newsletter .newsletter-alliance-button-wa { display:grid; place-items:center; width:42px; height:42px; flex:0 0 42px; border:1px solid rgba(7,51,71,.16); border-radius:50%; background:rgba(255,255,255,.62); color:#fff; box-shadow:0 3px 10px rgba(7,51,71,.12); }
 .newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width:29px; height:29px; }
 @media (max-width:420px) { .newsletter .newsletter-alliance-button-wa { width:40px; height:40px; flex-basis:40px; } }
+
+/* El círculo del CTA adopta el tratamiento completo del logo actual de WhatsApp. */
+.newsletter .newsletter-alliance-button-wa { width:42px; height:42px; flex:0 0 42px; border:0; background:#25D366; box-shadow:0 4px 12px rgba(0,92,45,.24); }
+.newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width:31px; height:31px; }
+@media (max-width:420px) { .newsletter .newsletter-alliance-button-wa { width:40px; height:40px; flex-basis:40px; } .newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width:30px; height:30px; } }

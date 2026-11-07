@@ -10027,3 +10027,18 @@ footer a {
 @media (max-width: 420px) {
   .newsletter .newsletter-alliance-button-wa { width: 40px; height: 40px; flex-basis: 40px; }
 }
+
+/* El círculo del CTA adopta el tratamiento completo del logo actual de WhatsApp. */
+.newsletter .newsletter-alliance-button-wa {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 0;
+  background: #25D366;
+  box-shadow: 0 4px 12px rgba(0, 92, 45, .24);
+}
+.newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width: 31px; height: 31px; }
+@media (max-width: 420px) {
+  .newsletter .newsletter-alliance-button-wa { width: 40px; height: 40px; flex-basis: 40px; }
+  .newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width: 30px; height: 30px; }
+}
