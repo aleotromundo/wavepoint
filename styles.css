@@ -9935,3 +9935,17 @@ footer a {
 @media (prefers-reduced-motion: reduce) {
   .newsletter .newsletter-alliance-button, .newsletter .newsletter-alliance-button-arrow { transition: none; }
 }
+
+/* Partnership aerial treatment: original WavePoint mark in front of a softened Costa Rica coast image. */
+.newsletter .newsletter-alliance-logo-art { position: relative; isolation: isolate; width: min(92%, 380px); height: 220px; margin-top: 0; }
+.newsletter .newsletter-alliance-aerial { position: absolute; z-index: 0; inset: 8% -4% 6%; overflow: hidden; border: 1px solid rgba(214, 190, 128, .42); border-radius: 42% 58% 46% 54% / 48% 45% 55% 52%; transform: rotate(-3deg); opacity: .84; box-shadow: 0 0 0 10px rgba(214, 190, 128, .035), 0 18px 44px rgba(1, 19, 29, .25); }
+.newsletter .newsletter-alliance-aerial::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(110deg, rgba(4, 28, 41, .58), rgba(5, 50, 64, .16) 46%, rgba(4, 28, 41, .54)); }
+.newsletter .newsletter-alliance-aerial::after { content: ""; position: absolute; inset: -8%; z-index: 2; border: 1px solid rgba(175, 239, 230, .22); border-radius: inherit; box-shadow: inset 0 0 30px rgba(2, 20, 31, .24); }
+.newsletter .newsletter-alliance-aerial img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 68% 46%; filter: blur(1.5px) saturate(.78) contrast(.96); transform: scale(1.08); }
+.newsletter .newsletter-alliance-logo .logo-wave-aura { z-index: 1; opacity: .34; }
+.newsletter .newsletter-alliance-logo .services-watermark { position: relative; z-index: 3; width: 100%; max-height: 190px; filter: drop-shadow(0 14px 24px rgba(0, 0, 0, .34)); }
+@media (max-width: 760px) {
+  .newsletter .newsletter-alliance-logo-art { width: min(92%, 290px); height: 170px; }
+  .newsletter .newsletter-alliance-aerial { inset: 8% -5% 5%; }
+  .newsletter .newsletter-alliance-logo .services-watermark { max-height: 155px; }
+}
