@@ -9200,7 +9200,7 @@ footer a {
 .allies-ticker .section-title { margin-bottom: 3px; color: #f4fbf8; font-size: clamp(24px, 3vw, 34px); }
 .allies-ticker .section-sub { max-width: 760px; color: rgba(234, 247, 242, .7); font-size: 13px; }
 .allies-ticker .sq { background: #48d7c1; }
-.allies-ticker-viewport { width: 100%; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.allies-ticker-viewport { width: 100%; padding-block: 5px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
 .allies-ticker-track { display: flex; width: max-content; animation: allies-slide-left 26s linear infinite; will-change: transform; }
 .allies-ticker-set { display: flex; gap: 12px; padding-right: 12px; }
 .ally-tile { display: flex; align-items: center; gap: 10px; width: 194px; height: 74px; padding: 8px 12px 8px 8px; flex: 0 0 auto; border: 1px solid rgba(160, 231, 216, .2); border-radius: 12px; background: rgba(255, 255, 255, .1); color: #f4fbf8; transition: transform .2s ease, background .2s ease; }
@@ -9467,15 +9467,22 @@ footer a {
 @media (max-width:640px){.surf-lesson-details{margin-top:20px;padding:17px}.surf-lesson-details .service-supporting-lead{font-size:15px;line-height:1.55}.surf-lesson-details ul{display:grid;gap:7px}.surf-lesson-details li{border-radius:12px}}
 /* Carrusel de aliados: arrastre horizontal estable sin interferir con el avance automático. */
 .allies-ticker-viewport {
-  cursor: grab;
+  cursor: grab !important;
   user-select: none;
   -webkit-user-select: none;
+}
+.allies-ticker-viewport,
+.allies-ticker-viewport * {
+  cursor: grab !important;
+}
+.allies-ticker.is-dragging .allies-ticker-viewport,
+.allies-ticker.is-dragging .allies-ticker-viewport * {
+  cursor: grabbing !important;
 }
 .allies-ticker-viewport img {
   -webkit-user-drag: none;
   user-select: none;
 }
-.allies-ticker.is-dragging .allies-ticker-viewport { cursor: grabbing; }
 .allies-ticker .ally-tile img.ally-eterno-verano-logo {
   object-fit: contain !important;
   object-position: center !important;
@@ -9489,14 +9496,16 @@ footer a {
 }
 .allies-ticker .ally-tile.ally-nativa-diving > .ally-nativa-logo-frame {
   display: block !important;
-  flex: 0 0 90% !important;
-  width: 90% !important;
+  flex: 0 0 94% !important;
+  width: 94% !important;
   height: 90% !important;
-  max-width: 90% !important;
+  max-width: 94% !important;
   min-width: 0 !important;
+  box-sizing: border-box !important;
   overflow: hidden !important;
+  padding: 4px !important;
   border-radius: 9px !important;
-  background: #f7f0e5 !important;
+  background: transparent !important;
 }
 .allies-ticker .ally-tile.ally-nativa-diving .ally-nativa-logo-frame img {
   position: static !important;

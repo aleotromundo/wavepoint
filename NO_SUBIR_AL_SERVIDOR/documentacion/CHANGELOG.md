@@ -1,3 +1,14 @@
+# 2026-11-07
+### Carrusel de aliados — evitar que se recorte el efecto hover
+- `styles.css` y `styles.optimized.css`: se agregan 5 px de espacio vertical dentro del viewport para conservar el desplazamiento ascendente de las tarjetas sin que se corte.
+- `index.html`: se renueva la versión de caché del CSS.
+- Validación: comprobar el espacio adicional alrededor de la tarjeta y ejecutar `git diff --check`.
+
+### Aliados — probar logo blanco de Nativa Diving
+- `assets/img/collaborators/nativa-diving/nativa-diving-logo-white.webp`: versión blanca del logo con fondo transparente para integrarse con el fondo oscuro de la tarjeta.
+- `index.html`: se usa la nueva versión solo en las dos copias del carrusel de aliados.
+- Validación: comprobar transparencia, color blanco, proporción original y `git diff --check`.
+
 # 2026-11-06
 ### Aliados — integrar visualmente la tarjeta de Nativa Diving
 - `index.html`: la tarjeta de Nativa muestra únicamente el logo completo, sin texto adicional.
