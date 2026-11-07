@@ -4094,3 +4094,6 @@ to{filter:brightness(1.18)}
 .newsletter .newsletter-alliance-watermark { margin-top:2px; }
 .newsletter .newsletter-alliance-location { margin-top:-2px; }
 @media (max-width:760px) { .newsletter .newsletter-alliance-logo { width:min(100%,270px); height:auto; padding:0; gap:7px; } .newsletter .newsletter-alliance-copy { text-align:left; } .newsletter .newsletter-alliance-card h2 { max-width:100%; } .newsletter .newsletter-alliance-card .newsletter-card-text { max-width:100%; } .newsletter .newsletter-alliance-qr { width:min(100%,132px); } .newsletter .newsletter-alliance-watermark { margin-top:0; } }
+
+/* En móvil, el mensaje y la acción van primero; el logo/QR cierra la tarjeta debajo. */
+@media (max-width:760px) { .newsletter .newsletter-alliance-copy { grid-column:1; grid-row:1; } .newsletter .newsletter-alliance-logo { grid-column:1; grid-row:2; } }

@@ -10003,3 +10003,9 @@ footer a {
   .newsletter .newsletter-alliance-qr { width: min(100%, 132px); }
   .newsletter .newsletter-alliance-watermark { margin-top: 0; }
 }
+
+/* En móvil, el mensaje y la acción van primero; el logo/QR cierra la tarjeta debajo. */
+@media (max-width: 760px) {
+  .newsletter .newsletter-alliance-copy { grid-column: 1; grid-row: 1; }
+  .newsletter .newsletter-alliance-logo { grid-column: 1; grid-row: 2; }
+}
