@@ -4097,3 +4097,8 @@ to{filter:brightness(1.18)}
 
 /* En móvil, el mensaje y la acción van primero; el logo/QR cierra la tarjeta debajo. */
 @media (max-width:760px) { .newsletter .newsletter-alliance-copy { grid-column:1; grid-row:1; } .newsletter .newsletter-alliance-logo { grid-column:1; grid-row:2; } }
+
+/* La flecha del CTA gira hacia el destino real del QR/logo. */
+.newsletter .newsletter-alliance-button-arrow { --alliance-arrow-rotation:0deg; transform:rotate(var(--alliance-arrow-rotation)); transform-origin:center; transition:transform .28s ease,background .22s ease; }
+.newsletter .newsletter-alliance-button:hover .newsletter-alliance-button-arrow { transform:translate(2px,-2px) rotate(var(--alliance-arrow-rotation)); }
+@media (prefers-reduced-motion:reduce) { .newsletter .newsletter-alliance-button-arrow { transition:none; } }

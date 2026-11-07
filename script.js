@@ -2112,3 +2112,45 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initServicesBackgroundLogo, { once: true });
   else initServicesBackgroundLogo();
 })();
+
+// Flecha del CTA de alianzas: apunta siempre al bloque QR/logo, incluso después de un reflow responsive.
+(() => {
+  const initAllianceArrow = () => {
+    const button = document.querySelector('.newsletter-alliance-button');
+    const arrow = document.querySelector('.newsletter-alliance-button-arrow');
+    const target = document.querySelector('.newsletter-alliance-logo');
+    const card = document.querySelector('.newsletter-alliance-card');
+    if (!button || !arrow || !target) return;
+
+    let frame = 0;
+    const update = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const sourceRect = arrow.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const sourceX = sourceRect.left + sourceRect.width / 2;
+        const sourceY = sourceRect.top + sourceRect.height / 2;
+        const targetX = targetRect.left + targetRect.width / 2;
+        const targetY = targetRect.top + targetRect.height / 2;
+        const angle = Math.atan2(targetY - sourceY, targetX - sourceX) * 180 / Math.PI;
+        // El glifo ↗ ya nace apuntando a 45 grados; compensamos esa orientación base.
+        arrow.style.setProperty('--alliance-arrow-rotation', `${angle - 45}deg`);
+      });
+    };
+
+    update();
+    window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('orientationchange', update, { passive: true });
+    if (document.fonts?.ready) document.fonts.ready.then(update);
+    if (window.ResizeObserver) {
+      const observer = new ResizeObserver(update);
+      observer.observe(button);
+      observer.observe(target);
+      if (card) observer.observe(card);
+    }
+  };
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAllianceArrow, { once: true });
+  else initAllianceArrow();
+})();
