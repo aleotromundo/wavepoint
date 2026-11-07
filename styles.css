@@ -3670,8 +3670,11 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 	object-position: center 85%;
 }
 @media (min-width: 981px) {
+  #servicios .service-grid-catalog .service-card-surfskate {
+    min-height: clamp(435px, 31.6vw, 455px);
+  }
   #servicios .service-card-surfskate .service-img img {
-    top: -100px !important;
+    top: clamp(-100px, -7vw, -88px) !important;
     bottom: auto !important;
     height: 100% !important;
   }
