@@ -1,6 +1,6 @@
 # 2026-11-07
 ### Surfskate — subir el encuadre de la tarjeta para mostrar los pies
-- `styles.css` y `styles.optimized.css`: se desplaza la foto 44 px hacia arriba solo en escritorio para que los pies queden visibles sobre el panel de texto; móvil no cambia. El ajuste anterior de `object-position` no producía un cambio perceptible.
+- `styles.css` y `styles.optimized.css`: se desplaza la foto 100 px hacia arriba solo en escritorio para que los pies queden visibles sobre el panel de texto; móvil no cambia. El ajuste anterior de `object-position` no producía un cambio perceptible.
 - `index.html`: se renueva la versión de caché del CSS.
 - Validación: comprobar el desplazamiento exclusivo de escritorio y ejecutar `git diff --check`.
 

@@ -3671,7 +3671,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 }
 @media (min-width: 981px) {
   #servicios .service-card-surfskate .service-img img {
-    top: -44px !important;
+    top: -100px !important;
     bottom: auto !important;
     height: 100% !important;
   }
