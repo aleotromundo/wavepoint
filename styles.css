@@ -9960,3 +9960,13 @@ footer a {
 .newsletter .newsletter-alliance-watermark { position: relative; z-index: 1; display: block; width: 82px !important; height: auto; max-height: 48px !important; opacity: .72 !important; filter: drop-shadow(0 5px 12px rgba(0, 167, 189, .24)) !important; }
 .newsletter .newsletter-alliance-location { position: static; z-index: 1; color: rgba(198, 242, 239, .58); font-size: 8px; }
 @media (max-width: 760px) { .newsletter .newsletter-alliance-logo { width: min(100%, 300px); height: 260px; padding: 14px 14px 10px; } .newsletter .newsletter-alliance-qr { width: min(100%, 170px); padding: 8px; border-radius: 12px; } .newsletter .newsletter-alliance-qr-label { font-size: 9px; } .newsletter .newsletter-alliance-watermark { width: 66px !important; max-height: 38px !important; } }
+
+/* En móvil, la firma de WavePoint lidera; el QR queda como acción secundaria. */
+@media (max-width: 760px) {
+  .newsletter .newsletter-alliance-logo { height: 286px; gap: 7px; }
+  .newsletter .newsletter-alliance-watermark { order: 1; width: 118px !important; max-height: 68px !important; opacity: .94 !important; }
+  .newsletter .newsletter-alliance-qr-link { order: 2; gap: 5px; }
+  .newsletter .newsletter-alliance-qr-label { font-size: 8px; letter-spacing: .1em; }
+  .newsletter .newsletter-alliance-qr { width: min(100%, 132px); padding: 7px; border-radius: 10px; }
+  .newsletter .newsletter-alliance-location { order: 3; }
+}
