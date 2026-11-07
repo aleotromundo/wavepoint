@@ -483,9 +483,9 @@ id: 'surfskate', number: '09', eyebrow: 'SURFSKATE · PROGRESO', title: 'Clases 
 cardText: 'Encontrá tu flow en tierra.',
 description: 'Explorá tus giros, ganá confianza sobre la tabla y empezá a sentir movimientos que después podés llevar al agua. Ya sea que pruebes el surfskate por primera vez o quieras sumarlo a tu práctica de surf, WavePoint te conecta con instructores locales para encontrar una sesión acorde a tu nivel.',
 includes: ['Tabla de surfskate para la sesión', 'Casco y protecciones'],
-images: ['assets/img/services/surfskate/guide-surfskate-cover.webp', 'assets/img/services/surfskate/surfskate-bowl.webp', 'assets/img/services/surfskate/surfskate.webp', 'assets/img/services/surfskate/guide-surfskate-gallery.webp'],
-imageAlts: ['Clase grupal de surfskate al aire libre', 'Grupo practicando surfskate en una pista cubierta', 'Dos instructores practicando surfskate sobre una tabla', 'Persona practicando surfskate en una pista'],
-imageAltsEn: ['Group surfskate lesson outdoors', 'Group practicing surfskate at an indoor park', 'Two instructors practicing surfskate on a board', 'Person practicing surfskate on a track'],
+images: ['assets/img/services/surfskate/guide-surfskate-cover.webp', 'assets/img/services/surfskate/surfskate.webp', 'assets/img/services/surfskate/guide-surfskate-gallery.webp'],
+imageAlts: ['Clase grupal de surfskate al aire libre', 'Dos instructores practicando surfskate sobre una tabla', 'Persona practicando surfskate en una pista'],
+imageAltsEn: ['Group surfskate lesson outdoors', 'Two instructors practicing surfskate on a board', 'Person practicing surfskate on a track'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha preferida'], minDate: 'today' },
 { id: 'group_size', label: '¿Cuántas personas participarían?', type: 'number', min: 1 },
@@ -1020,7 +1020,7 @@ const galleryStart = service.id === 'roca-bruja' ? 0 : 1;
 const galleryImages = service.galleryImages || service.images.slice(galleryStart);
 const galleryImageAlts = isEn ? (service.galleryImageAltsEn || service.imageAltsEn) : (service.galleryImageAlts || service.imageAlts);
 const gallery = galleryImages.map((image, index) => { const altIndex = service.galleryImages ? index : index + galleryStart; return `<img src="${esc(image)}" alt="${esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
-const galleryClass = service.id === 'surfskate' ? ' service-editorial-gallery-surfskate' : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
+const galleryClass = service.id === 'surfskate' ? ` service-editorial-gallery-surfskate${galleryImages.length === 2 ? ' service-editorial-gallery-surfskate--two' : ''}` : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
 const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
 const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : lang === 'pt-BR' ? 'INCLUÍDO' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';

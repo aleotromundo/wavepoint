@@ -44,7 +44,7 @@ Las fotos 11, 12 y 13 se optimizaron en WebP y se distribuyen sin retirar las im
 - `foto-12.jpg` → `assets/img/services/surfskate/guide-surfskate-cover.webp`: portada de la ficha.
 - `foto-13.jpg` → `assets/img/services/surfskate/guide-surfskate-gallery.webp`: nueva imagen de la galería.
 
-La galería conserva `surfskate-bowl.webp` y la portada anterior `surfskate.webp`, además de la nueva foto 13. Se quitaron `surfskate-class.webp` (el coach con las alumnas) y `surfskate-wave.webp` (el surfista en una ola), según lo pedido. El archivo original de la guía no se modifica.
+La galería conserva la portada anterior `surfskate.webp` y la nueva foto 13 (`guide-surfskate-gallery.webp`). `surfskate-bowl.webp` (el grupo practicando en la playa) ya no se muestra en la galería. También se quitaron `surfskate-class.webp` (el coach con las alumnas) y `surfskate-wave.webp` (el surfista en una ola), según lo pedido. El archivo original de la guía no se modifica.
 
 ## Foto para Roca Bruja
 
