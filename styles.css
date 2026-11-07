@@ -1423,13 +1423,13 @@ h1, h2, h3, h4, .section-title, .foot-brand {
 #servicios { position: relative; }
 #servicios .services-logo-placement-layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
 /* Confirmed initial logo placement: x=76px, y=-37px, scale=1.00. */
-#servicios .services-background-logo { position: absolute; top: 0; left: 0; display: grid; place-items: center; width: min(42vw, 420px); height: 300px; pointer-events: none; cursor: default; touch-action: auto; transform: translate3d(76px, -37px, 0) scale(1.00); transform-origin: center; }
+#servicios .services-background-logo { position: absolute; top: 0; left: 0; display: grid; place-items: center; width: min(42vw, 420px); height: 300px; pointer-events: none; cursor: default; touch-action: auto; transform: translate3d(76px, -55px, 0) scale(1.00); transform-origin: center; }
 #servicios .services-background-logo .logo-wave-aura { inset: -14% -10% -8%; }
 #servicios .services-background-logo .services-watermark { width: 100%; height: auto; max-height: 100%; object-fit: contain; opacity: .92; filter: drop-shadow(0 8px 20px rgba(0, 167, 189, .22)); pointer-events: none; transform: none; position: relative; z-index: 1; }
 @media (max-width: 980px) { #servicios .services-background-logo { width: min(42vw, 360px); height: 250px; } }
 @media (max-width: 640px) {
   #servicios .services-logo-placement-layer { position: relative; inset: auto; z-index: 1; grid-column: 1 / -1; height: 180px; display: grid; place-items: center; pointer-events: none; }
-  #servicios .services-background-logo { position: relative; top: auto !important; left: auto !important; width: min(88vw, 320px); height: 180px; transform: none; display: grid; }
+  #servicios .services-background-logo { position: relative; top: auto !important; left: auto !important; width: min(88vw, 320px); height: 180px; transform: translateY(-18px); display: grid; }
 }
 .newsletter-card { position: relative; min-height: 276px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; padding: clamp(26px, 3vw, 40px); border: 1px solid rgba(255,255,255,.22); border-radius: 24px; background: rgba(4, 31, 45, .34); box-shadow: 0 20px 54px rgba(3, 24, 35, .24); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
 .newsletter-card::before { content: ""; position: absolute; width: 210px; height: 210px; right: -76px; top: -92px; border-radius: 50%; background: rgba(128, 230, 218, .18); filter: blur(2px); pointer-events: none; }
