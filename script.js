@@ -2076,16 +2076,16 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
   });
 })();
 
-// Editor temporal para que el propietario defina la posición final del logo de alianzas.
+// Ajustador reutilizable conectado al logo que ahora pertenece a la tarjeta Surfskate.
 (() => {
   const initLogoPlacementEditor = () => {
-    const logo = document.querySelector('.newsletter-alliance-logo');
-    const art = logo?.querySelector('.newsletter-alliance-logo-art');
-    if (!logo || !art || document.querySelector('.logo-placement-tool')) return;
+    const art = document.querySelector('[data-logo-placement-target="surfskate-card"]');
+    if (!art || document.querySelector('.logo-placement-tool')) return;
 
-    const STORAGE_KEY = 'wavepoint-logo-placement-preview';
+    const targetName = art.dataset.logoPlacementTarget;
+    const storageKey = `wavepoint-logo-placement-${targetName}`;
     const saved = (() => {
-      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch (error) { return null; }
+      try { return JSON.parse(localStorage.getItem(storageKey) || 'null'); } catch (error) { return null; }
     })();
     const state = {
       x: Number.isFinite(saved?.x) ? saved.x : 0,
@@ -2097,10 +2097,10 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
 
     const panel = document.createElement('aside');
     panel.className = 'logo-placement-tool';
-    panel.setAttribute('aria-label', 'Ajuste temporal del logo');
+    panel.setAttribute('aria-label', 'Ajuste temporal del logo de Surfskate');
     panel.innerHTML = `
-      <strong>Ajustar logo de WavePoint</strong>
-      <p>Arrastrá el logo para elegir dónde queda. También podés cambiar su tamaño con el control.</p>
+      <strong>Ajustar logo de Surfskate</strong>
+      <p>Arrastrá el logo de la tarjeta para elegir su posición y cambiá el tamaño con el control.</p>
       <label>Tamaño <input class="logo-placement-scale" type="range" min="0.65" max="1.35" step="0.01" value="1" aria-label="Tamaño del logo"></label>
       <div class="logo-placement-readout" aria-live="polite"></div>
       <button class="logo-placement-confirm" type="button">Confirmar ubicación</button>
@@ -2118,7 +2118,7 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
       art.style.setProperty('--logo-scale', state.scale.toFixed(2));
       scaleInput.value = state.scale.toFixed(2);
       readout.textContent = `x: ${Math.round(state.x)} · y: ${Math.round(state.y)} · tamaño: ${state.scale.toFixed(2)}x`;
-      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (error) { /* storage optional */ }
+      try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (error) { /* storage optional */ }
     };
 
     const updateFromPointer = event => {
@@ -2156,12 +2156,15 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
     }, { passive: false });
     scaleInput.addEventListener('input', () => { state.scale = Number(scaleInput.value); render(); });
     confirm.addEventListener('click', async () => {
-      const code = `WAVEPOINT_LOGO x=${Math.round(state.x)} y=${Math.round(state.y)} scale=${state.scale.toFixed(2)}`;
+      const x = Math.round(state.x);
+      const y = Math.round(state.y);
+      const scale = state.scale.toFixed(2);
+      const code = `WAVEPOINT_LOGO target=${targetName} x=${x} y=${y} scale=${scale}`;
       const url = new URL(window.location.href);
-      url.hash = `wavepoint-logo=${Math.round(state.x)},${Math.round(state.y)},${state.scale.toFixed(2)}`;
+      url.hash = `wavepoint-logo=${targetName},${x},${y},${scale}`;
       const message = `${code}\n${url.toString()}`;
       try { await navigator.clipboard.writeText(message); } catch (error) { window.prompt('Copiá este ajuste y mandámelo:', message); }
-      status.textContent = `Ajuste confirmado y copiado: ${code}. Mandame el código o este enlace para publicarlo definitivo.`;
+      status.textContent = `Ajuste confirmado y copiado: ${code}. Mandame el código o este enlace para fijarlo en el diseño.`;
       confirm.textContent = 'Ajuste confirmado';
     });
 
