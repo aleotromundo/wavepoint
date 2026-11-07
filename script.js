@@ -2112,3 +2112,44 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initServicesBackgroundLogo, { once: true });
   else initServicesBackgroundLogo();
 })();
+
+// En mobile, la flecha del CTA señala al WhatsApp flotante fijo en pantalla; desktop conserva la flecha original.
+(() => {
+  const initMobileAllianceArrow = () => {
+    const button = document.querySelector('.newsletter-alliance-button');
+    const arrow = document.querySelector('.newsletter-alliance-button-arrow');
+    const target = document.querySelector('.whatsapp-float');
+    const mobile = window.matchMedia('(max-width: 760px)');
+    if (!button || !arrow || !target) return;
+
+    let frame = 0;
+    const update = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        if (!mobile.matches) {
+          arrow.style.removeProperty('--mobile-alliance-arrow-rotation');
+          return;
+        }
+        const sourceRect = arrow.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const sourceX = sourceRect.left + sourceRect.width / 2;
+        const sourceY = sourceRect.top + sourceRect.height / 2;
+        const targetX = targetRect.left + targetRect.width / 2;
+        const targetY = targetRect.top + targetRect.height / 2;
+        const angle = Math.atan2(targetY - sourceY, targetX - sourceX) * 180 / Math.PI;
+        arrow.style.setProperty('--mobile-alliance-arrow-rotation', `${angle - 45}deg`);
+      });
+    };
+
+    update();
+    window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('orientationchange', update, { passive: true });
+    mobile.addEventListener?.('change', update);
+    if (document.fonts?.ready) document.fonts.ready.then(update);
+  };
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initMobileAllianceArrow, { once: true });
+  else initMobileAllianceArrow();
+})();
