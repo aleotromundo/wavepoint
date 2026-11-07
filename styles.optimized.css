@@ -4055,3 +4055,6 @@ to{filter:brightness(1.18)}
 
 /* Alliance logo visual */
 .newsletter-alliance-card{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(20px,4vw,64px);align-items:center}.newsletter-alliance-copy{position:relative;z-index:2}.newsletter-alliance-logo{position:relative;z-index:1;display:grid;place-items:center;width:min(100%,340px);min-height:250px;justify-self:center;align-self:stretch}.newsletter-alliance-logo .services-watermark{grid-column:auto;width:100%;height:auto;min-height:0;max-height:260px;object-fit:contain;opacity:.94;filter:drop-shadow(0 12px 24px rgba(0,167,189,.28));transform:none}@media (max-width:760px){.newsletter-alliance-card{grid-template-columns:1fr;gap:4px}.newsletter-alliance-logo{width:min(100%,250px);min-height:190px;order:-1}.newsletter-alliance-logo .services-watermark{max-height:190px}}
+
+/* Keep the alliance logo in the desktop right column */
+.newsletter-alliance-logo{grid-column:2!important;grid-row:1;min-height:0;height:100%;align-self:center}@media (max-width:760px){.newsletter-alliance-logo{grid-column:1!important;grid-row:auto;height:auto}}
