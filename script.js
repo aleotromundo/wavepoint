@@ -2091,9 +2091,9 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
       try { return JSON.parse(localStorage.getItem(storageKey) || 'null'); } catch (error) { return null; }
     })();
     const state = {
-      x: Number.isFinite(saved?.x) ? saved.x : 0,
-      y: Number.isFinite(saved?.y) ? saved.y : 0,
-      scale: Number.isFinite(saved?.scale) ? saved.scale : 1
+      x: Number.isFinite(saved?.x) ? saved.x : 76,
+      y: Number.isFinite(saved?.y) ? saved.y : -37,
+      scale: Number.isFinite(saved?.scale) ? saved.scale : 1.00
     };
     let drag = null;
     let moved = false;

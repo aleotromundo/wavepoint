@@ -10,7 +10,7 @@ Usar este flujo para colocar o redimensionar logos en el sitio. Identificar prim
 ## Implementación actual
 
 - El logo de alianzas está en `index.html` dentro de `.newsletter-alliance-logo`. Su ubicación fijada actual está en `styles.css` y `styles.optimized.css`: `x=-126px`, `y=-7px`, `scale=1.35`.
-- El logo flotante de WavePoint está en una capa absoluta independiente sobre la sección `#servicios`, no dentro de una tarjeta. Su objetivo es `[data-logo-placement-target="services-background"]`; el ajustador lo coloca inicialmente junto a la tarjeta Surfskate y permite arrastrarlo libremente sobre el fondo de la sección.
+- El logo flotante de WavePoint está en una capa absoluta independiente sobre la sección `#servicios`, no dentro de una tarjeta. Su objetivo es `[data-logo-placement-target="services-background"]`; el ajustador lo coloca inicialmente junto a la tarjeta Surfskate y permite arrastrarlo libremente sobre el fondo de la sección. Su ubicación inicial confirmada es `x=76px`, `y=-37px`, `scale=1.00`, relativa a esa posición base.
 - El ajustador de `script.js` permite arrastrar y cambiar el tamaño (`0.65`–`1.35`). Al confirmar produce un código como `WAVEPOINT_LOGO target=services-background x=-20 y=8 scale=1.10` y un enlace con el hash `#wavepoint-logo=services-background,-20,8,1.10`.
 - La vista previa se guarda en `localStorage` con la clave `wavepoint-logo-placement-services-background`. Confirmar copia el ajuste; no lo fija automáticamente en el código.
 
