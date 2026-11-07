@@ -9918,3 +9918,38 @@ footer a {
 
 /* Let the alliance mark sit directly on the card; keep only its soft oval halo. */
 .newsletter .newsletter-alliance-logo { border: 0; border-radius: 0; background: transparent; box-shadow: none; overflow: visible; }
+
+/* Compact partnership card: make the WavePoint mark the single, integrated WhatsApp action. */
+.newsletter { padding: clamp(34px, 4.5vw, 58px) 0; }
+.newsletter .newsletter-alliance-card { min-height: 310px; gap: clamp(20px, 3vw, 44px); padding: clamp(26px, 3.5vw, 44px); }
+.newsletter .newsletter-alliance-action { margin-top: 18px; }
+.newsletter .newsletter-alliance-followup { margin: 0 !important; color: rgba(224, 244, 245, .76); font: 500 12px/1.5 "DM Sans", sans-serif; }
+.newsletter .newsletter-alliance-logo { position: relative; display: grid; grid-column: 2; grid-row: 1; place-items: center; justify-self: end; align-self: center; width: min(100%, 360px); height: 260px; margin: 0; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; cursor: pointer; transition: transform .24s ease; }
+.newsletter .newsletter-alliance-logo-cta { position: absolute; z-index: 3; top: 13px; left: 50%; width: min(84%, 310px); transform: translateX(-50%); color: #bcf5ef; font: 800 10px/1.45 "DM Sans", sans-serif; letter-spacing: .12em; text-align: center; text-transform: uppercase; text-shadow: 0 2px 12px rgba(1, 22, 34, .62); }
+.newsletter .newsletter-alliance-logo-art { position: relative; z-index: 1; display: grid; place-items: center; width: min(88%, 310px); height: 158px; margin-top: 16px; transform: none; transform-origin: center; }
+.newsletter .newsletter-alliance-logo .services-watermark { width: 100%; height: auto; min-height: 0; max-height: 158px; object-fit: contain; opacity: .99; filter: drop-shadow(0 12px 24px rgba(0, 167, 189, .3)); transform: none; }
+.newsletter .newsletter-alliance-logo:hover { transform: translateY(-3px); }
+.newsletter .newsletter-alliance-logo:hover .services-watermark { transform: scale(1.035); }
+.newsletter .newsletter-alliance-logo:hover::before { border-color: rgba(175, 245, 241, .32); box-shadow: 0 0 0 22px rgba(176, 245, 242, .035), 0 0 48px rgba(15, 199, 215, .18); }
+.newsletter .newsletter-alliance-logo:focus-visible { outline: 3px solid #f3b64b; outline-offset: 4px; border-radius: 50%; }
+.newsletter .newsletter-alliance-button-arrow { position: absolute; z-index: 3; top: 21px; right: 24px; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(205, 250, 246, .32); border-radius: 50%; background: rgba(4, 42, 57, .3); color: #e5fffb; font-size: 19px; line-height: 1; }
+.newsletter .newsletter-alliance-location { bottom: 13px; }
+@media (max-width: 760px) {
+  .newsletter { padding: 32px 0; }
+  .newsletter .newsletter-alliance-card { min-height: 0; gap: 8px; padding: clamp(22px, 5vw, 30px); }
+  .newsletter .newsletter-alliance-logo { grid-column: 1; grid-row: 1; justify-self: center; width: min(100%, 280px); height: 184px; }
+  .newsletter .newsletter-alliance-logo-cta { top: 5px; width: min(86%, 260px); font-size: 9px; letter-spacing: .1em; }
+  .newsletter .newsletter-alliance-logo-art { width: min(84%, 235px); height: 110px; margin-top: 18px; }
+  .newsletter .newsletter-alliance-logo .services-watermark { max-height: 110px; }
+  .newsletter .newsletter-alliance-button-arrow { top: 7px; right: 14px; width: 29px; height: 29px; font-size: 17px; }
+  .newsletter .newsletter-alliance-location { bottom: 7px; }
+  .newsletter .newsletter-alliance-copy { grid-column: 1; grid-row: 2; }
+  .newsletter .newsletter-alliance-action { margin-top: 12px; }
+}
+@media (max-width: 420px) {
+  .newsletter .newsletter-alliance-card { padding: 20px; }
+  .newsletter .newsletter-alliance-logo-cta { width: 82%; font-size: 8.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .newsletter .newsletter-alliance-logo, .newsletter .newsletter-alliance-logo .services-watermark { transition: none; }
+}
