@@ -9,7 +9,7 @@ Usar este flujo para colocar o redimensionar logos en el sitio. Identificar prim
 
 ## Implementación actual
 
-- El logo de alianzas está en `index.html` dentro de `.newsletter-alliance-logo`. Su ubicación fijada actual está en `styles.css` y `styles.optimized.css`: `x=-126px`, `y=-7px`, `scale=1.35`.
+- El logo de alianzas está en `index.html` dentro de `.newsletter-alliance-logo`, centrado en un marco visual responsive. No conserva el antiguo desplazamiento `x=-126px`, que hacía que invadiera la columna del texto; el ajuste se controla por la cuadrícula del componente.
 - El logo de WavePoint está en una capa absoluta sobre `#servicios`, independiente del grid y de la tarjeta Surfskate. El script solo calcula una posición base junto a la tarjeta Surfskate (debajo en pantallas donde no cabe al costado) y la recalcula al cambiar el viewport.
 - La ubicación final confirmada del logo de fondo es `x=76px`, `y=-37px`, `scale=1.00`, relativa a la posición base. Está fijada directamente en `styles.css` y `styles.optimized.css`.
 - El ajustador visual fue retirado por solicitud del propietario después de fijar la posición. No hay panel, arrastre, guardado `localStorage` ni botón de confirmación activo en la página. Si el propietario pide volver a ajustar, consultar esta skill y reintroducirlo únicamente para el objetivo correcto.
