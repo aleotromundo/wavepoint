@@ -217,7 +217,7 @@
     allianceTitle: 'Vamos criar algo especial juntos.',
     allianceText: 'Você oferece hospedagem, experiências ou serviços em Tamarindo? Queremos conhecer seu trabalho e conectá-lo a quem vem descobrir a região.',
     allianceFollowup: 'Uma conversa direta pelo WhatsApp, sem compromisso.',
-    allianceButton: 'Vamos conversar sobre uma parceria com',
+    allianceButton: 'Vamos conversar',
     newsletterKicker: 'NOVIDADES LOCAIS',
     newsletterButton: 'Quero receber novidades',
     newsletterEmailPlaceholder: 'Seu e-mail',
