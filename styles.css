@@ -9970,3 +9970,36 @@ footer a {
   .newsletter .newsletter-alliance-qr { width: min(100%, 132px); padding: 7px; border-radius: 10px; }
   .newsletter .newsletter-alliance-location { order: 3; }
 }
+
+/* La zona QR/logo se integra con la tarjeta: sin segundo recuadro ni altura desperdiciada. */
+.newsletter .newsletter-alliance-logo {
+  width: min(100%, 360px);
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  gap: 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.newsletter .newsletter-alliance-copy { align-self: center; }
+.newsletter .newsletter-alliance-card h2 { max-width: 610px; }
+.newsletter .newsletter-alliance-card .newsletter-card-text { max-width: 560px; }
+.newsletter .newsletter-alliance-qr-link { gap: 7px; }
+.newsletter .newsletter-alliance-qr { width: min(100%, 218px); }
+.newsletter .newsletter-alliance-watermark { margin-top: 2px; }
+.newsletter .newsletter-alliance-location { margin-top: -2px; }
+@media (max-width: 760px) {
+  .newsletter .newsletter-alliance-logo {
+    width: min(100%, 270px);
+    height: auto;
+    padding: 0;
+    gap: 7px;
+  }
+  .newsletter .newsletter-alliance-copy { text-align: left; }
+  .newsletter .newsletter-alliance-card h2 { max-width: 100%; }
+  .newsletter .newsletter-alliance-card .newsletter-card-text { max-width: 100%; }
+  .newsletter .newsletter-alliance-qr { width: min(100%, 132px); }
+  .newsletter .newsletter-alliance-watermark { margin-top: 0; }
+}
