@@ -10009,15 +10009,3 @@ footer a {
   .newsletter .newsletter-alliance-copy { grid-column: 1; grid-row: 1; }
   .newsletter .newsletter-alliance-logo { grid-column: 1; grid-row: 2; }
 }
-
-/* En mobile, el destino de la flecha es el WhatsApp flotante, no el QR de la tarjeta. */
-@media (max-width: 760px) {
-  .newsletter .newsletter-alliance-button-arrow {
-    --mobile-alliance-arrow-rotation: 0deg;
-    transform: rotate(var(--mobile-alliance-arrow-rotation));
-    transition: transform .22s ease, background .22s ease;
-  }
-  .newsletter .newsletter-alliance-button:hover .newsletter-alliance-button-arrow {
-    transform: translate(2px, -2px) rotate(var(--mobile-alliance-arrow-rotation));
-  }
-}
