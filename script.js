@@ -2076,34 +2076,21 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
   });
 })();
 
-// Ajustador conectado al logo flotante del fondo de Servicios.
+// Mantener el logo flotante del fondo cerca de Surfskate sin ligarlo a la tarjeta.
 (() => {
-  const initLogoPlacementEditor = () => {
-    const art = document.querySelector('[data-logo-placement-target="services-background"]');
+  const initServicesBackgroundLogo = () => {
+    const logo = document.querySelector('.services-background-logo');
     const section = document.querySelector('#servicios');
     const layer = section?.querySelector('.services-logo-placement-layer');
     const surfskateCard = section?.querySelector('.service-card-surfskate');
-    if (!art || !section || !layer || !surfskateCard || document.querySelector('.logo-placement-tool')) return;
-
-    const targetName = art.dataset.logoPlacementTarget;
-    const storageKey = `wavepoint-logo-placement-${targetName}`;
-    const saved = (() => {
-      try { return JSON.parse(localStorage.getItem(storageKey) || 'null'); } catch (error) { return null; }
-    })();
-    const state = {
-      x: Number.isFinite(saved?.x) ? saved.x : 76,
-      y: Number.isFinite(saved?.y) ? saved.y : -37,
-      scale: Number.isFinite(saved?.scale) ? saved.scale : 1.00
-    };
-    let drag = null;
-    let moved = false;
+    if (!logo || !section || !layer || !surfskateCard) return;
 
     const placeBesideSurfskate = () => {
       const sectionRect = section.getBoundingClientRect();
       const cardRect = surfskateCard.getBoundingClientRect();
       const layerWidth = layer.clientWidth;
-      const logoWidth = art.offsetWidth;
-      const logoHeight = art.offsetHeight;
+      const logoWidth = logo.offsetWidth;
+      const logoHeight = logo.offsetHeight;
       const gap = 24;
       let left = cardRect.right - sectionRect.left + gap;
       let top = cardRect.top - sectionRect.top + Math.max(0, (cardRect.height - logoHeight) / 2);
@@ -2113,87 +2100,13 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
       }
       left = Math.max(16, Math.min(left, Math.max(16, layerWidth - logoWidth - 16)));
       top = Math.max(16, top);
-      art.style.left = `${Math.round(left)}px`;
-      art.style.top = `${Math.round(top)}px`;
+      logo.style.left = `${Math.round(left)}px`;
+      logo.style.top = `${Math.round(top)}px`;
     };
-
-    const panel = document.createElement('aside');
-    panel.className = 'logo-placement-tool';
-    panel.setAttribute('aria-label', 'Ajuste temporal del logo en el fondo de Servicios');
-    panel.innerHTML = `
-      <strong>Ajustar logo de WavePoint</strong>
-      <p>Arrastrá el logo libremente sobre el fondo de Servicios y cambiá su tamaño con el control.</p>
-      <label>Tamaño <input class="logo-placement-scale" type="range" min="0.65" max="1.35" step="0.01" value="1" aria-label="Tamaño del logo"></label>
-      <div class="logo-placement-readout" aria-live="polite"></div>
-      <button class="logo-placement-confirm" type="button">Confirmar ubicación</button>
-      <div class="logo-placement-status" role="status" aria-live="polite"></div>`;
-    document.body.appendChild(panel);
-
-    const scaleInput = panel.querySelector('.logo-placement-scale');
-    const readout = panel.querySelector('.logo-placement-readout');
-    const status = panel.querySelector('.logo-placement-status');
-    const confirm = panel.querySelector('.logo-placement-confirm');
-
-    const render = () => {
-      art.style.setProperty('--logo-x', `${state.x}px`);
-      art.style.setProperty('--logo-y', `${state.y}px`);
-      art.style.setProperty('--logo-scale', state.scale.toFixed(2));
-      scaleInput.value = state.scale.toFixed(2);
-      readout.textContent = `x: ${Math.round(state.x)} · y: ${Math.round(state.y)} · tamaño: ${state.scale.toFixed(2)}x`;
-      try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (error) { /* storage optional */ }
-    };
-
-    const updateFromPointer = event => {
-      if (!drag) return;
-      state.x = drag.originX + event.clientX - drag.clientX;
-      state.y = drag.originY + event.clientY - drag.clientY;
-      if (Math.abs(event.clientX - drag.clientX) + Math.abs(event.clientY - drag.clientY) > 4) moved = true;
-      render();
-    };
-
-    art.addEventListener('pointerdown', event => {
-      if (event.button !== 0) return;
-      event.preventDefault();
-      moved = false;
-      drag = { clientX: event.clientX, clientY: event.clientY, originX: state.x, originY: state.y };
-      art.classList.add('is-dragging');
-      art.setPointerCapture?.(event.pointerId);
-    });
-    art.addEventListener('pointermove', updateFromPointer);
-    const stopDrag = event => {
-      if (!drag) return;
-      art.releasePointerCapture?.(event.pointerId);
-      art.classList.remove('is-dragging');
-      drag = null;
-    };
-    art.addEventListener('pointerup', stopDrag);
-    art.addEventListener('pointercancel', stopDrag);
-    art.addEventListener('click', event => {
-      if (moved) { event.preventDefault(); event.stopPropagation(); moved = false; }
-    }, true);
-    art.addEventListener('wheel', event => {
-      event.preventDefault();
-      state.scale = Math.max(.65, Math.min(1.35, state.scale + (event.deltaY < 0 ? .03 : -.03)));
-      render();
-    }, { passive: false });
-    scaleInput.addEventListener('input', () => { state.scale = Number(scaleInput.value); render(); });
-    confirm.addEventListener('click', async () => {
-      const x = Math.round(state.x);
-      const y = Math.round(state.y);
-      const scale = state.scale.toFixed(2);
-      const code = `WAVEPOINT_LOGO target=${targetName} x=${x} y=${y} scale=${scale}`;
-      const url = new URL(window.location.href);
-      url.hash = `wavepoint-logo=${targetName},${x},${y},${scale}`;
-      const message = `${code}\n${url.toString()}`;
-      try { await navigator.clipboard.writeText(message); } catch (error) { window.prompt('Copiá este ajuste y mandámelo:', message); }
-      status.textContent = `Ajuste confirmado y copiado: ${code}. Mandame el código o este enlace para fijarlo en el diseño.`;
-      confirm.textContent = 'Ajuste confirmado';
-    });
 
     placeBesideSurfskate();
-    render();
     window.addEventListener('resize', placeBesideSurfskate, { passive: true });
   };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initLogoPlacementEditor, { once: true });
-  else initLogoPlacementEditor();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initServicesBackgroundLogo, { once: true });
+  else initServicesBackgroundLogo();
 })();
