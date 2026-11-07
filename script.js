@@ -2075,3 +2075,98 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
     }
   });
 })();
+
+// Editor temporal para que el propietario defina la posición final del logo de alianzas.
+(() => {
+  const initLogoPlacementEditor = () => {
+    const logo = document.querySelector('.newsletter-alliance-logo');
+    const art = logo?.querySelector('.newsletter-alliance-logo-art');
+    if (!logo || !art || document.querySelector('.logo-placement-tool')) return;
+
+    const STORAGE_KEY = 'wavepoint-logo-placement-preview';
+    const saved = (() => {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch (error) { return null; }
+    })();
+    const state = {
+      x: Number.isFinite(saved?.x) ? saved.x : 0,
+      y: Number.isFinite(saved?.y) ? saved.y : 0,
+      scale: Number.isFinite(saved?.scale) ? saved.scale : 1
+    };
+    let drag = null;
+    let moved = false;
+
+    const panel = document.createElement('aside');
+    panel.className = 'logo-placement-tool';
+    panel.setAttribute('aria-label', 'Ajuste temporal del logo');
+    panel.innerHTML = `
+      <strong>Ajustar logo de WavePoint</strong>
+      <p>Arrastrá el logo para elegir dónde queda. También podés cambiar su tamaño con el control.</p>
+      <label>Tamaño <input class="logo-placement-scale" type="range" min="0.65" max="1.35" step="0.01" value="1" aria-label="Tamaño del logo"></label>
+      <div class="logo-placement-readout" aria-live="polite"></div>
+      <button class="logo-placement-confirm" type="button">Confirmar ubicación</button>
+      <div class="logo-placement-status" role="status" aria-live="polite"></div>`;
+    document.body.appendChild(panel);
+
+    const scaleInput = panel.querySelector('.logo-placement-scale');
+    const readout = panel.querySelector('.logo-placement-readout');
+    const status = panel.querySelector('.logo-placement-status');
+    const confirm = panel.querySelector('.logo-placement-confirm');
+
+    const render = () => {
+      art.style.setProperty('--logo-x', `${state.x}px`);
+      art.style.setProperty('--logo-y', `${state.y}px`);
+      art.style.setProperty('--logo-scale', state.scale.toFixed(2));
+      scaleInput.value = state.scale.toFixed(2);
+      readout.textContent = `x: ${Math.round(state.x)} · y: ${Math.round(state.y)} · tamaño: ${state.scale.toFixed(2)}x`;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (error) { /* storage optional */ }
+    };
+
+    const updateFromPointer = event => {
+      if (!drag) return;
+      state.x = drag.originX + event.clientX - drag.clientX;
+      state.y = drag.originY + event.clientY - drag.clientY;
+      if (Math.abs(event.clientX - drag.clientX) + Math.abs(event.clientY - drag.clientY) > 4) moved = true;
+      render();
+    };
+
+    art.addEventListener('pointerdown', event => {
+      if (event.button !== 0) return;
+      event.preventDefault();
+      moved = false;
+      drag = { clientX: event.clientX, clientY: event.clientY, originX: state.x, originY: state.y };
+      art.classList.add('is-dragging');
+      art.setPointerCapture?.(event.pointerId);
+    });
+    art.addEventListener('pointermove', updateFromPointer);
+    const stopDrag = event => {
+      if (!drag) return;
+      art.releasePointerCapture?.(event.pointerId);
+      art.classList.remove('is-dragging');
+      drag = null;
+    };
+    art.addEventListener('pointerup', stopDrag);
+    art.addEventListener('pointercancel', stopDrag);
+    art.addEventListener('click', event => {
+      if (moved) { event.preventDefault(); event.stopPropagation(); moved = false; }
+    }, true);
+    art.addEventListener('wheel', event => {
+      event.preventDefault();
+      state.scale = Math.max(.65, Math.min(1.35, state.scale + (event.deltaY < 0 ? .03 : -.03)));
+      render();
+    }, { passive: false });
+    scaleInput.addEventListener('input', () => { state.scale = Number(scaleInput.value); render(); });
+    confirm.addEventListener('click', async () => {
+      const code = `WAVEPOINT_LOGO x=${Math.round(state.x)} y=${Math.round(state.y)} scale=${state.scale.toFixed(2)}`;
+      const url = new URL(window.location.href);
+      url.hash = `wavepoint-logo=${Math.round(state.x)},${Math.round(state.y)},${state.scale.toFixed(2)}`;
+      const message = `${code}\n${url.toString()}`;
+      try { await navigator.clipboard.writeText(message); } catch (error) { window.prompt('Copiá este ajuste y mandámelo:', message); }
+      status.textContent = `Ajuste confirmado y copiado: ${code}. Mandame el código o este enlace para publicarlo definitivo.`;
+      confirm.textContent = 'Ajuste confirmado';
+    });
+
+    render();
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initLogoPlacementEditor, { once: true });
+  else initLogoPlacementEditor();
+})();
