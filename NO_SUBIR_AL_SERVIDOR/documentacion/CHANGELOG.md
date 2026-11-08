@@ -8,6 +8,12 @@
 - `REFERENCIAS_FOTOS.md` y `SEGUIMIENTO.md`: se registró la correspondencia de fotos y el punto como resuelto.
 - Validación: `node --check services.js`, `node --check script.js`, `node --check pt-br.js` y `git diff --check` sin errores.
 
+### Local Host — centrar personas en tarjeta y portada
+- `styles.css` y `styles.optimized.css`: se ajusta el encuadre vertical de la misma foto de Local Host a `76%` tanto en la tarjeta del catálogo como en la portada de la ficha, para mostrar a las personas y reducir el cielo.
+- `services.js`: se agrega la clase específica `local-host-detail-page` para limitar el cambio a esta ficha.
+- `index.html` y `service-detail.html`: se renueva la caché del CSS.
+- Validación: sintaxis JavaScript y `git diff --check`.
+
 ### Surfskate — subir el encuadre de la tarjeta para mostrar los pies
 - `styles.css` y `styles.optimized.css`: la tarjeta gana altura progresivamente en escritorio y el encuadre de la foto se ajusta según el ancho, para mostrar más a las personas sin cortarles la cabeza y aprovechar el espacio para revelar sus pies. Móvil no cambia.
 - `index.html`: se renueva la versión de caché del CSS.
