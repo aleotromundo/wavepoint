@@ -3004,6 +3004,7 @@ body { min-height: 100vh; background: #071c28; overscroll-behavior: none !import
 .service-page-heading .service-page-intro { max-width: 720px; margin: 14px 0 0; }
 .detail-hero { position: relative; isolation: isolate; display: flex; min-height: min(590px, 74svh); align-items: end; overflow: hidden; padding: 150px 0 72px; background: linear-gradient(90deg, rgba(3,22,31,.9), rgba(4,36,45,.54) 62%, rgba(6,40,48,.2)), var(--service-detail-image) center/cover no-repeat; }
 .boat-detail-page .detail-hero { background-position: center 44%; }
+.local-host-detail-page .detail-hero { background-position: center 76%; }
 .detail-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(4,24,33,.34), transparent 64%); }
 .detail-hero-content {
   position: relative;
@@ -3705,6 +3706,9 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
 }
 #servicios .service-card-surfskate .service-img img {
 	object-position: center 85%;
+}
+#servicios .service-card-local-host .service-img img {
+	object-position: center 76%;
 }
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card-surfskate {
