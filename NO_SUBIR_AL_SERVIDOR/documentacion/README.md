@@ -7,12 +7,14 @@ Sitio web estático bilingüe de experiencias de surf, turismo y colaboradores l
 Si estás leyendo este repositorio para continuar un trabajo, seguí este orden antes de editar:
 
 1. Leer este `README.md`.
-2. Leer `PROJECT_GUIDE.md` completo y respetar sus decisiones protegidas.
-3. Leer la entrada más reciente de `CHANGELOG.md`.
-4. Revisar `git status --short --branch` y no sobrescribir cambios existentes que no pertenezcan a tu tarea. Si el trabajo se hace desde varios dispositivos, sincronizar primero con `git pull --rebase` o `git fetch` + revisión del estado para evitar perder cambios locales de otra copia.
-5. Auditar el alcance exacto, implementar el cambio mínimo y mantener separados los cambios visuales, funcionales y de contenido.
-6. Validar sintaxis, referencias, responsive, accesibilidad y `git diff --check`.
-7. Registrar el cambio en `CHANGELOG.md` con archivos, motivo, comportamiento esperado y validaciones.
+2. Leer `SEGUIMIENTO.md` y ubicar el punto de trabajo si la tarea afecta una guía, decisión, estado o pendiente.
+3. Leer `PROJECT_GUIDE.md` completo y respetar sus decisiones protegidas.
+4. Leer la entrada más reciente de `CHANGELOG.md`.
+5. Revisar `git status --short --branch` y no sobrescribir cambios existentes que no pertenezcan a tu tarea. Si el trabajo se hace desde varios dispositivos, sincronizar primero con `git pull --rebase` o `git fetch` + revisión del estado para evitar perder cambios locales de otra copia.
+6. Auditar el alcance exacto, implementar el cambio mínimo y mantener separados los cambios visuales, funcionales y de contenido.
+7. Validar sintaxis, referencias, responsive, accesibilidad y `git diff --check`.
+8. Si corresponde, actualizar `SEGUIMIENTO.md` con la resolución, archivos, validaciones y pendientes residuales.
+9. Registrar el cambio en `CHANGELOG.md` con archivos, motivo, comportamiento esperado y validaciones cuando sea un cambio relevante.
 
 ## Cómo trabajar con el usuario
 
@@ -56,6 +58,7 @@ python3 -m http.server 4173 --bind 0.0.0.0
 ## Documentación de continuidad
 
 - `AGENTS.md`: reglas de entrada para agentes y herramientas compatibles.
+- `SEGUIMIENTO.md`: estado central de tareas, resoluciones, validaciones y pendientes.
 - `PROJECT_GUIDE.md`: fuente de verdad de producto, arquitectura, copy, catálogo y restricciones.
 - `AUDIT.md`: auditoría técnica, riesgos y próximos pasos de producción.
 - `CHANGELOG.md`: registro obligatorio de cambios y validaciones.

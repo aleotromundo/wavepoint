@@ -545,6 +545,42 @@ licenses: { label: 'Do the drivers have a valid driver’s license?', options: [
 }
 },
 {
+id: 'local-host', number: '10A', eyebrow: 'BIENVENIDA LOCAL · TAMARINDO', title: 'Country Host — Tu bienvenida a Tamarindo',
+cardText: 'Llegá, conocé y empezá a sentirte parte.',
+description: 'Llegar a un lugar nuevo es más fácil cuando alguien te recibe. Con Country Host, tenés un contacto local de WAVEPOINT para resolver tus primeras dudas, descubrir lugares que van con vos y encontrar planes para compartir. Una bienvenida gratuita para empezar a disfrutar Tamarindo con orientación y compañía.',
+lead: 'Una hora de bienvenida y orientación presencial, más consultas por WhatsApp durante las 48 horas siguientes al encuentro. La bienvenida es gratuita; las actividades y consumos que decidas contratar se pagan por separado.',
+includes: ['Precio: gratuito', 'Encuentro presencial de una hora de bienvenida y orientación', 'Recomendaciones para comer y salir según tus gustos, presupuesto y el ambiente que busques', 'Orientación sobre playas, clases y alternativas de surf', 'Conexión con planes y encuentros de la vida local, según disponibilidad', 'Ayuda para consultar y organizar otras experiencias', 'Consultas por WhatsApp durante las 48 horas posteriores al encuentro'],
+images: [
+'assets/img/services/local-host/local-host-1.webp',
+'assets/img/services/local-host/local-host-2.webp',
+'assets/img/services/local-host/local-host-3.webp',
+'assets/img/services/local-host/local-host-4.webp'
+],
+imageAlts: [
+'Grupo de visitantes reunido en la playa de Tamarindo al atardecer',
+'Grupo de personas compartiendo una comida en Tamarindo',
+'Grupo de visitantes reunido durante una salida nocturna',
+'Grupo de amigos compartiendo un encuentro en Tamarindo'
+],
+imageAltsEn: [
+'Group of visitors gathered on Tamarindo beach at sunset',
+'Group of people sharing a meal in Tamarindo',
+'Group of visitors gathered during a night out',
+'Friends sharing a local gathering in Tamarindo'
+],
+questions: [
+{ id: 'arrival_date', label: '¿Cuándo llegás a Tamarindo?', type: 'dates', fields: ['Fecha de llegada'], minDate: 'today' },
+{ id: 'stay_length', label: '¿Cuántos días te quedás?', type: 'text', placeholder: 'Ej.: 5 días' },
+{ id: 'group_size', label: '¿Con quién viajás?', type: 'text', placeholder: 'Ej.: solo, pareja, amigos o familia' },
+{ id: 'lodging', label: '¿Dónde te hospedás?', type: 'text', placeholder: 'Alojamiento o zona', optional: true },
+{ id: 'interests', label: '¿Qué te interesa descubrir?', type: 'multi', options: ['Surf', 'Gastronomía', 'Vida nocturna', 'Naturaleza', 'Conocer gente', 'Todavía no lo sé'] },
+{ id: 'notes', label: '¿Hay algo más que quieras contarnos?', type: 'textarea', placeholder: 'Opcional', optional: true }
+],
+en: {
+eyebrow: 'LOCAL WELCOME · TAMARINDO', title: 'Country Host — Your welcome to Tamarindo', cardText: 'Arrive, connect and start feeling at home.', description: 'Arriving somewhere new is easier when someone is there to welcome you. With Country Host, you have a local WAVEPOINT contact to answer your first questions, point you toward places that fit you and help you find plans to share. A free welcome to start enjoying Tamarindo with guidance and company.', lead: 'A one-hour in-person welcome and orientation, plus WhatsApp support during the 48 hours after the meeting. The welcome is free; any activities or personal expenses you choose are paid separately.', includes: ['Price: free', 'One-hour in-person welcome and orientation', 'Recommendations for food and going out based on your tastes, budget and preferred atmosphere', 'Surf orientation: beaches, lessons and options for your level', 'Connections to local plans and gatherings, subject to availability', 'Help organizing other experiences and checking availability', 'WhatsApp questions during the 48 hours after the meeting'], imageAlts: ['Group of visitors gathered on Tamarindo beach at sunset', 'Group of people sharing a meal in Tamarindo', 'Group of visitors gathered during a night out', 'Friends sharing a local gathering in Tamarindo'], questions: { arrival_date: { label: 'When are you arriving in Tamarindo?', fields: ['Arrival date'] }, stay_length: { label: 'How many days are you staying?', placeholder: 'e.g. 5 days' }, group_size: { label: 'Who are you traveling with?', placeholder: 'e.g. solo, couple, friends or family' }, lodging: { label: 'Where are you staying?', placeholder: 'Accommodation or area' }, interests: { label: 'What would you like to discover?', options: ['Surf', 'Food', 'Nightlife', 'Nature', 'Meet people', 'I’m not sure yet'] }, notes: { label: 'Is there anything else you would like to tell us?', placeholder: 'Optional' } }
+}
+},
+{
 id: 'retiros', number: '10', eyebrow: 'RETIROS · EXPERIENCIAS', title: 'Retiros',
 cardText: 'Elegí una pausa con intención: surf, descanso, movimiento y comunidad en un mismo viaje.',
 description: 'WavePoint Retiros nace de nuestro amor por el surf, la naturaleza y el estilo de vida costero. Son experiencias diseñadas para reconectar contigo mismo, con el mar y con una comunidad vibrante, en uno de los destinos más mágicos de Costa Rica: Tamarindo. Estos retiros están pensados para quienes buscan más que unas vacaciones: buscan transformación, conexión y aventura.',

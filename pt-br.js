@@ -92,6 +92,9 @@
     serviceCardStayTitle: 'Hospedagens e hotéis',
     serviceCardStayText: 'Hotéis e hospedagens à beira-mar para cada tipo de viagem.',
     serviceCardStayAlt: 'Hospedagem tropical de madeira com passarela externa',
+    serviceCardLocalHostTitle: 'Country Host',
+    serviceCardLocalHostText: 'Chegue, conheça e comece a se sentir parte.',
+    serviceCardLocalHostAlt: 'Grupo de visitantes reunido na praia de Tamarindo ao pôr do sol',
     serviceCardSurfLessonsImageAlt: 'Aluna praticando surfe em Tamarindo',
     serviceCardCoachingImageAlt: 'Três surfistas pulando com suas pranchas na praia',
     serviceCardCoachingTitle: 'Coaching de surfe',
@@ -1011,6 +1014,17 @@
       includes: ['Prancha de surfskate para a aula', 'Capacete e equipamentos de proteção'],
       imageAlts: ['Aula de surfskate em grupo ao ar livre', 'Grupo praticando surfskate em uma pista coberta', 'Dois instrutores praticando surfskate', 'Pessoa praticando surfskate em uma pista'],
       galleryImageAlts: ['Aula de surfskate em grupo ao ar livre', 'Grupo praticando surfskate em uma pista coberta', 'Dois instrutores praticando surfskate', 'Pessoa praticando surfskate em uma pista']
+    },
+    'local-host': {
+      eyebrow: 'BOAS-VINDAS LOCAIS · TAMARINDO',
+      title: 'Country Host — Sua chegada a Tamarindo',
+      cardText: 'Chegue, conheça e comece a se sentir parte.',
+      description: 'Chegar a um lugar novo é mais fácil quando alguém recebe você. Com o Country Host, você tem um contato local da WAVEPOINT para tirar suas primeiras dúvidas, descobrir lugares que combinam com você e encontrar planos para compartilhar. Uma recepção gratuita para começar a aproveitar Tamarindo com orientação e companhia.',
+      lead: 'Um encontro presencial de uma hora para dar as boas-vindas e orientar você, além de contato pelo WhatsApp durante as 48 horas seguintes. A recepção é gratuita; as atividades e os gastos pessoais que você escolher são pagos separadamente.',
+      includes: ['Preço: gratuito', 'Encontro presencial de uma hora de boas-vindas e orientação', 'Recomendações para comer e sair conforme seus gostos, orçamento e ambiente preferido', 'Orientação sobre surfe, praias, aulas e opções para o seu nível', 'Conexão com planos e encontros locais, conforme a disponibilidade', 'Ajuda para organizar outras experiências e consultar disponibilidade', 'Dúvidas pelo WhatsApp durante as 48 horas após o encontro'],
+      imageAlts: ['Grupo de visitantes reunido na praia de Tamarindo ao pôr do sol', 'Grupo de pessoas compartilhando uma refeição em Tamarindo', 'Grupo de visitantes reunido durante uma saída noturna', 'Amigos compartilhando um encontro local em Tamarindo'],
+      questions: { arrival_date: { label: 'Quando você chega a Tamarindo?', fields: ['Data de chegada'] }, stay_length: { label: 'Quantos dias você ficará?', placeholder: 'Ex.: 5 dias' }, group_size: { label: 'Com quem você está viajando?', placeholder: 'Ex.: sozinho, casal, amigos ou família' }, lodging: { label: 'Onde você está hospedado?', placeholder: 'Hospedagem ou região' }, interests: { label: 'O que você gostaria de descobrir?', options: ['Surfe', 'Gastronomia', 'Vida noturna', 'Natureza', 'Conhecer pessoas', 'Ainda não sei'] }, notes: { label: 'Há mais alguma coisa que você gostaria de contar?', placeholder: 'Opcional' } },
+      galleryImageAlts: ['Grupo de visitantes reunido na praia de Tamarindo ao pôr do sol', 'Grupo de pessoas compartilhando uma refeição em Tamarindo', 'Grupo de visitantes reunido durante uma saída noturna', 'Amigos compartilhando um encontro local em Tamarindo']
     },
     retiros: {
       eyebrow: 'RETIROS · TAMARINDO',
