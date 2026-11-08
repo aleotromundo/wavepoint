@@ -1,4 +1,13 @@
 # 2026-11-07
+### Guiasegundaparte — ficha Local Host / Country Host
+- `services.js`: se incorporó el servicio gratuito con bienvenida presencial de una hora, consultas por WhatsApp durante 48 horas, recomendaciones, orientación sobre surf y ayuda para organizar experiencias.
+- `index.html`: se agregó la tarjeta de Country Host al catálogo con enlace a la ficha.
+- `assets/img/services/local-host/`: se optimizaron como WebP las cuatro fotos marcadas en la guía (`foto-05.jpg` a `foto-08.jpg`) para portada y galería.
+- `script.js` y `pt-br.js`: se agregaron los textos de tarjeta y las traducciones EN/PT-BR de la ficha y del formulario.
+- `service-detail.html`: se actualizó la versión de caché de `services.js`.
+- `REFERENCIAS_FOTOS.md` y `SEGUIMIENTO.md`: se registró la correspondencia de fotos y el punto como resuelto.
+- Validación: `node --check services.js`, `node --check script.js`, `node --check pt-br.js` y `git diff --check` sin errores.
+
 ### Surfskate — subir el encuadre de la tarjeta para mostrar los pies
 - `styles.css` y `styles.optimized.css`: la tarjeta gana altura progresivamente en escritorio y el encuadre de la foto se ajusta según el ancho, para mostrar más a las personas sin cortarles la cabeza y aprovechar el espacio para revelar sus pies. Móvil no cambia.
 - `index.html`: se renueva la versión de caché del CSS.

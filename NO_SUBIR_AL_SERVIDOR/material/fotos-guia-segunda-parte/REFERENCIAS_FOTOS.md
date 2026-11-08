@@ -8,10 +8,10 @@ Este mapa conserva la correspondencia entre cada imagen y su posición en el arc
 | 2 | `foto-02.jpg` | (sin texto cercano) |
 | 3 | `foto-03.jpg` | (sin texto cercano) |
 | 4 | `foto-04.jpg` | (sin texto cercano) |
-| 5 | `foto-05.jpg` | (sin texto cercano) |
-| 6 | `foto-06.jpg` | (sin texto cercano) |
-| 7 | `foto-07.jpg` | (sin texto cercano) |
-| 8 | `foto-08.jpg` | (sin texto cercano) |
+| 5 | `foto-05.jpg` | Local Host / Country Host — bienvenida en la playa |
+| 6 | `foto-06.jpg` | Local Host / Country Host — encuentro grupal |
+| 7 | `foto-07.jpg` | Local Host / Country Host — actividad social |
+| 8 | `foto-08.jpg` | Local Host / Country Host — encuentro nocturno |
 | 9 | `foto-09.jpg` | (sin texto cercano) |
 | 10 | `foto-10.jpg` | (sin texto cercano) |
 | 11 | `foto-11.jpg` | (sin texto cercano) |
