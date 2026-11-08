@@ -2017,8 +2017,20 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
   });
 });
 
+
 // Atajo de actualización: requiere cinco toques conscientes sobre el logo.
 (function bindLogoCacheRefresh(){
+  const refreshToken=new URL(window.location.href).searchParams.get('wp_refresh');
+  if(refreshToken){
+    document.querySelectorAll('link[rel="stylesheet"][href]').forEach(link=>{
+      try{
+        const stylesheetUrl=new URL(link.href,window.location.href);
+        if(stylesheetUrl.origin!==window.location.origin) return;
+        stylesheetUrl.searchParams.set('wp_refresh',refreshToken);
+        link.href=stylesheetUrl.toString();
+      }catch(error){}
+    });
+  }
   const logo=document.querySelector('.hero-logo-wrap');
   if(!logo) return;
   const REQUIRED_TAPS=5;
