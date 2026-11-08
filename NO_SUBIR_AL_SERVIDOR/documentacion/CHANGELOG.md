@@ -1,3 +1,9 @@
+# 2026-11-08
+### Country Host — encuadre más visible en tarjeta y portada
+- `styles.css` y `styles.optimized.css`: la tarjeta pasa a `object-position: 100% !important` con un selector más específico para superar el centrado global forzado; la portada usa `78%` en escritorio para conservar las cabezas y `92%` en móvil para acercar a las personas.
+- `index.html` y `service-detail.html`: se cambia la clave de caché del CSS a `20261108-local-host-crop4` para que el navegador solicite los estilos actualizados.
+- Validación: confirmar selectores y referencias de caché, ejecutar `git diff --check` y revisar las imágenes en los anchos de móvil y escritorio.
+
 # 2026-11-07
 ### Guiasegundaparte — ficha Local Host / Country Host
 - `services.js`: se incorporó el servicio gratuito con bienvenida presencial de una hora, consultas por WhatsApp durante 48 horas, recomendaciones, orientación sobre surf y ayuda para organizar experiencias.
