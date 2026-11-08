@@ -1,4 +1,9 @@
 # 2026-11-08
+### Actualización del CSS desde la cuenta regresiva del logo
+- `script.js`: al recargar con `wp_refresh`, añadir ese token único a las hojas de estilo del mismo origen para que el navegador vuelva a pedir el CSS, además de solicitar el HTML con una URL nueva.
+- `index.html` y `service-detail.html`: renovar la versión de `script.js` a `20261108-logo-refresh-css1` para que llegue el comportamiento actualizado.
+- Validación: comprobar sintaxis de JavaScript, carga de CSS con `wp_refresh` y la secuencia de cinco toques.
+
 ### Country Host — encuadre más visible en tarjeta y portada
 - `styles.css` y `styles.optimized.css`: la tarjeta pasa a `object-position: 100% !important` con un selector más específico para superar el centrado global forzado; la portada usa `78%` en escritorio para conservar las cabezas y `92%` en móvil para acercar a las personas.
 - `index.html` y `service-detail.html`: se cambia la clave de caché del CSS a `20261108-local-host-crop4` para que el navegador solicite los estilos actualizados.
