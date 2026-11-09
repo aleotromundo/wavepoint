@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — centrar la foto completa
+- `styles.css` y `styles.optimized.css`: se centra explícitamente la imagen completa horizontal y verticalmente desde 981 px, sin cambiar escala ni recorte; el móvil permanece igual.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop28`.
+
 ### Roca Bruja — mostrar personas y roca completas
 - `styles.css` y `styles.optimized.css`: la tarjeta usa la foto completa con `object-fit: contain` desde 981 px para conservar todas las personas y la roca del fondo; el móvil no cambia.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop27`.
