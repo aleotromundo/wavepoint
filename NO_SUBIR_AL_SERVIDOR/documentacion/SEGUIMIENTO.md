@@ -39,7 +39,7 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 
 ## Confirmaciones externas
 
-La guía alcanza para resolver la ficha de Buceo: se implementó con las cuatro experiencias, el formulario, cotización sin tarifa fija y las fotos obligatorias `foto-18.jpg` a `foto-21.jpg` convertidas a WebP. También se alinearon las capacidades de Embarcaciones con la guía: 7 personas para Papagayo, 7 para snorkel por la costa de Guanacaste y 4 para pesca en mar abierto. Si el proveedor comunica cambios futuros, se actualizan esos datos.
+La guía alcanza para resolver la ficha de Buceo: se implementó con las cuatro experiencias, el formulario y cotización sin tarifa fija. La portada/tarjeta conserva `foto-18.jpg`; la galería usa la foto de tres buzos de `foto-20.jpg` convertida a WebP, sin la mantarraya de `foto-21.jpg`. También se alinearon las capacidades de Embarcaciones con la guía: 7 personas para Papagayo, 7 para snorkel por la costa de Guanacaste y 4 para pesca en mar abierto. Si el proveedor comunica cambios futuros, se actualizan esos datos.
 
 ### Publicación del dominio canónico
 - El push a `main` genera un deployment de Producción de Vercel y GitHub marcó exitoso el deployment del commit `36d7f27`; la URL generada requiere iniciar sesión en Vercel.
