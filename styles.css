@@ -10096,7 +10096,7 @@ footer a {
     bottom: auto !important;
     height: 120% !important;
     object-position: 60% 100% !important;
-    transform: scale(.9) !important;
+    transform: none !important;
     transform-origin: center center !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-witch-rock:hover .service-img img,
