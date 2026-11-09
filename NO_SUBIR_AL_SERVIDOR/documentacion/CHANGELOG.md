@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — 15% adicional hacia arriba
+- `styles.css` y `styles.optimized.css`: se desplaza la imagen de Roca Bruja 15% adicional hacia arriba desde 981 px; el desplazamiento horizontal, Coaching y el móvil no cambian.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop21`.
+
 ### Surf coaching — hacer visible el desplazamiento vertical
 - `styles.css` y `styles.optimized.css`: se aplica un desplazamiento físico de 20% hacia arriba a la foto desde 981 px, extendiendo el área de cobertura para que el movimiento sea visible; Roca Bruja y el móvil no cambian.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop20`.
