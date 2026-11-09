@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — alejar más la imagen
+- `styles.css` y `styles.optimized.css`: se amplía el zoom out de la foto de Roca Bruja a `88%` desde 981 px; el resto de tarjetas y el móvil no cambian.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop25`.
+
 ### Roca Bruja — alejar un poco la imagen
 - `styles.css` y `styles.optimized.css`: se aplica un zoom out suave de 6% a la foto de Roca Bruja desde 981 px; Coaching y el móvil no cambian.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop24`.
