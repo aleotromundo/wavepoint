@@ -1,4 +1,8 @@
 # 2026-11-08
+### Country Host — subir físicamente la foto en escritorio
+- `styles.css` y `styles.optimized.css`: se mueve la imagen 70 px hacia arriba desde 981 px, ampliando su área para mantener cobertura del marco; se conserva el encuadre móvil.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop8`.
+
 ### Country Host — desplazar la foto hacia arriba en escritorio
 - `styles.css` y `styles.optimized.css`: se elimina el zoom y se ajusta únicamente `object-position` a `118%` desde 981 px para subir la foto dentro del marco; el móvil conserva su encuadre.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop7`.
