@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — mostrar personas y roca completas
+- `styles.css` y `styles.optimized.css`: la tarjeta usa la foto completa con `object-fit: contain` desde 981 px para conservar todas las personas y la roca del fondo; el móvil no cambia.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop27`.
+
 ### Roca Bruja — restaurar el recorte anterior
 - `styles.css` y `styles.optimized.css`: se elimina el zoom out y se restaura el recorte anterior de la foto de Roca Bruja; no se modifican Coaching ni el móvil.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop26`.
