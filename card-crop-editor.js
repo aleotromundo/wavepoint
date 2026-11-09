@@ -140,8 +140,8 @@
   }
 
   function apply(item) {
-    item.image.style.objectPosition = `${item.current.x}% ${item.current.y}%`;
-    item.image.style.transform = `scale(${item.current.zoom})`;
+    item.image.style.setProperty('object-position', `${item.current.x}% ${item.current.y}%`, 'important');
+    item.image.style.setProperty('transform', `scale(${item.current.zoom})`, 'important');
     if (item.marker) {
       item.marker.textContent = `ZOOM ${Math.round(item.current.zoom * 100)}% · X ${Math.round(item.current.x)} · Y ${Math.round(item.current.y)}`;
     }
