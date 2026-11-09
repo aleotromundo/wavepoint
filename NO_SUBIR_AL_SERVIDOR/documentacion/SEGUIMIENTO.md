@@ -53,5 +53,22 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | 2026-11-08 | 7 | 1 | 0 | Auditoría del repositorio: capacidades de Embarcaciones divergentes de la guía; se detectaron WebP optimizados no usados en el programa de surf y se actualizaron sus referencias. |
 | 2026-11-08 | 7 | 1 | 0 | Se integró el tour del estero con cuatro imágenes WebP, ficha, formulario, CTA de alianzas y traducciones. |
 
+## Trazabilidad y estimación de esfuerzo
+
+Este registro separa el tiempo de calendario del esfuerzo técnico observable. Git no mide minutos de trabajo ni permite atribuir cada intervalo a una persona o IA; por eso las horas siguientes son una estimación basada en commits, agrupación de cambios cercanos y pausas entre actividad observable.
+
+| Hito | Commit / evidencia | Fecha y hora local (Costa Rica) |
+|---|---|---|
+| Primer commit que menciona explícitamente la Guía Segunda Parte | `b3cfcec` — “Mejora ficha ATV y registra guia segunda parte” | 2026-11-01 22:27:06 |
+| Primer archivo `Guiasegundaparte_` incorporado al repositorio | `ba3a897` | 2026-11-02 01:00:17 |
+| PDF `Guia_Segunda_Parte_Completa.pdf` incorporado al repositorio | `438cfb6` | 2026-11-04 10:05:14 |
+| Último commit de la tanda auditada | `d0823e7` — “Improve estuary tour gallery” | 2026-11-09 00:12:54 |
+
+La auditoría de los archivos de guía, catálogo, traducciones, estilos y seguimiento encontró **166 commits observables** entre el 2026-11-01 y el 2026-11-09. El tiempo de calendario desde el primer commit explícito hasta el último fue de **7 días, 1 hora, 45 minutos y 48 segundos**, distribuido en varias jornadas y no como trabajo continuo.
+
+Se detectaron pausas largas entre bloques de actividad, incluyendo aproximadamente **26 horas** entre el 2 y el 4 de noviembre, **25 horas** entre el 5 y el 6, **17 horas** entre el 6 y el 7 y **25 horas** entre el 7 y el 8. Estas pausas no se contabilizan como trabajo.
+
+Agrupando commits cercanos como sesiones, el esfuerzo técnico observable se estima en un rango de **13 h 36 min a 25 h 53 min**. La estimación central adoptada para este seguimiento es de **aproximadamente 18 horas efectivas**, equivalentes a **4,5 jornales de cuatro horas**; para planificación se redondea a **5 jornales de cuatro horas**. Esta cifra incluye implementación, revisión de la guía, imágenes, traducciones, validaciones, resolución de conflictos y publicaciones, pero no afirma cuántas horas trabajó personalmente el usuario, Manus, Copilot o los procesos automáticos.
+
 ## Continuidad
 El `PROJECT_GUIDE.md` describe el producto y el `CHANGELOG.md` conserva el historial. Este archivo resume el estado vivo de las tareas y se actualiza únicamente cuando aporta continuidad.
