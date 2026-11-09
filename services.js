@@ -414,24 +414,24 @@ id: 'mangrove-tour', number: '05A', eyebrow: 'NATURALEZA · TAMARINDO', title: '
 cardText: 'Navegá entre manglares y descubrí la vida del estero de Tamarindo.',
 description: 'Navegá por los canales del estero de Tamarindo y conocé la vida que se esconde entre sus manglares. Con un guía local naturalista, aprenderás sobre este ecosistema mientras buscás cocodrilos, monos y aves en su entorno natural.',
 lead: 'Disfrutá del paisaje desde una embarcación con techo y asientos, con tiempo para observar, sacar fotos y conocer otra cara de Tamarindo.',
-heroImage: 'assets/img/services/mangrove-tour/mangrove-tour-boat.webp',
+heroImage: 'assets/img/services/mangrove-tour/mangrove-tour-visitor-crocodile.webp',
 images: [
-'assets/img/services/mangrove-tour/mangrove-tour-boat.webp',
-'assets/img/services/mangrove-tour/mangrove-tour-monkeys.webp',
-'assets/img/services/mangrove-tour/mangrove-tour-mangroves.webp',
-'assets/img/services/mangrove-tour/mangrove-tour-wildlife.webp'
+'assets/img/services/mangrove-tour/mangrove-tour-visitor-crocodile.webp',
+'assets/img/services/mangrove-tour/mangrove-tour-people-boat.webp',
+'assets/img/services/mangrove-tour/mangrove-tour-kayak.webp',
+'assets/img/services/mangrove-tour/mangrove-tour-kayak-estuary.webp'
 ],
 imageAlts: [
-'Embarcación con techo navegando por el estero de Tamarindo',
-'Mono aullador descansando sobre una rama entre la vegetación del estero',
-'Canal del estero de Tamarindo entre raíces de manglar',
-'Cocodrilo descansando entre la vegetación del estero'
+'Visitante observando un cocodrilo desde la embarcación en el estero',
+'Grupo de visitantes disfrutando el recorrido en bote por el estero',
+'Personas navegando en kayak por el estero de Tamarindo',
+'Persona remando en kayak frente a los manglares del estero'
 ],
 imageAltsEn: [
-'Covered boat navigating the Tamarindo estuary',
-'Howler monkey resting on a branch among the estuary vegetation',
-'Tamarindo estuary channel among mangrove roots',
-'Crocodile resting among the estuary vegetation'
+'Visitor observing a crocodile from the boat in the estuary',
+'Group of visitors enjoying the estuary boat tour',
+'People kayaking through the Tamarindo estuary',
+'Person kayaking beside the estuary mangroves'
 ],
 facts: [['Duración', 'Dos horas'], ['Modalidad', 'Recorrido guiado en bote'], ['Grupo', 'Hasta 12 participantes'], ['Idiomas', 'Español e inglés'], ['Precio', 'USD 40 por persona']],
 includes: ['Recorrido por el estero en bote con techo y asientos', 'Guía local naturalista', 'Chaleco salvavidas', 'Servicio de Local Host'],
