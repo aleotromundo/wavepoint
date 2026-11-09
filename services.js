@@ -565,11 +565,13 @@ cardText: 'Un poco de aventura más allá de la playa.',
 description: 'Salí con guías locales y descubrí los alrededores de Tamarindo en cuatriciclo. Tomá el paisaje, disfrutá el recorrido y compartí la aventura con la gente con la que viajas. WavePoint te ayuda a encontrar un tour que se adapte a tu grupo, con la ruta y los detalles confirmados antes de salir.',
 images: ['assets/img/services/atv/atv-forest-convoy.webp', 'assets/img/services/atv/atv-arenal-volcano-ride.webp', 'assets/img/services/atv/atv-coastal-overlook.webp', 'assets/img/services/atv/atv-forest-trail.webp'],
 galleryImages: ['assets/img/services/atv/atv-instagram-1.webp', 'assets/img/services/atv/atv-instagram-2.webp', 'assets/img/services/atv/atv-instagram-3.webp'],
-imageAlts: ['Vehículo todoterreno cruzando un arroyo en un bosque tropical', 'Dos personas disfrutando un recorrido en vehículo todoterreno', 'Grupo de cuatriciclos recorriendo un sendero junto al río'],
-imageAltsEn: ['All-terrain vehicle crossing a stream in a tropical forest', 'Two people enjoying an all-terrain vehicle ride', 'Group of ATVs riding along a trail beside the river'],
+imageAlts: ['Vehículo todoterreno cruzando un arroyo en un bosque tropical', 'Dos personas disfrutando un recorrido en vehículo todoterreno', 'Grupo de cuatriciclos recorriendo un sendero junto al río', 'Cuatriciclo avanzando por un sendero de bosque tropical'],
+imageAltsEn: ['All-terrain vehicle crossing a stream in a tropical forest', 'Two people enjoying an all-terrain vehicle ride', 'Group of ATVs riding along a trail beside the river', 'ATV riding along a tropical forest trail'],
 galleryImageAlts: ['Vehículo todoterreno cruzando un arroyo en un bosque tropical', 'Dos personas disfrutando un recorrido en vehículo todoterreno', 'Grupo de cuatriciclos recorriendo un sendero junto al río'],
 galleryImageAltsEn: ['All-terrain vehicle crossing a stream in a tropical forest', 'Two people enjoying an all-terrain vehicle ride', 'Group of ATVs riding along a trail beside the river'],
 questions: [
+{ id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
+{ id: 'preferred_route', label: '¿Qué recorrido o modalidad les interesa?', type: 'choice', options: ['Explorer · 2 horas', 'Adventure · 4 horas', 'Ultimate · 6 horas', 'Alquiler · 24 horas'] },
 { id: 'drivers', label: '¿Cuántas personas quieren conducir?', type: 'number' },
 { id: 'passengers', label: '¿Cuántas irían como acompañantes?', type: 'number' },
 { id: 'driver_ages', label: '¿Qué edades tienen quienes quieren conducir?', type: 'text', placeholder: 'Ej.: 24, 31 y 42' },
@@ -582,6 +584,8 @@ cardText: 'A little adventure beyond the beach.',
 description: 'Head out with local guides and discover the surroundings of Tamarindo on an ATV. Take in the scenery, enjoy the ride and share the adventure with the people you’re traveling with. WavePoint helps you find a tour that suits your group, with the route and details confirmed before you go.',
 imageAlts: ['Group of ATVs riding along a tropical forest trail', 'Two people on an ATV with Arenal Volcano in the background', 'Two ATVs at a viewpoint above the Guanacaste coast', 'Group of ATVs riding along a tropical forest trail'],
 questions: {
+preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
+preferred_route: { label: 'Which route or option interests you?', options: ['Explorer · 2 hours', 'Adventure · 4 hours', 'Ultimate · 6 hours', 'Rental · 24 hours'] },
 drivers: { label: 'How many people want to drive?' },
 passengers: { label: 'How many would be passengers?' },
 driver_ages: { label: 'What are the ages of the drivers?', placeholder: 'e.g. 24, 31 and 42' },
@@ -1364,17 +1368,18 @@ setServiceMeta('og:description', serviceDescription);
 setServiceMeta('og:url', serviceUrl.href);
 setServiceMeta('og:type', 'website');
 const serviceShareImage = new URL('assets/img/site/share/wavepoint-logo-white.jpg?v=20261022-2', location.origin + location.pathname.replace(/[^/]*$/, '')).href;
+const serviceShareAlt = lang === 'pt-BR' ? 'Logotipo da WavePoint em fundo branco' : lang === 'es' ? 'Logotipo de WavePoint sobre fondo blanco' : 'WavePoint logo on a solid white background';
 setServiceMeta('og:image', serviceShareImage);
 setServiceMeta('og:image:secure_url', serviceShareImage);
 setServiceMeta('og:image:type', 'image/jpeg');
 setServiceMeta('og:image:width', '1200');
 setServiceMeta('og:image:height', '630');
-setServiceMeta('og:image:alt', 'WavePoint logo on a solid white background');
+setServiceMeta('og:image:alt', serviceShareAlt);
 setServiceMeta('og:locale', lang === 'en' ? 'en_US' : lang === 'pt-BR' ? 'pt_BR' : 'es_CR');
 setServiceTwitterMeta('twitter:title', document.title);
 setServiceTwitterMeta('twitter:description', serviceDescription);
 setServiceTwitterMeta('twitter:image', serviceShareImage);
-setServiceTwitterMeta('twitter:image:alt', 'WavePoint logo on a solid white background');
+setServiceTwitterMeta('twitter:image:alt', serviceShareAlt);
 document.body.classList.toggle('accommodation-detail-page', service.id === 'alojamiento-experiencias');
 document.body.classList.toggle('surf-lesson-detail-page', service.id === 'clases-de-surf');
 document.body.classList.toggle('surf-program-detail-page', service.id === 'surf-programa-3-dias');
@@ -1460,7 +1465,9 @@ if (service.id === 'surf-programa-3-dias') {
   }
 }
 error.textContent = '';
-const isSpanish = lang !== 'en';
+const isSpanish = lang === 'es';
+const isPortuguese = lang === 'pt-BR';
+const localized = (es, en, pt) => isPortuguese ? pt : isSpanish ? es : en;
 const clean = value => String(value || '').replace(/^¿|[?]$/g, '').trim().toLowerCase();
 const name = form.elements['request-name']?.value.trim();
 const extra = form.elements['request-contact']?.value.trim();
@@ -1482,32 +1489,47 @@ const groupValue = countQuestion?.type === 'headcount'
     : 0;
 const hasGroupCount = groupValue > 0;
 const plural = groupValue > 1;
-const subject = clean(service.title);
+const subject = service.id === 'atv'
+  ? localized('los paseos de ATV en Tamarindo', 'ATV tours in Tamarindo', 'passeios de quadriciclo (ATV) em Tamarindo')
+  : clean(service.title);
 const isAccommodation = service.id === 'alojamiento-experiencias';
 const lines = isAccommodation
-  ? [isSpanish
-    ? (plural ? 'Hola, WavePoint. Queríamos consultar por alojamiento.' : 'Hola, WavePoint. Quería consultar por alojamiento.')
-    : (plural ? 'Hi WavePoint. We’d like to ask about accommodation.' : 'Hi WavePoint. I’d like to ask about accommodation.')]
+  ? [localized(
+    plural ? 'Hola, WavePoint. Queríamos consultar por alojamiento.' : 'Hola, WavePoint. Quería consultar por alojamiento.',
+    plural ? 'Hi WavePoint. We’d like to ask about accommodation.' : 'Hi WavePoint. I’d like to ask about accommodation.',
+    plural ? 'Olá, WavePoint. Gostaríamos de consultar hospedagem.' : 'Olá, WavePoint. Gostaria de consultar hospedagem.'
+  )]
   : hasGroupCount
-    ? [isSpanish
-      ? (plural ? `Hola, WavePoint. Queremos consultar por ${subject}.` : `Hola, WavePoint. Quiero consultar por ${subject}.`)
-      : (plural ? `Hi WavePoint. We’d like to ask about ${subject}.` : `Hi WavePoint. I’d like to ask about ${subject}.`)]
-  : isSpanish
-    ? [`Hola, WavePoint. Les escribo por ${subject}.`]
-    : [`Hi WavePoint. I’m getting in touch about ${subject}.`];
+    ? [localized(
+      plural ? `Hola, WavePoint. Queremos consultar por ${subject}.` : `Hola, WavePoint. Quiero consultar por ${subject}.`,
+      plural ? `Hi WavePoint. We’d like to ask about ${subject}.` : `Hi WavePoint. I’d like to ask about ${subject}.`,
+      plural ? `Olá, WavePoint. Gostaríamos de consultar sobre ${subject}.` : `Olá, WavePoint. Gostaria de consultar sobre ${subject}.`
+    )]
+  : [localized(
+    `Hola, WavePoint. Les escribo por ${subject}.`,
+    `Hi WavePoint. I’m getting in touch about ${subject}.`,
+    `Olá, WavePoint. Estou entrando em contato sobre ${subject}.`
+  )];
 if (name) {
   lines.push(hasGroupCount && plural
-    ? isSpanish ? `Soy ${name} y somos ${groupValue} personas.` : `I’m ${name}, and there are ${groupValue} of us.`
-    : isSpanish ? `Me llamo ${name}.` : `My name is ${name}.`);
+    ? localized(`Soy ${name} y somos ${groupValue} personas.`, `I’m ${name}, and there are ${groupValue} of us.`, `Meu nome é ${name} e somos ${groupValue} pessoas.`)
+    : localized(`Me llamo ${name}.`, `My name is ${name}.`, `Meu nome é ${name}.`));
 } else if (hasGroupCount) {
-  lines.push(isSpanish
-    ? (plural ? `Somos ${groupValue} personas.` : 'Viaja 1 persona.')
-    : (plural ? `There are ${groupValue} of us.` : 'One person will be traveling.'));
+  lines.push(localized(
+    plural ? `Somos ${groupValue} personas.` : 'Viaja 1 persona.',
+    plural ? `There are ${groupValue} of us.` : 'One person will be traveling.',
+    plural ? `Somos ${groupValue} pessoas.` : 'Vou viajar sozinho(a).'
+  ));
 }
 const naturalAnswers = {
-  preferred_date: isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
+  preferred_date: lang === 'pt-BR' ? 'A data preferida é' : isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
   lesson_date: isSpanish ? 'La fecha preferida es' : 'Our preferred date is',
   program_dates: isSpanish ? 'Las fechas propuestas para las tres clases son' : 'The proposed dates for the three lessons are',
+  preferred_route: lang === 'pt-BR' ? 'O percurso ou opção que queremos consultar é' : isSpanish ? 'El recorrido o modalidad que queremos consultar es' : 'The route or option we’d like to ask about is',
+  drivers: isSpanish ? 'Personas que conducirán:' : 'People who want to drive:',
+  passengers: isSpanish ? 'Personas pasajeras:' : 'Passengers:',
+  driver_ages: isSpanish ? 'Edades de quienes conducirán:' : 'Ages of the drivers:',
+  licenses: isSpanish ? 'Licencias de conducir vigentes:' : 'Valid driver’s licenses:',
   lesson_format: isSpanish ? 'Preferimos una clase' : 'We prefer a',
   instruction_language: isSpanish ? 'Preferimos la instrucción en' : 'We prefer instruction in',
   swimming_comfort: isSpanish ? 'Sobre nuestra comodidad en el agua,' : 'Regarding our comfort in the water,',
@@ -1540,16 +1562,57 @@ const naturalAnswers = {
   date_flexibility: isSpanish ? 'Sobre la fecha, ' : 'Regarding the date, ',
   swimming_comfort: isSpanish ? 'Sobre nadar en el mar, ' : 'About swimming in the sea, '
 };
+if (isPortuguese) Object.assign(naturalAnswers, {
+  preferred_date: 'A data preferida é',
+  lesson_date: 'A data preferida é',
+  program_dates: 'As datas sugeridas para as três aulas são',
+  preferred_route: 'O percurso ou opção que queremos consultar é',
+  drivers: 'Pessoas que pretendem dirigir:',
+  passengers: 'Pessoas passageiras:',
+  driver_ages: 'Idades de quem pretende dirigir:',
+  licenses: 'Carteiras de habilitação válidas:',
+  lesson_format: 'Preferimos uma aula',
+  instruction_language: 'Preferimos a instrução em',
+  swimming_comfort: 'Sobre nosso conforto na água,',
+  transport_need: 'Sobre o transporte,',
+  food_allergies: 'Sobre alergias ou restrições alimentares,',
+  coaching_mode: 'A modalidade de coaching que queremos consultar é',
+  participant_levels: 'Os níveis dos participantes são',
+  date_flexibility: 'Sobre a flexibilidade de data,',
+  feedback_format: 'O formato de feedback que queremos consultar é',
+  edited_photos: 'Sobre fotos editadas à parte,',
+  photo_mode: 'A modalidade de fotografia que nos interessa é',
+  preferred_spot: 'O local que preferimos é',
+  session_format: 'O formato de sessão que preferimos é',
+  group_ages: 'As idades do nosso grupo são',
+  experience_background: 'Nossa experiência com skate, surfskate ou surfe é',
+  preferred_format: 'O formato que gostaríamos de consultar é',
+  surf_level: plural ? 'Nosso nível de surfe é' : 'Meu nível de surfe é',
+  current_surf_level: plural ? 'Nosso nível atual de surfe é' : 'Meu nível atual de surfe é',
+  lesson_goal: plural ? 'Gostaríamos de' : 'Gostaria de',
+  improvement_goal: plural ? 'Gostaríamos de melhorar' : 'Gostaria de melhorar',
+  group_levels: 'Os níveis de surfe do grupo são',
+  preferred_schedule: plural ? 'Preferimos o horário da' : 'Prefiro o horário da',
+  session_schedule: plural ? 'Preferimos o horário da' : 'Prefiro o horário da',
+  board_need: plural ? 'Sobre as pranchas, precisamos de' : 'Sobre a prancha, preciso de',
+  own_board: plural ? 'Sobre as pranchas, ' : 'Sobre a prancha, ',
+  own_boards: 'Sobre as pranchas, ',
+  origin: plural ? 'Estamos viajando de' : 'Estou viajando de',
+  preferred_fruit: plural ? 'Depois da aula, preferimos comer' : 'Depois da aula, prefiro comer',
+  analysis_time: plural ? 'Preferimos receber a análise' : 'Prefiro receber a análise'
+});
 if (isAccommodation) {
   const datesQuestion = service.questions.find(question => question.id === 'stay_dates');
   const dates = datesQuestion ? getValues(datesQuestion) : [];
   if (dates.length) {
-    const formatDate = value => new Intl.DateTimeFormat(isSpanish ? 'es' : 'en', { dateStyle: 'long', timeZone: 'UTC' })
+    const formatDate = value => new Intl.DateTimeFormat(lang === 'pt-BR' ? 'pt-BR' : isSpanish ? 'es' : 'en', { dateStyle: 'long', timeZone: 'UTC' })
       .format(new Date(`${value}T00:00:00Z`));
     const [arrival, departure] = dates.map(formatDate);
-    lines.push(isSpanish
-      ? `La estadía sería del ${arrival} al ${departure}.`
-      : `${plural ? 'We’re' : 'I’m'} looking to stay from ${arrival} to ${departure}.`);
+    lines.push(localized(
+      `La estadía sería del ${arrival} al ${departure}.`,
+      `${plural ? 'We’re' : 'I’m'} looking to stay from ${arrival} to ${departure}.`,
+      `A estadia seria de ${arrival} a ${departure}.`
+    ));
   }
 
   const accommodationQuestion = service.questions.find(question => question.id === 'accommodation_type');
@@ -1557,12 +1620,16 @@ if (isAccommodation) {
   if (accommodation) {
     const wantsRecommendations = clean(accommodation).includes('recomend') || clean(accommodation).includes('recommend');
     lines.push(wantsRecommendations
-      ? isSpanish
-        ? (plural ? 'Nos gustaría recibir recomendaciones de alojamiento.' : 'Me gustaría recibir recomendaciones de alojamiento.')
-        : (plural ? 'We’d appreciate accommodation recommendations.' : 'I’d appreciate accommodation recommendations.')
-      : isSpanish
-        ? `${plural ? 'Nos interesa' : 'Me interesa'} ${accommodation}.`
-        : `${plural ? 'We’re' : 'I’m'} interested in ${accommodation}.`);
+      ? localized(
+        plural ? 'Nos gustaría recibir recomendaciones de alojamiento.' : 'Me gustaría recibir recomendaciones de alojamiento.',
+        plural ? 'We’d appreciate accommodation recommendations.' : 'I’d appreciate accommodation recommendations.',
+        plural ? 'Gostaríamos de receber recomendações de hospedagem.' : 'Gostaria de receber recomendações de hospedagem.'
+      )
+      : localized(
+        `${plural ? 'Nos interesa' : 'Me interesa'} ${accommodation}.`,
+        `${plural ? 'We’re' : 'I’m'} interested in ${accommodation}.`,
+        `${plural ? 'Temos' : 'Tenho'} interesse em ${accommodation}.`
+      ));
   }
 
   const experiencesQuestion = service.questions.find(question => question.id === 'experiences');
@@ -1570,18 +1637,24 @@ if (isAccommodation) {
   const undecided = experiences.some(value => clean(value).includes('todavía no lo sé') || clean(value).includes('still don’t know'));
   const selectedExperiences = experiences.filter(value => !clean(value).includes('todavía no lo sé') && !clean(value).includes('still don’t know'));
   if (selectedExperiences.length) {
-    lines.push(isSpanish
-      ? `${plural ? 'También nos gustaría sumar' : 'También me gustaría sumar'}: ${selectedExperiences.join(', ')}.`
-      : `${plural ? 'We’d also like to add' : 'I’d also like to add'}: ${selectedExperiences.join(', ')}.`);
+    lines.push(localized(
+      `${plural ? 'También nos gustaría sumar' : 'También me gustaría sumar'}: ${selectedExperiences.join(', ')}.`,
+      `${plural ? 'We’d also like to add' : 'I’d also like to add'}: ${selectedExperiences.join(', ')}.`,
+      `${plural ? 'Também gostaríamos de incluir' : 'Também gostaria de incluir'}: ${selectedExperiences.join(', ')}.`
+    ));
   }
   if (undecided) {
     lines.push(selectedExperiences.length
-      ? isSpanish
-        ? (plural ? 'Todavía no decidimos si queremos sumar alguna otra experiencia.' : 'Todavía no decidí si quiero sumar alguna otra experiencia.')
-        : (plural ? 'We haven’t decided whether to add any other experiences yet.' : 'I haven’t decided whether to add any other experiences yet.')
-      : isSpanish
-        ? (plural ? 'Todavía no decidimos qué experiencias sumar.' : 'Todavía no decidí qué experiencias sumar.')
-        : (plural ? 'We haven’t decided which experiences to add yet.' : 'I haven’t decided which experiences to add yet.'));
+      ? localized(
+        plural ? 'Todavía no decidimos si queremos sumar alguna otra experiencia.' : 'Todavía no decidí si quiero sumar alguna otra experiencia.',
+        plural ? 'We haven’t decided whether to add any other experiences yet.' : 'I haven’t decided whether to add any other experiences yet.',
+        plural ? 'Ainda não decidimos se queremos incluir outra experiência.' : 'Ainda não decidi se quero incluir outra experiência.'
+      )
+      : localized(
+        plural ? 'Todavía no decidimos qué experiencias sumar.' : 'Todavía no decidí qué experiencias sumar.',
+        plural ? 'We haven’t decided which experiences to add yet.' : 'I haven’t decided which experiences to add yet.',
+        plural ? 'Ainda não decidimos quais experiências incluir.' : 'Ainda não decidi quais experiências incluir.'
+      ));
   }
 } else {
   service.questions.forEach(question => {
@@ -1591,29 +1664,33 @@ if (isAccommodation) {
       const children = form.elements[`${question.id}-children`]?.value.trim();
       const ages = form.elements[`${question.id}-ages`]?.value.trim();
       if (adults || children) {
-        lines.push(isSpanish
-          ? `Participamos ${adults || '0'} adultos y ${children || '0'} niños.`
-          : `${adults || '0'} adults and ${children || '0'} children are joining.`);
+        lines.push(localized(
+          `Participamos ${adults || '0'} adultos y ${children || '0'} niños.`,
+          `${adults || '0'} adults and ${children || '0'} children are joining.`,
+          `Participaremos ${adults || '0'} adultos e ${children || '0'} crianças.`
+        ));
       }
-      if (ages) lines.push(isSpanish ? `Las edades de los niños son ${ages}.` : `The children’s ages are ${ages}.`);
+      if (ages) lines.push(localized(`Las edades de los niños son ${ages}.`, `The children’s ages are ${ages}.`, `As idades das crianças são ${ages}.`));
       return;
     }
     if (!values.length || question.id === 'group_size' || question.id === 'snorkel_people') return;
     const displayValues = question.type === 'dates'
-      ? values.map(value => new Intl.DateTimeFormat(isSpanish ? 'es' : 'en', { dateStyle: 'long', timeZone: 'UTC' })
+      ? values.map(value => new Intl.DateTimeFormat(lang === 'pt-BR' ? 'pt-BR' : isSpanish ? 'es' : 'en', { dateStyle: 'long', timeZone: 'UTC' })
         .format(new Date(`${value}T00:00:00Z`)))
       : values;
     const joined = displayValues.join(isSpanish ? ', ' : ', ');
     const normalized = clean(joined);
     if (!hasGroupCount) {
-      lines.push(isSpanish ? `Como dato adicional: ${joined}.` : `One more detail: ${joined}.`);
+      lines.push(localized(`Como dato adicional: ${joined}.`, `One more detail: ${joined}.`, `Como informação adicional: ${joined}.`));
       return;
     }
     if (question.id === 'surf_level' || question.id === 'current_surf_level') {
       if (normalized === 'primera vez' || normalized === 'first time') {
-        lines.push(isSpanish
-          ? (plural ? 'Es nuestra primera vez haciendo surf.' : 'Es mi primera vez haciendo surf.')
-          : (plural ? 'It’s our first time surfing.' : 'It’s my first time surfing.'));
+        lines.push(localized(
+          plural ? 'Es nuestra primera vez haciendo surf.' : 'Es mi primera vez haciendo surf.',
+          plural ? 'It’s our first time surfing.' : 'It’s my first time surfing.',
+          plural ? 'É a nossa primeira vez no surfe.' : 'É a minha primeira vez no surfe.'
+        ));
         return;
       }
       lines.push(`${naturalAnswers[question.id]} ${joined}.`);
@@ -1621,27 +1698,29 @@ if (isAccommodation) {
     }
     if (question.id === 'board_need' || question.id === 'own_board' || question.id === 'own_boards') {
       const boardValue = normalized;
-      const sentence = isSpanish
-        ? (boardValue === 'sí' ? (plural ? 'necesitamos tablas' : 'necesito una tabla') : boardValue.includes('asesoramiento') ? (plural ? 'necesitamos asesoramiento con las tablas' : 'necesito asesoramiento con la tabla') : boardValue.includes('llevamos') ? (plural ? 'llevamos nuestras propias tablas' : 'llevo mi propia tabla') : boardValue)
-        : (boardValue === 'yes' ? (plural ? 'we need boards' : 'I need a board') : boardValue.includes('advice') ? (plural ? 'we need advice about boards' : 'I need advice about a board') : boardValue.includes('bring') ? (plural ? 'we bring our own boards' : 'I bring my own board') : boardValue);
-      lines.push(`${isSpanish ? 'Sobre el equipo,' : 'About equipment,'} ${sentence}.`);
+      const sentence = isPortuguese
+        ? (boardValue === 'sim' ? (plural ? 'precisamos de pranchas' : 'preciso de uma prancha') : boardValue.includes('orienta') ? (plural ? 'precisamos de orientação sobre as pranchas' : 'preciso de orientação sobre a prancha') : boardValue.includes('lev') || boardValue.includes('traz') ? (plural ? 'levamos nossas próprias pranchas' : 'levo minha própria prancha') : boardValue)
+        : isSpanish
+          ? (boardValue === 'sí' ? (plural ? 'necesitamos tablas' : 'necesito una tabla') : boardValue.includes('asesoramiento') ? (plural ? 'necesitamos asesoramiento con las tablas' : 'necesito asesoramiento con la tabla') : boardValue.includes('llevamos') ? (plural ? 'llevamos nuestras propias tablas' : 'llevo mi propia tabla') : boardValue)
+          : (boardValue === 'yes' ? (plural ? 'we need boards' : 'I need a board') : boardValue.includes('advice') ? (plural ? 'we need advice about boards' : 'I need advice about a board') : boardValue.includes('bring') ? (plural ? 'we bring our own boards' : 'I bring my own board') : boardValue);
+      lines.push(`${localized('Sobre el equipo,', 'About equipment,', 'Sobre os equipamentos,')} ${sentence}.`);
       return;
     }
     const prefix = naturalAnswers[question.id];
     if (prefix) {
       const schedule = question.id === 'preferred_schedule' || question.id === 'session_schedule' ? joined.toLowerCase() : joined;
       lines.push(`${prefix} ${schedule}${/[.!?]$/.test(prefix) ? '' : '.'}`.replace(/\.\.$/, '.'));
-    } else if (isSpanish) {
-        lines.push(`Como dato adicional: ${joined}.`);
     } else {
-        lines.push(`One more detail: ${joined}.`);
-    }
+        lines.push(localized(`Como dato adicional: ${joined}.`, `One more detail: ${joined}.`, `Como informação adicional: ${joined}.`));
+      }
   });
 }
-if (extra) lines.push(isSpanish ? `Además, ${extra}.` : `Also, ${extra}.`);
-lines.push('', isSpanish
-    ? (!hasGroupCount ? 'Gracias. Quedo pendiente.' : plural ? 'Gracias. Quedamos atentos.' : 'Gracias. Quedo atento/a.')
-  : 'Thank you. Looking forward to your reply.');
+if (extra) lines.push(localized(`Además, ${extra}.`, `Also, ${extra}.`, `Além disso, ${extra}.`));
+lines.push('', localized(
+  !hasGroupCount ? 'Gracias. Quedo pendiente.' : plural ? 'Gracias. Quedamos atentos.' : 'Gracias. Quedo atento/a.',
+  'Thank you. Looking forward to your reply.',
+  !hasGroupCount ? 'Obrigado(a). Aguardo seu retorno.' : plural ? 'Obrigado(a). Ficamos no aguardo.' : 'Obrigado(a). Fico no aguardo.'
+));
 const whatsappUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`;
 window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 const confirmation = document.createElement('p');

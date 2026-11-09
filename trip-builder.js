@@ -35,6 +35,10 @@
       estimate: 'Tarifa por persona',
       atvEstimate: 'Tarifa por vehículo',
       atvEstimateNote: 'Consultar según recorrido',
+      atvRoute: 'Recorrido o modalidad',
+      atvRoutePlaceholder: 'Elegí un recorrido',
+      atvRoutes: { explorer: 'Explorer · 2 horas', adventure: 'Adventure · 4 horas', ultimate: 'Ultimate · 6 horas', rental: 'Alquiler · 24 horas' },
+      waAtvRoute: 'Recorrido elegido',
       accommodationEstimate: 'Tarifa aprox. por persona / noche',
       accommodationPerNight: 'aprox. por noche',
       perPersonShort: 'c/u',
@@ -60,7 +64,7 @@
       requestConfirmationLink: 'Si WhatsApp no se abrió, abrilo aquí.',
       continue: 'Continuar a la solicitud',
       selectError: 'Agregá al menos una experiencia para continuar.',
-      detailsError: 'Completá las fechas y la cantidad de personas de cada experiencia elegida.',
+      detailsError: 'Completá las fechas, el recorrido ATV cuando corresponda y la cantidad de personas de cada experiencia elegida.',
       accommodationError: 'Completá la recomendación de alojamiento para Estadías y hoteles.',
       chooseAccommodation: 'Elegir alojamiento',
       changeAccommodation: 'Cambiar alojamiento',
@@ -117,6 +121,10 @@
       estimate: 'Rate per person',
       atvEstimate: 'Rate per vehicle',
       atvEstimateNote: 'Ask us based on the route',
+      atvRoute: 'Route or option',
+      atvRoutePlaceholder: 'Choose a route',
+      atvRoutes: { explorer: 'Explorer · 2 hours', adventure: 'Adventure · 4 hours', ultimate: 'Ultimate · 6 hours', rental: 'Rental · 24 hours' },
+      waAtvRoute: 'Selected route',
       accommodationEstimate: 'Approx. rate per person / night',
       accommodationPerNight: 'approx. per night',
       perPersonShort: 'per person',
@@ -142,7 +150,7 @@
       requestConfirmationLink: 'If WhatsApp did not open, open it here.',
       continue: 'Continue to booking request',
       selectError: 'Add at least one experience to continue.',
-      detailsError: 'Add dates and guest counts for every selected experience.',
+      detailsError: 'Add dates, an ATV route where applicable, and guest counts for every selected experience.',
       accommodationError: 'Complete the accommodation recommendation for Stays and Hotels.',
       chooseAccommodation: 'Choose accommodation',
       changeAccommodation: 'Change accommodation',
@@ -208,7 +216,7 @@
     });
   }
   const selected = new Map();
-  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'stays' ? { accommodation: '', recommendation: { guests: '1', budget: '', id: '' } } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
+  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'atv' ? { atvRoute: '' } : {}), ...(experience.id === 'stays' ? { accommodation: '', recommendation: { guests: '1', budget: '', id: '' } } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
   let accommodationModalMode = 'options';
   let customerName = '';
   let customerExtra = '';
@@ -304,6 +312,8 @@
   };
   const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
     : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
+  const atvRouteField = (experience, draft, copy) => experience.id !== 'atv' ? ''
+    : `<label class="trip-atv-route-field">${esc(copy.atvRoute)}<select data-atv-route aria-label="${esc(copy.atvRoute)}" required><option value="" disabled ${draft.atvRoute ? '' : 'selected'}>${esc(copy.atvRoutePlaceholder)}</option>${Object.entries(copy.atvRoutes).map(([route, label]) => `<option value="${route}" ${draft.atvRoute === route ? 'selected' : ''}>${esc(label)}</option>`).join('')}</select></label>`;
   const renderCards = () => experiences.map(experience => {
     const state = selected.get(experience.id);
     const draft = drafts.get(experience.id);
@@ -325,7 +335,7 @@
       <div class="trip-experience-content">
         <h3><a class="trip-experience-title-link" href="${experienceHref(experience)}">${esc(experience.title[lang])}</a></h3>
         <p>${esc(experience.description[lang])}</p>
-        <div class="trip-experience-fields">${photoModeField(experience, draft, copy)}${dateInputs(experience)}${guestsField}</div>
+        <div class="trip-experience-fields">${photoModeField(experience, draft, copy)}${atvRouteField(experience, draft, copy)}${dateInputs(experience)}${guestsField}</div>
         ${accommodationField(experience, draft, copy)}
         <p class="trip-experience-price"><span>${estimateLabel}</span><strong>${estimateValue}</strong></p>
         <button class="trip-add-button" type="button" data-add aria-pressed="${Boolean(state)}">${state ? copy.added : copy.add}</button>
@@ -389,7 +399,7 @@
       const accommodationLabel = id === 'stays' ? (accommodation ? accommodation.name[lang] : state.accommodation === 'recommendation' ? copy.recommendAccommodationShort : '—') : '';
       return `<li class="trip-summary-item">
         <span class="trip-summary-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
-        <div class="trip-summary-item-copy"><strong>${esc(titleFor(experience, state))}</strong>${id === 'stays' ? `<span>${esc(copy.accommodationSelected)}: ${esc(accommodationLabel)}</span>` : ''}<span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
+        <div class="trip-summary-item-copy"><strong>${esc(titleFor(experience, state))}</strong>${id === 'stays' ? `<span>${esc(copy.accommodationSelected)}: ${esc(accommodationLabel)}</span>` : ''}${id === 'atv' && state.atvRoute ? `<span>${esc(copy.atvRoute)}: ${esc(copy.atvRoutes[state.atvRoute])}</span>` : ''}<span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
         <div class="trip-summary-price">${accommodationTotal ? `<strong>${formatMoneyRange(accommodationTotal.min, accommodationTotal.max)}</strong><span>${copy.accommodationPerNight}</span>` : price === null ? `<span>${id === 'stays' ? copy.quote : id === 'atv' ? copy.atvEstimateNote : copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
       </li>`;
     });
@@ -400,7 +410,7 @@
     const needsDetails = list.some(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
       const guests = Number(state.guests);
-      return !state.start || (experience.dateMode === 'range' && !state.end) || (id === 'stays' && !state.accommodation) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
+      return !state.start || (experience.dateMode === 'range' && !state.end) || (id === 'stays' && !state.accommodation) || (id === 'atv' && !state.atvRoute) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
     });
     const requestError = invalidDates ? copy.invalidDates : list.some(([id, state]) => id === 'stays' && !state.accommodation) ? copy.accommodationError : list.length && needsDetails ? copy.detailsError : '';
     return `<div class="trip-cart-top">
@@ -442,6 +452,7 @@
     if (tripCanonical) tripCanonical.href = `${location.origin}/trip-builder`;
     const tripDescriptionMeta = document.querySelector('meta[name=description]');
     if (tripDescriptionMeta) tripDescriptionMeta.content = tripDescription;
+    const tripShareAlt = lang === 'pt-BR' ? 'Logotipo da WavePoint em fundo branco' : lang === 'es' ? 'Logotipo de WavePoint sobre fondo blanco' : 'WavePoint logo on a solid white background';
     const setTripMeta = (property, content) => {
       let meta = document.querySelector(`meta[property=\"${property}\"]`);
       if (!meta) { meta = document.createElement('meta'); meta.setAttribute('property', property); document.head.appendChild(meta); }
@@ -461,12 +472,12 @@
     setTripMeta('og:image:type', 'image/jpeg');
     setTripMeta('og:image:width', '1200');
     setTripMeta('og:image:height', '630');
-    setTripMeta('og:image:alt', 'WavePoint logo on a solid white background');
+    setTripMeta('og:image:alt', tripShareAlt);
     setTripMeta('og:locale', lang === 'en' ? 'en_US' : lang === 'pt-BR' ? 'pt_BR' : 'es_CR');
     setTripTwitterMeta('twitter:title', document.title);
     setTripTwitterMeta('twitter:description', tripDescription);
     setTripTwitterMeta('twitter:image', `${location.origin}/assets/img/site/share/wavepoint-logo-white.jpg?v=20261022-2`);
-    setTripTwitterMeta('twitter:image:alt', 'WavePoint logo on a solid white background');
+    setTripTwitterMeta('twitter:image:alt', tripShareAlt);
     root.innerHTML = `<section class="trip-builder-hero">
       <div class="trip-builder-hero-image" aria-hidden="true">
         <video class="trip-builder-hero-video" autoplay loop muted playsinline poster="assets/img/services/retreats/retreat-tamarindo.webp" tabindex="-1">
@@ -477,7 +488,7 @@
         <a class="detail-arrow detail-arrow-prev" href="service-detail.html?service=surfskate" rel="prev" aria-label="${copy.previousService}: ${lang === 'es' ? 'Clases de surfskate' : lang === 'pt-BR' ? 'Aulas de surfskate' : 'Surfskate Lessons'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="M20 2 3 20l17 18" /></svg></a>
         <a class="detail-arrow detail-arrow-next" href="service-detail.html?service=retiros" rel="next" aria-label="${copy.nextService}: ${lang === 'es' ? 'Retiros' : lang === 'pt-BR' ? 'Retiros' : 'Retreats'}"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="m4 2 17 18L4 38" /></svg></a>
       </nav>
-      <div class="container trip-builder-hero-content"><a class="collab-floating-brand trip-builder-floating-brand" href="index.html" aria-label="WavePoint — volver al inicio"><img src="assets/wavepoint-hero-mark.png" alt="WavePoint" decoding="async"></a><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
+      <div class="container trip-builder-hero-content"><a class="collab-floating-brand trip-builder-floating-brand" href="index.html" aria-label="${lang === 'pt-BR' ? 'WavePoint — voltar à página inicial' : lang === 'en' ? 'WavePoint — back to home' : 'WavePoint — volver al inicio'}"><img src="assets/wavepoint-hero-mark.png" alt="WavePoint" decoding="async"></a><p class="trip-kicker">${copy.eyebrow}</p><h1>${copy.title}</h1><p>${copy.intro}</p></div>
     </section>
     <section class="trip-builder-main"><div class="container">
       <header class="trip-builder-heading"><p class="trip-kicker">WAVEPOINT · TAMARINDO</p><h2>${copy.sectionTitle}</h2><p>${copy.sectionIntro}</p></header>
@@ -545,6 +556,7 @@
       draft[event.target.dataset.date] = event.target.value;
       updateExperienceCards();
     }
+    if (event.target.matches('[data-atv-route]')) draft.atvRoute = event.target.value;
     if (event.target.matches('[data-guests]')) draft.guests = event.target.value;
     if (event.target.matches('[data-photo-mode]')) {
       draft.photoMode = event.target.value;
@@ -689,7 +701,7 @@
     const incomplete = chosen.some(([id, state]) => {
       const experience = experiences.find(item => item.id === id);
       const guests = Number(state.guests);
-      return !state.start || (experience.dateMode === 'range' && !state.end) || (id === 'stays' && !state.accommodation) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
+      return !state.start || (experience.dateMode === 'range' && !state.end) || (id === 'stays' && !state.accommodation) || (id === 'atv' && !state.atvRoute) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
     });
     if (invalidDates) { error.textContent = COPY[lang].invalidDates; return; }
     if (incomplete) { error.textContent = COPY[lang].detailsError; return; }
@@ -715,6 +727,7 @@
       }
       if (experience.dateMode === 'range') lines.push(`  ${COPY[lang].waCheckIn}: ${formatDate(state.start)} · ${COPY[lang].waCheckOut}: ${formatDate(state.end)}`);
       else lines.push(`  ${COPY[lang].waDate}: ${formatDate(state.start)}`);
+      if (id === 'atv') lines.push(`  ${COPY[lang].waAtvRoute}: ${COPY[lang].atvRoutes[state.atvRoute]}`);
       lines.push(`  ${COPY[lang].waGuests}: ${state.guests}`);
       if (accommodationRate) {
         const nightlyTotal = { min: accommodationRate.min * Number(state.guests), max: accommodationRate.max * Number(state.guests) };
