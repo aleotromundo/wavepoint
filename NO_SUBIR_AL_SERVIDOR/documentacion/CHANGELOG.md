@@ -1,4 +1,8 @@
 # 2026-11-08
+### Programa de iniciación — subir 30% la imagen en escritorio
+- `styles.css` y `styles.optimized.css`: se desplaza la foto de la tarjeta 30% hacia arriba desde 981 px, manteniendo el encuadre móvil sin cambios.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop13`.
+
 ### Country Host — subir 70 px adicionales en escritorio
 - `styles.css` y `styles.optimized.css`: se desplaza la foto 70 px adicionales hacia arriba, hasta un total de 140 px desde 981 px; el móvil permanece sin cambios.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop11`.
