@@ -10077,10 +10077,7 @@ footer a {
 /* Surf coaching: subir 25% la foto de la tarjeta en escritorio. */
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card.service-card-surf-coaching .service-img img {
-    top: -25% !important;
-    bottom: auto !important;
-    height: 125% !important;
-    object-position: center bottom !important;
+    object-position: 25% 25% !important;
     transform: none !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-surf-coaching:hover .service-img img,
@@ -10092,13 +10089,7 @@ footer a {
 /* Roca Bruja: mover 15% la foto hacia arriba y a la izquierda en escritorio. */
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-img img {
-    top: -15% !important;
-    left: -15% !important;
-    right: auto !important;
-    bottom: auto !important;
-    width: 115% !important;
-    height: 115% !important;
-    object-position: center bottom !important;
+    object-position: 15% 15% !important;
     transform: none !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-witch-rock:hover .service-img img,
