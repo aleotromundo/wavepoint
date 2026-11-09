@@ -1,4 +1,8 @@
 # 2026-11-08
+### Clases de surf — alejar un poco la imagen en escritorio
+- `styles.css` y `styles.optimized.css`: la foto de la tarjeta se reduce suavemente a `94%` desde 981 px para mostrar un encuadre un poco más amplio; el móvil permanece sin cambios.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop12`.
+
 ### Country Host — subir 70 px adicionales en escritorio
 - `styles.css` y `styles.optimized.css`: se desplaza la foto 70 px adicionales hacia arriba, hasta un total de 140 px desde 981 px; el móvil permanece sin cambios.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop11`.
