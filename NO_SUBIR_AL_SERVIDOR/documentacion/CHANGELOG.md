@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja y Surf coaching — ajustar posición sin zoom
+- `styles.css` y `styles.optimized.css`: Roca Bruja se desplaza 30% hacia la derecha y Surf coaching 20% hacia arriba desde 981 px; no se modifica la escala ni el encuadre móvil.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop17`.
+
 ### Roca Bruja y Surf coaching — quitar zoom de las tarjetas
 - `styles.css` y `styles.optimized.css`: se elimina el aumento de tamaño aplicado a ambas fotos; se conserva únicamente el desplazamiento del recorte mediante `object-position` desde 981 px. El móvil no cambia.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop16`.
