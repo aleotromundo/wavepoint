@@ -43,13 +43,13 @@ imageAlt: 'Entrada de Hotel Tamalodge entre jardines',
 imageAlts: ['Entrada de Hotel Tamalodge entre jardines', 'Habitación de Hotel Tamalodge con cocina', 'Habitación sencilla de Hotel Tamalodge'],
 imageAltsEn: ['Hotel Tamalodge entrance among the gardens', 'Hotel Tamalodge room with a kitchen', 'Simple room at Hotel Tamalodge'],
 details: ['Habitación privada con baño privado.'],
-amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong'],
+amenities: ['Piscina', 'Cocina compartida', 'WiFi', 'Mesa de ping-pong', 'Servicio de Local Host'],
 en: {
 category: 'BUDGET OPTION',
 priceNote: 'per room · per night',
 summary: 'A private room with a private bathroom for a simple, functional stay.',
 details: ['Private room with a private bathroom.'],
-amenities: ['Pool', 'Shared kitchen', 'WiFi', 'Ping-pong table']
+amenities: ['Pool', 'Shared kitchen', 'WiFi', 'Ping-pong table', 'Local Host service']
 }
 },
 {
@@ -71,7 +71,7 @@ details: [
 'Habitación cuádruple con terraza — USD 130 · dos camas matrimoniales · baño privado · terraza · desayuno incluido · 1 habitación.',
 'Apartamento completo — USD 210 · capacidad para 8 personas · dos habitaciones con camas matrimoniales y literas · un baño · living y cocina · 2 apartamentos.'
 ],
-amenities: ['Frente al mar', 'Desayuno incluido según la unidad'],
+amenities: ['Frente al mar', 'Desayuno incluido según la unidad', 'Servicio de Local Host'],
 en: {
 category: 'MID-RANGE OPTION',
 priceNote: 'per unit · per night',
@@ -82,7 +82,7 @@ details: [
 'Quadruple room with terrace — USD 130 · two double beds · private bathroom · terrace · breakfast included · 1 room.',
 'Full apartment — USD 210 · sleeps 8 · two bedrooms with double beds and bunk beds · one bathroom · living room and kitchen · 2 apartments.'
 ],
-amenities: ['Beachfront', 'Breakfast included depending on the unit']
+amenities: ['Beachfront', 'Breakfast included depending on the unit', 'Local Host service']
 }
 },
 {
@@ -102,7 +102,7 @@ details: [
 '1 de octubre al 30 de noviembre: USD 250 · estadía mínima de 2 noches.',
 'Resto de las fechas: USD 300 · estadía mínima de 2 noches.'
 ],
-amenities: ['Frente al mar', 'Tarifas para hasta 10 personas, incluidos adultos y niños', 'Máximo de 5 personas adicionales · capacidad total de 15 personas', 'Semana Santa: consultar tarifas especiales'],
+amenities: ['Frente al mar', 'Tarifas para hasta 10 personas, incluidos adultos y niños', 'Máximo de 5 personas adicionales · capacidad total de 15 personas', 'Semana Santa: consultar tarifas especiales', 'Servicio de Local Host'],
 en: {
 category: 'GROUP OPTION',
 priceNote: 'per night · up to 10 guests',
@@ -115,7 +115,7 @@ details: [
 'October 1 to November 30: USD 250 · 2-night minimum stay.',
 'All other dates: USD 300 · 2-night minimum stay.'
 ],
-amenities: ['Beachfront', 'Rates include up to 10 guests, adults and children', 'Up to 5 additional guests · 15 guests total', 'Ask about special Easter week rates']
+amenities: ['Beachfront', 'Rates include up to 10 guests, adults and children', 'Up to 5 additional guests · 15 guests total', 'Ask about special Easter week rates', 'Local Host service']
 }
 },
 {
@@ -128,13 +128,13 @@ imageAlt: 'Vista aérea del hotel Capitán Suizo junto a la playa',
 imageAlts: ['Vista aérea del hotel Capitán Suizo junto a la playa', 'Bungalow de Capitán Suizo rodeado de jardines tropicales', 'Interior de bungalow frente a la playa en Capitán Suizo'],
 imageAltsEn: ['Aerial view of Hotel Capitan Suizo beside the beach', 'Capitán Suizo bungalow surrounded by tropical gardens', 'Interior of a beachfront bungalow at Capitán Suizo'],
 details: ['Tarifa: USD 600 por noche.', 'Consultar disponibilidad.'],
-amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios'],
+amenities: ['Hotel ubicado frente a la playa', 'Piscina al aire libre', 'Spa y servicio de masajes', 'Jardines', 'Salas de reuniones', 'Tiendas', 'Estacionamiento privado', 'WiFi en el centro de negocios', 'Servicio de Local Host'],
 en: {
 category: 'DELUXE OPTION',
 priceNote: 'per night · check availability',
 summary: 'A beachfront hotel with wellness services, a pool, and spaces to enjoy your stay.',
 details: ['Rate: USD 600 per night.', 'Please check availability.'],
-amenities: ['Beachfront hotel', 'Outdoor pool', 'Spa and massage services', 'Gardens', 'Meeting rooms', 'Shops', 'Private parking', 'WiFi in the business center']
+amenities: ['Beachfront hotel', 'Outdoor pool', 'Spa and massage services', 'Gardens', 'Meeting rooms', 'Shops', 'Private parking', 'WiFi in the business center', 'Local Host service']
 }
 }
 ],
@@ -162,7 +162,7 @@ id: 'clases-de-surf', number: '02', eyebrow: 'CLASES DE SURF · TAMARINDO', titl
 cardText: 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.',
 description: 'Una clase de surf de 2 horas con instructor local, explicación en la playa y práctica guiada en el agua, adaptada al nivel del grupo. Puede ser un primer acercamiento al mar o una sesión intermedia para corregir errores básicos.',
 lead: 'Incluye instructor local, introducción al equipo y la seguridad, tabla incluida y práctica adaptada al nivel. El punto de encuentro se informa después de confirmar la reserva y el pago.',
-includes: ['Duración: 2 horas', 'Tabla incluida', 'Primer acercamiento al mar o acompañamiento intermedio', 'Corrección de errores básicos', 'Punto de encuentro informado después de confirmar la reserva y el pago'],
+includes: ['Duración: 2 horas', 'Tabla incluida', 'Primer acercamiento al mar o acompañamiento intermedio', 'Corrección de errores básicos', 'Punto de encuentro informado después de confirmar la reserva y el pago', 'Servicio de Local Host'],
 images: [
 'assets/img/services/surf-lessons/surf-lesson-woman.webp',
 'assets/img/services/surf-lessons/optimized/surf-lesson-group.webp',
@@ -194,7 +194,7 @@ title: 'Surf lessons',
 cardText: 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.',
 description: 'A 2-hour lesson with a local surf instructor, a beach briefing and guided practice in the water, adapted to your group’s level. It can be a first approach to the ocean or an intermediate session focused on correcting basic mistakes.',
 lead: 'Includes a local instructor, an introduction to equipment and safety, a board, and practice adapted to your level. The meeting point is shared after the booking and payment are confirmed.',
-includes: ['Duration: 2 hours', 'Board included', 'First approach to the ocean or intermediate guidance', 'Correction of basic mistakes', 'Meeting point shared after the booking and payment are confirmed'],
+includes: ['Duration: 2 hours', 'Board included', 'First approach to the ocean or intermediate guidance', 'Correction of basic mistakes', 'Meeting point shared after the booking and payment are confirmed', 'Local Host service'],
 imageAlts: [
 'Student practicing surfing in Tamarindo',
 'Two surfers practicing together on a wave in Tamarindo',
@@ -243,7 +243,7 @@ facts: [['Duración', 'Tres días consecutivos, con una clase de dos horas cada 
 whyHeading: '¿Por qué tres días de surf?',
 whyText: 'En el primer encuentro todo es nuevo: la tabla, el movimiento del agua y las sensaciones de estar entre las olas. Volver otro día permite retomar esa experiencia, trabajar lo que te costó y seguir construyendo confianza. Cada clase parte de la anterior, con tiempo para practicar, recibir correcciones y disfrutar de tus avances.',
 includesHeading: 'Qué incluye',
-includes: ['Tres clases privadas de dos horas, repartidas en tres días consecutivos.', 'Acompañamiento y correcciones del instructor.', 'Explicación en la playa y práctica guiada en el agua.', 'Tabla de surf y lycra para cada sesión.', 'Seguimiento de lo trabajado durante el programa.'],
+includes: ['Tres clases privadas de dos horas, repartidas en tres días consecutivos.', 'Acompañamiento y correcciones del instructor.', 'Explicación en la playa y práctica guiada en el agua.', 'Tabla de surf y lycra para cada sesión.', 'Seguimiento de lo trabajado durante el programa.', 'Servicio de Local Host'],
 days: [
 { title: 'Día 1 · Conocer el mar y la tabla', text: 'Empezamos por familiarizarnos con el entorno, el equipo y las pautas básicas de seguridad. Practicamos la posición sobre la tabla, la remada y el movimiento para ponerse de pie, antes de llevar esos primeros ejercicios al agua con el instructor.' },
 { title: 'Día 2 · Practicar y ganar confianza', text: 'Retomamos lo aprendido y trabajamos sobre tus primeras sensaciones. Dedicamos más tiempo a la remada, el equilibrio y la puesta de pie, con correcciones que te ayuden a entender qué ajustar en cada intento.' },
@@ -265,7 +265,7 @@ facts: [['Duration', 'Three consecutive days, with one 2-hour lesson each day.']
 whyHeading: 'Why three days of surfing?',
 whyText: 'At the first meeting, everything is new: the board, the movement of the water and the feeling of being among the waves. Coming back another day lets you revisit the experience, work on what felt difficult and keep building confidence. Each lesson builds on the last, with time to practice, receive corrections and enjoy your progress.',
 includesHeading: 'What’s included',
-includes: ['Three private 2-hour lessons, spread across three consecutive days.', 'Guidance and corrections from the instructor.', 'A beach briefing and guided practice in the water.', 'A surfboard and rash guard for each session.', 'Follow-up on what you work on during the program.'],
+includes: ['Three private 2-hour lessons, spread across three consecutive days.', 'Guidance and corrections from the instructor.', 'A beach briefing and guided practice in the water.', 'A surfboard and rash guard for each session.', 'Follow-up on what you work on during the program.', 'Local Host service'],
 days: [
 { title: 'Day 1 · Get to know the ocean and board', text: 'We start by getting familiar with the surroundings, the equipment and basic safety guidelines. We practice positioning on the board, paddling and the movement to stand up before taking those first exercises into the water with the instructor.' },
 { title: 'Day 2 · Practice and build confidence', text: 'We revisit what you learned and work with your first impressions. We spend more time on paddling, balance and standing up, with corrections to help you understand what to adjust on each attempt.' },
@@ -298,7 +298,7 @@ id: 'surf-coaching', number: '03', eyebrow: 'SURFCOACHING · PROGRESO', title: '
 cardText: 'Sesión de surf grabada y videoanálisis técnico para mejorar tu postura, tus tiempos y tus movimientos.',
 description: 'Un servicio de videoanálisis de una sesión de surf, recomendado para surfistas intermedios o avanzados. Primero se graba la sesión y después el instructor analiza las olas para hacer una devolución técnica.',
 lead: 'El servicio tiene dos momentos: una sesión de surf grabada, con una cámara que busca captar la mayor cantidad posible de olas, y un análisis posterior desde una pantalla para corregir posturas, tiempos y movimientos. Incluye el video de tus olas y la devolución técnica. Precio: USD 45 por persona.',
-includes: ['Sesión de surf grabada', 'Video de tus olas', 'Videoanálisis y devolución técnica posterior', 'Recomendado para surfistas intermedios o avanzados', 'USD 45 por persona'],
+includes: ['Sesión de surf grabada', 'Video de tus olas', 'Videoanálisis y devolución técnica posterior', 'Recomendado para surfistas intermedios o avanzados', 'USD 45 por persona', 'Servicio de Local Host'],
 images: ['assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/surf-coaching-session.webp', 'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp'],
 imageAlts: ['Tres surfistas saltando con sus tablas en la playa', 'Surfista surcando una ola sobre una tabla roja', 'Grupo de surfistas reuniéndose con sus tablas en la playa de Tamarindo'],
 imageAltsEn: ['Three surfers jumping with their boards on the beach', 'Surfer riding a wave on a red board', 'Group of surfers gathering with their boards on Tamarindo Beach'],
@@ -323,7 +323,7 @@ title: 'Surf coaching',
 cardText: 'A filmed surf session and technical video analysis to improve your posture, timing and movements.',
 description: 'A video analysis service for a surf session, recommended for intermediate or advanced surfers. The session is filmed first, and the coach then reviews the waves to provide technical feedback.',
 lead: 'The service has two moments: a filmed surf session, with a camera aiming to capture as many waves as possible, followed by a screen-based analysis to correct posture, timing and movements. It includes the video of your waves and technical feedback. Price: USD 45 per person.',
-includes: ['Filmed surf session', 'Video of your waves', 'Video analysis and technical feedback afterwards', 'Recommended for intermediate or advanced surfers', 'USD 45 per person'],
+includes: ['Filmed surf session', 'Video of your waves', 'Video analysis and technical feedback afterwards', 'Recommended for intermediate or advanced surfers', 'USD 45 per person', 'Local Host service'],
 imageAlts: ['Surfer riding a wave on a red board', 'Three surfers sharing a beach session with their boards', 'Group of surfers gathering with their boards on Tamarindo Beach'],
 questions: {
 preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
@@ -353,7 +353,7 @@ images: [
 ],
 imageAlts: ['Mujer practicando una postura de yoga frente al mar', 'Grupo meditando dentro de un rancho tropical con techo de paja', 'Clase grupal de yoga en un espacio abierto entre palmeras'],
 imageAltsEn: ['Woman practicing a yoga pose beside the sea', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees'],
-includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía'],
+includes: ['Mats de yoga', 'Clases grupales o privadas', 'Adaptación según tu nivel y energía', 'Servicio de Local Host'],
 questions: [
 { id: 'yoga_experience', label: '¿Qué experiencia tienes con el yoga?', type: 'choice', options: ['Primera vez', 'Algo de experiencia', 'Practico regularmente'] },
 { id: 'yoga_format', label: '¿Prefieres una clase grupal o privada?', type: 'choice', options: ['Grupal', 'Privada', 'Cualquiera de las dos'] },
@@ -369,7 +369,7 @@ questions: {
   yoga_format: { label: 'Would you prefer a group or private class?', options: ['Group', 'Private', 'Either is fine'] },
   yoga_notes: { label: 'Is there anything you want the instructor to keep in mind to adapt the session?', placeholder: 'Optional' }
 },
-includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy'],
+includes: ['Yoga mats', 'Group or private classes', 'Adapted to your level and energy', 'Local Host service'],
 imageAlts: ['Woman meditating on the beach by the ocean', 'Group meditating in a thatched-roof tropical pavilion', 'Group yoga class in an open-air space among palm trees']
 }
 },
@@ -450,6 +450,7 @@ date_flexibility: { label: 'Can you change the date if sea conditions require it
 {
 id: 'surf-fotografia', number: '08', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fotos de surf',
 cardText: 'Tu tiempo en el agua, capturado.',
+includes: ['Servicio de Local Host'],
 description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
 images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-photography/guide-surf-gallery.webp'],
 imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Dos surfistas caminan por la arena con sus tablas'],
@@ -466,6 +467,7 @@ en: {
 eyebrow: 'SURF PHOTOGRAPHY',
 title: 'Surf Photography',
 cardText: 'Your time in the water, captured.',
+includes: ['Local Host service'],
 description: 'Your first wave, a turn you’ve been working on or a session shared with friends—every surfer has moments worth keeping. WavePoint connects you with local surf photographers to capture yours, so you can focus on the waves and take a little of Tamarindo home with you.',
 imageAlts: ['Surf photographer in the water with a camera beside a breaking wave'],
 submitLabel: 'ASK ABOUT PHOTOGRAPHY ↗',
@@ -1087,7 +1089,7 @@ const prices = isEn ? [
 ];
 const intro = isEn ? 'Head out from Tamarindo with a local guide and a private tour for your group. Choose from three routes according to how much time you want to dedicate to the adventure.' : 'Explorá los alrededores de Tamarindo en cuatriciclo con un guía local y un tour privado para tu grupo. Elegí entre tres recorridos según cuánto tiempo quieras dedicarle a la aventura.';
 const priceNote = isEn ? 'Prices are per ATV. The two-person rate is the total for two people sharing one ATV: one driver and one passenger.' : 'Los precios son por cuatriciclo. La tarifa doble es el total para dos personas compartiendo un ATV: conductor y acompañante.';
-const included = isEn ? 'Includes the ATV, local guide, helmet and safety instructions. A valid driver’s license is required to drive.' : 'Incluye cuatriciclo, guía local, casco e indicaciones de seguridad. Para conducir necesitás una licencia vigente.';
+const included = isEn ? 'Includes the ATV, local guide, helmet, safety instructions and Local Host service. A valid driver’s license is required to drive.' : 'Incluye cuatriciclo, guía local, casco, indicaciones de seguridad y servicio de Local Host. Para conducir necesitás una licencia vigente.';
 const request = isEn ? 'Tell us the date, number of participants and preferred route. Before you pay, we confirm availability, meeting point, service details and final price. Rates are for reference and sending a request does not confirm a booking.' : 'Contanos la fecha, cuántas personas participan y qué recorrido prefieren. Antes de pagar, confirmaremos disponibilidad, punto de encuentro, detalles del servicio y precio final. Las tarifas son de referencia y enviar una solicitud no confirma la reserva.';
 const galleryStory = renderStandardStory(service);
 const localizedOptions = portuguese?.options || options;

@@ -809,7 +809,7 @@
           priceNote: 'por quarto · por noite',
           summary: 'Quarto privativo com banheiro para uma estadia simples e funcional.',
           details: ['Quarto privativo com banheiro privativo.'],
-          amenities: ['Piscina', 'Cozinha compartilhada', 'Wi-Fi', 'Mesa de pingue-pongue'],
+          amenities: ['Piscina', 'Cozinha compartilhada', 'Wi-Fi', 'Mesa de pingue-pongue', 'Serviço de Local Host'],
           imageAlts: ['Entrada do Hotel Tamalodge entre jardins', 'Quarto do Hotel Tamalodge com cozinha', 'Quarto simples do Hotel Tamalodge']
         },
         'casa-aura': {
@@ -822,7 +822,7 @@
             'Quarto quádruplo com terraço — USD 130 · duas camas de casal · banheiro privativo · terraço · café da manhã incluído · 1 quarto.',
             'Apartamento completo — USD 210 · acomoda até 8 pessoas · dois quartos com camas de casal e beliches · um banheiro · sala de estar e cozinha · 2 apartamentos.'
           ],
-          amenities: ['À beira-mar', 'Café da manhã incluído conforme a unidade'],
+          amenities: ['À beira-mar', 'Café da manhã incluído conforme a unidade', 'Serviço de Local Host'],
           imageAlts: ['Entrada da Casa Aura em Tamarindo', 'Área comum de madeira da Casa Aura', 'Interior da Casa Aura com sala e cozinha']
         },
         'casa-madera': {
@@ -837,7 +837,7 @@
             'De 1 de outubro a 30 de novembro: USD 250 · estadia mínima de 2 noites.',
             'Demais datas: USD 300 · estadia mínima de 2 noites.'
           ],
-          amenities: ['À beira-mar', 'Valores para até 10 pessoas, adultos e crianças', 'Até 5 pessoas adicionais · capacidade total de 15 pessoas', 'Consulte os valores especiais para a Semana Santa'],
+          amenities: ['À beira-mar', 'Valores para até 10 pessoas, adultos e crianças', 'Até 5 pessoas adicionais · capacidade total de 15 pessoas', 'Consulte os valores especiais para a Semana Santa', 'Serviço de Local Host'],
           imageAlts: ['Casa de Maderas cercada por vegetação tropical', 'Casa de Maderas com piscina e jardins tropicais', 'Vista aérea da Casa de Maderas junto à Playa Grande']
         },
         'capitan-suizo': {
@@ -845,7 +845,7 @@
           priceNote: 'por noite · consulte a disponibilidade',
           summary: 'Hotel à beira-mar com serviços de bem-estar, piscina e espaços para aproveitar a estadia.',
           details: ['Diária: USD 600.', 'Consulte a disponibilidade.'],
-          amenities: ['Hotel à beira-mar', 'Piscina ao ar livre', 'Spa e serviços de massagem', 'Jardins', 'Salas de reunião', 'Lojas', 'Estacionamento privativo', 'Wi-Fi no centro de negócios'],
+          amenities: ['Hotel à beira-mar', 'Piscina ao ar livre', 'Spa e serviços de massagem', 'Jardins', 'Salas de reunião', 'Lojas', 'Estacionamento privativo', 'Wi-Fi no centro de negócios', 'Serviço de Local Host'],
           imageAlts: ['Vista aérea do Hotel Capitán Suizo junto à praia', 'Bangalô do Capitán Suizo cercado por jardins tropicais', 'Interior de um bangalô à beira-mar no Capitán Suizo']
         }
       }
@@ -856,7 +856,7 @@
       cardText: 'Conte seu nível e o que gostaria de aprender. Vamos encontrar uma aula ideal para você.',
       description: 'Uma aula de 2 horas com instrutor local, conversa inicial na praia e prática guiada na água, de acordo com o nível do seu grupo. Pode ser o primeiro contato com o mar ou uma sessão intermediária para corrigir fundamentos.',
       lead: 'Inclui instrutor local, apresentação dos equipamentos e orientações de segurança, prancha e prática adaptada ao seu nível. O ponto de encontro é informado após a confirmação da reserva e do pagamento.',
-      includes: ['Duração: 2 horas', 'Prancha incluída', 'Primeiro contato com o mar ou acompanhamento para nível intermediário', 'Correção dos fundamentos', 'Ponto de encontro informado após a confirmação da reserva e do pagamento'],
+      includes: ['Duração: 2 horas', 'Prancha incluída', 'Primeiro contato com o mar ou acompanhamento para nível intermediário', 'Correção dos fundamentos', 'Ponto de encontro informado após a confirmação da reserva e do pagamento', 'Serviço de Local Host'],
       imageAlts: ['Aluna praticando surfe em Tamarindo', 'Duas pessoas surfando juntas em uma onda em Tamarindo', 'Surfista pegando uma onda em Tamarindo']
     },
     'surf-programa-3-dias': {
@@ -874,7 +874,7 @@
         whyHeading: 'Por que surfar durante três dias?',
         whyText: 'No primeiro encontro, tudo é novidade: a prancha, o movimento da água e a sensação de estar entre as ondas. Voltar outro dia permite retomar a experiência, trabalhar o que foi mais difícil e ganhar confiança. Cada aula parte da anterior, com tempo para praticar, receber orientações e aproveitar seu progresso.',
         includesHeading: 'O que está incluído',
-        includes: ['Três aulas particulares de duas horas em três dias consecutivos.', 'Acompanhamento e orientações do instrutor.', 'Explicação na praia e prática guiada na água.', 'Prancha e lycra para cada sessão.', 'Acompanhamento do que foi trabalhado durante o programa.'],
+        includes: ['Três aulas particulares de duas horas em três dias consecutivos.', 'Acompanhamento e orientações do instrutor.', 'Explicação na praia e prática guiada na água.', 'Prancha e lycra para cada sessão.', 'Acompanhamento do que foi trabalhado durante o programa.', 'Serviço de Local Host'],
         days: [
           { title: 'Dia 1 · Conheça o mar e a prancha', text: 'Vamos conhecer o ambiente, o equipamento e as orientações básicas de segurança. Praticaremos a posição na prancha, a remada e o movimento para ficar em pé antes de levar os primeiros exercícios à água com o instrutor.' },
           { title: 'Dia 2 · Pratique e ganhe confiança', text: 'Retomaremos o que você aprendeu e trabalharemos suas primeiras sensações. Vamos dedicar mais tempo à remada, ao equilíbrio e a ficar em pé, com orientações para ajudar você a entender o que ajustar em cada tentativa.' },
@@ -897,7 +897,7 @@
       cardText: 'Sessão filmada e análise técnica em vídeo das suas ondas.',
       description: 'Um serviço de análise em vídeo de uma sessão de surfe, recomendado para surfistas intermediários ou avançados. Primeiro a sessão é filmada; depois, o instrutor analisa as ondas e compartilha observações técnicas.',
       lead: 'O serviço tem duas etapas: uma sessão de surfe filmada para registrar o maior número possível de ondas e, depois, uma análise em vídeo para ajustar postura, tempo e movimentos. Inclui as imagens das suas ondas e comentários técnicos. Preço: USD 45 por pessoa.',
-      includes: ['Sessão de surfe filmada', 'Vídeo das suas ondas', 'Análise em vídeo e comentários técnicos', 'Recomendado para surfistas intermediários ou avançados', 'USD 45 por pessoa'],
+      includes: ['Sessão de surfe filmada', 'Vídeo das suas ondas', 'Análise em vídeo e comentários técnicos', 'Recomendado para surfistas intermediários ou avançados', 'USD 45 por pessoa', 'Serviço de Local Host'],
       imageAlts: ['Surfista pegando uma onda em uma prancha vermelha', 'Três surfistas compartilhando uma sessão na praia com suas pranchas', 'Grupo de surfistas reunido com suas pranchas na praia de Tamarindo']
     },
     'roca-bruja': {
@@ -965,7 +965,7 @@
       title: 'Yoga',
       cardText: 'Uma prática para acompanhar sua viagem e desacelerar.',
       description: 'Faça uma pausa, aproveite o movimento e reserve um tempo para você. Seja sua primeira aula ou a continuação de uma prática que já conhece, a WavePoint ajuda a encontrar uma sessão adequada à sua experiência, com instrutores locais e opções em grupo ou particulares.',
-      includes: ['Tapetes de yoga', 'Aulas em grupo ou particulares', 'Adaptação ao seu nível e à sua disposição'],
+      includes: ['Tapetes de yoga', 'Aulas em grupo ou particulares', 'Adaptação ao seu nível e à sua disposição', 'Serviço de Local Host'],
       imageAlts: ['Mulher praticando uma postura de yoga à beira-mar', 'Grupo meditando em um espaço tropical com teto de palha', 'Aula de yoga em grupo ao ar livre entre palmeiras']
     },
     atv: {
@@ -994,7 +994,7 @@
         ratesHeading: 'Escolha a opção ideal para seu grupo',
         priceNote: 'Os valores são por quadriciclo. A tarifa para duas pessoas é o total para compartilhar um veículo: uma pessoa dirige e a outra vai como passageira.',
         includedHeading: 'O que está incluído',
-        included: 'Quadriciclo, guia local, capacete e instruções de segurança. Para dirigir, é necessário ter carteira de habilitação válida.',
+        included: 'Quadriciclo, guia local, capacete, instruções de segurança e serviço de Local Host. Para dirigir, é necessário ter carteira de habilitação válida.',
         requestHeading: 'Consulte a disponibilidade com a WavePoint',
         request: 'Informe a data, o número de participantes e o percurso preferido. Antes de qualquer pagamento, confirmaremos a disponibilidade, o ponto de encontro, os detalhes do serviço e o preço final. Os valores são de referência; enviar uma consulta não confirma a reserva.'
       }
@@ -1003,6 +1003,7 @@
       eyebrow: 'FOTOGRAFIA DE SURFE',
       title: 'Fotografia de surfe',
       cardText: 'Seu tempo na água, registrado.',
+      includes: ['Serviço de Local Host'],
       description: 'Sua primeira onda, uma manobra que vem treinando ou uma sessão com amigos: há momentos que merecem ser lembrados. A WavePoint conecta você a fotógrafos locais de surfe para registrar sua sessão enquanto você se concentra nas ondas.',
       imageAlts: ['Dois surfistas saem da água com suas pranchas na praia', 'Dois surfistas caminham pela areia carregando suas pranchas']
     },
