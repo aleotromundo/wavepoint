@@ -410,6 +410,49 @@ imageAlts: ['Group of people aboard a boat off the coast', 'Group snorkeling bes
 }
 },
 {
+id: 'mangrove-tour', number: '05A', eyebrow: 'NATURALEZA · TAMARINDO', title: 'Tour del estero en bote — Descubrí la naturaleza entre manglares',
+cardText: 'Navegá entre manglares y descubrí la vida del estero de Tamarindo.',
+description: 'Navegá por los canales del estero de Tamarindo y conocé la vida que se esconde entre sus manglares. Con un guía local naturalista, aprenderás sobre este ecosistema mientras buscás cocodrilos, monos y aves en su entorno natural.',
+lead: 'Disfrutá del paisaje desde una embarcación con techo y asientos, con tiempo para observar, sacar fotos y conocer otra cara de Tamarindo.',
+heroImage: 'assets/img/services/mangrove-tour/mangrove-tour-boat.webp',
+images: [
+'assets/img/services/mangrove-tour/mangrove-tour-boat.webp',
+'assets/img/services/mangrove-tour/mangrove-tour-cover.webp',
+'assets/img/services/mangrove-tour/mangrove-tour-mangroves.webp',
+'assets/img/services/mangrove-tour/mangrove-tour-wildlife.webp'
+],
+imageAlts: [
+'Embarcación con techo navegando por el estero de Tamarindo',
+'Visitante observando fauna entre los manglares desde una embarcación',
+'Canal del estero de Tamarindo entre raíces de manglar',
+'Cocodrilo descansando entre la vegetación del estero'
+],
+imageAltsEn: [
+'Covered boat navigating the Tamarindo estuary',
+'Visitor observing wildlife among the mangroves from a boat',
+'Tamarindo estuary channel among mangrove roots',
+'Crocodile resting among the estuary vegetation'
+],
+facts: [['Duración', 'Dos horas'], ['Modalidad', 'Recorrido guiado en bote'], ['Grupo', 'Hasta 12 participantes'], ['Idiomas', 'Español e inglés'], ['Precio', 'USD 40 por persona']],
+includes: ['Recorrido por el estero en bote con techo y asientos', 'Guía local naturalista', 'Chaleco salvavidas', 'Servicio de Local Host'],
+before: 'Traé ropa cómoda, gorra, protección solar y repelente. Si viajan niños, indicá sus edades al consultar. La actividad no es accesible para sillas de ruedas. Los animales viven en libertad: los avistamientos dependen de las condiciones del día y no están garantizados.',
+priceText: 'USD 40 por persona.',
+requestText: 'Contanos qué fecha preferís y cuántas personas participan. Si necesitás recogida, indicá dónde te hospedás para verificar la cobertura. WAVEPOINT confirmará disponibilidad, horario, punto de encuentro o recogida y condiciones antes de enviarte el enlace de pago.',
+allianceText: '¿Tenés un negocio u ofrecés experiencias en Tamarindo y alrededores? Contanos tu propuesta y conversemos sobre una alianza para acercar tus servicios a quienes visitan la zona. Escribinos por WhatsApp y veamos cómo trabajar juntos.',
+questions: [
+{ id: 'preferred_date', label: '¿Qué fecha preferís?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
+{ id: 'group_size', label: '¿Cuántas personas participan?', type: 'number', min: 1, max: 12 },
+{ id: 'children_ages', label: 'Si viajan niños, ¿qué edades tienen?', type: 'text', placeholder: 'Opcional', optional: true },
+{ id: 'pickup', label: '¿Necesitás consultar por recogida?', type: 'choice', options: ['Sí', 'No'], optional: true },
+{ id: 'lodging', label: 'Si necesitás recogida, ¿dónde te hospedás?', type: 'text', placeholder: 'Alojamiento o zona', optional: true }
+],
+en: {
+ eyebrow: 'NATURE · TAMARINDO', title: 'Boat estuary tour — Discover nature among the mangroves', cardText: 'Navigate among mangroves and discover life in the Tamarindo estuary.', description: 'Navigate the channels of the Tamarindo estuary and discover the life hidden among its mangroves. With a local naturalist guide, you will learn about this ecosystem while looking for crocodiles, monkeys and birds in their natural environment.', lead: 'Enjoy the landscape from a covered boat with seats, with time to observe, take photos and discover another side of Tamarindo.', facts: [['Duration', 'Two hours'], ['Format', 'Guided boat tour'], ['Group', 'Up to 12 participants'], ['Languages', 'Spanish and English'], ['Price', 'USD 40 per person']], includes: ['Boat ride through the estuary with roof and seats', 'Local naturalist guide', 'Life jacket', 'Local Host service'], before: 'Bring comfortable clothes, a hat, sunscreen and insect repellent. If children are traveling, tell us their ages when you inquire. The activity is not wheelchair accessible. Animals live in the wild: sightings depend on the conditions of the day and are not guaranteed.', priceText: 'USD 40 per person.', requestText: 'Tell us your preferred date and how many people are participating. If you need pickup, tell us where you are staying so we can check coverage. WAVEPOINT will confirm availability, schedule, meeting point or pickup and conditions before sending a payment link.', allianceText: 'Do you run a business or offer experiences in Tamarindo and the surrounding area? Tell us about your proposal and let’s talk about a partnership to connect your services with visitors to the region. Write to us on WhatsApp and let’s explore how to work together.',
+ questions: { preferred_date: { label: 'What date would you prefer?', fields: ['Date'] }, group_size: { label: 'How many people are participating?' }, children_ages: { label: 'If children are traveling, what are their ages?', placeholder: 'Optional' }, pickup: { label: 'Would you like to ask about pickup?', options: ['Yes', 'No'] }, lodging: { label: 'If you need pickup, where are you staying?', placeholder: 'Accommodation or area' } },
+ imageAlts: ['Covered boat navigating the Tamarindo estuary', 'Visitor observing wildlife among the mangroves from a boat', 'Tamarindo estuary channel among mangrove roots', 'Crocodile resting among the estuary vegetation']
+}
+},
+{
 id: 'roca-bruja', number: '04', eyebrow: 'VIAJE DE SURF · AVENTURA', title: 'Roca Bruja',
 cardText: 'Un día de surf en barco con guías locales que conocen la zona.',
 lead: 'Algunos surf trips te acompañan mucho después de tu última ola.',
@@ -834,7 +877,7 @@ description: 'Tell us your dates, group size and interests. We’ll put together
 imageAlts: ['Sunset over the coast framed by a tropical tree']
 }
 });
-const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-programa-3-dias', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
+const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-programa-3-dias', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'mangrove-tour', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
 serviceOrder.splice(9, 0, 'trip-builder');
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
@@ -1064,6 +1107,19 @@ const includes = service.includes?.length ? `<div class="service-supporting-incl
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
 }
+function renderMangroveStory(service) {
+const isEn = lang === 'en';
+const isPt = lang === 'pt-BR';
+const title = isEn ? 'Tour details' : isPt ? 'Detalhes do passeio' : 'Datos del tour';
+const includesLabel = isEn ? 'WHAT IS INCLUDED' : isPt ? 'O QUE ESTÁ INCLUÍDO' : 'QUÉ INCLUYE';
+const beforeLabel = isEn ? 'BEFORE YOU GO' : isPt ? 'ANTES DE IR' : 'ANTES DE IR';
+const requestLabel = isEn ? 'REQUEST A BOOKING' : isPt ? 'SOLICITAR RESERVA' : 'SOLICITAR RESERVA';
+const allianceLabel = isEn ? 'PARTNERSHIPS WITH WAVEPOINT' : isPt ? 'PARCERIAS COM A WAVEPOINT' : 'ALIANZAS CON WAVEPOINT';
+const facts = service.facts.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('');
+const includes = service.includes.map(item => `<li>${esc(item)}</li>`).join('');
+const gallery = service.images.map((image, index) => `<img src="${esc(image)}" alt="${esc(service.imageAlts?.[index] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${index + 1}`)}" loading="lazy" />`).join('');
+return `<section class="mangrove-story" aria-label="${esc(title)}"><div class="detail-gallery service-editorial-gallery mangrove-gallery" role="group" aria-label="${isEn ? 'Mangrove tour photos' : isPt ? 'Fotos do passeio pelo estuário' : 'Fotos del tour del estero'}">${gallery}</div><section class="mangrove-panel mangrove-facts"><p class="service-page-kicker">${esc(title)}</p><dl>${facts}</dl></section><section class="mangrove-panel"><p class="service-page-kicker">${includesLabel}</p><ul>${includes}</ul></section><section class="mangrove-panel mangrove-before"><p class="service-page-kicker">${beforeLabel}</p><p>${esc(service.before)}</p></section><section class="mangrove-panel mangrove-request"><p class="service-page-kicker">${requestLabel}</p><p class="mangrove-price">${esc(service.priceText)}</p><p>${esc(service.requestText)}</p><p class="mangrove-request-note">${isEn ? 'This is an inquiry; the booking is not confirmed yet. You do not need to pay now.' : isPt ? 'Esta é uma consulta; o passeio ainda não está confirmado. Você não precisa pagar agora.' : 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.'}</p></section><section class="mangrove-panel mangrove-alliance"><p class="service-page-kicker">${allianceLabel}</p><p>${esc(service.allianceText)}</p><a href="https://wa.me/50660399194?text=${encodeURIComponent(isEn ? 'Hello WavePoint, I would like to propose a partnership.' : 'Hola WavePoint, quiero proponer una alianza.')}" target="_blank" rel="noopener noreferrer">${isEn ? 'Propose a partnership' : isPt ? 'Propor uma parceria' : 'Proponer una alianza'} ↗</a></section></section>`;
+}
 function renderAtvStory(service) {
 const isEn = lang === 'en';
 const portuguese = lang === 'pt-BR' ? window.WAVEPOINT_PT_BR?.services?.atv?.atvCopy : null;
@@ -1277,6 +1333,8 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderSurfskateStory(service)
 : service.id === 'retiros'
 ? renderRetreatStory(service)
+: service.id === 'mangrove-tour'
+? renderMangroveStory(service)
 : service.id === 'atv'
 ? renderAtvStory(service)
 : service.id === 'snorkel-catamaran'

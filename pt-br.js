@@ -960,6 +960,21 @@
         reservationNote: 'Esta é uma consulta; o passeio ainda não está confirmado. Você não precisa pagar agora.'
       }
     },
+    'mangrove-tour': {
+      eyebrow: 'NATUREZA · TAMARINDO',
+      title: 'Passeio pelo estuário de barco — Descubra a natureza entre manguezais',
+      cardText: 'Navegue entre manguezais e descubra a vida do estuário de Tamarindo.',
+      description: 'Navegue pelos canais do estuário de Tamarindo e conheça a vida escondida entre os manguezais. Com um guia naturalista local, você aprenderá sobre esse ecossistema enquanto procura crocodilos, macacos e aves em seu ambiente natural.',
+      lead: 'Aproveite a paisagem em uma embarcação coberta com assentos, com tempo para observar, tirar fotos e conhecer outro lado de Tamarindo.',
+      before: 'Leve roupas confortáveis, boné, protetor solar e repelente. Se houver crianças, informe as idades ao consultar. A atividade não é acessível para cadeirantes. Os animais vivem soltos: os avistamentos dependem das condições do dia e não são garantidos.',
+      priceText: 'USD 40 por pessoa.',
+      requestText: 'Informe a data preferida e quantas pessoas participarão. Se precisar de transporte, diga onde está hospedado para verificarmos a cobertura. A WAVEPOINT confirmará disponibilidade, horário, ponto de encontro ou transporte e condições antes de enviar o link de pagamento.',
+      allianceText: 'Você tem um negócio ou oferece experiências em Tamarindo e arredores? Conte sua proposta e vamos conversar sobre uma parceria para aproximar seus serviços de quem visita a região.',
+      facts: [['Duração', 'Duas horas'], ['Formato', 'Passeio guiado de barco'], ['Grupo', 'Até 12 participantes'], ['Idiomas', 'Espanhol e inglês'], ['Preço', 'USD 40 por pessoa']],
+      includes: ['Passeio pelo estuário em barco coberto com assentos', 'Guia naturalista local', 'Colete salva-vidas', 'Serviço de Local Host'],
+      questions: { preferred_date: { label: 'Qual data você prefere?', fields: ['Data'] }, group_size: { label: 'Quantas pessoas participarão?' }, children_ages: { label: 'Se houver crianças, quais são as idades?', placeholder: 'Opcional' }, pickup: { label: 'Você precisa consultar sobre transporte?', options: ['Sim', 'Não'] }, lodging: { label: 'Se precisar de transporte, onde está hospedado?', placeholder: 'Hospedagem ou região' } },
+      imageAlts: ['Barco coberto navegando pelo estuário de Tamarindo', 'Visitante observando a fauna entre os manguezais a partir de um barco', 'Canal do estuário de Tamarindo entre raízes de mangue', 'Crocodilo descansando entre a vegetação do estuário']
+    },
     yoga: {
       eyebrow: 'YOGA · TAMARINDO',
       title: 'Yoga',

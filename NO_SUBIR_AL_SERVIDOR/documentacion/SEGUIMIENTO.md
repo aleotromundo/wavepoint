@@ -22,7 +22,7 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | 3 | Mejorar navegación y agregar foto nueva | **Resuelto** | La ficha quedó como “Navegación — Descubrí Guanacaste desde el mar”, con opciones, tarifas de referencia, condiciones, datos prácticos, formulario y foto nueva. | `services.js`, `styles.css`, `styles.optimized.css`, `service-detail.html`; changelog de Embarcaciones. | Ninguno conocido. |
 | 4 | Crear ficha nueva de Local Host/Country Host con fotos | **Resuelto** | Se creó la ficha gratuita con bienvenida presencial de una hora, consultas por WhatsApp durante 48 horas, recomendaciones, orientación y formulario de consulta. Se integraron las cuatro fotos marcadas en la guía como portada y galería, con traducciones ES/EN/PT-BR. | `services.js`, `index.html`, `script.js`, `pt-br.js`, `service-detail.html`, `assets/img/services/local-host/`; fotos `foto-05.jpg` a `foto-08.jpg`; `REFERENCIAS_FOTOS.md`. | Ninguno conocido. |
 | 5 | Incluir Local Host gratis en varios servicios | **Resuelto** | Se agregó “Servicio de Local Host” únicamente en los incluidos de Clases de surf, programa de surf, Yoga, ATV, hospedajes, Fotos de surf y Surf coaching. Se mantuvieron intactos precios, formularios, descripciones y el comportamiento móvil; se sincronizaron ES/EN/PT-BR. | `services.js`, `pt-br.js`; instrucción literal en `Guia_Segunda_Parte_Completa.pdf`. | Ninguno conocido. |
-| 6 | Desarrollar el tour del estero | **Pendiente** | La guía contiene una propuesta de ficha para un tour en bote por el estero, pero no existe un servicio implementado. | PDF de Guiasegundaparte. | Confirmar proveedor, fotos, precio, condiciones y crear ficha, formulario, traducciones e integración. |
+| 6 | Desarrollar el tour del estero | **Resuelto** | Se creó la ficha completa del tour en bote por el estero con textos de la guía, precio de referencia de USD 40 por persona, datos prácticos, condiciones, formulario de consulta, CTA de alianzas y traducciones ES/EN/PT-BR. Se integraron cuatro imágenes WebP optimizadas en portada y galería. | `services.js`, `index.html`, `script.js`, `pt-br.js`, `styles.optimized.css`, `assets/img/services/mangrove-tour/`, `MATERIAL_TOUR_ESTERO.md`. | Confirmar con el proveedor la autorización de uso comercial de las imágenes antes de futuras campañas pagadas. |
 | 7 | Agregar portugués y hacerlo más visible | **Resuelto** | Se agregó selector PT-BR y traducciones para portada, guía, servicios, fichas, formularios y armador. | `pt-br.js`, `script.js`, `lang-switch.js`, `services.js`, `trip-builder.js`, `guia-playas.html`, `guide-i18n.js`. | Revisar solo si el usuario pide una mejora visual adicional del selector. |
 | 8 | Crear botón para proponer una alianza con WavePoint | **Resuelto** | Se implementó CTA de alianzas con WhatsApp, mensaje preparado, QR, textos bilingües y ajustes visuales del botón. Este punto se completó después del PDF de seguimiento anterior. | `index.html`, `script.js`, `styles.css`, `styles.optimized.css`; commits `11487d8` a `54c661b`. | Ninguno conocido. |
 
@@ -43,8 +43,8 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 
 ## Conteo actual
 
-- **Puntos principales resueltos:** 7 de 8.
-- **Puntos principales pendientes:** 1 de 8.
+- **Puntos principales resueltos:** 8 de 8.
+- **Puntos principales pendientes:** 0 de 8.
 - **Tareas visuales/fotos pendientes adicionales:** Buceo.
 
 ## Historial de cortes
@@ -55,6 +55,7 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | 2026-11-08 | 5 | 3 | Se verificó que el CTA de alianzas ya está implementado en el repositorio. |
 | 2026-11-08 | 6 | 2 | Se integró la ficha Local Host/Country Host con las cuatro fotos marcadas en la guía, formulario y traducciones. |
 | 2026-11-08 | 7 | 1 | Se incluyó Local Host en los siete servicios indicados por la guía, dentro de sus bloques de incluidos y con traducciones ES/EN/PT-BR. |
+| 2026-11-08 | 8 | 0 | Se integró el tour del estero con cuatro imágenes WebP, ficha, formulario, CTA de alianzas y traducciones. |
 
 ## Continuidad
 
