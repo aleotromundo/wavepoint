@@ -1,4 +1,8 @@
 # 2026-11-08
+### Surf coaching — subir 25% la imagen en escritorio
+- `styles.css` y `styles.optimized.css`: se desplaza la foto de la tarjeta 25% hacia arriba desde 981 px, manteniendo el encuadre móvil sin cambios.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop14`.
+
 ### Programa de iniciación — subir 30% la imagen en escritorio
 - `styles.css` y `styles.optimized.css`: se desplaza la foto de la tarjeta 30% hacia arriba desde 981 px, manteniendo el encuadre móvil sin cambios.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop13`.
