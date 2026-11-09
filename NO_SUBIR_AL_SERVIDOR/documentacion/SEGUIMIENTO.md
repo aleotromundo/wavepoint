@@ -48,7 +48,7 @@ Estas son las preguntas concretas que conviene enviar antes de cerrar la ficha d
 5. **Buceo — operación:** Para cada opción, ¿cuál es la duración, cantidad de inmersiones, edad mínima, requisitos de certificación, documentación necesaria y punto de encuentro?
 6. **Buceo — precio:** ¿Se cotiza según modalidad, cantidad de participantes e instructor/guía compartido o privado, sin publicar una tarifa fija? ¿Qué precio orientativo debe mostrar la ficha, si corresponde?
 7. **Buceo — incluidos:** ¿Se confirman como incluidos el equipo completo, instructora PADI, espacio en la embarcación, snacks, agua, té frío y fruta?
-8. **Buceo — fotos:** ¿Tenemos autorización de NATIVA para usar en WavePoint las fotos `foto-18.jpg` a `foto-21.jpg` de la guía? ¿Hay fotos originales de mayor resolución o nuevas fotos autorizadas?
+8. **Buceo — fotos:** Las fotos `foto-18.jpg` a `foto-21.jpg` de la guía son de uso obligatorio para la ficha. Se deben convertir a WebP e integrar en tarjeta, portada y galería, sin pedir confirmación adicional sobre si se usan.
 
 ## Conteo actual
 - **Puntos principales resueltos:** 7 de 8.
