@@ -1,6 +1,6 @@
 (() => {
   const params = new URLSearchParams(window.location.search);
-  if (params.get('editor-encuadres') !== '1') return;
+  if (params.get('editor-encuadres') !== '1' && !window.matchMedia('(min-width: 981px)').matches) return;
 
   const STORAGE_KEY = 'wavepoint-card-crop-confirmed-v1';
   const cards = [...document.querySelectorAll('#servicios .service-grid-catalog > .service-card:not(.service-card-pack)')]
@@ -240,8 +240,7 @@
   document.querySelectorAll('#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-img img')
     .forEach(image => image.style.setProperty('transition', 'none', 'important'));
   const requestedCard = params.get('tarjeta');
-  const requestedIndex = requestedCard === 'roca-bruja'
-    ? cards.findIndex(item => /roca-bruja|witch.?rock/i.test(`${item.key} ${item.title}`))
-    : 0;
+  const rocaBrujaIndex = cards.findIndex(item => /roca-bruja|witch.?rock/i.test(`${item.key} ${item.title}`));
+  const requestedIndex = requestedCard === 'roca-bruja' || rocaBrujaIndex >= 0 ? rocaBrujaIndex : 0;
   selectCard(requestedIndex >= 0 ? requestedIndex : 0);
 })();

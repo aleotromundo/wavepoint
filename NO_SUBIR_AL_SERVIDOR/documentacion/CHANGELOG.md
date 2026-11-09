@@ -1,4 +1,8 @@
 # 2026-11-08
+### Marcador visible en la página oficial
+- `card-crop-editor.js`: el marcador y sus controles aparecen automáticamente en la portada publicada desde 981 px, iniciando en Roca Bruja; en móvil no se activa para conservar la experiencia actual.
+- `index.html`: se renueva la caché del editor a `20261108-marker2`.
+
 ### Editor manual de Roca Bruja con marcador numérico
 - `card-crop-editor.js`: el editor puede abrir directamente Roca Bruja y muestra sobre la tarjeta los valores vivos de `ZOOM`, `X` y `Y` al arrastrar o ampliar la foto.
 - `styles.css` y `styles.optimized.css`: se añade el marcador visible únicamente mientras el editor está activo.
