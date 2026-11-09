@@ -10077,7 +10077,7 @@ footer a {
 /* Surf coaching: subir 25% la foto de la tarjeta en escritorio. */
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card.service-card-surf-coaching .service-img img {
-    object-position: 25% 45% !important;
+    object-position: 25% 65% !important;
     transform: none !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-surf-coaching:hover .service-img img,
