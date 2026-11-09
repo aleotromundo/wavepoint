@@ -34,6 +34,7 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | Fotos de Local Host/Country Host | **Resuelto** | Se identificaron en la guía y en el repositorio las fotos `foto-05.jpg` a `foto-08.jpg`; se optimizaron como WebP y se usaron en la ficha. | Ninguno conocido. |
 | Encuadre de la tarjeta Country Host en escritorio | **Resuelto** | Se aplicó un zoom suave anclado abajo desde 981 px para reducir el cielo y mostrar más a las personas; el encuadre móvil no cambia. | Ninguno conocido. |
 | Logo decorativo de Servicios después de agregar Country Host | **Resuelto** | Por decisión de producto, se retiró por completo la capa decorativa que aparecía después de las tarjetas y antes de “Experiencia a medida”. Se conservaron las tarjetas, el separador y los demás logos del sitio. | `index.html`, `styles.css`, `styles.optimized.css`. | Ninguno conocido. |
+| Fotos del tour del estero | **Resuelto** | Se mantuvieron la embarcación lateral, las raíces del manglar y el cocodrilo; se reemplazó la imagen pequeña de fauna desde el bote por una foto WebP de un mono aullador en mejor resolución. | `services.js`, `assets/img/services/mangrove-tour/`, `MATERIAL_TOUR_ESTERO.md`. | Confirmar autorización de uso comercial de las imágenes antes de futuras campañas pagadas. |
 | Ficha y fotos de Buceo | **Pendiente** | La guía incluye contenido propuesto y existe la referencia de Nativa Diving, pero no hay ficha de servicio integrada. | Definir alcance, fotos, datos verificables, traducciones y formulario. |
 
 ## Conteo actual
