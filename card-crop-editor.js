@@ -86,6 +86,10 @@
     }
 
     item.frame.classList.add('card-crop-editor-frame');
+    item.marker = document.createElement('div');
+    item.marker.className = 'card-crop-editor-marker';
+    item.marker.setAttribute('aria-hidden', 'true');
+    item.frame.append(item.marker);
     item.image.draggable = false;
     item.image.addEventListener('load', () => apply(item));
     item.image.addEventListener('pointerdown', event => {
@@ -138,6 +142,9 @@
   function apply(item) {
     item.image.style.objectPosition = `${item.current.x}% ${item.current.y}%`;
     item.image.style.transform = `scale(${item.current.zoom})`;
+    if (item.marker) {
+      item.marker.textContent = `ZOOM ${Math.round(item.current.zoom * 100)}% · X ${Math.round(item.current.x)} · Y ${Math.round(item.current.y)}`;
+    }
   }
 
   function syncControls() {
@@ -232,5 +239,9 @@
   window.addEventListener('resize', () => cards.forEach(item => apply(item)));
   document.querySelectorAll('#servicios .service-grid-catalog > .service-card:not(.service-card-pack) .service-img img')
     .forEach(image => image.style.setProperty('transition', 'none', 'important'));
-  selectCard(0);
+  const requestedCard = params.get('tarjeta');
+  const requestedIndex = requestedCard === 'roca-bruja'
+    ? cards.findIndex(item => /roca-bruja|witch.?rock/i.test(`${item.key} ${item.title}`))
+    : 0;
+  selectCard(requestedIndex >= 0 ? requestedIndex : 0);
 })();

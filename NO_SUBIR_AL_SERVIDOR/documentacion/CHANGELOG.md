@@ -1,4 +1,9 @@
 # 2026-11-08
+### Editor manual de Roca Bruja con marcador numérico
+- `card-crop-editor.js`: el editor puede abrir directamente Roca Bruja y muestra sobre la tarjeta los valores vivos de `ZOOM`, `X` y `Y` al arrastrar o ampliar la foto.
+- `styles.css` y `styles.optimized.css`: se añade el marcador visible únicamente mientras el editor está activo.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop34`.
+
 ### Roca Bruja — foto completa como punto de partida
 - `styles.css` y `styles.optimized.css`: se muestra la foto completa dentro de la tarjeta desde 981 px, sin zoom ni desplazamiento; el móvil permanece sin cambios.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop33`.
