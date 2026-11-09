@@ -1,4 +1,8 @@
 # 2026-11-08
+### Country Host — subir 70 px adicionales en escritorio
+- `styles.css` y `styles.optimized.css`: se desplaza la foto 70 px adicionales hacia arriba, hasta un total de 140 px desde 981 px; el móvil permanece sin cambios.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop11`.
+
 ### Country Host — volver a desplazar la foto hacia arriba
 - `styles.css` y `styles.optimized.css`: se restablece el desplazamiento de 70 px hacia arriba desde 981 px, dejando el móvil sin cambios.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop10`.
