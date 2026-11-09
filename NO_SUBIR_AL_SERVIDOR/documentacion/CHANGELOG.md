@@ -1,4 +1,9 @@
 ## 2026-11-09
+### Auditoría y actualización del seguimiento de la Guía Segunda Parte
+- `NO_SUBIR_AL_SERVIDOR/documentacion/SEGUIMIENTO.md`: se corrigió la descripción de las fotos actuales del Tour del estero y se agregó una lista exacta de ocho confirmaciones para Embarcaciones y Buceo.
+- Se dejó explícito que no deben modificarse capacidades, precios ni condiciones de Embarcaciones hasta recibir confirmación del proveedor.
+- Se dejó documentado que la ficha de Buceo, su formulario y las fotos `foto-18.jpg` a `foto-21.jpg` siguen pendientes.
+
 ### Actualizar PDF de estado de la Guía Segunda Parte
 - `NO_SUBIR_AL_SERVIDOR/documentacion/Estado_fotos_Guia_Segunda_Parte.pdf`: se reemplazó el resumen anterior de 4 puntos resueltos y 4 pendientes por el estado actual: 7 puntos principales resueltos, 1 parcial y 0 pendientes principales.
 - Se actualizaron las tablas de fotos y cambios visuales: Local Host/Country Host, tour del estero, logo de Nativa Diving y retiro del logo decorativo de Servicios figuran como resueltos; la ficha y fotos de Buceo quedan como pendiente adicional.
