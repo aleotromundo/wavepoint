@@ -2095,38 +2095,3 @@ document.querySelectorAll('.guide-destination[data-destination-href]').forEach(c
     }
   });
 })();
-
-// Mantener el logo flotante del fondo cerca de Surfskate sin ligarlo a la tarjeta.
-(() => {
-  const initServicesBackgroundLogo = () => {
-    const logo = document.querySelector('.services-background-logo');
-    const section = document.querySelector('#servicios');
-    const layer = section?.querySelector('.services-logo-placement-layer');
-    const surfskateCard = section?.querySelector('.service-card-surfskate');
-    if (!logo || !section || !layer || !surfskateCard) return;
-
-    const placeBesideSurfskate = () => {
-      const sectionRect = section.getBoundingClientRect();
-      const cardRect = surfskateCard.getBoundingClientRect();
-      const layerWidth = layer.clientWidth;
-      const logoWidth = logo.offsetWidth;
-      const logoHeight = logo.offsetHeight;
-      const gap = 24;
-      let left = cardRect.right - sectionRect.left + gap;
-      let top = cardRect.top - sectionRect.top + Math.max(0, (cardRect.height - logoHeight) / 2);
-      if (left + logoWidth > layerWidth - 16) {
-        left = cardRect.left - sectionRect.left;
-        top = cardRect.bottom - sectionRect.top + gap;
-      }
-      left = Math.max(16, Math.min(left, Math.max(16, layerWidth - logoWidth - 16)));
-      top = Math.max(16, top);
-      logo.style.left = `${Math.round(left)}px`;
-      logo.style.top = `${Math.round(top)}px`;
-    };
-
-    placeBesideSurfskate();
-    window.addEventListener('resize', placeBesideSurfskate, { passive: true });
-  };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initServicesBackgroundLogo, { once: true });
-  else initServicesBackgroundLogo();
-})();
