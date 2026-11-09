@@ -1,4 +1,8 @@
 # 2026-11-08
+### Country Host — desplazar la foto hacia arriba en escritorio
+- `styles.css` y `styles.optimized.css`: se elimina el zoom y se ajusta únicamente `object-position` a `118%` desde 981 px para subir la foto dentro del marco; el móvil conserva su encuadre.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop7`.
+
 ### Country Host — segundo ajuste de encuadre en escritorio
 - `styles.css` y `styles.optimized.css`: se aumenta ligeramente el zoom de la tarjeta desde 981 px para dar más presencia a las personas, manteniendo intacto el encuadre móvil.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop6`.
