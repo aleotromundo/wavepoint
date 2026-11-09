@@ -3721,12 +3721,12 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
     height: 100% !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-local-host .service-img img {
-    transform: scale(1.28) !important;
+    transform: scale(1.38) !important;
     transform-origin: center bottom !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-local-host:hover .service-img img,
   #servicios .service-grid-catalog .service-card.service-card-local-host .service-image-link:focus-visible .service-img img {
-    transform: scale(1.32) !important;
+    transform: scale(1.42) !important;
   }
 }
 #servicios .service-grid-catalog .service-card:hover .service-img img,

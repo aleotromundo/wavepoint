@@ -1,4 +1,8 @@
 # 2026-11-08
+### Country Host — segundo ajuste de encuadre en escritorio
+- `styles.css` y `styles.optimized.css`: se aumenta ligeramente el zoom de la tarjeta desde 981 px para dar más presencia a las personas, manteniendo intacto el encuadre móvil.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop6`.
+
 ### Country Host — mostrar más personas en escritorio
 - `styles.css` y `styles.optimized.css`: se aplica un zoom suave anclado al borde inferior únicamente desde 981 px para reducir el cielo y hacer más visibles las personas en la tarjeta del catálogo; el móvil conserva su encuadre actual.
 - `index.html` y `service-detail.html`: se cambia la clave de caché del CSS a `20261108-local-host-crop5`.
