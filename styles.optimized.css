@@ -4109,3 +4109,4 @@ to{filter:brightness(1.18)}
 .newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width:31px; height:31px; }
 @media (max-width:420px) { .newsletter .newsletter-alliance-button-wa { width:40px; height:40px; flex-basis:40px; } .newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width:30px; height:30px; } }
 @media(max-width:640px){.local-host-detail-page .detail-hero{background-position:center 92%}}
+@media (min-width:981px){#servicios .service-grid-catalog .service-card.service-card-beginner-program .service-img img{top:-30%!important;bottom:auto!important;height:130%!important;object-position:center bottom!important;transform:none!important}#servicios .service-grid-catalog .service-card.service-card-beginner-program:hover .service-img img,#servicios .service-grid-catalog .service-card.service-card-beginner-program .service-image-link:focus-visible .service-img img{transform:none!important}}
