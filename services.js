@@ -417,19 +417,19 @@ lead: 'Disfrutá del paisaje desde una embarcación con techo y asientos, con ti
 heroImage: 'assets/img/services/mangrove-tour/mangrove-tour-boat.webp',
 images: [
 'assets/img/services/mangrove-tour/mangrove-tour-boat.webp',
-'assets/img/services/mangrove-tour/mangrove-tour-cover.webp',
+'assets/img/services/mangrove-tour/mangrove-tour-monkeys.webp',
 'assets/img/services/mangrove-tour/mangrove-tour-mangroves.webp',
 'assets/img/services/mangrove-tour/mangrove-tour-wildlife.webp'
 ],
 imageAlts: [
 'Embarcación con techo navegando por el estero de Tamarindo',
-'Visitante observando fauna entre los manglares desde una embarcación',
+'Mono aullador descansando sobre una rama entre la vegetación del estero',
 'Canal del estero de Tamarindo entre raíces de manglar',
 'Cocodrilo descansando entre la vegetación del estero'
 ],
 imageAltsEn: [
 'Covered boat navigating the Tamarindo estuary',
-'Visitor observing wildlife among the mangroves from a boat',
+'Howler monkey resting on a branch among the estuary vegetation',
 'Tamarindo estuary channel among mangrove roots',
 'Crocodile resting among the estuary vegetation'
 ],
