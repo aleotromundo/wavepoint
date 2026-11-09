@@ -561,6 +561,20 @@
 }
 .trip-date-field,
 .trip-guests-field { min-width: 0; }
+.trip-atv-route-field { grid-column: 1 / -1; min-width: 0; }
+.trip-atv-route-field select {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  margin-top: 6px;
+  padding: 8px 34px 8px 12px;
+  border: 1px solid rgba(8, 43, 58, .17);
+  border-radius: 8px;
+  background: #fff;
+  color: #183c47;
+  font: 12px "DM Sans", sans-serif;
+}
+.trip-atv-route-field select:focus-visible { border-color: #10a49a; outline: 3px solid rgba(16, 164, 154, .13); }
 .trip-date-trigger,
 .trip-guests-stepper {
   display: flex;

@@ -17,6 +17,13 @@
 - Se agregó la nota de validación pendiente de capacidades de Embarcaciones y el resumen de esfuerzo estimado: 166 commits observables, aproximadamente 18 horas técnicas efectivas y 5 jornales de cuatro horas redondeados.
 - Validación: PDF de una página en formato A4 horizontal, texto extraíble, tablas revisadas visualmente y estado contrastado con `SEGUIMIENTO.md`.
 
+### ATV — fecha y recorrido estructurados; cobertura PT-BR
+- `services.js`: se añadieron fecha preferida y recorrido/modalidad como preguntas del formulario; el mensaje preparado para WhatsApp etiqueta fecha, recorrido, conductores, pasajeros, edades y licencias en ES/EN/PT-BR. Se completó el cuarto `alt` de ATV en español e inglés.
+- `trip-builder.js`, `trip-builder.css`, `pt-br.js`: se agregó selector obligatorio de recorrido ATV, validación antes de continuar, resumen del recorrido y su inclusión en el mensaje; se añadieron textos ES/EN/PT-BR.
+- `pt-br.js`, `service-detail.html`, `trip-builder.html`, `site-nav.js`: se completaron alts del programa de surf de tres días, enlaces de cámaras, textos PT-BR y etiquetas accesibles de marca/WhatsApp; los alts sociales se localizan por idioma.
+- Se renovaron los parámetros de caché de las páginas que cargan los scripts/estilos actualizados.
+- Validación: `node --check` para `services.js`, `trip-builder.js`, `pt-br.js` y `site-nav.js`; `git diff --check`; vista previa local del armador y las fichas ATV/programa en PT-BR. Playwright confirmó el layout del armador y el formulario ATV a 320, 375, 430 y 1280 px, sin desbordamiento horizontal; se revisaron capturas móviles a 375 px. Se comprobó el bloqueo por recorrido ausente y se capturó el mensaje ATV en ES/EN/PT-BR sin abrir ni enviar WhatsApp.
+
 ## 2026-11-08
 ### Programa de surf de tres días — usar imágenes WebP optimizadas
 - `services.js`: se reemplazaron las tres referencias JPG originales por `day-1.webp`, `day-2.webp` y `day-3.webp`; no cambian las imágenes ni sus textos alternativos.
