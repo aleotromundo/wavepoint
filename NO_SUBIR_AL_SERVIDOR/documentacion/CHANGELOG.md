@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — restaurar el recorte anterior
+- `styles.css` y `styles.optimized.css`: se elimina el zoom out y se restaura el recorte anterior de la foto de Roca Bruja; no se modifican Coaching ni el móvil.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop26`.
+
 ### Roca Bruja — alejar más la imagen
 - `styles.css` y `styles.optimized.css`: se amplía el zoom out de la foto de Roca Bruja a `88%` desde 981 px; el resto de tarjetas y el móvil no cambian.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop25`.
