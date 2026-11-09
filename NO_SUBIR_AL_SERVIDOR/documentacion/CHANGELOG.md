@@ -23,6 +23,7 @@
 - `pt-br.js`, `service-detail.html`, `trip-builder.html`, `site-nav.js`: se completaron alts del programa de surf de tres días, enlaces de cámaras, textos PT-BR y etiquetas accesibles de marca/WhatsApp; los alts sociales se localizan por idioma.
 - Se renovaron los parámetros de caché de las páginas que cargan los scripts/estilos actualizados.
 - Validación: `node --check` para `services.js`, `trip-builder.js`, `pt-br.js` y `site-nav.js`; `git diff --check`; vista previa local del armador y las fichas ATV/programa en PT-BR. Playwright confirmó el layout del armador y el formulario ATV a 320, 375, 430 y 1280 px, sin desbordamiento horizontal; se revisaron capturas móviles a 375 px. Se comprobó el bloqueo por recorrido ausente y se capturó el mensaje ATV en ES/EN/PT-BR sin abrir ni enviar WhatsApp.
+- Publicación: el commit `36d7f27` generó un deployment Vercel de Producción exitoso, pero la URL requiere autenticación y `wavepointcr.com` sigue sirviendo desde LiteSpeed una versión fechada el 2026-10-22. El dominio canónico no quedó actualizado; falta autorización/acceso para conectar el dominio o desplegar al hosting actual.
 
 ## 2026-11-08
 ### Programa de surf de tres días — usar imágenes WebP optimizadas

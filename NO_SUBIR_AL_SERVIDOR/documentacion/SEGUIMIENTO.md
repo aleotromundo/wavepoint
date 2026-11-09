@@ -41,6 +41,11 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 
 La guía alcanza para resolver la ficha de Buceo: se implementó con las cuatro experiencias, el formulario, cotización sin tarifa fija y las fotos obligatorias `foto-18.jpg` a `foto-21.jpg` convertidas a WebP. También se alinearon las capacidades de Embarcaciones con la guía: 7 personas para Papagayo, 7 para snorkel por la costa de Guanacaste y 4 para pesca en mar abierto. Si el proveedor comunica cambios futuros, se actualizan esos datos.
 
+### Publicación del dominio canónico
+- El push a `main` genera un deployment de Producción de Vercel y GitHub marcó exitoso el deployment del commit `36d7f27`; la URL generada requiere iniciar sesión en Vercel.
+- `https://wavepointcr.com` todavía responde desde LiteSpeed con HTML fechado el 2026-10-22 y referencias a assets anteriores. El dominio canónico no está conectado a ese deployment y el repositorio no contiene un flujo de transferencia al hosting LiteSpeed.
+- Pendiente: con autorización y acceso al proveedor, conectar el dominio a Vercel o definir un flujo de despliegue al hosting actual. No cambiar DNS ni sobrescribir archivos del hosting sin autorización.
+
 ## Auditoría completa — 2026-11-08/09
 Se contrastaron los ocho puntos con la guía, el código, assets, formularios, traducciones, enlaces y sintaxis. El informe detallado quedó en `AUDITORIA_GUIA_2026-11-08.md`. Durante la auditoría se incorporaron en remoto el tour del estero y Buceo/NATIVA; ambos quedaron revisados como implementados. La auditoría no modificó la aplicación.
 
