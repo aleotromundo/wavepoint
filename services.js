@@ -222,9 +222,9 @@ id: 'surf-programa-3-dias', number: '02A', eyebrow: 'PROGRAMA DE SURF · INICIAC
 cardText: 'Tres clases privadas de dos horas para descubrir el mar y disfrutar tus primeras olas.',
 description: 'Tres días para descubrir el mar y disfrutar tus primeras olas.',
 images: [
-'assets/img/services/surf-program-3-days/day-1-original.jpg',
-'assets/img/services/surf-program-3-days/day-2-original.jpg',
-'assets/img/services/surf-program-3-days/day-3-original.jpg'
+'assets/img/services/surf-program-3-days/day-1.webp',
+'assets/img/services/surf-program-3-days/day-2.webp',
+'assets/img/services/surf-program-3-days/day-3.webp'
 ],
 heroImage: 'assets/img/services/surf-program-3-days/ocean-waves-no-people.webp',
 imageAlts: [

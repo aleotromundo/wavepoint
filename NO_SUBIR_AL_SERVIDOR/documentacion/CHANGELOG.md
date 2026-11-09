@@ -1,4 +1,9 @@
 ## 2026-11-08
+### Programa de surf de tres días — usar imágenes WebP optimizadas
+- `services.js`: se reemplazaron las tres referencias JPG originales por `day-1.webp`, `day-2.webp` y `day-3.webp`; no cambian las imágenes ni sus textos alternativos.
+- `SEGUIMIENTO.md`: se marcó como resuelta la optimización pendiente de las fotos del programa.
+- Validación: se comprobaron las tres rutas locales y `git diff --check` pasó. No se ejecutó `node --check` porque Node.js no está disponible en este entorno.
+
 ### Auditoría de Guiasegundaparte
 - Se contrastaron los ocho puntos principales de `Guia_Segunda_Parte_Completa.pdf` con el catálogo, las fichas, formularios, traducciones, navegación, estilos y assets del repositorio.
 - `SEGUIMIENTO.md`: Embarcaciones pasa a Parcial hasta confirmar con el proveedor las capacidades; la guía dice 7 personas para Papagayo y snorkel por Guanacaste y 4 para pesca en mar abierto, mientras las fichas ES/EN/PT-BR muestran 5.
