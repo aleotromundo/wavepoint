@@ -10097,7 +10097,8 @@ footer a {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
-    object-position: center center !important;
+    object-position: 50% 50% !important;
+    margin: 0 auto !important;
     background: #062f3b !important;
     transform: none !important;
     transform-origin: center center !important;
