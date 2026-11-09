@@ -106,6 +106,9 @@
     serviceCardSnorkelTitle: 'Passeios de barco',
     serviceCardSnorkelAlt: 'Grupo de pessoas a bordo de uma embarcação diante da costa',
     serviceCardSnorkelText: 'Descubra a costa de Guanacaste pelo mar.',
+    serviceCardDivingTitle: 'Mergulho',
+    serviceCardDivingText: 'Descubra um mundo sob a superfície com a NATIVA Diving.',
+    serviceCardDivingAlt: 'Mergulhador explorando a vida marinha debaixo d’água',
     serviceCardYogaTitle: 'Yoga',
     serviceCardYogaText: 'Uma prática para acompanhar sua viagem e desacelerar.',
     serviceCardAtvTitle: 'Passeios de quadriciclo — ATV',
@@ -931,9 +934,9 @@
         heading: 'Descubra Guanacaste pelo mar',
         intro: 'Um tempo no mar oferece outra perspectiva de Tamarindo. Para fazer snorkel, relaxar a bordo ou apreciar o pôr do sol, a WAVEPOINT ajuda você a encontrar um passeio adequado ao grupo e confirmar os detalhes antes da reserva.',
         options: [
-          ['Dia inteiro na Península de Papagayo', '8 horas · Até 5 pessoas · USD 850', 'Explore praias escondidas e combine navegação, snorkel e pesca. Inclui café da manhã, almoço com churrasco ou wraps/sanduíches, água, refrigerantes, cerveja, atividades de snorkel e pesca, além de capitão e marinheiro certificados.'],
-          ['Snorkel pela costa de Guanacaste', '4 horas · Até 5 pessoas · USD 500 / 6 horas · Até 5 pessoas · USD 650', 'Conheça trechos naturais da costa com equipamento de snorkel e plataforma inflável. Inclui café da manhã, almoço com wraps ou sanduíches, lanches, bebidas, capitão e marinheiro certificados.'],
-          ['Pesca em alto-mar', 'Duração e preço a confirmar · Até 5 pessoas', 'Um passeio dedicado à pesca, com equipamento e viveiro para iscas vivas. Inclui café da manhã, almoço, lanches, bebidas e churrasqueira a bordo; os detalhes são confirmados no atendimento.'],
+          ['Dia inteiro na Península de Papagayo', '8 horas · Até 7 pessoas · USD 850', 'Explore praias escondidas e combine navegação, snorkel e pesca. Inclui café da manhã, almoço com churrasco ou wraps/sanduíches, água, refrigerantes, cerveja, atividades de snorkel e pesca, além de capitão e marinheiro certificados.'],
+          ['Snorkel pela costa de Guanacaste', '4 horas · Até 7 pessoas · USD 500 / 6 horas · Até 7 pessoas · USD 650', 'Conheça trechos naturais da costa com equipamento de snorkel e plataforma inflável. Inclui café da manhã, almoço com wraps ou sanduíches, lanches, bebidas, capitão e marinheiro certificados.'],
+          ['Pesca em alto-mar', 'Duração e preço a confirmar · Até 4 pessoas', 'Um passeio dedicado à pesca, com equipamento e viveiro para iscas vivas. Inclui café da manhã, almoço, lanches, bebidas e churrasqueira a bordo; os detalhes são confirmados no atendimento.'],
           ['Pesca saindo da Bahía Potrero', '4 horas · USD 500 / 6 horas · USD 700 / 8 horas · USD 900', 'Escolha a duração ideal para o grupo. Inclui equipamento de pesca e snorkel. A opção de seis horas inclui wraps no almoço; os detalhes de alimentação para oito horas são confirmados no atendimento.'],
           ['Snorkel saindo da Bahía Potrero', '4 horas · Até 5 pessoas · USD 500', 'Um passeio tranquilo para explorar o mar, fazer snorkel e aproveitar o tempo na água. Inclui equipamento de snorkel e plataforma flutuante.'],
           ['Pôr do sol saindo da Bahía Potrero', '4 horas · Até 5 pessoas · USD 500', 'Aproveite as últimas horas do dia pela costa com bebidas, petiscos para compartilhar, equipamento de snorkel e plataforma flutuante.']
@@ -974,6 +977,39 @@
       includes: ['Passeio pelo estuário em barco coberto com assentos', 'Guia naturalista local', 'Colete salva-vidas', 'Serviço de Local Host'],
       questions: { preferred_date: { label: 'Qual data você prefere?', fields: ['Data'] }, group_size: { label: 'Quantas pessoas participarão?' }, children_ages: { label: 'Se houver crianças, quais são as idades?', placeholder: 'Opcional' }, pickup: { label: 'Você precisa consultar sobre transporte?', options: ['Sim', 'Não'] }, lodging: { label: 'Se precisar de transporte, onde está hospedado?', placeholder: 'Hospedagem ou região' } },
       imageAlts: ['Barco coberto navegando pelo estuário de Tamarindo', 'Visitante observando a fauna entre os manguezais a partir de um barco', 'Canal do estuário de Tamarindo entre raízes de mangue', 'Crocodilo descansando entre a vegetação do estuário']
+    },
+    'diving': {
+      eyebrow: 'MERGULHO · NATIVA DIVING',
+      title: 'Mergulho em Tamarindo e nas Ilhas Catalinas',
+      cardText: 'Descubra um mundo sob a superfície.',
+      description: 'Respire debaixo d’água pela primeira vez, conheça a vida marinha do Pacífico ou dê o próximo passo na sua formação com uma experiência adequada à sua curiosidade e ao seu nível.',
+      lead: 'Junto com a NATIVA Diving Experiences, oferecemos opções para quem nunca mergulhou, para quem quer obter a primeira certificação e para mergulhadores certificados que desejam continuar explorando. A disponibilidade, o preço final, a duração, o número de mergulhos e o ponto de encontro são confirmados antes do pagamento.',
+      imageAlts: ['Mergulhador descendo junto a uma parede de rocha submersa', 'Mergulhadores explorando um recife do Pacífico', 'Mergulhador observando a vida marinha', 'Mergulhador nadando junto a uma formação rochosa submersa'],
+      questions: {
+        diving_experience: { label: 'Qual experiência de mergulho interessa?', options: ['Primeira vez · Discover Scuba Diving', 'Quero me certificar · PADI Open Water', 'Quero continuar aprendendo · Outros cursos PADI', 'Já sou certificado · Mergulho de exploração'] },
+        instructor_mode: { label: 'Qual modalidade você quer consultar?', options: ['Instrutor ou guia compartilhado', 'Instrutor ou guia privativo', 'Quero comparar as duas opções'] },
+        group_size: { label: 'Quantas pessoas querem mergulhar?', min: 1 },
+        swimming_comfort: { label: 'Todos se sentem confortáveis nadando?', options: ['Sim', 'Não', 'Quero conversar com a instrutora'] }
+      },
+      divingCopy: {
+        sectionHeading: 'Escolha sua experiência',
+        experiences: [
+          ['Minha primeira vez — Discover Scuba Diving', 'Uma introdução ao mergulho para descobrir como é respirar debaixo d’água, sem fazer um curso completo. Não é necessária experiência ou certificação prévia, e esta experiência não concede certificação de mergulhador.'],
+          ['Quero me certificar — PADI Open Water Diver', 'O primeiro passo para se tornar um mergulhador certificado. O curso combina teoria, prática em águas confinadas e mergulhos em águas abertas.'],
+          ['Quero continuar aprendendo — Outros cursos PADI', 'Se você já tem uma certificação e quer ampliar seus conhecimentos, consulte as opções adequadas à sua formação e experiência.'],
+          ['Já sou certificado — Mergulho de exploração', 'Uma opção para mergulhadores certificados que querem explorar o ambiente subaquático. Os locais são coordenados conforme o nível dos participantes e as condições do mar.']
+        ],
+        modeHeading: 'Instrutor ou guia compartilhado ou privativo',
+        modeText: 'Você pode solicitar um instrutor ou guia compartilhado, privativo ou comparar as duas alternativas. A opção de instrutor privativo não implica, por si só, uma embarcação privativa.',
+        includesHeading: 'O que está incluído',
+        includes: ['Equipamento completo de mergulho durante a experiência', 'Acompanhamento de uma instrutora PADI certificada', 'Espaço na embarcação para a saída', 'Snacks, água, chá gelado e frutas'],
+        beforeHeading: 'Uma experiência de acordo com seu nível',
+        before: 'Não é preciso chegar sabendo qual programa escolher. Conte se nunca mergulhou, se quer se certificar ou se já tem experiência. Também precisamos saber se todos se sentem confortáveis nadando; os requisitos e a documentação são confirmados com a instrutora.',
+        priceHeading: 'Preço e duração',
+        priceText: 'Cotados de acordo com a modalidade, o número de participantes e a escolha de instrutor ou guia compartilhado ou privativo.',
+        requestHeading: 'Solicitar informações',
+        requestText: 'Conte qual experiência interessa, quantas pessoas querem mergulhar e se prefere uma modalidade compartilhada ou privativa. Antes do pagamento, confirmaremos disponibilidade, preço final, duração, número de mergulhos e ponto de encontro.'
+      }
     },
     yoga: {
       eyebrow: 'YOGA · TAMARINDO',
