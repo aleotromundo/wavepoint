@@ -10058,15 +10058,3 @@ footer a {
   .newsletter .newsletter-alliance-button-wa { width: 40px; height: 40px; flex-basis: 40px; }
   .newsletter .newsletter-alliance-button-wa .whatsapp-brand-icon { width: 30px; height: 30px; }
 }
-
-/* Clases de surf: alejar apenas la foto en escritorio sin alterar el encuadre móvil. */
-@media (min-width: 981px) {
-  #servicios .service-grid-catalog .service-card.service-card-surf-lessons .service-img img {
-    transform: scale(.94) !important;
-    transform-origin: center center !important;
-  }
-  #servicios .service-grid-catalog .service-card.service-card-surf-lessons:hover .service-img img,
-  #servicios .service-grid-catalog .service-card.service-card-surf-lessons .service-image-link:focus-visible .service-img img {
-    transform: scale(.98) !important;
-  }
-}
