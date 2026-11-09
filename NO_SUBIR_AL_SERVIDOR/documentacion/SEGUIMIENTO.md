@@ -38,6 +38,7 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | Logo de Nativa Diving en aliados/patrocinadores | **Resuelto** | Logo agregado al carrusel de aliados, con versión blanca para fondo oscuro. | Ninguno conocido. |
 | Fotos de Local Host/Country Host | **Resuelto** | Se identificaron en la guía y en el repositorio las fotos `foto-05.jpg` a `foto-08.jpg`; se optimizaron como WebP y se usaron en la ficha. | Ninguno conocido. |
 | Encuadre de la tarjeta Country Host en escritorio | **Resuelto** | Se aplicó un zoom suave anclado abajo desde 981 px para reducir el cielo y mostrar más a las personas; el encuadre móvil no cambia. | Ninguno conocido. |
+| Logo decorativo de Servicios después de agregar Country Host | **Resuelto** | El logo WavePoint con aura dejó de posicionarse de forma absoluta sobre la sección y ahora ocupa la celda libre inmediatamente después de Surfskate, con escala responsive para no superponerse a las tarjetas. | Ninguno conocido. |
 | Ficha y fotos de Buceo | **Pendiente** | La guía incluye contenido propuesto y existe la referencia de Nativa Diving, pero no hay ficha de servicio integrada. | Definir alcance, fotos, datos verificables, traducciones y formulario. |
 
 ## Conteo actual
