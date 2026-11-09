@@ -3751,6 +3751,22 @@ body.card-crop-editor-active #servicios .service-grid-catalog .service-card.card
 	outline-offset: 3px;
 	z-index: 3;
 }
+body.card-crop-editor-active .card-crop-editor-frame { position: relative; }
+.card-crop-editor-marker {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 5;
+	pointer-events: none;
+	padding: 6px 9px;
+	border: 1px solid rgba(159, 247, 235, .7);
+	border-radius: 8px;
+	background: rgba(3, 25, 34, .82);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+	color: #eafffa;
+	font: 700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+	letter-spacing: .02em;
+}
 .card-crop-editor {
 	position: fixed;
 	right: 16px;
