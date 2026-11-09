@@ -37,13 +37,14 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | Foto nueva de Roca Bruja | **Resuelto** | Se incorporó una vista del lugar y se ajustó la galería. | Ninguno conocido. |
 | Logo de Nativa Diving en aliados/patrocinadores | **Resuelto** | Logo agregado al carrusel de aliados, con versión blanca para fondo oscuro. | Ninguno conocido. |
 | Fotos de Local Host/Country Host | **Resuelto** | Se identificaron en la guía y en el repositorio las fotos `foto-05.jpg` a `foto-08.jpg`; se optimizaron como WebP y se usaron en la ficha. | Ninguno conocido. |
+| Encuadre de la tarjeta Country Host en escritorio | **Resuelto** | Se aplicó un zoom suave anclado abajo desde 981 px para reducir el cielo y mostrar más a las personas; el encuadre móvil no cambia. | Ninguno conocido. |
 | Ficha y fotos de Buceo | **Pendiente** | La guía incluye contenido propuesto y existe la referencia de Nativa Diving, pero no hay ficha de servicio integrada. | Definir alcance, fotos, datos verificables, traducciones y formulario. |
 
 ## Conteo actual
 
 - **Puntos principales resueltos:** 6 de 8.
 - **Puntos principales pendientes:** 2 de 8.
-- **Tareas visuales/fotos pendientes adicionales:** Local Host/Country Host y Buceo.
+- **Tareas visuales/fotos pendientes adicionales:** Buceo.
 
 ## Historial de cortes
 
