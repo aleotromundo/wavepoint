@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — restaurar estilo original de la tarjeta
+- `styles.css` y `styles.optimized.css`: se eliminan las reglas especiales acumuladas de encuadre para volver al comportamiento original de la tarjeta, sin eliminar ni cambiar las fotos de la ficha.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop32`.
+
 ### Roca Bruja — restaurar fotos sin bordes
 - `styles.css` y `styles.optimized.css`: se elimina el zoom out que generaba bordes y se restaura la presentación anterior de la foto; no se eliminan ni reemplazan las fotos de la ficha.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop31`.
