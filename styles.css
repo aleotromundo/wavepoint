@@ -10112,6 +10112,21 @@ footer a {
   }
 }
 
+/* Embarcaciones: desplazamiento adicional hacia arriba, solo en escritorio. */
+@media (min-width: 981px) {
+  #servicios .service-grid-catalog .service-card.service-card-snorkel .service-img img {
+    top: -20% !important;
+    bottom: auto !important;
+    height: 120% !important;
+    object-position: center 100% !important;
+    transform: none !important;
+  }
+  #servicios .service-grid-catalog .service-card.service-card-snorkel:hover .service-img img,
+  #servicios .service-grid-catalog .service-card.service-card-snorkel .service-image-link:focus-visible .service-img img {
+    transform: none !important;
+  }
+}
+
 /* Roca Bruja: encuadre final confirmado, solo para escritorio. */
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-img img {
