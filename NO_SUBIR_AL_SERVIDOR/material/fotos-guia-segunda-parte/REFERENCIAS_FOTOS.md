@@ -21,10 +21,10 @@ Este mapa conserva la correspondencia entre cada imagen y su posición en el arc
 | 15 | `foto-15.png` | (sin texto cercano) |
 | 16 | `foto-16.jpg` | (sin texto cercano) |
 | 17 | `foto-17.png` | (sin texto cercano) |
-| 18 | `foto-18.jpg` | Ficha de Buceo |
-| 19 | `foto-19.jpg` | Ficha de Buceo |
-| 20 | `foto-20.jpg` | Ficha de Buceo |
-| 21 | `foto-21.jpg` | Ficha de Buceo |
+| 18 | `foto-18.jpg` | Buceo — portada y tarjeta |
+| 19 | `foto-19.jpg` | Buceo — galería |
+| 20 | `foto-20.jpg` | Buceo — galería, tres buzos bajo el agua |
+| 21 | `foto-21.jpg` | Buceo — mantarraya, no se usa en la ficha |
 | 22 | `foto-22.png` | Logo de Nativa Diving para Aliados y patrocinadores |
 
 ## Fotos para Fotos de surf
