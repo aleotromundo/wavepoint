@@ -108,7 +108,7 @@
     serviceCardSnorkelText: 'Descubra a costa de Guanacaste pelo mar.',
     serviceCardDivingTitle: 'Mergulho',
     serviceCardDivingText: 'Descubra um mundo sob a superfície com a NATIVA Diving.',
-    serviceCardDivingAlt: 'Mergulhador explorando a vida marinha debaixo d’água',
+    serviceCardDivingAlt: 'Mergulhador descendo junto a uma parede de rocha submersa',
     serviceCardYogaTitle: 'Yoga',
     serviceCardYogaText: 'Uma prática para acompanhar sua viagem e desacelerar.',
     serviceCardAtvTitle: 'Passeios de quadriciclo — ATV',
@@ -993,7 +993,7 @@
       cardText: 'Descubra um mundo sob a superfície.',
       description: 'Respire debaixo d’água pela primeira vez, conheça a vida marinha do Pacífico ou dê o próximo passo na sua formação com uma experiência adequada à sua curiosidade e ao seu nível.',
       lead: 'Junto com a NATIVA Diving Experiences, oferecemos opções para quem nunca mergulhou, para quem quer obter a primeira certificação e para mergulhadores certificados que desejam continuar explorando. A disponibilidade, o preço final, a duração, o número de mergulhos e o ponto de encontro são confirmados antes do pagamento.',
-      imageAlts: ['Mergulhador descendo junto a uma parede de rocha submersa', 'Mergulhadores explorando um recife do Pacífico', 'Tartaruga marinha junto a uma pessoa fazendo snorkel', 'Mergulhador nadando junto a uma formação rochosa submersa'],
+      imageAlts: ['Mergulhador descendo junto a uma parede de rocha submersa', 'Mergulhador explorando um recife submerso', 'Tartaruga marinha junto a uma pessoa fazendo snorkel', 'Três mergulhadores explorando o fundo do mar'],
       questions: {
         diving_experience: { label: 'Qual experiência de mergulho interessa?', options: ['Primeira vez · Discover Scuba Diving', 'Quero me certificar · PADI Open Water', 'Quero continuar aprendendo · Outros cursos PADI', 'Já sou certificado · Mergulho de exploração'] },
         instructor_mode: { label: 'Qual modalidade você quer consultar?', options: ['Instrutor ou guia compartilhado', 'Instrutor ou guia privativo', 'Quero comparar as duas opções'] },

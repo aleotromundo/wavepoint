@@ -1,4 +1,10 @@
 ## 2026-11-09
+### Buceo — reemplazar la mantarraya de la galería
+- `services.js`: portada y tarjeta conservan `diving-18.webp`; la foto de mantarraya se reemplazó solo en la galería por una versión WebP optimizada de `foto-20.jpg`, con tres buzos bajo el agua.
+- `index.html`, `script.js` y `pt-br.js`: se restauró la imagen y descripción alternativa de la tarjeta y se sincronizaron los textos alternativos ES/EN/PT-BR de la ficha.
+- `assets/img/services/diving/diving-three-divers.webp`: versión WebP de `foto-20.jpg`; `REFERENCIAS_FOTOS.md` y `SEGUIMIENTO.md` registran la distribución correcta.
+- Validación: las imágenes WebP referenciadas existen y se pueden decodificar; se verificó portada/tarjeta y las tres fotos de galería; `services.js`, `script.js` y `pt-br.js` se analizaron con Tree-sitter y `git diff --check` pasó. Node.js no está disponible en el entorno.
+
 ### Ficha de Buceo con NATIVA Diving
 - `services.js`: se creó la ficha de Buceo en Tamarindo e Islas Catalinas con las cuatro experiencias de la guía, modalidad compartida/privada, formulario de consulta y cotización según modalidad, sin inventar tarifas.
 - `index.html`, `script.js` y `pt-br.js`: se agregó la tarjeta del servicio y las traducciones ES/EN/PT-BR.

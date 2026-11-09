@@ -602,13 +602,13 @@ images: [
 'assets/img/services/diving/diving-18.webp',
 'assets/img/services/diving/diving-19.webp',
 'assets/img/services/diving/diving-20.webp',
-'assets/img/services/diving/diving-21.webp'
+'assets/img/services/diving/diving-three-divers.webp'
 ],
 imageAlts: [
 'Buzo descendiendo junto a una pared de roca bajo el agua',
-'Buzos explorando un arrecife del Pacífico',
+'Buzo explorando un arrecife bajo el agua',
 'Tortuga marina junto a una persona haciendo snorkel',
-'Buzo nadando junto a una formación rocosa submarina'
+'Tres buzos explorando el fondo marino'
 ],
 questions: [
 { id: 'diving_experience', label: '¿Qué experiencia de buceo te interesa?', type: 'choice', options: ['Mi primera vez · Discover Scuba Diving', 'Quiero certificarme · PADI Open Water', 'Quiero seguir aprendiendo · Otros cursos PADI', 'Ya estoy certificado · Buceo de exploración'] },
@@ -636,7 +636,7 @@ requestHeading: 'Solicitar información',
 requestText: 'Contanos qué experiencia te interesa, cuántas personas quieren bucear y si prefieren modalidad compartida o privada. Antes de pagar, confirmaremos disponibilidad, precio final, duración, cantidad de inmersiones y punto de encuentro.'
 },
 en: {
-eyebrow: 'DIVING · NATIVA DIVING', title: 'Diving in Tamarindo and the Catalinas Islands', cardText: 'Discover a world beneath the surface.', description: 'Breathe underwater for the first time, meet the marine life of the Pacific or take the next step in your training with a diving experience that matches your curiosity and level.', lead: 'Together with NATIVA Diving Experiences, we offer options for first-time divers, people who want to earn their first certification and certified divers who want to keep exploring. Availability, final price, duration, number of dives and meeting point are confirmed before payment.', imageAlts: ['Diver descending beside an underwater rock wall', 'Divers exploring a Pacific reef', 'Sea turtle beside a snorkeler', 'Diver swimming beside an underwater rock formation'],
+eyebrow: 'DIVING · NATIVA DIVING', title: 'Diving in Tamarindo and the Catalinas Islands', cardText: 'Discover a world beneath the surface.', description: 'Breathe underwater for the first time, meet the marine life of the Pacific or take the next step in your training with a diving experience that matches your curiosity and level.', lead: 'Together with NATIVA Diving Experiences, we offer options for first-time divers, people who want to earn their first certification and certified divers who want to keep exploring. Availability, final price, duration, number of dives and meeting point are confirmed before payment.', imageAlts: ['Diver descending beside an underwater rock wall', 'Diver exploring an underwater reef', 'Sea turtle beside a snorkeler', 'Three divers exploring the seabed'],
 questions: {
 diving_experience: { label: 'Which diving experience interests you?', options: ['First time · Discover Scuba Diving', 'I want to get certified · PADI Open Water', 'I want to keep learning · Other PADI courses', 'I am certified · Exploration diving'] },
 instructor_mode: { label: 'Which format would you like to ask about?', options: ['Shared instructor or guide', 'Private instructor or guide', 'I want to compare both options'] },
