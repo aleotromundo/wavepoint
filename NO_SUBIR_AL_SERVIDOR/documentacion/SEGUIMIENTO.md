@@ -18,11 +18,11 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | # | Punto | Estado | Resolución actual | Archivos / evidencia | Pendiente |
 |---:|---|---|---|---|---|
 | 1 | Mejorar la ficha de ATV con cuadro y más explicación | **Resuelto** | Se agregaron recorridos Explorer, Adventure y Ultimate, tarifas, condiciones, incluidos y solicitud de disponibilidad. La tarifa se sincronizó como precio por vehículo en el armador. | `services.js`, `trip-builder.js`, `index.html`, `styles.css`, `styles.optimized.css`; changelog del punto ATV. | Ninguno conocido. |
-| 2 | Crear ficha aparte para el programa de surf de tres días | **Resuelto** | Se creó un programa de tres clases privadas consecutivas, con tarifas, progresión por día, fotos, formulario y validación de fechas consecutivas. | `services.js`, `index.html`, `script.js`, `trip-builder.js`, `styles.css`, `styles.optimized.css`. | Ninguno conocido. |
-| 3 | Mejorar navegación y agregar foto nueva | **Resuelto** | La ficha quedó como “Navegación — Descubrí Guanacaste desde el mar”, con opciones, tarifas de referencia, condiciones, datos prácticos, formulario y foto nueva. | `services.js`, `styles.css`, `styles.optimized.css`, `service-detail.html`; changelog de Embarcaciones. | Ninguno conocido. |
+| 2 | Crear ficha aparte para el programa de surf de tres días | **Resuelto** | Se creó un programa de tres clases privadas consecutivas, con tarifas, progresión por día, fotos WebP optimizadas, formulario y validación de fechas consecutivas. | `services.js`, `index.html`, `script.js`, `trip-builder.js`, `styles.css`, `styles.optimized.css`; `assets/img/services/surf-program-3-days/day-1.webp` a `day-3.webp`. | Ninguno conocido. |
+| 3 | Mejorar navegación y agregar foto nueva | **Parcial** | La ficha quedó como “Navegación — Descubrí Guanacaste desde el mar”, con opciones, tarifas de referencia, condiciones, datos prácticos, formulario y foto nueva. La auditoría encontró capacidades que no coinciden con la guía: el código declara 5 personas para Papagayo y snorkel por Guanacaste, y 5 para pesca en mar abierto; la guía indica 7, 7 y 4, respectivamente. | `services.js`, `pt-br.js`, `styles.css`, `styles.optimized.css`, `service-detail.html`; `Guia_Segunda_Parte_Completa.pdf`. | Confirmar las capacidades actuales con el proveedor antes de corregir los datos publicados; mantener sincronizadas las versiones ES/EN/PT-BR. |
 | 4 | Crear ficha nueva de Local Host/Country Host con fotos | **Resuelto** | Se creó la ficha gratuita con bienvenida presencial de una hora, consultas por WhatsApp durante 48 horas, recomendaciones, orientación y formulario de consulta. Se integraron las cuatro fotos marcadas en la guía como portada y galería, con traducciones ES/EN/PT-BR. | `services.js`, `index.html`, `script.js`, `pt-br.js`, `service-detail.html`, `assets/img/services/local-host/`; fotos `foto-05.jpg` a `foto-08.jpg`; `REFERENCIAS_FOTOS.md`. | Ninguno conocido. |
 | 5 | Incluir Local Host gratis en varios servicios | **Resuelto** | Se agregó “Servicio de Local Host” únicamente en los incluidos de Clases de surf, programa de surf, Yoga, ATV, hospedajes, Fotos de surf y Surf coaching. Se mantuvieron intactos precios, formularios, descripciones y el comportamiento móvil; se sincronizaron ES/EN/PT-BR. | `services.js`, `pt-br.js`; instrucción literal en `Guia_Segunda_Parte_Completa.pdf`. | Ninguno conocido. |
-| 6 | Desarrollar el tour del estero | **Pendiente** | La guía contiene una propuesta de ficha para un tour en bote por el estero, pero no existe un servicio implementado. | PDF de Guiasegundaparte. | Confirmar proveedor, fotos, precio, condiciones y crear ficha, formulario, traducciones e integración. |
+| 6 | Desarrollar el tour del estero | **Pendiente** | La guía contiene una propuesta de ficha con datos comerciales y operativos (2 horas, hasta 12 participantes, USD 40 por persona), pero no existe un servicio implementado ni una validación vigente de esos datos. | `Guia_Segunda_Parte_Completa.pdf`; `services.js` (sin ficha de estero). | Identificar/confirmar proveedor, vigencia de precio y condiciones, permiso y selección de fotos; luego crear ficha, formulario, traducciones e integración. |
 | 7 | Agregar portugués y hacerlo más visible | **Resuelto** | Se agregó selector PT-BR y traducciones para portada, guía, servicios, fichas, formularios y armador. | `pt-br.js`, `script.js`, `lang-switch.js`, `services.js`, `trip-builder.js`, `guia-playas.html`, `guide-i18n.js`. | Revisar solo si el usuario pide una mejora visual adicional del selector. |
 | 8 | Crear botón para proponer una alianza con WavePoint | **Resuelto** | Se implementó CTA de alianzas con WhatsApp, mensaje preparado, QR, textos bilingües y ajustes visuales del botón. Este punto se completó después del PDF de seguimiento anterior. | `index.html`, `script.js`, `styles.css`, `styles.optimized.css`; commits `11487d8` a `54c661b`. | Ninguno conocido. |
 
@@ -30,7 +30,7 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 
 | Pedido | Estado | Resolución actual | Pendiente |
 |---|---|---|---|
-| Fotos del programa de surf de tres días | **Resuelto** | Tres imágenes específicas integradas con textos alternativos y encuadres responsive. | Ninguno conocido. |
+| Fotos del programa de surf de tres días | **Resuelto** | Se usan las tres versiones WebP optimizadas con textos alternativos y encuadres responsive. | Ninguno conocido. |
 | Foto nueva de Embarcaciones | **Resuelto** | Foto incorporada a portada/tarjeta/galería según la distribución definida. | Ninguno conocido. |
 | Fotos de Fotos de surf | **Resuelto** | Se incorporaron portada y galería con fotos de la guía. | Ninguno conocido. |
 | Fotos nuevas de Surfskate | **Resuelto** | Se incorporaron fotos nuevas para tarjeta, portada y galería. | Ninguno conocido. |
@@ -42,18 +42,20 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 
 ## Conteo actual
 
-- **Puntos principales resueltos:** 7 de 8.
+- **Puntos principales resueltos:** 6 de 8.
+- **Puntos principales parciales:** 1 de 8.
 - **Puntos principales pendientes:** 1 de 8.
 - **Tareas visuales/fotos pendientes adicionales:** Buceo.
 
 ## Historial de cortes
 
-| Fecha | Resueltos | Pendientes | Motivo del cambio |
-|---|---:|---:|---|
-| Corte del PDF `Estado_fotos_Guia_Segunda_Parte.pdf` | 4 | 4 | El botón de alianzas todavía figuraba como pendiente. |
-| 2026-11-08 | 5 | 3 | Se verificó que el CTA de alianzas ya está implementado en el repositorio. |
-| 2026-11-08 | 6 | 2 | Se integró la ficha Local Host/Country Host con las cuatro fotos marcadas en la guía, formulario y traducciones. |
-| 2026-11-08 | 7 | 1 | Se incluyó Local Host en los siete servicios indicados por la guía, dentro de sus bloques de incluidos y con traducciones ES/EN/PT-BR. |
+| Fecha | Resueltos | Parciales | Pendientes | Motivo del cambio |
+|---|---:|---:|---:|---|
+| Corte del PDF `Estado_fotos_Guia_Segunda_Parte.pdf` | 4 | 0 | 4 | El botón de alianzas todavía figuraba como pendiente. |
+| 2026-11-08 | 5 | 0 | 3 | Se verificó que el CTA de alianzas ya está implementado en el repositorio. |
+| 2026-11-08 | 6 | 0 | 2 | Se integró la ficha Local Host/Country Host con las cuatro fotos marcadas en la guía, formulario y traducciones. |
+| 2026-11-08 | 7 | 0 | 1 | Se incluyó Local Host en los siete servicios indicados por la guía, dentro de sus bloques de incluidos y con traducciones ES/EN/PT-BR. |
+| 2026-11-08 | 6 | 1 | 1 | Auditoría del repositorio: capacidades de Embarcaciones divergentes de la guía; se detectaron WebP optimizados no usados en el programa de surf. |
 
 ## Continuidad
 

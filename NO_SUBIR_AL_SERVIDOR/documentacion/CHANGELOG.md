@@ -1,4 +1,11 @@
 ## 2026-11-08
+### Auditoría de Guiasegundaparte
+- Se contrastaron los ocho puntos principales de `Guia_Segunda_Parte_Completa.pdf` con el catálogo, las fichas, formularios, traducciones, navegación, estilos y assets del repositorio.
+- `SEGUIMIENTO.md`: Embarcaciones pasa a Parcial hasta confirmar con el proveedor las capacidades; la guía dice 7 personas para Papagayo y snorkel por Guanacaste y 4 para pesca en mar abierto, mientras las fichas ES/EN/PT-BR muestran 5.
+- `SEGUIMIENTO.md`: se registró que las imágenes JPG originales del programa de surf siguen referenciadas aunque están disponibles sus WebP optimizados. No se modificó código ni se cambiaron datos comerciales durante la auditoría.
+- El tour del estero y la ficha de Buceo permanecen pendientes; para el estero la guía ya propone duración, capacidad y precio, que deben verificarse antes de publicar.
+- Validación: contraste estático de la guía y archivos del repositorio; `git diff --check` pasó. No se ejecutó `node --check` porque Node.js no está disponible en el entorno.
+
 ### Local Host incluido en servicios seleccionados
 
 - `services.js`: se agregó «Servicio de Local Host» únicamente dentro de los incluidos de Clases de surf, programa de surf, Yoga, ATV, hospedajes, Fotos de surf y Surf coaching.
