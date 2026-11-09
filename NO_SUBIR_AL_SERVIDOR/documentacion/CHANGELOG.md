@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — sacar 10% de zoom
+- `styles.css` y `styles.optimized.css`: se reduce 10% el zoom de la foto manteniendo el encuadre previo; el móvil y las demás tarjetas no cambian.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop30`.
+
 ### Roca Bruja — volver al encuadre anterior
 - `styles.css` y `styles.optimized.css`: se restaura el encuadre previo a los últimos cambios de zoom out y centrado: desplazamiento vertical hacia arriba sin `contain` ni zoom adicional; el móvil y las demás tarjetas no cambian.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop29`.
