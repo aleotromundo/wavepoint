@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — alejar un poco la imagen
+- `styles.css` y `styles.optimized.css`: se aplica un zoom out suave de 6% a la foto de Roca Bruja desde 981 px; Coaching y el móvil no cambian.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop24`.
+
 ### Roca Bruja — hacer visible el desplazamiento vertical
 - `styles.css` y `styles.optimized.css`: se aplica un desplazamiento físico visible de 20% hacia arriba a la foto desde 981 px, conservando su posición horizontal y el encuadre móvil.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop23`.
