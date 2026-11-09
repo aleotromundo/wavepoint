@@ -10105,16 +10105,17 @@ footer a {
   }
 }
 
-/* Roca Bruja: punto de partida limpio, foto completa sin zoom en escritorio. */
+/* Roca Bruja: encuadre final confirmado, solo para escritorio. */
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-img img {
     object-fit: contain !important;
-    object-position: center center !important;
-    transform: none !important;
+    object-position: 14% 18% !important;
+    transform: scale(1.35) !important;
+    transform-origin: center center !important;
     background: #062f3b !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-witch-rock:hover .service-img img,
   #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-image-link:focus-visible .service-img img {
-    transform: none !important;
+    transform: scale(1.35) !important;
   }
 }
