@@ -10088,3 +10088,21 @@ footer a {
     transform: none !important;
   }
 }
+
+/* Roca Bruja: mover 15% la foto hacia arriba y a la izquierda en escritorio. */
+@media (min-width: 981px) {
+  #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-img img {
+    top: -15% !important;
+    left: -15% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 115% !important;
+    height: 115% !important;
+    object-position: center bottom !important;
+    transform: none !important;
+  }
+  #servicios .service-grid-catalog .service-card.service-card-witch-rock:hover .service-img img,
+  #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-image-link:focus-visible .service-img img {
+    transform: none !important;
+  }
+}
