@@ -1,3 +1,10 @@
+## 2026-11-09
+### Actualizar PDF de estado de la Guía Segunda Parte
+- `NO_SUBIR_AL_SERVIDOR/documentacion/Estado_fotos_Guia_Segunda_Parte.pdf`: se reemplazó el resumen anterior de 4 puntos resueltos y 4 pendientes por el estado actual: 7 puntos principales resueltos, 1 parcial y 0 pendientes principales.
+- Se actualizaron las tablas de fotos y cambios visuales: Local Host/Country Host, tour del estero, logo de Nativa Diving y retiro del logo decorativo de Servicios figuran como resueltos; la ficha y fotos de Buceo quedan como pendiente adicional.
+- Se agregó la nota de validación pendiente de capacidades de Embarcaciones y el resumen de esfuerzo estimado: 166 commits observables, aproximadamente 18 horas técnicas efectivas y 5 jornales de cuatro horas redondeados.
+- Validación: PDF de una página en formato A4 horizontal, texto extraíble, tablas revisadas visualmente y estado contrastado con `SEGUIMIENTO.md`.
+
 ## 2026-11-08
 ### Programa de surf de tres días — usar imágenes WebP optimizadas
 - `services.js`: se reemplazaron las tres referencias JPG originales por `day-1.webp`, `day-2.webp` y `day-3.webp`; no cambian las imágenes ni sus textos alternativos.
