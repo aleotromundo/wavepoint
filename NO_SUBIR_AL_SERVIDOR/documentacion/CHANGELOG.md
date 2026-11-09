@@ -1,4 +1,8 @@
 # 2026-11-08
+### Editor — aplicar movimiento visual en tiempo real
+- `card-crop-editor.js`: zoom y posición se aplican como estilos inline prioritarios para que las reglas de la tarjeta no los oculten mientras se arrastra o se usan los controles.
+- `index.html`: se renueva la caché del editor a `20261108-marker3`.
+
 ### Marcador visible en la página oficial
 - `card-crop-editor.js`: el marcador y sus controles aparecen automáticamente en la portada publicada desde 981 px, iniciando en Roca Bruja; en móvil no se activa para conservar la experiencia actual.
 - `index.html`: se renueva la caché del editor a `20261108-marker2`.
