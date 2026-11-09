@@ -590,6 +590,72 @@ licenses: { label: 'Do the drivers have a valid driver’s license?', options: [
 }
 },
 {
+id: 'diving', number: '06A', eyebrow: 'BUCEO · NATIVA DIVING', title: 'Buceo en Tamarindo e Islas Catalinas',
+cardText: 'Descubrí un mundo bajo la superficie.',
+description: 'Respirar bajo el agua por primera vez, conocer la vida marina del Pacífico o dar el siguiente paso en tu formación: encontrá una experiencia de buceo que acompañe tu curiosidad y tu nivel.',
+lead: 'Junto a NATIVA Diving Experiences, ofrecemos opciones para quienes nunca bucearon, quienes quieren obtener su primera certificación y buzos certificados que buscan seguir explorando. La disponibilidad, el precio final, la duración, la cantidad de inmersiones y el punto de encuentro se confirman antes de realizar el pago.',
+images: [
+'assets/img/services/diving/diving-18.webp',
+'assets/img/services/diving/diving-19.webp',
+'assets/img/services/diving/diving-20.webp',
+'assets/img/services/diving/diving-21.webp'
+],
+imageAlts: [
+'Buzo descendiendo junto a una pared de roca bajo el agua',
+'Buzos explorando un arrecife del Pacífico',
+'Buzo observando la vida marina bajo el agua',
+'Buzo nadando junto a una formación rocosa submarina'
+],
+questions: [
+{ id: 'diving_experience', label: '¿Qué experiencia de buceo te interesa?', type: 'choice', options: ['Mi primera vez · Discover Scuba Diving', 'Quiero certificarme · PADI Open Water', 'Quiero seguir aprendiendo · Otros cursos PADI', 'Ya estoy certificado · Buceo de exploración'] },
+{ id: 'instructor_mode', label: '¿Qué modalidad querés consultar?', type: 'choice', options: ['Instructor o guía compartido', 'Instructor o guía privado', 'Quiero comparar ambas opciones'] },
+{ id: 'group_size', label: '¿Cuántas personas quieren bucear?', type: 'number', min: 1 },
+{ id: 'swimming_comfort', label: '¿Todas las personas se sienten cómodas nadando?', type: 'choice', options: ['Sí', 'No', 'Quiero comentarlo con la instructora'] }
+],
+divingCopy: {
+sectionHeading: 'Elegí tu experiencia',
+experiences: [
+['Mi primera vez — Discover Scuba Diving', 'Una introducción al buceo para descubrir qué se siente al respirar bajo el agua, sin inscribirte en un curso completo. No necesitás experiencia ni certificación previa y esta experiencia no otorga una certificación de buzo.'],
+['Quiero certificarme — PADI Open Water Diver', 'Tu primer paso para convertirte en buzo certificado. El curso combina conocimientos teóricos, práctica en aguas confinadas e inmersiones en aguas abiertas.'],
+['Quiero seguir aprendiendo — Otros cursos PADI', 'Si ya tenés una certificación y querés ampliar tus conocimientos, consultá qué programa se adapta a tu formación y experiencia.'],
+['Ya estoy certificado — Buceo de exploración', 'Una opción para buzos certificados que quieren explorar el entorno submarino. Los sitios se coordinan según el nivel de los participantes y las condiciones del mar.']
+],
+modeHeading: 'Instructor o guía compartido o privado',
+modeText: 'Podés solicitar un instructor o guía compartido, privado o comparar ambas alternativas. La opción de instructor privado no implica, por sí sola, una embarcación privada.',
+includesHeading: 'Qué incluye',
+includes: ['Equipo completo de buceo durante la experiencia', 'Acompañamiento de una instructora PADI certificada', 'Espacio en la embarcación para la salida', 'Snacks, agua, té frío y fruta'],
+beforeHeading: 'Una experiencia según tu nivel',
+before: 'No hace falta llegar sabiendo qué programa elegir. Contanos si nunca buceaste, si querés certificarte o si ya tenés experiencia. También necesitamos saber si todos se sienten cómodos nadando; los requisitos de participación y la documentación se confirman con la instructora.',
+priceHeading: 'Precio y duración',
+priceText: 'Se cotizan según la modalidad, la cantidad de participantes y la elección de instructor o guía compartido o privado.',
+requestHeading: 'Solicitar información',
+requestText: 'Contanos qué experiencia te interesa, cuántas personas quieren bucear y si prefieren modalidad compartida o privada. Antes de pagar, confirmaremos disponibilidad, precio final, duración, cantidad de inmersiones y punto de encuentro.'
+},
+en: {
+eyebrow: 'DIVING · NATIVA DIVING', title: 'Diving in Tamarindo and the Catalinas Islands', cardText: 'Discover a world beneath the surface.', description: 'Breathe underwater for the first time, meet the marine life of the Pacific or take the next step in your training with a diving experience that matches your curiosity and level.', lead: 'Together with NATIVA Diving Experiences, we offer options for first-time divers, people who want to earn their first certification and certified divers who want to keep exploring. Availability, final price, duration, number of dives and meeting point are confirmed before payment.', imageAlts: ['Diver descending beside an underwater rock wall', 'Divers exploring a Pacific reef', 'Diver observing marine life underwater', 'Diver swimming beside an underwater rock formation'],
+questions: {
+diving_experience: { label: 'Which diving experience interests you?', options: ['First time · Discover Scuba Diving', 'I want to get certified · PADI Open Water', 'I want to keep learning · Other PADI courses', 'I am certified · Exploration diving'] },
+instructor_mode: { label: 'Which format would you like to ask about?', options: ['Shared instructor or guide', 'Private instructor or guide', 'I want to compare both options'] },
+group_size: { label: 'How many people want to dive?', min: 1 },
+swimming_comfort: { label: 'Is everyone comfortable swimming?', options: ['Yes', 'No', 'I would like to discuss it with the instructor'] }
+},
+divingCopy: {
+sectionHeading: 'Choose your experience',
+experiences: [
+['First time — Discover Scuba Diving', 'An introduction to diving for anyone who wants to discover what it feels like to breathe underwater, without enrolling in a full course. No previous experience or certification is required, and this experience does not provide a diving certification.'],
+['I want to get certified — PADI Open Water Diver', 'Your first step toward becoming a certified diver. The course combines theory, confined-water practice and open-water dives.'],
+['I want to keep learning — Other PADI courses', 'If you are already certified and want to expand your skills, ask about the options that fit your training and experience.'],
+['I am certified — Exploration diving', 'An option for certified divers who want to explore the underwater environment. Dive sites are coordinated according to participants’ level and sea conditions.']
+],
+modeHeading: 'Shared or private instructor or guide', modeText: 'You can ask for a shared instructor or guide, a private one or a comparison of both options. A private instructor or guide does not necessarily mean a private boat.',
+includesHeading: 'What is included', includes: ['Full diving equipment during the experience', 'Support from a certified PADI instructor', 'Boat space for the outing', 'Snacks, water, iced tea and fruit'],
+beforeHeading: 'An experience for your level', before: 'You do not need to arrive knowing which program to choose. Tell us whether you have never dived, want to get certified or are already experienced. We also need to know whether everyone is comfortable swimming; participation requirements and documentation are confirmed with the instructor.',
+priceHeading: 'Price and duration', priceText: 'Quoted according to the format, number of participants and choice of shared or private instructor or guide.',
+requestHeading: 'Request information', requestText: 'Tell us which experience interests you, how many people want to dive and whether you prefer a shared or private format. Before payment, we will confirm availability, final price, duration, number of dives and meeting point.'
+}
+},
+},
+{
 id: 'local-host', number: '10A', eyebrow: 'BIENVENIDA LOCAL · TAMARINDO', title: 'Country Host — Tu bienvenida a Tamarindo',
 cardText: 'Llegá, conocé y empezá a sentirte parte.',
 description: 'Llegar a un lugar nuevo es más fácil cuando alguien te recibe. Con Country Host, tenés un contacto local de WAVEPOINT para resolver tus primeras dudas, descubrir lugares que van con vos y encontrar planes para compartir. Una bienvenida gratuita para empezar a disfrutar Tamarindo con orientación y compañía.',
@@ -877,7 +943,7 @@ description: 'Tell us your dates, group size and interests. We’ll put together
 imageAlts: ['Sunset over the coast framed by a tropical tree']
 }
 });
-const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-programa-3-dias', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'mangrove-tour', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
+const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-programa-3-dias', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'mangrove-tour', 'diving', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros'];
 serviceOrder.splice(9, 0, 'trip-builder');
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
@@ -1156,27 +1222,36 @@ function renderBoatStory(service) {
 const isEn = lang === 'en';
 const portuguese = lang === 'pt-BR' ? window.WAVEPOINT_PT_BR?.services?.['snorkel-catamaran']?.boatCopy : null;
 const options = isEn ? [
-  ['Full day in the Papagayo Peninsula', '8 hours · Up to 5 people · USD 850', 'Explore hidden beaches and combine sailing, snorkeling and fishing. Includes breakfast, grilled lunch or wraps/sandwiches, water, soft drinks, beer, snorkeling and fishing activities, and certified captain and deckhand.'],
-  ['Snorkeling along the Guanacaste coast', '4 hours · Up to 5 people · USD 500 / 6 hours · Up to 5 people · USD 650', 'Explore natural corners of the coast with snorkeling equipment, inflatable platform, breakfast, lunch with wraps or sandwiches, snacks, drinks, and certified captain and deckhand.'],
-  ['Deep-sea fishing', 'Duration and price to be confirmed · Up to 5 people', 'Enjoy a fishing-focused outing with fishing equipment and a live-bait well. Breakfast, lunch, snacks, drinks and an onboard grill are included; the details are confirmed when you inquire.'],
+  ['Full day in the Papagayo Peninsula', '8 hours · Up to 7 people · USD 850', 'Explore hidden beaches and combine sailing, snorkeling and fishing. Includes breakfast, grilled lunch or wraps/sandwiches, water, soft drinks, beer, snorkeling and fishing activities, and certified captain and deckhand.'],
+  ['Snorkeling along the Guanacaste coast', '4 hours · Up to 7 people · USD 500 / 6 hours · Up to 7 people · USD 650', 'Explore natural corners of the coast with snorkeling equipment, inflatable platform, breakfast, lunch with wraps or sandwiches, snacks, drinks, and certified captain and deckhand.'],
+  ['Deep-sea fishing', 'Duration and price to be confirmed · Up to 4 people', 'Enjoy a fishing-focused outing with fishing equipment and a live-bait well. Breakfast, lunch, snacks, drinks and an onboard grill are included; the details are confirmed when you inquire.'],
   ['Fishing from Bahía Potrero', '4 hours · USD 500 / 6 hours · USD 700 / 8 hours · USD 900', 'Choose the duration that fits your group. Fishing and snorkeling equipment are included. The six-hour option includes wraps for lunch; food details for eight hours are confirmed when you inquire.'],
   ['Snorkeling from Bahía Potrero', '4 hours · Up to 5 people · USD 500', 'A relaxed outing to explore the sea, snorkel and spend time on the water. Includes snorkeling equipment and a floating platform.'],
   ['Sunset from Bahía Potrero', '4 hours · Up to 5 people · USD 500', 'Enjoy the last hours of the day along the coast with drinks, something to share, snorkeling equipment and a floating platform.']
 ] : [
-  ['Día completo en la península de Papagayo', '8 horas · Hasta 5 personas · USD 850', 'Una jornada para explorar playas escondidas y combinar navegación, snorkel y pesca. Incluye desayuno, almuerzo de parrillada o wraps/sándwiches, agua, refrescos, cerveza, actividades de snorkel y pesca, y capitán y marinero certificados.'],
-  ['Snorkel por la costa de Guanacaste', '4 horas · Hasta 5 personas · USD 500 / 6 horas · Hasta 5 personas · USD 650', 'Explorá rincones naturales de la costa con equipo de snorkel, plataforma inflable, desayuno, almuerzo con wraps o sándwiches, snacks, bebidas, y capitán y marinero certificados.'],
-  ['Pesca en mar abierto', 'Duración y precio a confirmar · Hasta 5 personas', 'Una salida enfocada en la pesca, con equipo y vivero para carnada viva. Incluye desayuno, almuerzo, snacks, bebidas y parrilla a bordo; los detalles se confirman al consultar.'],
+  ['Día completo en la península de Papagayo', '8 horas · Hasta 7 personas · USD 850', 'Una jornada para explorar playas escondidas y combinar navegación, snorkel y pesca. Incluye desayuno, almuerzo de parrillada o wraps/sándwiches, agua, refrescos, cerveza, actividades de snorkel y pesca, y capitán y marinero certificados.'],
+  ['Snorkel por la costa de Guanacaste', '4 horas · Hasta 7 personas · USD 500 / 6 horas · Hasta 7 personas · USD 650', 'Explorá rincones naturales de la costa con equipo de snorkel, plataforma inflable, desayuno, almuerzo con wraps o sándwiches, snacks, bebidas, y capitán y marinero certificados.'],
+  ['Pesca en mar abierto', 'Duración y precio a confirmar · Hasta 4 personas', 'Una salida enfocada en la pesca, con equipo y vivero para carnada viva. Incluye desayuno, almuerzo, snacks, bebidas y parrilla a bordo; los detalles se confirman al consultar.'],
   ['Pesca desde Bahía Potrero', '4 horas · USD 500 / 6 horas · USD 700 / 8 horas · USD 900', 'Elegí la duración que mejor se adapte a tu grupo. Incluye equipo de pesca y snorkel. La opción de seis horas incorpora wraps para el almuerzo; los detalles de alimentación de ocho horas se confirman al consultar.'],
   ['Snorkel desde Bahía Potrero', '4 horas · Hasta 5 personas · USD 500', 'Una salida de cuatro horas para explorar el mar, disfrutar del snorkel y descansar sobre el agua. Incluye equipo de snorkel y plataforma flotante.'],
   ['Atardecer desde Bahía Potrero', '4 horas · Hasta 5 personas · USD 500', 'Disfrutá las últimas horas del día navegando por la costa, con bebidas, algo rico para compartir, equipo de snorkel y plataforma flotante.']
 ];
-const conditions = isEn ? ['Maximum capacity: 5 people.', 'Fruit, hummus, dips, beer, soft drinks, water and ice.', 'Snorkeling equipment and floating platform available.', 'Request at least 24 hours in advance.', 'Preferably for ages five and up; ask us about younger children.', 'Cancellation policy: 72 hours.', 'A 30% deposit confirms the outing after availability is verified.', 'Departure point: Bahía Potrero.', 'Transport to the bay is paid separately.', 'Navigation permits and insurance policy.', 'Captain documents are in process.', 'Service available in Spanish and English.'] : ['Capacidad máxima: 5 personas.', 'Frutas variadas, hummus, dips, cerveza, refrescos, agua y hielo.', 'Se presta equipo de snorkel y plataforma flotante.', 'Solicitá la reserva con al menos 24 horas de anticipación.', 'Preferentemente para mayores de cinco años; consultá si viajan niños menores.', 'Política de cancelación: 72 horas.', 'Una seña del 30% confirma la salida una vez verificada la disponibilidad.', 'Punto de salida: Bahía Potrero.', 'El transporte hasta la bahía se paga aparte.', 'Permisos de navegación y póliza de seguro.', 'Documentos del capitán en trámite.', 'Atención en español e inglés.'];
+const conditions = isEn ? ['Capacities vary by outing: up to 7 people for Papagayo and Guanacaste coast snorkeling, and up to 4 for deep-sea fishing.', 'Fruit, hummus, dips, beer, soft drinks, water and ice.', 'Snorkeling equipment and floating platform available.', 'Request at least 24 hours in advance.', 'Preferably for ages five and up; ask us about younger children.', 'Cancellation policy: 72 hours.', 'A 30% deposit confirms the outing after availability is verified.', 'Departure point: Bahía Potrero.', 'Transport to the bay is paid separately.', 'Navigation permits and insurance policy.', 'Captain documents are in process.', 'Service available in Spanish and English.'] : ['Capacidades según la salida: hasta 7 personas para Papagayo y snorkel por la costa de Guanacaste, y hasta 4 para pesca en mar abierto.', 'Frutas variadas, hummus, dips, cerveza, refrescos, agua y hielo.', 'Se presta equipo de snorkel y plataforma flotante.', 'Solicitá la reserva con al menos 24 horas de anticipación.', 'Preferentemente para mayores de cinco años; consultá si viajan niños menores.', 'Política de cancelación: 72 horas.', 'Una seña del 30% confirma la salida una vez verificada la disponibilidad.', 'Punto de salida: Bahía Potrero.', 'El transporte hasta la bahía se paga aparte.', 'Permisos de navegación y póliza de seguro.', 'Documentos del capitán en trámite.', 'Atención en español e inglés.'];
 const practical = isEn ? 'Bring a swimsuit, towel and sun protection. Tell us the participants’ ages and any allergy or dietary need. If you want to snorkel, let us know how comfortable everyone is swimming in the sea.' : 'Traé traje de baño, toalla y protección solar. Contanos las edades de los participantes y cualquier alergia o necesidad alimentaria. Si quieren hacer snorkel, indicá también cómo se sienten nadando en el mar.';
 const galleryStory = renderStandardStory(service);
 const localizedOptions = portuguese?.options || options;
 const localizedConditions = portuguese?.conditions || conditions;
 const localizedPractical = portuguese?.practical || practical;
 return `${galleryStory}<section class="boat-story" aria-labelledby="boat-options-heading"><div class="boat-story-intro"><p class="service-page-kicker">${portuguese?.eyebrow || (isEn ? 'NAVIGATION · GUANACASTE' : 'EMBARCACIONES · GUANACASTE')}</p><h2 id="boat-options-heading">${portuguese?.heading || (isEn ? 'Navigation — Discover Guanacaste from the sea' : 'Navegación — Descubrí Guanacaste desde el mar')}</h2><p>${portuguese?.intro || (isEn ? 'A little time at sea, a different view of Tamarindo. Whether you would love to snorkel, relax on deck or watch the sun go down over the ocean, WAVEPOINT helps you find an outing that feels right for your group. Enjoy the sea breeze, discover the coastline and confirm the details before you book.' : 'Un poco de tiempo en el mar, una vista diferente de Tamarindo. Ya sea que quieras hacer snorkel, relajarte a bordo o ver cómo cae el sol sobre el océano, WAVEPOINT te ayuda a encontrar una salida que se adapte a tu grupo. Disfrutá la brisa marina, descubrí la costa y conocé todos los detalles antes de reservar.')}</p></div><div class="boat-options">${localizedOptions.map(([title, facts, text]) => `<article class="boat-option"><h3>${title}</h3><p class="boat-option-facts">${facts}</p><p>${text}</p></article>`).join('')}</div><div class="boat-details"><section><h3>${portuguese?.beforeHeading || (isEn ? 'Before you go' : 'Antes de ir')}</h3><p>${localizedPractical}</p></section><section><h3>${portuguese?.conditionsHeading || (isEn ? 'Included and conditions' : 'Incluidos y condiciones')}</h3><ul>${localizedConditions.map(item => `<li>${item}</li>`).join('')}</ul></section></div><div class="boat-request"><h3>${portuguese?.requestHeading || (isEn ? 'Request this experience' : 'Solicitar reserva')}</h3><p>${portuguese?.request || (isEn ? 'Tell us which outing interests you, your preferred dates and how many people are participating. WAVEPOINT will confirm availability, meeting point or pickup, inclusions, conditions and the total price before sending a payment link.' : 'Contanos qué salida te interesa, tus fechas y cuántas personas participan. WAVEPOINT confirmará disponibilidad, punto de encuentro o recogida, incluidos, condiciones y precio total antes de enviarte el enlace de pago.')}</p><p>${portuguese?.reservationNote || (isEn ? 'This is an inquiry; the booking is not confirmed yet. You do not need to pay now.' : 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.')}</p></div></section>`;
+}
+function renderDivingStory(service) {
+const copy = service.divingCopy;
+const experiences = copy.experiences.map(([title, text]) => `<article class="diving-experience"><h3>${esc(title)}</h3><p>${esc(text)}</p></article>`).join('');
+const includes = copy.includes.map(item => `<li>${esc(item)}</li>`).join('');
+const isEn = lang === 'en';
+const isPt = lang === 'pt-BR';
+const gallery = renderStandardStory(service);
+return `${gallery}<section class="diving-story" aria-labelledby="diving-experiences-heading"><div class="diving-story-intro"><p class="service-page-kicker">${isEn ? 'NATIVA DIVING EXPERIENCES' : isPt ? 'NATIVA DIVING EXPERIENCES' : 'NATIVA DIVING EXPERIENCES'}</p><h2 id="diving-experiences-heading">${esc(copy.sectionHeading)}</h2><p>${esc(service.lead || '')}</p></div><div class="diving-experiences">${experiences}</div><section class="diving-panel"><h3>${esc(copy.modeHeading)}</h3><p>${esc(copy.modeText)}</p></section><section class="diving-panel"><h3>${esc(copy.includesHeading)}</h3><ul>${includes}</ul></section><section class="diving-panel"><h3>${esc(copy.beforeHeading)}</h3><p>${esc(copy.before)}</p></section><section class="diving-panel"><h3>${esc(copy.priceHeading)}</h3><p>${esc(copy.priceText)}</p></section><section class="diving-panel diving-request"><h3>${esc(copy.requestHeading)}</h3><p>${esc(copy.requestText)}</p><p>${isEn ? 'This is an inquiry; the booking is not confirmed yet. You do not need to pay now.' : isPt ? 'Esta é uma consulta; o mergulho ainda não está confirmado. Você não precisa pagar agora.' : 'Esto es una solicitud; la reserva todavía no está confirmada. No tenés que pagar ahora.'}</p></section></section>`;
 }
 function renderWitchRockStory(service) {
 const story = renderStandardStory(service, service.coordination);
@@ -1335,6 +1410,8 @@ const story = service.id === 'alojamiento-experiencias'
 ? renderRetreatStory(service)
 : service.id === 'mangrove-tour'
 ? renderMangroveStory(service)
+: service.id === 'diving'
+? renderDivingStory(service)
 : service.id === 'atv'
 ? renderAtvStory(service)
 : service.id === 'snorkel-catamaran'

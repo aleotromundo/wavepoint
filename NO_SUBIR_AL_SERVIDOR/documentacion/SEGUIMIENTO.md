@@ -35,26 +35,17 @@ Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea c
 | Encuadre de la tarjeta Country Host en escritorio | **Resuelto** | Se aplicó un zoom suave anclado abajo desde 981 px para reducir el cielo y mostrar más a las personas; el encuadre móvil no cambia. | Ninguno conocido. |
 | Logo decorativo de Servicios después de agregar Country Host | **Resuelto** | Por decisión de producto, se retiró por completo la capa decorativa que aparecía después de las tarjetas y antes de “Experiencia a medida”. Se conservaron las tarjetas, el separador y los demás logos del sitio. | `index.html`, `styles.css`, `styles.optimized.css`. | Ninguno conocido. |
 | Fotos del tour del estero | **Resuelto** | Se reemplazaron las referencias repetidas por cuatro fotos WebP distintas de la ficha de TripAdvisor: visitante observando un cocodrilo, grupo en bote, personas en kayak y kayak frente a manglares. | `services.js`, `index.html`, `assets/img/services/mangrove-tour/`, `MATERIAL_TOUR_ESTERO.md`. | Confirmar autorización de uso comercial de las imágenes antes de futuras campañas pagadas. |
-| Ficha y fotos de Buceo | **Pendiente** | La guía incluye contenido propuesto y existe la referencia de Nativa Diving, pero no hay ficha de servicio integrada. | Definir alcance, fotos, datos verificables, traducciones y formulario. |
+| Ficha y fotos de Buceo | **Resuelto** | Se creó la ficha de Buceo con NATIVA a partir del contenido de la guía, con cuatro experiencias, modalidad compartida/privada, incluidos, cotización sin tarifa inventada, formulario y traducciones ES/EN/PT-BR. Se integraron obligatoriamente las fotos `foto-18.jpg` a `foto-21.jpg` convertidas a WebP. | Revisar datos comerciales únicamente si el proveedor entrega cambios posteriores. |
 
-## Consultas exactas pendientes para el proveedor
+## Confirmaciones externas
 
-Estas son las preguntas concretas que conviene enviar antes de cerrar la ficha de Embarcaciones y desarrollar Buceo:
-
-1. **Embarcaciones — capacidades:** ¿La capacidad máxima vigente es de 7 personas para el día completo en la península de Papagayo, 7 personas para snorkel por la costa de Guanacaste y 4 personas para pesca en mar abierto? El código actual muestra 5 en esos tres casos.
-2. **Embarcaciones — datos comerciales:** ¿Se mantienen los precios de referencia de la guía: USD 850 para Papagayo, USD 500/650 para snorkel por Guanacaste y USD 500/700/900 para pesca desde Bahía Potrero? ¿Hay cambios en duración, incluidos, edad mínima o punto de salida?
-3. **Buceo — disponibilidad:** ¿NATIVA ofrece actualmente las cuatro opciones de la guía: Discover Scuba Diving, PADI Open Water, otros cursos PADI y buceo de exploración para personas certificadas?
-4. **Buceo — modalidad:** ¿Se puede solicitar instructor o guía compartido, privado o comparación de ambas opciones? ¿La modalidad privada implica solo instructor/guía privado y no necesariamente embarcación privada?
-5. **Buceo — operación:** Para cada opción, ¿cuál es la duración, cantidad de inmersiones, edad mínima, requisitos de certificación, documentación necesaria y punto de encuentro?
-6. **Buceo — precio:** ¿Se cotiza según modalidad, cantidad de participantes e instructor/guía compartido o privado, sin publicar una tarifa fija? ¿Qué precio orientativo debe mostrar la ficha, si corresponde?
-7. **Buceo — incluidos:** ¿Se confirman como incluidos el equipo completo, instructora PADI, espacio en la embarcación, snacks, agua, té frío y fruta?
-8. **Buceo — fotos:** Las fotos `foto-18.jpg` a `foto-21.jpg` de la guía son de uso obligatorio para la ficha. Se deben convertir a WebP e integrar en tarjeta, portada y galería, sin pedir confirmación adicional sobre si se usan.
+La guía alcanza para resolver la ficha de Buceo: se implementó con las cuatro experiencias, el formulario, cotización sin tarifa fija y las fotos obligatorias `foto-18.jpg` a `foto-21.jpg` convertidas a WebP. También se alinearon las capacidades de Embarcaciones con la guía: 7 personas para Papagayo, 7 para snorkel por la costa de Guanacaste y 4 para pesca en mar abierto. Si el proveedor comunica cambios futuros, se actualizan esos datos.
 
 ## Conteo actual
 - **Puntos principales resueltos:** 7 de 8.
 - **Puntos principales parciales:** 1 de 8.
 - **Puntos principales pendientes:** 0 de 8.
-- **Tareas visuales/fotos pendientes adicionales:** Buceo.
+- Tareas visuales/fotos pendientes adicionales: ninguna conocida.
 
 ## Historial de cortes
 | Fecha | Resueltos | Parciales | Pendientes | Motivo del cambio |
@@ -66,6 +57,7 @@ Estas son las preguntas concretas que conviene enviar antes de cerrar la ficha d
 | 2026-11-08 | 7 | 1 | 0 | Auditoría del repositorio: capacidades de Embarcaciones divergentes de la guía; se detectaron WebP optimizados no usados en el programa de surf y se actualizaron sus referencias. |
 | 2026-11-08 | 7 | 1 | 0 | Se integró el tour del estero con cuatro imágenes WebP, ficha, formulario, CTA de alianzas y traducciones. |
 | 2026-11-09 | 7 | 1 | 0 | Se reemplazaron tarjeta, portada y galería del tour del estero por cuatro fotos WebP distintas con visitantes; se actualizó la trazabilidad y se dejó la lista exacta de consultas para Embarcaciones y Buceo. |
+| 2026-11-09 | 7 | 1 | 0 | Se desarrolló la ficha de Buceo con el contenido de la guía, formulario, traducciones y las cuatro fotos obligatorias convertidas a WebP; no se inventaron precios. |
 
 ## Trazabilidad y estimación de esfuerzo
 

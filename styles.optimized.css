@@ -4010,6 +4010,17 @@ to{filter:brightness(1.18)}
 @media(prefers-reduced-motion:reduce){.atv-option{transition:none}.atv-option:hover{transform:none}}
 
 /* Embarcaciones · opciones, tarifas y condiciones de navegación. */
+.diving-story { display:grid; gap:clamp(22px,4vw,42px); margin-top:clamp(30px,5vw,56px); }
+.diving-story-intro, .diving-panel { padding:clamp(24px,4vw,44px); border:1px solid rgba(8,127,128,.16); border-radius:26px; background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(231,247,243,.9)); box-shadow:0 18px 42px rgba(8,43,58,.1); }
+.diving-story-intro h2, .diving-panel h3, .diving-experience h3 { margin:0 0 14px; color:#123746; }
+.diving-story-intro h2 { font:700 clamp(34px,5vw,60px)/.96 "Barlow Condensed",Impact,sans-serif; }
+.diving-story-intro p:last-child, .diving-panel p, .diving-panel li, .diving-experience p { color:#47636c; font-size:clamp(15px,1.5vw,18px); line-height:1.65; }
+.diving-story-intro p:last-child, .diving-panel p { max-width:900px; margin:0; }
+.diving-experiences { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.diving-experience { padding:clamp(20px,3vw,30px); border:1px solid rgba(8,127,128,.14); border-radius:22px; background:rgba(255,255,255,.84); }
+.diving-experience p { margin:0; }
+.diving-panel ul { margin:0; padding-left:1.2rem; }
+@media (max-width: 700px) { .diving-experiences { grid-template-columns:1fr; } }
 .boat-story { display:grid; gap:clamp(22px,4vw,42px); margin-top:clamp(30px,5vw,56px); }
 .boat-story-intro, .boat-request { padding:clamp(24px,4vw,44px); border:1px solid rgba(8,127,128,.16); border-radius:26px; background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(231,247,243,.9)); box-shadow:0 18px 42px rgba(8,43,58,.1); }
 .boat-story-intro h2 { margin:0 0 14px; color:#123746; font:700 clamp(38px,5vw,64px)/.96 "Barlow Condensed",Impact,sans-serif; }

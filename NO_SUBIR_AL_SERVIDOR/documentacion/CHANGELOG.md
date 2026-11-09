@@ -1,4 +1,11 @@
 ## 2026-11-09
+### Ficha de Buceo con NATIVA Diving
+- `services.js`: se creó la ficha de Buceo en Tamarindo e Islas Catalinas con las cuatro experiencias de la guía, modalidad compartida/privada, formulario de consulta y cotización según modalidad, sin inventar tarifas.
+- `index.html`, `script.js` y `pt-br.js`: se agregó la tarjeta del servicio y las traducciones ES/EN/PT-BR.
+- `assets/img/services/diving/`: se integraron obligatoriamente `foto-18.jpg` a `foto-21.jpg` convertidas a WebP para portada y galería.
+- `SEGUIMIENTO.md`: Buceo pasa de pendiente a resuelto; no quedan tareas visuales/fotos adicionales conocidas.
+- Validación: `node --check` para `services.js`, `script.js` y `pt-br.js`; `git diff --check` pasó.
+
 ### Auditoría y actualización del seguimiento de la Guía Segunda Parte
 - `NO_SUBIR_AL_SERVIDOR/documentacion/SEGUIMIENTO.md`: se corrigió la descripción de las fotos actuales del Tour del estero y se agregó una lista exacta de ocho confirmaciones para Embarcaciones y Buceo.
 - Se dejó explícito que no deben modificarse capacidades, precios ni condiciones de Embarcaciones hasta recibir confirmación del proveedor.
