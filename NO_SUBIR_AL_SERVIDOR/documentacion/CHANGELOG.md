@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja y Surf coaching — quitar zoom de las tarjetas
+- `styles.css` y `styles.optimized.css`: se elimina el aumento de tamaño aplicado a ambas fotos; se conserva únicamente el desplazamiento del recorte mediante `object-position` desde 981 px. El móvil no cambia.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop16`.
+
 ### Roca Bruja — mover 15% la imagen hacia arriba y a la izquierda
 - `styles.css` y `styles.optimized.css`: se desplaza la foto de la tarjeta 15% hacia arriba y 15% hacia la izquierda desde 981 px, manteniendo el encuadre móvil sin cambios.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop15`.
