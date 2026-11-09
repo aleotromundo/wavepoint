@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — 20% adicional hacia arriba
+- `styles.css` y `styles.optimized.css`: se desplaza la imagen de Roca Bruja 20% adicional hacia arriba desde 981 px; se conservan su posición horizontal, Coaching y el móvil.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop22`.
+
 ### Roca Bruja — 15% adicional hacia arriba
 - `styles.css` y `styles.optimized.css`: se desplaza la imagen de Roca Bruja 15% adicional hacia arriba desde 981 px; el desplazamiento horizontal, Coaching y el móvil no cambian.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop21`.
