@@ -3721,7 +3721,7 @@ footer a.footer-logo-link { display: inline-flex; align-items: center; width: fi
     height: 100% !important;
   }
   #servicios .service-grid-catalog .service-card.service-card-local-host .service-img img {
-    top: -70px !important;
+    top: -140px !important;
     bottom: auto !important;
     height: calc(100% + 70px) !important;
     object-position: center 100% !important;
