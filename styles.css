@@ -10108,7 +10108,7 @@ footer a {
 /* Embarcaciones: subir la imagen 20% solo en escritorio. */
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card.service-card-snorkel .service-img img {
-    object-position: center 75% !important;
+    object-position: center 100% !important;
   }
 }
 
