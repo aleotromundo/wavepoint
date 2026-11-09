@@ -1,3 +1,11 @@
+## 2026-11-08
+### Local Host incluido en servicios seleccionados
+
+- `services.js`: se agregó «Servicio de Local Host» únicamente dentro de los incluidos de Clases de surf, programa de surf, Yoga, ATV, hospedajes, Fotos de surf y Surf coaching.
+- `pt-br.js`: se sincronizó la misma inclusión en portugués brasileño; también se conservaron las variantes en inglés.
+- No se modificaron precios, descripciones, formularios, reservas ni el comportamiento móvil.
+- Validación: `node --check services.js`, `node --check pt-br.js` y `git diff --check` pasaron; publicado en `main`.
+
 # 2026-11-08
 ### Editor — aplicar movimiento visual en tiempo real
 - `card-crop-editor.js`: zoom y posición se aplican como estilos inline prioritarios para que las reglas de la tarjeta no los oculten mientras se arrastra o se usan los controles.
