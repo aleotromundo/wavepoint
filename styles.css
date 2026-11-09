@@ -10088,3 +10088,17 @@ footer a {
     transform: none !important;
   }
 }
+
+/* Roca Bruja: punto de partida limpio, foto completa sin zoom en escritorio. */
+@media (min-width: 981px) {
+  #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-img img {
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+    background: #062f3b !important;
+  }
+  #servicios .service-grid-catalog .service-card.service-card-witch-rock:hover .service-img img,
+  #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-image-link:focus-visible .service-img img {
+    transform: none !important;
+  }
+}
