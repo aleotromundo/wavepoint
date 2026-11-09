@@ -1,4 +1,8 @@
 # 2026-11-08
+### Roca Bruja — volver al encuadre anterior
+- `styles.css` y `styles.optimized.css`: se restaura el encuadre previo a los últimos cambios de zoom out y centrado: desplazamiento vertical hacia arriba sin `contain` ni zoom adicional; el móvil y las demás tarjetas no cambian.
+- `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop29`.
+
 ### Roca Bruja — centrar la foto completa
 - `styles.css` y `styles.optimized.css`: se centra explícitamente la imagen completa horizontal y verticalmente desde 981 px, sin cambiar escala ni recorte; el móvil permanece igual.
 - `index.html` y `service-detail.html`: se renueva la caché CSS a `20261108-local-host-crop28`.

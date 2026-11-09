@@ -10092,14 +10092,10 @@ footer a {
 /* Roca Bruja: mover 15% la foto hacia arriba y a la izquierda en escritorio. */
 @media (min-width: 981px) {
   #servicios .service-grid-catalog .service-card.service-card-witch-rock .service-img img {
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: 50% 50% !important;
-    margin: 0 auto !important;
-    background: #062f3b !important;
+    top: -20% !important;
+    bottom: auto !important;
+    height: 120% !important;
+    object-position: 60% 100% !important;
     transform: none !important;
     transform-origin: center center !important;
   }
