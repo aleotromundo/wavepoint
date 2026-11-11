@@ -2726,3 +2726,9 @@
 - `index.html`: se cargó el editor con versión de caché renovada. Se puede forzar una nueva apertura con `?ajustar-logo=1`.
 - `styles.optimized.css`: se agregaron los estilos del modal y se reactivan los eventos de puntero únicamente sobre el logo mientras el editor está abierto.
 - Validación: `node --check services-logo-placement-editor.js`, comprobaciones de markup/asset, `git diff --check` y estado limpio del cambio antes de publicar.
+
+## 2026-11-11
+### Servicios — fijar directamente la posición responsive del logo
+- `index.html`: se retiró del sitio el panel temporal de ajuste porque no resultó usable en el navegador de prueba.
+- `styles.optimized.css`: el logo queda centrado y ligeramente más arriba en móvil; en escritorio se amplía para ocupar aproximadamente el espacio de tres tarjetas y se desplaza hacia la derecha.
+- Validación: se verificó la ausencia del script del panel en la portada, `node --check` y `git diff --check`.

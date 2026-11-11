@@ -4217,3 +4217,17 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   .logo-placement-editor-readout{align-items:initial;flex-direction:initial}
   .logo-placement-editor-readout button{width:100%}
 }
+
+/* Direct final placement: centered and slightly higher on mobile; larger and right-shifted on desktop. */
+@media(min-width:981px){
+  #servicios .services-logo-placement-layer{grid-column:span 3;justify-self:end;width:100%;min-height:370px}
+  #servicios .services-background-logo{width:min(100%,700px);height:370px;transform:translate3d(58px,0,0)}
+}
+@media(max-width:980px){
+  #servicios .services-logo-placement-layer{grid-column:1/-1}
+  #servicios .services-background-logo{transform:translate3d(0,-28px,0)}
+}
+@media(max-width:640px){
+  #servicios .services-logo-placement-layer{grid-column:1;min-height:210px;height:210px}
+  #servicios .services-background-logo{transform:translate3d(0,-30px,0)}
+}
