@@ -5,20 +5,20 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/alojamiento-experiencias", "destination": "/service-detail.html?service=alojamiento-experiencias" },
-    { "source": "/local-host", "destination": "/service-detail.html?service=local-host" },
-    { "source": "/clases-de-surf", "destination": "/service-detail.html?service=clases-de-surf" },
-    { "source": "/surf-programa-3-dias", "destination": "/service-detail.html?service=surf-programa-3-dias" },
-    { "source": "/surf-coaching", "destination": "/service-detail.html?service=surf-coaching" },
-    { "source": "/roca-bruja", "destination": "/service-detail.html?service=roca-bruja" },
-    { "source": "/snorkel-catamaran", "destination": "/service-detail.html?service=snorkel-catamaran" },
-    { "source": "/mangrove-tour", "destination": "/service-detail.html?service=mangrove-tour" },
-    { "source": "/diving", "destination": "/service-detail.html?service=diving" },
-    { "source": "/yoga", "destination": "/service-detail.html?service=yoga" },
-    { "source": "/atv", "destination": "/service-detail.html?service=atv" },
-    { "source": "/surf-fotografia", "destination": "/service-detail.html?service=surf-fotografia" },
-    { "source": "/surfskate", "destination": "/service-detail.html?service=surfskate" },
-    { "source": "/retiros", "destination": "/service-detail.html?service=retiros" }
+  "redirects": [
+    { "source": "/alojamiento-experiencias", "destination": "/service-detail.html?service=alojamiento-experiencias", "permanent": false },
+    { "source": "/local-host", "destination": "/service-detail.html?service=local-host", "permanent": false },
+    { "source": "/clases-de-surf", "destination": "/service-detail.html?service=clases-de-surf", "permanent": false },
+    { "source": "/surf-programa-3-dias", "destination": "/service-detail.html?service=surf-programa-3-dias", "permanent": false },
+    { "source": "/surf-coaching", "destination": "/service-detail.html?service=surf-coaching", "permanent": false },
+    { "source": "/roca-bruja", "destination": "/service-detail.html?service=roca-bruja", "permanent": false },
+    { "source": "/snorkel-catamaran", "destination": "/service-detail.html?service=snorkel-catamaran", "permanent": false },
+    { "source": "/mangrove-tour", "destination": "/service-detail.html?service=mangrove-tour", "permanent": false },
+    { "source": "/diving", "destination": "/service-detail.html?service=diving", "permanent": false },
+    { "source": "/yoga", "destination": "/service-detail.html?service=yoga", "permanent": false },
+    { "source": "/atv", "destination": "/service-detail.html?service=atv", "permanent": false },
+    { "source": "/surf-fotografia", "destination": "/service-detail.html?service=surf-fotografia", "permanent": false },
+    { "source": "/surfskate", "destination": "/service-detail.html?service=surfskate", "permanent": false },
+    { "source": "/retiros", "destination": "/service-detail.html?service=retiros", "permanent": false }
   ]
 }

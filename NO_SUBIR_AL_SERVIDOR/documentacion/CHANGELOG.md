@@ -2732,3 +2732,9 @@
 - `index.html`: se retiró del sitio el panel temporal de ajuste porque no resultó usable en el navegador de prueba.
 - `styles.optimized.css`: el logo queda centrado y ligeramente más arriba en móvil; en escritorio se amplía para ocupar aproximadamente el espacio de tres tarjetas y se desplaza hacia la derecha.
 - Validación: se verificó la ausencia del script del panel en la portada, `node --check` y `git diff --check`.
+
+## 2026-11-11
+### Vercel — reparar rutas limpias de fichas
+- `vercel.json`: se reemplazó la regla general de rutas por redirecciones explícitas para las 14 fichas del catálogo; cada slug abre `service-detail.html` con su servicio correcto.
+- Motivo: Vercel estaba respondiendo 404 en `/diving` y en el resto de slugs aunque `service-detail.html?service=...` funcionaba.
+- Validación: se comprobó JSON, sintaxis JavaScript, formato Git y se repitió la prueba HTTP de las páginas principales y todas las fichas después del deployment.
