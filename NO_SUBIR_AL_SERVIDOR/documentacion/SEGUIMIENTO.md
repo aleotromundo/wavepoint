@@ -87,3 +87,10 @@ Agrupando commits cercanos como sesiones, el esfuerzo técnico observable se est
 
 ## Continuidad
 El `PROJECT_GUIDE.md` describe el producto y el `CHANGELOG.md` conserva el historial. Este archivo resume el estado vivo de las tareas y se actualiza únicamente cuando aporta continuidad.
+
+## Sitio web — idioma, SEO y limpieza técnica (2026-11-10)
+**Estado: Parcial.** El idioma inicial ahora es inglés, se conservan las preferencias guardadas y se actualizaron los metadatos de la portada. Las 14 fichas del catálogo usan rutas limpias, con reescrituras en Vercel y 22 URLs en el sitemap. El enlace inline de Red Door se reemplazó por un listener accesible por teclado.
+
+Se eliminaron del árbol actual `charli.mp4`, `Vivero_Piero_vertical_v1.mp4`, `assets/videohero3x.mp4`, `.picasa.ini` y la copia del logo sin referencias. `styles.css` quedó archivado como `NO_SUBIR_AL_SERVIDOR/styles-legacy.css`; las páginas del sitio cargan `styles.optimized.css`. `videohero1.mp4` y `videoheroxx3.mp4` se recomprimieron en H.264 CRF 25, con SSIM de 0,986 y 0,989 y reducciones de 24% y 35%. Los otros videos activos se conservaron porque las pruebas no redujeron su tamaño de forma útil.
+
+**Pendiente:** `charli.mp4` todavía existe en commits históricos; purgarlo exige reescribir y forzar la actualización de `main`, acción pendiente de confirmación explícita. La publicación a producción también queda pendiente de confirmar que `origin/main` está conectado al despliegue de Vercel.

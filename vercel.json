@@ -8,6 +8,10 @@
   "trailingSlash": false,
   "routes": [
     { "handle": "filesystem" },
+    {
+      "src": "^/(alojamiento-experiencias|clases-de-surf|surf-programa-3-dias|surf-coaching|roca-bruja|snorkel-catamaran|mangrove-tour|diving|local-host|yoga|atv|surf-fotografia|surfskate|retiros)/?$",
+      "dest": "/service-detail.html?service=$1"
+    },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

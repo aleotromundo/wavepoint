@@ -1,20 +1,17 @@
 (() => {
   const STORAGE_KEY = 'wavepoint-lang';
-  const languages = [...(navigator.languages || []), navigator.language || ''];
-  const browserLanguage = languages.map(language => language.toLowerCase());
-  const preferredLanguage = browserLanguage.find(language => language.startsWith('pt') || language.startsWith('es'));
-  const detectedLanguage = preferredLanguage?.startsWith('pt') ? 'pt-BR' : preferredLanguage?.startsWith('es') ? 'es' : 'en';
+  const defaultLanguage = 'en';
 
-  let initialLanguage = detectedLanguage;
+  let initialLanguage = defaultLanguage;
   try {
     const savedLanguage = localStorage.getItem(STORAGE_KEY);
     if (savedLanguage === 'en' || savedLanguage === 'es' || savedLanguage === 'pt-BR') {
       initialLanguage = savedLanguage;
     } else {
-      localStorage.setItem(STORAGE_KEY, detectedLanguage);
+      localStorage.setItem(STORAGE_KEY, defaultLanguage);
     }
   } catch (error) {
-    // Keep the detected language for this page when browser storage is unavailable.
+    // Keep the default language for this page when browser storage is unavailable.
   }
   document.documentElement.lang = initialLanguage;
 

@@ -1965,6 +1965,18 @@
     dialog.addEventListener('click',event=>{if(event.target===dialog) dialog.close();});
   }
 
+  document.querySelectorAll('.camera-card[data-navigation-url]').forEach(card => {
+    const navigate = () => window.location.assign(card.dataset.navigationUrl);
+    card.addEventListener('click', event => {
+      if (event.target.closest('a, button')) return;
+      navigate();
+    });
+    card.addEventListener('keydown', event => {
+      if (event.key !== 'Enter') return;
+      event.preventDefault();
+      navigate();
+    });
+  });
   bindNewsletterForm();
   bindContactRequestForm();
   bindSiteAssistant();

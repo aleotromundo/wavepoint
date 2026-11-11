@@ -951,7 +951,7 @@ const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-progra
 serviceOrder.splice(9, 0, 'trip-builder');
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
-const getService = () => { const id = new URLSearchParams(location.search).get('service'); if (id === 'pack-ajustable' || id === 'trip-builder') { location.replace('trip-builder.html'); return services[0]; } return services.find(item => item.id === id) || services[0]; };
+const getService = () => { const queryId = new URLSearchParams(location.search).get('service'); const pathId = location.pathname.replace(/\/+$/, '').split('/').pop(); const id = queryId || (pathId && !['service-detail', 'service-detail.html', 'index.html'].includes(pathId) ? pathId : null); if (id === 'pack-ajustable' || id === 'trip-builder') { location.replace('/trip-builder'); return services[0]; } return services.find(item => item.id === id) || services[0]; };
 let lang = (() => { try { const saved = localStorage.getItem('wavepoint-lang'); return saved === 'es' || saved === 'pt-BR' ? saved : 'en'; } catch (error) { return 'en'; } })();
 const hasEn = service => lang === 'en' && Boolean(service.en);
 const localizeService = service => {
@@ -1148,7 +1148,7 @@ const promoTitle = portuguese ? 'Aprenda a surfar em três aulas' : isEn ? 'Lear
 const promoText = portuguese ? 'Três aulas particulares de duas horas, em três dias consecutivos, com acompanhamento do que você aprender em cada encontro.' : isEn ? 'Three private 2-hour lessons, spread across three consecutive days, with follow-up on what you learn.' : 'Tres clases privadas de dos horas, distribuidas en tres días consecutivos, con seguimiento de lo aprendido.';
 const promoLink = portuguese ? 'Conheça o programa' : isEn ? 'Explore the program' : 'Conocé el programa';
 const intro = portuguese ? service.cardText : isEn ? 'Tell us your level and what you’d like to learn. We’ll find a lesson that fits.' : 'Contanos tu nivel y qué te gustaría aprender. Te ayudamos a encontrar una clase que te quede bien.';
-const programPromo = `<section class="surf-program-promo" aria-labelledby="surf-program-promo-title"><div><p class="service-page-kicker">${promoKicker}</p><h3 id="surf-program-promo-title">${promoTitle}</h3><p>${promoText}</p></div><a href="service-detail.html?service=surf-programa-3-dias">${promoLink} <span aria-hidden="true">↗</span></a></section>`;
+const programPromo = `<section class="surf-program-promo" aria-labelledby="surf-program-promo-title"><div><p class="service-page-kicker">${promoKicker}</p><h3 id="surf-program-promo-title">${promoTitle}</h3><p>${promoText}</p></div><a href="/surf-programa-3-dias">${promoLink} <span aria-hidden="true">↗</span></a></section>`;
 return `<section class="surf-lesson-intro" aria-labelledby="surf-lesson-heading"><div class="surf-lesson-intro-copy"><p class="service-page-kicker">${isEn ? 'SURF LESSONS · TAMARINDO' : portuguese ? 'AULAS DE SURFE · TAMARINDO' : 'CLASES DE SURF · TAMARINDO'}</p><h2 id="surf-lesson-heading">${portuguese ? 'Pronto para surfar?' : isEn ? 'Ready to surf?' : '¿Listo para surfear?'}</h2><p class="surf-lesson-lead">${intro}</p><button class="surf-survey-open" type="button" data-scroll-surf-form>${ui.surveyOpen} <span aria-hidden="true">↗</span></button></div><div class="detail-gallery surf-lesson-gallery" role="group" aria-label="${isEn ? 'Surf lesson photos' : portuguese ? 'Fotos das aulas de surfe' : 'Fotos de las clases de surf'}">${gallery}</div></section>${details}${programPromo}<section class="surf-lesson-survey-intro"><span class="surf-lesson-survey-mark">02</span><div><p class="service-page-kicker">${isEn ? 'SURF LESSONS' : portuguese ? 'AULAS DE SURFE' : 'CLASES DE SURF'}</p><h3>${ui.surveyHeading}</h3><p>${ui.surveyText}</p></div></section>`;
 }
 function renderSurfProgramStory(service) {
@@ -1346,9 +1346,7 @@ const ui = uiFor(service);
 document.documentElement.lang = lang;
 const serviceDescription = service.description || (lang === 'en' ? 'Explore this WavePoint experience in Tamarindo, Costa Rica.' : lang === 'pt-BR' ? 'Conheça esta experiência da WavePoint em Tamarindo, Costa Rica.' : 'Explorá esta experiencia de WavePoint en Tamarindo, Costa Rica.');
 document.title = `${service.title} · WavePoint`;
-const serviceUrl = new URL(location.href);
-serviceUrl.hash = '';
-serviceUrl.search = `?service=${encodeURIComponent(service.id)}`;
+const serviceUrl = new URL(`/${encodeURIComponent(service.id)}`, location.origin);
 const serviceCanonical = document.querySelector('link[rel=canonical]');
 if (serviceCanonical) serviceCanonical.href = serviceUrl.href;
 const serviceDescriptionMeta = document.querySelector('meta[name=description]');
@@ -1391,7 +1389,7 @@ const position = services.findIndex(item => item.id === service.id);
 const prevService = localizeService(services[(position - 1 + services.length) % services.length]);
 const nextService = localizeService(services[(position + 1) % services.length]);
 const arrowLabel = lang === 'pt-BR' ? ['Experiência anterior', 'Próxima experiência'] : lang === 'es' ? ['Experiencia anterior', 'Siguiente experiencia'] : ['Previous experience', 'Next experience'];
-const serviceHref = item => item.id === 'trip-builder' ? 'trip-builder.html' : `service-detail.html?service=${item.id}`;
+const serviceHref = item => `/${item.id}`;
 const heroArrows = `<nav class="detail-hero-arrows" aria-label="${lang === 'en' ? 'Browse experiences' : lang === 'pt-BR' ? 'Explorar experiências' : 'Recorrer experiencias'}"><a class="detail-arrow detail-arrow-prev" href="${serviceHref(prevService)}" rel="prev" aria-label="${arrowLabel[0]}: ${esc(prevService.title)}" title="${esc(prevService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M19 3 4 20l15 17"/></svg></a><a class="detail-arrow detail-arrow-next" href="${serviceHref(nextService)}" rel="next" aria-label="${arrowLabel[1]}: ${esc(nextService.title)}" title="${esc(nextService.title)}"><svg viewBox="0 0 24 40" aria-hidden="true" focusable="false"><path d="M5 3l15 17L5 37"/></svg></a></nav>`;
 const nameField = service.id === 'clases-de-surf'
 ? `<label class="detail-question detail-field" data-survey-question for="request-name"><span>${ui.nameLabel}</span><input id="request-name" name="request-name" type="text" placeholder="${ui.namePlaceholder}" required /></label>`
