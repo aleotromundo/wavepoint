@@ -1965,6 +1965,7 @@
     dialog.addEventListener('click',event=>{if(event.target===dialog) dialog.close();});
   }
 
+<<<<<<< HEAD
   document.querySelectorAll('.camera-card[data-navigation-url]').forEach(card => {
     const navigate = () => window.location.assign(card.dataset.navigationUrl);
     card.addEventListener('click', event => {
@@ -1977,6 +1978,8 @@
       navigate();
     });
   });
+=======
+>>>>>>> a011c7c4b05703c3be8ef738292780b6bb32e6e2
   bindNewsletterForm();
   bindContactRequestForm();
   bindSiteAssistant();
