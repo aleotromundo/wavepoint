@@ -3,15 +3,22 @@
   "buildCommand": "",
   "installCommand": "",
   "outputDirectory": ".",
-  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "^/(alojamiento-experiencias|clases-de-surf|surf-programa-3-dias|surf-coaching|roca-bruja|snorkel-catamaran|mangrove-tour|diving|local-host|yoga|atv|surf-fotografia|surfskate|retiros)/?$",
-      "dest": "/service-detail.html?service=$1"
-    },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/alojamiento-experiencias", "destination": "/service-detail.html?service=alojamiento-experiencias" },
+    { "source": "/local-host", "destination": "/service-detail.html?service=local-host" },
+    { "source": "/clases-de-surf", "destination": "/service-detail.html?service=clases-de-surf" },
+    { "source": "/surf-programa-3-dias", "destination": "/service-detail.html?service=surf-programa-3-dias" },
+    { "source": "/surf-coaching", "destination": "/service-detail.html?service=surf-coaching" },
+    { "source": "/roca-bruja", "destination": "/service-detail.html?service=roca-bruja" },
+    { "source": "/snorkel-catamaran", "destination": "/service-detail.html?service=snorkel-catamaran" },
+    { "source": "/mangrove-tour", "destination": "/service-detail.html?service=mangrove-tour" },
+    { "source": "/diving", "destination": "/service-detail.html?service=diving" },
+    { "source": "/yoga", "destination": "/service-detail.html?service=yoga" },
+    { "source": "/atv", "destination": "/service-detail.html?service=atv" },
+    { "source": "/surf-fotografia", "destination": "/service-detail.html?service=surf-fotografia" },
+    { "source": "/surfskate", "destination": "/service-detail.html?service=surfskate" },
+    { "source": "/retiros", "destination": "/service-detail.html?service=retiros" }
   ]
 }
