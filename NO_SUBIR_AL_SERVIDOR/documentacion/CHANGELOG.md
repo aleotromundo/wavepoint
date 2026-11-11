@@ -1,3 +1,10 @@
+## 2026-11-11
+### Servicios — recuperar el logo WavePoint entre Surfskate y Armá tu viaje
+- `index.html`: se reincorporó la capa decorativa del logo WavePoint inmediatamente después de la tarjeta “Clases de surfskate” y antes del separador de “Experiencia a medida”, sin alterar las tarjetas ni sus enlaces.
+- `styles.optimized.css`: se restauró el espacio visual de la marca para escritorio y móvil, junto con las ondas animadas existentes y los ajustes responsive para evitar recortes u overflow.
+- `index.html`: se renovó la versión de caché de la hoja de estilos activa.
+- Validación: se verificó la inserción en el orden correcto del catálogo, la existencia del asset local del logo y `git diff --check`.
+
 ## 2026-11-09
 ### Buceo — reemplazar la mantarraya de la galería
 - `services.js`: portada y tarjeta conservan `diving-18.webp`; la foto de mantarraya se reemplazó solo en la galería por una versión WebP optimizada de `foto-20.jpg`, con tres buzos bajo el agua.
