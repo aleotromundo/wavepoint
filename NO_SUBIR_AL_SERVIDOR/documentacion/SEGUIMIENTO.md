@@ -87,7 +87,6 @@ Agrupando commits cercanos como sesiones, el esfuerzo técnico observable se est
 
 ## Continuidad
 El `PROJECT_GUIDE.md` describe el producto y el `CHANGELOG.md` conserva el historial. Este archivo resume el estado vivo de las tareas y se actualiza únicamente cuando aporta continuidad.
-<<<<<<< HEAD
 
 ## Sitio web — idioma, SEO y limpieza técnica (2026-11-10)
 **Estado: Parcial.** El idioma inicial ahora es inglés, se conservan las preferencias guardadas y se actualizaron los metadatos de la portada. Las 14 fichas del catálogo usan rutas limpias, con reescrituras en Vercel y 22 URLs en el sitemap. El enlace inline de Red Door se reemplazó por un listener accesible por teclado.
@@ -97,5 +96,3 @@ Se eliminaron del árbol actual `charli.mp4`, `Vivero_Piero_vertical_v1.mp4`, `a
 La historia local de `main` se reescribió con `git-filter-repo` para purgar `charli.mp4`. La nueva punta es `cd378aa`; se verificó que el árbol del sitio es idéntico al commit de cambios anterior y que el archivo ya no aparece en los objetos ni en la historia de `main`. No se hizo push.
 
 **Pendiente:** el usuario debe publicar la historia reescrita con `git push --force-with-lease origin main`. Después, confirmar que Vercel desplegó la rama y comprobar el sitemap público.
-=======
->>>>>>> a011c7c4b05703c3be8ef738292780b6bb32e6e2

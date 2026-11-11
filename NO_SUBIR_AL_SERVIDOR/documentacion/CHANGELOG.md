@@ -2703,7 +2703,6 @@
 ### Navegación — priorizar explorar experiencias
 - `script.js`: el enlace `Services/Servicios` del menú principal y mobile ahora se presenta como `Explore experiences/Explorá experiencias`, conservando el enlace a `#servicios`.
 - La guía, las cámaras y el resto de la navegación mantienen su posición y accesibilidad.
-<<<<<<< HEAD
 ## 2026-11-10
 ### Idioma inicial, URLs de experiencias y limpieza del sitio
 - `pt-br.js`: el inglés queda como idioma inicial en visitas nuevas; se respetan las preferencias guardadas.
@@ -2713,5 +2712,3 @@
 - Se retiran los videos y assets sin referencias. `videohero1.mp4` y `videoheroxx3.mp4` se optimizan en H.264 CRF 25, con SSIM de 0,986 y 0,989.
 - `charli.mp4` se elimina del árbol actual; la limpieza del historial queda pendiente de autorización para reescribir `main`.
 - Validación: rutas y sitemap comprobados, render de fichas y navegación por teclado en navegador local, y `git diff --check`.
-=======
->>>>>>> a011c7c4b05703c3be8ef738292780b6bb32e6e2

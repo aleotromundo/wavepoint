@@ -10,11 +10,7 @@
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (error) { /* storage unavailable: language lasts for this page only */ }
   };
 
-<<<<<<< HEAD
   const SWITCHER = '<div aria-label="Language selector" class="lang-switcher">'
-=======
-  const SWITCHER = '<div aria-label="Selector de idioma" class="lang-switcher">'
->>>>>>> a011c7c4b05703c3be8ef738292780b6bb32e6e2
     + '<button aria-label="Português do Brasil" title="Português do Brasil" class="lang-toggle" data-lang-toggle data-lang-option="pt" type="button"><span class="lang-flag lang-flag-pt" aria-hidden="true"><svg viewBox="0 0 36 36" role="img"><defs><clipPath id="flag-br-clip"><circle cx="18" cy="18" r="18"/></clipPath></defs><g clip-path="url(#flag-br-clip)"><path fill="#009c3b" d="M0 0h36v36H0z"/><path fill="#ffdf00" d="M18 3 34 18 18 33 2 18Z"/><circle cx="18" cy="18" r="7" fill="#002776"/><path d="M12 16.5c3.7-2.1 8.3-2.1 12 0" fill="none" stroke="#fff" stroke-width="1.2"/></g></svg></span></button>'
     + '<button aria-label="Switch to English" title="English" class="lang-toggle" data-lang-toggle data-lang-option="en" type="button" aria-pressed="true"><span class="lang-flag lang-flag-en" aria-hidden="true"><svg viewBox="0 0 36 36" role="img"><defs><clipPath id="flag-en-clip"><circle cx="18" cy="18" r="18"/></clipPath></defs><g clip-path="url(#flag-en-clip)"><path fill="#23447c" d="M0 0h36v36H0z"/><path fill="#fff" d="m0 0 36 22v7L0 7zm36 0L0 22v7L36 7z"/><path fill="#c83b48" d="m0 0 36 22v3L0 3zm36 0L0 22v3L36 3z"/><path fill="#fff" d="M13 0h10v36H13zM0 13h36v10H0z"/><path fill="#c83b48" d="M15.5 0h5v36h-5zM0 15.5h36v5H0z"/></g></svg></span></button>'
     + '<button aria-label="Cambiar a español" title="Español" class="lang-toggle" data-lang-toggle data-lang-option="es" type="button" aria-pressed="false"><span class="lang-flag lang-flag-es" aria-hidden="true"><svg viewBox="0 0 36 36" role="img"><defs><clipPath id="flag-es-clip"><circle cx="18" cy="18" r="18"/></clipPath></defs><g clip-path="url(#flag-es-clip)"><path fill="#aa151b" d="M0 0h36v36H0z"/><path fill="#f1bf00" d="M0 9h36v18H0z"/></g></svg></span></button>'
