@@ -2738,3 +2738,9 @@
 - `vercel.json`: se reemplazó la regla general de rutas por redirecciones explícitas para las 14 fichas del catálogo; cada slug abre `service-detail.html` con su servicio correcto.
 - Motivo: Vercel estaba respondiendo 404 en `/diving` y en el resto de slugs aunque `service-detail.html?service=...` funcionaba.
 - Validación: se comprobó JSON, sintaxis JavaScript, formato Git y se repitió la prueba HTTP de las páginas principales y todas las fichas después del deployment.
+
+## 2026-11-11
+### Vercel — alias estáticos para fichas del catálogo
+- Se agregaron alias HTML para los 14 slugs de servicios (`diving.html`, `surfskate.html`, etc.) que redirigen al detalle dinámico correspondiente.
+- Motivo: el proyecto de Vercel sirve correctamente los archivos estáticos pero no está aplicando las reglas de rutas declaradas en `vercel.json`; los alias mantienen funcionales los enlaces limpios mediante `cleanUrls`.
+- Validación: cada alias contiene el identificador correcto del servicio y se comprobarán todas las rutas HTTP después del deployment.
