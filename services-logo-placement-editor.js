@@ -122,6 +122,6 @@
 
   apply();
   try { localStorage.setItem(STORAGE_KEY, 'shown'); } catch (error) { console.info('No se pudo guardar la apertura del ajustador.', error); }
-  if (typeof editor.showModal === 'function') editor.showModal();
+  if (typeof editor.show === 'function') editor.show();
   else editor.setAttribute('open', '');
 })();
