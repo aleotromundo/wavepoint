@@ -2744,3 +2744,9 @@
 - Se agregaron alias HTML para los 14 slugs de servicios (`diving.html`, `surfskate.html`, etc.) que redirigen al detalle dinámico correspondiente.
 - Motivo: el proyecto de Vercel sirve correctamente los archivos estáticos pero no está aplicando las reglas de rutas declaradas en `vercel.json`; los alias mantienen funcionales los enlaces limpios mediante `cleanUrls`.
 - Validación: cada alias contiene el identificador correcto del servicio y se comprobarán todas las rutas HTTP después del deployment.
+
+## 2026-11-11
+### Tipografías — reducir el salto de fuente inicial
+- Se agregaron `preload` de las fuentes locales principales (`Shadows Into Light`, `Barlow Condensed 700` y `DM Sans 400`) en las páginas activas.
+- Se mantiene `font-display: swap`: la mejora prioriza descargar las fuentes locales antes del CSS sin bloquear texto si el navegador está lento.
+- Validación: las precargas apuntan a archivos WOFF2 existentes y se comprobaron todas las páginas activas.
