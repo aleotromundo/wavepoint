@@ -93,4 +93,6 @@ El `PROJECT_GUIDE.md` describe el producto y el `CHANGELOG.md` conserva el histo
 
 Se eliminaron del árbol actual `charli.mp4`, `Vivero_Piero_vertical_v1.mp4`, `assets/videohero3x.mp4`, `.picasa.ini` y la copia del logo sin referencias. `styles.css` quedó archivado como `NO_SUBIR_AL_SERVIDOR/styles-legacy.css`; las páginas del sitio cargan `styles.optimized.css`. `videohero1.mp4` y `videoheroxx3.mp4` se recomprimieron en H.264 CRF 25, con SSIM de 0,986 y 0,989 y reducciones de 24% y 35%. Los otros videos activos se conservaron porque las pruebas no redujeron su tamaño de forma útil.
 
-**Pendiente:** `charli.mp4` todavía existe en commits históricos; purgarlo exige reescribir y forzar la actualización de `main`, acción pendiente de confirmación explícita. La publicación a producción también queda pendiente de confirmar que `origin/main` está conectado al despliegue de Vercel.
+La historia local de `main` se reescribió con `git-filter-repo` para purgar `charli.mp4`. La nueva punta es `cd378aa`; se verificó que el árbol del sitio es idéntico al commit de cambios anterior y que el archivo ya no aparece en los objetos ni en la historia de `main`. No se hizo push.
+
+**Pendiente:** el usuario debe publicar la historia reescrita con `git push --force-with-lease origin main`. Después, confirmar que Vercel desplegó la rama y comprobar el sitemap público.
