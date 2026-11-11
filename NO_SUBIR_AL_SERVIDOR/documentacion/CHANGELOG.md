@@ -2719,3 +2719,10 @@
 - Se retiran los videos y assets sin referencias. `videohero1.mp4` y `videoheroxx3.mp4` se optimizan en H.264 CRF 25, con SSIM de 0,986 y 0,989.
 - `charli.mp4` se elimina del árbol actual; la limpieza del historial queda pendiente de autorización para reescribir `main`.
 - Validación: rutas y sitemap comprobados, render de fichas y navegación por teclado en navegador local, y `git diff --check`.
+
+## 2026-11-11
+### Servicios — ajustador temporal del logo
+- `services-logo-placement-editor.js`: se agregó un modal temporal de una sola aparición por navegador para arrastrar y escalar el logo de Servicios, con controles de `x`, `y` y `scale`, lectura inequívoca de valores y copia al portapapeles.
+- `index.html`: se cargó el editor con versión de caché renovada. Se puede forzar una nueva apertura con `?ajustar-logo=1`.
+- `styles.optimized.css`: se agregaron los estilos del modal y se reactivan los eventos de puntero únicamente sobre el logo mientras el editor está abierto.
+- Validación: `node --check services-logo-placement-editor.js`, comprobaciones de markup/asset, `git diff --check` y estado limpio del cambio antes de publicar.

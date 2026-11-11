@@ -4161,3 +4161,34 @@ body.card-crop-editor-active .card-crop-editor-frame{position:relative}.card-cro
   #servicios .services-logo-placement-layer{grid-column:1;min-height:210px;height:210px}
   #servicios .services-background-logo{width:min(88vw,260px);height:210px}
 }
+
+/* Temporary services-logo placement editor. It only appears once per browser, or with ?ajustar-logo=1. */
+.logo-placement-editor{width:min(560px,calc(100% - 28px));padding:0;border:0;border-radius:20px;background:transparent;color:#f4fffc;box-shadow:0 26px 90px rgba(0,0,0,.5)}
+.logo-placement-editor::backdrop{background:rgba(1,12,19,.68);backdrop-filter:blur(6px)}
+.logo-placement-editor-card{padding:22px;background:linear-gradient(145deg,#0a3443,#06232f);border:1px solid rgba(156,232,215,.38);border-radius:20px}
+.logo-placement-editor-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.logo-placement-editor-kicker{margin:0 0 6px;color:#9aeeea;font-size:10px;font-weight:900;letter-spacing:.16em}
+.logo-placement-editor h2{margin:0;color:#fff;font:700 30px/1.05 "Barlow Condensed",Impact,sans-serif}
+.logo-placement-editor-help{margin:14px 0 18px;color:rgba(235,249,244,.8);font:500 14px/1.5 "DM Sans",sans-serif}
+.logo-placement-editor-close{display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font-size:23px;line-height:1;cursor:pointer}
+.logo-placement-editor-controls{display:grid;gap:12px}
+.logo-placement-editor-controls label{display:grid;grid-template-columns:1fr auto;gap:5px 12px;color:#f4fffc;font:700 13px/1.2 "DM Sans",sans-serif}
+.logo-placement-editor-controls output{color:#9aeeea;font-variant-numeric:tabular-nums}
+.logo-placement-editor-controls input{grid-column:1/-1;width:100%;accent-color:#65e2d4;cursor:pointer}
+.logo-placement-editor-readout{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:11px 12px;border:1px solid rgba(156,232,215,.22);border-radius:10px;background:rgba(1,16,24,.42)}
+.logo-placement-editor-readout code{color:#d9fff4;font:600 11px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+.logo-placement-editor-readout button,.logo-placement-editor-actions button{min-height:36px;padding:0 12px;border:1px solid rgba(156,232,215,.34);border-radius:9px;background:rgba(12,100,102,.5);color:#fff;font:700 12px "DM Sans",sans-serif;cursor:pointer;white-space:nowrap}
+.logo-placement-editor-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+.logo-placement-editor-reset{background:rgba(255,255,255,.08)!important}
+.logo-placement-editor-done{background:linear-gradient(135deg,#08a6a1,#087e98)!important}
+.logo-placement-editor button:hover{filter:brightness(1.12)}
+.logo-placement-editor button:focus-visible,.logo-placement-editor input:focus-visible{outline:2px solid #f3b64b;outline-offset:3px}
+body.logo-placement-editor-active #servicios .services-background-logo{pointer-events:auto;cursor:grab;touch-action:none}
+body.logo-placement-editor-active #servicios .services-background-logo.is-placement-dragging{cursor:grabbing}
+body.logo-placement-editor-active #servicios .services-background-logo .services-watermark{user-select:none;-webkit-user-drag:none}
+@media(max-width:560px){
+  .logo-placement-editor-card{padding:18px}
+  .logo-placement-editor h2{font-size:26px}
+  .logo-placement-editor-readout{align-items:stretch;flex-direction:column}
+  .logo-placement-editor-readout button{width:100%}
+}
