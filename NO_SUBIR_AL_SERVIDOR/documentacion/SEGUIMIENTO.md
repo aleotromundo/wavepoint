@@ -116,3 +116,8 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** La portada quedó más compacta y angosta, con el título dentro de un marco fino y transparente, sin el rectángulo translúcido pesado ni la descripción en el hero.
 
 **Archivo:** `styles.optimized.css`.
+
+## Portada de Yoga — bajar imagen — 2026-11-12
+**Estado: Resuelto.** La imagen de fondo de la portada se desplazó visualmente hacia abajo mediante un ajuste específico de `background-position`, en escritorio y móvil.
+
+**Archivo:** `styles.optimized.css`.

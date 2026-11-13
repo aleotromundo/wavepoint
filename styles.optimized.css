@@ -4273,4 +4273,5 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 .service-detail-page.yoga-detail-page .detail-hero{min-height:min(520px,66svh);padding-bottom:58px}
 .service-detail-page.yoga-detail-page .detail-hero-content{width:min(600px,calc(100% - 42px));padding:18px 26px 20px;border:1px solid rgba(199,250,235,.42);border-radius:18px;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
 .service-detail-page.yoga-detail-page .detail-hero h1{font-size:clamp(56px,7vw,90px)}
-@media (max-width:640px){.service-detail-page.yoga-detail-page .detail-hero{min-height:460px;padding-bottom:42px}.service-detail-page.yoga-detail-page .detail-hero-content{width:calc(100% - 32px);padding:16px 18px 18px;border-radius:16px}}
+.service-detail-page.yoga-detail-page .detail-hero{background-position:center 35%}
+@media (max-width:640px){.service-detail-page.yoga-detail-page .detail-hero{min-height:460px;padding-bottom:42px;background-position:center 35%}.service-detail-page.yoga-detail-page .detail-hero-content{width:calc(100% - 32px);padding:16px 18px 18px;border-radius:16px}}
