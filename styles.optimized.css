@@ -4321,3 +4321,56 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   background: transparent !important;
   box-shadow: none !important;
 }
+
+/* Surfskate: collage equilibrado, con sujetos visibles y sin marcos. */
+@media (min-width: 641px) {
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate {
+    gap: clamp(10px, 1.35vw, 18px) !important;
+    align-items: stretch !important;
+  }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+  }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(1) {
+    object-position: center 76% !important;
+  }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(2) {
+    object-fit: cover !important;
+    object-position: center 52% !important;
+  }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(3) {
+    object-position: center 58% !important;
+  }
+}
+@media (max-width: 640px) {
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate {
+    height: auto !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    gap: clamp(8px, 2.8vw, 12px) !important;
+  }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 5 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(1) {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-position: center 76% !important;
+  }
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(2),
+  .service-detail-page:not(.surf-lesson-detail-page):not(.accommodation-detail-page) .service-editorial-gallery-surfskate img:nth-child(3) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    aspect-ratio: 4 / 5 !important;
+  }
+}
