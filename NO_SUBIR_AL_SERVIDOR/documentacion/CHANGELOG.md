@@ -16,10 +16,10 @@
 - `service-detail.html`: se renuevan las versiones de caché del CSS y de `services.js`.
 - Validación: sintaxis JavaScript, orden/dimensiones de imágenes, separación responsive, versiones de caché e `git diff --check`.
 
-### Fichas — reducir el espacio sobre la tarjeta en móvil
-- `styles.optimized.css`: la navegación fija conserva espacio para no tapar el contenido; el espacio adicional venía de alinear la tarjeta al final de un hero con altura mínima. En pantallas de hasta 980 px, las tarjetas ahora empiezan tras un margen de 112 px.
+### Fichas — reducir el espacio sobre la tarjeta en todos los tamaños
+- `styles.optimized.css`: la navegación fija conserva espacio para no tapar el contenido; el espacio adicional venía de alinear la tarjeta al final de un hero con altura mínima. En todos los tamaños, las tarjetas ahora empiezan tras un margen de 112 px.
 - `service-detail.html`: se renueva la versión de caché del CSS.
-- Validación: `node --check services.js`, selector común comprobado para móvil/tablet (hasta 980 px) y excluido de escritorio, navegación fija conservada, versión de caché renovada y `git diff --check`.
+- Validación: `node --check services.js`, selector común comprobado para móvil, tablet y escritorio, 112 px de resguardo bajo el menú fijo, versión de caché renovada y `git diff --check`.
 
 ### Armá tu viaje — integrar las fichas nuevas
 - `trip-builder.js`: se agregaron Programa de surf de 3 días, Tour del estero, Buceo y Country Host. Retiros queda fuera del armador por decisión del usuario.

@@ -4360,5 +4360,5 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   }
 }
 
-/* Fichas de experiencia: conservar el resguardo del menú fijo sin dejar espacio sobrante sobre la tarjeta en móvil. */
-@media(max-width:980px){.service-detail-page .detail-hero{align-items:flex-start;padding-top:112px}}
+/* Fichas de experiencia: mantener un resguardo seguro bajo el menú fijo sin hueco sobrante en ningún tamaño. */
+.service-detail-page .detail-hero{align-items:flex-start!important;padding-top:112px!important}
