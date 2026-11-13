@@ -137,4 +137,6 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 
 **Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`.
 
-**Pendiente:** recibir la captura con el orden deseado, aplicarlo como orden definitivo y publicar el cambio para que el usuario use el editor en el sitio.
+**Publicación:** el commit `ce30cdc` se subió a `main` y GitHub informa que el deployment de Vercel terminó correctamente. La vista previa requiere iniciar sesión; `wavepointcr.com` respondió 404 durante la comprobación, por lo que no se confirma acceso al editor desde el dominio canónico.
+
+**Pendiente:** confirmar acceso a la vista previa o resolver la publicación del dominio; recibir la captura y aplicar el orden final.
