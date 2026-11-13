@@ -4566,3 +4566,25 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     max-height: 520px !important;
   }
 }
+
+/* Corrección definitiva de composición: primera foto arriba; segunda y tercera abajo. */
+.surf-coaching-detail-page .service-editorial-gallery img:nth-child(1) {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+}
+.surf-coaching-detail-page .service-editorial-gallery img:nth-child(2) {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+}
+.surf-coaching-detail-page .service-editorial-gallery img:nth-child(3) {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+}
+@media (max-width: 640px) {
+  .surf-coaching-detail-page .service-editorial-gallery img:nth-child(1),
+  .surf-coaching-detail-page .service-editorial-gallery img:nth-child(2),
+  .surf-coaching-detail-page .service-editorial-gallery img:nth-child(3) {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+}
