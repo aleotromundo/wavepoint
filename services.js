@@ -299,9 +299,9 @@ cardText: 'Sesión de surf grabada y videoanálisis técnico para mejorar tu pos
 description: 'Un servicio de videoanálisis de una sesión de surf, recomendado para surfistas intermedios o avanzados. Primero se graba la sesión y después el instructor analiza las olas para hacer una devolución técnica.',
 lead: 'El servicio tiene dos momentos: una sesión de surf grabada, con una cámara que busca captar la mayor cantidad posible de olas, y un análisis posterior desde una pantalla para corregir posturas, tiempos y movimientos. Incluye el video de tus olas y la devolución técnica. Precio: USD 45 por persona.',
 includes: ['Sesión de surf grabada', 'Video de tus olas', 'Videoanálisis y devolución técnica posterior', 'Recomendado para surfistas intermedios o avanzados', 'USD 45 por persona', 'Servicio de Local Host'],
-images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/surf-coaching-session.webp'],
-imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Tres surfistas saltando con sus tablas en la playa', 'Surfista surcando una ola sobre una tabla roja'],
-imageAltsEn: ['Two surfers emerge from the water carrying their boards', 'Three surfers jumping with their boards on the beach', 'Surfer riding a wave on a red board'],
+images: ['assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-photography/surf-coaching-session.webp'],
+imageAlts: ['Tres surfistas saltando con sus tablas en la playa', 'Dos surfistas salen del agua con sus tablas en la playa', 'Surfista surcando una ola sobre una tabla roja'],
+imageAltsEn: ['Three surfers jumping with their boards on the beach', 'Two surfers emerge from the water carrying their boards', 'Surfer riding a wave on a red board'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
@@ -324,7 +324,7 @@ cardText: 'A filmed surf session and technical video analysis to improve your po
 description: 'A video analysis service for a surf session, recommended for intermediate or advanced surfers. The session is filmed first, and the coach then reviews the waves to provide technical feedback.',
 lead: 'The service has two moments: a filmed surf session, with a camera aiming to capture as many waves as possible, followed by a screen-based analysis to correct posture, timing and movements. It includes the video of your waves and technical feedback. Price: USD 45 per person.',
 includes: ['Filmed surf session', 'Video of your waves', 'Video analysis and technical feedback afterwards', 'Recommended for intermediate or advanced surfers', 'USD 45 per person', 'Local Host service'],
-imageAlts: ['Surfer riding a wave on a red board', 'Three surfers sharing a beach session with their boards', 'Group of surfers gathering with their boards on Tamarindo Beach'],
+imageAlts: ['Three surfers jumping with their boards on the beach', 'Two surfers emerge from the water carrying their boards', 'Surfer riding a wave on a red board'],
 questions: {
 preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
 current_surf_level: { label: 'What is your current surfing level?', options: ['Beginner', 'Intermediate', 'Advanced'] },
