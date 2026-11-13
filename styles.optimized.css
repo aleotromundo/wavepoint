@@ -4392,3 +4392,39 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   box-shadow: none !important;
   filter: drop-shadow(0 18px 26px rgba(8, 43, 58, .24));
 }
+
+/* Surf Coaching: armonizar las fotos 2 y 3 sin cajas contenedoras. */
+.surf-coaching-detail-page .service-editorial-gallery {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: clamp(18px, 2.4vw, 32px) !important;
+  height: auto !important;
+  background: transparent !important;
+}
+.surf-coaching-detail-page .service-editorial-gallery img {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  height: clamp(360px, 38vw, 520px) !important;
+  max-width: calc(50% - 16px) !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 18px 26px rgba(8, 43, 58, .24));
+  background: transparent !important;
+}
+@media (max-width: 640px) {
+  .surf-coaching-detail-page .service-editorial-gallery {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .surf-coaching-detail-page .service-editorial-gallery img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 520px !important;
+  }
+}

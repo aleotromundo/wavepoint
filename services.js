@@ -1578,6 +1578,7 @@ document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
 document.body.classList.toggle('boat-detail-page', service.id === 'snorkel-catamaran');
 document.body.classList.toggle('local-host-detail-page', service.id === 'local-host');
 document.body.classList.toggle('surf-photo-detail-page', service.id === 'surf-fotografia');
+document.body.classList.toggle('surf-coaching-detail-page', service.id === 'surf-coaching');
 document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.heroImage || service.images[0])})`);
 const browsableServices = services;
 const position = browsableServices.findIndex(item => item.id === service.id);
