@@ -167,11 +167,13 @@ images: [
 'assets/img/services/surf-lessons/surf-lesson-woman.webp',
 'assets/img/services/surf-lessons/optimized/surf-lesson-group.webp',
 'assets/img/services/surf-lessons/surf-photography.webp',
+'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp',
 ],
 imageAlts: [
 'Alumna practicando surf en Tamarindo',
 'Dos surfistas practicando juntos en una ola en Tamarindo',
 'Surfera tomando una ola en Tamarindo',
+'Grupo caminando con sus tablas hacia la orilla en Tamarindo',
 ],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
@@ -199,6 +201,7 @@ imageAlts: [
 'Student practicing surfing in Tamarindo',
 'Two surfers practicing together on a wave in Tamarindo',
 'Surfer riding a wave in Tamarindo',
+'Group walking with their boards toward the shore in Tamarindo',
 ],
 questions: {
 preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
@@ -299,9 +302,9 @@ cardText: 'Sesión de surf grabada y videoanálisis técnico para mejorar tu pos
 description: 'Un servicio de videoanálisis de una sesión de surf, recomendado para surfistas intermedios o avanzados. Primero se graba la sesión y después el instructor analiza las olas para hacer una devolución técnica.',
 lead: 'El servicio tiene dos momentos: una sesión de surf grabada, con una cámara que busca captar la mayor cantidad posible de olas, y un análisis posterior desde una pantalla para corregir posturas, tiempos y movimientos. Incluye el video de tus olas y la devolución técnica. Precio: USD 45 por persona.',
 includes: ['Sesión de surf grabada', 'Video de tus olas', 'Videoanálisis y devolución técnica posterior', 'Recomendado para surfistas intermedios o avanzados', 'USD 45 por persona', 'Servicio de Local Host'],
-images: ['assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/surf-coaching-session.webp', 'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp'],
-imageAlts: ['Tres surfistas saltando con sus tablas en la playa', 'Surfista surcando una ola sobre una tabla roja', 'Grupo de surfistas reuniéndose con sus tablas en la playa de Tamarindo'],
-imageAltsEn: ['Three surfers jumping with their boards on the beach', 'Surfer riding a wave on a red board', 'Group of surfers gathering with their boards on Tamarindo Beach'],
+images: ['assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/surf-coaching-session.webp'],
+imageAlts: ['Tres surfistas saltando con sus tablas en la playa', 'Surfista surcando una ola sobre una tabla roja'],
+imageAltsEn: ['Three surfers jumping with their boards on the beach', 'Surfer riding a wave on a red board'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
