@@ -162,3 +162,9 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** Se habilitó en la ficha Surfskate el mismo editor libre de Fotos de surf, con almacenamiento local independiente. A partir de la captura del usuario, la galería pública muestra las dos fotos lado a lado, de igual ancho, alineadas arriba y conservando la proporción original; sin marcos ni fondos. El editor se conserva para futuras propuestas.
 
 **Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`. La herramienta está disponible con `?ordenarFotos=1`; la vista limpia de captura usa `&captura=1`.
+
+## Local Host — encuadre de la tercera foto móvil — 2026-11-13
+**Estado: Parcial.** Se ajustó solo la tercera imagen de la galería (`local-host-4.webp`) en pantallas móviles, moviendo el recorte hacia abajo para centrar a las personas y reducir el espacio vacío sobre el grupo. El original no se modifica.
+
+**Archivos:** `styles.optimized.css`, `service-detail.html`.
+**Pendiente:** aprobación para subir el cambio a `main`; el push puede iniciar un deployment de Vercel.

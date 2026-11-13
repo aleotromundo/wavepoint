@@ -4351,3 +4351,11 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   box-shadow: none !important;
   outline: 0 !important;
 }
+
+/* Local Host: subir visualmente el grupo en la tercera foto de la galería móvil. */
+@media (max-width: 640px) {
+  .local-host-detail-page .service-editorial-gallery img:nth-child(3) {
+    object-fit: cover !important;
+    object-position: center 90% !important;
+  }
+}
