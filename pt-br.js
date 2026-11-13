@@ -865,7 +865,7 @@
       description: 'Uma aula de 2 horas com instrutor local, conversa inicial na praia e prática guiada na água, de acordo com o nível do seu grupo. Pode ser o primeiro contato com o mar ou uma sessão intermediária para corrigir fundamentos.',
       lead: 'Inclui instrutor local, apresentação dos equipamentos e orientações de segurança, prancha e prática adaptada ao seu nível. O ponto de encontro é informado após a confirmação da reserva e do pagamento.',
       includes: ['Duração: 2 horas', 'Prancha incluída', 'Primeiro contato com o mar ou acompanhamento para nível intermediário', 'Correção dos fundamentos', 'Ponto de encontro informado após a confirmação da reserva e do pagamento', 'Serviço de Local Host'],
-      imageAlts: ['Aluna praticando surfe em Tamarindo', 'Duas pessoas surfando juntas em uma onda em Tamarindo', 'Surfista pegando uma onda em Tamarindo', 'Surfista de torso nu em pé sobre a prancha em uma onda pequena']
+      imageAlts: ['Aluna praticando surfe em Tamarindo', 'Duas pessoas surfando juntas em uma onda em Tamarindo', 'Surfista pegando uma onda em Tamarindo']
     },
     'surf-programa-3-dias': {
       eyebrow: 'PROGRAMA DE SURFE · INICIANTES',
