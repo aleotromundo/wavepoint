@@ -3796,7 +3796,7 @@ to{filter:brightness(1.18)}
 .surf-program-day-photo img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .75s cubic-bezier(.2,.7,.2,1),filter .5s ease; }
 .surf-program-day-photo-1 img { object-position:center 75%; }
 .surf-program-day-photo-2 img { object-position:center 30%; }
-.surf-program-day-photo-3 img { object-position:center 55%; }
+.surf-program-day-photo-3 img { object-position:center 0%; }
 .surf-program-day--reverse .surf-program-day-photo { order:2; }
 .surf-program-day-copy { align-self:center; padding:22px; }
 .surf-program-day-copy .service-page-kicker { margin:0 0 6px; color:#087f80; font-size:10px; font-weight:900; letter-spacing:.1em; }

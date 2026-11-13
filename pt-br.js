@@ -872,7 +872,7 @@
       title: 'Programa para iniciantes no surfe',
       cardText: 'Três aulas particulares de duas horas para descobrir o mar e aproveitar suas primeiras ondas.',
       description: 'Três dias para descobrir o mar e aproveitar suas primeiras ondas.',
-      imageAlts: ['Grupo caminhando com suas pranchas em direção à praia em Tamarindo', 'Surfista sobre uma onda, com outros surfistas remando por perto', 'Surfista de roupa escura fazendo uma manobra sobre uma onda verde'],
+      imageAlts: ['Grupo caminhando com suas pranchas em direção à praia em Tamarindo', 'Aluno praticando a posição de remada na prancha em terra', 'Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água'],
       questions: {
         program_dates: { label: 'Quais datas você sugere para as três aulas? Escolha três dias consecutivos na ordem das aulas.', fields: ['Dia 1', 'Dia 2', 'Dia 3'] },
         group_size: { label: 'Quantas pessoas participarão?' }

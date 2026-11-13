@@ -164,7 +164,12 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`. La herramienta está disponible con `?ordenarFotos=1`; la vista limpia de captura usa `&captura=1`.
 
 ## Local Host — encuadre de la tercera foto móvil — 2026-11-13
-**Estado: Parcial.** Se ajustó solo la tercera imagen de la galería (`local-host-4.webp`) en pantallas móviles, moviendo el recorte hacia abajo para centrar a las personas y reducir el espacio vacío sobre el grupo. El original no se modifica.
+**Estado: Resuelto.** Se ajustó solo la tercera imagen de la galería (`local-host-4.webp`) en pantallas móviles, moviendo el recorte hacia abajo para centrar a las personas y reducir el espacio vacío sobre el grupo. El original no se modifica; el cambio está en `main` y Vercel lo desplegó correctamente.
 
 **Archivos:** `styles.optimized.css`, `service-detail.html`.
-**Pendiente:** aprobación para subir el cambio a `main`; el push puede iniciar un deployment de Vercel.
+
+## Programa de iniciación al surf — fotos únicas para los días 2 y 3 — 2026-11-13
+**Estado: Publicado en `main`.** Se detectó que las fotos actuales (`day-2.webp`, `day-3.webp`) también están en la galería de Fotos de surf. Se sustituyeron por dos fotos originales de práctica sin referencias en otras páginas, optimizadas como WebP (`day-2-board-position.webp`, `day-3-pop-up-practice.webp`). También se actualizaron los textos alternativos ES/EN/PT-BR y el encuadre del día 3.
+
+**Archivos:** `services.js`, `pt-br.js`, `styles.optimized.css`, `service-detail.html`, dos nuevos WebP en `assets/img/services/surf-program-3-days/`.
+**Pendiente:** revisión y autorización para subir a `main`; el push puede iniciar un deployment de Vercel.

@@ -223,14 +223,14 @@ cardText: 'Tres clases privadas de dos horas para descubrir el mar y disfrutar t
 description: 'Tres días para descubrir el mar y disfrutar tus primeras olas.',
 images: [
 'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp',
-'assets/img/services/surf-program-3-days/day-2.webp',
-'assets/img/services/surf-program-3-days/day-3.webp'
+'assets/img/services/surf-program-3-days/day-2-board-position.webp',
+'assets/img/services/surf-program-3-days/day-3-pop-up-practice.webp'
 ],
 heroImage: 'assets/img/services/surf-program-3-days/ocean-waves-no-people.webp',
 imageAlts: [
 'Grupo caminando con sus tablas hacia la orilla en Tamarindo.',
-'Surfista sobre una ola, con otros surfistas remando cerca.',
-'Surfista de traje oscuro haciendo una maniobra sobre una ola verde.'
+'Alumno practicando la posición de remada sobre la tabla en tierra.',
+'Alumno ensayando la puesta de pie sobre la tabla antes de entrar al agua.'
 ],
 questions: [
 { id: 'program_dates', label: '¿Qué fechas proponés para las tres clases? Elegí tres días consecutivos en el orden de las clases.', type: 'dates', fields: ['Día 1', 'Día 2', 'Día 3'], minDate: 'today' },
@@ -286,7 +286,7 @@ en: {
 eyebrow: 'SURF PROGRAM · BEGINNERS', title: 'Beginner Surf Program',
 cardText: 'Three private 2-hour lessons to discover the ocean and enjoy your first waves.',
 description: 'Three days to discover the ocean and enjoy your first waves.',
-imageAlts: ['Group walking with their boards toward the shore in Tamarindo.', 'Surfer riding a wave with others paddling nearby.', 'Surfer in a dark wetsuit making a turn on a green wave.'],
+imageAlts: ['Group walking with their boards toward the shore in Tamarindo.', 'Surf student practicing the paddling position on a board on land.', 'Surf student rehearsing the pop-up on a surfboard before entering the water.'],
 questions: {
 program_dates: { label: 'Which dates would you like for the three lessons? Choose three consecutive days in lesson order.', fields: ['Day 1', 'Day 2', 'Day 3'] },
 group_size: { label: 'How many people will take part?' }
