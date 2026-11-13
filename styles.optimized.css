@@ -4244,3 +4244,7 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 
 /* Galería de buceo: centrar la foto en los buzos, no en el agua */
 .detail-gallery img[src$="diving-three-divers.webp"],.service-editorial-gallery img[src$="diving-three-divers.webp"]{object-position:center 48%!important}
+
+/* Galería de ATV: centrar el vehículo en la foto 1 y en la foto 3 */
+.detail-gallery img[src$="atv-instagram-1.webp"],.service-editorial-gallery img[src$="atv-instagram-1.webp"]{object-position:center 85%!important}
+.detail-gallery img[src$="atv-instagram-3.webp"],.service-editorial-gallery img[src$="atv-instagram-3.webp"]{object-position:center 45%!important}
