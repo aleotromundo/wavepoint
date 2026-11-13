@@ -4251,3 +4251,8 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 
 /* Galería de Fotos de surf: mostrar entera la foto vertical (Día 1) */
 .detail-gallery img[src$="surf-program-3-days/day-1.webp"],.service-editorial-gallery img[src$="surf-program-3-days/day-1.webp"]{object-fit:contain!important;background:transparent!important}
+
+/* Galería de Fotos de surf: las 4 fotos en su proporción original, sin recortes ni fondos */
+.surf-photo-detail-page .detail-gallery.service-editorial-gallery,.surf-photo-detail-page .service-editorial-gallery{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;grid-template-columns:none!important;grid-template-rows:none!important;height:auto!important;gap:12px!important;background:transparent!important}
+.surf-photo-detail-page .detail-gallery img,.surf-photo-detail-page .service-editorial-gallery img{display:block!important;height:225px!important;width:auto!important;max-width:100%!important;object-fit:contain!important;object-position:center!important;background:transparent!important;grid-column:auto!important;grid-row:auto!important;border-radius:14px!important;box-shadow:0 14px 32px rgba(8,43,58,.14)!important}
+@media (max-width:640px){.surf-photo-detail-page .detail-gallery img,.surf-photo-detail-page .service-editorial-gallery img{height:auto!important;width:100%!important;max-height:340px!important}}
