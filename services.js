@@ -231,9 +231,9 @@ images: [
 ],
 heroImage: 'assets/img/services/surf-program-3-days/ocean-waves-no-people.webp',
 imageAlts: [
-'Práctica en tierra de la posición sobre la tabla antes de entrar al agua.',
-'Instructor demostrando la remada y la puesta de pie sobre la tabla.',
-'Grupo de surfistas con sus tablas junto al mar al finalizar una sesión.'
+'Surfista de torso desnudo parado sobre la tabla en una ola pequeña.',
+'Surfista sobre una ola, con otros surfistas remando cerca.',
+'Surfista de traje oscuro haciendo una maniobra sobre una ola verde.'
 ],
 questions: [
 { id: 'program_dates', label: '¿Qué fechas proponés para las tres clases? Elegí tres días consecutivos en el orden de las clases.', type: 'dates', fields: ['Día 1', 'Día 2', 'Día 3'], minDate: 'today' },
@@ -515,7 +515,7 @@ title: 'Surf Photography',
 cardText: 'Your time in the water, captured.',
 includes: ['Local Host service'],
 description: 'Your first wave, a turn you’ve been working on or a session shared with friends—every surfer has moments worth keeping. WavePoint connects you with local surf photographers to capture yours, so you can focus on the waves and take a little of Tamarindo home with you.',
-imageAlts: ['Surf photographer in the water with a camera beside a breaking wave'],
+imageAlts: ['Two surfers emerge from the water carrying their boards', 'Two surfers walk along the beach carrying their boards', 'Shirtless surfer standing on a board on a small wave', 'Surfer riding a wave with others paddling nearby', 'Surfer in a dark wetsuit making a turn on a green wave'],
 submitLabel: 'ASK ABOUT PHOTOGRAPHY ↗',
 questions: {
 preferred_date: { label: 'What date would you prefer?', fields: ['Preferred date'] },
