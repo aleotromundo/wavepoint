@@ -4493,3 +4493,31 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   filter: drop-shadow(0 18px 26px rgba(8, 43, 58, .24));
   background: transparent !important;
 }
+
+/* Surf Coaching: reducir el tamaño de la columna y evitar fotos gigantes. */
+.surf-coaching-detail-page .service-editorial-gallery {
+  width: min(100%, 900px) !important;
+  margin-inline: auto !important;
+  justify-items: center !important;
+  gap: clamp(18px, 2.4vw, 30px) !important;
+}
+.surf-coaching-detail-page .service-editorial-gallery img,
+.surf-coaching-detail-page .service-editorial-gallery img:nth-child(2),
+.surf-coaching-detail-page .service-editorial-gallery img:nth-child(3) {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 600px !important;
+  object-fit: contain !important;
+  margin-inline: auto !important;
+}
+@media (max-width: 640px) {
+  .surf-coaching-detail-page .service-editorial-gallery {
+    width: min(100%, 520px) !important;
+  }
+  .surf-coaching-detail-page .service-editorial-gallery img,
+  .surf-coaching-detail-page .service-editorial-gallery img:nth-child(2),
+  .surf-coaching-detail-page .service-editorial-gallery img:nth-child(3) {
+    max-height: 520px !important;
+  }
+}
