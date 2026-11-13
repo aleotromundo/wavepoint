@@ -4642,3 +4642,28 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     gap: 8px !important;
   }
 }
+
+/* Surf Coaching: composición elegida en el editor, tres fotos en una sola fila. */
+@media (min-width: 641px) {
+  .surf-coaching-detail-page .service-editorial-gallery {
+    display: grid !important;
+    grid-template-columns: 1.85fr 1fr .82fr !important;
+    grid-template-rows: clamp(300px, 31vw, 480px) !important;
+    width: min(100%, 1240px) !important;
+    gap: clamp(8px, 1.1vw, 16px) !important;
+    align-items: stretch !important;
+  }
+  .surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-1,
+  .surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-2,
+  .surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-3 {
+    grid-column: auto !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    margin: 0 !important;
+  }
+}
