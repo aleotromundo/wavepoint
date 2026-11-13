@@ -225,7 +225,7 @@ id: 'surf-programa-3-dias', number: '02A', eyebrow: 'PROGRAMA DE SURF · INICIAC
 cardText: 'Tres clases privadas de dos horas para descubrir el mar y disfrutar tus primeras olas.',
 description: 'Tres días para descubrir el mar y disfrutar tus primeras olas.',
 images: [
-'assets/img/services/surf-program-3-days/day-1.webp',
+'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp',
 'assets/img/services/surf-program-3-days/day-2.webp',
 'assets/img/services/surf-program-3-days/day-3.webp'
 ],
@@ -289,7 +289,7 @@ en: {
 eyebrow: 'SURF PROGRAM · BEGINNERS', title: 'Beginner Surf Program',
 cardText: 'Three private 2-hour lessons to discover the ocean and enjoy your first waves.',
 description: 'Three days to discover the ocean and enjoy your first waves.',
-imageAlts: ['Surfer balancing on a small wave.', 'One person surfing while another practices paddling in the water.', 'Surfer practicing their stance on a wave.'],
+imageAlts: ['Group walking with their boards toward the shore in Tamarindo.', 'One person surfing while another practices paddling in the water.', 'Surfer practicing their stance on a wave.'],
 questions: {
 program_dates: { label: 'Which dates would you like for the three lessons? Choose three consecutive days in lesson order.', fields: ['Day 1', 'Day 2', 'Day 3'] },
 group_size: { label: 'How many people will take part?' }
