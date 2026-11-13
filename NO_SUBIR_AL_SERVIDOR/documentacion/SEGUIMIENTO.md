@@ -158,3 +158,9 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 
 **Archivos:** `styles.optimized.css`, `service-detail.html`.
 **Pendiente:** integrar el cambio en GitHub; el push a `main` inicia un deployment de Vercel.
+
+## Surfskate — editor visual para ordenar la galería — 2026-11-13
+**Estado: Parcial.** Se habilitó en la ficha Surfskate el mismo editor libre de Fotos de surf para mover y redimensionar las imágenes; usa una clave de almacenamiento local independiente para no alterar el orden de Fotos de surf. La captura limpia usa `&captura=1`, y la disposición se puede copiar en JSON.
+
+**Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`.
+**Pendiente:** desplegar el editor, recibir la disposición/captura del usuario y aplicarla a la galería pública de Surfskate.

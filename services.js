@@ -1165,11 +1165,12 @@ const prices = copy.prices.map(([participants, lesson, program]) => `<article cl
 return `<div class="surf-program-story"><section class="surf-program-overview" aria-label="${labels.overview}"><p class="surf-program-intro">${esc(copy.intro)}</p><dl class="surf-program-facts">${facts}</dl></section><section class="surf-program-why" aria-labelledby="surf-program-why-heading"><p class="service-page-kicker">${labels.approach}</p><h2 id="surf-program-why-heading">${esc(copy.whyHeading)}</h2><p>${esc(copy.whyText)}</p></section><section class="surf-program-includes" aria-labelledby="surf-program-includes-heading"><p class="service-page-kicker">${labels.program}</p><h2 id="surf-program-includes-heading">${esc(copy.includesHeading)}</h2><ul>${includes}</ul></section><section class="surf-program-days" aria-label="${labels.lessons}">${days}</section><p class="surf-program-progress-note">${esc(copy.progressNote)}</p><section class="surf-program-pricing" aria-labelledby="surf-program-prices-heading"><div class="surf-program-section-head"><div><p class="service-page-kicker">${labels.rates}</p><h2 id="surf-program-prices-heading">${esc(copy.pricesHeading)}</h2></div><span class="surf-program-currency">USD</span></div><p class="surf-program-price-lead">${esc(copy.priceLead)}</p><div class="surf-program-price-list">${prices}</div><p class="surf-program-price-note">${esc(copy.priceNote)}</p></section><section class="surf-program-reservation" aria-labelledby="surf-program-reservation-heading"><h3 id="surf-program-reservation-heading">${esc(copy.reservationHeading)}</h3><p>${esc(copy.reservationText)}</p><p class="surf-program-reservation-note">${esc(copy.reservationNote)}</p></section></div>`;
 }
 const SURF_PHOTO_LAYOUT_STORAGE_KEY = 'wavepoint:surf-photo-gallery-layout:v1';
+const SURFSKATE_LAYOUT_STORAGE_KEY = 'wavepoint:surfskate-gallery-layout:v1';
 // Fotos de surf: disposición pública. Cada fila reparte su ancho según la proporción de sus fotos, así todas las fotos de una fila tienen la misma altura y el mismo espacio entre ellas. `sizes` sigue el orden de la galería (ancho, alto de cada archivo).
 const SURF_PHOTO_COLLAGE = { rows: [[0, 1], [2, 3]], sizes: [[1600, 1066], [1600, 1066], [1600, 900], [900, 1600]] };
-function readSurfPhotoLayout(sources) {
+function readSurfPhotoLayout(sources, storageKey = SURF_PHOTO_LAYOUT_STORAGE_KEY) {
 try {
-const saved = JSON.parse(window.localStorage.getItem(SURF_PHOTO_LAYOUT_STORAGE_KEY) || 'null');
+const saved = JSON.parse(window.localStorage.getItem(storageKey) || 'null');
 if (!saved || !Array.isArray(saved.photos) || saved.photos.length !== sources.length) return null;
 const bySrc = new Map(saved.photos.map(photo => [photo.src, photo]));
 if (bySrc.size !== sources.length || !sources.every(src => bySrc.has(src))) return null;
@@ -1179,10 +1180,11 @@ return saved.photos.map(photo => ({ src: photo.src, x: photo.x, y: photo.y, w: p
 return null;
 }
 }
-function setupSurfPhotoReorder() {
+function setupPhotoLayoutEditor() {
 const editor = document.querySelector('[data-surf-photo-reorder]');
 const canvas = editor?.querySelector('[data-surf-photo-grid]');
 if (!editor || !canvas) return;
+const storageKey = editor.dataset.layoutKey || SURF_PHOTO_LAYOUT_STORAGE_KEY;
 const captureMode = editor.hasAttribute('data-capture');
 const items = [...canvas.querySelectorAll('[data-surf-photo-item]')];
 const images = items.map(item => item.querySelector('img'));
@@ -1215,7 +1217,7 @@ canvasHeight: round(Number(canvas.style.getPropertyValue('--canvas-height')) || 
 photos: layout.map(({ src, x, y, w, z }) => ({ src, x: round(x), y: round(y), w: round(w), z }))
 });
 const save = () => {
-try { window.localStorage.setItem(SURF_PHOTO_LAYOUT_STORAGE_KEY, JSON.stringify(serialize())); } catch (error) {}
+try { window.localStorage.setItem(storageKey, JSON.stringify(serialize())); } catch (error) {}
 };
 const bringToFront = item => {
 const state = stateFor(item);
@@ -1292,7 +1294,7 @@ save();
 });
 };
 const init = () => {
-layout = readSurfPhotoLayout(items.map(item => item.dataset.photoSrc)) || buildDefault();
+layout = readSurfPhotoLayout(items.map(item => item.dataset.photoSrc), storageKey) || buildDefault();
 apply();
 canvas.classList.add('is-ready');
 };
@@ -1304,7 +1306,7 @@ image.addEventListener('error', resolve, { once: true });
 if (captureMode) return;
 items.forEach(bindItem);
 editor.querySelector('[data-photo-order-reset]')?.addEventListener('click', () => {
-try { window.localStorage.removeItem(SURF_PHOTO_LAYOUT_STORAGE_KEY); } catch (error) {}
+try { window.localStorage.removeItem(storageKey); } catch (error) {}
 window.location.reload();
 });
 editor.querySelector('[data-photo-order-capture]')?.addEventListener('click', () => {
@@ -1333,8 +1335,11 @@ const galleryStart = service.id === 'roca-bruja' ? 0 : 1;
 const galleryImages = service.galleryImages || service.images.slice(galleryStart);
 const galleryImageAlts = isEn ? (service.galleryImageAltsEn || service.imageAltsEn) : (service.galleryImageAlts || service.imageAlts);
 const isSurfPhotoGallery = service.id === 'surf-fotografia';
+const isSurfskateGallery = service.id === 'surfskate';
+const isReorderableGallery = isSurfPhotoGallery || isSurfskateGallery;
+const galleryLayoutStorageKey = isSurfskateGallery ? SURFSKATE_LAYOUT_STORAGE_KEY : SURF_PHOTO_LAYOUT_STORAGE_KEY;
 const query = new URLSearchParams(window.location.search);
-const reorderMode = isSurfPhotoGallery && query.get('ordenarFotos') === '1';
+const reorderMode = isReorderableGallery && query.get('ordenarFotos') === '1';
 const captureMode = reorderMode && query.get('captura') === '1';
 const galleryItems = galleryImages.map((image, index) => ({ image, altIndex: service.galleryImages ? index : index + galleryStart }));
 const reorderCopy = lang === 'en'
@@ -1359,7 +1364,7 @@ return `<img src="${esc(image)}" alt="${alt}" width="${width}" height="${height}
 }).join('')}</div>`).join('') : '';
 const galleryClassName = `detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}${useCollage ? ' surf-photo-collage' : ''}`;
 const galleryMarkup = gallery ? reorderMode
-? `<div class="surf-photo-reorder-editor${captureMode ? ' is-capture' : ''}" data-surf-photo-reorder${captureMode ? ' data-capture' : ''} data-copied="${reorderCopy.copied}" data-copy-failed="${reorderCopy.copyFailed}">${captureMode ? '' : `<div class="surf-photo-reorder-toolbar"><p>${reorderCopy.instruction}</p><div><button type="button" data-photo-layout-copy>${reorderCopy.copy}</button><button type="button" data-photo-order-reset>${reorderCopy.reset}</button><button type="button" data-photo-order-capture>${reorderCopy.capture}</button></div><p class="surf-photo-layout-status" data-photo-layout-status role="status"></p><textarea class="surf-photo-layout-output" data-photo-layout-output readonly hidden rows="10" aria-label="${reorderCopy.copy}"></textarea></div>`}<div class="surf-photo-free-canvas" data-surf-photo-grid role="group" aria-label="${galleryRoleLabel}">${gallery}</div></div>`
+? `<div class="surf-photo-reorder-editor${captureMode ? ' is-capture' : ''}" data-surf-photo-reorder data-layout-key="${galleryLayoutStorageKey}"${captureMode ? ' data-capture' : ''} data-copied="${reorderCopy.copied}" data-copy-failed="${reorderCopy.copyFailed}">${captureMode ? '' : `<div class="surf-photo-reorder-toolbar"><p>${reorderCopy.instruction}</p><div><button type="button" data-photo-layout-copy>${reorderCopy.copy}</button><button type="button" data-photo-order-reset>${reorderCopy.reset}</button><button type="button" data-photo-order-capture>${reorderCopy.capture}</button></div><p class="surf-photo-layout-status" data-photo-layout-status role="status"></p><textarea class="surf-photo-layout-output" data-photo-layout-output readonly hidden rows="10" aria-label="${reorderCopy.copy}"></textarea></div>`}<div class="surf-photo-free-canvas" data-surf-photo-grid role="group" aria-label="${galleryRoleLabel}">${gallery}</div></div>`
 : `<div class="${galleryClassName}" role="group" aria-label="${galleryRoleLabel}" tabindex="0">${collageMarkup || gallery}</div>` : '';
 const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : lang === 'pt-BR' ? 'INCLUÍDO' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
@@ -1618,7 +1623,7 @@ const surfFormBar = '';
 	 document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${browsableServices.length}</p><h1>${esc(service.title)}</h1>${service.id === 'yoga' ? '' : `<p class="detail-hero-intro">${esc(service.description)}</p>`}</div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : lang === 'pt-BR' ? 'Consultar disponibilidade' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="serviceRequestTitle">${surfFormBar}<div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : lang === 'pt-BR' ? 'SOLICITAÇÃO' : 'SOLICITUD'}</p><h2 id="serviceRequestTitle">${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : lang === 'pt-BR' ? 'Seu progresso' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(lang === 'pt-BR' ? ui.submit : service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
 		const requestForm = document.getElementById('serviceRequestForm');
 		window.dispatchEvent(new Event('wavepoint:service-rendered'));
-		if (service.id === 'surf-fotografia' && new URLSearchParams(window.location.search).get('ordenarFotos') === '1') setupSurfPhotoReorder();
+		if ((service.id === 'surf-fotografia' || service.id === 'surfskate') && new URLSearchParams(window.location.search).get('ordenarFotos') === '1') setupPhotoLayoutEditor();
 	setupSurveyInteractions(requestForm);
 setupQuickRequestPanel(requestForm);
 if (service.id === 'clases-de-surf') {
