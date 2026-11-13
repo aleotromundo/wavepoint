@@ -1,4 +1,10 @@
 ## 2026-11-12
+### Fotos de surf — collage con separaciones exactas
+- `services.js`: la galería pública se renderiza en dos filas (`SURF_PHOTO_COLLAGE`): playa y surfista en el agua arriba; ola verde y surfista vertical abajo, según la disposición elegida por el usuario. Cada foto declara `width`, `height` y su proporción (`--r`).
+- `styles.optimized.css`: las filas usan `flex` con peso igual a la proporción de cada foto, por lo que las alturas de una fila coinciden y el hueco horizontal y vertical es el mismo (`--collage-gap`). En móvil pasa a una columna.
+- `service-detail.html`: renovación de las versiones de caché.
+- Validación: `node --check services.js`, `git diff --check` y medición en Chrome a 1440, 1280, 1024, 768 y 390 px (alturas por fila idénticas, bordes alineados, huecos iguales de 20 a 10 px, sin errores de consola); el editor sigue funcionando.
+
 ### Fotos de surf — editor de disposición libre
 - `services.js`: el editor de `?ordenarFotos=1` ahora es un lienzo libre; arrastrar mueve cada foto a cualquier lugar, la esquina inferior derecha cambia el tamaño y el teclado permite mover y escalar. Las posiciones se guardan en `localStorage` (`wavepoint:surf-photo-gallery-layout:v1`) en unidades relativas al ancho del lienzo, de modo que escalan con la pantalla. Se agregó «Copiar disposición» (JSON con respaldo en un cuadro de texto) y se retiró el reordenamiento por flechas arriba/abajo. `&captura=1` muestra la disposición sin controles.
 - `styles.optimized.css` y `service-detail.html`: estilos del lienzo (`container-type:inline-size` y unidades `cqw`) y renovación de las versiones de caché.

@@ -4297,3 +4297,9 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 .surf-photo-free-resize{position:absolute;right:-9px;bottom:-9px;width:22px;height:22px;border:2px solid #fff;border-radius:50%;background:#218b88;box-shadow:0 1px 4px rgba(0,0,0,.35);cursor:nwse-resize}
 .surf-photo-reorder-editor.is-capture .surf-photo-free-item{cursor:default;pointer-events:none;touch-action:auto}
 @media(max-width:640px){.surf-photo-reorder-toolbar{align-items:flex-start;padding:12px}.surf-photo-reorder-toolbar>div{width:100%}.surf-photo-reorder-toolbar button{flex:1 1 140px;min-height:44px}}
+
+/* Fotos de surf: collage público con filas de igual altura, bordes alineados y un único espacio entre fotos. */
+.surf-photo-detail-page .detail-gallery.service-editorial-gallery.surf-photo-collage{--collage-gap:clamp(10px,1.6vw,20px);display:flex!important;flex-direction:column!important;grid-template-columns:none!important;grid-auto-rows:auto!important;gap:var(--collage-gap)!important}
+.surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row{display:flex;align-items:flex-start;gap:var(--collage-gap);width:100%;margin:0!important;padding:0!important}
+.surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row>img{display:block!important;flex:var(--r) 1 0%;min-width:0;width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:var(--r);object-fit:cover!important;border-radius:0!important}
+@media(max-width:640px){.surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row{flex-direction:column;align-items:stretch}.surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row>img{flex:none;width:100%!important}}

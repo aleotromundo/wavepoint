@@ -147,3 +147,8 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`. Cambios todavía sin commit ni publicación.
 
 **Pendiente:** publicar para poder abrir el editor (la vista previa pide iniciar sesión y `wavepointcr.com` respondió 404 en la comprobación anterior); recibir el JSON o la captura del usuario y fijar esa disposición en la galería pública. Nota: en la galería pública actual la tercera foto ocupa toda la fila; no coincide con la cuadrícula 2×2 descrita arriba.
+
+## Fotos de surf — collage con separaciones exactas — 2026-11-12
+**Estado: Resuelto.** La galería pública de Fotos de surf adopta la disposición que el usuario armó con el editor: arriba las dos fotos horizontales (playa y surfista en el agua), abajo la ola verde ancha a la izquierda y el surfista vertical a la derecha. Cada fila reparte su ancho según la proporción real de sus fotos, de modo que las fotos de una fila tienen exactamente la misma altura, los bordes izquierdo y derecho quedan alineados y el espacio entre fotos es el mismo en horizontal y en vertical (`clamp(10px,1.6vw,20px)`). En pantallas de hasta 640 px las fotos pasan a una columna con el mismo espacio. El editor `?ordenarFotos=1` se conserva.
+
+**Archivos:** `services.js` (constante `SURF_PHOTO_COLLAGE` con filas y medidas de cada archivo), `styles.optimized.css`, `service-detail.html`. Si cambian las fotos de la galería, actualizar `sizes` en ese orden.

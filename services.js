@@ -1165,6 +1165,8 @@ const prices = copy.prices.map(([participants, lesson, program]) => `<article cl
 return `<div class="surf-program-story"><section class="surf-program-overview" aria-label="${labels.overview}"><p class="surf-program-intro">${esc(copy.intro)}</p><dl class="surf-program-facts">${facts}</dl></section><section class="surf-program-why" aria-labelledby="surf-program-why-heading"><p class="service-page-kicker">${labels.approach}</p><h2 id="surf-program-why-heading">${esc(copy.whyHeading)}</h2><p>${esc(copy.whyText)}</p></section><section class="surf-program-includes" aria-labelledby="surf-program-includes-heading"><p class="service-page-kicker">${labels.program}</p><h2 id="surf-program-includes-heading">${esc(copy.includesHeading)}</h2><ul>${includes}</ul></section><section class="surf-program-days" aria-label="${labels.lessons}">${days}</section><p class="surf-program-progress-note">${esc(copy.progressNote)}</p><section class="surf-program-pricing" aria-labelledby="surf-program-prices-heading"><div class="surf-program-section-head"><div><p class="service-page-kicker">${labels.rates}</p><h2 id="surf-program-prices-heading">${esc(copy.pricesHeading)}</h2></div><span class="surf-program-currency">USD</span></div><p class="surf-program-price-lead">${esc(copy.priceLead)}</p><div class="surf-program-price-list">${prices}</div><p class="surf-program-price-note">${esc(copy.priceNote)}</p></section><section class="surf-program-reservation" aria-labelledby="surf-program-reservation-heading"><h3 id="surf-program-reservation-heading">${esc(copy.reservationHeading)}</h3><p>${esc(copy.reservationText)}</p><p class="surf-program-reservation-note">${esc(copy.reservationNote)}</p></section></div>`;
 }
 const SURF_PHOTO_LAYOUT_STORAGE_KEY = 'wavepoint:surf-photo-gallery-layout:v1';
+// Fotos de surf: disposición pública. Cada fila reparte su ancho según la proporción de sus fotos, así todas las fotos de una fila tienen la misma altura y el mismo espacio entre ellas. `sizes` sigue el orden de la galería (ancho, alto de cada archivo).
+const SURF_PHOTO_COLLAGE = { rows: [[0, 1], [2, 3]], sizes: [[1600, 1066], [1600, 1066], [1600, 900], [900, 1600]] };
 function readSurfPhotoLayout(sources) {
 try {
 const saved = JSON.parse(window.localStorage.getItem(SURF_PHOTO_LAYOUT_STORAGE_KEY) || 'null');
@@ -1348,10 +1350,17 @@ return `<figure class="surf-photo-free-item" data-surf-photo-item data-photo-src
 }).join('');
 const galleryClass = service.id === 'surfskate' ? ` service-editorial-gallery-surfskate${galleryImages.length === 2 ? ' service-editorial-gallery-surfskate--two' : ''}` : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
 const galleryRoleLabel = isEn ? `${service.title} photos` : lang === 'pt-BR' ? `Fotos de ${service.title}` : `Fotos de ${service.title}`;
-const galleryClassName = `detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}`;
+const useCollage = isSurfPhotoGallery && !reorderMode && galleryItems.length === SURF_PHOTO_COLLAGE.sizes.length;
+const collageMarkup = useCollage ? SURF_PHOTO_COLLAGE.rows.map(row => `<div class="surf-photo-collage-row">${row.map(index => {
+const { image, altIndex } = galleryItems[index];
+const [width, height] = SURF_PHOTO_COLLAGE.sizes[index];
+const alt = esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`);
+return `<img src="${esc(image)}" alt="${alt}" width="${width}" height="${height}" loading="lazy" style="--r:${(width / height).toFixed(5)}" />`;
+}).join('')}</div>`).join('') : '';
+const galleryClassName = `detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}${useCollage ? ' surf-photo-collage' : ''}`;
 const galleryMarkup = gallery ? reorderMode
 ? `<div class="surf-photo-reorder-editor${captureMode ? ' is-capture' : ''}" data-surf-photo-reorder${captureMode ? ' data-capture' : ''} data-copied="${reorderCopy.copied}" data-copy-failed="${reorderCopy.copyFailed}">${captureMode ? '' : `<div class="surf-photo-reorder-toolbar"><p>${reorderCopy.instruction}</p><div><button type="button" data-photo-layout-copy>${reorderCopy.copy}</button><button type="button" data-photo-order-reset>${reorderCopy.reset}</button><button type="button" data-photo-order-capture>${reorderCopy.capture}</button></div><p class="surf-photo-layout-status" data-photo-layout-status role="status"></p><textarea class="surf-photo-layout-output" data-photo-layout-output readonly hidden rows="10" aria-label="${reorderCopy.copy}"></textarea></div>`}<div class="surf-photo-free-canvas" data-surf-photo-grid role="group" aria-label="${galleryRoleLabel}">${gallery}</div></div>`
-: `<div class="${galleryClassName}" role="group" aria-label="${galleryRoleLabel}" tabindex="0">${gallery}</div>` : '';
+: `<div class="${galleryClassName}" role="group" aria-label="${galleryRoleLabel}" tabindex="0">${collageMarkup || gallery}</div>` : '';
 const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : lang === 'pt-BR' ? 'INCLUÍDO' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
