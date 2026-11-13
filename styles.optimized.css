@@ -4234,3 +4234,7 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 
 /* Galerías de fichas: mostrar la foto completa, sin recortar cabezas ni pies */
 .detail-gallery img,.service-editorial-gallery img{object-fit:contain!important;object-position:center!important;background:#0a2c3b!important}
+
+/* Portada de Fotos de surf: que no se corte la cabeza de las personas */
+.surf-photo-detail-page .detail-hero{background-position:center 0%}
+.service-image-link[href="/surf-fotografia"] img{object-position:center 0%!important}
