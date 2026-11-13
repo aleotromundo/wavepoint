@@ -4232,8 +4232,8 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   #servicios .services-background-logo{transform:translate3d(0,-30px,0)}
 }
 
-/* Galerías de fichas: mostrar la foto completa, sin recortar cabezas ni pies */
-.detail-gallery img,.service-editorial-gallery img{object-fit:contain!important;object-position:center!important;background:#0a2c3b!important}
+/* Galerías de fichas: llenar el marco sin fondos y conservar la parte de arriba de las personas */
+.detail-gallery img,.service-editorial-gallery img{object-fit:cover!important;object-position:center 15%!important;background:none!important}
 
 /* Portada de Fotos de surf: que no se corte la cabeza de las personas */
 .surf-photo-detail-page .detail-hero{background-position:center 0%}
