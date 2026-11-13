@@ -126,3 +126,8 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** Se reincorporó la foto del surfista con traje oscuro en la ola verde a la galería de Fotos de surf, que vuelve a tener cinco imágenes.
 
 **Archivo:** `services.js`.
+
+## Fotos de surf — cuadrícula 2×2 — 2026-11-12
+**Estado: Resuelto.** Se anuló la regla que hacía que la tercera foto ocupara toda la fila; ahora la galería mantiene dos columnas y coloca la foto del surfista con traje oscuro a la izquierda y la del surfista sin remera a la derecha en la fila inferior.
+
+**Archivo:** `styles.optimized.css`.
