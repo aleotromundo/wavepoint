@@ -495,8 +495,8 @@ id: 'surf-fotografia', number: '08', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fot
 cardText: 'Tu tiempo en el agua, capturado.',
 includes: ['Servicio de Local Host'],
 description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
-images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-photography/guide-surf-gallery.webp'],
-imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Dos surfistas caminan por la arena con sus tablas'],
+images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-photography/guide-surf-gallery.webp', 'assets/img/services/surf-program-3-days/day-1.webp', 'assets/img/services/surf-program-3-days/day-2.webp', 'assets/img/services/surf-program-3-days/day-3.webp'],
+imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Dos surfistas caminan por la arena con sus tablas', 'Práctica en tierra de la posición sobre la tabla antes de entrar al agua.', 'Instructor demostrando la remada y la puesta de pie sobre la tabla.', 'Grupo de surfistas con sus tablas junto al mar al finalizar una sesión.'],
 imageAltsEn: ['Two surfers emerge from the water carrying their boards', 'Two surfers walk along the beach carrying their boards'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha preferida'], minDate: 'today' },
