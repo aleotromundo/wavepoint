@@ -4248,3 +4248,6 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 /* Galería de ATV: centrar el vehículo en la foto 1 y en la foto 3 */
 .detail-gallery img[src$="atv-instagram-1.webp"],.service-editorial-gallery img[src$="atv-instagram-1.webp"]{object-position:center 85%!important}
 .detail-gallery img[src$="atv-instagram-3.webp"],.service-editorial-gallery img[src$="atv-instagram-3.webp"]{object-position:center 45%!important}
+
+/* Galería de Fotos de surf: mostrar entera la foto vertical (Día 1) */
+.detail-gallery img[src$="surf-program-3-days/day-1.webp"],.service-editorial-gallery img[src$="surf-program-3-days/day-1.webp"]{object-fit:contain!important;background:transparent!important}
