@@ -947,8 +947,7 @@ description: 'Tell us your dates, group size and interests. We’ll put together
 imageAlts: ['Sunset over the coast framed by a tropical tree']
 }
 });
-const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-programa-3-dias', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'mangrove-tour', 'diving', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'retiros', 'local-host'];
-serviceOrder.splice(9, 0, 'trip-builder');
+const serviceOrder = ['alojamiento-experiencias', 'clases-de-surf', 'surf-programa-3-dias', 'surf-coaching', 'roca-bruja', 'snorkel-catamaran', 'mangrove-tour', 'diving', 'yoga', 'atv', 'surf-fotografia', 'surfskate', 'trip-builder', 'retiros', 'local-host'];
 services.sort((left, right) => serviceOrder.indexOf(left.id) - serviceOrder.indexOf(right.id));
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": "'" }[char]));
 const getService = () => { const queryId = new URLSearchParams(location.search).get('service'); const pathId = location.pathname.replace(/\/+$/, '').split('/').pop(); const id = queryId || (pathId && !['service-detail', 'service-detail.html', 'index.html'].includes(pathId) ? pathId : null); if (id === 'pack-ajustable' || id === 'trip-builder') { location.replace('/trip-builder'); return services[0]; } return services.find(item => item.id === id) || services[0]; };
@@ -1385,7 +1384,7 @@ document.body.classList.toggle('yoga-detail-page', service.id === 'yoga');
 document.body.classList.toggle('boat-detail-page', service.id === 'snorkel-catamaran');
 document.body.classList.toggle('local-host-detail-page', service.id === 'local-host');
 document.body.style.setProperty('--service-detail-image', `url(${JSON.stringify(service.heroImage || service.images[0])})`);
-const browsableServices = services.filter(item => item.id !== 'trip-builder');
+const browsableServices = services;
 const position = browsableServices.findIndex(item => item.id === service.id);
 const prevService = localizeService(browsableServices[(position - 1 + browsableServices.length) % browsableServices.length]);
 const nextService = localizeService(browsableServices[(position + 1) % browsableServices.length]);
