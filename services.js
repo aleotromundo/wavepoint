@@ -167,13 +167,13 @@ images: [
 'assets/img/services/surf-lessons/surf-lesson-woman.webp',
 'assets/img/services/surf-lessons/optimized/surf-lesson-group.webp',
 'assets/img/services/surf-lessons/surf-photography.webp',
-'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp',
+'assets/img/services/surf-program-3-days/day-1.webp',
 ],
 imageAlts: [
 'Alumna practicando surf en Tamarindo',
 'Dos surfistas practicando juntos en una ola en Tamarindo',
 'Surfera tomando una ola en Tamarindo',
-'Grupo caminando con sus tablas hacia la orilla en Tamarindo',
+'Surfista de torso desnudo parado sobre la tabla en una ola pequeña.',
 ],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
@@ -201,7 +201,7 @@ imageAlts: [
 'Student practicing surfing in Tamarindo',
 'Two surfers practicing together on a wave in Tamarindo',
 'Surfer riding a wave in Tamarindo',
-'Group walking with their boards toward the shore in Tamarindo',
+'Shirtless surfer standing on a board on a small wave',
 ],
 questions: {
 preferred_date: { label: 'What date would you prefer?', fields: ['Date'] },
