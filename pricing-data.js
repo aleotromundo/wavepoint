@@ -1,6 +1,8 @@
 (() => {
   const rates = {
     'surf-lessons': [70, 65, 60, 55, 50, 50],
+    'surf-program-3-days': [210, 195, 180, 165, 150, 150],
+    'mangrove-tour': [40, 40, 40, 40, 40, 40],
     'surf-coaching': [45, 45, 45, 45, 45, 45],
     yoga: [20, 20, 20, 20, 20, 20],
     'surf-photography-water': [120, 100, 80, 75, 70, 65],

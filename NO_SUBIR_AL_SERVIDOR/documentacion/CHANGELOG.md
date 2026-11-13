@@ -1,3 +1,18 @@
+## 2026-11-13
+### Armá tu viaje — datos incompletos no bloquean la solicitud
+- `trip-builder.js`: fechas, alojamiento y recorrido pueden quedar sin completar; el armador permite continuar y mantiene 1 persona como valor inicial. Las fechas inválidas o no consecutivas siguen mostrando un bloqueo específico.
+- El resumen avisa que quedan datos pendientes y el mensaje preparado para WhatsApp identifica qué falta por experiencia. El envío sigue siendo una solicitud, no una reserva confirmada.
+- `pt-br.js`: se agregaron las traducciones de los avisos opcionales y de datos pendientes.
+- Validación: prueba real con Chromium: una experiencia sin fecha deja habilitado “Continuar”, muestra el aviso, conserva 1 persona y no produjo errores JavaScript.
+
+### Armá tu viaje — integrar las fichas nuevas
+- `trip-builder.js`: se agregaron Programa de surf de 3 días, Tour del estero, Buceo y Country Host. Retiros queda fuera del armador por decisión del usuario.
+- El programa de surf exige tres fechas consecutivas y calcula la tarifa de referencia por persona; el Tour del estero calcula USD 40 por persona y limita el grupo a 12; Buceo queda a cotizar; Country Host figura como gratuito.
+- Las cuatro fichas tienen enlace a su detalle, imagen local, selección de fecha y participantes, resumen, validación y mensaje preparado para WhatsApp. El programa conserva sus tres fechas en el resumen y la solicitud.
+- `pricing-data.js`: se agregaron las tarifas del programa de tres días y del Tour del estero.
+- `pt-br.js`: se sincronizaron las etiquetas, mensajes y nombres de las nuevas experiencias en portugués brasileño.
+- Validación: `node --check` para `trip-builder.js`, `pricing-data.js`, `pt-br.js`, `script.js` y `services.js`; `git diff --check`; se comprobaron 13 experiencias del armador (las 14 fichas menos Retiros) y todas sus imágenes locales.
+
 ## 2026-11-12
 ### Fotos de surf — collage con separaciones exactas
 - `services.js`: la galería pública se renderiza en dos filas (`SURF_PHOTO_COLLAGE`): playa y surfista en el agua arriba; ola verde y surfista vertical abajo, según la disposición elegida por el usuario. Cada foto declara `width`, `height` y su proporción (`--r`).

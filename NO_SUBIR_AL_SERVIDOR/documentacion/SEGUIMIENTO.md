@@ -1,6 +1,17 @@
 # WavePoint — Seguimiento de tareas y decisiones
 Este archivo es el registro operativo de tareas de producto y de las guías de trabajo, incluyendo `Guiasegundaparte`. Cada punto debe conservar su estado actual, la resolución tomada, los archivos involucrados, la validación realizada y lo que todavía falta.
 
+## Armá tu viaje — integración de fichas nuevas (2026-11-13)
+**Estado: Resuelto en código.** El armador ahora incluye las 13 fichas combinables del catálogo: las nueve que ya tenía más Programa de surf de 3 días, Tour del estero, Buceo y Country Host. Retiros se mantiene fuera por decisión del usuario.
+
+El programa de surf solicita tres fechas consecutivas y calcula la tarifa de referencia del programa completo por persona. El Tour del estero usa USD 40 por persona y un máximo de 12 participantes. Buceo queda como cotización a confirmar y Country Host se muestra como gratuito. Las cuatro fichas conservan el enlace a su detalle, selección de fecha y participantes, validación, resumen y mensaje preparado para WhatsApp.
+
+**Archivos:** `trip-builder.js`, `pricing-data.js`, `pt-br.js`, `NO_SUBIR_AL_SERVIDOR/documentacion/CHANGELOG.md`.
+**Validación:** sintaxis Node.js, `git diff --check`, cobertura de 13 experiencias y comprobación de todas las imágenes locales. **Pendiente:** publicar el código en el dominio público; `wavepointcr.com` todavía sirve desde LiteSpeed una versión anterior.
+
+### Datos incompletos en el armador (2026-11-13)
+**Estado: Resuelto en código.** Las fechas, el alojamiento y el recorrido pueden quedar vacíos sin impedir la solicitud. La cantidad de personas comienza en 1; el resumen muestra un aviso y el texto de WhatsApp identifica los datos pendientes por experiencia. Solo se bloquean fechas contradictorias o no consecutivas. Validado con Chromium en una experiencia sin fecha: “Continuar” queda habilitado, el aviso aparece y no se registran errores JavaScript.
+
 ## Regla de mantenimiento
 Este archivo sirve para conservar la continuidad del trabajo. Cuando una tarea cambie un avance, una decisión, un estado o un pendiente, registrar brevemente qué se hizo, cómo quedó y qué falta. Los ajustes menores que no cambien el seguimiento no necesitan una entrada artificial. El estado debe reflejar el repositorio actual, no solo una guía o PDF histórico.
 

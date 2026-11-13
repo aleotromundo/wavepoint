@@ -3,13 +3,17 @@
   const experiences = [
     { id: 'stays', image: 'assets/img/stays/casa-maderas/house.webp', imageAlt: { es: 'Casa de Maderas, alojamiento colorido con piscina', en: 'Casa de Maderas, colorful accommodation with a pool' }, dateMode: 'range', title: { es: 'Estadías y hoteles', en: 'Stays and Hotels' }, description: { es: 'Encontrá alojamiento para tu estadía.', en: 'Find a place to stay during your trip.' } },
     { id: 'surf-lessons', image: 'assets/img/services/surf-lessons/surf-lesson-woman.webp', imageAlt: { es: 'Alumna practicando surf en Tamarindo', en: 'Student practicing surfing in Tamarindo' }, title: { es: 'Clases de surf', en: 'Surf lessons' }, description: { es: 'Una clase adaptada al nivel de tu grupo.', en: 'A surf lesson tailored to your group’s level.' } },
+    { id: 'surf-programa-3-dias', rateId: 'surf-program-3-days', dateMode: 'program', image: 'assets/img/services/surf-program-3-days/day-3-pop-up-practice.webp', imageAlt: { es: 'Alumno ensayando la puesta de pie sobre la tabla', en: 'Surf student rehearsing the pop-up on a surfboard' }, title: { es: 'Programa de surf de 3 días', en: '3-day surf program' }, description: { es: 'Tres clases privadas en días consecutivos.', en: 'Three private lessons on consecutive days.' } },
     { id: 'surf-coaching', image: 'assets/img/services/surf-coaching/surf-coaching-group-beach.webp', imageAlt: { es: 'Tres surfistas saltando con sus tablas en la playa', en: 'Three surfers jumping with their boards on the beach' }, title: { es: 'Surf coaching', en: 'Surf coaching' }, description: { es: 'Entrenamiento y análisis para mejorar tu surf.', en: 'Coaching and feedback to help you progress.' } },
     { id: 'witch-rock', image: 'assets/img/services/witchs-rock/guide-roca-bruja-boat.webp', imageAlt: { es: 'Grupo a bordo de un barco frente a la formación rocosa de Roca Bruja', en: 'Group aboard a boat in front of the Witch’s Rock formation' }, title: { es: 'Roca Bruja', en: 'Witch’s Rock Surf Trip' }, description: { es: 'Una salida de surf por barco.', en: 'A surf trip by boat.' } },
     { id: 'snorkel-catamaran', image: 'assets/img/services/snorkel-catamaran/snorkel-turtle.webp', imageAlt: { es: 'Persona haciendo snorkel junto a una tortuga marina sobre un arrecife', en: 'Snorkeler swimming near a sea turtle above a coral reef' }, title: { es: 'Snorkel y catamarán', en: 'Snorkeling and catamaran' }, description: { es: 'Explorá el mar o navegá la costa.', en: 'Explore underwater or sail along the coast.' } },
     { id: 'yoga', image: 'assets/img/services/yoga/yoga-coastal-pose.webp', imageAlt: { es: 'Mujer practicando una postura de yoga frente al mar', en: 'Woman practicing a yoga pose beside the sea' }, title: { es: 'Yoga', en: 'Yoga' }, description: { es: 'Sumá una pausa a tu viaje.', en: 'Make room for a pause in your trip.' } },
     { id: 'atv', image: 'assets/img/services/atv/atv-forest-convoy.webp', imageAlt: { es: 'Grupo de cuatriciclos recorriendo un sendero de bosque tropical', en: 'Group of ATVs riding along a tropical forest trail' }, title: { es: 'Tours en cuatriciclo — ATV', en: 'ATV tours' }, description: { es: 'Elegí un recorrido y consultá la tarifa por vehículo.', en: 'Choose a route and ask about the vehicle rate.' } },
     { id: 'surf-photography', image: 'assets/img/services/surf-photography/photo-service.webp', imageAlt: { es: 'Surfera captada durante una sesión acuática', en: 'Surfer photographed during an in-water session' }, beachImage: 'assets/img/services/surf-photography/surf-photographer-wave.webp', beachImageAlt: { es: 'Fotógrafo capturando una sesión de surf desde la playa', en: 'Photographer capturing a surf session from the beach' }, title: { es: 'Fotos de surf', en: 'Surf Photography' }, description: { es: 'Guardá los momentos de tu sesión.', en: 'Keep the memories from your surf session.' } },
-    { id: 'surfskate', image: 'assets/img/services/surfskate/guide-surfskate-card.webp', imageAlt: { es: 'Instructor asistiendo a una persona durante una práctica de surfskate', en: 'Instructor helping a student practice surfskate' }, title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } }
+    { id: 'surfskate', image: 'assets/img/services/surfskate/guide-surfskate-card.webp', imageAlt: { es: 'Instructor asistiendo a una persona durante una práctica de surfskate', en: 'Instructor helping a student practice surfskate' }, title: { es: 'Clases de surfskate', en: 'Surfskate Lessons' }, description: { es: 'Encontrá tu flow en tierra.', en: 'Find your flow on land.' } },
+    { id: 'mangrove-tour', rateId: 'mangrove-tour', maxGuests: 12, image: 'assets/img/services/mangrove-tour/mangrove-tour-people-boat.webp', imageAlt: { es: 'Grupo de visitantes disfrutando el recorrido en bote por el estero', en: 'Group of visitors enjoying the estuary boat tour' }, title: { es: 'Tour del estero', en: 'Estuary boat tour' }, description: { es: 'Descubrí la naturaleza entre manglares.', en: 'Discover nature among the mangroves.' } },
+    { id: 'diving', image: 'assets/img/services/diving/diving-18.webp', imageAlt: { es: 'Buzo descendiendo junto a una pared de roca bajo el agua', en: 'Diver descending beside an underwater rock wall' }, title: { es: 'Buceo', en: 'Diving' }, description: { es: 'Explorá el mundo submarino con NATIVA Diving.', en: 'Explore the underwater world with NATIVA Diving.' } },
+    { id: 'local-host', free: true, image: 'assets/img/services/local-host/local-host-1.webp', imageAlt: { es: 'Grupo de visitantes reunido en la playa de Tamarindo al atardecer', en: 'Group of visitors gathered on Tamarindo beach at sunset' }, title: { es: 'Country Host', en: 'Country Host' }, description: { es: 'Llegá, conocé y empezá a sentirte parte.', en: 'Arrive, connect and start feeling at home.' } }
   ];
   const accommodationOptions = [
     { id: 'tamalodge', maxGuests: 2, budgetMin: 50, budgetMax: 50, priceUnit: { es: 'por habitación / noche', en: 'per room / night' }, image: 'assets/img/stays/tamalodge/cover.webp', name: { es: 'Hotel Tamalodge', en: 'Hotel Tamalodge' }, category: { es: 'Opción económica', en: 'Budget option' }, summary: { es: 'Habitación privada con baño privado para una estadía simple y funcional.', en: 'A private room with a private bathroom for a simple, functional stay.' } },
@@ -31,6 +35,9 @@
       date: 'Fecha preferida',
       checkIn: 'Llegada',
       checkOut: 'Salida',
+      programDay1: 'Día 1',
+      programDay2: 'Día 2',
+      programDay3: 'Día 3',
       guests: 'Cantidad de personas',
       estimate: 'Tarifa por persona',
       atvEstimate: 'Tarifa por vehículo',
@@ -46,6 +53,7 @@
       photoWater: 'Fotografía acuática',
       photoBeach: 'Fotografía desde la playa',
       quote: 'Precio a confirmar',
+      free: 'Gratis',
       trip: 'Tu viaje',
       cartCaption: 'Tu próxima aventura empieza acá.',
       itemCount: 'experiencia',
@@ -64,7 +72,8 @@
       requestConfirmationLink: 'Si WhatsApp no se abrió, abrilo aquí.',
       continue: 'Continuar a la solicitud',
       selectError: 'Agregá al menos una experiencia para continuar.',
-      detailsError: 'Completá las fechas, el recorrido ATV cuando corresponda y la cantidad de personas de cada experiencia elegida.',
+      detailsError: 'Completá las fechas, los tres días del programa de surf, el recorrido ATV cuando corresponda y la cantidad de personas de cada experiencia elegida.',
+      incompleteNote: 'Podés continuar: algunos datos quedan pendientes y se le avisarán al equipo de WavePoint en tu solicitud.',
       accommodationError: 'Completá la recomendación de alojamiento para Estadías y hoteles.',
       chooseAccommodation: 'Elegir alojamiento',
       changeAccommodation: 'Cambiar alojamiento',
@@ -86,6 +95,7 @@
       closeAccommodation: 'Cerrar selector de alojamiento',
       selectAccommodation: 'Elegir',
       invalidDates: 'La fecha de salida debe ser posterior a la de llegada.',
+      invalidProgramDates: 'Elegí tres días consecutivos para el programa de surf.',
       name: 'Tu nombre (opcional)',
       namePlaceholder: '¿Cómo te llamás?',
       requestExtra: '¿Algo más que debamos saber? (opcional)',
@@ -93,6 +103,7 @@
       waIntro: 'Hola WavePoint, quiero armar mi viaje a Tamarindo:',
       waIntroPlural: 'Hola WavePoint, queremos armar nuestro viaje a Tamarindo:',
       waDate: 'Fecha preferida',
+      waProgramDates: 'Fechas del programa',
       waCheckIn: 'Llegada',
       waCheckOut: 'Salida',
       waGuests: 'Personas',
@@ -101,6 +112,11 @@
       waQuote: 'Precio a confirmar',
       waName: 'Nombre',
       waExtra: 'Información adicional',
+      waMissingData: 'Datos pendientes de completar',
+      waMissingDate: 'Fecha pendiente',
+      waMissingProgramDates: 'Fechas del programa incompletas',
+      waMissingRoute: 'Recorrido pendiente',
+      waMissingAccommodation: 'Alojamiento pendiente',
       imageAlt: 'Imagen de',
       currency: 'USD'
     },
@@ -117,6 +133,9 @@
       date: 'Preferred date',
       checkIn: 'Check-in',
       checkOut: 'Check-out',
+      programDay1: 'Day 1',
+      programDay2: 'Day 2',
+      programDay3: 'Day 3',
       guests: 'Number of guests',
       estimate: 'Rate per person',
       atvEstimate: 'Rate per vehicle',
@@ -132,6 +151,7 @@
       photoWater: 'In-water photography',
       photoBeach: 'Photography from the beach',
       quote: 'Price to be confirmed',
+      free: 'Free',
       trip: 'Your trip',
       cartCaption: 'Your next adventure starts here.',
       itemCount: 'experience',
@@ -150,7 +170,8 @@
       requestConfirmationLink: 'If WhatsApp did not open, open it here.',
       continue: 'Continue to booking request',
       selectError: 'Add at least one experience to continue.',
-      detailsError: 'Add dates, an ATV route where applicable, and guest counts for every selected experience.',
+      detailsError: 'Add dates, all three surf-program days, an ATV route where applicable, and guest counts for every selected experience.',
+      incompleteNote: 'You can continue: some details are still pending and will be noted for the WavePoint team in your request.',
       accommodationError: 'Complete the accommodation recommendation for Stays and Hotels.',
       chooseAccommodation: 'Choose accommodation',
       changeAccommodation: 'Change accommodation',
@@ -172,6 +193,7 @@
       closeAccommodation: 'Close accommodation selector',
       selectAccommodation: 'Choose',
       invalidDates: 'Check-out must be after check-in.',
+      invalidProgramDates: 'Choose three consecutive days for the surf program.',
       name: 'Your name (optional)',
       namePlaceholder: 'What’s your name?',
       requestExtra: 'Anything else we should know? (optional)',
@@ -179,6 +201,7 @@
       waIntro: 'Hi WavePoint, I’d like to plan my Tamarindo trip:',
       waIntroPlural: 'Hi WavePoint, we’d like to plan our Tamarindo trip:',
       waDate: 'Preferred date',
+      waProgramDates: 'Program dates',
       waCheckIn: 'Check-in',
       waCheckOut: 'Check-out',
       waGuests: 'Guests',
@@ -187,6 +210,11 @@
       waQuote: 'Price to be confirmed',
       waName: 'Name',
       waExtra: 'Additional information',
+      waMissingData: 'Details still to be completed',
+      waMissingDate: 'Date pending',
+      waMissingProgramDates: 'Program dates incomplete',
+      waMissingRoute: 'Route pending',
+      waMissingAccommodation: 'Accommodation pending',
       imageAlt: 'Photo of',
       currency: 'USD'
     }
@@ -216,7 +244,7 @@
     });
   }
   const selected = new Map();
-  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.id === 'atv' ? { atvRoute: '' } : {}), ...(experience.id === 'stays' ? { accommodation: '', recommendation: { guests: '1', budget: '', id: '' } } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
+  const drafts = new Map(experiences.map(experience => [experience.id, { start: '', end: '', guests: '1', ...(experience.dateMode === 'program' ? { programDates: ['', '', ''] } : {}), ...(experience.id === 'atv' ? { atvRoute: '' } : {}), ...(experience.id === 'stays' ? { accommodation: '', recommendation: { guests: '1', budget: '', id: '' } } : {}), ...(experience.id === 'surf-photography' ? { photoMode: 'water' } : {}) }]));
   let accommodationModalMode = 'options';
   let customerName = '';
   let customerExtra = '';
@@ -224,10 +252,13 @@
   const mobileCart = document.getElementById('tripMobileCart');
   let cartHeaderObserver;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const experienceFor = id => experiences.find(experience => experience.id === id);
   const priceFor = (id, guests, photoMode) => {
+    const experience = experienceFor(id);
+    if (experience?.free) return null;
     const rateId = id === 'surf-photography'
       ? `surf-photography-${photoMode === 'beach' ? 'beach' : 'water'}`
-      : id;
+      : experience?.rateId || id;
     const rates = window.WAVEPOINT_PRICING.rates[rateId];
     if (!rates || !Number.isInteger(guests) || guests < 1) return null;
     const perPersonRate = rates[Math.min(guests, 6) - 1];
@@ -263,6 +294,28 @@
     const [, month, day] = date.split('-');
     return `${day}/${month}`;
   };
+  const datesFor = (experience, state) => experience.dateMode === 'range'
+    ? [state.start, state.end]
+    : experience.dateMode === 'program' ? state.programDates : [state.start];
+  const isConsecutive = (first, second) => {
+    if (!first || !second) return false;
+    const delta = new Date(`${second}T12:00:00`) - new Date(`${first}T12:00:00`);
+    return delta === 24 * 60 * 60 * 1000;
+  };
+  const hasInvalidDates = (experience, state) => experience.dateMode === 'range'
+    ? Boolean(state.start && state.end && state.end <= state.start)
+    : experience.dateMode === 'program'
+      ? state.programDates.some(Boolean) && (state.programDates.some(date => !date) || !isConsecutive(state.programDates[0], state.programDates[1]) || !isConsecutive(state.programDates[1], state.programDates[2]))
+      : false;
+  const hasMissingDates = (experience, state) => datesFor(experience, state).some(date => !date);
+  const maxGuestsFor = experience => experience.maxGuests || 99;
+  const missingDetailsFor = (experience, state, copy) => {
+    const missing = [];
+    if (hasMissingDates(experience, state)) missing.push(experience.dateMode === 'program' ? copy.waMissingProgramDates : copy.waMissingDate);
+    if (experience.id === 'stays' && !state.accommodation) missing.push(copy.waMissingAccommodation);
+    if (experience.id === 'atv' && !state.atvRoute) missing.push(copy.waMissingRoute);
+    return missing;
+  };
   const calendarIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M7.5 3.5v4m9-4v4M3.5 9.5h17"/></svg>';
   const dateField = (experience, key, label) => {
     const value = drafts.get(experience.id)[key];
@@ -271,6 +324,8 @@
   };
   const dateInputs = experience => experience.dateMode === 'range'
     ? `${dateField(experience, 'start', COPY[lang].checkIn)}${dateField(experience, 'end', COPY[lang].checkOut)}`
+    : experience.dateMode === 'program'
+      ? [COPY[lang].programDay1, COPY[lang].programDay2, COPY[lang].programDay3].map((label, index) => `<label class="trip-date-field">${label}<button class="trip-date-trigger${drafts.get(experience.id).programDates[index] ? ' has-value' : ''}" type="button" data-program-date-trigger="${index}" aria-label="${esc(`${label}${drafts.get(experience.id).programDates[index] ? `: ${formatDateShort(drafts.get(experience.id).programDates[index])}` : ''}`)}">${calendarIcon}<span data-program-date-value="${index}">${formatDateShort(drafts.get(experience.id).programDates[index])}</span></button><input class="trip-date-picker" type="date" data-program-date="${index}" value="${esc(drafts.get(experience.id).programDates[index])}" tabindex="-1" aria-hidden="true" /></label>`).join('')
     : dateField(experience, 'start', COPY[lang].date);
   const accommodationFor = id => accommodationOptions.find(option => option.id === id);
   const accommodationRateFor = (id, guests) => {
@@ -326,7 +381,9 @@
     const imageAlt = beachPhoto ? experience.beachImageAlt?.[lang] : experience.imageAlt?.[lang];
     const guestsField = `<label class="trip-guests-field">${copy.guests}<span class="trip-guests-stepper"><button type="button" data-guests-step="decrease" aria-label="${esc(lang === 'es' ? 'Quitar una persona' : lang === 'pt-BR' ? 'Remover uma pessoa' : 'Remove one guest')}">−</button><output data-guests-value>${esc(guests)}</output><button type="button" data-guests-step="increase" aria-label="${esc(lang === 'es' ? 'Agregar una persona' : lang === 'pt-BR' ? 'Adicionar uma pessoa' : 'Add one guest')}">+</button></span></label>`;
     const estimateLabel = experience.id === 'stays' ? copy.accommodationEstimate : experience.id === 'atv' ? copy.atvEstimate : copy.estimate;
-    const estimateValue = accommodationRate
+    const estimateValue = experience.free
+      ? copy.free
+      : accommodationRate
       ? formatMoneyRange(accommodationRate.min, accommodationRate.max, moneyApprox)
       : experience.id === 'atv' ? copy.atvEstimateNote
       : price === null ? copy.quote : `${money(price)} ${copy.perPersonShort}`;
@@ -394,25 +451,21 @@
       }
       const dates = experience.dateMode === 'range'
         ? `${copy.checkIn}: ${formatDate(state.start) || '—'} · ${copy.checkOut}: ${formatDate(state.end) || '—'}`
-        : `${copy.date}: ${formatDate(state.start) || '—'}`;
+        : experience.dateMode === 'program'
+          ? `${copy.waProgramDates}: ${state.programDates.map(date => formatDate(date) || '—').join(' · ')}`
+          : `${copy.date}: ${formatDate(state.start) || '—'}`;
       const accommodation = id === 'stays' ? accommodationFor(state.accommodation) : null;
       const accommodationLabel = id === 'stays' ? (accommodation ? accommodation.name[lang] : state.accommodation === 'recommendation' ? copy.recommendAccommodationShort : '—') : '';
       return `<li class="trip-summary-item">
         <span class="trip-summary-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
         <div class="trip-summary-item-copy"><strong>${esc(titleFor(experience, state))}</strong>${id === 'stays' ? `<span>${esc(copy.accommodationSelected)}: ${esc(accommodationLabel)}</span>` : ''}${id === 'atv' && state.atvRoute ? `<span>${esc(copy.atvRoute)}: ${esc(copy.atvRoutes[state.atvRoute])}</span>` : ''}<span>${esc(dates)}</span><span>${esc(state.guests)} ${Number(state.guests) === 1 ? copy.guestsShort : copy.guestsShortPlural}</span></div>
-        <div class="trip-summary-price">${accommodationTotal ? `<strong>${formatMoneyRange(accommodationTotal.min, accommodationTotal.max)}</strong><span>${copy.accommodationPerNight}</span>` : price === null ? `<span>${id === 'stays' ? copy.quote : id === 'atv' ? copy.atvEstimateNote : copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
+        <div class="trip-summary-price">${accommodationTotal ? `<strong>${formatMoneyRange(accommodationTotal.min, accommodationTotal.max)}</strong><span>${copy.accommodationPerNight}</span>` : experience.free ? `<strong>${copy.free}</strong>` : price === null ? `<span>${id === 'atv' ? copy.atvEstimateNote : copy.noEstimate}</span>` : `<strong>${money(price * Number(state.guests))}</strong>`}<button type="button" data-remove="${id}" aria-label="${esc(copy.remove)}: ${esc(titleFor(experience, state))}">${copy.remove}</button></div>
       </li>`;
     });
-    const invalidDates = list.some(([id, state]) => {
-      const experience = experiences.find(item => item.id === id);
-      return experience.dateMode === 'range' && state.start && state.end && state.end <= state.start;
-    });
-    const needsDetails = list.some(([id, state]) => {
-      const experience = experiences.find(item => item.id === id);
-      const guests = Number(state.guests);
-      return !state.start || (experience.dateMode === 'range' && !state.end) || (id === 'stays' && !state.accommodation) || (id === 'atv' && !state.atvRoute) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
-    });
-    const requestError = invalidDates ? copy.invalidDates : list.some(([id, state]) => id === 'stays' && !state.accommodation) ? copy.accommodationError : list.length && needsDetails ? copy.detailsError : '';
+    const invalidDates = list.some(([id, state]) => hasInvalidDates(experienceFor(id), state));
+    const hasMissingDetails = list.some(([id, state]) => missingDetailsFor(experienceFor(id), state, copy).length);
+    const invalidProgram = list.some(([id, state]) => experiences.find(item => item.id === id)?.dateMode === 'program' && hasInvalidDates(experienceFor(id), state));
+    const requestError = invalidProgram ? copy.invalidProgramDates : invalidDates ? copy.invalidDates : hasMissingDetails ? copy.incompleteNote : '';
     return `<div class="trip-cart-top">
         <div class="trip-summary-head"><p class="trip-kicker">${copy.selected}</p><h2>${copy.trip}</h2><p class="trip-cart-caption">${copy.cartCaption}</p></div>
         <div class="trip-cart-illustration" aria-hidden="true">
@@ -437,7 +490,7 @@
       <label class="trip-contact-field">${copy.requestExtra}<textarea data-extra placeholder="${copy.extraPlaceholder}">${esc(customerExtra)}</textarea></label>
       <p class="trip-request-error" role="alert" aria-live="assertive">${requestError}</p>
       <p class="trip-request-confirmation" role="status" aria-live="polite" hidden><span>${copy.requestConfirmation}</span> <a data-confirmation-link target="_blank" rel="noopener noreferrer">${copy.requestConfirmationLink}</a></p>
-      <button class="trip-continue-button" type="button" data-continue ${!list.length || needsDetails ? 'disabled' : ''}>${copy.continue}</button>`;
+      <button class="trip-continue-button" type="button" data-continue ${!list.length || invalidDates ? 'disabled' : ''}>${copy.continue}</button>`;
   };
   const render = () => {
     const copy = COPY[lang];
@@ -552,6 +605,14 @@
     const card = event.target.closest('[data-experience]');
     if (!card) return;
     const draft = drafts.get(card.dataset.experience);
+    if (event.target.matches('[data-program-date]')) {
+      draft.programDates[Number(event.target.dataset.programDate)] = event.target.value;
+      const state = selected.get(card.dataset.experience);
+      if (state) Object.assign(state, draft, { programDates: [...draft.programDates] });
+      updateExperienceCards();
+      updateSummary();
+      return;
+    }
     if (event.target.matches('[data-date]')) {
       draft[event.target.dataset.date] = event.target.value;
       updateExperienceCards();
@@ -644,6 +705,19 @@
       updateSummary();
       return;
     }
+    const programDateTrigger = event.target.closest('[data-program-date-trigger]');
+    if (programDateTrigger && card) {
+      const picker = card.querySelector(`[data-program-date="${programDateTrigger.dataset.programDateTrigger}"]`);
+      if (picker) {
+        try {
+          if (typeof picker.showPicker === 'function') picker.showPicker();
+          else picker.click();
+        } catch (error) {
+          picker.click();
+        }
+      }
+      return;
+    }
     const dateTrigger = event.target.closest('[data-date-trigger]');
     if (dateTrigger && card) {
       const picker = dateTrigger.parentElement.querySelector(`[data-date="${dateTrigger.dataset.dateTrigger}"]`);
@@ -661,7 +735,7 @@
     if (guestsStep && card) {
       const draft = drafts.get(card.dataset.experience);
       const nextGuests = Number(draft.guests) + (guestsStep.dataset.guestsStep === 'increase' ? 1 : -1);
-      draft.guests = String(Math.max(1, Math.min(99, nextGuests)));
+      draft.guests = String(Math.max(1, Math.min(maxGuestsFor(experienceFor(card.dataset.experience)), nextGuests)));
       const state = selected.get(card.dataset.experience);
       if (state) Object.assign(state, draft);
       updateExperienceCards();
@@ -694,17 +768,9 @@
     const error = root.querySelector('.trip-request-error');
     const chosen = [...selected.entries()];
     if (!chosen.length) { error.textContent = COPY[lang].selectError; return; }
-    const invalidDates = chosen.some(([id, state]) => {
-      const experience = experiences.find(item => item.id === id);
-      return experience.dateMode === 'range' && state.start && state.end && state.end <= state.start;
-    });
-    const incomplete = chosen.some(([id, state]) => {
-      const experience = experiences.find(item => item.id === id);
-      const guests = Number(state.guests);
-      return !state.start || (experience.dateMode === 'range' && !state.end) || (id === 'stays' && !state.accommodation) || (id === 'atv' && !state.atvRoute) || !Number.isInteger(guests) || guests < 1 || (experience.dateMode === 'range' && state.end <= state.start);
-    });
+    const invalidDates = chosen.some(([id, state]) => hasInvalidDates(experienceFor(id), state));
+    if (chosen.some(([id, state]) => experienceFor(id)?.dateMode === 'program' && hasInvalidDates(experienceFor(id), state))) { error.textContent = COPY[lang].invalidProgramDates; return; }
     if (invalidDates) { error.textContent = COPY[lang].invalidDates; return; }
-    if (incomplete) { error.textContent = COPY[lang].detailsError; return; }
     error.textContent = '';
     const groupSize = Math.max(...chosen.map(([, state]) => Number(state.guests)));
     const lines = [groupSize > 1 ? COPY[lang].waIntroPlural : COPY[lang].waIntro, ''];
@@ -726,13 +792,18 @@
         }
       }
       if (experience.dateMode === 'range') lines.push(`  ${COPY[lang].waCheckIn}: ${formatDate(state.start)} · ${COPY[lang].waCheckOut}: ${formatDate(state.end)}`);
+      else if (experience.dateMode === 'program') lines.push(`  ${COPY[lang].waProgramDates}: ${state.programDates.map(date => formatDate(date)).join(' · ')}`);
       else lines.push(`  ${COPY[lang].waDate}: ${formatDate(state.start)}`);
       if (id === 'atv') lines.push(`  ${COPY[lang].waAtvRoute}: ${COPY[lang].atvRoutes[state.atvRoute]}`);
       lines.push(`  ${COPY[lang].waGuests}: ${state.guests}`);
+      const missing = missingDetailsFor(experience, state, COPY[lang]);
+      if (missing.length) lines.push(`  ${COPY[lang].waMissingData}: ${missing.join(', ')}`);
       if (accommodationRate) {
         const nightlyTotal = { min: accommodationRate.min * Number(state.guests), max: accommodationRate.max * Number(state.guests) };
         lines.push(`  ${COPY[lang].waRate}: ${formatMoneyRange(accommodationRate.min, accommodationRate.max, moneyApprox)} ${COPY[lang].perPersonShort} · ${COPY[lang].accommodationPerNight}`);
         lines.push(`  ${COPY[lang].waEstimate}: ${formatMoneyRange(nightlyTotal.min, nightlyTotal.max)} · ${COPY[lang].accommodationPerNight}`);
+      } else if (experience.free) {
+        lines.push(`  ${COPY[lang].free}`);
       } else if (price === null) {
         lines.push(`  ${id === 'atv' ? `${COPY[lang].atvEstimate}: ${COPY[lang].atvEstimateNote}` : COPY[lang].waQuote}`);
       } else {
