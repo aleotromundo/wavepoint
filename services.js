@@ -139,10 +139,10 @@ amenities: ['Beachfront hotel', 'Outdoor pool', 'Spa and massage services', 'Gar
 }
 ],
 questions: [
-{ id: 'stay_dates', label: '¿Cuándo quieres alojarte?', type: 'dates', fields: ['Llegada', 'Salida'] },
-{ id: 'accommodation_type', label: '¿Qué alojamiento te interesa?', type: 'choice', options: ['Hotel Tamalodge', 'Casa Aura', 'Casa Madera', 'Capitán Suizo', 'Quiero recomendaciones'] },
-{ id: 'group_size', label: '¿Cuántas personas viajarían?', type: 'number' },
-{ id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'] }
+{ id: 'stay_dates', label: '¿Cuándo quieres alojarte?', type: 'dates', fields: ['Llegada', 'Salida'], optional: true },
+{ id: 'accommodation_type', label: '¿Qué alojamiento te interesa?', type: 'choice', options: ['Hotel Tamalodge', 'Casa Aura', 'Casa Madera', 'Capitán Suizo', 'Quiero recomendaciones'], optional: true },
+{ id: 'group_size', label: '¿Cuántas personas viajarían?', type: 'number', optional: true },
+{ id: 'experiences', label: '¿Qué experiencias te gustaría sumar?', type: 'multi', options: ['Surf', 'Surf coaching', 'Roca Bruja', 'Snorkel', 'Catamarán', 'Yoga', 'ATV', 'Todavía no lo sé'], optional: true }
 ],
 en: {
 eyebrow: 'STAYS · HOTELS',
