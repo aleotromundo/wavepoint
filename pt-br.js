@@ -1070,7 +1070,7 @@
       cardText: 'Seu tempo na água, registrado.',
       includes: ['Serviço de Local Host'],
       description: 'Sua primeira onda, uma manobra que vem treinando ou uma sessão com amigos: há momentos que merecem ser lembrados. A WavePoint conecta você a fotógrafos locais de surfe para registrar sua sessão enquanto você se concentra nas ondas.',
-      imageAlts: ['Dois surfistas saem da água com suas pranchas na praia', 'Dois surfistas caminham pela areia carregando suas pranchas', 'Surfista de torso nu em pé sobre a prancha em uma onda pequena', 'Surfista sobre uma onda, com outros surfistas remando por perto', 'Surfista de roupa escura fazendo uma manobra sobre uma onda verde']
+      imageAlts: ['Dois surfistas saem da água com suas pranchas na praia', 'Dois surfistas caminham pela areia carregando suas pranchas', 'Surfista sobre uma onda, com outros surfistas remando por perto', 'Surfista de roupa escura fazendo uma manobra sobre uma onda verde', 'Surfista de torso nu em pé sobre a prancha em uma onda pequena']
     },
     surfskate: {
       eyebrow: 'AULAS DE SURFSKATE',
