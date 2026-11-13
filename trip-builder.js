@@ -313,7 +313,7 @@
   const photoModeField = (experience, draft, copy) => experience.id !== 'surf-photography' ? ''
     : `<label class="trip-photo-mode-field">${copy.photoMode}<select data-photo-mode><option value="water" ${draft.photoMode === 'water' ? 'selected' : ''}>${copy.photoWater}</option><option value="beach" ${draft.photoMode === 'beach' ? 'selected' : ''}>${copy.photoBeach}</option></select></label>`;
   const atvRouteField = (experience, draft, copy) => experience.id !== 'atv' ? ''
-    : `<label class="trip-atv-route-field">${esc(copy.atvRoute)}<select data-atv-route aria-label="${esc(copy.atvRoute)}" required><option value="" disabled ${draft.atvRoute ? '' : 'selected'}>${esc(copy.atvRoutePlaceholder)}</option>${Object.entries(copy.atvRoutes).map(([route, label]) => `<option value="${route}" ${draft.atvRoute === route ? 'selected' : ''}>${esc(label)}</option>`).join('')}</select></label>`;
+    : `<label class="trip-atv-route-field">${esc(copy.atvRoute)}<select data-atv-route aria-label="${esc(copy.atvRoute)}"><option value="" disabled ${draft.atvRoute ? '' : 'selected'}>${esc(copy.atvRoutePlaceholder)}</option>${Object.entries(copy.atvRoutes).map(([route, label]) => `<option value="${route}" ${draft.atvRoute === route ? 'selected' : ''}>${esc(label)}</option>`).join('')}</select></label>`;
   const renderCards = () => experiences.map(experience => {
     const state = selected.get(experience.id);
     const draft = drafts.get(experience.id);
