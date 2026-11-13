@@ -4372,3 +4372,14 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   object-position: center center !important;
   background: transparent !important;
 }
+
+/* Surf Coaching: las fotos 2 y 3 se presentan sin marco visual. */
+.detail-gallery img[src$="surf-photography/guide-surf-cover.webp"],
+.service-editorial-gallery img[src$="surf-photography/guide-surf-cover.webp"],
+.detail-gallery img[src$="surf-program-3-days/day-2-board-position.webp"],
+.service-editorial-gallery img[src$="surf-program-3-days/day-2-board-position.webp"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
