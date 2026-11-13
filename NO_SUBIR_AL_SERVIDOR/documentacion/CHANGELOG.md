@@ -5,6 +5,11 @@
 - `pt-br.js`: se agregaron las traducciones de los avisos opcionales y de datos pendientes.
 - Validación: prueba real con Chromium: una experiencia sin fecha deja habilitado “Continuar”, muestra el aviso, conserva 1 persona y no produjo errores JavaScript.
 
+### Surfcoaching — intercambiar portada y primera foto de la galería
+- `services.js`: la foto grupal de surfistas ahora es la portada y la foto de los dos surfistas con sus tablas pasa a ser la primera de la galería; se ajustan los textos alternativos en español e inglés.
+- `service-detail.html`: se renueva la versión de caché de `services.js` para que la ficha reciba el orden actualizado.
+- Validación: sintaxis JavaScript, existencia y orden de los tres recursos, textos alternativos, versión de caché e `git diff --check`.
+
 ### Armá tu viaje — integrar las fichas nuevas
 - `trip-builder.js`: se agregaron Programa de surf de 3 días, Tour del estero, Buceo y Country Host. Retiros queda fuera del armador por decisión del usuario.
 - El programa de surf exige tres fechas consecutivas y calcula la tarifa de referencia por persona; el Tour del estero calcula USD 40 por persona y limita el grupo a 12; Buceo queda a cotizar; Country Host figura como gratuito.
