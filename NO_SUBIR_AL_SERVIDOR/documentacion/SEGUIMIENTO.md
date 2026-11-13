@@ -140,3 +140,10 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Publicación:** el commit `ce30cdc` se subió a `main` y GitHub informa que el deployment de Vercel terminó correctamente. La vista previa requiere iniciar sesión; `wavepointcr.com` respondió 404 durante la comprobación, por lo que no se confirma acceso al editor desde el dominio canónico.
 
 **Pendiente:** confirmar acceso a la vista previa o resolver la publicación del dominio; recibir la captura y aplicar el orden final.
+
+## Fotos de surf — editor de disposición libre — 2026-11-12
+**Estado: Parcial.** El editor de `?ordenarFotos=1` pasó de reordenar dentro de la cuadrícula a un lienzo libre: cada foto se arrastra a cualquier posición, se estira desde la esquina inferior derecha y también se maneja con teclado (flechas para mover, + y − para el tamaño). La disposición se guarda solo en el navegador de quien edita; el botón «Copiar disposición» entrega un JSON con posición y ancho de cada foto (en % del ancho del lienzo) para fijarlo en el sitio. `&captura=1` muestra el lienzo limpio. La galería pública no cambió.
+
+**Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`. Cambios todavía sin commit ni publicación.
+
+**Pendiente:** publicar para poder abrir el editor (la vista previa pide iniciar sesión y `wavepointcr.com` respondió 404 en la comprobación anterior); recibir el JSON o la captura del usuario y fijar esa disposición en la galería pública. Nota: en la galería pública actual la tercera foto ocupa toda la fila; no coincide con la cuadrícula 2×2 descrita arriba.

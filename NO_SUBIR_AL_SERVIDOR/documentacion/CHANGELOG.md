@@ -1,4 +1,10 @@
 ## 2026-11-12
+### Fotos de surf — editor de disposición libre
+- `services.js`: el editor de `?ordenarFotos=1` ahora es un lienzo libre; arrastrar mueve cada foto a cualquier lugar, la esquina inferior derecha cambia el tamaño y el teclado permite mover y escalar. Las posiciones se guardan en `localStorage` (`wavepoint:surf-photo-gallery-layout:v1`) en unidades relativas al ancho del lienzo, de modo que escalan con la pantalla. Se agregó «Copiar disposición» (JSON con respaldo en un cuadro de texto) y se retiró el reordenamiento por flechas arriba/abajo. `&captura=1` muestra la disposición sin controles.
+- `styles.optimized.css` y `service-detail.html`: estilos del lienzo (`container-type:inline-size` y unidades `cqw`) y renovación de las versiones de caché.
+- La galería pública no cambia: las posiciones de las cuatro fotos son idénticas antes y después.
+- Validación: `node --check services.js`, `git diff --check` y prueba en Chrome con Playwright (arrastrar, estirar, teclado, persistencia tras recargar, copiar, captura, restablecer y galería pública sin errores de consola).
+
 ### Fotos de surf — editor de orden visual para escritorio
 - `services.js`: la ficha permite abrir `?ordenarFotos=1` para reorganizar las fotos arrastrándolas con el mouse o usando flechas; el orden se guarda solo en el navegador. `&captura=1` muestra la galería sin controles.
 - `styles.optimized.css` y `service-detail.html`: estilos adaptables y renovación de las versiones de caché. La vista pública normal conserva el orden configurado en el código.

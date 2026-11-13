@@ -1164,81 +1164,145 @@ const days = copy.days.map((day, index) => { const dayTitle = day.title.split(' 
 const prices = copy.prices.map(([participants, lesson, program]) => `<article class="surf-program-price-card"><h4>${esc(participants)}</h4><dl><div><dt>${esc(copy.priceHeaders[1])}</dt><dd>${esc(lesson)}</dd></div><div><dt>${esc(copy.priceHeaders[2])}</dt><dd>${esc(program)}</dd></div></dl></article>`).join('');
 return `<div class="surf-program-story"><section class="surf-program-overview" aria-label="${labels.overview}"><p class="surf-program-intro">${esc(copy.intro)}</p><dl class="surf-program-facts">${facts}</dl></section><section class="surf-program-why" aria-labelledby="surf-program-why-heading"><p class="service-page-kicker">${labels.approach}</p><h2 id="surf-program-why-heading">${esc(copy.whyHeading)}</h2><p>${esc(copy.whyText)}</p></section><section class="surf-program-includes" aria-labelledby="surf-program-includes-heading"><p class="service-page-kicker">${labels.program}</p><h2 id="surf-program-includes-heading">${esc(copy.includesHeading)}</h2><ul>${includes}</ul></section><section class="surf-program-days" aria-label="${labels.lessons}">${days}</section><p class="surf-program-progress-note">${esc(copy.progressNote)}</p><section class="surf-program-pricing" aria-labelledby="surf-program-prices-heading"><div class="surf-program-section-head"><div><p class="service-page-kicker">${labels.rates}</p><h2 id="surf-program-prices-heading">${esc(copy.pricesHeading)}</h2></div><span class="surf-program-currency">USD</span></div><p class="surf-program-price-lead">${esc(copy.priceLead)}</p><div class="surf-program-price-list">${prices}</div><p class="surf-program-price-note">${esc(copy.priceNote)}</p></section><section class="surf-program-reservation" aria-labelledby="surf-program-reservation-heading"><h3 id="surf-program-reservation-heading">${esc(copy.reservationHeading)}</h3><p>${esc(copy.reservationText)}</p><p class="surf-program-reservation-note">${esc(copy.reservationNote)}</p></section></div>`;
 }
-const SURF_PHOTO_ORDER_STORAGE_KEY = 'wavepoint:surf-photo-gallery-order:v1';
-function getSurfPhotoGalleryOrder(items) {
+const SURF_PHOTO_LAYOUT_STORAGE_KEY = 'wavepoint:surf-photo-gallery-layout:v1';
+function readSurfPhotoLayout(sources) {
 try {
-const savedOrder = JSON.parse(window.localStorage.getItem(SURF_PHOTO_ORDER_STORAGE_KEY) || 'null');
-if (!Array.isArray(savedOrder) || savedOrder.length !== items.length || new Set(savedOrder).size !== items.length) return items;
-const itemsByImage = new Map(items.map(item => [item.image, item]));
-if (!savedOrder.every(image => itemsByImage.has(image))) return items;
-return savedOrder.map(image => itemsByImage.get(image));
+const saved = JSON.parse(window.localStorage.getItem(SURF_PHOTO_LAYOUT_STORAGE_KEY) || 'null');
+if (!saved || !Array.isArray(saved.photos) || saved.photos.length !== sources.length) return null;
+const bySrc = new Map(saved.photos.map(photo => [photo.src, photo]));
+if (bySrc.size !== sources.length || !sources.every(src => bySrc.has(src))) return null;
+if (!saved.photos.every(photo => [photo.x, photo.y, photo.w].every(Number.isFinite))) return null;
+return saved.photos.map(photo => ({ src: photo.src, x: photo.x, y: photo.y, w: photo.w, z: Number.isFinite(photo.z) ? photo.z : 1 }));
 } catch (error) {
-return items;
+return null;
 }
 }
 function setupSurfPhotoReorder() {
 const editor = document.querySelector('[data-surf-photo-reorder]');
-const gallery = editor?.querySelector('[data-surf-photo-grid]');
-if (!editor || !gallery) return;
-const getItems = () => [...gallery.querySelectorAll('[data-surf-photo-item]')];
-const saveOrder = () => {
-try { window.localStorage.setItem(SURF_PHOTO_ORDER_STORAGE_KEY, JSON.stringify(getItems().map(item => item.dataset.photoSrc))); } catch (error) {}
+const canvas = editor?.querySelector('[data-surf-photo-grid]');
+if (!editor || !canvas) return;
+const captureMode = editor.hasAttribute('data-capture');
+const items = [...canvas.querySelectorAll('[data-surf-photo-item]')];
+const images = items.map(item => item.querySelector('img'));
+const MIN_WIDTH = 8;
+const BOTTOM_GAP = 2;
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const round = value => Math.round(value * 10) / 10;
+let layout = [];
+let active = null;
+const stateFor = item => layout.find(photo => photo.src === item.dataset.photoSrc);
+const ratioFor = item => {
+const image = item.querySelector('img');
+return image && image.naturalWidth ? image.naturalHeight / image.naturalWidth : 0.66;
 };
-const updateControls = () => getItems().forEach((item, index, items) => {
-const up = item.querySelector('[data-photo-move="up"]');
-const down = item.querySelector('[data-photo-move="down"]');
-if (up) up.disabled = index === 0;
-if (down) down.disabled = index === items.length - 1;
+const apply = () => {
+let bottom = 0;
+items.forEach(item => {
+const state = stateFor(item);
+if (!state) return;
+item.style.setProperty('--photo-x', String(state.x));
+item.style.setProperty('--photo-y', String(state.y));
+item.style.setProperty('--photo-w', String(state.w));
+item.style.zIndex = String(state.z);
+bottom = Math.max(bottom, state.y + state.w * ratioFor(item));
 });
-gallery.addEventListener('click', event => {
-const button = event.target.closest('[data-photo-move]');
-if (!button) return;
-const item = button.closest('[data-surf-photo-item]');
-const items = getItems();
-const index = items.indexOf(item);
-if (index < 0) return;
-if (button.dataset.photoMove === 'up' && index > 0) gallery.insertBefore(item, items[index - 1]);
-if (button.dataset.photoMove === 'down' && index < items.length - 1) gallery.insertBefore(items[index + 1], item);
-saveOrder();
-updateControls();
+canvas.style.setProperty('--canvas-height', String(Math.max(bottom + BOTTOM_GAP, 50)));
+};
+const serialize = () => ({
+canvasHeight: round(Number(canvas.style.getPropertyValue('--canvas-height')) || 50),
+photos: layout.map(({ src, x, y, w, z }) => ({ src, x: round(x), y: round(y), w: round(w), z }))
 });
-let draggedItem = null;
-gallery.addEventListener('dragstart', event => {
-const item = event.target.closest('[data-surf-photo-item]');
-if (!item || event.target.closest('button')) { event.preventDefault(); return; }
-draggedItem = item;
+const save = () => {
+try { window.localStorage.setItem(SURF_PHOTO_LAYOUT_STORAGE_KEY, JSON.stringify(serialize())); } catch (error) {}
+};
+const bringToFront = item => {
+const state = stateFor(item);
+if (state && layout.some(photo => photo !== state && photo.z >= state.z)) state.z = Math.max(...layout.map(photo => photo.z)) + 1;
+};
+const select = item => {
+items.forEach(other => other.classList.toggle('is-selected', other === item));
+};
+const buildDefault = () => {
+const columnWidth = 48.5;
+const heights = [0, 0];
+return items.map((item, index) => {
+const column = heights[0] <= heights[1] ? 0 : 1;
+const y = heights[column];
+heights[column] += columnWidth * ratioFor(item) + 2;
+return { src: item.dataset.photoSrc, x: column ? 51.5 : 0, y, w: columnWidth, z: index + 1 };
+});
+};
+const bindItem = item => {
+item.addEventListener('pointerdown', event => {
+if (event.pointerType === 'mouse' && event.button !== 0) return;
+const state = stateFor(item);
+if (!state) return;
+select(item);
+bringToFront(item);
+apply();
+active = {
+item, state, pointerId: event.pointerId,
+resize: Boolean(event.target.closest('[data-photo-resize]')),
+startX: event.clientX, startY: event.clientY,
+originX: state.x, originY: state.y, originW: state.w,
+unit: 100 / (canvas.getBoundingClientRect().width || 1)
+};
+item.setPointerCapture(event.pointerId);
 item.classList.add('is-dragging');
-event.dataTransfer.effectAllowed = 'move';
-event.dataTransfer.setData('text/plain', item.dataset.photoSrc);
-});
-gallery.addEventListener('dragover', event => {
-if (!draggedItem) return;
 event.preventDefault();
-const target = event.target.closest('[data-surf-photo-item]');
-gallery.querySelectorAll('.is-drop-target').forEach(item => item.classList.remove('is-drop-target'));
-if (target && target !== draggedItem) {
-target.classList.add('is-drop-target');
-event.dataTransfer.dropEffect = 'move';
-}
 });
-gallery.addEventListener('drop', event => {
-if (!draggedItem) return;
+item.addEventListener('pointermove', event => {
+if (!active || active.item !== item || active.pointerId !== event.pointerId) return;
+const deltaX = (event.clientX - active.startX) * active.unit;
+const deltaY = (event.clientY - active.startY) * active.unit;
+if (active.resize) {
+active.state.w = clamp(active.originW + deltaX, MIN_WIDTH, 100 - active.state.x);
+} else {
+active.state.x = clamp(active.originX + deltaX, 0, 100 - active.state.w);
+active.state.y = Math.max(0, active.originY + deltaY);
+}
+apply();
+});
+const end = event => {
+if (!active || active.item !== item || active.pointerId !== event.pointerId) return;
+active = null;
+item.classList.remove('is-dragging');
+save();
+};
+item.addEventListener('pointerup', end);
+item.addEventListener('pointercancel', end);
+item.addEventListener('focus', () => select(item));
+item.addEventListener('keydown', event => {
+const state = stateFor(item);
+if (!state) return;
+const step = event.shiftKey ? 2 : 0.5;
+if (event.key === 'ArrowLeft') state.x = clamp(state.x - step, 0, 100 - state.w);
+else if (event.key === 'ArrowRight') state.x = clamp(state.x + step, 0, 100 - state.w);
+else if (event.key === 'ArrowUp') state.y = Math.max(0, state.y - step);
+else if (event.key === 'ArrowDown') state.y += step;
+else if (event.key === '+' || event.key === '=') state.w = clamp(state.w + step, MIN_WIDTH, 100 - state.x);
+else if (event.key === '-' || event.key === '_') state.w = clamp(state.w - step, MIN_WIDTH, 100 - state.x);
+else return;
 event.preventDefault();
-const target = event.target.closest('[data-surf-photo-item]');
-if (target && target !== draggedItem) {
-const rect = target.getBoundingClientRect();
-gallery.insertBefore(draggedItem, event.clientY < rect.top + rect.height / 2 ? target : target.nextElementSibling);
-saveOrder();
-updateControls();
-}
+bringToFront(item);
+apply();
+save();
 });
-gallery.addEventListener('dragend', () => {
-draggedItem?.classList.remove('is-dragging');
-gallery.querySelectorAll('.is-drop-target').forEach(item => item.classList.remove('is-drop-target'));
-draggedItem = null;
-});
+};
+const init = () => {
+layout = readSurfPhotoLayout(items.map(item => item.dataset.photoSrc)) || buildDefault();
+apply();
+canvas.classList.add('is-ready');
+};
+images.forEach(image => { image.loading = 'eager'; image.draggable = false; });
+Promise.all(images.map(image => (image.complete && image.naturalWidth) ? null : new Promise(resolve => {
+image.addEventListener('load', resolve, { once: true });
+image.addEventListener('error', resolve, { once: true });
+}))).then(init);
+if (captureMode) return;
+items.forEach(bindItem);
 editor.querySelector('[data-photo-order-reset]')?.addEventListener('click', () => {
-try { window.localStorage.removeItem(SURF_PHOTO_ORDER_STORAGE_KEY); } catch (error) {}
+try { window.localStorage.removeItem(SURF_PHOTO_LAYOUT_STORAGE_KEY); } catch (error) {}
 window.location.reload();
 });
 editor.querySelector('[data-photo-order-capture]')?.addEventListener('click', () => {
@@ -1246,7 +1310,20 @@ const url = new URL(window.location.href);
 url.searchParams.set('captura', '1');
 window.location.assign(url.toString());
 });
-updateControls();
+const status = editor.querySelector('[data-photo-layout-status]');
+const output = editor.querySelector('[data-photo-layout-output]');
+editor.querySelector('[data-photo-layout-copy]')?.addEventListener('click', async () => {
+const text = JSON.stringify(serialize(), null, 2);
+if (output) output.value = text;
+try {
+await navigator.clipboard.writeText(text);
+if (output) output.hidden = true;
+if (status) status.textContent = editor.dataset.copied || '';
+} catch (error) {
+if (output) { output.hidden = false; output.focus(); output.select(); }
+if (status) status.textContent = editor.dataset.copyFailed || '';
+}
+});
 }
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
@@ -1258,23 +1335,22 @@ const query = new URLSearchParams(window.location.search);
 const reorderMode = isSurfPhotoGallery && query.get('ordenarFotos') === '1';
 const captureMode = reorderMode && query.get('captura') === '1';
 const galleryItems = galleryImages.map((image, index) => ({ image, altIndex: service.galleryImages ? index : index + galleryStart }));
-const visibleGalleryItems = reorderMode ? getSurfPhotoGalleryOrder(galleryItems) : galleryItems;
 const reorderCopy = lang === 'en'
-? { instruction: 'Drag photos to arrange them, or use the arrows. This order is saved only in this browser.', up: 'Move up', down: 'Move down', reset: 'Reset order', capture: 'Clean view for screenshot' }
+? { instruction: 'Drag each photo anywhere you like and pull its bottom-right corner to resize it. With the keyboard: arrows to move, + and − to resize. The layout is saved only in this browser.', reset: 'Reset layout', capture: 'Clean view for screenshot', copy: 'Copy layout', copied: 'Layout copied.', copyFailed: 'Could not copy automatically. Copy the text below.' }
 : lang === 'pt-BR'
-? { instruction: 'Arraste as fotos para organizá-las ou use as setas. A ordem fica salva apenas neste navegador.', up: 'Mover para cima', down: 'Mover para baixo', reset: 'Restaurar ordem', capture: 'Visualização para captura' }
-: { instruction: 'Arrastrá las fotos para ordenarlas o usá las flechas. El orden se guarda solo en este navegador.', up: 'Subir', down: 'Bajar', reset: 'Restablecer orden', capture: 'Vista limpia para captura' };
-const gallery = visibleGalleryItems.map(({ image, altIndex }, index) => {
+? { instruction: 'Arraste cada foto para onde quiser e puxe o canto inferior direito para mudar o tamanho. No teclado: setas para mover, + e − para o tamanho. A disposição fica salva apenas neste navegador.', reset: 'Restaurar disposição', capture: 'Visualização para captura', copy: 'Copiar disposição', copied: 'Disposição copiada.', copyFailed: 'Não foi possível copiar automaticamente. Copie o texto abaixo.' }
+: { instruction: 'Arrastrá cada foto adonde quieras y estirá la esquina inferior derecha para cambiar su tamaño. Con el teclado: flechas para mover, + y − para el tamaño. La disposición se guarda solo en este navegador.', reset: 'Restablecer disposición', capture: 'Vista limpia para captura', copy: 'Copiar disposición', copied: 'Disposición copiada.', copyFailed: 'No se pudo copiar automáticamente. Copiá el texto de abajo.' };
+const gallery = galleryItems.map(({ image, altIndex }) => {
 const alt = esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`);
 const imageMarkup = `<img src="${esc(image)}" alt="${alt}" loading="lazy" />`;
-if (!reorderMode || captureMode) return imageMarkup;
-return `<figure class="surf-photo-order-item" data-surf-photo-item data-photo-src="${esc(image)}" draggable="true">${imageMarkup}<figcaption class="surf-photo-order-controls"><button type="button" data-photo-move="up" aria-label="${reorderCopy.up}">↑ <span>${reorderCopy.up}</span></button><button type="button" data-photo-move="down" aria-label="${reorderCopy.down}">↓ <span>${reorderCopy.down}</span></button></figcaption></figure>`;
+if (!reorderMode) return imageMarkup;
+return `<figure class="surf-photo-free-item" data-surf-photo-item data-photo-src="${esc(image)}"${captureMode ? '' : ' tabindex="0"'}>${imageMarkup}${captureMode ? '' : '<span class="surf-photo-free-resize" data-photo-resize aria-hidden="true"></span>'}</figure>`;
 }).join('');
 const galleryClass = service.id === 'surfskate' ? ` service-editorial-gallery-surfskate${galleryImages.length === 2 ? ' service-editorial-gallery-surfskate--two' : ''}` : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
 const galleryRoleLabel = isEn ? `${service.title} photos` : lang === 'pt-BR' ? `Fotos de ${service.title}` : `Fotos de ${service.title}`;
-const galleryClassName = `detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}${reorderMode && !captureMode ? ' surf-photo-reorder-grid' : ''}`;
+const galleryClassName = `detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}`;
 const galleryMarkup = gallery ? reorderMode
-? `<div class="surf-photo-reorder-editor" data-surf-photo-reorder>${captureMode ? '' : `<div class="surf-photo-reorder-toolbar"><p>${reorderCopy.instruction}</p><div><button type="button" data-photo-order-reset>${reorderCopy.reset}</button><button type="button" data-photo-order-capture>${reorderCopy.capture}</button></div></div>`}<div class="${galleryClassName}" data-surf-photo-grid role="group" aria-label="${galleryRoleLabel}" tabindex="0">${gallery}</div></div>`
+? `<div class="surf-photo-reorder-editor${captureMode ? ' is-capture' : ''}" data-surf-photo-reorder${captureMode ? ' data-capture' : ''} data-copied="${reorderCopy.copied}" data-copy-failed="${reorderCopy.copyFailed}">${captureMode ? '' : `<div class="surf-photo-reorder-toolbar"><p>${reorderCopy.instruction}</p><div><button type="button" data-photo-layout-copy>${reorderCopy.copy}</button><button type="button" data-photo-order-reset>${reorderCopy.reset}</button><button type="button" data-photo-order-capture>${reorderCopy.capture}</button></div><p class="surf-photo-layout-status" data-photo-layout-status role="status"></p><textarea class="surf-photo-layout-output" data-photo-layout-output readonly hidden rows="10" aria-label="${reorderCopy.copy}"></textarea></div>`}<div class="surf-photo-free-canvas" data-surf-photo-grid role="group" aria-label="${galleryRoleLabel}">${gallery}</div></div>`
 : `<div class="${galleryClassName}" role="group" aria-label="${galleryRoleLabel}" tabindex="0">${gallery}</div>` : '';
 const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : lang === 'pt-BR' ? 'INCLUÍDO' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
