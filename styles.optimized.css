@@ -4468,3 +4468,28 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     max-height: 520px !important;
   }
 }
+
+/* Surf Coaching: galería vertical de tres fotos, con la de las tablas primero. */
+.surf-coaching-detail-page .service-editorial-gallery {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-auto-rows: auto !important;
+  gap: clamp(18px, 2.4vw, 30px) !important;
+  height: auto !important;
+  background: transparent !important;
+}
+.surf-coaching-detail-page .service-editorial-gallery img,
+.surf-coaching-detail-page .service-editorial-gallery img:nth-child(2),
+.surf-coaching-detail-page .service-editorial-gallery img:nth-child(3) {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 18px 26px rgba(8, 43, 58, .24));
+  background: transparent !important;
+}

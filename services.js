@@ -299,9 +299,9 @@ cardText: 'Sesión de surf grabada y videoanálisis técnico para mejorar tu pos
 description: 'Un servicio de videoanálisis de una sesión de surf, recomendado para surfistas intermedios o avanzados. Primero se graba la sesión y después el instructor analiza las olas para hacer una devolución técnica.',
 lead: 'El servicio tiene dos momentos: una sesión de surf grabada, con una cámara que busca captar la mayor cantidad posible de olas, y un análisis posterior desde una pantalla para corregir posturas, tiempos y movimientos. Incluye el video de tus olas y la devolución técnica. Precio: USD 45 por persona.',
 includes: ['Sesión de surf grabada', 'Video de tus olas', 'Videoanálisis y devolución técnica posterior', 'Recomendado para surfistas intermedios o avanzados', 'USD 45 por persona', 'Servicio de Local Host'],
-images: ['assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-program-3-days/day-2-board-position.webp', 'assets/img/services/surf-program-3-days/day-3-pop-up-practice.webp'],
-imageAlts: ['Tres surfistas saltando con sus tablas en la playa', 'Dos surfistas salen del agua con sus tablas en la playa', 'Alumno practicando la posición de remada sobre la tabla en tierra', 'Alumno ensayando la puesta de pie sobre la tabla antes de entrar al agua'],
-imageAltsEn: ['Three surfers jumping with their boards on the beach', 'Two surfers emerge from the water carrying their boards', 'Surf student practicing the paddling position on a board on land', 'Surf student rehearsing the pop-up on a surfboard before entering the water'],
+images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-program-3-days/day-2-board-position.webp'],
+imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Tres surfistas saltando con sus tablas en la playa', 'Alumno practicando la posición de remada sobre la tabla en tierra'],
+imageAltsEn: ['Two surfers emerge from the water carrying their boards', 'Three surfers jumping with their boards on the beach', 'Surf student practicing the paddling position on a board on land'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha'], minDate: 'today' },
 { id: 'current_surf_level', label: '¿Cuál es tu nivel actual de surf?', type: 'choice', options: ['Principiante', 'Intermedio', 'Avanzado'] },
