@@ -1348,7 +1348,7 @@ const reorderCopy = lang === 'en'
 : lang === 'pt-BR'
 ? { instruction: 'Arraste cada foto para onde quiser e puxe o canto inferior direito para mudar o tamanho. No teclado: setas para mover, + e − para o tamanho. A disposição fica salva apenas neste navegador.', reset: 'Restaurar disposição', capture: 'Visualização para captura', copy: 'Copiar disposição', copied: 'Disposição copiada.', copyFailed: 'Não foi possível copiar automaticamente. Copie o texto abaixo.' }
 : { instruction: 'Arrastrá cada foto adonde quieras y estirá la esquina inferior derecha para cambiar su tamaño. Con el teclado: flechas para mover, + y − para el tamaño. La disposición se guarda solo en este navegador.', reset: 'Restablecer disposición', capture: 'Vista limpia para captura', copy: 'Copiar disposición', copied: 'Disposición copiada.', copyFailed: 'No se pudo copiar automáticamente. Copiá el texto de abajo.' };
-const gallery = galleryItems.map(({ image, altIndex }) => {
+const gallery = galleryItems.map(({ image, altIndex }, index) => {
 const alt = esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`);
 const imageMarkup = `<img class="service-gallery-image service-gallery-image-${index + 1}" src="${esc(image)}" alt="${alt}" loading="lazy" />`;
 if (!reorderMode) return imageMarkup;
