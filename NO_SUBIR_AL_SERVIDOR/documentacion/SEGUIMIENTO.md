@@ -96,3 +96,8 @@ Se eliminaron del árbol actual `charli.mp4`, `Vivero_Piero_vertical_v1.mp4`, `a
 La historia local de `main` se reescribió con `git-filter-repo` para purgar `charli.mp4`. La nueva punta es `cd378aa`; se verificó que el árbol del sitio es idéntico al commit de cambios anterior y que el archivo ya no aparece en los objetos ni en la historia de `main`. No se hizo push.
 
 **Pendiente:** el usuario debe publicar la historia reescrita con `git push --force-with-lease origin main`. Después, confirmar que Vercel desplegó la rama y comprobar el sitemap público.
+
+## Galería de Fotos de surf — 2026-11-12
+**Estado: Resuelto.** La galería de la ficha `surf-fotografia` quedó organizada en dos columnas con filas amplias y parejas, sin recortar ni deformar las imágenes; en pantallas pequeñas pasa a una columna. No se agregaron ni subieron fotos nuevas.
+
+**Archivo:** `styles.optimized.css`. **Commit:** `1940498` — «Ajustar galería de fotos de surf».
