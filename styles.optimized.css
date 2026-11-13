@@ -4303,3 +4303,21 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 .surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row{display:flex;align-items:flex-start;gap:var(--collage-gap);width:100%;margin:0!important;padding:0!important}
 .surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row>img{display:block!important;flex:var(--r) 1 0%;min-width:0;width:auto!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:var(--r)!important;object-fit:cover!important;object-position:center!important;border-radius:0!important}
 @media(max-width:640px){.surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row{flex-direction:column;align-items:stretch}.surf-photo-detail-page .surf-photo-collage .surf-photo-collage-row>img{flex:none;width:100%!important;aspect-ratio:var(--r)!important;object-fit:contain!important;object-position:center!important}}
+
+/* Surfskate: galería sin caja, fondo, borde ni sombra alrededor de las fotos. */
+.service-detail-page .service-editorial-gallery-surfskate,
+.service-detail-page .service-editorial-gallery-surfskate--two {
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.service-detail-page .service-editorial-gallery-surfskate img,
+.service-detail-page .service-editorial-gallery-surfskate--two img {
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
