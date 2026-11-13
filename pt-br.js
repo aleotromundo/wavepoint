@@ -865,14 +865,14 @@
       description: 'Uma aula de 2 horas com instrutor local, conversa inicial na praia e prática guiada na água, de acordo com o nível do seu grupo. Pode ser o primeiro contato com o mar ou uma sessão intermediária para corrigir fundamentos.',
       lead: 'Inclui instrutor local, apresentação dos equipamentos e orientações de segurança, prancha e prática adaptada ao seu nível. O ponto de encontro é informado após a confirmação da reserva e do pagamento.',
       includes: ['Duração: 2 horas', 'Prancha incluída', 'Primeiro contato com o mar ou acompanhamento para nível intermediário', 'Correção dos fundamentos', 'Ponto de encontro informado após a confirmação da reserva e do pagamento', 'Serviço de Local Host'],
-      imageAlts: ['Aluna praticando surfe em Tamarindo', 'Duas pessoas surfando juntas em uma onda em Tamarindo', 'Surfista pegando uma onda em Tamarindo']
+      imageAlts: ['Aluna praticando surfe em Tamarindo', 'Duas pessoas surfando juntas em uma onda em Tamarindo', 'Surfista pegando uma onda em Tamarindo', 'Surfista de torso nu em pé sobre a prancha em uma onda pequena']
     },
     'surf-programa-3-dias': {
       eyebrow: 'PROGRAMA DE SURFE · INICIANTES',
       title: 'Programa para iniciantes no surfe',
       cardText: 'Três aulas particulares de duas horas para descobrir o mar e aproveitar suas primeiras ondas.',
       description: 'Três dias para descobrir o mar e aproveitar suas primeiras ondas.',
-      imageAlts: ['Prática na praia da posição sobre a prancha antes de entrar na água', 'Instrutor demonstrando a remada e como ficar em pé na prancha', 'Grupo de surfistas com suas pranchas à beira-mar após uma sessão'],
+      imageAlts: ['Grupo caminhando com suas pranchas em direção à praia em Tamarindo', 'Surfista sobre uma onda, com outros surfistas remando por perto', 'Surfista de roupa escura fazendo uma manobra sobre uma onda verde'],
       questions: {
         program_dates: { label: 'Quais datas você sugere para as três aulas? Escolha três dias consecutivos na ordem das aulas.', fields: ['Dia 1', 'Dia 2', 'Dia 3'] },
         group_size: { label: 'Quantas pessoas participarão?' }
@@ -907,7 +907,7 @@
       description: 'Um serviço de análise em vídeo de uma sessão de surfe, recomendado para surfistas intermediários ou avançados. Primeiro a sessão é filmada; depois, o instrutor analisa as ondas e compartilha observações técnicas.',
       lead: 'O serviço tem duas etapas: uma sessão de surfe filmada para registrar o maior número possível de ondas e, depois, uma análise em vídeo para ajustar postura, tempo e movimentos. Inclui as imagens das suas ondas e comentários técnicos. Preço: USD 45 por pessoa.',
       includes: ['Sessão de surfe filmada', 'Vídeo das suas ondas', 'Análise em vídeo e comentários técnicos', 'Recomendado para surfistas intermediários ou avançados', 'USD 45 por pessoa', 'Serviço de Local Host'],
-      imageAlts: ['Surfista pegando uma onda em uma prancha vermelha', 'Três surfistas compartilhando uma sessão na praia com suas pranchas', 'Grupo de surfistas reunido com suas pranchas na praia de Tamarindo']
+      imageAlts: ['Três surfistas pulando com suas pranchas na praia', 'Surfista pegando uma onda em uma prancha vermelha']
     },
     'roca-bruja': {
       eyebrow: 'PASSEIO DE SURFE · AVENTURA',
@@ -1070,7 +1070,7 @@
       cardText: 'Seu tempo na água, registrado.',
       includes: ['Serviço de Local Host'],
       description: 'Sua primeira onda, uma manobra que vem treinando ou uma sessão com amigos: há momentos que merecem ser lembrados. A WavePoint conecta você a fotógrafos locais de surfe para registrar sua sessão enquanto você se concentra nas ondas.',
-      imageAlts: ['Dois surfistas saem da água com suas pranchas na praia', 'Dois surfistas caminham pela areia carregando suas pranchas']
+      imageAlts: ['Dois surfistas saem da água com suas pranchas na praia', 'Dois surfistas caminham pela areia carregando suas pranchas', 'Surfista de torso nu em pé sobre a prancha em uma onda pequena', 'Surfista sobre uma onda, com outros surfistas remando por perto', 'Surfista de roupa escura fazendo uma manobra sobre uma onda verde']
     },
     surfskate: {
       eyebrow: 'AULAS DE SURFSKATE',
