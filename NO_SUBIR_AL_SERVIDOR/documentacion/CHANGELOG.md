@@ -5,11 +5,11 @@
 - `pt-br.js`: se agregaron las traducciones de los avisos opcionales y de datos pendientes.
 - Validación: prueba real con Chromium: una experiencia sin fecha deja habilitado “Continuar”, muestra el aviso, conserva 1 persona y no produjo errores JavaScript.
 
-### Iniciación y Surfcoaching — reasignar fotos
-- `services.js`: Día 3 usa la foto de la tarjeta del Programa de iniciación; la foto anterior pasa a Surfcoaching.
-- `index.html` y `trip-builder.js`: las tarjetas de Surfcoaching reciben la foto anterior; el armador del programa queda alineado con la tarjeta pública.
-- `script.js` y `pt-br.js`: se actualizan los textos alternativos para español, inglés y portugués.
-- Validación: sintaxis de los cuatro scripts, existencia de las imágenes, asignación de las referencias y textos alternativos en la ficha, la portada y el armador; versiones de caché renovadas y `git diff --check`.
+### Iniciación y Surfcoaching — reasignar fotos en la galería
+- `services.js`: Día 3 conserva la foto de la tarjeta del Programa de iniciación; en la galería de Surfcoaching, la foto de la tabla roja se reemplaza por la de Día 2 y la foto anterior de Día 3 se suma como otra imagen.
+- `index.html` y `trip-builder.js`: las tarjetas de Surfcoaching conservan la foto grupal original y el armador del Programa de iniciación queda alineado con la tarjeta pública.
+- `script.js` y `pt-br.js`: textos alternativos coherentes en español, inglés y portugués para tarjetas, armador y galería.
+- Validación: sintaxis de los scripts modificados, existencia y asignación de las imágenes, portada y tarjetas sin cambios, galería con las cuatro imágenes previstas, versiones de caché renovadas y `git diff --check`.
 
 ### Surfcoaching — intercambiar portada y primera foto de la galería
 - `services.js`: la foto grupal de surfistas ahora es la portada y la foto de los dos surfistas con sus tablas pasa a ser la primera de la galería; se ajustan los textos alternativos en español e inglés.

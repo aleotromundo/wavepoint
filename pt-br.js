@@ -93,7 +93,7 @@
     serviceCardLocalHostText: 'Chegue, conheça e comece a se sentir parte.',
     serviceCardLocalHostAlt: 'Grupo de visitantes reunido na praia de Tamarindo ao pôr do sol',
     serviceCardSurfLessonsImageAlt: 'Aluna praticando surfe em Tamarindo',
-    serviceCardCoachingImageAlt: 'Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água',
+    serviceCardCoachingImageAlt: 'Três surfistas pulando com suas pranchas na praia',
     serviceCardCoachingTitle: 'Coaching de surfe',
     serviceCardCoachingText: 'Sessão filmada e análise técnica em vídeo das suas ondas.',
     serviceCardWitchRockTitle: 'Roca Bruja',
@@ -414,7 +414,7 @@
       stays: { title: 'Hospedagens e hotéis', description: 'Encontre hospedagem para sua estadia.', imageAlt: 'Casa de Maderas, hospedagem colorida com piscina' },
       'surf-lessons': { title: 'Aulas de surfe', description: 'Uma aula de surfe adaptada ao nível do seu grupo.', imageAlt: 'Aluna praticando surfe em Tamarindo' },
       'surf-programa-3-dias': { title: 'Programa de surfe de 3 dias', description: 'Três aulas particulares em dias consecutivos.', imageAlt: 'Alunos de surfe com suas pranchas na praia de Tamarindo' },
-      'surf-coaching': { title: 'Coaching de surfe', description: 'Treinamento e análise para evoluir no surfe.', imageAlt: 'Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água' },
+      'surf-coaching': { title: 'Coaching de surfe', description: 'Treinamento e análise para evoluir no surfe.', imageAlt: 'Três surfistas pulando com suas pranchas na praia' },
       'witch-rock': { title: 'Roca Bruja', description: 'Um passeio de surfe de barco.', imageAlt: 'Grupo a bordo de um barco diante da formação rochosa de Roca Bruja' },
       'snorkel-catamaran': { title: 'Passeios de barco', description: 'Explore o mar ou navegue pela costa.', imageAlt: 'Passeio de barco pela costa de Guanacaste' },
       yoga: { title: 'Yoga', description: 'Inclua uma pausa na sua viagem.', imageAlt: 'Mulher praticando yoga à beira-mar' },
@@ -923,7 +923,7 @@
       description: 'Um serviço de análise em vídeo de uma sessão de surfe, recomendado para surfistas intermediários ou avançados. Primeiro a sessão é filmada; depois, o instrutor analisa as ondas e compartilha observações técnicas.',
       lead: 'O serviço tem duas etapas: uma sessão de surfe filmada para registrar o maior número possível de ondas e, depois, uma análise em vídeo para ajustar postura, tempo e movimentos. Inclui as imagens das suas ondas e comentários técnicos. Preço: USD 45 por pessoa.',
       includes: ['Sessão de surfe filmada', 'Vídeo das suas ondas', 'Análise em vídeo e comentários técnicos', 'Recomendado para surfistas intermediários ou avançados', 'USD 45 por pessoa', 'Serviço de Local Host'],
-      imageAlts: ['Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água', 'Surfista pegando uma onda em uma prancha vermelha']
+      imageAlts: ['Três surfistas pulando com suas pranchas na praia', 'Dois surfistas saem da água com suas pranchas na praia', 'Aluno praticando a posição de remada na prancha em terra', 'Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água']
     },
     'roca-bruja': {
       eyebrow: 'PASSEIO DE SURFE · AVENTURA',
