@@ -93,7 +93,7 @@
     serviceCardLocalHostText: 'Chegue, conheça e comece a se sentir parte.',
     serviceCardLocalHostAlt: 'Grupo de visitantes reunido na praia de Tamarindo ao pôr do sol',
     serviceCardSurfLessonsImageAlt: 'Aluna praticando surfe em Tamarindo',
-    serviceCardCoachingImageAlt: 'Três surfistas pulando com suas pranchas na praia',
+    serviceCardCoachingImageAlt: 'Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água',
     serviceCardCoachingTitle: 'Coaching de surfe',
     serviceCardCoachingText: 'Sessão filmada e análise técnica em vídeo das suas ondas.',
     serviceCardWitchRockTitle: 'Roca Bruja',
@@ -413,8 +413,8 @@
     experiences: {
       stays: { title: 'Hospedagens e hotéis', description: 'Encontre hospedagem para sua estadia.', imageAlt: 'Casa de Maderas, hospedagem colorida com piscina' },
       'surf-lessons': { title: 'Aulas de surfe', description: 'Uma aula de surfe adaptada ao nível do seu grupo.', imageAlt: 'Aluna praticando surfe em Tamarindo' },
-      'surf-programa-3-dias': { title: 'Programa de surfe de 3 dias', description: 'Três aulas particulares em dias consecutivos.', imageAlt: 'Aluno ensaiando o pop-up na prancha' },
-      'surf-coaching': { title: 'Coaching de surfe', description: 'Treinamento e análise para evoluir no surfe.', imageAlt: 'Três surfistas pulando com suas pranchas na praia' },
+      'surf-programa-3-dias': { title: 'Programa de surfe de 3 dias', description: 'Três aulas particulares em dias consecutivos.', imageAlt: 'Alunos de surfe com suas pranchas na praia de Tamarindo' },
+      'surf-coaching': { title: 'Coaching de surfe', description: 'Treinamento e análise para evoluir no surfe.', imageAlt: 'Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água' },
       'witch-rock': { title: 'Roca Bruja', description: 'Um passeio de surfe de barco.', imageAlt: 'Grupo a bordo de um barco diante da formação rochosa de Roca Bruja' },
       'snorkel-catamaran': { title: 'Passeios de barco', description: 'Explore o mar ou navegue pela costa.', imageAlt: 'Passeio de barco pela costa de Guanacaste' },
       yoga: { title: 'Yoga', description: 'Inclua uma pausa na sua viagem.', imageAlt: 'Mulher praticando yoga à beira-mar' },
@@ -888,7 +888,7 @@
       title: 'Programa para iniciantes no surfe',
       cardText: 'Três aulas particulares de duas horas para descobrir o mar e aproveitar suas primeiras ondas.',
       description: 'Três dias para descobrir o mar e aproveitar suas primeiras ondas.',
-      imageAlts: ['Grupo caminhando com suas pranchas em direção à praia em Tamarindo', 'Aluno praticando a posição de remada na prancha em terra', 'Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água'],
+      imageAlts: ['Grupo caminhando com suas pranchas em direção à praia em Tamarindo', 'Aluno praticando a posição de remada na prancha em terra', 'Alunos de surfe com suas pranchas na praia de Tamarindo'],
       questions: {
         program_dates: { label: 'Quais datas você sugere para as três aulas? Escolha três dias consecutivos na ordem das aulas.', fields: ['Dia 1', 'Dia 2', 'Dia 3'] },
         group_size: { label: 'Quantas pessoas participarão?' }
@@ -923,7 +923,7 @@
       description: 'Um serviço de análise em vídeo de uma sessão de surfe, recomendado para surfistas intermediários ou avançados. Primeiro a sessão é filmada; depois, o instrutor analisa as ondas e compartilha observações técnicas.',
       lead: 'O serviço tem duas etapas: uma sessão de surfe filmada para registrar o maior número possível de ondas e, depois, uma análise em vídeo para ajustar postura, tempo e movimentos. Inclui as imagens das suas ondas e comentários técnicos. Preço: USD 45 por pessoa.',
       includes: ['Sessão de surfe filmada', 'Vídeo das suas ondas', 'Análise em vídeo e comentários técnicos', 'Recomendado para surfistas intermediários ou avançados', 'USD 45 por pessoa', 'Serviço de Local Host'],
-      imageAlts: ['Três surfistas pulando com suas pranchas na praia', 'Surfista pegando uma onda em uma prancha vermelha']
+      imageAlts: ['Aluno ensaiando o movimento para ficar em pé na prancha antes de entrar na água', 'Surfista pegando uma onda em uma prancha vermelha']
     },
     'roca-bruja': {
       eyebrow: 'PASSEIO DE SURFE · AVENTURA',
