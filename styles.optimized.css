@@ -4588,3 +4588,25 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     grid-row: auto !important;
   }
 }
+
+/* Posiciones explícitas para evitar que las reglas antiguas alteren la composición. */
+.surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-1 {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+}
+.surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-2 {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+}
+.surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-3 {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+}
+@media (max-width: 640px) {
+  .surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-1,
+  .surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-2,
+  .surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-3 {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+}

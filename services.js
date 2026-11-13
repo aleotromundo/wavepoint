@@ -1350,7 +1350,7 @@ const reorderCopy = lang === 'en'
 : { instruction: 'Arrastrá cada foto adonde quieras y estirá la esquina inferior derecha para cambiar su tamaño. Con el teclado: flechas para mover, + y − para el tamaño. La disposición se guarda solo en este navegador.', reset: 'Restablecer disposición', capture: 'Vista limpia para captura', copy: 'Copiar disposición', copied: 'Disposición copiada.', copyFailed: 'No se pudo copiar automáticamente. Copiá el texto de abajo.' };
 const gallery = galleryItems.map(({ image, altIndex }) => {
 const alt = esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`);
-const imageMarkup = `<img src="${esc(image)}" alt="${alt}" loading="lazy" />`;
+const imageMarkup = `<img class="service-gallery-image service-gallery-image-${index + 1}" src="${esc(image)}" alt="${alt}" loading="lazy" />`;
 if (!reorderMode) return imageMarkup;
 return `<figure class="surf-photo-free-item" data-surf-photo-item data-photo-src="${esc(image)}"${captureMode ? '' : ' tabindex="0"'}>${imageMarkup}${captureMode ? '' : '<span class="surf-photo-free-resize" data-photo-resize aria-hidden="true"></span>'}</figure>`;
 }).join('');
