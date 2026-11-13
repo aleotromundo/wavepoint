@@ -1167,6 +1167,7 @@ return `<div class="surf-program-story"><section class="surf-program-overview" a
 }
 const SURF_PHOTO_LAYOUT_STORAGE_KEY = 'wavepoint:surf-photo-gallery-layout:v1';
 const SURFSKATE_LAYOUT_STORAGE_KEY = 'wavepoint:surfskate-gallery-layout:v1';
+const SURF_COACHING_LAYOUT_STORAGE_KEY = 'wavepoint:surf-coaching-gallery-layout:v1';
 // Fotos de surf: disposición pública. Cada fila reparte su ancho según la proporción de sus fotos, así todas las fotos de una fila tienen la misma altura y el mismo espacio entre ellas. `sizes` sigue el orden de la galería (ancho, alto de cada archivo).
 const SURF_PHOTO_COLLAGE = { rows: [[0, 1, 2]], sizes: [[1600, 1066], [1600, 900], [900, 1600]] };
 function readSurfPhotoLayout(sources, storageKey = SURF_PHOTO_LAYOUT_STORAGE_KEY) {
@@ -1337,8 +1338,9 @@ const galleryImages = service.galleryImages || service.images.slice(galleryStart
 const galleryImageAlts = isEn ? (service.galleryImageAltsEn || service.imageAltsEn) : (service.galleryImageAlts || service.imageAlts);
 const isSurfPhotoGallery = service.id === 'surf-fotografia';
 const isSurfskateGallery = service.id === 'surfskate';
-const isReorderableGallery = isSurfPhotoGallery || isSurfskateGallery;
-const galleryLayoutStorageKey = isSurfskateGallery ? SURFSKATE_LAYOUT_STORAGE_KEY : SURF_PHOTO_LAYOUT_STORAGE_KEY;
+const isSurfCoachingGallery = service.id === 'surf-coaching';
+const isReorderableGallery = isSurfPhotoGallery || isSurfskateGallery || isSurfCoachingGallery;
+const galleryLayoutStorageKey = isSurfskateGallery ? SURFSKATE_LAYOUT_STORAGE_KEY : isSurfCoachingGallery ? SURF_COACHING_LAYOUT_STORAGE_KEY : SURF_PHOTO_LAYOUT_STORAGE_KEY;
 const query = new URLSearchParams(window.location.search);
 const reorderMode = isReorderableGallery && query.get('ordenarFotos') === '1';
 const captureMode = reorderMode && query.get('captura') === '1';
@@ -1625,7 +1627,7 @@ const surfFormBar = '';
 	 document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${browsableServices.length}</p><h1>${esc(service.title)}</h1>${service.id === 'yoga' ? '' : `<p class="detail-hero-intro">${esc(service.description)}</p>`}</div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : lang === 'pt-BR' ? 'Consultar disponibilidade' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="serviceRequestTitle">${surfFormBar}<div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : lang === 'pt-BR' ? 'SOLICITAÇÃO' : 'SOLICITUD'}</p><h2 id="serviceRequestTitle">${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : lang === 'pt-BR' ? 'Seu progresso' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(lang === 'pt-BR' ? ui.submit : service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
 		const requestForm = document.getElementById('serviceRequestForm');
 		window.dispatchEvent(new Event('wavepoint:service-rendered'));
-		if ((service.id === 'surf-fotografia' || service.id === 'surfskate') && new URLSearchParams(window.location.search).get('ordenarFotos') === '1') setupPhotoLayoutEditor();
+        if ((service.id === 'surf-fotografia' || service.id === 'surfskate' || service.id === 'surf-coaching') && new URLSearchParams(window.location.search).get('ordenarFotos') === '1') setupPhotoLayoutEditor();
 	setupSurveyInteractions(requestForm);
 setupQuickRequestPanel(requestForm);
 if (service.id === 'clases-de-surf') {
