@@ -98,6 +98,6 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Pendiente:** el usuario debe publicar la historia reescrita con `git push --force-with-lease origin main`. Después, confirmar que Vercel desplegó la rama y comprobar el sitemap público.
 
 ## Galería de Fotos de surf — 2026-11-12
-**Estado: Resuelto.** La galería de la ficha `surf-fotografia` quedó organizada en dos columnas con filas amplias y parejas, sin recortar ni deformar las imágenes; en pantallas pequeñas pasa a una columna. No se agregaron ni subieron fotos nuevas.
+**Estado: Resuelto.** La galería de la ficha `surf-fotografia` queda con cuatro fotos en una cuadrícula 2×2: las dos fotos de playa arriba; abajo, el surfista en el agua a la izquierda y el surfista sin remera a la derecha. Se retiró la foto de la maniobra con traje oscuro para conservar dos filas parejas. No se agregaron ni subieron fotos nuevas; en pantallas pequeñas la galería pasa a una columna.
 
-**Archivo:** `styles.optimized.css`. **Commit:** `1940498` — «Ajustar galería de fotos de surf».
+**Archivos:** `services.js`, `styles.optimized.css`. **Último ajuste:** ordenar cuatro fotos en una cuadrícula 2×2.
