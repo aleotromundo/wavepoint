@@ -4231,3 +4231,6 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   #servicios .services-logo-placement-layer{grid-column:1;min-height:210px;height:210px}
   #servicios .services-background-logo{transform:translate3d(0,-30px,0)}
 }
+
+/* Galerías de fichas: mostrar la foto completa, sin recortar cabezas ni pies */
+.detail-gallery img,.service-editorial-gallery img{object-fit:contain!important;object-position:center!important;background:#0a2c3b!important}
