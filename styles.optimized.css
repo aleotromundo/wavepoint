@@ -4238,3 +4238,6 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 /* Portada de Fotos de surf: que no se corte la cabeza de las personas */
 .surf-photo-detail-page .detail-hero{background-position:center 0%}
 .service-image-link[href="/surf-fotografia"] img{object-position:center 0%!important}
+
+/* Galería de Fotos de surf: quitar cielo de la tercera foto visible (Día 3 de iniciación) */
+.surf-photo-detail-page .detail-gallery img:nth-child(4),.surf-photo-detail-page .service-editorial-gallery img:nth-child(4){object-position:center 100%!important}
