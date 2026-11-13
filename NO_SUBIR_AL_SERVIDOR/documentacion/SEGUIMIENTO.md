@@ -154,13 +154,11 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Archivos:** `services.js` (constante `SURF_PHOTO_COLLAGE` con filas y medidas de cada archivo), `styles.optimized.css`, `service-detail.html`. Si cambian las fotos de la galería, actualizar `sizes` en ese orden.
 
 ## Fotos de surf — encuadre móvil centrado — 2026-11-13
-**Estado: Parcial.** Se corrigió la cascada que imponía proporción cuadrada a las imágenes del collage. En móvil se respeta la proporción original de cada foto y se muestra completa, centrada y sin recortar al surfista. Se renovó el parámetro de caché del CSS en la ficha.
+**Estado: Resuelto.** Se corrigió la cascada que imponía proporción cuadrada a las imágenes del collage. En móvil se respeta la proporción original de cada foto y se muestra completa, centrada y sin recortar al surfista. El cambio quedó integrado y el deployment de Vercel pasó.
 
 **Archivos:** `styles.optimized.css`, `service-detail.html`.
-**Pendiente:** integrar el cambio en GitHub; el push a `main` inicia un deployment de Vercel.
 
-## Surfskate — editor visual para ordenar la galería — 2026-11-13
-**Estado: Parcial.** Se habilitó en la ficha Surfskate el mismo editor libre de Fotos de surf para mover y redimensionar las imágenes; usa una clave de almacenamiento local independiente para no alterar el orden de Fotos de surf. La captura limpia usa `&captura=1`, y la disposición se puede copiar en JSON.
+## Surfskate — editor visual y disposición de galería — 2026-11-13
+**Estado: Resuelto.** Se habilitó en la ficha Surfskate el mismo editor libre de Fotos de surf, con almacenamiento local independiente. A partir de la captura del usuario, la galería pública muestra las dos fotos lado a lado, de igual ancho, alineadas arriba y conservando la proporción original; sin marcos ni fondos. El editor se conserva para futuras propuestas.
 
-**Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`.
-**Pendiente:** desplegar el editor, recibir la disposición/captura del usuario y aplicarla a la galería pública de Surfskate.
+**Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`. La herramienta está disponible con `?ordenarFotos=1`; la vista limpia de captura usa `&captura=1`.
