@@ -152,3 +152,9 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** La galería pública de Fotos de surf adopta la disposición que el usuario armó con el editor: arriba las dos fotos horizontales (playa y surfista en el agua), abajo la ola verde ancha a la izquierda y el surfista vertical a la derecha. Cada fila reparte su ancho según la proporción real de sus fotos, de modo que las fotos de una fila tienen exactamente la misma altura, los bordes izquierdo y derecho quedan alineados y el espacio entre fotos es el mismo en horizontal y en vertical (`clamp(10px,1.6vw,20px)`). En pantallas de hasta 640 px las fotos pasan a una columna con el mismo espacio. El editor `?ordenarFotos=1` se conserva.
 
 **Archivos:** `services.js` (constante `SURF_PHOTO_COLLAGE` con filas y medidas de cada archivo), `styles.optimized.css`, `service-detail.html`. Si cambian las fotos de la galería, actualizar `sizes` en ese orden.
+
+## Fotos de surf — encuadre móvil centrado — 2026-11-13
+**Estado: Parcial.** Se corrigió la cascada que imponía proporción cuadrada a las imágenes del collage. En móvil se respeta la proporción original de cada foto y se muestra completa, centrada y sin recortar al surfista. Se renovó el parámetro de caché del CSS en la ficha.
+
+**Archivos:** `styles.optimized.css`, `service-detail.html`.
+**Pendiente:** integrar el cambio en GitHub; el push a `main` inicia un deployment de Vercel.
