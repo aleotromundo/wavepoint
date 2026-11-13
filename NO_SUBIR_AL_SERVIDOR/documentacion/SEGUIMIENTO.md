@@ -101,3 +101,8 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** La galería de la ficha `surf-fotografia` queda con cuatro fotos en una cuadrícula 2×2: las dos fotos de playa arriba; abajo, el surfista en el agua a la izquierda y el surfista sin remera a la derecha. Se retiró la foto de la maniobra con traje oscuro para conservar dos filas parejas. No se agregaron ni subieron fotos nuevas; en pantallas pequeñas la galería pasa a una columna.
 
 **Archivos:** `services.js`, `styles.optimized.css`. **Último ajuste:** ordenar cuatro fotos en una cuadrícula 2×2.
+
+## Ficha de Yoga — mover descripción — 2026-11-12
+**Estado: Resuelto.** La descripción de Yoga ya no aparece debajo del título; ahora se muestra en el cuadro de contenido debajo de las fotos y encima de «INCLUYE». El cambio aplica únicamente a Yoga.
+
+**Archivo:** `services.js`.
