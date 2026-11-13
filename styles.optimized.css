@@ -4383,3 +4383,12 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
   box-shadow: none !important;
   outline: 0 !important;
 }
+
+/* Surf Coaching: conservar sombra sin dibujar una caja alrededor del contenedor. */
+.detail-gallery img[src$="surf-photography/guide-surf-cover.webp"],
+.service-editorial-gallery img[src$="surf-photography/guide-surf-cover.webp"],
+.detail-gallery img[src$="surf-program-3-days/day-2-board-position.webp"],
+.service-editorial-gallery img[src$="surf-program-3-days/day-2-board-position.webp"] {
+  box-shadow: none !important;
+  filter: drop-shadow(0 18px 26px rgba(8, 43, 58, .24));
+}
