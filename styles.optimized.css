@@ -4276,3 +4276,20 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 .service-detail-page.yoga-detail-page .detail-hero h1{font-size:clamp(56px,7vw,90px)}
 .service-detail-page.yoga-detail-page .detail-hero{background-position:center 35%}
 @media (max-width:640px){.service-detail-page.yoga-detail-page .detail-hero{min-height:460px;padding-bottom:42px;background-position:center 35%}.service-detail-page.yoga-detail-page .detail-hero-content{width:calc(100% - 32px);padding:16px 18px 18px;border-radius:16px}}
+/* Fotos de surf: editor de orden local, disponible solo con ?ordenarFotos=1. */
+.surf-photo-reorder-editor{width:100%;grid-column:1/-1}
+.surf-photo-reorder-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin:0 0 16px;padding:14px 16px;border:1px solid rgba(11,65,77,.14);border-radius:14px;background:#f3f8f6;color:#153d45}
+.surf-photo-reorder-toolbar p{margin:0;font-size:14px;line-height:1.5}
+.surf-photo-reorder-toolbar>div{display:flex;flex-wrap:wrap;gap:8px}
+.surf-photo-reorder-toolbar button,.surf-photo-order-controls button{min-height:42px;padding:9px 13px;border:1px solid rgba(11,65,77,.22);border-radius:10px;background:#fff;color:#123c45;font:inherit;font-size:14px;font-weight:600;line-height:1.2;cursor:pointer;touch-action:manipulation}
+.surf-photo-reorder-toolbar button:hover,.surf-photo-order-controls button:not(:disabled):hover{background:#e8f3f0}
+.surf-photo-reorder-toolbar button:focus-visible,.surf-photo-order-controls button:focus-visible{outline:3px solid #218b88;outline-offset:2px}
+.surf-photo-reorder-grid{grid-auto-rows:auto!important}
+.surf-photo-reorder-grid .surf-photo-order-item{display:grid;grid-template-rows:clamp(220px,26vw,380px) auto;gap:8px;min-width:0;margin:0;cursor:grab;touch-action:pan-y}
+.surf-photo-reorder-grid .surf-photo-order-item.is-dragging{opacity:.38;cursor:grabbing}
+.surf-photo-reorder-grid .surf-photo-order-item.is-drop-target{background:rgba(14,123,132,.1)}
+.surf-photo-reorder-grid .surf-photo-order-item>img{display:block;width:100%!important;height:100%!important;max-width:100%!important;max-height:none!important;object-fit:contain!important;object-position:center!important}
+.surf-photo-order-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+.surf-photo-order-controls button{width:100%;min-height:42px}
+.surf-photo-order-controls button:disabled{opacity:.42;cursor:default}
+@media(max-width:640px){.surf-photo-reorder-toolbar{align-items:flex-start;padding:12px}.surf-photo-reorder-toolbar>div{width:100%}.surf-photo-reorder-toolbar button{flex:1 1 140px;min-height:44px}.surf-photo-reorder-grid .surf-photo-order-item{grid-template-rows:auto auto;gap:8px}.surf-photo-reorder-grid .surf-photo-order-item>img{height:auto!important;max-height:340px!important}}

@@ -131,3 +131,10 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** Se anuló la regla que hacía que la tercera foto ocupara toda la fila; ahora la galería mantiene dos columnas y coloca la foto del surfista con traje oscuro a la izquierda y la del surfista sin remera a la derecha en la fila inferior.
 
 **Archivo:** `styles.optimized.css`.
+
+## Fotos de surf — editor de orden para escritorio — 2026-11-12
+**Estado: Parcial.** Se añadió un modo de edición activado con `?ordenarFotos=1`: permite arrastrar fotos con el mouse o moverlas con flechas. El orden se guarda únicamente en el almacenamiento local del navegador; `&captura=1` muestra la galería limpia para tomar una captura. La galería pública mantiene su orden actual hasta recibir la propuesta visual del usuario.
+
+**Archivos:** `services.js`, `styles.optimized.css`, `service-detail.html`.
+
+**Pendiente:** recibir la captura con el orden deseado, aplicarlo como orden definitivo y publicar el cambio para que el usuario use el editor en el sitio.

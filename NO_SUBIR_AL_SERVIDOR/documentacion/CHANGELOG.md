@@ -1,3 +1,9 @@
+## 2026-11-12
+### Fotos de surf — editor de orden visual para escritorio
+- `services.js`: la ficha permite abrir `?ordenarFotos=1` para reorganizar las fotos arrastrándolas con el mouse o usando flechas; el orden se guarda solo en el navegador. `&captura=1` muestra la galería sin controles.
+- `styles.optimized.css` y `service-detail.html`: estilos adaptables y renovación de las versiones de caché. La vista pública normal conserva el orden configurado en el código.
+- Validación: `node --check services.js`, `git diff --check` y prueba visual local con Chromium; se comprobó que el editor aparece en su modo y que la vista de captura oculta los controles.
+
 ## 2026-11-11
 ### Servicios — recuperar el logo WavePoint entre Surfskate y Armá tu viaje
 - `index.html`: se reincorporó la capa decorativa del logo WavePoint inmediatamente después de la tarjeta “Clases de surfskate” y antes del separador de “Experiencia a medida”, sin alterar las tarjetas ni sus enlaces.

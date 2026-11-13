@@ -1164,14 +1164,118 @@ const days = copy.days.map((day, index) => { const dayTitle = day.title.split(' 
 const prices = copy.prices.map(([participants, lesson, program]) => `<article class="surf-program-price-card"><h4>${esc(participants)}</h4><dl><div><dt>${esc(copy.priceHeaders[1])}</dt><dd>${esc(lesson)}</dd></div><div><dt>${esc(copy.priceHeaders[2])}</dt><dd>${esc(program)}</dd></div></dl></article>`).join('');
 return `<div class="surf-program-story"><section class="surf-program-overview" aria-label="${labels.overview}"><p class="surf-program-intro">${esc(copy.intro)}</p><dl class="surf-program-facts">${facts}</dl></section><section class="surf-program-why" aria-labelledby="surf-program-why-heading"><p class="service-page-kicker">${labels.approach}</p><h2 id="surf-program-why-heading">${esc(copy.whyHeading)}</h2><p>${esc(copy.whyText)}</p></section><section class="surf-program-includes" aria-labelledby="surf-program-includes-heading"><p class="service-page-kicker">${labels.program}</p><h2 id="surf-program-includes-heading">${esc(copy.includesHeading)}</h2><ul>${includes}</ul></section><section class="surf-program-days" aria-label="${labels.lessons}">${days}</section><p class="surf-program-progress-note">${esc(copy.progressNote)}</p><section class="surf-program-pricing" aria-labelledby="surf-program-prices-heading"><div class="surf-program-section-head"><div><p class="service-page-kicker">${labels.rates}</p><h2 id="surf-program-prices-heading">${esc(copy.pricesHeading)}</h2></div><span class="surf-program-currency">USD</span></div><p class="surf-program-price-lead">${esc(copy.priceLead)}</p><div class="surf-program-price-list">${prices}</div><p class="surf-program-price-note">${esc(copy.priceNote)}</p></section><section class="surf-program-reservation" aria-labelledby="surf-program-reservation-heading"><h3 id="surf-program-reservation-heading">${esc(copy.reservationHeading)}</h3><p>${esc(copy.reservationText)}</p><p class="surf-program-reservation-note">${esc(copy.reservationNote)}</p></section></div>`;
 }
+const SURF_PHOTO_ORDER_STORAGE_KEY = 'wavepoint:surf-photo-gallery-order:v1';
+function getSurfPhotoGalleryOrder(items) {
+try {
+const savedOrder = JSON.parse(window.localStorage.getItem(SURF_PHOTO_ORDER_STORAGE_KEY) || 'null');
+if (!Array.isArray(savedOrder) || savedOrder.length !== items.length || new Set(savedOrder).size !== items.length) return items;
+const itemsByImage = new Map(items.map(item => [item.image, item]));
+if (!savedOrder.every(image => itemsByImage.has(image))) return items;
+return savedOrder.map(image => itemsByImage.get(image));
+} catch (error) {
+return items;
+}
+}
+function setupSurfPhotoReorder() {
+const editor = document.querySelector('[data-surf-photo-reorder]');
+const gallery = editor?.querySelector('[data-surf-photo-grid]');
+if (!editor || !gallery) return;
+const getItems = () => [...gallery.querySelectorAll('[data-surf-photo-item]')];
+const saveOrder = () => {
+try { window.localStorage.setItem(SURF_PHOTO_ORDER_STORAGE_KEY, JSON.stringify(getItems().map(item => item.dataset.photoSrc))); } catch (error) {}
+};
+const updateControls = () => getItems().forEach((item, index, items) => {
+const up = item.querySelector('[data-photo-move="up"]');
+const down = item.querySelector('[data-photo-move="down"]');
+if (up) up.disabled = index === 0;
+if (down) down.disabled = index === items.length - 1;
+});
+gallery.addEventListener('click', event => {
+const button = event.target.closest('[data-photo-move]');
+if (!button) return;
+const item = button.closest('[data-surf-photo-item]');
+const items = getItems();
+const index = items.indexOf(item);
+if (index < 0) return;
+if (button.dataset.photoMove === 'up' && index > 0) gallery.insertBefore(item, items[index - 1]);
+if (button.dataset.photoMove === 'down' && index < items.length - 1) gallery.insertBefore(items[index + 1], item);
+saveOrder();
+updateControls();
+});
+let draggedItem = null;
+gallery.addEventListener('dragstart', event => {
+const item = event.target.closest('[data-surf-photo-item]');
+if (!item || event.target.closest('button')) { event.preventDefault(); return; }
+draggedItem = item;
+item.classList.add('is-dragging');
+event.dataTransfer.effectAllowed = 'move';
+event.dataTransfer.setData('text/plain', item.dataset.photoSrc);
+});
+gallery.addEventListener('dragover', event => {
+if (!draggedItem) return;
+event.preventDefault();
+const target = event.target.closest('[data-surf-photo-item]');
+gallery.querySelectorAll('.is-drop-target').forEach(item => item.classList.remove('is-drop-target'));
+if (target && target !== draggedItem) {
+target.classList.add('is-drop-target');
+event.dataTransfer.dropEffect = 'move';
+}
+});
+gallery.addEventListener('drop', event => {
+if (!draggedItem) return;
+event.preventDefault();
+const target = event.target.closest('[data-surf-photo-item]');
+if (target && target !== draggedItem) {
+const rect = target.getBoundingClientRect();
+gallery.insertBefore(draggedItem, event.clientY < rect.top + rect.height / 2 ? target : target.nextElementSibling);
+saveOrder();
+updateControls();
+}
+});
+gallery.addEventListener('dragend', () => {
+draggedItem?.classList.remove('is-dragging');
+gallery.querySelectorAll('.is-drop-target').forEach(item => item.classList.remove('is-drop-target'));
+draggedItem = null;
+});
+editor.querySelector('[data-photo-order-reset]')?.addEventListener('click', () => {
+try { window.localStorage.removeItem(SURF_PHOTO_ORDER_STORAGE_KEY); } catch (error) {}
+window.location.reload();
+});
+editor.querySelector('[data-photo-order-capture]')?.addEventListener('click', () => {
+const url = new URL(window.location.href);
+url.searchParams.set('captura', '1');
+window.location.assign(url.toString());
+});
+updateControls();
+}
 function renderStandardStory(service, extra = '') {
 const isEn = lang === 'en';
 const galleryStart = service.id === 'roca-bruja' ? 0 : 1;
 const galleryImages = service.galleryImages || service.images.slice(galleryStart);
 const galleryImageAlts = isEn ? (service.galleryImageAltsEn || service.imageAltsEn) : (service.galleryImageAlts || service.imageAlts);
-const gallery = galleryImages.map((image, index) => { const altIndex = service.galleryImages ? index : index + galleryStart; return `<img src="${esc(image)}" alt="${esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`)}" loading="lazy" />`; }).join('');
+const isSurfPhotoGallery = service.id === 'surf-fotografia';
+const query = new URLSearchParams(window.location.search);
+const reorderMode = isSurfPhotoGallery && query.get('ordenarFotos') === '1';
+const captureMode = reorderMode && query.get('captura') === '1';
+const galleryItems = galleryImages.map((image, index) => ({ image, altIndex: service.galleryImages ? index : index + galleryStart }));
+const visibleGalleryItems = reorderMode ? getSurfPhotoGalleryOrder(galleryItems) : galleryItems;
+const reorderCopy = lang === 'en'
+? { instruction: 'Drag photos to arrange them, or use the arrows. This order is saved only in this browser.', up: 'Move up', down: 'Move down', reset: 'Reset order', capture: 'Clean view for screenshot' }
+: lang === 'pt-BR'
+? { instruction: 'Arraste as fotos para organizá-las ou use as setas. A ordem fica salva apenas neste navegador.', up: 'Mover para cima', down: 'Mover para baixo', reset: 'Restaurar ordem', capture: 'Visualização para captura' }
+: { instruction: 'Arrastrá las fotos para ordenarlas o usá las flechas. El orden se guarda solo en este navegador.', up: 'Subir', down: 'Bajar', reset: 'Restablecer orden', capture: 'Vista limpia para captura' };
+const gallery = visibleGalleryItems.map(({ image, altIndex }, index) => {
+const alt = esc(galleryImageAlts?.[altIndex] || `${service.title} · ${isEn ? 'photo' : 'foto'} ${altIndex + 1}`);
+const imageMarkup = `<img src="${esc(image)}" alt="${alt}" loading="lazy" />`;
+if (!reorderMode || captureMode) return imageMarkup;
+return `<figure class="surf-photo-order-item" data-surf-photo-item data-photo-src="${esc(image)}" draggable="true">${imageMarkup}<figcaption class="surf-photo-order-controls"><button type="button" data-photo-move="up" aria-label="${reorderCopy.up}">↑ <span>${reorderCopy.up}</span></button><button type="button" data-photo-move="down" aria-label="${reorderCopy.down}">↓ <span>${reorderCopy.down}</span></button></figcaption></figure>`;
+}).join('');
 const galleryClass = service.id === 'surfskate' ? ` service-editorial-gallery-surfskate${galleryImages.length === 2 ? ' service-editorial-gallery-surfskate--two' : ''}` : service.id === 'roca-bruja' ? ' service-editorial-gallery-witch-rock' : '';
-const galleryMarkup = gallery ? `<div class="detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}" role="group" aria-label="${isEn ? `${service.title} photos` : `Fotos de ${service.title}`}" tabindex="0">${gallery}</div>` : '';
+const galleryRoleLabel = isEn ? `${service.title} photos` : lang === 'pt-BR' ? `Fotos de ${service.title}` : `Fotos de ${service.title}`;
+const galleryClassName = `detail-gallery service-editorial-gallery${galleryImages.length > 2 ? ' service-editorial-gallery-triple' : ''}${galleryClass}${reorderMode && !captureMode ? ' surf-photo-reorder-grid' : ''}`;
+const galleryMarkup = gallery ? reorderMode
+? `<div class="surf-photo-reorder-editor" data-surf-photo-reorder>${captureMode ? '' : `<div class="surf-photo-reorder-toolbar"><p>${reorderCopy.instruction}</p><div><button type="button" data-photo-order-reset>${reorderCopy.reset}</button><button type="button" data-photo-order-capture>${reorderCopy.capture}</button></div></div>`}<div class="${galleryClassName}" data-surf-photo-grid role="group" aria-label="${galleryRoleLabel}" tabindex="0">${gallery}</div></div>`
+: `<div class="${galleryClassName}" role="group" aria-label="${galleryRoleLabel}" tabindex="0">${gallery}</div>` : '';
 const includes = service.includes?.length ? `<div class="service-supporting-includes"><p class="service-supporting-label">${isEn ? 'INCLUDED' : lang === 'pt-BR' ? 'INCLUÍDO' : 'INCLUYE'}</p><ul>${service.includes.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : '';
 const supporting = service.lead || extra || includes ? `<div class="service-supporting-content">${service.lead ? `<p class="service-supporting-lead">${esc(service.lead)}</p>` : ''}${extra ? `<p class="service-supporting-extra">${esc(extra)}</p>` : ''}${includes}</div>` : '';
 return galleryMarkup || supporting ? `<section class="service-editorial-story">${galleryMarkup}${supporting}</section>` : '';
@@ -1426,9 +1530,10 @@ const story = service.id === 'alojamiento-experiencias'
 const surfSurveyModal = '' /* El formulario de clases queda visible debajo del contenido. */;
 const surfFormBar = '';
 /* const surfSurveyModal = service.id === 'clases-de-surf' ? `<dialog class="surf-survey-modal" id="surfSurveyModal" aria-labelledby="surfSurveyTitle"><div class="surf-survey-modal-shell"><div class="surf-survey-modal-head"><div><p class="service-page-kicker">${lang === 'en' ? 'READY TO SURF?' : '¿LISTO PARA SURFEAR?'}</p><h2 id="surfSurveyTitle">${ui.modalTitle}</h2><p>${ui.modalText}</p></div><button class="surf-survey-close" type="button" data-close-surf-survey aria-label="${ui.modalClose}">×</button></div><div id="surfSurveyModalBody"></div></div></dialog>` : ''; */
- document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${browsableServices.length}</p><h1>${esc(service.title)}</h1>${service.id === 'yoga' ? '' : `<p class="detail-hero-intro">${esc(service.description)}</p>`}</div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : lang === 'pt-BR' ? 'Consultar disponibilidade' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="serviceRequestTitle">${surfFormBar}<div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : lang === 'pt-BR' ? 'SOLICITAÇÃO' : 'SOLICITUD'}</p><h2 id="serviceRequestTitle">${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : lang === 'pt-BR' ? 'Seu progresso' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(lang === 'pt-BR' ? ui.submit : service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
-	const requestForm = document.getElementById('serviceRequestForm');
-	window.dispatchEvent(new Event('wavepoint:service-rendered'));
+	 document.getElementById('serviceDetailRoot').innerHTML = `<section class="detail-hero">${heroArrows}<div class="container detail-hero-content"><p class="service-page-kicker">${esc(service.eyebrow)}</p><p class="detail-index">${String(position + 1).padStart(2, '0')} / ${browsableServices.length}</p><h1>${esc(service.title)}</h1>${service.id === 'yoga' ? '' : `<p class="detail-hero-intro">${esc(service.description)}</p>`}</div></section><section class="detail-content"><div class="container detail-layout"><article class="detail-story${service.id === 'retiros' ? ' detail-story-retreats' : ''}">${story}</article><button class="quick-request-launcher" id="quickRequestLauncher" type="button" aria-expanded="false" aria-controls="detailRequestPanel"><span class="quick-request-launcher-icon" aria-hidden="true">↗</span><span>${lang === 'en' ? 'Check availability' : lang === 'pt-BR' ? 'Consultar disponibilidade' : 'Consultar disponibilidad'}</span></button><aside class="detail-request quick-request-panel" id="detailRequestPanel" role="dialog" aria-modal="false" aria-labelledby="serviceRequestTitle">${surfFormBar}<div class="detail-request-head"><p class="service-page-kicker">${lang === 'en' ? 'BOOK REQUEST' : lang === 'pt-BR' ? 'SOLICITAÇÃO' : 'SOLICITUD'}</p><h2 id="serviceRequestTitle">${ui.requestTitle}</h2><p>${ui.requestText}</p></div><form id="serviceRequestForm" class="service-survey-form" novalidate><div class="survey-progress" data-survey-progress role="status" aria-live="polite"><div class="survey-progress-copy"><span>${lang === 'en' ? 'Your progress' : lang === 'pt-BR' ? 'Seu progresso' : 'Tu avance'}</span><strong data-survey-progress-value>0 / 0</strong></div><div class="survey-progress-track" aria-hidden="true"><span data-survey-progress-bar></span></div></div>${formQuestions}<label class="detail-question detail-field" data-survey-question for="request-contact"><span>${ui.extraLabel} <span class="detail-optional">${ui.optional}</span></span><textarea id="request-contact" name="request-contact" placeholder="${ui.extraPlaceholder}"></textarea></label><button class="detail-submit" type="submit">${esc(lang === 'pt-BR' ? ui.submit : service.submitLabel || ui.submit)}</button><p class="detail-form-note">${ui.note}</p><p class="detail-error" id="detailError" role="alert"></p></form></aside></div></section>${surfSurveyModal}`;
+		const requestForm = document.getElementById('serviceRequestForm');
+		window.dispatchEvent(new Event('wavepoint:service-rendered'));
+		if (service.id === 'surf-fotografia' && new URLSearchParams(window.location.search).get('ordenarFotos') === '1') setupSurfPhotoReorder();
 	setupSurveyInteractions(requestForm);
 setupQuickRequestPanel(requestForm);
 if (service.id === 'clases-de-surf') {
