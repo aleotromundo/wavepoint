@@ -289,7 +289,7 @@ en: {
 eyebrow: 'SURF PROGRAM · BEGINNERS', title: 'Beginner Surf Program',
 cardText: 'Three private 2-hour lessons to discover the ocean and enjoy your first waves.',
 description: 'Three days to discover the ocean and enjoy your first waves.',
-imageAlts: ['Group walking with their boards toward the shore in Tamarindo.', 'One person surfing while another practices paddling in the water.', 'Surfer practicing their stance on a wave.'],
+imageAlts: ['Group walking with their boards toward the shore in Tamarindo.', 'Surfer riding a wave with others paddling nearby.', 'Surfer in a dark wetsuit making a turn on a green wave.'],
 questions: {
 program_dates: { label: 'Which dates would you like for the three lessons? Choose three consecutive days in lesson order.', fields: ['Day 1', 'Day 2', 'Day 3'] },
 group_size: { label: 'How many people will take part?' }
