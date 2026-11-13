@@ -4265,3 +4265,6 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 /* Galería de Fotos de surf: sin marco, sombra ni bordes alrededor de las fotos */
 .surf-photo-detail-page .detail-gallery.service-editorial-gallery,.surf-photo-detail-page .service-editorial-gallery,.surf-photo-detail-page .detail-gallery.service-editorial-gallery>*{border:0!important;box-shadow:none!important;outline:0!important;padding:0!important;margin-left:0!important;margin-right:0!important}
 .surf-photo-detail-page .detail-gallery img,.surf-photo-detail-page .service-editorial-gallery img{border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;background:transparent!important;padding:0!important}
+
+/* Country Host: en escritorio, la tercera foto enfoca al grupo y no a la planta. */
+@media (min-width:981px){.local-host-detail-page .service-editorial-gallery img:nth-child(3){object-position:center 76%!important}}

@@ -106,3 +106,8 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** La descripción de Yoga ya no aparece debajo del título; ahora se muestra en el cuadro de contenido debajo de las fotos y encima de «INCLUYE». El cambio aplica únicamente a Yoga.
 
 **Archivo:** `services.js`.
+
+## Country Host — encuadre de la tercera foto — 2026-11-12
+**Estado: Resuelto.** En escritorio, la tercera foto de la galería centra el grupo de personas y reduce el protagonismo de la planta mediante `object-position: center 76%`. El ajuste queda limitado a la ficha de Country Host.
+
+**Archivo:** `styles.optimized.css`.
