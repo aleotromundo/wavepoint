@@ -111,3 +111,8 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** En escritorio, la tercera foto de la galería centra el grupo de personas y reduce el protagonismo de la planta mediante `object-position: center 76%`. El ajuste queda limitado a la ficha de Country Host.
 
 **Archivo:** `styles.optimized.css`.
+
+## Portada de Yoga — ajuste tras mover la descripción — 2026-11-12
+**Estado: Resuelto.** La portada quedó más compacta y angosta, con el título dentro de un marco fino y transparente, sin el rectángulo translúcido pesado ni la descripción en el hero.
+
+**Archivo:** `styles.optimized.css`.
