@@ -1167,7 +1167,7 @@ return `<div class="surf-program-story"><section class="surf-program-overview" a
 const SURF_PHOTO_LAYOUT_STORAGE_KEY = 'wavepoint:surf-photo-gallery-layout:v1';
 const SURFSKATE_LAYOUT_STORAGE_KEY = 'wavepoint:surfskate-gallery-layout:v1';
 // Fotos de surf: disposición pública. Cada fila reparte su ancho según la proporción de sus fotos, así todas las fotos de una fila tienen la misma altura y el mismo espacio entre ellas. `sizes` sigue el orden de la galería (ancho, alto de cada archivo).
-const SURF_PHOTO_COLLAGE = { rows: [[0, 1], [2, 3]], sizes: [[1600, 1066], [1600, 1066], [1600, 900], [900, 1600]] };
+const SURF_PHOTO_COLLAGE = { rows: [[0, 1, 2]], sizes: [[1600, 1066], [1600, 900], [900, 1600]] };
 function readSurfPhotoLayout(sources, storageKey = SURF_PHOTO_LAYOUT_STORAGE_KEY) {
 try {
 const saved = JSON.parse(window.localStorage.getItem(storageKey) || 'null');

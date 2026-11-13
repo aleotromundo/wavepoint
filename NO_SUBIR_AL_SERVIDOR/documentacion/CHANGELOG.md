@@ -10,6 +10,12 @@
 - `service-detail.html`: se renueva la versión de caché de `services.js` para que la ficha reciba el orden actualizado.
 - Validación: sintaxis JavaScript, existencia y orden de los tres recursos, textos alternativos, versión de caché e `git diff --check`.
 
+### Fotos de surf — tres fotos en una fila en escritorio
+- `services.js`: las tres fotos actuales de la galería se agrupan en una sola fila y conservan sus proporciones originales.
+- `styles.optimized.css`: en móvil las fotos siguen apiladas y el espacio entre ellas baja a 6 px.
+- `service-detail.html`: se renuevan las versiones de caché del CSS y de `services.js`.
+- Validación: sintaxis JavaScript, orden/dimensiones de imágenes, separación responsive, versiones de caché e `git diff --check`.
+
 ### Armá tu viaje — integrar las fichas nuevas
 - `trip-builder.js`: se agregaron Programa de surf de 3 días, Tour del estero, Buceo y Country Host. Retiros queda fuera del armador por decisión del usuario.
 - El programa de surf exige tres fechas consecutivas y calcula la tarifa de referencia por persona; el Tour del estero calcula USD 40 por persona y limita el grupo a 12; Buceo queda a cotizar; Country Host figura como gratuito.
