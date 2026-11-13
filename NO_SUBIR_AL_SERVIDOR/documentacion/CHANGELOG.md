@@ -16,6 +16,11 @@
 - `service-detail.html`: se renuevan las versiones de caché del CSS y de `services.js`.
 - Validación: sintaxis JavaScript, orden/dimensiones de imágenes, separación responsive, versiones de caché e `git diff --check`.
 
+### Fichas — reducir el espacio sobre la tarjeta en móvil
+- `styles.optimized.css`: la navegación fija conserva espacio para no tapar el contenido; el espacio adicional venía de alinear la tarjeta al final de un hero con altura mínima. En pantallas de hasta 980 px, las tarjetas ahora empiezan tras un margen de 112 px.
+- `service-detail.html`: se renueva la versión de caché del CSS.
+- Validación: `node --check services.js`, selector común comprobado para móvil/tablet (hasta 980 px) y excluido de escritorio, navegación fija conservada, versión de caché renovada y `git diff --check`.
+
 ### Armá tu viaje — integrar las fichas nuevas
 - `trip-builder.js`: se agregaron Programa de surf de 3 días, Tour del estero, Buceo y Country Host. Retiros queda fuera del armador por decisión del usuario.
 - El programa de surf exige tres fechas consecutivas y calcula la tarifa de referencia por persona; el Tour del estero calcula USD 40 por persona y limita el grupo a 12; Buceo queda a cotizar; Country Host figura como gratuito.

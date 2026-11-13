@@ -4359,3 +4359,6 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     object-position: center 90% !important;
   }
 }
+
+/* Fichas de experiencia: conservar el resguardo del menú fijo sin dejar espacio sobrante sobre la tarjeta en móvil. */
+@media(max-width:980px){.service-detail-page .detail-hero{align-items:flex-start;padding-top:112px}}
