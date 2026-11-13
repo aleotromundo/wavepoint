@@ -495,9 +495,9 @@ id: 'surf-fotografia', number: '08', eyebrow: 'FOTOGRAFÍA DE SURF', title: 'Fot
 cardText: 'Tu tiempo en el agua, capturado.',
 includes: ['Servicio de Local Host'],
 description: 'Tu primera ola, un giro que venís trabajando o una sesión compartida con amigos: cada surfista tiene momentos que vale la pena guardar. WavePoint te conecta con fotógrafos locales de surf para capturarlos, así vos podés enfocarte en las olas y llevarte un pedacito de Tamarindo.',
-images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-photography/guide-surf-gallery.webp', 'assets/img/services/surf-program-3-days/day-2.webp', 'assets/img/services/surf-program-3-days/day-1.webp'],
-imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Dos surfistas caminan por la arena con sus tablas', 'Surfista sobre una ola, con otros surfistas remando cerca.', 'Surfista de torso desnudo parado sobre la tabla en una ola pequeña.'],
-imageAltsEn: ['Two surfers emerge from the water carrying their boards', 'Two surfers walk along the beach carrying their boards', 'Surfer riding a wave with others paddling nearby', 'Shirtless surfer standing on a board on a small wave'],
+images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-photography/guide-surf-gallery.webp', 'assets/img/services/surf-program-3-days/day-2.webp', 'assets/img/services/surf-program-3-days/day-3.webp', 'assets/img/services/surf-program-3-days/day-1.webp'],
+imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Dos surfistas caminan por la arena con sus tablas', 'Surfista sobre una ola, con otros surfistas remando cerca.', 'Surfista de traje oscuro haciendo una maniobra sobre una ola verde.', 'Surfista de torso desnudo parado sobre la tabla en una ola pequeña.'],
+imageAltsEn: ['Two surfers emerge from the water carrying their boards', 'Two surfers walk along the beach carrying their boards', 'Surfer riding a wave with others paddling nearby', 'Surfer in a dark wetsuit making a turn on a green wave', 'Shirtless surfer standing on a board on a small wave'],
 questions: [
 { id: 'preferred_date', label: '¿Qué fecha prefieren?', type: 'dates', fields: ['Fecha preferida'], minDate: 'today' },
 { id: 'group_size', label: '¿Cuántas personas participarían?', type: 'number', min: 1 },

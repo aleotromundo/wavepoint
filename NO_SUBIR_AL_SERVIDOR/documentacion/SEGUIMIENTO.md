@@ -121,3 +121,8 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 **Estado: Resuelto.** La imagen de fondo de la portada se desplazó visualmente hacia abajo mediante un ajuste específico de `background-position`, en escritorio y móvil.
 
 **Archivo:** `styles.optimized.css`.
+
+## Fotos de surf — restaurar foto faltante — 2026-11-12
+**Estado: Resuelto.** Se reincorporó la foto del surfista con traje oscuro en la ola verde a la galería de Fotos de surf, que vuelve a tener cinco imágenes.
+
+**Archivo:** `services.js`.
