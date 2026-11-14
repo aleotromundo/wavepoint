@@ -4681,9 +4681,10 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     grid-template-columns: minmax(0, 1fr) !important;
     grid-template-rows: none !important;
     width: min(100%, 520px) !important;
-    gap: 0 !important;
+    box-sizing: border-box !important;
+    gap: 14px !important;
     margin-inline: auto !important;
-    padding: 0 !important;
+    padding: 0 16px !important;
   }
   html body.surf-coaching-detail-page .service-editorial-gallery > img.service-gallery-image-1,
   html body.surf-coaching-detail-page .service-editorial-gallery > img.service-gallery-image-2,
@@ -4699,5 +4700,7 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     max-height: none !important;
     object-fit: contain !important;
     margin: 0 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 10px 24px rgba(8, 43, 58, .18) !important;
   }
 }
