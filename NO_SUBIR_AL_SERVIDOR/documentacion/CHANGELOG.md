@@ -1,4 +1,11 @@
 ## 2026-11-13
+### Hoja de estilos global — minificada
+- `styles.optimized.css`: se quitan comentarios y espacios innecesarios. Pesa 397 KB sin comprimir (antes 416 KB) y unos 70 KB comprimidos (antes 78 KB).
+- Solo se tocaron espacios alrededor de `{ } ; ,`; no cambian selectores ni valores.
+- Todas las páginas que cargan la hoja renuevan la versión de caché a `20261113-minified1`.
+- Validación: se compararon los estilos calculados de todos los elementos (14 vistas: index, armador, fichas de surfskate, roca bruja y surfcoaching, guía y retiros, en 1280 y 390 px). En las páginas sin animación son idénticos. En index y armador difieren solo por el momento de las animaciones: la versión original comparada consigo misma también varía.
+- Pendiente: las reglas repetidas y los `!important` (564) requieren una limpieza más profunda, que queda para otra tarea.
+
 ### Armador — imagen del Programa de surf de 3 días más liviana
 - `assets/img/services/surf-program-3-days/day-3-card.webp`: nueva versión WebP de la foto del día 3 (800 px de ancho, calidad 72). Pesa 178 KB; la original JPG pesaba 807 KB y se conserva sin cambios.
 - `trip-builder.js`: la tarjeta del Programa de surf de 3 días usa la nueva imagen.
