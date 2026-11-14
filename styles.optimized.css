@@ -4647,12 +4647,13 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
 @media (min-width: 641px) {
   .surf-coaching-detail-page .service-editorial-gallery {
     display: grid !important;
-    grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr) minmax(0, .82fr) !important;
-    grid-template-rows: clamp(300px, 31vw, 480px) !important;
+    grid-template-columns: 47.5% 26.5% 22.5% !important;
+    grid-template-rows: clamp(300px, 31vw, 450px) !important;
     grid-auto-flow: column !important;
-    width: min(100%, 1240px) !important;
+    width: min(100%, 1440px) !important;
     min-width: 0 !important;
-    gap: clamp(8px, 1.1vw, 16px) !important;
+    column-gap: 1.75% !important;
+    row-gap: 0 !important;
     align-items: stretch !important;
   }
   .surf-coaching-detail-page .service-editorial-gallery .service-gallery-image-1,
