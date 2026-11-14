@@ -1,4 +1,10 @@
 ## 2026-11-13
+### Galerías — pasar entre fotos con flechas y teclado
+- `script.js`: el visor de fotos recorre las imágenes de la misma galería. Se puede avanzar y retroceder con las flechas de la pantalla (‹ ›) o con las teclas ← y →; al llegar al final vuelve a la primera. Escape sigue cerrando. El texto muestra la posición (por ejemplo, 2/3).
+- `styles.optimized.css`: estilos de las flechas, a los costados de la foto en escritorio y dentro de la imagen en móvil.
+- Se renuevan las versiones de caché de `script.js` y `styles.optimized.css` en todas las páginas.
+- Validación: Chromium en 1280×800 y 390×844 en Roca Bruja: se abre la foto, las flechas y las teclas cambian de foto, la vuelta funciona, Escape cierra y no hay errores de JavaScript; `node --check script.js` y `git diff --check`.
+
 ### Programa de iniciación — foto del día 2 sin repetir la de Surfcoaching
 - `services.js`: en el Programa de iniciación al surf, la foto del día 2 pasa de `day-2-board-position.webp` a `day-3-pop-up-practice.webp`, donde se ve la cara del instructor. Se actualiza el texto alternativo en español y en inglés.
 - `pt-br.js`: se actualiza el texto alternativo del día 2 en portugués.

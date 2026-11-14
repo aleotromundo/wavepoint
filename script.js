@@ -1596,6 +1596,14 @@
     if (document.querySelector('.guide-image-modal')) return;
     const images = [...new Set([...document.querySelectorAll('.guide-detail-card img, .collab-gallery img, .surf-lesson-gallery img, .detail-gallery img, .surf-program-day-photo img, .retreat-editorial img, .accommodation-gallery img, .service-card img, .service-offering img, .service-pack-image, .about-page img')])].filter(image => !image.closest('a[href]'));
     if (!images.length) return;
+    const GROUP_SELECTOR = '.detail-gallery, .service-editorial-gallery, .collab-gallery, .surf-lesson-gallery, .accommodation-gallery, .retreat-editorial, .surf-program-day-photo, .guide-detail-card';
+    const groupOf = img => img.closest(GROUP_SELECTOR) || img.parentElement;
+    const L = languageState.current;
+    const labels = {
+      close: L === 'en' ? 'Close image' : L === 'pt-BR' ? 'Fechar imagem' : 'Cerrar imagen',
+      prev: L === 'en' ? 'Previous image' : L === 'pt-BR' ? 'Imagem anterior' : 'Imagen anterior',
+      next: L === 'en' ? 'Next image' : L === 'pt-BR' ? 'Próxima imagem' : 'Imagen siguiente'
+    };
 
     const modal = document.createElement('div');
     modal.className = 'guide-image-modal';
@@ -1603,13 +1611,17 @@
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
     modal.setAttribute('aria-label', 'Imagen ampliada');
-    modal.innerHTML = '<figure><button class="guide-image-modal-close" type="button" aria-label="Cerrar imagen">×</button><img alt=""><figcaption></figcaption></figure>';
+    modal.innerHTML = '<figure><button class="guide-image-modal-close" type="button" aria-label="' + labels.close + '">×</button><button class="guide-image-modal-nav guide-image-modal-prev" type="button" aria-label="' + labels.prev + '">‹</button><img alt=""><button class="guide-image-modal-nav guide-image-modal-next" type="button" aria-label="' + labels.next + '">›</button><figcaption></figcaption></figure>';
     document.body.appendChild(modal);
 
     const close = modal.querySelector('.guide-image-modal-close');
+    const prev = modal.querySelector('.guide-image-modal-prev');
+    const next = modal.querySelector('.guide-image-modal-next');
     const image = modal.querySelector('img');
     const caption = modal.querySelector('figcaption');
     let lastFocused = null;
+    let list = [];
+    let index = 0;
 
     function closeModal(){
       modal.hidden = true;
@@ -1617,15 +1629,26 @@
       document.body.style.overflow = '';
       lastFocused?.focus();
     }
-    function openModal(source){
-      lastFocused = document.activeElement;
+    function show(i){
+      index = (i + list.length) % list.length;
+      const source = list[index];
       image.src = source.currentSrc || source.src;
       image.alt = source.alt || '';
-      caption.textContent = source.alt || '';
-      close.setAttribute('aria-label', languageState.current === 'en' ? 'Close image' : languageState.current === 'pt-BR' ? 'Fechar imagem' : 'Cerrar imagen');
-      modal.setAttribute('aria-label', languageState.current === 'en' ? 'Enlarged image' : languageState.current === 'pt-BR' ? 'Imagem ampliada' : 'Imagen ampliada');
+      const counter = list.length > 1 ? '  (' + (index + 1) + '/' + list.length + ')' : '';
+      caption.textContent = (source.alt || '') + counter;
+      const multi = list.length > 1;
+      prev.hidden = !multi;
+      next.hidden = !multi;
+    }
+    function openModal(source){
+      lastFocused = document.activeElement;
+      list = images.filter(img => groupOf(img) === groupOf(source));
+      if (!list.length) list = [source];
+      close.setAttribute('aria-label', labels.close);
+      modal.setAttribute('aria-label', L === 'en' ? 'Enlarged image' : L === 'pt-BR' ? 'Imagem ampliada' : 'Imagen ampliada');
       modal.hidden = false;
       document.body.style.overflow = 'hidden';
+      show(Math.max(0, list.indexOf(source)));
       close.focus();
     }
 
@@ -1633,7 +1656,7 @@
       source.tabIndex = 0;
       source.classList.add('image-zoomable');
       source.setAttribute('role', 'button');
-      source.setAttribute('aria-label', `${languageState.current === 'en' ? 'View enlarged image: ' : languageState.current === 'pt-BR' ? 'Ver imagem ampliada: ' : 'Ver imagen ampliada: '}${source.alt || ''}`);
+      source.setAttribute('aria-label', `${L === 'en' ? 'View enlarged image: ' : L === 'pt-BR' ? 'Ver imagem ampliada: ' : 'Ver imagen ampliada: '}${source.alt}`);
       source.addEventListener('click', ()=>openModal(source));
       source.addEventListener('keydown', event=>{
         if(event.key === 'Enter' || event.key === ' '){
@@ -1643,8 +1666,15 @@
       });
     });
     close.addEventListener('click', closeModal);
+    prev.addEventListener('click', ()=>show(index - 1));
+    next.addEventListener('click', ()=>show(index + 1));
     modal.addEventListener('click', event=>{ if(event.target === modal) closeModal(); });
-    document.addEventListener('keydown', event=>{ if(event.key === 'Escape' && !modal.hidden) closeModal(); });
+    document.addEventListener('keydown', event=>{
+      if (modal.hidden) return;
+      if (event.key === 'Escape') closeModal();
+      else if (event.key === 'ArrowLeft' && list.length > 1) { event.preventDefault(); show(index - 1); }
+      else if (event.key === 'ArrowRight' && list.length > 1) { event.preventDefault(); show(index + 1); }
+    });
   }
 
   window.addEventListener('wavepoint:service-rendered', bindGuideImageModal);
