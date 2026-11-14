@@ -192,4 +192,5 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 
 **Archivos:** `styles.optimized.css`, `service-detail.html` (versión de caché `20261114-surf-coaching-gallery1`). El editor `?ordenarFotos=1` y `services.js` no cambian. Se dejaron intactas las reglas por nombre de archivo de las fotos `guide-surf-cover` y `day-2-board-position`, porque también aplican a otra ficha.
 **Validación:** Chrome headless a 1440, 1024 y 390 px: las tres fotos visibles, misma altura en escritorio, sin solapamientos.
-**Pendiente:** subir a `main`.
+**Portada:** el commit `2fa56a4` (19:39) reordenó `images` y dejó como portada de la ficha la foto de los dos surfistas saliendo del agua. Se restauró la portada anterior (tres surfistas saltando en la playa, la misma de la tarjeta del inicio y del armador) con `heroImage` en `services.js`, sin alterar la galería. Versión de caché de `services.js`: `20261114-surf-coaching-hero1`.
+**Pendiente:** revisar el resto de las galerías con esta como referencia.

@@ -301,6 +301,7 @@ lead: 'El servicio tiene dos momentos: una sesión de surf grabada, con una cám
 includes: ['Sesión de surf grabada', 'Video de tus olas', 'Videoanálisis y devolución técnica posterior', 'Recomendado para surfistas intermedios o avanzados', 'USD 45 por persona', 'Servicio de Local Host'],
 images: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-program-3-days/day-2-board-position.webp'],
 galleryImages: ['assets/img/services/surf-photography/guide-surf-cover.webp', 'assets/img/services/surf-coaching/surf-coaching-group-beach.webp', 'assets/img/services/surf-program-3-days/day-2-board-position.webp'],
+heroImage: 'assets/img/services/surf-coaching/surf-coaching-group-beach.webp',
 imageAlts: ['Dos surfistas salen del agua con sus tablas en la playa', 'Tres surfistas saltando con sus tablas en la playa', 'Alumno practicando la posición de remada sobre la tabla en tierra'],
 imageAltsEn: ['Two surfers emerge from the water carrying their boards', 'Three surfers jumping with their boards on the beach', 'Surf student practicing the paddling position on a board on land'],
 questions: [
