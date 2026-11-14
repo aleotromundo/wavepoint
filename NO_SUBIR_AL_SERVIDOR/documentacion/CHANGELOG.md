@@ -1,4 +1,10 @@
 ## 2026-11-13
+### Armador — logo animado en el hueco de la grilla
+- `trip-builder.js`: si la grilla de experiencias tiene un número impar de tarjetas, la última celda muestra la marca de WavePoint (`assets/wavepoint-hero-mark.png`) como elemento decorativo (`aria-hidden`). Con el conjunto actual, ocupa el hueco junto a Country Host.
+- `trip-builder.css`: el logo entra con la misma animación de ola que el resto del sitio (`trip-logo-arrive`) y después flota suavemente (`trip-logo-float`). Con `prefers-reduced-motion` no se anima.
+- `trip-builder.html`: se renuevan las versiones de caché de `trip-builder.css` y `trip-builder.js`.
+- Validación: `node --check trip-builder.js`; Chromium en 1331×594 y 390×844, sin errores de página, con el logo en la celda vacía y la animación aplicada; `git diff --check`.
+
 ### Armador — logo flotante completo en el hero
 - `trip-builder.css`: la marca flotante de WavePoint del hero "Tu viaje, a tu manera" sube de `bottom: 88px` a `bottom: 124px`, para que la ola y el texto no queden cortados por el borde inferior del hero.
 - `trip-builder.html`: se renueva la versión de caché de `trip-builder.css`.

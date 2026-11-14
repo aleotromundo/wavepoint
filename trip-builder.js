@@ -545,7 +545,7 @@
     </section>
     <section class="trip-builder-main"><div class="container">
       <header class="trip-builder-heading"><p class="trip-kicker">WAVEPOINT · TAMARINDO</p><h2>${copy.sectionTitle}</h2><p>${copy.sectionIntro}</p></header>
-      <div class="trip-builder-layout"><div class="trip-experience-grid">${renderCards()}</div><aside class="trip-summary" aria-label="${copy.trip}" id="tripSummary">${renderSummary()}</aside></div>
+      <div class="trip-builder-layout"><div class="trip-experience-grid">${renderCards()}${experiences.length % 2 ? '<div class="trip-logo-tile" aria-hidden="true"><img class="trip-logo-tile-mark" src="assets/wavepoint-hero-mark.png" alt="" loading="lazy" decoding="async"></div>' : ''}</div><aside class="trip-summary" aria-label="${copy.trip}" id="tripSummary">${renderSummary()}</aside></div>
       </div></section>${renderAccommodationModal()}`;
     updateMobileCart();
   };

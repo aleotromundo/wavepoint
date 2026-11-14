@@ -694,3 +694,9 @@
 /* Estado inicial: evita mostrar una pantalla vacía mientras carga el render dinámico. */
 .trip-builder-loading { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #072e3c; color: #e7fffa; font: 700 16px "DM Sans", sans-serif; }
 .trip-recommendation-dialog { width: min(680px, 100%); }
+
+.trip-logo-tile { display: grid; place-items: center; min-height: 180px; border-radius: 18px; }
+.trip-logo-tile-mark { width: min(70%, 220px); height: auto; filter: drop-shadow(0 8px 20px rgba(0, 167, 189, .25)); animation: trip-logo-arrive 1.25s cubic-bezier(.2,.8,.25,1) both, trip-logo-float 6s ease-in-out 1.25s infinite; }
+@keyframes trip-logo-arrive { 0% { opacity: 0; transform: translate3d(0, 28px, 0) scale(.9) rotate(-3deg); } 48% { opacity: 1; transform: translate3d(0, -8px, 0) scale(1.02) rotate(1.5deg); } 74% { transform: translate3d(0, 3px, 0) scale(.99) rotate(-.5deg); } 100% { opacity: 1; transform: none; } }
+@keyframes trip-logo-float { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -6px, 0); } }
+@media (prefers-reduced-motion: reduce) { .trip-logo-tile-mark { animation: none; } }
