@@ -1,4 +1,9 @@
 ## 2026-11-13
+### Visor de fotos — flechas estilo portada
+- `script.js` y `styles.optimized.css`: las flechas ‹ › del visor pasan a ser chevrones finos, sin círculo ni fondo, como las de la portada de cada experiencia. Quedan a los costados de la foto en escritorio y sobre sus bordes en móvil.
+- Se renuevan las versiones de caché de `script.js` y `styles.optimized.css` en todas las páginas.
+- Validación: captura en Roca Bruja (1280 px) con las flechas a los costados; `node --check script.js` y `git diff --check`.
+
 ### Visor de fotos — ampliar con rueda y flechas ↑ ↓
 - `script.js`: dentro del visor, la rueda del mouse amplía (hacia arriba) o reduce (hacia abajo), y las teclas ↑ y ↓ hacen lo mismo. El zoom va de 100 % a 300 % en pasos de 25 %. Las teclas ← y → siguen cambiando de foto.
 - Al ampliar, el visor se puede recorrer con las barras de desplazamiento; las flechas de la pantalla se ocultan mientras está ampliado.

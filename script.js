@@ -1611,7 +1611,7 @@
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
     modal.setAttribute('aria-label', 'Imagen ampliada');
-    modal.innerHTML = '<figure><button class="guide-image-modal-close" type="button" aria-label="' + labels.close + '">×</button><button class="guide-image-modal-nav guide-image-modal-prev" type="button" aria-label="' + labels.prev + '">‹</button><img alt=""><button class="guide-image-modal-nav guide-image-modal-next" type="button" aria-label="' + labels.next + '">›</button><figcaption></figcaption></figure>';
+    modal.innerHTML = '<figure><button class="guide-image-modal-close" type="button" aria-label="' + labels.close + '">×</button><button class="guide-image-modal-nav guide-image-modal-prev" type="button" aria-label="' + labels.prev + '"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="M20 2 3 20l17 18" /></svg></button><img alt=""><button class="guide-image-modal-nav guide-image-modal-next" type="button" aria-label="' + labels.next + '"><svg aria-hidden="true" viewBox="0 0 24 40" focusable="false"><path d="m4 2 17 18L4 38" /></svg></button><figcaption></figcaption></figure>';
     document.body.appendChild(modal);
 
     const close = modal.querySelector('.guide-image-modal-close');
