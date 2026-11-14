@@ -184,3 +184,12 @@ La historia local de `main` se reescribió con `git-filter-repo` para purgar `ch
 
 **Archivos:** `services.js`, `pt-br.js`, `styles.optimized.css`, `service-detail.html`, dos nuevos WebP en `assets/img/services/surf-program-3-days/`.
 **Pendiente:** revisión y autorización para subir a `main`; el push puede iniciar un deployment de Vercel.
+
+## Surf Coaching — galería de fotos en escritorio y móvil — 2026-11-14
+**Estado: Resuelto en código; pendiente publicar.** En escritorio la galería quedaba colapsada (0 px de alto) y las fotos no se veían: una regla histórica (`.service-detail-page:not(...) .service-editorial-gallery-triple img:nth-child(3)`) tenía más prioridad que los parches añadidos entre 23:50 y 00:27 y mandaba la tercera foto a una segunda fila de 0 px. Se reemplazaron unos 340 renglones de parches apilados por un único bloque al final de `styles.optimized.css`, con un selector más específico.
+
+**Resultado:** en escritorio las tres fotos van en una sola fila, a la misma altura y sin recortes (columnas `1.5fr / 0.8fr / 0.6667fr`, la proporción real de cada archivo, con la composición elegida en el editor). En móvil (≤ 640 px) quedan apiladas a todo el ancho con 14 px de separación. Cada foto reserva su proporción con `aspect-ratio`, así la galería no se colapsa mientras carga. Sin marcos ni cajas, solo una sombra suave.
+
+**Archivos:** `styles.optimized.css`, `service-detail.html` (versión de caché `20261114-surf-coaching-gallery1`). El editor `?ordenarFotos=1` y `services.js` no cambian. Se dejaron intactas las reglas por nombre de archivo de las fotos `guide-surf-cover` y `day-2-board-position`, porque también aplican a otra ficha.
+**Validación:** Chrome headless a 1440, 1024 y 390 px: las tres fotos visibles, misma altura en escritorio, sin solapamientos.
+**Pendiente:** subir a `main`.
