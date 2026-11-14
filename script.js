@@ -1622,11 +1622,31 @@
     let lastFocused = null;
     let list = [];
     let index = 0;
+    let zoom = 1;
+    let baseWidth = 0;
+    const ZOOM_MIN = 1, ZOOM_MAX = 3, ZOOM_STEP = 0.25;
+
+    function applyZoom(){
+      if (zoom <= ZOOM_MIN) {
+        zoom = ZOOM_MIN;
+        image.style.width = '';
+        modal.classList.remove('is-zoomed');
+      } else {
+        image.style.width = (baseWidth * zoom) + 'px';
+        modal.classList.add('is-zoomed');
+      }
+    }
+    function setZoom(value){
+      zoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round(value * 100) / 100));
+      applyZoom();
+    }
 
     function closeModal(){
       modal.hidden = true;
       image.removeAttribute('src');
       document.body.style.overflow = '';
+      zoom = ZOOM_MIN;
+      applyZoom();
       lastFocused?.focus();
     }
     function show(i){
@@ -1639,6 +1659,9 @@
       const multi = list.length > 1;
       prev.hidden = !multi;
       next.hidden = !multi;
+      zoom = ZOOM_MIN;
+      applyZoom();
+      image.addEventListener('load', () => { baseWidth = image.getBoundingClientRect().width; }, { once: true });
     }
     function openModal(source){
       lastFocused = document.activeElement;
@@ -1674,7 +1697,14 @@
       if (event.key === 'Escape') closeModal();
       else if (event.key === 'ArrowLeft' && list.length > 1) { event.preventDefault(); show(index - 1); }
       else if (event.key === 'ArrowRight' && list.length > 1) { event.preventDefault(); show(index + 1); }
+      else if (event.key === 'ArrowUp') { event.preventDefault(); setZoom(zoom + ZOOM_STEP); }
+      else if (event.key === 'ArrowDown') { event.preventDefault(); setZoom(zoom - ZOOM_STEP); }
     });
+    modal.addEventListener('wheel', event=>{
+      if (modal.hidden) return;
+      event.preventDefault();
+      setZoom(zoom + (event.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP));
+    }, { passive: false });
   }
 
   window.addEventListener('wavepoint:service-rendered', bindGuideImageModal);

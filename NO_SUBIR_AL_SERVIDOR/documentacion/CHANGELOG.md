@@ -1,4 +1,13 @@
 ## 2026-11-13
+### Visor de fotos — ampliar con rueda y flechas ↑ ↓
+- `script.js`: dentro del visor, la rueda del mouse amplía (hacia arriba) o reduce (hacia abajo), y las teclas ↑ y ↓ hacen lo mismo. El zoom va de 100 % a 300 % en pasos de 25 %. Las teclas ← y → siguen cambiando de foto.
+- Al ampliar, el visor se puede recorrer con las barras de desplazamiento; las flechas de la pantalla se ocultan mientras está ampliado.
+- Al cambiar de foto o cerrar, el zoom vuelve a 100 %.
+- `styles.optimized.css`: estilos del modo ampliado.
+- Se renuevan las versiones de caché de `script.js` y `styles.optimized.css` en todas las páginas.
+- Validación: Chromium en Roca Bruja (1280 px): la rueda y las flechas amplían y reducen, el límite es 300 %, el mínimo es 100 %, y al cambiar de foto el zoom se reinicia; sin errores de JavaScript. `node --check script.js` y `git diff --check`.
+- Pendiente: en móvil no probé la rueda (las pruebas usaron las flechas), y con la rueda no se puede desplazar la foto ampliada; hay que usar las barras.
+
 ### Galerías — pasar entre fotos con flechas y teclado
 - `script.js`: el visor de fotos recorre las imágenes de la misma galería. Se puede avanzar y retroceder con las flechas de la pantalla (‹ ›) o con las teclas ← y →; al llegar al final vuelve a la primera. Escape sigue cerrando. El texto muestra la posición (por ejemplo, 2/3).
 - `styles.optimized.css`: estilos de las flechas, a los costados de la foto en escritorio y dentro de la imagen en móvil.

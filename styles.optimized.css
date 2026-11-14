@@ -4,3 +4,7 @@
 .guide-image-modal-nav:focus-visible,.guide-image-modal-nav:hover{background:#087f87;outline:2px solid #9ce8d7;outline-offset:2px}
 .guide-image-modal-nav[hidden]{display:none}
 @media (max-width:760px){.guide-image-modal-prev{left:6px}.guide-image-modal-next{right:6px}}
+.guide-image-modal.is-zoomed{overflow:auto;place-items:start center}
+.guide-image-modal.is-zoomed figure{width:auto;max-width:none;max-height:none}
+.guide-image-modal.is-zoomed img{max-width:none;max-height:none}
+.guide-image-modal.is-zoomed .guide-image-modal-nav{display:none}
