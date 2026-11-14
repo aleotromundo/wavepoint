@@ -1,4 +1,11 @@
 ## 2026-11-13
+### Armador — imagen del Programa de surf de 3 días más liviana
+- `assets/img/services/surf-program-3-days/day-3-card.webp`: nueva versión WebP de la foto del día 3 (800 px de ancho, calidad 72). Pesa 178 KB; la original JPG pesaba 807 KB y se conserva sin cambios.
+- `trip-builder.js`: la tarjeta del Programa de surf de 3 días usa la nueva imagen.
+- `trip-builder.html`: se renueva la versión de caché de `trip-builder.js`.
+- Validación: Chromium en 1280×800; la imagen carga sin errores y el armador no tiene solicitudes fallidas; `node --check trip-builder.js` y `git diff --check`.
+- Pendiente: `styles.optimized.css` (406 KB) sigue igual; la tarjeta de `index.html`/`services.js` todavía usa la JPG original.
+
 ### Armador — logo animado en el hueco de la grilla
 - `trip-builder.js`: si la grilla de experiencias tiene un número impar de tarjetas, la última celda muestra la marca de WavePoint (`assets/wavepoint-hero-mark.png`) como elemento decorativo (`aria-hidden`). Con el conjunto actual, ocupa el hueco junto a Country Host.
 - `trip-builder.css`: el logo entra con la misma animación de ola que el resto del sitio (`trip-logo-arrive`) y después flota suavemente (`trip-logo-float`). Con `prefers-reduced-motion` no se anima.
