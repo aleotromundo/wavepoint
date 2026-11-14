@@ -223,13 +223,13 @@ cardText: 'Tres clases privadas de dos horas para descubrir el mar y disfrutar t
 description: 'Tres días para descubrir el mar y disfrutar tus primeras olas.',
 images: [
 'assets/img/services/surf-coaching/surf-coaching-tamarindo-surf-camp.webp',
-'assets/img/services/surf-program-3-days/day-2-board-position.webp',
+'assets/img/services/surf-program-3-days/day-3-pop-up-practice.webp',
 'assets/img/services/surf-program-3-days/day-3-original.jpg'
 ],
 heroImage: 'assets/img/services/surf-program-3-days/ocean-waves-no-people.webp',
 imageAlts: [
 'Grupo caminando con sus tablas hacia la orilla en Tamarindo.',
-'Alumno practicando la posición de remada sobre la tabla en tierra.',
+'Alumno practicando el pop-up sobre la tabla en tierra.',
 'Alumnos de surf con sus tablas en la playa de Tamarindo.'
 ],
 questions: [
@@ -286,7 +286,7 @@ en: {
 eyebrow: 'SURF PROGRAM · BEGINNERS', title: 'Beginner Surf Program',
 cardText: 'Three private 2-hour lessons to discover the ocean and enjoy your first waves.',
 description: 'Three days to discover the ocean and enjoy your first waves.',
-imageAlts: ['Group walking with their boards toward the shore in Tamarindo.', 'Surf student practicing the paddling position on a board on land.', 'Surf students with their boards on Tamarindo Beach.'],
+imageAlts: ['Group walking with their boards toward the shore in Tamarindo.', 'Surf student practicing the pop-up on a board on land.', 'Surf students with their boards on Tamarindo Beach.'],
 questions: {
 program_dates: { label: 'Which dates would you like for the three lessons? Choose three consecutive days in lesson order.', fields: ['Day 1', 'Day 2', 'Day 3'] },
 group_size: { label: 'How many people will take part?' }

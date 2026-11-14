@@ -1,4 +1,11 @@
 ## 2026-11-13
+### Programa de iniciación — foto del día 2 sin repetir la de Surfcoaching
+- `services.js`: en el Programa de iniciación al surf, la foto del día 2 pasa de `day-2-board-position.webp` a `day-3-pop-up-practice.webp`, donde se ve la cara del instructor. Se actualiza el texto alternativo en español y en inglés.
+- `pt-br.js`: se actualiza el texto alternativo del día 2 en portugués.
+- Surfcoaching conserva `day-2-board-position.webp` en su galería, sin cambios.
+- `service-detail.html`: se renuevan las versiones de caché de `services.js` y `pt-br.js`.
+- Validación: sintaxis de `services.js` y `pt-br.js`; Chromium en las dos fichas, con todas las fotos cargadas (tras bajar la página) y sin errores de JavaScript.
+
 ### Hoja de estilos global — minificada
 - `styles.optimized.css`: se quitan comentarios y espacios innecesarios. Pesa 397 KB sin comprimir (antes 416 KB) y unos 70 KB comprimidos (antes 78 KB).
 - Solo se tocaron espacios alrededor de `{ } ; ,`; no cambian selectores ni valores.
