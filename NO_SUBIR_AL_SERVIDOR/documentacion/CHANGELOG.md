@@ -1,4 +1,9 @@
 ## 2026-11-13
+### Roca Bruja — galería más grande en escritorio
+- `styles.optimized.css`: la galería de la ficha de Roca Bruja pasa de 900 px a 1200 px de ancho máximo en escritorio; se mantienen las tres columnas y la proporción 4:3. En móvil no cambia.
+- `service-detail.html`: se renueva la versión de caché de `styles.optimized.css`.
+- Validación: `node --check services.js` y `git diff --check`.
+
 ### Armá tu viaje — datos incompletos no bloquean la solicitud
 - `trip-builder.js`: fechas, alojamiento y recorrido pueden quedar sin completar; el armador permite continuar y mantiene 1 persona como valor inicial. Las fechas inválidas o no consecutivas siguen mostrando un bloqueo específico.
 - El resumen avisa que quedan datos pendientes y el mensaje preparado para WhatsApp identifica qué falta por experiencia. El envío sigue siendo una solicitud, no una reserva confirmada.
