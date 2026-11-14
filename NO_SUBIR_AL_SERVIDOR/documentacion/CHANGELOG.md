@@ -1,4 +1,10 @@
 ## 2026-11-13
+### Galerías de fichas — fotos responsive en todas las secciones
+- `styles.optimized.css`: al final de la hoja se agregan reglas de móvil (hasta 640 px) para las galerías de las fichas: una columna, fotos a ancho completo y proporción 4:3. Antes, Roca Bruja mostraba tres miniaturas en una fila y Surfskate dejaba una foto oculta.
+- Excluidas a propósito: la galería de fotos de surf y la de surfcoaching, que tienen su propio collage y proporciones por foto.
+- `service-detail.html`: se renueva la versión de caché de `styles.optimized.css`.
+- Validación: prueba con Chromium en 390 px y 1280 px para todas las fichas con galería (surf-coaching, roca-bruja, snorkel-catamaran, yoga, atv, surf-fotografia, surfskate): sin desborde horizontal y con todas las fotos visibles; `node --check services.js` y `git diff --check`.
+
 ### Roca Bruja — galería más grande en escritorio
 - `styles.optimized.css`: la galería de la ficha de Roca Bruja pasa de 900 px a 1200 px de ancho máximo en escritorio; se mantienen las tres columnas y la proporción 4:3. En móvil no cambia.
 - `service-detail.html`: se renueva la versión de caché de `styles.optimized.css`.

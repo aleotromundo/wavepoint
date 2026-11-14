@@ -4460,3 +4460,16 @@ html body.service-detail-page.surf-coaching-detail-page .service-editorial-story
     grid-row: auto !important;
   }
 }
+
+/* Galerías de fichas: fotos responsive en todas las secciones (móvil apilado a ancho completo). */
+@media (max-width:640px){
+.service-detail-page:not(.surf-photo-detail-page):not(.surf-coaching-detail-page) .service-editorial-gallery{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto!important;height:auto!important;max-width:none!important;width:100%!important;gap:12px!important;margin:0!important}
+.service-detail-page:not(.surf-photo-detail-page):not(.surf-coaching-detail-page) .service-editorial-gallery img{grid-column:auto!important;grid-row:auto!important;width:100%!important;max-width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:4/3!important;object-fit:cover!important}
+}
+@media (min-width:641px){
+.service-detail-page:not(.surf-photo-detail-page):not(.surf-coaching-detail-page) .service-editorial-gallery img{max-width:100%!important}
+}
+@media (max-width:640px){
+.service-detail-page:not(.surf-photo-detail-page):not(.surf-coaching-detail-page) .service-editorial-gallery.service-editorial-gallery-surfskate{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto!important;height:auto!important}
+.service-detail-page:not(.surf-photo-detail-page):not(.surf-coaching-detail-page) .service-editorial-gallery.service-editorial-gallery-surfskate img{grid-column:1/-1!important;grid-row:auto!important}
+}
