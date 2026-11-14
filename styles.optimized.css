@@ -4700,7 +4700,7 @@ body.logo-placement-editor-active #servicios .services-background-logo .services
     max-height: none !important;
     object-fit: contain !important;
     margin: 0 !important;
-    border-radius: 18px !important;
-    box-shadow: 0 10px 24px rgba(8, 43, 58, .18) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 }
