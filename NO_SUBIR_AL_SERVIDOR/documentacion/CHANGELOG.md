@@ -1,4 +1,9 @@
 ## 2026-11-13
+### Armador — logo flotante completo en el hero
+- `trip-builder.css`: la marca flotante de WavePoint del hero "Tu viaje, a tu manera" sube de `bottom: 88px` a `bottom: 124px`, para que la ola y el texto no queden cortados por el borde inferior del hero.
+- `trip-builder.html`: se renueva la versión de caché de `trip-builder.css`.
+- Validación: Chromium en 1168×572, 1280×800 y 390×844 (en escritorio chico y en móvil el logo queda dentro del hero); `git diff --check`.
+
 ### Galerías de fichas — fotos responsive en todas las secciones
 - `styles.optimized.css`: al final de la hoja se agregan reglas de móvil (hasta 640 px) para las galerías de las fichas: una columna, fotos a ancho completo y proporción 4:3. Antes, Roca Bruja mostraba tres miniaturas en una fila y Surfskate dejaba una foto oculta.
 - Excluidas a propósito: la galería de fotos de surf y la de surfcoaching, que tienen su propio collage y proporciones por foto.
